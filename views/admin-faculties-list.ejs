@@ -1,0 +1,26 @@
+<%- include('partials/headerAdmin') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Viko fakultetų sąrašas</h1>
+  <a type="button" class="btn btn-secondary" href="/admin-faculties-create"> Sukurti</a>
+
+    <%  faculties.forEach(function(faculty){ %>
+    <div class="database-result-edit">
+      <div class="edit-left">
+      <span class="font-weight-bold"> <%=faculty.username%></span>
+      </div>
+      <div class="">
+          <a type="button" class="btn btn-primary" href="/admin-faculties-edit/<%=faculty._id %>"> Redaguoti</a>
+      </div>
+    </div>
+
+    <% }) %>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

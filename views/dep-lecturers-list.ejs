@@ -1,0 +1,29 @@
+<%- include('partials/headerDep') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Visų katedros dėstytojų sąrašas</h1>
+
+    <%  users.forEach(function(user){ %>
+    <div class="database-result-edit ">
+      <div class="edit-left">
+        <%= user.role %> <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+      </div>
+
+      <div class="">
+        <div class="btn-group" role="group" aria-label="" id="group">
+          <a type="button" class="btn btn-primary" href="/dep-edit-user/<%= user._id %>"> Redaguoti</a>
+          <a type="button" class="btn btn-secondary" href="/dep-lecturer-report/<%= user._id %>"> Ataskaita</a>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,150 @@
+<%- include('partials/headerLecturer') %>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Naudotojo <%=user.username%> aplinka</h1>
+  <%if ( user.role === "dėstytojas") { %>
+  <p class="lead">Jūsų ataskaitos būsena: <%=user.busena%></p>
+  <% } else if (user.role === "katedros vedėjas") { %>
+  <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo%></p>
+  <% } %>
+
+  <p class="lead">Rolė: <%=user.role%></p>
+</div>
+
+<div class="container">
+  <div class="jumbotron ">
+    <form action="/update-user" method="post">
+
+      <div class="form-group ">
+        <h4 class="text-center">Jūsų asmeniniai duomenys</h4>
+        <%if ( user.rolesKeitimas === true) { %>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Rolė:</label>
+            <select name="role" class="form-select">
+              <option style="color:gray" value="<%=user.role%>"> <%=user.role%> </option>
+              <option class="others" value="dėstytojas">dėstytojas</option>
+              <option class="others" value="katedros vedėjas">katedros vedėjas</option>
+            </select>
+          </div>
+        </div>
+        <% } %>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Vardas:</label>
+            <input type="text" class="form-control " name="vardas" value="<%=user.vardas%>" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Pavardė:</label>
+            <input type="text" class="form-control " name="pavarde" value="<%=user.pavarde%>" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Fakultetas:</label>
+            <select name="fakultetas" class="form-select form-control" required>
+              <option value="nepasirinkta"></option>
+              <option class="others" <%if (user.fakultetas === "Agrotechnologijų") { %> selected <% } %> value="Agrotechnologijų">Agrotechnologijų</option>
+              <option class="others" <%if (user.fakultetas === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
+              <option class="others" <%if (user.fakultetas === "Elektronikos ir informatikos") { %> selected <% } %> value="Elektronikos ir informatikos">Elektronikos ir informatikos</option>
+              <option class="others" <%if (user.fakultetas === "Menų ir kūrybinių technologijų") { %> selected <% } %> value="Menų ir kūrybinių technologijų">Menų ir kūrybinių technologijų</option>
+              <option class="others" <%if (user.fakultetas === "Pedagogikos") { %> selected <% } %> value="Pedagogikos">Pedagogikos</option>
+              <option class="others" <%if (user.fakultetas === "Sveikatos priežiūros") { %> selected <% } %> value="Sveikatos priežiūros">Sveikatos priežiūros</option>
+              <option class="others" <%if (user.fakultetas === "Verslo vadybos") { %> selected <% } %> value="Verslo vadybos">Verslo vadybos</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Katedra:</label>
+            <select name="katedra" class="form-select form-control" required>
+              <option value="nepasirinkta"></option>
+              <option class="others" <%if (user.katedra === "Elektronikos ir kompiuterių inžinerijos") { %> selected <% } %> value="Elektronikos ir kompiuterių inžinerijos">Elektronikos ir kompiuterių inžinerijos</option>
+              <option class="others" <%if (user.katedra === "Informacinių sistemų") { %> selected <% } %> value="Informacinių sistemų">Informacinių sistemų</option>
+              <option class="others" <%if (user.katedra === "Programinės įrangos") { %> selected <% } %> value="Programinės įrangos">Programinės įrangos</option>
+              <option class="others" <%if (user.katedra === "Bankininkystės") { %> selected <% } %> value="Bankininkystės">Bankininkystės</option>
+              <option class="others" <%if (user.katedra === "Buhalterinės apskaitos") { %> selected <% } %> value="Buhalterinės apskaitos">Buhalterinės apskaitos</option>
+              <option class="others" <%if (user.katedra === "Draudimo") { %> selected <% } %> value="Draudimo">Draudimo</option>
+              <option class="others" <%if (user.katedra === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
+              <option class="others" <%if (user.katedra === "Bankininkystės") { %> selected <% } %> value="Bankininkystės">Bankininkystės</option>
+              <option class="others" <%if (user.katedra === "Finansų") { %> selected <% } %> value="Finansų">Finansų</option>
+              <option class="others" <%if (user.katedra === "Reklamos ir komunikacijos") { %> selected <% } %> value="Reklamos ir komunikacijos">Reklamos ir komunikacijos</option>
+              <option class="others" <%if (user.katedra === "Tarptautinio verslo") { %> selected <% } %> value="Tarptautinio verslo">Tarptautinio verslo</option>
+              <option class="others" <%if (user.katedra === "Turizmo") { %> selected <% } %> value="Turizmo">Turizmo</option>
+              <option class="others" <%if (user.katedra === "Vadybos") { %> selected <% } %> value="Vadybos">Vadybos</option>
+              <option class="others" <%if (user.katedra === "Verslo inovacijų") { %> selected <% } %> value="Verslo inovacijų">Verslo inovacijų</option>
+              <option class="others" <%if (user.katedra === "Medicinos technologijų ir dietetikos") { %> selected <% } %> value="Medicinos technologijų ir dietetikos">Medicinos technologijų ir dietetikos</option>
+              <option class="others" <%if (user.katedra === "Grožio terapijos") { %> selected <% } %> value="Grožio terapijos">Grožio terapijos</option>
+              <option class="others" <%if (user.katedra === "Reabilitacijos") { %> selected <% } %> value="Reabilitacijos">Reabilitacijos</option>
+              <option class="others" <%if (user.katedra === "Slaugos") { %> selected <% } %> value="Slaugos">Slaugos</option>
+              <option class="others" <%if (user.katedra === "Chemijos ir maisto technologijos") { %> selected <% } %> value="Chemijos ir maisto technologijos">Chemijos ir maisto technologijos</option>
+              <option class="others" <%if (user.katedra === "Kraštotvarkos ir agroverslo technologijų") { %> selected <% } %> value="Kraštotvarkos ir agroverslo technologijų">Kraštotvarkos ir agroverslo technologijų</option>
+              <option class="others" <%if (user.katedra === "Veterinarijos") { %> selected <% } %> value="Veterinarijos">Veterinarijos</option>
+              <option class="others" <%if (user.katedra === "Edukologijos") { %> selected <% } %> value="Edukologijos">Edukologijos</option>
+              <option class="others" <%if (user.katedra === "Socialinės gerovės") { %> selected <% } %> value="Socialinės gerovės">Socialinės gerovės</option>
+              <option class="others" <%if (user.katedra === "Bankininkystės") { %> selected <% } %> value="Bankininkystės">Bankininkystės</option>
+              <option class="others" <%if (user.katedra === "Kultūros vadybos ir šokio pedagogikos") { %> selected <% } %> value="Kultūros vadybos ir šokio pedagogikos">Kultūros vadybos ir šokio pedagogikos</option>
+              <option class="others" <%if (user.katedra === "Mados dizaino") { %> selected <% } %> value="Mados dizaino">Mados dizaino</option>
+              <option class="others" <%if (user.katedra === "Ritminės muzikos") { %> selected <% } %> value="Ritminės muzikos">Ritminės muzikos</option>
+              <option class="others" <%if (user.katedra === "Scenos meno") { %> selected <% } %> value="Scenos meno">Scenos meno</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Išsilavinimas (Studijų sritis, kryptis. Kvalifikacinis laipsnis, mokslinis laipsnis)</label>
+            <input type="text" class="form-control " name="issilavinimas" value="<%=user.destytojas.issilavinimas%>" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Pareigos</label>
+            <select name="pareigos" class="form-select form-control" required>
+              <option value="nepasirinkta"></option>
+              <option class="others" <%if (user.destytojas.pareigos === "Asistentas") { %> selected <% } %> value="Asistentas">Asistentas</option>
+              <option class="others" <%if (user.destytojas.pareigos === "Lektorius") { %> selected <% } %> value="Lektorius">Lektorius</option>
+              <option class="others" <%if (user.destytojas.pareigos === "Docentas") { %> selected <% } %> value="Docentas">Docentas</option>
+              <option class="others" <%if (user.destytojas.pareigos === "Profesorius") { %> selected <% } %> value="Profesorius">Profesorius</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Pagrindinė, nepagrindinė darbovietė</label>
+            <select name="darbovietesTipas" class="form-select form-control" required>
+              <option value="nepasirinkta"></option>
+              <option class="others" <%if (user.destytojas.darbovietesTipas === "P") { %> selected <% } %> value="P">Pagrindinė</option>
+              <option class="others" <%if (user.destytojas.darbovietesTipas === "N") { %> selected <% } %> value="N">Nepagrindinė</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Pedagoginis stažas (metais)</label>
+            <input type="number" class="form-control " name="pedagogStazas" value="<%=user.destytojas.pedagogStazas%>" placeholder="" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Praktinės veiklos stažas (metais)</label>
+            <input type="number" class="form-control " name="praktVeiklStazas" value="<%=user.destytojas.praktVeiklStazas%>" placeholder="" required>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6 mb-3 text-center">
+            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+<%- include('partials/footer') %>

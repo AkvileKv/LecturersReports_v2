@@ -1,0 +1,24 @@
+<%- include('partials/headerAdmin') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Naudotojo <%= user.vardas %> <%= user.pavarde %> ataskaitos</h1>
+
+    <%if (user.rolesKeitimas === true) { %>
+    <a type="button" class="btn btn-primary" href="/admin-edit-report-lec/<%= user._id %>"> Dėstytojo ataskaita</a>
+    <a type="button" class="btn btn-primary" href="/admin-edit-report-dep/<%= user._id %>"> Vedėjo ataskaita</a>
+
+    <% } else if (user.rolesKeitimas === false && user.role === "dėstytojas") { %>
+    <a type="button" class="btn btn-primary" href="/admin-edit-report-lec/<%= user._id %>"> Dėstytojo ataskaita</a>
+
+    <% } else if (user.rolesKeitimas === false && user.role === "katedros vedėjas") {  %>
+    <a type="button" class="btn btn-primary" href="/admin-edit-report-dep/<%= user._id %>"> Vedėjo ataskaita</a>
+    <% } else {  %>
+    <p class="lead">Ataskaitos redagavimas nėra galimas.</p>
+    <% } %>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

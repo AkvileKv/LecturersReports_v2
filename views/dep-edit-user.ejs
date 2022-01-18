@@ -1,0 +1,42 @@
+<%- include('partials/headerDep') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Dėstytojo <%=user.vardas%> <%=user.pavarde%> redagavimas</h1>
+    <form action="/update-user-info-dep" method="post">
+
+      <div class="form-group ">
+         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
+
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="">Dėstytojo ataskaitos būsena:</label>
+            <select name="busena" class="form-select form-control" required>
+              <option class="others" <%if (user.busena === "nesukurta") { %> selected <% } %> value="nesukurta">Nesukurta</option>
+              <option class="others" <%if (user.busena === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
+              <option class="others" <%if (user.busena === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
+              <option class="others" <%if (user.busena === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo" disabled>Užrakinta katedros vedėjo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3 text-center">
+            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+    </form>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

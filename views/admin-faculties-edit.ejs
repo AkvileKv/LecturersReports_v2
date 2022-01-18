@@ -1,0 +1,53 @@
+<%- include('partials/headerAdmin') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Viko fakultetų redagavimas</h1>
+
+    <form class="" action="/edit-faculty" method="post">
+  <div class="form-group ">
+    <input type="hidden" class="form-control  database-result" name="id" value="<%=faculty._id%>">
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="">Fakultetas:</label>
+        <select name="fakultetas" class="form-select form-control" required>
+          <option value="nepasirinkta"></option>
+          <option class="others" <%if (faculty.username === "Agrotechnologijų") { %> selected <% } %> value="Agrotechnologijų">Agrotechnologijų</option>
+          <option class="others" <%if (faculty.username === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
+          <option class="others" <%if (faculty.username === "Elektronikos ir informatikos") { %> selected <% } %> value="Elektronikos ir informatikos">Elektronikos ir informatikos</option>
+          <option class="others" <%if (faculty.username === "Menų ir kūrybinių technologijų") { %> selected <% } %> value="Menų ir kūrybinių technologijų">Menų ir kūrybinių technologijų</option>
+          <option class="others" <%if (faculty.username === "Pedagogikos") { %> selected <% } %> value="Pedagogikos">Pedagogikos</option>
+          <option class="others" <%if (faculty.username === "Sveikatos priežiūros") { %> selected <% } %> value="Sveikatos priežiūros">Sveikatos priežiūros</option>
+          <option class="others" <%if (faculty.username === "Verslo vadybos") { %> selected <% } %> value="Verslo vadybos">Verslo vadybos</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="">Dekanas:</label>
+        <input type="text" class="form-control" name="dekanas" value="<%=faculty.dekanas%>" placeholder="" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="">Prodekanas:</label>
+        <input type="text" class="form-control" name="prodekanas" value="<%=faculty.prodekanas%>" placeholder="" required>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti?');">IŠSAUGOTI</button>
+        </div>
+      </div>
+
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+<%- include('partials/footer') %>

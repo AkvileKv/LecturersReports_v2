@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron text-center">
+
+    <form action="/register" method="post">
+
+      <p class="">REGISTRACIJA</p>
+
+      <div class="form-row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <label>El. pašto adresas:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <input type="email" name="username" class="form-control form-control-md text-center" autofocus required placeholder="" autocomplete="off">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <label>Slaptažodis:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <input type="password" name="password" id="password" minlength="5" class="form-control form-control-md text-center" required placeholder="" autocomplete="off">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <label>Slaptažodžio patvirtinimas:</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <input type="password" name="confirmPassword" id="confirmPassword" minlength="5" class="form-control form-control-md text-center" required placeholder="" autocomplete="off">
+        </div>
+      </div>
+      <p></p>
+      <button type="submit" class="btn btn-primary">Registruotis</button>
+    </form>
+
+  </div>
+</div>
+
+
+<%- include('partials/footer') %>

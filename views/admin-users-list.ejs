@@ -1,0 +1,33 @@
+<%- include('partials/headerAdmin') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
+
+    <%  users.forEach(function(user){ %>
+    <div class="database-result-edit ">
+      <div class="edit-left">
+        <%= user.role %> <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+      </div>
+
+      <div class="">
+        <div class="btn-group" role="group" aria-label="" id="group">
+          <a type="button" class="btn btn-primary" href="/admin-edit-user/<%= user._id %>"> Redaguoti</a>
+          <a type="button" class="btn btn-secondary" href="/admin-all-user-reports/<%= user._id %>"> Ataskaitos</a>
+          <form action="/delete" method="post">
+            <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Are you sure you want to delete this record?');" value="<%=user._id%>">Ištrinti</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <% }) %>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>
