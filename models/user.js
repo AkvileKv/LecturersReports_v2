@@ -2,14 +2,7 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 const mongooseHistory = require('mongoose-history');
 
-var kDS1Schema = new mongoose.Schema({
-  nr: String,
-  vardPavard: String,
-  pareigos: String,
-  darbovietesTipas: String,
-  pedagogStazas: Number,
-  praktVeiklStazas: Number, //ives kaip Number, isves kaip String ?
-});
+
 var kD1_K01Schema = new mongoose.Schema({
   nr: String,
   dalykas: String,
@@ -121,6 +114,7 @@ var tMTEP3_T06Schema = new mongoose.Schema({
 });
 var tMTEP3_T07Schema = new mongoose.Schema({
   nr: String,
+  atlikejas: String,
   menoSrit: String,
   pavadinimas: String,
   atlikVieta: String,
@@ -129,6 +123,7 @@ var tMTEP3_T07Schema = new mongoose.Schema({
 });
 var tMTEP3_T08Schema = new mongoose.Schema({
   nr: String,
+  atlikejas: String,
   menoSrit: String,
   pavadinimas: String,
   atlikVieta: String,
@@ -137,6 +132,7 @@ var tMTEP3_T08Schema = new mongoose.Schema({
 });
 var tMTEP3_T09Schema = new mongoose.Schema({
   nr: String,
+  atlikejas: String,
   menoSrit: String,
   pavadinimas: String,
   atlikVieta: String,
@@ -145,6 +141,7 @@ var tMTEP3_T09Schema = new mongoose.Schema({
 });
 var tMTEP3_T10Schema = new mongoose.Schema({
   nr: String,
+  atlikejas: String,
   veiklPobud: String,
   veiklTiksl: String,
   dataVieta: String,
@@ -154,6 +151,7 @@ var tMTEP3_T10Schema = new mongoose.Schema({
 });
 var tMTEP3_T11Schema = new mongoose.Schema({
   nr: String,
+  destytojas: String,
   veiklPobud: String,
   veiklTiksl: String,
   dataVieta: String,
@@ -271,6 +269,156 @@ var kV5_34Schema = new mongoose.Schema({
   salisData: String
 });
 
+//katedros vedeju schemos
+var kKPP1_1Schema = new mongoose.Schema({
+  nr: String,
+  studKryptis: String,
+  studProgr: String,
+  progrKodas: String,
+  isakNrData: String,
+  studKryptis: String,
+  akreditLaikot: Number,
+  eCTS: String
+});
+var kDS1Schema = new mongoose.Schema({
+  nr: String,
+  vardPavard: String,
+  pareigos: String,
+  darbovTipas: String,
+  pedagogStazas: String,
+  praktinStazas: String
+});
+var kKPP1_3Schema = new mongoose.Schema({
+  nr: String,
+  studKryptis: String,
+  studProgr: String,
+  destytojas: String,
+  imonIstaig: String
+});
+var mV2_M02Schema = new mongoose.Schema({
+  nr: String,
+  bibliografApr: String,
+  tipas: String,
+  mokslSrit: String,
+  mokslKrypt: String
+});
+var mV2_M03Schema = new mongoose.Schema({
+  nr: String,
+  studProgr: String,
+  dalykPavad: String,
+  apimtisKredit: Number,
+  destytojas: String
+});
+var mV2_M04Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  studProgr: String,
+  dalykPavad: String,
+  apimtisKredit: Number,
+  busena: String
+});
+var mV2_D06Schema = new mongoose.Schema({
+  nr: String,
+  studProgr: String,
+  progrKodas: String,
+  atlPatobulin: String,
+  tobulinPriezast: String,
+  tobulinIrod: String
+});
+var mV2_D01Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  komitetas: String,
+  veikla: String,
+  rezultatai: String
+});
+var mV2_D02Schema = new mongoose.Schema({
+  nr: String,
+  studKryptis: String,
+  veikla: String,
+  rezultatai: String,
+  destytojas: String
+});
+var mV2_D03Schema = new mongoose.Schema({
+  nr: String,
+  studKryptis: String,
+  studProgr: String,
+  veikla: String,
+  rezultatai: String,
+  destytojas: String
+});
+var mV2_S01Schema = new mongoose.Schema({
+  nr: String,
+  veikla: String,
+  dataVieta: String,
+  destytojas: String
+});
+var mV2_SSchema = new mongoose.Schema({
+  nr: String,
+  stiprybes: String,
+  tobulintina: String
+});
+var tMTEP3_kT01Schema = new mongoose.Schema({
+  nr: String,
+  tyrTemat: String,
+  tyrGrup: String,
+  mokslSrit: String,
+  mokslKrypt: String,
+  destytojas: String
+});
+var tMTEP3_kT04Schema = new mongoose.Schema({
+  nr: String,
+  uzsakovas: String,
+  tema: String,
+  data: String,
+  konsultantas: String,
+  atlygArNe: String
+});
+var tMTEP3_kT05Schema = new mongoose.Schema({
+  nr: String,
+  veiklPavad: String,
+  veiklRezult: String,
+  destytojas: String,
+  atlygArNe: String
+});
+var tMTEP3_162Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  veiklPavad: String,
+  veiklRezult: String,
+  dataVieta: String
+});
+var tMTEP3_kT16Schema = new mongoose.Schema({
+  nr: String,
+  pavadinimas: String,
+  uzsakovas: String,
+  rengejai: String
+});
+var tMTEP3_kT12Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  veiklPobud: String,
+  dataVieta: String
+});
+var tMTEP3_kT13Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  studDuom: String,
+  renginioPavad: String,
+  rezultatas: String,
+  data: String
+});
+var tMTEP3_kT14Schema = new mongoose.Schema({
+  nr: String,
+  destytojas: String,
+  renginys: String,
+  veiklPobud: String,
+  dataVieta: String
+});
+
+
+
+
 var userSchema = new mongoose.Schema({ //pagrindinė schema
   email: String,
   password: String,
@@ -285,7 +433,10 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   updated_for: String,
 
   destytojas: {
-    kDS1: [kDS1Schema], //1 lentelė
+    pareigos: String,
+    darbovietesTipas: String,
+    pedagogStazas: Number,
+    praktVeiklStazas: Number, //1 lentelė
     kD1_K01: { //2 lentelė
       kD1_K01_array: [kD1_K01Schema],
       isVisoValPlan: Number,
@@ -335,21 +486,21 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       priezastys: String
     },
     tMTEP3_T01: [tMTEP3_T01Schema], //10 lentelė
-    tMTEP3_T02: [tMTEP3_T02Schema],//11
-    tMTEP3_T03: [tMTEP3_T03Schema],//12
+    tMTEP3_T02: [tMTEP3_T02Schema], //11
+    tMTEP3_T03: [tMTEP3_T03Schema], //12
     tMTEP3_T04: [tMTEP3_T04Schema], //13
     tMTEP3_T05: [tMTEP3_T05Schema], //14.1
     tMTEP3_142: [tMTEP3_142Schema], //14.2
     tMTEP3_143: [tMTEP3_143Schema], //14.3
     tMTEP3_T06: [tMTEP3_T06Schema], //15
     tMTEP3_T07: [tMTEP3_T07Schema], //16
-    tMTEP3_T08: [tMTEP3_T08Schema],//17
-    tMTEP3_T09: [tMTEP3_T09Schema],//18
-    tMTEP3_T10: [tMTEP3_T10Schema],//19
-    tMTEP3_T11: [tMTEP3_T11Schema],//20
-    tMTEP3_T12: [tMTEP3_T12Schema],//21
-    tMTEP3_T13: [tMTEP3_T13Schema],//22
-    tMTEP3_T14: [tMTEP3_T14Schema],//23
+    tMTEP3_T08: [tMTEP3_T08Schema], //17
+    tMTEP3_T09: [tMTEP3_T09Schema], //18
+    tMTEP3_T10: [tMTEP3_T10Schema], //19
+    tMTEP3_T11: [tMTEP3_T11Schema], //20
+    tMTEP3_T12: [tMTEP3_T12Schema], //21
+    tMTEP3_T13: [tMTEP3_T13Schema], //22
+    tMTEP3_T14: [tMTEP3_T14Schema], //23
     tMTEP3_S: [tMTEP3_SSchema],
     kTOV4: {
       kompTobulinimas_planVal: Number,
@@ -371,8 +522,8 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         dalyvavoDalyk: Boolean
       }
     },
-      kTOV4_25: [kTOV4_25Schema], //25 lentelė
-      kTOV4_26: [kTOV4_26Schema], //26
+    kTOV4_25: [kTOV4_25Schema], //25 lentelė
+    kTOV4_26: [kTOV4_26Schema], //26
     kTOV4_KV03: [kTOV4_KV03Schema], //27
     kTOV4_O01: {
       kTOV4_O01_1: [kTOV4_O01_1Schema], //28.1
@@ -383,11 +534,11 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     kV5_KT01: [kV5_KT01Schema], //31
     kV5_KT02: [kV5_KT02Schema], //30
     kV5_32: { //32
-    socAtskMaz: [kV5_32Schema],
-    aplinkosaugInic: [kV5_32Schema],
-    lietValstybPuosel: [kV5_32Schema],
-    lietEtnokPuos: [kV5_32Schema],
-    savanorystIniciatyv: [kV5_32Schema]
+      socAtskMaz: [kV5_32Schema],
+      aplinkosaugInic: [kV5_32Schema],
+      lietValstybPuosel: [kV5_32Schema],
+      lietEtnokPuos: [kV5_32Schema],
+      savanorystIniciatyv: [kV5_32Schema]
     },
     kV5_33: [kV5_33Schema], //33 lentelė
     kV5_34: [kV5_34Schema], //34
@@ -402,53 +553,42 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     },
     ataskaitosPateikimoData: String,
   }
-  //, // !!! ok viskas iki vedejo
-
+  // //, // !!! ok viskas iki vedejo
+  //
   // katedrosVedejas: {
-  //   kDS1: [kDS1Schema],
+  //   kKPP1_1: [kKPP1_1Schema], //1 lentelė
+  //   kDS1: [kDS1Schema], // 2
+  //   kKPP1_3: [kKPP1_3Schema], //3
   //   mV2: {
-  //     mV2_M01: [mV2_M01Schema],
-  //     mV2_M02: [mV2_M02Schema],
-  //     mV2_M03: [mV2_M03Schema],
-  //     mV2_M04: [mV2_M04Schema],
-  //     mV2_D01: [mV2_D0123Schema],
-  //     mV2_D02: [mV2_D0123Schema],
-  //     mV2_D03: [mV2_D0123Schema],
-  //     mV2_D04: [mV2_D04Schema],
-  //     mV2_D05: [mV2_D05Schema],
-  //     mV2_D06: [mV2_D06Schema],
-  //     mV2_D07: {
-  //       derinimas: String
-  //     },
-  //     mV2_D08: [mV2_D08Schema],
-  //     mV2_S01: [mV2_S01Schema],
+  //     mV2_M02: [mV2_M02Schema], //4
+  //     mV2_M03: [mV2_M03Schema], //10
+  //     mV2_M04: [mV2_M04Schema], //5
+  //     mV2_D01: [mV2_D01Schema], //7
+  //     mV2_D02: [mV2_D02Schema], //8
+  //     mV2_D03: [mV2_D03Schema], //9
+  //     mV2_D06: [mV2_D06Schema], //6
+  //     mV2_S01: [mV2_S01Schema], //11
   //     mV2_S: [mV2_SSchema]
   //   },
   //   tMTEP3: {
-  //     tMTEP3_T01: [tMTEP3_kT01Schema],
-  //     tMTEP3_T02: [tMTEP3_T02Schema],
-  //     tMTEP3_T03: [tMTEP3_T03Schema],
-  //     tMTEP3_T04: [tMTEP3_kT04Schema],
-  //     tMTEP3_T05: [tMTEP3_kT05Schema],
-  //     tMTEP3_T06: [tMTEP3_T06Schema],
-  //     tMTEP3_T07: [tMTEP3_T07Schema],
-  //     tMTEP3_T08: [tMTEP3_T08Schema],
-  //     tMTEP3_T09: [tMTEP3_T09Schema],
-  //     tMTEP3_T10: [tMTEP3_kT10Schema],
-  //     tMTEP3_T11: [tMTEP3_kT11Schema],
-  //     tMTEP3_T12: [tMTEP3_kT12Schema],
-  //     tMTEP3_T13: [tMTEP3_kT13Schema],
-  //     tMTEP3_T14: [tMTEP3_kT14Schema],
-  //     tMTEP3_T15: [tMTEP3_kT15Schema],
-  //     tMTEP3_T16: [tMTEP3_kT16Schema],
-  //     tMTEP3_T17: {
-  //       komentaras: String
-  //     },
-  //     tMTEP3_T18: {
-  //       komentaras: String
-  //     }, //plane pazymeta T.10
+  //     tMTEP3_T01: [tMTEP3_kT01Schema], //12 lentelė
+  //     tMTEP3_T02: [tMTEP3_T02Schema], //13
+  //     tMTEP3_T03: [tMTEP3_T03Schema], //14
+  //     tMTEP3_T04: [tMTEP3_kT04Schema], //15
+  //     tMTEP3_T05: [tMTEP3_kT05Schema], //16.1
+  //     tMTEP3_162: [tMTEP3_162Schema], //16.2
+  //     tMTEP3_T06: [tMTEP3_T06Schema], //17
+  //     tMTEP3_T07: [tMTEP3_T07Schema], //18
+  //     tMTEP3_T08: [tMTEP3_T08Schema], // 19
+  //     tMTEP3_T09: [tMTEP3_T09Schema], //20
+  //     tMTEP3_T10: [tMTEP3_T10Schema], //21
+  //     tMTEP3_T11: [tMTEP3_T11Schema], //22
+  //     tMTEP3_T12: [tMTEP3_kT12Schema], //23
+  //     tMTEP3_T13: [tMTEP3_kT13Schema],//25
+  //     tMTEP3_T14: [tMTEP3_kT14Schema], //24
+  //     tMTEP3_T16: [tMTEP3_kT16Schema], //16.3
   //     tMTEP3_S: [tMTEP3_SSchema]
-  //   },
+  //   }, //testii toliau
   //   kTOV4: {
   //     kTOV4_KV01: {
   //       dalykinesLT: {
