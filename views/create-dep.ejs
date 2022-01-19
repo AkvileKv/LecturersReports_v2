@@ -4926,50 +4926,50 @@
   }
 </script>
 <script>
-  window.onload = calc4();
-
+    window.onload = calc4();
   function calc4() {
 
-var idarbnum = 0;
-var baignum = 0;
-var baig = "baig";
-var ireg = "ireg";
-var proc = "proc";
-var fullproc = 0;
-for (let zx = 1; zx <= value11 - 1; zx++) {
-  var bendras = baig + zx;
-  var bendras2 = ireg + zx;
-  var bendras3 = proc+zx;
-  var num00 = document.getElementById(bendras).value;
-  if (num00 == 0)
-  {
-    document.getElementById(bendras3).value = 0;
-  }
-  else {
-  var num01 = document.getElementById(bendras2).value;
-  if (num01== 100){
-    document.getElementById(bendras3).value = num00;
-  }
-  else{
-  var num000 = parseFloat(num00);
-  var num001 = parseFloat(num01);
-  var num002 = num001/num000 * 100;
-  num002 = num002.toFixed(2);
-  idarbnum = idarbnum + num001;
-  baignum = baignum + num000;
-  document.getElementById(bendras3).value = num002;
-  }
+    var idarbnum = 0;
+    var baignum = 0;
+    var baig = "baig";
+    var ireg = "ireg";
+    var proc = "proc";
+    var fullproc = 0;
+    for (let zx = 1; zx <= value11 - 1; zx++) {
+      var bendras = baig + zx;
+      var bendras2 = ireg + zx;
+      var bendras3 = proc+zx;
+      var num00 = document.getElementById(bendras).value;
+      if (num00 == 0)
+      {
+        document.getElementById(bendras3).value = 0;
+      }
+      else {
+      var num01 = document.getElementById(bendras2).value;
+      num00 = parseFloat(num00);
+      num01 = parseFloat(num01);
+      if (num01 > num00){
+        document.getElementById(bendras3).value = 100;
+      }
+      else{
+      var num000 = parseFloat(num00);
+      var num001 = parseFloat(num01);
+      var num002 = num001/num000 * 100;
+      num002 = num002.toFixed(2);
+      idarbnum = idarbnum + num001;
+      baignum = baignum + num000;
+      document.getElementById(bendras3).value = num002;
+      }
 
+      }
+
+    }
+    document.getElementById("baigsk").value = baignum;
+    document.getElementById("iregsk").value = idarbnum;
+    fullproc= idarbnum/baignum*100;
+    fullproc = fullproc.toFixed(2);
+    document.getElementById("isvisoproc").value = fullproc;
   }
-
-}
-
-document.getElementById("baigsk").value = baignum;
-document.getElementById("iregsk").value = idarbnum;
-fullproc= idarbnum/baignum*100;
-fullproc = fullproc.toFixed(2);
-document.getElementById("isvisoproc").value = fullproc;
-}
 </script>
 <script>
   window.onload = calchours();

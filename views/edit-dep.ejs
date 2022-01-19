@@ -4386,8 +4386,10 @@
       }
       else {
       var num01 = document.getElementById(bendras2).value;
-      if (num01== 100){
-        document.getElementById(bendras3).value = num00;
+      num00 = parseFloat(num00);
+      num01 = parseFloat(num01);
+      if (num01 > num00){
+        document.getElementById(bendras3).value = 100;
       }
       else{
       var num000 = parseFloat(num00);
@@ -4402,8 +4404,6 @@
       }
 
     }
-
-    fullproc= fullproc/(value11-1);
     document.getElementById("baigsk").value = baignum;
     document.getElementById("iregsk").value = idarbnum;
     fullproc= idarbnum/baignum*100;
