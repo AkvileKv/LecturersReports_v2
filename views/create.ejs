@@ -381,7 +381,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control" name="nD2_D03studKryptis" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control" name="nD2_D03studKryptis1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Studijų programa</label>
@@ -874,7 +874,10 @@
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_142pastabos2" placeholder="" autocomplete="off"></textarea>
             </div>
           </div>
+          <div id="add_to_meN011">
 
+          </div>
+          <button class="plus-button" type="button" onclick="n142()">+</button><br><br>
           <p><b>14.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų
             </b></p>
             <div class="form-row">
@@ -909,6 +912,10 @@
                 <textarea type="text" rows="1" class="form-control " name="tMTEP3_143uzsakovas3" placeholder="" autocomplete="off"></textarea>
               </div>
             </div>
+            <div id="add_to_meN021">
+
+            </div>
+            <button class="plus-button" type="button" onclick="n143()">+</button><br><br>
             </b></p>
         <!-- TMTEP3_T06 -->
         <table style="width: 100%">
@@ -1714,6 +1721,10 @@
             <input type="number" class="form-control text-center" name="kTOV4_mokymotrukmeValUžs4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
           </div>
         </div>
+        <div id="add_to_meN031">
+
+        </div>
+        <button class="plus-button" type="button" onclick="mokymo()">+</button><br><br>
                 <!-- Tyrimų_komp -->
                 <div class="form-row">
                   <div class="col-md-2 mb-3">
@@ -1774,7 +1785,11 @@
                     <input type="number" class="form-control text-center" name="kTOV4_tyrimutrukmeValUžs4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
                   </div>
                 </div>
-                 <!-- Tyrimų_komp -->
+                <div id="add_to_meN041">
+
+                </div>
+                <button class="plus-button" type="button" onclick="tyrimu()">+</button><br><br>
+                 <!-- Bendrosios_komp -->
                  <div class="form-row">
                    <div class="col-md-2 mb-3">
                      <label for="">Bendrosios kompetencijos</label>
@@ -1834,6 +1849,10 @@
                      <input type="number" class="form-control text-center" name="kTOV4_bendrosiostrukmeValUžs4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
                   </div>
                  </div>
+                 <div id="add_to_meN051">
+
+                </div>
+                <button class="plus-button" type="button" onclick="bendrosios()">+</button><br><br>
                   <!-- Dalykinės_komp -->
                 <div class="form-row">
                   <div class="col-md-2 mb-3">
@@ -1894,6 +1913,10 @@
                     <input type="number" class="form-control text-center" name="kTOV4_dalyktrukmeValUžs4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
                   </div>
                 </div>
+                <div id="add_to_meN061">
+
+                </div>
+                <button class="plus-button" type="button" onclick="dalykines()">+</button><br><br>
                 <div class="form-row">
                   <div class="col-md-7 mb-3">
                   </div>
@@ -1940,6 +1963,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_25skirta2" autocomplete="off"></textarea>
           </div>
         </div>
+        <div id="add_to_meN071">
+
+        </div>
+        <button class="plus-button" type="button" onclick="kTOV4_25()">+</button><br><br>
         <p>*AP – akademinis personalas, NP – neakademinis personalas, VP – visas personalas</p>
         <!--kTOV4_26-->
         <p><b>Dėstytojo stažuotės Lietuvoje ir užsienyje </b></p>
@@ -1965,6 +1992,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_26data1" autocomplete="off"></textarea>
           </div>
           </div>
+          <div id="add_to_meN081">
+
+          </div>
+          <button class="plus-button" type="button" onclick="kTOV4_26()">+</button><br><br>
         <!--kTOV4_KV03-->
         <table style="width:100%">
           <tr>
@@ -2097,11 +2128,11 @@
             <div class="col-md-1 mb-3">
             </div>
           <div class="col-md-3 mb-3">
-            <label for=""><br>Data, vieta</label>
+            <label for="">Data, vieta</label>
             <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2dataVieta1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-8 mb-3">
-            <label for=""><br>Kiti komentarai</label>
+            <label for="">Kiti komentarai</label>
             <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2ktKomentarai1" autocomplete="off"></textarea>
           </div>
           </div>
@@ -2125,16 +2156,17 @@
                 <div class="col-md-1 mb-3">
                 </div>
               <div class="col-md-3 mb-3">
-                <label for=""><br>Data, vieta</label>
+                <label for="">Data, vieta</label>
                 <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2dataVieta2" autocomplete="off"></textarea>
               </div>
               <div class="col-md-8 mb-3">
-                <label for=""><br>Kiti komentarai</label>
+                <label for="">Kiti komentarai</label>
                 <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2ktKomentarai2" autocomplete="off"></textarea>
               </div>
               </div>
         <div id="add_to_me291">
-
+        </div>
+                <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
           <!--kTOV4_29-->
           <p><b>Bendradarbiavimas su socialiniais partneriais: mokslo ir švietimo institucijomis (ŠV), regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis (SP), darbdaviais (D)</b></p>
           <div class="form-row">
@@ -2151,7 +2183,7 @@
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris1" placeholder="" autocomplete="off"></textarea>
             </div>
             <div class="col-md-1 mb-3">
-              <input type="text" class="form-control text-center" name="kTOV4_29nr2" placeholder="" autocomplete="off" value="1" readonly="readonly">
+              <input type="text" class="form-control text-center" name="kTOV4_29nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
             </div>
             <div class="col-md-6 mb-3">
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla2" placeholder="" autocomplete="off"></textarea>
@@ -2160,10 +2192,11 @@
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris2" placeholder="" autocomplete="off"></textarea>
             </div>
           </div>
+          <div id="add_to_meN091">
+          </div>
+                  <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
           <p>*veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas, vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas karjeros planavimo veiklose, diskusijose ir pan.</p>
           <!-- kTOV4_S -->
-        </div>
-        <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
         <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2319,7 +2352,9 @@
             <textarea type="text" rows="1" class="form-control " name="kV5_32socaprasymas3" autocomplete="off"></textarea>
           </div>
           </div>
-
+          <div id="add_to_meN101">
+          </div>
+                  <button class="plus-button" type="button" onclick="kTOV4_32soc()">+</button><br><br>
           <div class="form-row">
             <div class="col-md-3 mb-3">
               <label for="">Aplinkosauginės iniciatyvos</label>
@@ -2338,6 +2373,9 @@
               <textarea type="text" rows="1" class="form-control " name="kV5_32aplinkaprasymas3" autocomplete="off"></textarea>
             </div>
             </div>
+            <div id="add_to_meN111">
+            </div>
+                    <button class="plus-button" type="button" onclick="kTOV4_32apl()">+</button><br><br>
             <div class="form-row">
               <div class="col-md-3 mb-3">
                 <label for="">Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas</label>
@@ -2356,6 +2394,9 @@
                 <textarea type="text" rows="1" class="form-control " name="kV5_32valstybaprasymas3" autocomplete="off"></textarea>
               </div>
               </div>
+              <div id="add_to_meN121">
+              </div>
+                      <button class="plus-button" type="button" onclick="kTOV4_32vals()">+</button><br><br>
               <div class="form-row">
                 <div class="col-md-3 mb-3">
                   <label for="">Lietuvos etnokultūros puoselėjimas</label>
@@ -2374,6 +2415,9 @@
                   <textarea type="text" rows="1" class="form-control " name="kV5_32etnoaprasymas3" autocomplete="off"></textarea>
                 </div>
                 </div>
+                <div id="add_to_meN131">
+                </div>
+                        <button class="plus-button" type="button" onclick="kTOV4_32etno()">+</button><br><br>
                 <div class="form-row">
                   <div class="col-md-3 mb-3">
                     <label for="">Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos</label>
@@ -2392,6 +2436,9 @@
                     <textarea type="text" rows="1" class="form-control " name="kV5_32savaprasymas3" autocomplete="off"></textarea>
                   </div>
                   </div>
+                  <div id="add_to_meN141">
+                  </div>
+                          <button class="plus-button" type="button" onclick="kTOV4_32sav()">+</button><br><br>
 
 
        <!-- kV5_33 -->
@@ -2431,7 +2478,11 @@
                         <label for=""><br><br>Vieta</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_33vieta1" autocomplete="off"></textarea>
           </div>
-
+          </div>
+          <div id="add_to_meN151">
+          </div>
+                  <button class="plus-button" type="button" onclick="kTOV4_33()">+</button><br><br>
+          <!-- kV5_34 -->
           <p><b>Dalyvavimas Lietuvos ir tarptautiniuose projektuose ir programose, tarptautiniuose mainuose.*(Erasmus+ ir kt.), ES struktūrinių fondų  projektuose</b></p>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2466,9 +2517,11 @@
                           <label for="">Šalis, data</label>
               <textarea type="text" rows="1" class="form-control " name="kV5_34salisData1" autocomplete="off"></textarea>
             </div>
-
-
-        <p><b>Kita informacija:</b></p>
+            </div>
+            <div id="add_to_meN161">
+            </div>
+                    <button class="plus-button" type="button" onclick="kTOV4_34()">+</button>
+        <p><b><br><br>Kita informacija:</b></p>
         <div class="col-md-12 mb-3">
 <textarea type="text" rows="1" class="form-control " name="kV5_kitaInfo" autocomplete="off"></textarea>
 </div>
@@ -2531,6 +2584,25 @@
         <input type="hidden" id="yonder107" name="yonder108" value="2">
         <input type="hidden" id="yonder109" name="yonder110" value="2">
         <input type="hidden" id="yonder111" name="yonder112" value="2">
+
+
+        <input type="hidden" id="new1" name="new2" value="2">
+        <input type="hidden" id="new3" name="new4" value="3">
+        <input type="hidden" id="new5" name="new6" value="4">
+        <input type="hidden" id="new7" name="new8" value="4">
+        <input type="hidden" id="new9" name="new10" value="4">
+        <input type="hidden" id="new11" name="new12" value="4">
+        <input type="hidden" id="new13" name="new14" value="2">
+        <input type="hidden" id="new15" name="new16" value="1">
+        <input type="hidden" id="new17" name="new18" value="2">
+        <input type="hidden" id="new19" name="new20" value="3">
+        <input type="hidden" id="new21" name="new22" value="3">
+        <input type="hidden" id="new23" name="new24" value="3">
+        <input type="hidden" id="new25" name="new26" value="3">
+        <input type="hidden" id="new27" name="new28" value="3">
+        <input type="hidden" id="new29" name="new30" value="1">
+        <input type="hidden" id="new31" name="new32" value="1">
+
 
         <!-- PABAIGA -->
         <!-- padaryti, kad nerodutu paspaudus issaugoti -->
@@ -2684,38 +2756,34 @@
     div4++;
     document.getElementById(bendr4).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <label for="">Nr.</label>
-                    <input type="text" class="form-control text-center" name="nD2_M02nr` + value4 + `" placeholder="" autocomplete="off" value="` + value4 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-11 mb-3">
-                    <label for=""><b>Pilnas bibliografinis aprašas:</b> Pavardė, V., (Metai).
-                      Pavadinimas. Leidykla/spaustuvė. Tiražas, p. skaičius, ISBN
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="bibliografApr` + value4 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
-                    </div>
-                  <div class="col-md-2 mb-3">
-                    <label for="">Tipas*</label>
-                    <textarea type="text" rows="1" class="form-control " name="tipas` + value4 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Mokslo sritis**</label>
-                    <textarea type="text" rows="1" class="form-control " name="mokslSrit` + value4 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Mokslo kryptis***</label>
-                    <textarea type="text" rows="1" class="form-control " name="mokslKrypt` + value4 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Katedra</label>
-                    <textarea type="text" rows="1" class="form-control " name="katedra` + value4 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+          <div class="col-md-1 mb-3">
+            <label for="">Nr.</label>
+            <input type="text" class="form-control text-center" name="nD2_M02nr` + value4 + `" placeholder="" autocomplete="off" value="` + value4 + `" readonly="readonly">
+          </div>
+          <div class="col-md-11 mb-3">
+            <label for=""><b>Pilnas bibliografinis aprašas:</b> Pavardė, V., (Metai).
+              Pavadinimas. Leidykla/spaustuvė. Tiražas, p. skaičius, ISBN
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="bibliografApr` + value4 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Tipas*</label>
+            <textarea type="text" rows="1" class="form-control " name="tipas` + value4 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Mokslo sritis**</label>
+            <textarea type="text" rows="1" class="form-control " name="mokslSrit` + value4 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Mokslo kryptis***</label>
+            <textarea type="text" rows="1" class="form-control " name="mokslKrypt` + value4 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me04` + div4 + `">
               `;
     document.getElementById("yonder7").value = value4;
@@ -2793,10 +2861,10 @@
                   <textarea type="text" rows="1" class="form-control " name="nD2_M04dalykPavad` + value6 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="nD2_M04busena` + value6 + `" placeholder="" autocomplete="off"></textarea>
+                  <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit` + value6 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit` + value6 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                  <textarea type="text" rows="1" class="form-control " name="nD2_M04busena` + value6 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
               </div>
               <div id="add_to_me06` + div6 + `">
@@ -2905,20 +2973,23 @@
     div9++;
     document.getElementById(bendr9).innerHTML +=
       `
-      <div class="form-row">
-        <div class="col-md-1 mb-3">
-          <input type="text" class="form-control text-center" name="nD2_D03nr` + value9 + `" placeholder="" autocomplete="off" value="` + value9 + `" readonly="readonly">
+        <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="nD2_D03nr` + value9 + `" placeholder="" autocomplete="off" value="` + value9 + `" readonly="readonly">
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control" name="nD2_D03studKryptis` + value9 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control" name="nD2_D03veikla` + value9 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="nD2_D03rezultatai` + value9 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-4 mb-3">
-          <textarea type="text" rows="1" class="form-control" name="nD2_D03veikla` + value9 + `" placeholder="" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-4 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="nD2_D03rezultatai` + value9 + `" placeholder="" autocomplete="off"></textarea>
-        </div>
-      </div>
               <div id="add_to_me09` + div9 + `">
               `;
     document.getElementById("yonder17").value = value9;
@@ -3140,9 +3211,12 @@ function OnInput(e) {
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="tMTEP3_T03nr` + value14 + `" placeholder="" autocomplete="off" value="` + value14 + `" readonly="readonly">
                 </div>
-                <div class="col-md-11 mb-3">
+                <div class="col-md-9 mb-3">
                   <textarea type="text" rows="1" class="form-control" name="tMTEP3_T03pilnasBiblApr` + value14 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
+                <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T03rengTipas` + value14 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
               </div>
               <div id="add_to_me14` + div14 + `">
               `;
@@ -3170,25 +3244,30 @@ function OnInput(e) {
     div15++;
     document.getElementById(bendr15).innerHTML +=
       `
-              <div class="form-row">
-                <div class="col-md-1 mb-3">
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
 
-                  <input type="text" class="form-control text-center" name="tMTEP3_T04nr` + value15 + `" placeholder="" autocomplete="off" value="` + value15 + `" readonly="readonly">
-                </div>
-                <div class="col-md-4 mb-3">
+            <input type="text" class="form-control text-center" name="tMTEP3_T04nr` + value15 + `" placeholder="" autocomplete="off" value="` + value15 + `" readonly="readonly">
+          </div>
+          <div class="col-md-4 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04uzsakovas` + value15 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-5 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04uzsakovas` + value15 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04tema` + value15 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04tema` + value15 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04data` + value15 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                </div>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04data` + value15 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04atlygArNe` + value15 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
+
                 <div id="add_to_me15` + div15 + `">
+                  </div>
               `;
     document.getElementById("yonder29").value = value15;
     value15++;
@@ -3216,14 +3295,17 @@ function OnInput(e) {
       `
               <div class="form-row">
                 <div class="col-md-1 mb-3">
-                  <input type="text" class="form-control  text-center" name="tMTEP3_T05nr` + value16 + `" placeholder="" autocomplete="off" value="` + value16 + `" readonly="readonly">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklPavad` + value16 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-7 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklRezult` + value16 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
+            <input type="text" class="form-control  text-center" name="tMTEP3_T05nr` + value16 + `" placeholder="" autocomplete="off" value="` + value16 + `" readonly="readonly">
+          </div>
+          <div class="col-md-4 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklPavad` + value16 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-5 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklRezult` + value16 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05atlygArNe` + value16 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
                 </div>
                 <div id="add_to_me16` + div16 + `">
               `;
@@ -3251,40 +3333,44 @@ function OnInput(e) {
     div17++;
     document.getElementById(bendr17).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <label for=""><br></label>
-                    <input type="text" class="form-control text-center" name="tMTEP3_T06nr` + value17 + `" placeholder="" autocomplete="off" value="` + value17 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Autorius/bendraautorius
-                      (Pavardė, vardas)
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T06autorius` + value17 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Meno sritis*, pavadinimas</label>
-                    <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06menoSrit` + value17 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
-                    </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Pobūdis
-                      <i>(premjera ar pakartojimas)</i>
-                    </label>
-                    <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06pobudis` + value17 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Realizavimo vieta, vieši įvertinimai</label>
-                    <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06realizVieta` + value17 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Data</label>
-                    <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06data` + value17 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T06nr` + value17 + `" placeholder="" autocomplete="off" value="` + value17 + `" readonly="readonly">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Autorius/bendraautorius
+              (Pavardė, vardas)
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T06autorius` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Meno sritis*, pavadinimas</label>
+            <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06menoSrit` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Pobūdis
+              <i>(premjera ar pakartojimas)</i>
+            </label>
+            <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06pobudis` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for=""><br>Realizavimo vieta, vieši įvertinimai</label>
+            <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06realizVieta` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for=""><br>Data</label>
+            <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06data` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for=""><br>Atlygintinai/ Neatlygintinai</label>
+            <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T06atlygArNe` + value17 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me17` + div17 + `">
               `;
     document.getElementById("yonder33").value = value17;
@@ -3312,37 +3398,35 @@ function OnInput(e) {
     document.getElementById(bendr18).innerHTML +=
       `
               <div class="form-row">
-                <div class="col-md-1 mb-3">
-                  <label for=""><br><br></label>
-                  <input type="text" class="form-control text-center" name="tMTEP3_T07nr` + value18 + `" placeholder="" autocomplete="off" value="` + value18 + `" readonly="readonly">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for=""><br>Atlikėjas/dalyvis
-                    (<b>Pavardė</b>, vardas)
-                  </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlikejas` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-5 mb-3">
-                  <label for=""><br>Meno sritis*, renginys </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07menoSrit` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                  </div>
-                <div class="col-md-4 mb-3">
-                  <label for="">Pavadinimas </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07pavadinimas` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for=""> Atlikimo vieta, vieši įvertinimai</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlikVieta` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="">Data</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07data` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-              </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T07nr` + value18 + `" placeholder="" autocomplete="off" value="` + value18 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Meno sritis*, renginys </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07menoSrit` + value18 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Pavadinimas </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07pavadinimas` + value18 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-5 mb-3">
+            <label for=""> Atlikimo vieta, vieši įvertinimai</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlikVieta` + value18 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Data</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07data` + value18 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintina</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlygArNe` + value18 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
               <div id="add_to_me18` + div18 + `">
               `;
     document.getElementById("yonder35").value = value18;
@@ -3370,37 +3454,35 @@ function OnInput(e) {
     document.getElementById(bendr19).innerHTML +=
       `
               <div class="form-row">
-                <div class="col-md-1 mb-3">
-                  <label for=""><br><br></label>
-                  <input type="text" class="form-control text-center" name="tMTEP3_T08nr` + value19 + `" placeholder="" autocomplete="off" value="` + value19 + `" readonly="readonly">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for=""><br>Atlikėjas/dalyvis
-                    (<b>Pavardė</b>, vardas)
-                  </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlikejas` + value19 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-5 mb-3">
-                  <label for=""><br>Meno sritis*, renginys </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08menoSrit` + value19 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                  </div>
-                <div class="col-md-4 mb-3">
-                  <label for="">Pavadinimas </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08pavadinimas` + value19 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for=""> Atlikimo vieta, vieši įvertinimai</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlikVieta` + value19 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="">Data</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08data` + value19 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-              </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T08nr` + value19 + `" placeholder="" autocomplete="off" value="` + value19 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Meno sritis*, renginys </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08menoSrit` + value19 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Pavadinimas </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08pavadinimas` + value19 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-5 mb-3">
+            <label for=""> Atlikimo vieta, vieši įvertinimai</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlikVieta` + value19 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Data</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08data` + value19 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintina</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlygArNe` + value19 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
               <div id="add_to_me19` + div19 + `">
               `;
     document.getElementById("yonder37").value = value19;
@@ -3428,37 +3510,35 @@ function OnInput(e) {
     document.getElementById(bendr20).innerHTML +=
       `
               <div class="form-row">
-                <div class="col-md-1 mb-3">
-                  <label for=""><br><br></label>
-                  <input type="text" class="form-control text-center" name="tMTEP3_T09nr` + value20 + `" placeholder="" autocomplete="off" value="` + value20 + `" readonly="readonly">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for=""><br>Atlikėjas/dalyvis
-                    (<b>Pavardė</b>, vardas)
-                  </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlikejas` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-5 mb-3">
-                  <label for=""><br>Meno sritis*, renginys </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09menoSrit` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                  </div>
-                <div class="col-md-4 mb-3">
-                  <label for="">Pavadinimas </label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09pavadinimas` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for=""> Atlikimo vieta, vieši įvertinimai</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlikVieta` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="">Data</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09data` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-              </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T09nr` + value20 + `" placeholder="" autocomplete="off" value="` + value20 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Meno sritis*, renginys </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09menoSrit` + value20 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Pavadinimas </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09pavadinimas` + value20 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-5 mb-3">
+            <label for=""> Atlikimo vieta, vieši įvertinimai</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlikVieta` + value20 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Data</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09data` + value20 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintina</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlygArNe` + value20 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
               <div id="add_to_me20` + div20 + `">
               `;
     document.getElementById("yonder39").value = value20;
@@ -3485,41 +3565,45 @@ function OnInput(e) {
     div21++;
     document.getElementById(bendr21).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <br>
-                    <input type="text" class="form-control text-center" name="tMTEP3_T10nr` + value21 + `" placeholder="" autocomplete="off" value="` + value21 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Veiklos pobūdis
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10veiklPobud` + value21 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Veiklos tikslas
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10veiklTiksl` + value21 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
-                    </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Data, vieta
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10dataVieta` + value21 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-2 mb-3">
-                    <label for="">Dalyvių skaičius
-                    </label>
-                    <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk` + value21 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Kiti komentarai
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10ktKomentarai` + value21 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T10nr` + value21 + `" placeholder="" autocomplete="off" value="` + value21 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Veiklos pobūdis
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10veiklPobud` + value21 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Veiklos tikslas
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10veiklTiksl` + value21 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Data, vieta
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10dataVieta` + value21 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Dalyvių skaičius
+            </label>
+            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk` + value21 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Kiti komentarai
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10ktKomentarai` + value21 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintina</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10atlygArNe` + value21 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me21` + div21 + `">
               `;
     document.getElementById("yonder41").value = value21;
@@ -3546,41 +3630,45 @@ function OnInput(e) {
     div22++;
     document.getElementById(bendr22).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <br>
-                    <input type="text" class="form-control text-center" name="tMTEP3_T11nr` + value22 + `" placeholder="" autocomplete="off" value="` + value22 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Veiklos pobūdis
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11veiklPobud` + value22 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Veiklos tikslas
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11veiklTiksl` + value22 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
-                    </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="">Data, vieta
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11dataVieta` + value22 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-2 mb-3">
-                    <label for="">Dalyvių skaičius
-                    </label>
-                    <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk` + value22 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Kiti komentarai
-                    </label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11ktKomentarai` + value22 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="tMTEP3_T11nr` + value22 + `" placeholder="" autocomplete="off" value="` + value22 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Veiklos pobūdis
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11veiklPobud` + value22 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Veiklos tikslas
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11veiklTiksl` + value22 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Data, vieta
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11dataVieta` + value22 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Dalyvių skaičius
+            </label>
+            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk` + value22 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Kiti komentarai
+            </label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11ktKomentarai` + value22 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintina</label>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11atlygArNe` + value22 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me22` + div22 + `">
               `;
     document.getElementById("yonder43").value = value22;
@@ -3778,24 +3866,27 @@ function OnInput(e) {
     div27++;
     document.getElementById(bendr27).innerHTML +=
       `
-      <div class="form-row">
-                <div class="col-md-1 mb-3">
+                <div class="form-row">
+          <div class="col-md-1 mb-3">
 
-                  <input type="text" class="form-control text-center" name="kTOV4_KV03nr` + value27 + `" autocomplete="off" value="` + value27 + `" readonly="readonly">
-                </div>
-                <div class="col-md-3 mb-3">
+            <input type="text" class="form-control text-center" name="kTOV4_KV03nr` + value27 + `" autocomplete="off" value="` + value27 + `" readonly="readonly">
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03studKryptis` + value27 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03salis` + value27 + `" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03salis` + value27 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03institucija` + value27 + `" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03institucija` + value27 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
 
-                  <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas` + value27 + `" autocomplete="off"></textarea>
-                </div>
-                </div>
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas` + value27 + `" autocomplete="off"></textarea>
+          </div>
+        </div>
                 <div id="add_to_me27` + div27 + `">
               `;
     document.getElementById("yonder53").value = value27;
@@ -3860,32 +3951,34 @@ function OnInput(e) {
     div29++;
     document.getElementById(bendr29).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <label for=""></label>
-                    <input type="text" class="form-control text-center" name="kTOV4_O01_2nr` + value29 + `" autocomplete="off" value="` + value29 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-11 mb-3">
-                    <label for="">Veiklos pobūdis</label>
-                    <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2veiklPobud` + value29 + `" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
-                    </div>
-                  <div class="col-md-3 mb-3">
-                    <label for=""><br>Data, vieta</label>
-                    <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2dataVieta` + value29 + `" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-2 mb-3">
-                    <label for="">Dalyvių skaičius (tikslinė grupė)</label>
-                    <input type="number" class="form-control text-center" name="kTOV4_O01_2dalyvSk` + value29 + `" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for=""><br>Kiti komentarai</label>
-                    <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2ktKomentarai` + value29 + `" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="kTOV4_O01_2nr` + value29 + `" autocomplete="off" value="` + value29 + `" readonly="readonly">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Dėstytojas
+              (pavardė, vardas)
+              </label>
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2destytojas` + value29 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-8 mb-3">
+            <label for="">Veiklos pobūdis</label>
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2veiklPobud` + value29 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+            </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Data, vieta</label>
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2dataVieta` + value29 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-8 mb-3">
+            <label for="">Kiti komentarai</label>
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_O01_2ktKomentarai` + value29 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me29` + div29 + `">
               `;
     document.getElementById("yonder57").value = value29;
@@ -3950,33 +4043,37 @@ function OnInput(e) {
     div31++;
     document.getElementById(bendr31).innerHTML +=
       `
-                <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <label for=""></label>
-                    <input type="text" class="form-control text-center" name="kV5_KT01nr` + value31 + `" autocomplete="off" value="` + value31 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Diplomanto pavardė, vardas</label>
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas` + value31 + `" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Studijų programa</label>
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr` + value31 + `" autocomplete="off"></textarea>
-                  </div>
-                  </div>
                   <div class="form-row">
-                    <div class="col-md-1 mb-3">
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="kV5_KT01nr` + value31 + `" autocomplete="off" value="` + value31 + `" readonly="readonly">
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Studijų kryptis</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studKryptis` + value31 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="">Studijų programa</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr` + value31 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Studentas (pavardė, vardas)</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas` + value31 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
 
-                    </div>
-                  <div class="col-md-5 mb-3">
-                    <label for="">Darbo tema</label>
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT01darboTema` + value31 + `" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="">Užsakovas</label>
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT01uzsakovas` + value31 + `" autocomplete="off"></textarea>
-                  </div>
-                  </div>
+            </div>
+          <div class="col-md-5 mb-3">
+            <label for="">Darbo tema</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT01darboTema` + value31 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="">Užsakovas</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT01uzsakovas` + value31 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
                 <div id="add_to_me31` + div31 + `">
               `;
     document.getElementById("yonder61").value = value31;
@@ -4003,20 +4100,23 @@ function OnInput(e) {
     div32++;
     document.getElementById(bendr32).innerHTML +=
       `
-              <div class="form-row">
-                  <div class="col-md-1 mb-3">
-                    <input type="text" class="form-control text-center" name="kV5_KT02nr` + value32 + `" autocomplete="off" value="` + value32 + `" readonly="readonly">
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas` + value32 + `" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr` + value32 + `" autocomplete="off"></textarea>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT02darboTema` + value32 + `" autocomplete="off"></textarea>
-                  </div>
-                </div>
+                <div class="form-row">
+                <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="kV5_KT02nr` + value32 + `" autocomplete="off" value="` + value32 + `" readonly="readonly">
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studKryptis` + value32 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas` + value32 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr` + value32 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kV5_KT02darboTema` + value32 + `" autocomplete="off"></textarea>
+          </div>
+        </div>
                 <div id="add_to_me32` + div32 + `">
               `;
     document.getElementById("yonder63").value = value32;
@@ -5092,6 +5192,672 @@ function OnInput(e) {
               `;
     document.getElementById("yonder111").value = value56;
     value56++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value57 = 3;
+  var div57 = 1;
+  var asd57 = "add_to_meN01";
+
+  function n142() {
+    var bendr57 = asd57 + div57;
+    div57++;
+    document.getElementById(bendr57).innerHTML +=
+      `
+      <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <input type="text" class="form-control text-center" name="tMTEP3_142nr` + value57 + `" placeholder="" autocomplete="off" value="` + value57 + `" readonly="readonly">
+            </div>
+            <div class="col-md-7 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="tMTEP3_142pavadinimas` + value57 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="tMTEP3_142pastabos` + value57 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN01` + div57 + `">
+                  </div>
+              `;
+    document.getElementById("new1").value = value57;
+    value57++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value58 = 4;
+  var div58 = 1;
+  var asd58 = "add_to_meN02";
+
+  function n143() {
+    var bendr58 = asd58 + div58;
+    div58++;
+    document.getElementById(bendr58).innerHTML +=
+      `
+      <div class="form-row">
+              <div class="col-md-1 mb-3">
+                <input type="text" class="form-control text-center" name="tMTEP3_143nr` + value58 + `" placeholder="" autocomplete="off" value="` + value58 + `" readonly="readonly">
+              </div>
+              <div class="col-md-7 mb-3">
+                <textarea type="text" rows="1" class="form-control " name="tMTEP3_143pavadinimas` + value58 + `" placeholder="" autocomplete="off"></textarea>
+              </div>
+              <div class="col-md-4 mb-3">
+                <textarea type="text" rows="1" class="form-control " name="tMTEP3_143uzsakovas` + value58 + `" placeholder="" autocomplete="off"></textarea>
+              </div>
+            </div>
+                <div id="add_to_meN02` + div58 + `">
+                  </div>
+              `;
+    document.getElementById("new3").value = value58;
+    value58++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+
+<script>
+  var value59 = 5;
+  var div59 = 1;
+  var asd59 = "add_to_meN03";
+
+  function mokymo() {
+    var bendr59 = asd59 + div59;
+    div59++;
+    document.getElementById(bendr59).innerHTML +=
+      `
+      <div class="form-row">
+      <div class="col-md-2 mb-3">
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopavad` + value59 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr` + value59 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <input type="number" class="form-control text-center" name="kTOV4_mokymotrukmeValLT` + value59 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+          </div>
+          <div class="col-md-2 mb-3">
+            <input type="number" class="form-control text-center" name="kTOV4_mokymotrukmeValUžs` + value59 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+          </div>
+          </div>
+                <div id="add_to_meN03` + div59 + `">
+                  </div>
+              `;
+    document.getElementById("new5").value = value59;
+    value59++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value60 = 5;
+  var div60 = 1;
+  var asd60 = "add_to_meN04";
+
+  function tyrimu() {
+    var bendr60 = asd60 + div60;
+    div60++;
+    document.getElementById(bendr60).innerHTML +=
+      `
+      <div class="form-row">
+                  <div class="col-md-2 mb-3">
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupavad` + value60 + `" autocomplete="off"></textarea>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr` + value60 + `" autocomplete="off"></textarea>
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input type="number" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT` + value60 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input type="number" class="form-control text-center" name="kTOV4_tyrimutrukmeValUžs` + value60 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  </div>
+                </div>
+                <div id="add_to_meN04` + div60 + `">
+                  </div>
+              `;
+    document.getElementById("new7").value = value60;
+    value60++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value61 = 5;
+  var div61 = 1;
+  var asd61 = "add_to_meN05";
+
+  function bendrosios() {
+    var bendr61 = asd61 + div61;
+    div61++;
+    document.getElementById(bendr61).innerHTML +=
+      `
+                  <div class="form-row">
+                   <div class="col-md-2 mb-3">
+                   </div>
+                   <div class="col-md-3 mb-3">
+                     <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospavad` + value61 + `" autocomplete="off"></textarea>
+                   </div>
+                   <div class="col-md-3 mb-3">
+                     <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr` + value61 + `" autocomplete="off"></textarea>
+                   </div>
+                   <div class="col-md-2 mb-3">
+                     <input type="number" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT` + value61 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                   </div>
+                   <div class="col-md-2 mb-3">
+                     <input type="number" class="form-control text-center" name="kTOV4_bendrosiostrukmeValUžs` + value61 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  </div>
+                 </div>
+                <div id="add_to_meN05` + div61 + `">
+                  </div>
+              `;
+    document.getElementById("new9").value = value61;
+    value61++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value62 = 5;
+  var div62 = 1;
+  var asd62 = "add_to_meN06";
+
+  function dalykines() {
+    var bendr62 = asd62 + div62;
+    div62++;
+    document.getElementById(bendr62).innerHTML +=
+      `
+      <div class="form-row">
+                  <div class="col-md-2 mb-3">
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpavad` + value62 + `" autocomplete="off"></textarea>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr` + value62 + `" autocomplete="off"></textarea>
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input type="number" class="form-control text-center" name="kTOV4_dalyktrukmeValLT` + value62 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input type="number" class="form-control text-center" name="kTOV4_dalyktrukmeValUžs` + value62 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  </div>
+                </div>
+                <div id="add_to_meN06` + div62 + `">
+                  </div>
+              `;
+    document.getElementById("new11").value = value62;
+    value62++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value63 = 3;
+  var div63 = 1;
+  var asd63 = "add_to_meN07";
+
+  function kTOV4_25() {
+    var bendr63 = asd63 + div63;
+    div63++;
+    document.getElementById(bendr63).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="kTOV4_25nr` + value63 + `" placeholder="" autocomplete="off" value="` + value63 + `" readonly="readonly">
+          </div>
+          <div class="col-md-7 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_25renginysTema` + value63 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_25kompGrupe` + value63 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_25skirta` + value63 + `" autocomplete="off"></textarea>
+          </div>
+        </div>
+                <div id="add_to_meN07` + div63 + `">
+                  </div>
+              `;
+    document.getElementById("new13").value = value63;
+    value63++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value64 = 2;
+  var div64 = 1;
+  var asd64 = "add_to_meN08";
+
+  function kTOV4_26() {
+    var bendr64 = asd64 + div64;
+    div64++;
+    document.getElementById(bendr64).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="kTOV4_26nr` + value64 + `" placeholder="" autocomplete="off" value="` + value64 + `" readonly="readonly">
+          </div>
+          <div class="col-md-5 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_26imonIstaig` + value64 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_26kompGrupe` + value64 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal` + value64 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+          </div>
+          <div class="col-md-2 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kTOV4_26data` + value64 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
+                <div id="add_to_meN08` + div64 + `">
+                  </div>
+              `;
+    document.getElementById("new15").value = value64;
+    value64++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value65 = 3;
+  var div65 = 1;
+  var asd65 = "add_to_meN09";
+
+  function kTOV4_29() {
+    var bendr65 = asd65 + div65;
+    div65++;
+    document.getElementById(bendr65).innerHTML +=
+      `
+      <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
+            </div>
+            <div class="col-md-6 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-5 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris` + value65 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN09` + div65 + `">
+                  </div>
+              `;
+    document.getElementById("new17").value = value65;
+    value65++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value66 = 4;
+  var div66 = 1;
+  var asd66 = "add_to_meN10";
+
+  function kTOV4_32soc() {
+    var bendr66 = asd66 + div66;
+    div66++;
+    document.getElementById(bendr66).innerHTML +=
+      `
+      <div class="form-row">
+      <div class="col-md-3 mb-3">
+          </div>
+          <div class="col-md-9 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="kV5_32socaprasymas` + value66 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
+                <div id="add_to_meN10` + div66 + `">
+                  </div>
+              `;
+    document.getElementById("new19").value = value66;
+    value66++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value67 = 4;
+  var div67 = 1;
+  var asd67 = "add_to_meN11";
+
+  function kTOV4_32apl() {
+    var bendr67 = asd67 + div67;
+    div67++;
+    document.getElementById(bendr67).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+            </div>
+            <div class="col-md-9 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kV5_32aplinkaprasymas` + value67 + `" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN11` + div67 + `">
+                  </div>
+              `;
+    document.getElementById("new21").value = value67;
+    value67++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value68 = 4;
+  var div68 = 1;
+  var asd68 = "add_to_meN12";
+
+  function kTOV4_32vals() {
+    var bendr68 = asd68 + div68;
+    div68++;
+    document.getElementById(bendr68).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+            </div>
+            <div class="col-md-9 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kV5_32valstybaprasymas` + value68 + `" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN12` + div68 + `">
+                  </div>
+              `;
+    document.getElementById("new23").value = value68;
+    value68++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value69 = 4;
+  var div69 = 1;
+  var asd69 = "add_to_meN13";
+
+  function kTOV4_32etno() {
+    var bendr69 = asd69 + div69;
+    div69++;
+    document.getElementById(bendr69).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+            </div>
+            <div class="col-md-9 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kV5_32etnoaprasymas` + value69 + `" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN13` + div69 + `">
+                  </div>
+              `;
+    document.getElementById("new25").value = value69;
+    value69++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value70 = 4;
+  var div70 = 1;
+  var asd70 = "add_to_meN14";
+
+  function kTOV4_32sav() {
+    var bendr70 = asd70 + div70;
+    div70++;
+    document.getElementById(bendr70).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+            </div>
+            <div class="col-md-9 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kV5_32savaprasymas` + value70 + `" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN14` + div70 + `">
+                  </div>
+              `;
+    document.getElementById("new27").value = value70;
+    value70++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value71 = 2;
+  var div71 = 1;
+  var asd71 = "add_to_meN15";
+
+  function kTOV4_33() {
+    var bendr71 = asd71 + div71;
+    div71++;
+    document.getElementById(bendr71).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+            <input type="text" class="form-control text-center" name="kV5_33nr` + value71 + `" autocomplete="off" value="` + value71 + `" readonly="readonly">
+          </div>
+          <div class="col-md-4 mb-3">
+                        <label for="">Veikla (tyrimas, konsultacija be finansinio atlygio ir t.t.)</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33veikla` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+                        <label for="">Veiklos partneris</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33veiklPartner` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+                        <label for="">Organizacija, kurioje vykdyta veikla</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33organizac` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-1 mb-3">
+          </div>
+          <div class="col-md-2 mb-3">
+                        <label for="">Veikla orientuota į socialinės atskirties mažinimą (Taip/Ne)</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33veiklOrientavim` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+                        <label for=""><br><br>Dalyviai (VK personalas, studentai)</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33dalyviai` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+                        <label for=""><br><br>Laikas</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33laikas` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+                        <label for=""><br><br>Vieta</label>
+            <textarea type="text" rows="1" class="form-control " name="kV5_33vieta` + value71 + `" autocomplete="off"></textarea>
+          </div>
+          </div>
+                <div id="add_to_meN15` + div71 + `">
+                  </div>
+              `;
+    document.getElementById("new29").value = value71;
+    value71++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
+<script>
+  var value72 = 2;
+  var div72 = 1;
+  var asd72 = "add_to_meN16";
+
+  function kTOV4_34() {
+    var bendr72 = asd72 + div72;
+    div72++;
+    document.getElementById(bendr72).innerHTML +=
+      `
+      <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <label for=""><br></label>
+              <input type="text" class="form-control text-center" name="kV5_34nr` + value72 + `" autocomplete="off" value="` + value72 + `" readonly="readonly">
+            </div>
+            <div class="col-md-4 mb-3">
+                          <label for="">Projektų/programų/ mainų pavadinimas</label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34pavadinimas` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                          <label for="">Projekto vykdytojas, partneriai</label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34vykdytPartner` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-3 mb-3">
+                          <label for="">Dalyviai
+                            (dėstytojai ir studentai)
+                           </label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34dalyviai` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-1 mb-3">
+            </div>
+            <div class="col-md-4 mb-3">
+                          <label for="">Finansavimo šaltinis</label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34finansavim` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                          <label for="">Rezultatai</label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34rezultatai` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-3 mb-3">
+                          <label for="">Šalis, data</label>
+              <textarea type="text" rows="1" class="form-control " name="kV5_34salisData` + value72 + `" autocomplete="off"></textarea>
+            </div>
+            </div>
+                <div id="add_to_meN16` + div72 + `">
+                  </div>
+              `;
+    document.getElementById("new31").value = value72;
+    value72++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
