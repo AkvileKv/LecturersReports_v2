@@ -164,11 +164,11 @@ app.post("/create", function(req, res) {
           var nD2_M04busenacommand = "req.body.nD2_M04busena";
           var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
           var nD2_D01nrcommand = "req.body.nD2_D01nr";
-          var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+          var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
           var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
           var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
           var nD2_D02nrcommand = "req.body.nD2_D02nr";
-          var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+          var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
           var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
           var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
           var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -291,19 +291,19 @@ app.post("/create", function(req, res) {
           var kTOV4_mokymopavadcommand = "req.body.kTOV4_mokymopavad";
           var kTOV4_mokymopazymNrcommand = "req.body.kTOV4_mokymopazymNr";
           var kTOV4_mokymotrukmeValLTcommand = "req.body.kTOV4_mokymotrukmeValLT";
-          var kTOV4_mokymotrukmeValUžscommand = "req.body.kTOV4_mokymotrukmeValUžs";
+          var kTOV4_mokymotrukmeValNeLTcommand = "req.body.kTOV4_mokymotrukmeValNeLT";
           var kTOV4_tyrimupavadcommand = "req.body.kTOV4_tyrimupavad";
           var kTOV4_tyrimupazymNrcommand = "req.body.kTOV4_tyrimupazymNr";
           var kTOV4_tyrimutrukmeValLTcommand = "req.body.kTOV4_tyrimutrukmeValLT";
-          var kTOV4_tyrimutrukmeValUžscommand = "req.body.kTOV4_tyrimutrukmeValUžs";
+          var kTOV4_tyrimutrukmeValNeLTcommand = "req.body.kTOV4_tyrimutrukmeValNeLT";
           var kTOV4_bendrosiospavadcommand = "req.body.kTOV4_bendrosiospavad";
           var kTOV4_bendrosiospazymNrcommand = "req.body.kTOV4_bendrosiospazymNr";
           var kTOV4_bendrosiostrukmeValLTcommand = "req.body.kTOV4_bendrosiostrukmeValLT";
-          var kTOV4_bendrosiostrukmeValUžscommand = "req.body.kTOV4_bendrosiostrukmeValUžs";
+          var kTOV4_bendrosiostrukmeValNeLTcommand = "req.body.kTOV4_bendrosiostrukmeValNeLT";
           var kTOV4_dalykpavadcommand = "req.body.kTOV4_dalykpavad";
           var kTOV4_dalykpazymNrcommand = "req.body.kTOV4_dalykpazymNr";
           var kTOV4_dalyktrukmeValLTcommand = "req.body.kTOV4_dalyktrukmeValLT";
-          var kTOV4_dalyktrukmeValUžscommand = "req.body.kTOV4_dalyktrukmeValUžs";
+          var kTOV4_dalyktrukmeValNeLTcommand = "req.body.kTOV4_dalyktrukmeValNeLT";
           var kTOV4_25renginysTemacommand = "req.body.kTOV4_25renginysTema";
           var kTOV4_25kompGrupecommand = "req.body.kTOV4_25kompGrupe";
           var kTOV4_25skirtacommand = "req.body.kTOV4_25skirta";
@@ -447,16 +447,16 @@ app.post("/create", function(req, res) {
           for (let f = 1; f <= parseInt(req.body.yonder14); f++) {
             var iteracija7 = f;
             var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-            var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+            var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
             var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
             var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
             var joinednD2_D01nr = eval(nD2_D01nriteracija);
-            var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+            var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
             var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
             var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
             foundUser.destytojas.nD2_D01.push({
               nr: joinednD2_D01nr,
-              studProgr: joinednD2_D01studProgr,
+              komitetas: joinednD2_D01komitetas,
               veikla: joinednD2_D01veikla,
               rezultatai: joinednD2_D01rezultatai
             })
@@ -464,16 +464,16 @@ app.post("/create", function(req, res) {
           for (let g = 1; g <= parseInt(req.body.yonder16); g++) {
             var iteracija8 = g;
             var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-            var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+            var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
             var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
             var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
             var joinednD2_D02nr = eval(nD2_D02nriteracija);
-            var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+            var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
             var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
             var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
             foundUser.destytojas.nD2_D02.push({
               nr: joinednD2_D02nr,
-              studProgr: joinednD2_D02studProgr,
+              studKryptis: joinednD2_D02studKrypt,
               veikla: joinednD2_D02veikla,
               rezultatai: joinednD2_D02rezultatai
             })
@@ -873,64 +873,64 @@ app.post("/create", function(req, res) {
               var kTOV4_mokymopavadi = kTOV4_mokymopavadcommand+i;
               var kTOV4_mokymopazymNri = kTOV4_mokymopazymNrcommand+i;
               var kTOV4_mokymotrukmeValLTi = kTOV4_mokymotrukmeValLTcommand+i;
-              var kTOV4_mokymotrukmeValUžsi = kTOV4_mokymotrukmeValUžscommand+i;
+              var kTOV4_mokymotrukmeValNeLTi = kTOV4_mokymotrukmeValNeLTcommand+i;
               var kTOV4_mokymopavad = eval(kTOV4_mokymopavadi);
               var kTOV4_mokymopazymNr = eval(kTOV4_mokymopazymNri);
               var joinedkTOV4_mokymotrukmeValLT = eval(kTOV4_mokymotrukmeValLTi);
-              var joinedkTOV4_mokymotrukmeValUžs = eval(kTOV4_mokymotrukmeValUžsi);
+              var joinedkTOV4_mokymotrukmeValNeLT = eval(kTOV4_mokymotrukmeValNeLTi);
               foundUser.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
                 pavadinimas: kTOV4_mokymopavad,
                 pazymNr: kTOV4_mokymopazymNr,
                 trukmeValLT: joinedkTOV4_mokymotrukmeValLT,
-                trukmeValUžs: joinedkTOV4_mokymotrukmeValUžs
+                trukmeValNeLT: joinedkTOV4_mokymotrukmeValNeLT
               })
             }
             for (let i = 1; i <= parseInt(req.body.new8); i++) {
               var kTOV4_tyrimupavadi = kTOV4_tyrimupavadcommand +i;
               var kTOV4_tyrimupazymNri = kTOV4_tyrimupazymNrcommand +i;
               var kTOV4_tyrimutrukmeValLTi = kTOV4_tyrimutrukmeValLTcommand +i;
-              var kTOV4_tyrimutrukmeValUžsi = kTOV4_tyrimutrukmeValUžscommand +i;
+              var kTOV4_tyrimutrukmeValNeLTi = kTOV4_tyrimutrukmeValNeLTcommand +i;
               var kTOV4_tyrimupavad = eval(kTOV4_tyrimupavadi);
               var kTOV4_tyrimupazymNr = eval(kTOV4_tyrimupazymNri);
               var joinedkTOV4_tyrimutrukmeValLT = eval(kTOV4_tyrimutrukmeValLTi);
-              var joinedkTOV4_tyrimutrukmeValUžs = eval(kTOV4_tyrimutrukmeValUžsi);
+              var joinedkTOV4_tyrimutrukmeValNeLT = eval(kTOV4_tyrimutrukmeValNeLTi);
               foundUser.destytojas.kTOV4_KV01.kompetencijos.tyrimu.push({
                 pavadinimas: kTOV4_tyrimupavad,
                 pazymNr: kTOV4_tyrimupazymNr,
                 trukmeValLT: joinedkTOV4_tyrimutrukmeValLT,
-                trukmeValUžs: joinedkTOV4_tyrimutrukmeValUžs
+                trukmeValNeLT: joinedkTOV4_tyrimutrukmeValNeLT
               })
             }
             for (let i = 1; i <= parseInt(req.body.new10); i++) {
               var kTOV4_bendrosiospavadi = kTOV4_bendrosiospavadcommand +i;
               var kTOV4_bendrosiospazymNri = kTOV4_bendrosiospazymNrcommand +i;
               var kTOV4_bendrosiostrukmeValLTi = kTOV4_bendrosiostrukmeValLTcommand +i;
-              var kTOV4_bendrosiostrukmeValUžsi = kTOV4_bendrosiostrukmeValUžscommand +i;
+              var kTOV4_bendrosiostrukmeValNeLTi = kTOV4_bendrosiostrukmeValNeLTcommand +i;
               var kTOV4_bendrosiospavad = eval(kTOV4_bendrosiospavadi);
               var kTOV4_bendrosiospazymNr = eval(kTOV4_bendrosiospazymNri);
               var joinedkTOV4_bendrosiostrukmeValLT = eval(kTOV4_bendrosiostrukmeValLTi);
-              var joinedkTOV4_bendrosiostrukmeValUžs = eval(kTOV4_bendrosiostrukmeValUžsi);
+              var joinedkTOV4_bendrosiostrukmeValNeLT = eval(kTOV4_bendrosiostrukmeValNeLTi);
               foundUser.destytojas.kTOV4_KV01.kompetencijos.bendrosios.push({
                 pavadinimas: kTOV4_bendrosiospavad,
                 pazymNr: kTOV4_bendrosiospazymNr,
                 trukmeValLT: joinedkTOV4_bendrosiostrukmeValLT,
-                trukmeValUžs: joinedkTOV4_bendrosiostrukmeValUžs
+                trukmeValNeLT: joinedkTOV4_bendrosiostrukmeValNeLT
               })
             }
             for (let i = 1; i <= parseInt(req.body.new12); i++) {
               var kTOV4_dalykpavadi = kTOV4_dalykpavadcommand +i;
               var kTOV4_dalykpazymNri = kTOV4_dalykpazymNrcommand +i;
               var kTOV4_dalyktrukmeValLTi = kTOV4_dalyktrukmeValLTcommand +i;
-              var kTOV4_dalyktrukmeValUžsi = kTOV4_dalyktrukmeValUžscommand +i;
+              var kTOV4_dalyktrukmeValNeLTi = kTOV4_dalyktrukmeValNeLTcommand +i;
               var kTOV4_dalykpavad = eval(kTOV4_dalykpavadi);
               var kTOV4_dalykpazymNr = eval(kTOV4_dalykpazymNri);
               var joinedkTOV4_dalyktrukmeValLT = eval(kTOV4_dalyktrukmeValLTi);
-              var joinedkTOV4_dalyktrukmeValUžs = eval(kTOV4_dalyktrukmeValUžsi);
+              var joinedkTOV4_dalyktrukmeValNeLT = eval(kTOV4_dalyktrukmeValNeLTi);
               foundUser.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
                 pavadinimas: kTOV4_dalykpavad,
                 pazymNr: kTOV4_dalykpazymNr,
                 trukmeValLT: joinedkTOV4_dalyktrukmeValLT,
-                trukmeValUžs: joinedkTOV4_dalyktrukmeValUžs
+                trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
               })
             }
             for (let i = 1; i <= parseInt(req.body.new14); i++) {
@@ -1266,11 +1266,11 @@ app.post("/update", (req, res) => {
         var nD2_M04busenacommand = "req.body.nD2_M04busena";
         var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
         var nD2_D01nrcommand = "req.body.nD2_D01nr";
-        var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+        var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
         var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
         var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
         var nD2_D02nrcommand = "req.body.nD2_D02nr";
-        var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+        var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
         var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
         var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
         var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -1663,16 +1663,16 @@ app.post("/update", (req, res) => {
         for (let f = 1; f <= parseInt(req.body.yond14); f++) {
           var iteracija7 = f;
           var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-          var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+          var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
           var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
           var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
           var joinednD2_D01nr = eval(nD2_D01nriteracija);
-          var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+          var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
           var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
           var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
           foundUser.destytojas.nD2_D01.push({
             nr: joinednD2_D01nr,
-            studProgr: joinednD2_D01studProgr,
+            studProgr: joinednD2_D01komitetas,
             veikla: joinednD2_D01veikla,
             rezultatai: joinednD2_D01rezultatai
           })
@@ -1680,16 +1680,16 @@ app.post("/update", (req, res) => {
         for (let g = 1; g <= parseInt(req.body.yond16); g++) {
           var iteracija8 = g;
           var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-          var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+          var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
           var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
           var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
           var joinednD2_D02nr = eval(nD2_D02nriteracija);
-          var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+          var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
           var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
           var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
           foundUser.destytojas.nD2_D02.push({
             nr: joinednD2_D02nr,
-            studProgr: joinednD2_D02studProgr,
+            studKryptis: joinednD2_D02studKrypt,
             veikla: joinednD2_D02veikla,
             rezultatai: joinednD2_D02rezultatai
           })
@@ -2565,11 +2565,11 @@ app.post("/submit", function(req, res) {
         var nD2_M04busenacommand = "req.body.nD2_M04busena";
         var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
         var nD2_D01nrcommand = "req.body.nD2_D01nr";
-        var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+        var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
         var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
         var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
         var nD2_D02nrcommand = "req.body.nD2_D02nr";
-        var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+        var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
         var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
         var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
         var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -2974,17 +2974,17 @@ app.post("/submit", function(req, res) {
         for (let f = 1; f <= parseInt(req.body.yond14); f++) {
           var iteracija7 = f;
           var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-          var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+          var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
           var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
           var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
           var joinednD2_D01nr = eval(nD2_D01nriteracija);
-          var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+          var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
           var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
           var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
-          if (joinednD2_D01studProgr != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
+          if (joinednD2_D01komitetas != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
             foundUser.destytojas.nD2_D01.push({
               nr: joinednD2_D01nr,
-              studProgr: joinednD2_D01studProgr,
+              studProgr: joinednD2_D01komitetas,
               veikla: joinednD2_D01veikla,
               rezultatai: joinednD2_D01rezultatai
             })
@@ -2993,17 +2993,17 @@ app.post("/submit", function(req, res) {
         for (let g = 1; g <= parseInt(req.body.yond16); g++) {
           var iteracija8 = g;
           var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-          var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+          var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
           var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
           var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
           var joinednD2_D02nr = eval(nD2_D02nriteracija);
-          var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+          var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
           var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
           var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
-          if (joinednD2_D02studProgr != "" || joinednD2_D02veikla != "" || joinednD2_D02rezultatai != "") {
+          if (joinednD2_D02studKrypt != "" || joinednD2_D02veikla != "" || joinednD2_D02rezultatai != "") {
             foundUser.destytojas.nD2_D02.push({
               nr: joinednD2_D02nr,
-              studProgr: joinednD2_D02studProgr,
+              studKryptis: joinednD2_D02studKrypt,
               veikla: joinednD2_D02veikla,
               rezultatai: joinednD2_D02rezultatai
             })
@@ -9407,11 +9407,11 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           var nD2_M04busenacommand = "req.body.nD2_M04busena";
           var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
           var nD2_D01nrcommand = "req.body.nD2_D01nr";
-          var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+          var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
           var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
           var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
           var nD2_D02nrcommand = "req.body.nD2_D02nr";
-          var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+          var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
           var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
           var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
           var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -9804,16 +9804,16 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           for (let f = 1; f <= parseInt(req.body.yond14); f++) {
             var iteracija7 = f;
             var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-            var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+            var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
             var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
             var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
             var joinednD2_D01nr = eval(nD2_D01nriteracija);
-            var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+            var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
             var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
             var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
             foundUser.destytojas.nD2_D01.push({
               nr: joinednD2_D01nr,
-              studProgr: joinednD2_D01studProgr,
+              studProgr: joinednD2_D01komitetas,
               veikla: joinednD2_D01veikla,
               rezultatai: joinednD2_D01rezultatai
             })
@@ -9821,16 +9821,16 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           for (let g = 1; g <= parseInt(req.body.yond16); g++) {
             var iteracija8 = g;
             var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-            var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+            var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
             var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
             var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
             var joinednD2_D02nr = eval(nD2_D02nriteracija);
-            var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+            var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
             var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
             var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
             foundUser.destytojas.nD2_D02.push({
               nr: joinednD2_D02nr,
-              studProgr: joinednD2_D02studProgr,
+              studKryptis: joinednD2_D02studKrypt,
               veikla: joinednD2_D02veikla,
               rezultatai: joinednD2_D02rezultatai
             })
@@ -10657,11 +10657,11 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           var nD2_M04busenacommand = "req.body.nD2_M04busena";
           var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
           var nD2_D01nrcommand = "req.body.nD2_D01nr";
-          var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+          var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
           var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
           var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
           var nD2_D02nrcommand = "req.body.nD2_D02nr";
-          var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+          var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
           var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
           var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
           var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -11066,17 +11066,17 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           for (let f = 1; f <= parseInt(req.body.yond14); f++) {
             var iteracija7 = f;
             var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-            var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+            var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
             var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
             var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
             var joinednD2_D01nr = eval(nD2_D01nriteracija);
-            var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+            var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
             var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
             var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
-            if (joinednD2_D01studProgr != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
+            if (joinednD2_D01komitetas != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
               foundUser.destytojas.nD2_D01.push({
                 nr: joinednD2_D01nr,
-                studProgr: joinednD2_D01studProgr,
+                studProgr: joinednD2_D01komitetas,
                 veikla: joinednD2_D01veikla,
                 rezultatai: joinednD2_D01rezultatai
               })
@@ -11085,17 +11085,17 @@ app.post("/update-report-lecturer-dep", (req, res) => {
           for (let g = 1; g <= parseInt(req.body.yond16); g++) {
             var iteracija8 = g;
             var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-            var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+            var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
             var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
             var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
             var joinednD2_D02nr = eval(nD2_D02nriteracija);
-            var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+            var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
             var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
             var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
-            if (joinednD2_D02studProgr != "" || joinednD2_D02veikla != "" || joinednD2_D02rezultatai != "") {
+            if (joinednD2_D02studKrypt != "" || joinednD2_D02veikla != "" || joinednD2_D02rezultatai != "") {
               foundUser.destytojas.nD2_D02.push({
                 nr: joinednD2_D02nr,
-                studProgr: joinednD2_D02studProgr,
+                studKryptis: joinednD2_D02studKrypt,
                 veikla: joinednD2_D02veikla,
                 rezultatai: joinednD2_D02rezultatai
               })
@@ -12356,11 +12356,11 @@ app.post("/update-report-lec-admin", (req, res) => {
         var nD2_M04busenacommand = "req.body.nD2_M04busena";
         var nD2_M04apimtisKreditcommand = "req.body.nD2_M04apimtisKredit";
         var nD2_D01nrcommand = "req.body.nD2_D01nr";
-        var nD2_D01studProgrcommand = "req.body.nD2_D01studProgr";
+        var nD2_D01komitetascommand = "req.body.nD2_D01komitetas";
         var nD2_D01veiklacommand = "req.body.nD2_D01veikla";
         var nD2_D01rezultataicommand = "req.body.nD2_D01rezultatai";
         var nD2_D02nrcommand = "req.body.nD2_D02nr";
-        var nD2_D02studProgrcommand = "req.body.nD2_D02studProgr";
+        var nD2_D02studKryptcommand = "req.body.nD2_D02studKrypt";
         var nD2_D02veiklacommand = "req.body.nD2_D02veikla";
         var nD2_D02rezultataicommand = "req.body.nD2_D02rezultatai";
         var nD2_D03nrcommand = "req.body.nD2_D03nr";
@@ -12753,16 +12753,16 @@ app.post("/update-report-lec-admin", (req, res) => {
         for (let f = 1; f <= parseInt(req.body.yond14); f++) {
           var iteracija7 = f;
           var nD2_D01nriteracija = nD2_D01nrcommand + iteracija7;
-          var nD2_D01studProgriteracija = nD2_D01studProgrcommand + iteracija7;
+          var nD2_D01komitetasiteracija = nD2_D01komitetascommand + iteracija7;
           var nD2_D01veiklaiteracija = nD2_D01veiklacommand + iteracija7;
           var nD2_D01rezultataiiteracija = nD2_D01rezultataicommand + iteracija7;
           var joinednD2_D01nr = eval(nD2_D01nriteracija);
-          var joinednD2_D01studProgr = eval(nD2_D01studProgriteracija);
+          var joinednD2_D01komitetas = eval(nD2_D01komitetasiteracija);
           var joinednD2_D01veikla = eval(nD2_D01veiklaiteracija);
           var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
           foundUser.destytojas.nD2_D01.push({
             nr: joinednD2_D01nr,
-            studProgr: joinednD2_D01studProgr,
+            studProgr: joinednD2_D01komitetas,
             veikla: joinednD2_D01veikla,
             rezultatai: joinednD2_D01rezultatai
           })
@@ -12770,16 +12770,16 @@ app.post("/update-report-lec-admin", (req, res) => {
         for (let g = 1; g <= parseInt(req.body.yond16); g++) {
           var iteracija8 = g;
           var nD2_D02nriteracija = nD2_D02nrcommand + iteracija8;
-          var nD2_D02studProgriteracija = nD2_D02studProgrcommand + iteracija8;
+          var nD2_D02studKryptiteracija = nD2_D02studKryptcommand + iteracija8;
           var nD2_D02veiklaiteracija = nD2_D02veiklacommand + iteracija8;
           var nD2_D02rezultataiiteracija = nD2_D02rezultataicommand + iteracija8;
           var joinednD2_D02nr = eval(nD2_D02nriteracija);
-          var joinednD2_D02studProgr = eval(nD2_D02studProgriteracija);
+          var joinednD2_D02studKrypt = eval(nD2_D02studKryptiteracija);
           var joinednD2_D02veikla = eval(nD2_D02veiklaiteracija);
           var joinednD2_D02rezultatai = eval(nD2_D02rezultataiiteracija);
           foundUser.destytojas.nD2_D02.push({
             nr: joinednD2_D02nr,
-            studProgr: joinednD2_D02studProgr,
+            studKryptis: joinednD2_D02studKrypt,
             veikla: joinednD2_D02veikla,
             rezultatai: joinednD2_D02rezultatai
           })
