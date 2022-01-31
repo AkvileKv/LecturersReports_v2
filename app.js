@@ -274,7 +274,7 @@ app.post("/create", function(req, res) {
           var kV5_KT02studProgrcommand = "req.body.kV5_KT02studProgr";
           var kV5_KT02darboTemacommand = "req.body.kV5_KT02darboTema";
           var nD2_D03studKryptiscommand = "req.body.nD2_D03studKryptis";
-
+//for new version:
           var tMTEP3_T03rengTipascommand ="req.body.tMTEP3_T03rengTipas";
           var tMTEP3_T04atlygArNecommand = "req.body.tMTEP3_T04atlygArNe";
           var tMTEP3_T05atlygArNecommand = "req.body.tMTEP3_T05atlygArNe";

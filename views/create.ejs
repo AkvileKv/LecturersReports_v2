@@ -2271,7 +2271,7 @@ paraiškų rengimas)
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="kV5_KT01nr1" autocomplete="off" value="1" readonly="readonly">
           </div>
-          <div class="col-md-2 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01studKryptis1" autocomplete="off"></textarea>
           </div>
@@ -2279,7 +2279,7 @@ paraiškų rengimas)
             <label for="">Studijų programa</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr1" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas1" autocomplete="off"></textarea>
           </div>
@@ -2288,11 +2288,11 @@ paraiškų rengimas)
           <div class="col-md-1 mb-3">
 
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-6 mb-3">
             <label for="">Darbo tema</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01darboTema1" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-5 mb-3">
             <label for="">Užsakovas</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01uzsakovas1" autocomplete="off"></textarea>
           </div>
@@ -2521,6 +2521,7 @@ paraiškų rengimas)
 
       <input type="text" name="ataskaitos_busena" value="redaguojama" hidden>
 
+<!-- save iteration number -->
         <input type="hidden" id="yonder" name="yonder2" value="2">
         <input type="hidden" id="yonder3" name="yonder4" value="1">
         <input type="hidden" id="yonder5" name="yonder6" value="1">
@@ -2598,7 +2599,7 @@ paraiškų rengimas)
 
 
         <!-- PABAIGA -->
-        <!-- padaryti, kad nerodutu paspaudus issaugoti -->
+        <!-- padaryti, kad nerodytu paspaudus issaugoti -->
         <script>
           window.onbeforeunload = function() {
             return "";
@@ -2654,6 +2655,7 @@ paraiškų rengimas)
         </div>
         <div id="add_to_me01` + div + `">
         `;
+  // Kiekviename eilutės pridėjimo scripte aprašyta eilutė, kuri nusiunčia skaičių į hidden:
     document.getElementById("yonder").value = value1;
     value1++;
     var tx = document.getElementsByTagName('textarea');
