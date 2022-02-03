@@ -1080,6 +1080,7 @@ app.post("/create", function(req, res) {
               darboTema: joinedkV5_KT02darboTema
             })
           }
+          // 32 table
           for (let i = 1; i <= parseInt(req.body.new20); i++) {
             var kV5_32socaprasymasi = kV5_32socaprasymascommand +i;
             var joinedkV5_32socaprasymas = eval(kV5_32socaprasymasi);
