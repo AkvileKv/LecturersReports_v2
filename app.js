@@ -1673,7 +1673,7 @@ app.post("/update", (req, res) => {
           var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
           foundUser.destytojas.nD2_D01.push({
             nr: joinednD2_D01nr,
-            studProgr: joinednD2_D01komitetas,
+            komitetas: joinednD2_D01komitetas,
             veikla: joinednD2_D01veikla,
             rezultatai: joinednD2_D01rezultatai
           })
@@ -2985,7 +2985,7 @@ app.post("/submit", function(req, res) {
           if (joinednD2_D01komitetas != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
             foundUser.destytojas.nD2_D01.push({
               nr: joinednD2_D01nr,
-              studProgr: joinednD2_D01komitetas,
+              komitetas: joinednD2_D01komitetas,
               veikla: joinednD2_D01veikla,
               rezultatai: joinednD2_D01rezultatai
             })
@@ -9814,7 +9814,7 @@ app.post("/update-report-lecturer-dep", (req, res) => {
             var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
             foundUser.destytojas.nD2_D01.push({
               nr: joinednD2_D01nr,
-              studProgr: joinednD2_D01komitetas,
+              komitetas: joinednD2_D01komitetas,
               veikla: joinednD2_D01veikla,
               rezultatai: joinednD2_D01rezultatai
             })
@@ -11077,7 +11077,7 @@ app.post("/update-report-lecturer-dep", (req, res) => {
             if (joinednD2_D01komitetas != "" || joinednD2_D01veikla != "" || joinednD2_D01rezultatai != "") {
               foundUser.destytojas.nD2_D01.push({
                 nr: joinednD2_D01nr,
-                studProgr: joinednD2_D01komitetas,
+                komitetas: joinednD2_D01komitetas,
                 veikla: joinednD2_D01veikla,
                 rezultatai: joinednD2_D01rezultatai
               })
@@ -12763,7 +12763,7 @@ app.post("/update-report-lec-admin", (req, res) => {
           var joinednD2_D01rezultatai = eval(nD2_D01rezultataiiteracija);
           foundUser.destytojas.nD2_D01.push({
             nr: joinednD2_D01nr,
-            studProgr: joinednD2_D01komitetas,
+            komitetas: joinednD2_D01komitetas,
             veikla: joinednD2_D01veikla,
             rezultatai: joinednD2_D01rezultatai
           })

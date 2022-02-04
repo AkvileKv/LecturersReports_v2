@@ -1293,7 +1293,7 @@
           <% numb21++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <br>
+              <label for=""><br></label>
               <input type="text" class="form-control text-center" name="tMTEP3_T10nr<%=numb21%>" placeholder="" autocomplete="off" value="<%=numb21%>" readonly="readonly">
             </div>
             <div class="col-md-5 mb-3">
@@ -1346,7 +1346,7 @@
           <% numb22++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <br>
+              <label for=""><br></label>
               <input type="text" class="form-control text-center" name="tMTEP3_T11nr<%=numb22%>" placeholder="" autocomplete="off" value="<%=numb22%>" readonly="readonly">
             </div>
             <div class="col-md-5 mb-3">
@@ -1398,8 +1398,7 @@
           </p>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label for=""><br>
-              </label>
+              <label for=""><br></label>
             </div>
             <div class="col-md-8 mb-3">
               <label for="">Veiklos pobūdis (renginio/pranešimo pavadinimas)
@@ -1644,7 +1643,7 @@
 
           <!-- kTOV4_KV01 -->
 
-          <!-- KV01-->
+          <!-- kompetencijos-->
           <!-- 24 lentelė.  -->
           <p class="font-weight-bold">
             24 lentelė. Dėstytojo kvalifikacijos tobulinimas
@@ -1659,6 +1658,7 @@
             </tr>
           </table>
           <br>
+            <!-- 24 lentelė 1-->
           <!-- Mokymo(si)_komp -->
           <% var new3 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
@@ -1705,7 +1705,7 @@
 
           </div>
           <button class="plus-button" type="button" onclick="mokymo()">+</button><br><br>
-
+            <!-- 24 lentelė 2-->
           <!-- Tyrimų_komp -->
           <% var new4 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
@@ -1753,7 +1753,7 @@
           </div>
           <button class="plus-button" type="button" onclick="tyrimu()">+</button><br><br>
 
-
+          <!-- 24 lentelė 3-->
           <!-- Bendrosios_komp -->
           <% var new5 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
@@ -1777,7 +1777,6 @@
             </div>
           </div>
           <% } else { %>
-
           <div class="form-row">
             <div class="col-md-2 mb-3">
             </div>
@@ -1801,7 +1800,7 @@
 
           </div>
           <button class="plus-button" type="button" onclick="bendrosios()">+</button><br><br>
-
+              <!-- 24 lentelė 4-->
           <!-- Dalykinės_komp -->
           <% var new6 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
@@ -1974,19 +1973,15 @@
           <% numb27++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-
               <input type="text" class="form-control text-center" name="kTOV4_KV03nr<%=numb27%>" autocomplete="off" value="<%=numb27%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-
               <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03salis<%=numb27%>" autocomplete="off"><%=user.salis%></textarea>
             </div>
             <div class="col-md-4 mb-3">
-
               <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03institucija<%=numb27%>" autocomplete="off"><%=user.institucija%></textarea>
             </div>
             <div class="col-md-4 mb-3">
-
               <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas<%=numb27%>" autocomplete="off"><%=user.dalykas%></textarea>
             </div>
           </div>
@@ -2052,7 +2047,7 @@
           <% numb29++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label for=""></label>
+              <label for=""><br></label>
               <input type="text" class="form-control text-center" name="kTOV4_O01_2nr<%=numb29%>" autocomplete="off" value="<%=numb29%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
@@ -2176,7 +2171,7 @@
           <% numb31++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label for=""></label>
+              <label for=""><br></label>
               <input type="text" class="form-control text-center" name="kV5_KT01nr<%=numb31%>" autocomplete="off" value="<%=numb31%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
@@ -3481,7 +3476,7 @@
       `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
-                    <br>
+                    <label for=""><br></label>
                     <input type="text" class="form-control text-center" name="tMTEP3_T10nr` + value21 + `" placeholder="" autocomplete="off" value="` + value21 + `" readonly="readonly">
                   </div>
                   <div class="col-md-5 mb-3">
@@ -3548,7 +3543,7 @@
       `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
-                    <br>
+                  <label for=""><br></label>
                     <input type="text" class="form-control text-center" name="tMTEP3_T11nr` + value22 + `" placeholder="" autocomplete="off" value="` + value22 + `" readonly="readonly">
                   </div>
                   <div class="col-md-5 mb-3">
@@ -3615,7 +3610,6 @@
       `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
-
                   <input type="text" class="form-control text-center" name="tMTEP3_T12nr` + value23 + `" placeholder="" autocomplete="off" value="` + value23 + `" readonly="readonly">
                 </div>
                 <div class="col-md-8 mb-3">
@@ -4154,7 +4148,7 @@ function dalykines() {
       `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
-                    <label for=""></label>
+                    <label for=""><br></label>
                     <input type="text" class="form-control text-center" name="kTOV4_O01_2nr` + value29 + `" autocomplete="off" value="` + value29 + `" readonly="readonly">
                   </div>
                   <div class="col-md-3 mb-3">
@@ -4294,7 +4288,7 @@ function dalykines() {
       `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
-                    <label for=""></label>
+                    <label for=""><br></label>
                     <input type="text" class="form-control text-center" name="kV5_KT01nr` + value31 + `" autocomplete="off" value="` + value31 + `" readonly="readonly">
                   </div>
 
@@ -4313,7 +4307,6 @@ function dalykines() {
                   </div>
                   <div class="form-row">
                     <div class="col-md-1 mb-3">
-
                     </div>
                   <div class="col-md-7 mb-3">
                     <label for="">Darbo tema</label>
