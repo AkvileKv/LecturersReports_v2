@@ -274,7 +274,7 @@ app.post("/create", function(req, res) {
           var kV5_KT02studProgrcommand = "req.body.kV5_KT02studProgr";
           var kV5_KT02darboTemacommand = "req.body.kV5_KT02darboTema";
           var nD2_D03studKryptiscommand = "req.body.nD2_D03studKryptis";
-// new version:
+// new :
           var tMTEP3_T03rengTipascommand ="req.body.tMTEP3_T03rengTipas";
           var tMTEP3_T04atlygArNecommand = "req.body.tMTEP3_T04atlygArNe";
           var tMTEP3_T05atlygArNecommand = "req.body.tMTEP3_T05atlygArNe";
@@ -288,22 +288,27 @@ app.post("/create", function(req, res) {
           var tMTEP3_T09atlygArNecommand = "req.body.tMTEP3_T09atlygArNe";
           var tMTEP3_T10atlygArNecommand = "req.body.tMTEP3_T10atlygArNe";
           var tMTEP3_T11atlygArNecommand = "req.body.tMTEP3_T11atlygArNe";
+
           var kTOV4_mokymopavadcommand = "req.body.kTOV4_mokymopavad";
           var kTOV4_mokymopazymNrcommand = "req.body.kTOV4_mokymopazymNr";
           var kTOV4_mokymotrukmeValLTcommand = "req.body.kTOV4_mokymotrukmeValLT";
           var kTOV4_mokymotrukmeValNeLTcommand = "req.body.kTOV4_mokymotrukmeValNeLT";
+
           var kTOV4_tyrimupavadcommand = "req.body.kTOV4_tyrimupavad";
           var kTOV4_tyrimupazymNrcommand = "req.body.kTOV4_tyrimupazymNr";
           var kTOV4_tyrimutrukmeValLTcommand = "req.body.kTOV4_tyrimutrukmeValLT";
           var kTOV4_tyrimutrukmeValNeLTcommand = "req.body.kTOV4_tyrimutrukmeValNeLT";
+
           var kTOV4_bendrosiospavadcommand = "req.body.kTOV4_bendrosiospavad";
           var kTOV4_bendrosiospazymNrcommand = "req.body.kTOV4_bendrosiospazymNr";
           var kTOV4_bendrosiostrukmeValLTcommand = "req.body.kTOV4_bendrosiostrukmeValLT";
           var kTOV4_bendrosiostrukmeValNeLTcommand = "req.body.kTOV4_bendrosiostrukmeValNeLT";
+
           var kTOV4_dalykpavadcommand = "req.body.kTOV4_dalykpavad";
           var kTOV4_dalykpazymNrcommand = "req.body.kTOV4_dalykpazymNr";
           var kTOV4_dalyktrukmeValLTcommand = "req.body.kTOV4_dalyktrukmeValLT";
           var kTOV4_dalyktrukmeValNeLTcommand = "req.body.kTOV4_dalyktrukmeValNeLT";
+
           var kTOV4_25renginysTemacommand = "req.body.kTOV4_25renginysTema";
           var kTOV4_25kompGrupecommand = "req.body.kTOV4_25kompGrupe";
           var kTOV4_25skirtacommand = "req.body.kTOV4_25skirta";
@@ -363,6 +368,7 @@ app.post("/create", function(req, res) {
 
           foundUser.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
             foundUser.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
+
             foundUser.destytojas.kD1_K01.isJuSrautaisValPlan = req.body.isJuSrautaisValPlan,
             foundUser.destytojas.kD1_K01.isJuSrautaisValAtl = req.body.isJuSrautaisValAtl,
             foundUser.destytojas.kD1_K01.isJuUzsienioValPlan = req.body.isJuUzsienioValPlan,
@@ -933,6 +939,9 @@ app.post("/create", function(req, res) {
                 trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
               })
             }
+            foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
+            foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
+
             for (let i = 1; i <= parseInt(req.body.new14); i++) {
               var kTOV4_25renginysTemai = kTOV4_25renginysTemacommand+i;
               var kTOV4_25kompGrupei = kTOV4_25kompGrupecommand+i;

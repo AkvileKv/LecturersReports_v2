@@ -1068,7 +1068,7 @@
             </div>
           </div>
           <% }) %>
-            <input type="hidden" id="new3" name="new4" value="<%=new2%>">
+          <input type="hidden" id="new3" name="new4" value="<%=new2%>">
           <div id="add_to_meN021">
 
           </div>
@@ -1658,7 +1658,7 @@
             </tr>
           </table>
           <br>
-            <!-- 24 lentelė 1-->
+          <!-- 24 lentelė 1-->
           <!-- Mokymo(si)_komp -->
           <% var new3 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
@@ -1700,12 +1700,12 @@
           </div>
           <% } %>
           <% }) %>
-            <input type="hidden" id="new5" name="new6" value="<%=new3%>">
+          <input type="hidden" id="new5" name="new6" value="<%=new3%>">
           <div id="add_to_meN031">
 
           </div>
           <button class="plus-button" type="button" onclick="mokymo()">+</button><br><br>
-            <!-- 24 lentelė 2-->
+          <!-- 24 lentelė 2-->
           <!-- Tyrimų_komp -->
           <% var new4 = 0; %>
           <%  user.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
@@ -1747,7 +1747,7 @@
           </div>
           <% } %>
           <% }) %>
-            <input type="hidden" id="new7" name="new8" value="<%=new4%>">
+          <input type="hidden" id="new7" name="new8" value="<%=new4%>">
           <div id="add_to_meN041">
 
           </div>
@@ -1795,15 +1795,15 @@
           </div>
           <% } %>
           <% }) %>
-            <input type="hidden" id="new9" name="new10" value="<%=new5%>">
+          <input type="hidden" id="new9" name="new10" value="<%=new5%>">
           <div id="add_to_meN051">
 
           </div>
           <button class="plus-button" type="button" onclick="bendrosios()">+</button><br><br>
-              <!-- 24 lentelė 4-->
+          <!-- 24 lentelė 4-->
           <!-- Dalykinės_komp -->
           <% var new6 = 0; %>
-          <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
+          <%  user.destytojas.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
           <% new6++ %>
           <% if (new6==1) {%>
           <div class="form-row">
@@ -1842,7 +1842,7 @@
           </div>
           <% } %>
           <% }) %>
-            <input type="hidden" id="new11" name="new12" value="<%=new6%>">
+          <input type="hidden" id="new11" name="new12" value="<%=new6%>">
           <div id="add_to_meN061">
 
           </div>
@@ -1854,10 +1854,12 @@
               <label style="text-align: right;" for="">Iš viso:</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" class="form-control text-center" readonly="readonly" name="kTOV4_trukmeValLT" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+              <input type="number" class="form-control text-center" value="<%=user.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT%>" readonly="readonly" name="kTOV4_trukmeValLT" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+                autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" class="form-control text-center" readonly="readonly" name="kTOV4_trukmeValNeLT" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+              <input type="number" class="form-control text-center" value="<%=user.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT%>" readonly="readonly" name="kTOV4_trukmeValNeLT" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+                autocomplete="off">
             </div>
           </div>
           <p>**Akademinė valanda prilyginama astronominei valandai</p>
@@ -2284,7 +2286,7 @@
           <div id="add_to_meN101">
           </div>
           <button class="plus-button" type="button" onclick="kTOV4_32soc()">+</button><br><br>
-                <!-- 32 lentele 2-->
+          <!-- 32 lentele 2-->
           <!-- Aplinkosauginės iniciatyvos -->
           <% var numb32_2 = 0; %>
           <%  user.destytojas.kV5_32.aplinkosaugInic.forEach(function(user){ %>
@@ -2308,11 +2310,11 @@
           </div>
           <% } %>
           <% }) %>
-              <input type="hidden" id="new21" name="new22" value="<%=numb32_2%>">
+          <input type="hidden" id="new21" name="new22" value="<%=numb32_2%>">
           <div id="add_to_meN111">
           </div>
           <button class="plus-button" type="button" onclick="kTOV4_32apl()">+</button><br><br>
-                <!-- 32 lentele 3-->
+          <!-- 32 lentele 3-->
           <!-- Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas -->
           <% var numb32_3 = 0; %>
           <%  user.destytojas.kV5_32.lietValstybPuosel.forEach(function(user){ %>
@@ -2336,11 +2338,11 @@
           </div>
           <% } %>
           <% }) %>
-                <input type="hidden" id="new23" name="new24" value="<%=numb32_3%>">
+          <input type="hidden" id="new23" name="new24" value="<%=numb32_3%>">
           <div id="add_to_meN121">
           </div>
           <button class="plus-button" type="button" onclick="kTOV4_32vals()">+</button><br><br>
-                <!-- 32 lentele 4-->
+          <!-- 32 lentele 4-->
           <!-- Lietuvos etnokultūros puoselėjimas -->
           <% var numb32_4 = 0; %>
           <%  user.destytojas.kV5_32.lietEtnokPuos.forEach(function(user){ %>
@@ -2364,11 +2366,11 @@
           </div>
           <% } %>
           <% }) %>
-            <input type="hidden" id="new25" name="new26" value="<%=numb32_4%>">
+          <input type="hidden" id="new25" name="new26" value="<%=numb32_4%>">
           <div id="add_to_meN131">
           </div>
           <button class="plus-button" type="button" onclick="kTOV4_32etno()">+</button><br><br>
-                <!-- 32 lentele 5-->
+          <!-- 32 lentele 5-->
           <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
           <% var numb32_5 = 0; %>
           <%  user.destytojas.kV5_32.savanorystIniciatyv.forEach(function(user){ %>
@@ -2442,7 +2444,7 @@
               <textarea type="text" rows="1" class="form-control " name="kV5_33vieta<%numb33%>" autocomplete="off"><%=user.vieta%></textarea>
             </div>
           </div>
-              <% }) %>
+          <% }) %>
           <input type="hidden" id="new29" name="new30" value="<%=numb33%>">
           <div id="add_to_meN151">
           </div>
@@ -3180,7 +3182,7 @@
     }
   }
 </script>
-    <!-- 14.2 table -->
+<!-- 14.2 table -->
 <script>
   var value57 = document.getElementById("new1").value;
   value57++;
@@ -3220,10 +3222,10 @@
     }
   }
 </script>
-  <!-- 14.3 table -->
+<!-- 14.3 table -->
 <script>
   var value58 = document.getElementById("new3").value;
-  value58 ++;
+  value58++;
   var div58 = 1;
   var asd58 = "add_to_meN02";
 
@@ -3323,8 +3325,8 @@
     }
   }
 </script>
-      <!-- TMTEP3_T07 -->
-      <!-- 16 table.  -->
+<!-- TMTEP3_T07 -->
+<!-- 16 table.  -->
 <script>
   var value18 = document.getElementById("yond35").value;
   value18++;
@@ -3776,7 +3778,7 @@
     }
   }
 </script>
-  <!-- TMTEP3_S -->
+<!-- TMTEP3_S -->
 <script>
   var value26 = document.getElementById("yond51").value;
   value26++;
@@ -3865,16 +3867,16 @@
 <!-- 24 table 2-->
 <!-- Tyrimų_komp -->
 <script>
-var value60 =  document.getElementById("new7").value;
-value60++;
-var div60 = 1;
-var asd60 = "add_to_meN04";
+  var value60 = document.getElementById("new7").value;
+  value60++;
+  var div60 = 1;
+  var asd60 = "add_to_meN04";
 
-function tyrimu() {
-  var bendr60 = asd60 + div60;
-  div60++;
-  document.getElementById(bendr60).innerHTML +=
-    `
+  function tyrimu() {
+    var bendr60 = asd60 + div60;
+    div60++;
+    document.getElementById(bendr60).innerHTML +=
+      `
     <div class="form-row">
                 <div class="col-md-2 mb-3">
                 </div>
@@ -3894,33 +3896,33 @@ function tyrimu() {
               <div id="add_to_meN04` + div60 + `">
                 </div>
             `;
-  document.getElementById("new7").value = value60;
-  value60++;
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
+    document.getElementById("new7").value = value60;
+    value60++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
 
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
   }
-}
 </script>
 <!-- 24 table 3-->
 <!-- Bendrosios_komp -->
 <script>
-var value61 = document.getElementById("new9").value;
-value61++;
-var div61 = 1;
-var asd61 = "add_to_meN05";
+  var value61 = document.getElementById("new9").value;
+  value61++;
+  var div61 = 1;
+  var asd61 = "add_to_meN05";
 
-function bendrosios() {
-  var bendr61 = asd61 + div61;
-  div61++;
-  document.getElementById(bendr61).innerHTML +=
-    `
+  function bendrosios() {
+    var bendr61 = asd61 + div61;
+    div61++;
+    document.getElementById(bendr61).innerHTML +=
+      `
                 <div class="form-row">
                  <div class="col-md-2 mb-3">
                  </div>
@@ -3940,33 +3942,33 @@ function bendrosios() {
               <div id="add_to_meN05` + div61 + `">
                 </div>
             `;
-  document.getElementById("new9").value = value61;
-  value61++;
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
+    document.getElementById("new9").value = value61;
+    value61++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
 
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
   }
-}
 </script>
 <!-- 24 table 4-->
 <!-- Dalykinės_komp -->
 <script>
-var value62 =  document.getElementById("new11").value;
-value62++;
-var div62 = 1;
-var asd62 = "add_to_meN06";
+  var value62 = document.getElementById("new11").value;
+  value62++;
+  var div62 = 1;
+  var asd62 = "add_to_meN06";
 
-function dalykines() {
-  var bendr62 = asd62 + div62;
-  div62++;
-  document.getElementById(bendr62).innerHTML +=
-    `
+  function dalykines() {
+    var bendr62 = asd62 + div62;
+    div62++;
+    document.getElementById(bendr62).innerHTML +=
+      `
     <div class="form-row">
                 <div class="col-md-2 mb-3">
                 </div>
@@ -3986,19 +3988,19 @@ function dalykines() {
               <div id="add_to_meN06` + div62 + `">
                 </div>
             `;
-  document.getElementById("new11").value = value62;
-  value62++;
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
+    document.getElementById("new11").value = value62;
+    value62++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
 
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
   }
-}
 </script>
 <!-- 25 table -->
 <script>
@@ -4179,7 +4181,7 @@ function dalykines() {
   }
 </script>
 <!-- kTOV4_O01_2 -->
-  <!-- 28.2.table  -->
+<!-- 28.2.table  -->
 <script>
   var value29 = document.getElementById("yond57").value;
   value29++;
@@ -4458,7 +4460,7 @@ function dalykines() {
 </script>
 <!-- 32 table 2-->
 <script>
-  var value67 =  document.getElementById("new21").value;
+  var value67 = document.getElementById("new21").value;
   value67++;
   var div67 = 1;
   var asd67 = "add_to_meN11";
@@ -4668,7 +4670,7 @@ function dalykines() {
 <!-- kV5_34 -->
 <!-- 34 table -->
 <script>
-  var value72 =  document.getElementById("new31").value;
+  var value72 = document.getElementById("new31").value;
   value72++;
   var div72 = 1;
   var asd72 = "add_to_meN16";
@@ -4859,8 +4861,8 @@ function dalykines() {
     document.getElementById("atlikta4").value = atliktanum4;
   }
 </script>
-  <!-- kTOV4_KV01 -->
-  <!-- 24 lentelė.  -->
+<!-- kTOV4_KV01 -->
+<!-- 24 lentelė.  -->
 <script>
   function calc24() {
 
