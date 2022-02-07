@@ -2042,6 +2042,7 @@
             organizavimas; projektinė veikla, užsakomųjų projektų (veiklų) paieška, projektų
             paraiškų rengimas)
           </p>
+
           <% var numb29 = 0; %>
           <%  user.destytojas.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
           <% numb29++ %>
@@ -2078,6 +2079,43 @@
 
           </div>
           <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
+          <!--kTOV4_29-->
+          <!-- 29 lentelė.  -->
+          <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais: mokslo ir švietimo institucijomis (ŠV), regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis (SP), darbdaviais (D)</b></p>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <label for=""><br></label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="">Veikla*</label>
+            </div>
+            <div class="col-md-5 mb-3">
+              <label for="">Socialinis partneris</label>
+            </div>
+          </div>
+          <% var value65 = 0; %>
+          <%  user.destytojas.kTOV4_29.forEach(function(user){ %>
+          <% value65++ %>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <input type="text" class="form-control text-center" name="kTOV4_29nr<%=value65%>" placeholder="" autocomplete="off" value="<%=value65%>" readonly="readonly">
+            </div>
+            <div class="col-md-6 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla<%=value65%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
+            </div>
+            <div class="col-md-5 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris<%=value65%>" placeholder="" autocomplete="off"><%=user.socPartneris%></textarea>
+            </div>
+          </div>
+          <% }) %>
+          <input type="hidden" id="new17" name="new18" value="<%=value65%>">
+          <div id="add_to_meN091">
+
+          </div>
+          <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
+          <p class="text-justify">*veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
+            vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
+            karjeros planavimo veiklose, diskusijose ir pan.</p>
           <!-- kTOV4_S -->
           <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
           <div class="form-row">
@@ -2161,7 +2199,7 @@
 
           </div>
           <button class="plus-button" type="button" onclick="kt02()">+</button><br><br>
-          <p>*V – verslumo tematika; SA/DP – socialinės aatsakomybės, darnios plėtros tematika</p>
+          <p>*V – verslumo tematika; SA/DP – socialinės atsakomybės, darnios plėtros tematika</p>
           <!-- kV5_KT01 -->
           <!-- 31 lentelė. -->
           <p class="font-weight-bold">31 lentelė. Baigiamieji darbai (užsakomieji darbai),
@@ -2456,7 +2494,7 @@
           <div id="add_to_meN161">
           </div>
           <button class="plus-button" type="button" onclick="kV5_34()">+</button>
-<br><br>
+          <br><br>
           <p><b>Paanalizuokite savo veiklos socialinės atsakomybės ir darnios plėtros aspektus.</b></p>
 
           <div class="form-row">
@@ -2464,7 +2502,6 @@
               <textarea type="text" class="form-control " rows="1" name="kV5_KT02analize" autocomplete="off"><%=user.destytojas.kV5_KT02.analize%></textarea>
             </div>
           </div>
-
 
           <div class="row">
             <div class="text-center">
@@ -2478,7 +2515,10 @@
   </div>
 </div>
 
-<%- include('partials/footer') %>
+
+
+
+<!-- ---ALL SCRIPTS--- -->
 <!-- kD1_K01 -->
 <!-- 2 table -->
 <script>
@@ -2492,7 +2532,6 @@
     div++;
     document.getElementById(bendr).innerHTML +=
       `
-
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center " rows="1" name="nr` + value1 + `" placeholder="" autocomplete="off" value="` + value1 + `" readonly="readonly">
@@ -2588,49 +2627,6 @@
     }
   }
 </script>
-<!-- nD2_M03 -->
-<!-- 8 table -->
-<script>
-  var value5 = document.getElementById("yond9").value;
-  value5++;
-  var div5 = 1;
-  var asd5 = "add_to_me05";
-
-  function m03() {
-    var bendr5 = asd5 + div5;
-    div5++;
-    document.getElementById(bendr5).innerHTML +=
-      `
-      <div class="form-row">
-                <div class="col-md-1 mb-3">
-                  <input type="text"  class="form-control text-center" name="nD2_M03nr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr` + value5 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-5 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad` + value5 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
-                <div class="col-md-2 mb-3">
-                  <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit` + value5 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-                </div>
-              </div>
-              <div id="add_to_me05` + div5 + `">
-              `;
-    document.getElementById("yond9").value = value5;
-    value5++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
 <!-- nD2_M04 -->
 <!-- 4 table. -->
 <script>
@@ -2678,7 +2674,7 @@
   }
 </script>
 <!-- nD2_D01 -->
-<!-- 5 lentelė.  -->
+<!-- 5 table.  -->
 <script>
   var value7 = document.getElementById("yond13").value;
   value7++;
@@ -2809,6 +2805,49 @@
     }
   }
 </script>
+<!-- nD2_M03 -->
+<!-- 8 table -->
+<script>
+  var value5 = document.getElementById("yond9").value;
+  value5++;
+  var div5 = 1;
+  var asd5 = "add_to_me05";
+
+  function m03() {
+    var bendr5 = asd5 + div5;
+    div5++;
+    document.getElementById(bendr5).innerHTML +=
+      `
+      <div class="form-row">
+                <div class="col-md-1 mb-3">
+                  <input type="text"  class="form-control text-center" name="nD2_M03nr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr` + value5 + `" placeholder="" autocomplete="off"></textarea>
+                </div>
+                <div class="col-md-5 mb-3">
+                  <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad` + value5 + `" placeholder="" autocomplete="off"></textarea>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit` + value5 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                </div>
+              </div>
+              <div id="add_to_me05` + div5 + `">
+              `;
+    document.getElementById("yond9").value = value5;
+    value5++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
 <!-- nD2_S01 -->
 <!-- 9 table  -->
 <script>
@@ -2889,7 +2928,7 @@
   }
 </script>
 <!-- tMTEP3_T01 -->
-<!-- 10 lentelė.  -->
+<!-- 10 table.  -->
 <script>
   var value12 = document.getElementById("yond23").value;
   value12++;
@@ -2946,7 +2985,7 @@
   }
 </script>
 <!-- TMTEP3_T02 -->
-<!-- 11 lentelė -->
+<!-- 11 table -->
 <script>
   var value13 = document.getElementById("yond25").value;
   value13++;
@@ -3344,7 +3383,7 @@
   }
 </script>
 <!-- TMTEP3_T08 -->
-<!-- 17 lentelė.  -->
+<!-- 17 table.  -->
 <script>
   var value19 = document.getElementById("yond37").value;
   value19++;
@@ -3403,7 +3442,7 @@
   }
 </script>
 <!-- TMTEP3_T09 -->
-<!-- 18 lentelė.  -->
+<!-- 18 table.  -->
 <script>
   var value20 = document.getElementById("yond39").value;
   value20++;
@@ -3462,7 +3501,7 @@
   }
 </script>
 <!-- TMTEP3_T10 -->
-<!-- 19 lentelė.  -->
+<!-- 19 table.  -->
 <script>
   var value21 = document.getElementById("yond41").value;
   value21++;
@@ -3529,7 +3568,7 @@
   }
 </script>
 <!-- TMTEP3_T11 -->
-<!-- 20 lentelė.  -->
+<!-- 20 table.  -->
 <script>
   var value22 = document.getElementById("yond43").value;
   value22++;
@@ -3596,7 +3635,7 @@
   }
 </script>
 <!-- TMTEP3_T12 -->
-<!-- 21 lentelė.  -->
+<!-- 21 table.  -->
 <script>
   var value23 = document.getElementById("yond45").value;
   value23++;
@@ -3638,7 +3677,7 @@
   }
 </script>
 <!-- TMTEP3_T13 -->
-<!-- 22 lentelė.  -->
+<!-- 22 table.  -->
 <script>
   var value24 = document.getElementById("yond47").value;
   value24++;
@@ -3690,7 +3729,7 @@
   }
 </script>
 <!-- TMTEP3_T14 -->
-<!-- 23 lentelė.  -->
+<!-- 23 table.  -->
 <script>
   var value25 = document.getElementById("yond49").value;
   value25++;
@@ -3778,7 +3817,7 @@
 </script>
 <!-- KV01-->
 <!-- 24 table.  -->
-      <!-- Mokymo(si)_komp -->
+<!-- Mokymo(si)_komp -->
 <script>
   var value59 = document.getElementById("new5").value;
   value59++;
@@ -3823,6 +3862,7 @@
     }
   }
 </script>
+<!-- 24 table 2-->
 <!-- Tyrimų_komp -->
 <script>
 var value60 =  document.getElementById("new7").value;
@@ -3868,6 +3908,7 @@ function tyrimu() {
   }
 }
 </script>
+<!-- 24 table 3-->
 <!-- Bendrosios_komp -->
 <script>
 var value61 = document.getElementById("new9").value;
@@ -3913,6 +3954,7 @@ function bendrosios() {
   }
 }
 </script>
+<!-- 24 table 4-->
 <!-- Dalykinės_komp -->
 <script>
 var value62 =  document.getElementById("new11").value;
@@ -3958,7 +4000,6 @@ function dalykines() {
   }
 }
 </script>
-
 <!-- 25 table -->
 <script>
   var value63 = document.getElementById("new13").value; // pagal id
@@ -4002,6 +4043,7 @@ function dalykines() {
     }
   }
 </script>
+<!--kTOV4_26-->
 <!-- 26 table -->
 <script>
   var value64 = document.getElementById("new15").value; // pagal id
@@ -4048,6 +4090,7 @@ function dalykines() {
     }
   }
 </script>
+<!--kTOV4_KV03-->
 <!-- 27 table -->
 <script>
   var value27 = document.getElementById("yond53").value;
@@ -4094,7 +4137,8 @@ function dalykines() {
     }
   }
 </script>
-      <!-- 28.1. table  -->
+<!-- kTOV4_O01_1 -->
+<!-- 28.1. table  -->
 <script>
   var value28 = document.getElementById("yond55").value;
   value28++;
@@ -4134,6 +4178,7 @@ function dalykines() {
     }
   }
 </script>
+<!-- kTOV4_O01_2 -->
   <!-- 28.2.table  -->
 <script>
   var value29 = document.getElementById("yond57").value;
@@ -4189,6 +4234,47 @@ function dalykines() {
     }
   }
 </script>
+<!--kTOV4_29-->
+<!-- 29 table  -->
+<script>
+  var value65 = document.getElementById("new17").value;
+  value65++;
+  var div65 = 1;
+  var asd65 = "add_to_meN09";
+
+  function kTOV4_29() {
+    var bendr65 = asd65 + div65;
+    div65++;
+    document.getElementById(bendr65).innerHTML +=
+      `
+      <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
+            </div>
+            <div class="col-md-6 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+            <div class="col-md-5 mb-3">
+              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris` + value65 + `" placeholder="" autocomplete="off"></textarea>
+            </div>
+          </div>
+                <div id="add_to_meN09` + div65 + `">
+                  </div>
+              `;
+    document.getElementById("new17").value = value65;
+    value65++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+</script>
 <!-- kTOV4_S -->
 <script>
   var value30 = document.getElementById("yond59").value;
@@ -4228,7 +4314,7 @@ function dalykines() {
     }
   }
 </script>
-
+<!-- kV5_KT02 -->
 <!-- 30 table -->
 <script>
   var value32 = document.getElementById("yond63").value;
@@ -4274,6 +4360,7 @@ function dalykines() {
     }
   }
 </script>
+<!-- kV5_KT01 -->
 <!-- 31 table -->
 <script>
   var value31 = document.getElementById("yond61").value;
@@ -4513,7 +4600,7 @@ function dalykines() {
     }
   }
 </script>
-
+<!-- kV5_33 -->
 <!-- 33 table -->
 <script>
   var value71 = document.getElementById("new29").value;
@@ -4578,7 +4665,7 @@ function dalykines() {
     }
   }
 </script>
-
+<!-- kV5_34 -->
 <!-- 34 table -->
 <script>
   var value72 =  document.getElementById("new31").value;
@@ -4643,8 +4730,23 @@ function dalykines() {
   }
 </script>
 
+<!-- textarea size -->
+<script>
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
+  }
 
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+</script>
 
+<!-- CALCULATIONS -->
+
+<!-- nD2 -->
 <script>
   function calc() {
 
@@ -4677,6 +4779,7 @@ function dalykines() {
     document.getElementById("atlikta").value = atliktanum;
   }
 </script>
+<!-- tMTEP3 -->
 <script>
   function calc2() {
 
@@ -4710,6 +4813,7 @@ function dalykines() {
     document.getElementById("atlikta2").value = atliktanum2;
   }
 </script>
+<!-- kTOV4 -->
 <script>
   function calc3() {
 
@@ -4730,7 +4834,8 @@ function dalykines() {
     document.getElementById("atlikta3").value = atliktanum3;
   }
 </script>
-
+<!-- kD1_K01 -->
+<!-- 2 table -->
 <script>
   function calc4() {
 
@@ -4750,1007 +4855,34 @@ function dalykines() {
       atliktanum4 = atliktanum4 + num001;
     }
 
+    document.getElementById("planuota4").value = planuotanum4;
+    document.getElementById("atlikta4").value = atliktanum4;
+  }
+</script>
+  <!-- kTOV4_KV01 -->
+  <!-- 24 lentelė.  -->
+<script>
+  function calc24() {
+
+    var planuotanum4 = 0;
+    var atliktanum4 = 0;
+    var plan = "plan";
+    var atl = "atl";
+    for (let zx = 1; zx <= value1 - 1; zx++) {
+      var bendras = plan + zx;
+      var bendras2 = atl + zx;
+
+      var num00 = document.getElementById(bendras).value;
+      var num01 = document.getElementById(bendras2).value;
+      var num000 = parseFloat(num00) || 0;
+      var num001 = parseFloat(num01) || 0;
+      planuotanum4 = planuotanum4 + num000;
+      atliktanum4 = atliktanum4 + num001;
+    }
 
     document.getElementById("planuota4").value = planuotanum4;
     document.getElementById("atlikta4").value = atliktanum4;
   }
 </script>
 
-<!-- OLD neneaudojami scriptai-->
-<script>
-  var value33 = document.getElementById("yond65").value;
-  value33++;
-  var div33 = 1;
-  var asd33 = "add_to_me33";
-
-  function kv01dstaz() {
-    var bendr33 = asd33 + div33;
-    div33++;
-    document.getElementById(bendr33).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykStazuotespavad` + value33 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykStazuotespazymNr` + value33 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01dalykStazuotestrukmeVal` + value33 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me33` + div33 + `">
-                `;
-    document.getElementById("yond65").value = value33;
-    value33++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value34 = document.getElementById("yond67").value;
-  value34++;
-  var div34 = 1;
-  var asd34 = "add_to_me34";
-
-  function kv01dsem() {
-    var bendr34 = asd34 + div34;
-    div34++;
-    document.getElementById(bendr34).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykSeminaraipavad` + value34 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykSeminaraipazymNr` + value34 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01dalykSeminaraitrukmeVal` + value34 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me34` + div34 + `">
-                `;
-    document.getElementById("yond67").value = value34;
-    value34++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value35 = document.getElementById("yond69").value;
-  value35++;
-  var div35 = 1;
-  var asd35 = "add_to_me35";
-
-  function kv01dkonf() {
-    var bendr35 = asd35 + div35;
-    div35++;
-    document.getElementById(bendr35).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykKonfpavad` + value35 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykKonfpazymNr` + value35 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01dalykKonftrukmeVal` + value35 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me35` + div35 + `">
-                `;
-    document.getElementById("yond69").value = value35;
-    value35++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value36 = document.getElementById("yond71").value;
-  value36++;
-  var div36 = 1;
-  var asd36 = "add_to_me36";
-
-  function kv01dkurs() {
-    var bendr36 = asd36 + div36;
-    div36++;
-    document.getElementById(bendr36).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykKursaipavad` + value36 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01dalykKursaipazymNr` + value36 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01dalykKursaitrukmeVal` + value36 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me36` + div36 + `">
-                `;
-    document.getElementById("yond71").value = value36;
-    value36++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value37 = document.getElementById("yond73").value;
-  value37++;
-  var div37 = 1;
-  var asd37 = "add_to_me37";
-
-  function kv01didakstaz() {
-    var bendr37 = asd37 + div37;
-    div37++;
-    document.getElementById(bendr37).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakStazuotespavad` + value37 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakStazuotespazymNr` + value37 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01didakStazuotestrukmeVal` + value37 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me37` + div37 + `">
-                `;
-    document.getElementById("yond73").value = value37;
-    value37++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value38 = document.getElementById("yond75").value;
-  value38++;
-  var div38 = 1;
-  var asd38 = "add_to_me38";
-
-  function kv01didaksem() {
-    var bendr38 = asd38 + div38;
-    div38++;
-    document.getElementById(bendr38).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakSeminaraipavad` + value38 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakSeminaraipazymNr` + value38 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01didakSeminaraitrukmeVal` + value38 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me38` + div38 + `">
-                `;
-    document.getElementById("yond75").value = value38;
-    value38++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value39 = document.getElementById("yond77").value;
-  value39++;
-  var div39 = 1;
-  var asd39 = "add_to_me39";
-
-  function kv01didakkonf() {
-    var bendr39 = asd39 + div39;
-    div39++;
-    document.getElementById(bendr39).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakKonfpavad` + value39 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakKonfpazymNr` + value39 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01didakKonftrukmeVal` + value39 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me39` + div39 + `">
-                `;
-    document.getElementById("yond77").value = value39;
-    value39++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value40 = document.getElementById("yond79").value;
-  value40++;
-  var div40 = 1;
-  var asd40 = "add_to_me40";
-
-  function kv01didakkurs() {
-    var bendr40 = asd40 + div40;
-    div40++;
-    document.getElementById(bendr40).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakKursaipavad` + value40 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01didakKursaipazymNr` + value40 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01didakKursaitrukmeVal` + value40 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me40` + div40 + `">
-                `;
-    document.getElementById("yond79").value = value40;
-    value40++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value41 = document.getElementById("yond81").value;
-  value41++;
-  var div41 = 1;
-  var asd41 = "add_to_me41";
-
-  function kv01bstaz() {
-    var bendr41 = asd41 + div41;
-    div41++;
-    document.getElementById(bendr41).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrStazuotespavad` + value41 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrStazuotespazymNr` + value41 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01bendrStazuotestrukmeVal` + value41 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me41` + div41 + `">
-                `;
-    document.getElementById("yond81").value = value41;
-    value41++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value42 = document.getElementById("yond83").value;
-  value42++;
-  var div42 = 1;
-  var asd42 = "add_to_me42";
-
-  function kv01bsem() {
-    var bendr42 = asd42 + div42;
-    div42++;
-    document.getElementById(bendr42).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrSeminaraipavad` + value42 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrSeminaraipazymNr` + value42 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01bendrSeminaraitrukmeVal` + value42 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me42` + div42 + `">
-                `;
-    document.getElementById("yond83").value = value42;
-    value42++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value43 = document.getElementById("yond85").value;
-  value43++;
-  var div43 = 1;
-  var asd43 = "add_to_me43";
-
-  function kv01bkonf() {
-    var bendr43 = asd43 + div43;
-    div43++;
-    document.getElementById(bendr43).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrKonfpavad` + value43 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrKonfpazymNr` + value43 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01bendrKonftrukmeVal` + value43 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me43` + div43 + `">
-                `;
-    document.getElementById("yond85").value = value43;
-    value43++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value44 = document.getElementById("yond87").value;
-  value44++;
-  var div44 = 1;
-  var asd44 = "add_to_me44";
-
-  function kv01bkurs() {
-    var bendr44 = asd44 + div44;
-    div44++;
-    document.getElementById(bendr44).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrKursaipavad` + value44 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV01bendrKursaipazymNr` + value44 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV01bendrKursaitrukmeVal` + value44 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me44` + div44 + `">
-                `;
-    document.getElementById("yond87").value = value44;
-    value44++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value45 = document.getElementById("yond89").value;
-  value45++;
-  var div45 = 1;
-  var asd45 = "add_to_me45";
-
-  function kv02dstaz() {
-    var bendr45 = asd45 + div45;
-    div45++;
-    document.getElementById(bendr45).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykStazuotespavad` + value45 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykStazuotespazymNr` + value45 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02dalykStazuotestrukmeVal` + value45 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me45` + div45 + `">
-                `;
-    document.getElementById("yond89").value = value45;
-    value45++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value46 = document.getElementById("yond91").value;
-  value46++;
-  var div46 = 1;
-  var asd46 = "add_to_me46";
-
-  function kv02dsem() {
-    var bendr46 = asd46 + div46;
-    div46++;
-    document.getElementById(bendr46).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykSeminaraipavad` + value46 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykSeminaraipazymNr` + value46 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02dalykSeminaraitrukmeVal` + value46 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me46` + div46 + `">
-                `;
-    document.getElementById("yond91").value = value46;
-    value46++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value47 = document.getElementById("yond93").value;
-  value47++;
-  var div47 = 1;
-  var asd47 = "add_to_me47";
-
-  function kv02dkonf() {
-    var bendr47 = asd47 + div47;
-    div47++;
-    document.getElementById(bendr47).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykKonfpavad` + value47 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykKonfpazymNr` + value47 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02dalykKonftrukmeVal` + value47 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me47` + div47 + `">
-                `;
-    document.getElementById("yond93").value = value47;
-    value47++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value48 = document.getElementById("yond95").value;
-  value48++;
-  var div48 = 1;
-  var asd48 = "add_to_me48";
-
-  function kv02dkurs() {
-    var bendr48 = asd48 + div48;
-    div48++;
-    document.getElementById(bendr48).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykKursaipavad` + value48 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02dalykKursaipazymNr` + value48 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02dalykKursaitrukmeVal` + value48 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me48` + div48 + `">
-                `;
-    document.getElementById("yond95").value = value48;
-    value48++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value49 = document.getElementById("yond97").value;
-  value49++;
-  var div49 = 1;
-  var asd49 = "add_to_me49";
-
-  function kv02didakstaz() {
-    var bendr49 = asd49 + div49;
-    div49++;
-    document.getElementById(bendr49).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakStazuotespavad` + value49 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakStazuotespazymNr` + value49 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02didakStazuotestrukmeVal` + value49 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me49` + div49 + `">
-                `;
-    document.getElementById("yond97").value = value49;
-    value49++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value50 = document.getElementById("yond99").value;
-  value50++;
-  var div50 = 1;
-  var asd50 = "add_to_me50";
-
-  function kv02didaksem() {
-    var bendr50 = asd50 + div50;
-    div50++;
-    document.getElementById(bendr50).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakSeminaraipavad` + value50 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakSeminaraipazymNr` + value50 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02didakSeminaraitrukmeVal` + value50 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me50` + div50 + `">
-                `;
-    document.getElementById("yond99").value = value50;
-    value50++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value51 = document.getElementById("yond101").value;
-  value51++;
-  var div51 = 1;
-  var asd51 = "add_to_me51";
-
-  function kv02didakkonf() {
-    var bendr51 = asd51 + div51;
-    div51++;
-    document.getElementById(bendr51).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakKonfpavad` + value51 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakKonfpazymNr` + value51 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02didakKonftrukmeVal` + value51 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me51` + div51 + `">
-                `;
-    document.getElementById("yond101").value = value51;
-    value51++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value52 = document.getElementById("yond103").value;
-  value52++;
-  var div52 = 1;
-  var asd52 = "add_to_me52";
-
-  function kv02didakkurs() {
-    var bendr52 = asd52 + div52;
-    div52++;
-    document.getElementById(bendr52).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakKursaipavad` + value52 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02didakKursaipazymNr` + value52 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02didakKursaitrukmeVal` + value52 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me52` + div52 + `">
-                `;
-    document.getElementById("yond103").value = value52;
-    value52++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value53 = document.getElementById("yond105").value;
-  value53++;
-  var div53 = 1;
-  var asd53 = "add_to_me53";
-
-  function kv02bstaz() {
-    var bendr53 = asd53 + div53;
-    div53++;
-    document.getElementById(bendr53).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrStazuotespavad` + value53 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrStazuotespazymNr` + value53 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02bendrStazuotestrukmeVal` + value53 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me53` + div53 + `">
-                `;
-    document.getElementById("yond105").value = value53;
-    value53++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value54 = document.getElementById("yond107").value;
-  value54++;
-  var div54 = 1;
-  var asd54 = "add_to_me54";
-
-  function kv02bsem() {
-    var bendr54 = asd54 + div54;
-    div54++;
-    document.getElementById(bendr54).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrSeminaraipavad` + value54 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrSeminaraipazymNr` + value54 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02bendrSeminaraitrukmeVal` + value54 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me54` + div54 + `">
-                `;
-    document.getElementById("yond107").value = value54;
-    value54++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value55 = document.getElementById("yond109").value;
-  value55++;
-  var div55 = 1;
-  var asd55 = "add_to_me55";
-
-  function kv02bkonf() {
-    var bendr55 = asd55 + div55;
-    div55++;
-    document.getElementById(bendr55).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrKonfpavad` + value55 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrKonfpazymNr` + value55 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02bendrKonftrukmeVal` + value55 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me55` + div55 + `">
-                `;
-    document.getElementById("yond109").value = value55;
-    value55++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var value56 = document.getElementById("yond111").value;
-  value56++;
-  var div56 = 1;
-  var asd56 = "add_to_me56";
-
-  function kv02bkurs() {
-    var bendr56 = asd56 + div56;
-    div56++;
-    document.getElementById(bendr56).innerHTML +=
-      `
-        <div class="form-row">
-        <div class="col-md-2 mb-3">
-          <label for=""></label>
-        </div>
-        <div class="col-md-5 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrKursaipavad` + value56 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kTOV4_KV02bendrKursaipazymNr` + value56 + `" autocomplete="off"></textarea>
-        </div>
-        <div class="col-md-2 mb-3">
-          <input type="number" class="form-control text-center" name="kTOV4_KV02bendrKursaitrukmeVal` + value56 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
-        </div>
-      </div>
-                <div id="add_to_me56` + div56 + `">
-                `;
-    document.getElementById("yond111").value = value56;
-    value56++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-</script>
-<script>
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  }
-</script>
 <%- include('partials/footer') %>
