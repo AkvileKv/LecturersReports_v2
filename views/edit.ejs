@@ -1899,7 +1899,7 @@
             </div>
           </div>
           <% }) %>
-          <input type="hidden" id="new13" name="yond_25n" value="<%=numb_25%>">
+          <input type="hidden" id="new13" name="new14" value="<%=numb_25%>">
           <div id="add_to_meN071">
 
           </div>
@@ -1946,7 +1946,7 @@
             </div>
           </div>
           <% }) %>
-          <input type="hidden" id="new15" name="yond_26n" value="<%=numb_26%>">
+          <input type="hidden" id="new15" name="new16" value="<%=numb_26%>">
           <div id="add_to_meN081">
 
           </div>
@@ -2320,7 +2320,7 @@
           <%  user.destytojas.kV5_32.lietValstybPuosel.forEach(function(user){ %>
           <% numb32_3++ %>
           <% if (numb32_3==1) {%>
-          <div class="form-row">
+          <div class="form-row">readonly="readonly"
             <div class="col-md-3 mb-3">
               <label for="">Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas</label>
             </div>
@@ -2496,12 +2496,11 @@
           <div id="add_to_meN161">
           </div>
           <button class="plus-button" type="button" onclick="kV5_34()">+</button>
-          <br><br>
-          <p><b>Paanalizuokite savo veiklos socialinės atsakomybės ir darnios plėtros aspektus.</b></p>
 
+          <p class="font-weight-bold"> <br><br>Kita informacija:</p>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <textarea type="text" class="form-control " rows="1" name="kV5_KT02analize" autocomplete="off"><%=user.destytojas.kV5_KT02.analize%></textarea>
+              <textarea type="text" rows="1" class="form-control " name="kV5_kitaInfo" autocomplete="off"><%=user.destytojas.kV5_kitaInfo%></textarea>
             </div>
           </div>
 
