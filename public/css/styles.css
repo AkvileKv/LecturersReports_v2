@@ -70,22 +70,9 @@ footer {
   white-space: pre;
   white-space: pre-wrap;
 }
-  /* #print_helper1, #print_helper2, #print_helper3, #print_helper4, #print_helper5,
-  #print_helper6, #print_helper7, #print_helper8, #print_helper9, #print_helper10,
-  #print_helper11 {
-    display: block;
-    overflow: visible;
-    white-space: pre;
-    white-space: pre-wrap;
-  } */
 .the_textarea {
   display: none;
 }
-  /* #the_textarea1, #the_textarea2, #the_textarea3, #the_textarea4, #the_textarea5,
-  #the_textarea6, #the_textarea7, #the_textarea8, #the_textarea9, #the_textarea10,
-  #the_textarea11 {
-    display: none;
-  }*/
 }
 
 @media screen {
@@ -96,11 +83,6 @@ footer {
   {
     display: none;
   }
-  /* #print_helper1, #print_helper2, #print_helper3, #print_helper4, #print_helper5,
-  #print_helper6, #print_helper7, #print_helper8, #print_helper9, #print_helper10,
-  #print_helper11 {
-    display: none;
-  }*/
 }
 
 
