@@ -327,6 +327,7 @@ app.post("/create", function(req, res) {
           var kV5_32valstybaprasymascommand = "req.body.kV5_32valstybaprasymas";
           var kV5_32etnoaprasymascommand = "req.body.kV5_32etnoaprasymas";
           var kV5_32savaprasymascommand = "req.body.kV5_32savaprasymas";
+
           var kV5_33veiklacommand = "req.body.kV5_33veikla";
           var kV5_33veiklPartnercommand = "req.body.kV5_33veiklPartner";
           var kV5_33organizaccommand = "req.body.kV5_33organizac";
@@ -334,6 +335,7 @@ app.post("/create", function(req, res) {
           var kV5_33dalyviaicommand = "req.body.kV5_33dalyviai";
           var kV5_33laikascommand = "req.body.kV5_33laikas";
           var kV5_33vietacommand = "req.body.kV5_33vieta";
+
           var kV5_34pavadinimascommand = "req.body.kV5_34pavadinimas";
           var kV5_34vykdytPartnercommand = "req.body.kV5_34vykdytPartner";
           var kV5_34dalyviaicommand = "req.body.kV5_34dalyviai";
@@ -1425,6 +1427,7 @@ app.post("/update", (req, res) => {
         var kV5_32valstybaprasymascommand = "req.body.kV5_32valstybaprasymas";
         var kV5_32etnoaprasymascommand = "req.body.kV5_32etnoaprasymas";
         var kV5_32savaprasymascommand = "req.body.kV5_32savaprasymas";
+
         var kV5_33veiklacommand = "req.body.kV5_33veikla";
         var kV5_33veiklPartnercommand = "req.body.kV5_33veiklPartner";
         var kV5_33organizaccommand = "req.body.kV5_33organizac";
@@ -1432,6 +1435,7 @@ app.post("/update", (req, res) => {
         var kV5_33dalyviaicommand = "req.body.kV5_33dalyviai";
         var kV5_33laikascommand = "req.body.kV5_33laikas";
         var kV5_33vietacommand = "req.body.kV5_33vieta";
+
         var kV5_34pavadinimascommand = "req.body.kV5_34pavadinimas";
         var kV5_34vykdytPartnercommand = "req.body.kV5_34vykdytPartner";
         var kV5_34dalyviaicommand = "req.body.kV5_34dalyviai";
@@ -2121,7 +2125,6 @@ app.post("/update", (req, res) => {
             data: joinedkTOV4_26data
           })
         }
-
         for (let aa = 1; aa <= parseInt(req.body.yond54); aa++) {
           var kTOV4_KV03nriteracija = kTOV4_KV03nrcommand + aa;
           var kTOV4_KV03salisiteracija = kTOV4_KV03saliscommand + aa;
@@ -2567,6 +2570,7 @@ app.post("/submit", function(req, res) {
         var kV5_32valstybaprasymascommand = "req.body.kV5_32valstybaprasymas";
         var kV5_32etnoaprasymascommand = "req.body.kV5_32etnoaprasymas";
         var kV5_32savaprasymascommand = "req.body.kV5_32savaprasymas";
+
         var kV5_33veiklacommand = "req.body.kV5_33veikla";
         var kV5_33veiklPartnercommand = "req.body.kV5_33veiklPartner";
         var kV5_33organizaccommand = "req.body.kV5_33organizac";
@@ -2574,6 +2578,7 @@ app.post("/submit", function(req, res) {
         var kV5_33dalyviaicommand = "req.body.kV5_33dalyviai";
         var kV5_33laikascommand = "req.body.kV5_33laikas";
         var kV5_33vietacommand = "req.body.kV5_33vieta";
+
         var kV5_34pavadinimascommand = "req.body.kV5_34pavadinimas";
         var kV5_34vykdytPartnercommand = "req.body.kV5_34vykdytPartner";
         var kV5_34dalyviaicommand = "req.body.kV5_34dalyviai";
@@ -3235,7 +3240,7 @@ app.post("/submit", function(req, res) {
             var joinedkTOV4_mokymopazymNr = eval(kTOV4_mokymopazymNri);
             var joinedkTOV4_mokymotrukmeValLT = eval(kTOV4_mokymotrukmeValLTi);
             var joinedkTOV4_mokymotrukmeValNeLT = eval(kTOV4_mokymotrukmeValNeLTi);
-            if (kTOV4_mokymopavad != "" || joinedtMTEP3_T14veiklPobud != ""
+            if (joinedkTOV4_mokymopavad != "" || joinedtMTEP3_T14veiklPobud != ""
             || joinedtMTEP3_T14dataVieta != "") {
             foundUser.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
               nr: i,
@@ -3295,6 +3300,8 @@ app.post("/submit", function(req, res) {
             var kTOV4_dalykpazymNr = eval(kTOV4_dalykpazymNri);
             var joinedkTOV4_dalyktrukmeValLT = eval(kTOV4_dalyktrukmeValLTi);
             var joinedkTOV4_dalyktrukmeValNeLT = eval(kTOV4_dalyktrukmeValNeLTi);
+            if (kTOV4_dalykpavad != "" || kTOV4_dalykpazymNr != "" || joinedkTOV4_dalyktrukmeValLT != ""
+            || joinedkTOV4_dalyktrukmeValNeLT != "") {
             foundUser.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
               nr: i,
               pavadinimas: kTOV4_dalykpavad,
@@ -3303,6 +3310,7 @@ app.post("/submit", function(req, res) {
               trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
             })
           }
+        }
           foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
           foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
 
@@ -3321,6 +3329,7 @@ app.post("/submit", function(req, res) {
               kompGrupe: joinedkTOV4_25kompGrupe,
               skirta: joinedkTOV4_25skirta
             })
+          }
           }
           for (let i = 1; i <= parseInt(req.body.new16); i++) {
             var kTOV4_26imonIstaigi = kTOV4_26imonIstaigcommand + i;
@@ -3341,19 +3350,24 @@ app.post("/submit", function(req, res) {
               data: joinedkTOV4_26data
             })
           }
+          }
           // baigta
         for (let aa = 1; aa <= parseInt(req.body.yond54); aa++) {
           var kTOV4_KV03nriteracija = kTOV4_KV03nrcommand + aa;
           var kTOV4_KV03salisiteracija = kTOV4_KV03saliscommand + aa;
           var kTOV4_KV03institucijaiteracija = kTOV4_KV03institucijacommand + aa;
           var kTOV4_KV03dalykasiteracija = kTOV4_KV03dalykascommand + aa;
+          var kTOV4_KV03studKryptisiteracija = kTOV4_KV03studKryptiscommand + aa;
           var joinedkTOV4_KV03nr = eval(kTOV4_KV03nriteracija);
           var joinedkTOV4_KV03salis = eval(kTOV4_KV03salisiteracija);
           var joinedkTOV4_KV03institucija = eval(kTOV4_KV03institucijaiteracija);
           var joinedkTOV4_KV03dalykas = eval(kTOV4_KV03dalykasiteracija);
-          if (joinedkTOV4_KV03salis != "" || joinedkTOV4_KV03institucija != "" || joinedkTOV4_KV03dalykas != "") {
+          var joinedkTOV4_KV03studKryptis = eval(kTOV4_KV03studKryptisiteracija);
+          if (joinedkTOV4_KV03studKryptis != "" || joinedkTOV4_KV03salis != "" ||
+          joinedkTOV4_KV03institucija != "" || joinedkTOV4_KV03dalykas != "") {
             foundUser.destytojas.kTOV4_KV03.push({
               nr: joinedkTOV4_KV03nr,
+              studKryptis: joinedkTOV4_KV03studKryptis,
               salis: joinedkTOV4_KV03salis,
               institucija: joinedkTOV4_KV03institucija,
               dalykas: joinedkTOV4_KV03dalykas
@@ -3377,25 +3391,39 @@ app.post("/submit", function(req, res) {
         }
         for (let ac = 1; ac <= parseInt(req.body.yond58); ac++) {
           var kTOV4_O01_2nriteracija = kTOV4_O01_2nrcommand + ac;
+          var kTOV4_O01_2destytojasi = kTOV4_O01_2destytojascommand + ac;
           var kTOV4_O01_2veiklPobuditeracija = kTOV4_O01_2veiklPobudcommand + ac;
           var kTOV4_O01_2dataVietaiteracija = kTOV4_O01_2dataVietacommand + ac;
-          var kTOV4_O01_2dalyvSkiteracija = kTOV4_O01_2dalyvSkcommand + ac;
           var kTOV4_O01_2ktKomentaraiiteracija = kTOV4_O01_2ktKomentaraicommand + ac;
           var joinedkTOV4_O01_2nr = eval(kTOV4_O01_2nriteracija);
+          var joinedkTOV4_O01_2destytojas = eval(kTOV4_O01_2destytojasi);
           var joinedkTOV4_O01_2veiklPobud = eval(kTOV4_O01_2veiklPobuditeracija);
           var joinedkTOV4_O01_2dataVieta = eval(kTOV4_O01_2dataVietaiteracija);
-          var joinedkTOV4_O01_2dalyvSk = eval(kTOV4_O01_2dalyvSkiteracija);
           var joinedkTOV4_O01_2ktKomentarai = eval(kTOV4_O01_2ktKomentaraiiteracija);
-          if (joinedkTOV4_O01_2veiklPobud != "" || joinedkTOV4_O01_2dataVieta != "" || joinedkTOV4_O01_2dalyvSk != "" || joinedkTOV4_O01_2ktKomentarai != "") {
+          if (joinedkTOV4_O01_2destytojas != "" || joinedkTOV4_O01_2veiklPobud != "" ||
+          joinedkTOV4_O01_2dataVieta != "" || joinedkTOV4_O01_2ktKomentarai != "") {
             foundUser.destytojas.kTOV4_O01.kTOV4_O01_2.push({
               nr: joinedkTOV4_O01_2nr,
+              destytojas: joinedkTOV4_O01_2destytojas,
               veiklPobud: joinedkTOV4_O01_2veiklPobud,
               dataVieta: joinedkTOV4_O01_2dataVieta,
-              dalyvSk: joinedkTOV4_O01_2dalyvSk,
               ktKomentarai: joinedkTOV4_O01_2ktKomentarai
             })
           }
         }
+        for (let i = 1; i <= parseInt(req.body.new18); i++) {
+          var kTOV4_29veiklai = kTOV4_29veiklacommand + i;
+          var kTOV4_29socPartnerisi = kTOV4_29socPartneriscommand + i;
+          var joinedkTOV4_29veikla = eval(kTOV4_29veiklai);
+          var joinedkTOV4_29socPartneris = eval(kTOV4_29socPartnerisi);
+          if (joinedkTOV4_29veikla != "" || joinedkTOV4_29socPartneris != "" ) {
+          foundUser.destytojas.kTOV4_29.push({
+            nr: i,
+            veikla: joinedkTOV4_29veikla,
+            socPartneris: joinedkTOV4_29socPartneris
+          })
+        }
+      }
         for (let ad = 1; ad <= parseInt(req.body.yond60); ad++) {
           var kTOV4_Snriteracija = kTOV4_Snrcommand + ad;
           var kTOV4_Sstiprybesiteracija = kTOV4_Sstiprybescommand + ad;
@@ -3413,18 +3441,22 @@ app.post("/submit", function(req, res) {
         }
         for (let ae = 1; ae <= parseInt(req.body.yond62); ae++) {
           var kV5_KT01nriteracija = kV5_KT01nrcommand + ae;
+          var kV5_KT01studKryptisi = kV5_KT01studKryptiscommand + ae;
           var kV5_KT01diplomantasiteracija = kV5_KT01diplomantascommand + ae;
           var kV5_KT01studProgriteracija = kV5_KT01studProgrcommand + ae;
           var kV5_KT01darboTemaiteracija = kV5_KT01darboTemacommand + ae;
           var kV5_KT01uzsakovasiteracija = kV5_KT01uzsakovascommand + ae;
           var joinedkV5_KT01nr = eval(kV5_KT01nriteracija);
+          var joinedkV5_KT01studKryptis = eval(kV5_KT01studKryptisi);
           var joinedkV5_KT01diplomantas = eval(kV5_KT01diplomantasiteracija);
           var joinedkV5_KT01studProgr = eval(kV5_KT01studProgriteracija);
           var joinedkV5_KT01darboTema = eval(kV5_KT01darboTemaiteracija);
           var joinedkV5_KT01uzsakovas = eval(kV5_KT01uzsakovasiteracija);
-          if (joinedkV5_KT01diplomantas != "" || joinedkV5_KT01studProgr != "" || joinedkV5_KT01darboTema != "" || joinedkV5_KT01uzsakovas != "") {
+          if (joinedkV5_KT01studKryptis != "" || joinedkV5_KT01diplomantas != "" || joinedkV5_KT01studProgr != ""
+          || joinedkV5_KT01darboTema != "" || joinedkV5_KT01uzsakovas != "") {
             foundUser.destytojas.kV5_KT01.push({
               nr: joinedkV5_KT01nr,
+              studKryptis: joinedkV5_KT01studKryptis,
               diplomantas: joinedkV5_KT01diplomantas,
               studProgr: joinedkV5_KT01studProgr,
               darboTema: joinedkV5_KT01darboTema,
@@ -3434,25 +3466,135 @@ app.post("/submit", function(req, res) {
         }
         for (let af = 1; af <= parseInt(req.body.yond64); af++) {
           var kV5_KT02nriteracija = kV5_KT02nrcommand + af;
+          var kV5_KT02studKryptisi = kV5_KT02studKryptiscommand + af;
           var kV5_KT02diplomantasiteracija = kV5_KT02diplomantascommand + af;
           var kV5_KT02studProgriteracija = kV5_KT02studProgrcommand + af;
           var kV5_KT02darboTemaiteracija = kV5_KT02darboTemacommand + af;
+          var joinedkV5_KT02studKryptis = eval(kV5_KT02studKryptisi);
           var joinedkV5_KT02nr = eval(kV5_KT02nriteracija);
           var joinedkV5_KT02diplomantas = eval(kV5_KT02diplomantasiteracija);
           var joinedkV5_KT02studProgr = eval(kV5_KT02studProgriteracija);
           var joinedkV5_KT02darboTema = eval(kV5_KT02darboTemaiteracija);
-          if (joinedkV5_KT02diplomantas != "" || joinedkV5_KT02studProgr != "" || joinedkV5_KT02darboTema != "") {
-            foundUser.destytojas.kV5_KT02.kV5_KT02_array.push({
+          if (joinedkV5_KT01studKryptis != "" || joinedkV5_KT02diplomantas != "" ||
+          joinedkV5_KT02studProgr != "" || joinedkV5_KT02darboTema != "") {
+            foundUser.destytojas.kV5_KT02.push({
               nr: joinedkV5_KT02nr,
+              studKryptis: joinedkV5_KT02studKryptis,
               diplomantas: joinedkV5_KT02diplomantas,
               studProgr: joinedkV5_KT02studProgr,
               darboTema: joinedkV5_KT02darboTema
             })
           }
         }
-        foundUser.destytojas.kV5_KT02.analize = req.body.kV5_KT02analize,
-          foundUser.updated_for = req.user.id,
-          foundUser.busena = req.body.ataskaitos_busena
+        // 32 table
+        for (let i = 1; i <= parseInt(req.body.new20); i++) {
+          var kV5_32socaprasymasi = kV5_32socaprasymascommand + i;
+          var joinedkV5_32socaprasymas = eval(kV5_32socaprasymasi);
+          if (joinedkV5_32socaprasymas != "" ) {
+          foundUser.destytojas.kV5_32.socAtskMaz.push({
+            aprasymas: joinedkV5_32socaprasymas
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new22); i++) {
+          var kV5_32aplinkaprasymasi = kV5_32aplinkaprasymascommand + i;
+          var joinedkV5_32aplinkaprasymas = eval(kV5_32aplinkaprasymasi);
+            if (joinedkV5_32aplinkaprasymas != "" ) {
+          foundUser.destytojas.kV5_32.aplinkosaugInic.push({
+            aprasymas: joinedkV5_32aplinkaprasymas
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new24); i++) {
+          var kV5_32valstybaprasymasi = kV5_32valstybaprasymascommand + i;
+          var joinedkV5_32valstybaprasymas = eval(kV5_32valstybaprasymasi);
+            if (joinedkV5_32valstybaprasymas != "" ) {
+          foundUser.destytojas.kV5_32.lietValstybPuosel.push({
+            aprasymas: joinedkV5_32valstybaprasymas
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new26); i++) {
+          var kV5_32etnoaprasymasi = kV5_32etnoaprasymascommand + i;
+          var joinedkV5_32etnoaprasymas = eval(kV5_32etnoaprasymasi);
+            if (joinedkV5_32etnoaprasymas != "" ) {
+          foundUser.destytojas.kV5_32.lietEtnokPuos.push({
+            aprasymas: joinedkV5_32etnoaprasymas
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new28); i++) {
+          var kV5_32savaprasymasi = kV5_32savaprasymascommand + i;
+          var joinedkV5_32savaprasymas = eval(kV5_32savaprasymasi);
+            if (joinedkV5_32savaprasymas != "" ) {
+          foundUser.destytojas.kV5_32.savanorystIniciatyv.push({
+            aprasymas: joinedkV5_32savaprasymas
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new30); i++) {
+          var kV5_33veiklai = kV5_33veiklacommand + i;
+          var kV5_33veiklPartneri = kV5_33veiklPartnercommand + i;
+          var kV5_33organizaci = kV5_33organizaccommand + i;
+          var kV5_33veiklOrientavimi = kV5_33veiklOrientavimcommand + i;
+          var kV5_33dalyviaii = kV5_33dalyviaicommand + i;
+          var kV5_33vietai = kV5_33vietacommand + i;
+          var kV5_33laikasi = kV5_33laikascommand + i
+
+          var joinedkV5_33veikla = eval(kV5_33veiklai);
+          var joinedkV5_33veiklPartner = eval(kV5_33veiklPartneri);
+          var joinedkV5_33organizac = eval(kV5_33organizaci);
+          var joinedkV5_33veiklOrientavim = eval(kV5_33veiklOrientavimi);
+          var joinedkV5_33dalyviai = eval(kV5_33dalyviaii);
+          var joinedkV5_33vieta = eval(kV5_33vietai);
+          var joinedkV5_33laikas = eval(kV5_33laikasi);
+
+          if (joinedkV5_33veikla != "" || joinedkV5_33veiklPartner != "" ||
+          joinedkV5_33organizac != "" || joinedkV5_33veiklOrientavim != ""
+          || joinedkV5_33dalyviai != "" || joinedkV5_33laikas != "" || joinedkV5_33vieta != "") {
+          foundUser.destytojas.kV5_33.push({
+            
+            veikla: joinedkV5_33veikla,
+            veiklPartner: joinedkV5_33veiklPartner,
+            organizac: joinedkV5_33organizac,
+            veiklOrientavim: joinedkV5_33veiklOrientavim,
+            dalyviai: joinedkV5_33dalyviai,
+            laikas: joinedkV5_33laikas,
+            vieta: joinedkV5_33vieta
+          })
+        }
+        }
+        for (let i = 1; i <= parseInt(req.body.new32); i++) {
+          var kV5_34pavadinimasi = kV5_34pavadinimascommand + i;
+          var kV5_34vykdytPartneri = kV5_34vykdytPartnercommand + i;
+          var kV5_34dalyviaii = kV5_34dalyviaicommand + i;
+          var kV5_34finansavimi = kV5_34finansavimcommand + i;
+          var kV5_34rezultataii = kV5_34rezultataicommand + i;
+          var kV5_34salisDatai = kV5_34salisDatacommand + i;
+          var joinedkV5_34pavadinimas = eval(kV5_34pavadinimasi);
+          var joinedkV5_34vykdytPartner = eval(kV5_34vykdytPartneri);
+          var joinedkV5_34dalyviai = eval(kV5_34dalyviaii);
+          var joinedkV5_34finansavim = eval(kV5_34finansavimi);
+          var joinedkV5_34rezultatai = eval(kV5_34rezultataii);
+          var joinedkV5_34salisData = eval(kV5_34salisDatai);
+          if (joinedkV5_34pavadinimas != "" || joinedkV5_34vykdytPartner != "" ||
+          joinedkV5_34dalyviai != "" || joinedkV5_34finansavim != ""
+          || joinedkV5_34rezultatai != "" || joinedkV5_34salisData != "") {
+          foundUser.destytojas.kV5_34.push({
+            nr: i,
+            pavadinimas: joinedkV5_34pavadinimas,
+            vykdytPartner: joinedkV5_34vykdytPartner,
+            dalyviai: joinedkV5_34dalyviai,
+            finansavim: joinedkV5_34finansavim,
+            rezultatai: joinedkV5_34rezultatai,
+            salisData: joinedkV5_34salisData
+          })
+        }
+        }
+        foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
+        foundUser.updated_for = req.user.id,
+        foundUser.busena = req.body.ataskaitos_busena
+
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");
