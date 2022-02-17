@@ -15,6 +15,9 @@ footer {
 #footer .container-fluid {
   padding-top: 0.8%;
 }
+a {
+  text-decoration: none;
+}
 
 .copyright {
   float: none;

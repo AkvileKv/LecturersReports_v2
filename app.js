@@ -1517,7 +1517,6 @@ app.post("/update", (req, res) => {
           var joinedsemestras = eval(semestrasiteracija);
           var joinedplanuotosVal = eval(planuotosValiteracija);
           var joinedatliktosVal = eval(atliktosValiteracija);
-            if (joineddalykas != "" || joinedgrupe != "" || joinedsemestras != "" || joinedplanuotosVal != "" || joinedatliktosVal != "") {
           foundUser.destytojas.kD1_K01.kD1_K01_array.push({
             nr: joinednr,
             dalykas: joineddalykas,
@@ -1526,7 +1525,6 @@ app.post("/update", (req, res) => {
             planuotosVal: joinedplanuotosVal,
             atliktosVal: joinedatliktosVal
           })
-        }
         }
         foundUser.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
           foundUser.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
@@ -2284,7 +2282,7 @@ app.post("/update", (req, res) => {
           var kV5_33veiklOrientavimi = kV5_33veiklOrientavimcommand + i;
           var kV5_33dalyviaii = kV5_33dalyviaicommand + i;
           var kV5_33vietai = kV5_33vietacommand + i;
-          var kV5_33laikasi = kV5_33laikascommand + i
+          var kV5_33laikasi = kV5_33laikascommand + i;
           var joinedkV5_33veikla = eval(kV5_33veiklai);
           var joinedkV5_33veiklPartner = eval(kV5_33veiklPartneri);
           var joinedkV5_33organizac = eval(kV5_33organizaci);
@@ -3240,8 +3238,8 @@ app.post("/submit", function(req, res) {
             var joinedkTOV4_mokymopazymNr = eval(kTOV4_mokymopazymNri);
             var joinedkTOV4_mokymotrukmeValLT = eval(kTOV4_mokymotrukmeValLTi);
             var joinedkTOV4_mokymotrukmeValNeLT = eval(kTOV4_mokymotrukmeValNeLTi);
-            if (joinedkTOV4_mokymopavad != "" || joinedtMTEP3_T14veiklPobud != ""
-            || joinedtMTEP3_T14dataVieta != "") {
+            if (joinedkTOV4_mokymopavad != "" || joinedkTOV4_mokymopazymNr != ""
+            || joinedkTOV4_mokymotrukmeValLT != "" || joinedkTOV4_mokymotrukmeValNeLT != "") {
             foundUser.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
               nr: i,
               pavadinimas: joinedkTOV4_mokymopavad,
@@ -3363,8 +3361,8 @@ app.post("/submit", function(req, res) {
           var joinedkTOV4_KV03institucija = eval(kTOV4_KV03institucijaiteracija);
           var joinedkTOV4_KV03dalykas = eval(kTOV4_KV03dalykasiteracija);
           var joinedkTOV4_KV03studKryptis = eval(kTOV4_KV03studKryptisiteracija);
-          if (joinedkTOV4_KV03studKryptis != "" || joinedkTOV4_KV03salis != "" ||
-          joinedkTOV4_KV03institucija != "" || joinedkTOV4_KV03dalykas != "") {
+          if (joinedkTOV4_KV03salis != "" || joinedkTOV4_KV03institucija != "" ||
+          joinedkTOV4_KV03dalykas != "" || joinedkTOV4_KV03studKryptis != "") {
             foundUser.destytojas.kTOV4_KV03.push({
               nr: joinedkTOV4_KV03nr,
               studKryptis: joinedkTOV4_KV03studKryptis,
@@ -3553,7 +3551,7 @@ app.post("/submit", function(req, res) {
           joinedkV5_33organizac != "" || joinedkV5_33veiklOrientavim != ""
           || joinedkV5_33dalyviai != "" || joinedkV5_33laikas != "" || joinedkV5_33vieta != "") {
           foundUser.destytojas.kV5_33.push({
-            
+
             veikla: joinedkV5_33veikla,
             veiklPartner: joinedkV5_33veiklPartner,
             organizac: joinedkV5_33organizac,
