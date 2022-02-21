@@ -938,16 +938,20 @@
               <input type="text" class="form-control text-center" name="tMTEP3_T04nr<%=numb15%>" placeholder="" autocomplete="off" value="<%=numb15%>" readonly="readonly">
             </div>
             <div class="col-md-4 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04uzsakovas<%=numb15%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04uzsakovas<%=numb15%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04tema<%=numb15%>" placeholder="" autocomplete="off"><%=user.tema%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04tema<%=numb15%>" placeholder="" autocomplete="off"><%=user.tema%></textarea>
             </div>
             <div class="col-md-2 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04data<%=numb15%>" placeholder="" autocomplete="off"><%=user.data%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04data<%=numb15%>" placeholder="" autocomplete="off"><%=user.data%></textarea>
             </div>
             <div class="col-md-2 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04atlygArNe<%=numb15%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+              <select name="tMTEP3_T04atlygArNe<%=numb15%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
             </div>
           </div>
 
@@ -992,7 +996,11 @@
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklRezult<%=numb16%>" placeholder="" autocomplete="off"><%=user.veiklRezult%></textarea>
             </div>
             <div class="col-md-2 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05atlygArNe<%=numb16%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+              <select name="tMTEP3_T05atlygArNe<%=numb16%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
             </div>
           </div>
           <% }) %>
@@ -1116,8 +1124,13 @@
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T06data<%=numb17%>" placeholder="" autocomplete="off"><%=user.data%></textarea>
             </div>
             <div class="col-md-2 mb-3">
+              <br>
               <label for="">Atlygintinai/ Neatlygintinai</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T06atlygArNe<%=numb17%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+              <select name="tMTEP3_T06atlygArNe<%=numb17%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
             </div>
           </div>
           <% }) %>
@@ -1161,18 +1174,23 @@
             <div class="col-md-1 mb-3">
             </div>
             <div class="col-md-5 mb-3">
-                <br>
+
               <label for=""> Atlikimo vieta, vieši įvertinimai</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlikVieta<%=numb18%>" placeholder="" autocomplete="off"><%=user.atlikVieta%></textarea>
             </div>
             <div class="col-md-4 mb-3">
-                <br>
+
               <label for="">Data</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07data<%=numb18%>" placeholder="" autocomplete="off"><%=user.data%></textarea>
             </div>
             <div class="col-md-2 mb-3">
+
               <label for="">Atlygintinai/ Neatlygintina</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlygArNe<%=numb18%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+              <select name="tMTEP3_T07atlygArNe<%=numb18%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
             </div>
           </div>
           <% }) %>
@@ -1206,7 +1224,7 @@
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08menoSrit<%=numb19%>" placeholder="" autocomplete="off"><%=user.menoSrit%></textarea>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="">Pavadinimas </label>
+              <label for="">Pavadinimas</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08pavadinimas<%=numb19%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
             </div>
           </div>
@@ -1214,19 +1232,24 @@
             <div class="col-md-1 mb-3">
             </div>
             <div class="col-md-5 mb-3">
-                <br>
+
               <label for="">Atlikimo vieta, vieši įvertinimai</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlikVieta<%=numb19%>" placeholder="" autocomplete="off"><%=user.atlikVieta%></textarea>
             </div>
             <div class="col-md-4 mb-3">
-                <br>
+
               <label for="">Data</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08data<%=numb19%>" placeholder="" autocomplete="off"><%=user.data%></textarea>
             </div>
             <div class="col-md-2 mb-3">
+
               <label for="">Atlygintinai/ Neatlygintina</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlygArNe<%=numb19%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
-            </div>
+              <select name="tMTEP3_T08atlygArNe<%=numb19%>"class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
+                </div>
           </div>
           <% }) %>
           <input type="hidden" id="yond37" name="yond38" value="<%=numb19%>">
@@ -1275,8 +1298,12 @@
             </div>
             <div class="col-md-2 mb-3">
               <label for="">Atlygintinai/ Neatlygintina</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlygArNe<%=numb20%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
-            </div>
+              <select name="tMTEP3_T09atlygArNe<%=numb20%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
+                </div>
           </div>
           <% }) %>
           <input type="hidden" id="yond39" name="yond40" value="<%=numb20%>">
@@ -1331,8 +1358,12 @@
             </div>
             <div class="col-md-2 mb-3">
               <label for="">Atlygintinai/ Neatlygintina</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10atlygArNe<%=numb21%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
-            </div>
+              <select name="tMTEP3_T10atlygArNe<%=numb21%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
+                </div>
           </div>
           <% }) %>
           <input type="hidden" id="yond41" name="yond42" value="<%=numb21%>">
@@ -1384,8 +1415,12 @@
             </div>
             <div class="col-md-2 mb-3">
               <label for="">Atlygintinai/ Neatlygintina</label>
-              <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11atlygArNe<%=numb22%>" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
-            </div>
+              <select name="tMTEP3_T11atlygArNe<%=numb22%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+              </select>
+              </div>
           </div>
           <% }) %>
           <input type="hidden" id="yond43" name="yond44" value="<%=numb22%>">
@@ -3131,7 +3166,11 @@
                   <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04data` + value15 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04atlygArNe` + value15 + `"placeholder="" autocomplete="off"></textarea>
+                    <select name="tMTEP3_T04atlygArNe` + value15 + `" class="form-select form-control">
+                      <option value=""></option>
+                      <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                      <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                    </select>
                 </div>
                 </div>
                 <div id="add_to_me15` + div15 + `">
@@ -3174,9 +3213,13 @@
                   <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05veiklRezult` + value16 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T05atlygArNe` + value16 + `"placeholder="" autocomplete="off"></textarea>
+                  <select name="tMTEP3_T05atlygArNe` + value16 + `" class="form-select form-control">
+                    <option value=""></option>
+                    <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                    <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                  </select>
                 </div>
-                </div>
+              </div>
                 <div id="add_to_me16` + div16 + `">
               `;
     document.getElementById("yond31").value = value16;
@@ -3317,8 +3360,12 @@
     </div>
     <div class="col-md-2 mb-3">
       <label for=""><br>Atlygintinai/ Neatlygintinai</label>
-      <textarea type="text" rows="1" class="form-control " name="tMTEP3_T06atlygArNe` + value17 + `" pplaceholder="" autocomplete="off"></textarea>
-    </div>
+      <select name="tMTEP3_T06atlygArNe` + value17 + `" class="form-select form-control">
+        <option value=""></option>
+        <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+        <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+      </select>
+        </div>
   </div>
                 <div id="add_to_me17` + div17 + `">
               `;
@@ -3376,8 +3423,12 @@
                 </div>
                 <div class="col-md-2 mb-3">
                   <label for="">Atlygintinai/ Neatlygintina</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T07atlygArNe` + value18 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
+                  <select  name="tMTEP3_T07atlygArNe` + value18 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                    <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                  </select>
+                  </div>
               </div>
               <div id="add_to_me18` + div18 + `">
               `;
@@ -3435,8 +3486,12 @@
         </div>
         <div class="col-md-2 mb-3">
           <label for="">Atlygintinai/ Neatlygintina</label>
-          <textarea type="text" rows="1" class="form-control " name="tMTEP3_T08atlygArNe` + value19 + `" placeholder="" autocomplete="off"></textarea>
-        </div>
+          <select name="tMTEP3_T08atlygArNe` + value19 + `"class="form-select form-control">
+            <option value=""></option>
+            <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+            <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+          </select>
+          </div>
       </div>
       <div id="add_to_me19` + div19 + `">
               `;
@@ -3494,8 +3549,12 @@
                 </div>
                 <div class="col-md-2 mb-3">
                   <label for="">Atlygintinai/ Neatlygintina</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T09atlygArNe` + value20 + `" placeholder="" autocomplete="off"></textarea>
-                </div>
+                  <select name="tMTEP3_T09atlygArNe` + value20 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                    <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                  </select>
+                  </div>
               </div>
               <div id="add_to_me20` + div20 + `">
               `;
@@ -3561,7 +3620,11 @@
                   </div>
                   <div class="col-md-2 mb-3">
                     <label for="">Atlygintinai/ Neatlygintina</label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T10atlygArNe` + value21 + `" placeholder="" autocomplete="off"></textarea>
+                    <select name="tMTEP3_T10atlygArNe` + value21 + `" class="form-select form-control">
+                      <option value=""></option>
+                      <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                      <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                    </select>
                   </div>
                   </div>
                 <div id="add_to_me21` + div21 + `">
@@ -3628,8 +3691,12 @@
                   </div>
                   <div class="col-md-2 mb-3">
                     <label for="">Atlygintinai/ Neatlygintina</label>
-                    <textarea type="text" rows="1" class="form-control " name="tMTEP3_T11atlygArNe` + value22 + `" placeholder="" autocomplete="off"></textarea>
-                  </div>
+                    <select name="tMTEP3_T11atlygArNe` + value22 + `" class="form-select form-control">
+                      <option value=""></option>
+                      <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+                      <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                    </select>
+                      </div>
                   </div>
                 <div id="add_to_me22` + div22 + `">
               `;
