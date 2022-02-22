@@ -272,7 +272,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Tipas*</label>
-            <select name="tipas1" class="form-select form-control">
+            <select name="tipas1" class="form-select form-control" >
               <option value=""></option>
               <option class="others" value="vadovėliai">V</option>
               <option class="others" value="mokomosios knygos">MK</option>
@@ -295,18 +295,78 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Mokslo kryptis***</label>
-            <textarea type="text" rows="1" class="form-control " name="mokslKrypt1" placeholder="" autocomplete="off"></textarea>
+            <select name="mokslKrypt1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Gamtos mokslai N">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Fizika">Fizika</option>
+              <option class="others" value="Chemija">Chemija</option>
+              <option class="others" value="Biochemija">Biochemija</option>
+              <option class="others" value="Geologija">Geologija</option>
+              <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+              <option class="others" value="Paleontologija">Paleontologija</option>
+              <option class="others" value="Astronomija">Astronomija</option>
+              <option class="others" value="Informatika">Informatika</option>
+              <option class="others" value="Biologija">Biologija</option>
+              <option class="others" value="Biofizika">Biofizika</option>
+              <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+              <option class="others" value="Botanika">Botanika</option>
+              <option class="others" value="Zoologija">Zoologija</option>
+              </optgroup>
+                <optgroup label="Technologijos mokslai T">
+                  <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                  <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                </optgroup>
+                <optgroup label="Medicinos ir sveikatos mokslai M">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Slauga">Slauga</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai A">
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                  <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                  <option class="others" value="Miškotyra">Miškotyra</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai S">
+                  <option class="others" value="Teisė">Teisė</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai H">
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                  <option class="others" value="Filologija">Filologija</option>
+                  <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                  <option class="others" value="Etnologija">Etnologija</option>
+                </optgroup>
+            </select>
           </div>
         </div>
         <div id="add_to_me041">
 
         </div>
         <button class="plus-button" type="button" onclick="m02()">+</button><br><br>
-        <p class="text-justify"><b>* V </b> – vadovėliai, <b>MK</b> – mokomosios knygos, <b>ML</b> – kiti metodiniai leidiniai, <b>KM</b> – konferencijų medžiaga ir <b>Kt </b>– kita.
-          <b>** H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai,<b> N </b>– Gamtos mokslai,<b> A </b>– Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai, <b>T </b> – Technologijos mokslai.
+        <p class="text-justify">*<b> V</b> – vadovėliai, <b>MK</b> – mokomosios knygos, <b>ML</b> – kiti metodiniai leidiniai, <b>KM</b> – konferencijų medžiaga ir <b>Kt </b>– kita.
+          <br>**<b> H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai,<b> N </b>– Gamtos mokslai,<b> A </b>– Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai, <b>T </b> – Technologijos mokslai.
           <br> *** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-
 
         <!-- nD2_M04 -->
         <!-- 4 lentelė. -->
@@ -349,7 +409,7 @@
         </div>
         <button class="plus-button" type="button" onclick="m04()">+</button><br><br>
         <p class="text-justify">
-          <b>* P</b> – Parengtas atestacijai,
+          *<b> P</b> – Parengtas atestacijai,
           <b>A</b> – Atestuotas,
           <b>AS</b> – Atestuotas su sąlyga,
           <b>NA</b> – Neatestuotas.
@@ -397,7 +457,149 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control " name="nD2_D02studKrypt1" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_D02studKrypt1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Veikla</label>
@@ -421,25 +623,165 @@
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <label for=""><br><br><br><br></label>
+            <label for=""><br></label>
             <input type="text" class="form-control text-center" name="nD2_D03nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <label for=""><br><br><br>Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control" name="nD2_D03studKryptis1" placeholder="" autocomplete="off"></textarea>
+            <label for="">Studijų kryptis</label>
+            <select name="nD2_D03studKryptis1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
-            <label for=""><br><br><br>Studijų programa</label>
+            <label for="">Studijų programa</label>
             <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <label for=""><br><br><br>Veikla</label>
+            <label for="">Veikla</label>
             <textarea type="text" rows="1" class="form-control" name="nD2_D03veikla1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="">Rezultatai (parengta vertinimui (PV, numatomas vertinimo terminas) /
-              Aktedituota (A, terminas iki kada, SKVC įsak. Nr. ir data)
-            </label>
+            <label for="">Rezultatai*</label>
             <textarea type="text" rows="1" class="form-control " name="nD2_D03rezultatai1" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
@@ -447,6 +789,8 @@
 
         </div>
         <button class="plus-button" type="button" onclick="d03()">+</button><br><br>
+        <p class="text-justify">* Parengta vertinimui (PV, numatomas vertinimo terminas)
+           / Aktedituota (A, terminas iki kada, SKVC įsak. Nr. ir data).</p>
 
         <!-- nD2_M03 -->
         <!-- 8 lentelė -->
@@ -664,7 +1008,68 @@
             </div>
           <div class="col-md-5 mb-3">
             <label for="">Mokslo kryptis****</label>
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T01mokslKrypt1" placeholder="" autocomplete="off"></textarea>
+            <select name="tMTEP3_T01mokslKrypt1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Gamtos mokslai N">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Fizika">Fizika</option>
+              <option class="others" value="Chemija">Chemija</option>
+              <option class="others" value="Biochemija">Biochemija</option>
+              <option class="others" value="Geologija">Geologija</option>
+              <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+              <option class="others" value="Paleontologija">Paleontologija</option>
+              <option class="others" value="Astronomija">Astronomija</option>
+              <option class="others" value="Informatika">Informatika</option>
+              <option class="others" value="Biologija">Biologija</option>
+              <option class="others" value="Biofizika">Biofizika</option>
+              <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+              <option class="others" value="Botanika">Botanika</option>
+              <option class="others" value="Zoologija">Zoologija</option>
+              </optgroup>
+                <optgroup label="Technologijos mokslai T">
+                  <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                  <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                </optgroup>
+                <optgroup label="Medicinos ir sveikatos mokslai M">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Slauga">Slauga</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai A">
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                  <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                  <option class="others" value="Miškotyra">Miškotyra</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai S">
+                  <option class="others" value="Teisė">Teisė</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai H">
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                  <option class="others" value="Filologija">Filologija</option>
+                  <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                  <option class="others" value="Etnologija">Etnologija</option>
+                </optgroup>
+            </select>
           </div>
         </div>
         <div id="add_to_me121">
@@ -672,13 +1077,13 @@
         </div>
         <button class="plus-button" type="button" onclick="t01()">+</button><br><br>
         <p class="text-justify">* Jeigu tyrimas užsakomasis, nurodykite užsakovą. Jei tyrimas yra sudėtinė projekto dalis, nurodykite projekto pavadinimą.
-          <b>**</b> Studijų kokybės bei kompetencijų užtikrinimo tyrimai (kodas <b>T01</b>); Verslo aplinkos ir darbo rinkos analizės tyrimai (kodas <b>T02</b>);
+          <br>** Studijų kokybės bei kompetencijų užtikrinimo tyrimai (kodas <b>T01</b>); Verslo aplinkos ir darbo rinkos analizės tyrimai (kodas <b>T02</b>);
           Technologijos mokslų srities tyrimai (kodas <b>T03</b>); Specializuotos tematikos
           taikomieji moksliniai tyrimai
           (kodas <b>T04</b>); Inovacijos (kodas <b>T05</b>). <br>
-          <b>*** H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> –
+          *** <b>H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> –
           Medicinos ir sveikatos mokslai, <b>T</b> – Technologijos mokslai.
-          <br><b>****</b> Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">
+          <br>**** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">
             https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
 
@@ -755,10 +1160,7 @@
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-2 mb-3">
-            <label for="">Publikacijos tipas
-              <b>(kodai
-                01-08)</b>
-            </label>
+            <label for="">Publikacijos tipas <b>(kodai 01-08)</b> </label>
             <select name="tMTEP3_T02tipas1" class="form-select form-control">
               <option value=""></option>
               <option class="others" value="01">01</option>
@@ -787,7 +1189,68 @@
           <div class="col-md-4 mb-3">
             <br>
             <label for="">Mokslo kryptis**</label>
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T02mokslKrypt1" placeholder="" autocomplete="off"></textarea>
+              <select name="tMTEP3_T02mokslKrypt1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Gamtos mokslai N">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Fizika">Fizika</option>
+              <option class="others" value="Chemija">Chemija</option>
+              <option class="others" value="Biochemija">Biochemija</option>
+              <option class="others" value="Geologija">Geologija</option>
+              <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+              <option class="others" value="Paleontologija">Paleontologija</option>
+              <option class="others" value="Astronomija">Astronomija</option>
+              <option class="others" value="Informatika">Informatika</option>
+              <option class="others" value="Biologija">Biologija</option>
+              <option class="others" value="Biofizika">Biofizika</option>
+              <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+              <option class="others" value="Botanika">Botanika</option>
+              <option class="others" value="Zoologija">Zoologija</option>
+              </optgroup>
+                <optgroup label="Technologijos mokslai T">
+                  <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                  <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                </optgroup>
+                <optgroup label="Medicinos ir sveikatos mokslai M">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Slauga">Slauga</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai A">
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                  <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                  <option class="others" value="Miškotyra">Miškotyra</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai S">
+                  <option class="others" value="Teisė">Teisė</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai H">
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                  <option class="others" value="Filologija">Filologija</option>
+                  <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                  <option class="others" value="Etnologija">Etnologija</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <br>
@@ -815,7 +1278,17 @@
               <b>(kodai
                 01-08)</b>
             </label>
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T02tipas2" placeholder="" autocomplete="off"></textarea>
+            <select name="tMTEP3_T02tipas2" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="01">01</option>
+              <option class="others" value="02">02</option>
+              <option class="others" value="03">03</option>
+              <option class="others" value="04">04</option>
+              <option class="others" value="05">05</option>
+              <option class="others" value="06">06</option>
+              <option class="others" value="07">07</option>
+              <option class="others" value="08">08</option>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <br>
@@ -833,7 +1306,68 @@
           <div class="col-md-4 mb-3">
             <br>
             <label for="">Mokslo kryptis**</label>
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T02mokslKrypt2" placeholder="" autocomplete="off"></textarea>
+            <select name="tMTEP3_T02mokslKrypt2" class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Gamtos mokslai N">
+            <option class="others" value="Matematika">Matematika</option>
+            <option class="others" value="Fizika">Fizika</option>
+            <option class="others" value="Chemija">Chemija</option>
+            <option class="others" value="Biochemija">Biochemija</option>
+            <option class="others" value="Geologija">Geologija</option>
+            <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+            <option class="others" value="Paleontologija">Paleontologija</option>
+            <option class="others" value="Astronomija">Astronomija</option>
+            <option class="others" value="Informatika">Informatika</option>
+            <option class="others" value="Biologija">Biologija</option>
+            <option class="others" value="Biofizika">Biofizika</option>
+            <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+            <option class="others" value="Botanika">Botanika</option>
+            <option class="others" value="Zoologija">Zoologija</option>
+            </optgroup>
+              <optgroup label="Technologijos mokslai T">
+                <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+              </optgroup>
+              <optgroup label="Medicinos ir sveikatos mokslai M">
+                <option class="others" value="Medicina">Medicina</option>
+                <option class="others" value="Odontologija">Odontologija</option>
+                <option class="others" value="Farmacija">Farmacija</option>
+                <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                <option class="others" value="Slauga">Slauga</option>
+              </optgroup>
+              <optgroup label="Žemės ūkio mokslai A">
+                <option class="others" value="Agronomija">Agronomija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+                <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                <option class="others" value="Miškotyra">Miškotyra</option>
+              </optgroup>
+              <optgroup label="Socialiniai mokslai S">
+                <option class="others" value="Teisė">Teisė</option>
+                <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                <option class="others" value="Vadyba">Vadyba</option>
+                <option class="others" value="Ekonomika">Ekonomika</option>
+                <option class="others" value="Sociologija">Sociologija</option>
+                <option class="others" value="Psichologija">Psichologija</option>
+                <option class="others" value="Edukologija">Edukologija</option>
+                <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+              </optgroup>
+              <optgroup label="Humanitariniai mokslai H">
+                <option class="others" value="Filosofija">Filosofija</option>
+                <option class="others" value="Teologija">Teologija</option>
+                <option class="others" value="Menotyra">Menotyra</option>
+                <option class="others" value="Filologija">Filologija</option>
+                <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                <option class="others" value="Etnologija">Etnologija</option>
+              </optgroup>
+          </select>
           </div>
           <div class="col-md-3 mb-3">
             <br>
@@ -846,9 +1380,9 @@
         </div>
         <button class="plus-button" type="button" onclick="t02()">+</button><br><br>
 
-        <p><b>* H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
+        <p>* <b>H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
           <b>T</b> – Technologijos mokslai.
-          <br><b>**</b> Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
+          <br>** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
         <!-- TMTEP3_T03 -->
         <!-- 12 lentelė.  -->
@@ -1206,11 +1740,9 @@
 
         </div>
         <button class="plus-button" type="button" onclick="t06()">+</button><br><br>
-        <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+        <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai. Nuoroda:
           <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610</a>
-        <br>
-          <b>**</b> Premjera ar pakartojimas
-            <br>
+        <br>** Premjera ar pakartojimas.<br>
           <b>PASTABA</b> : pridedami kūrėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos autorių pavardės</i>)
         </p>
 
@@ -1261,7 +1793,7 @@
 
         </div>
         <button class="plus-button" type="button" onclick="t07()">+</button><br><br>
-        <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+        <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
 
@@ -1312,7 +1844,7 @@
 
         </div>
         <button class="plus-button" type="button" onclick="t08()">+</button><br><br>
-        <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+        <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
 
@@ -1363,7 +1895,7 @@
 
         </div>
         <button class="plus-button" type="button" onclick="t09()">+</button><br><br>
-        <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+        <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
 
@@ -2095,7 +2627,7 @@
             <input type="number" id="isVisoTrukmeValNeLT24" class="form-control text-center" name="kTOV4_trukmeValNeLT" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
           </div>
         </div>
-        <p>**Akademinė valanda prilyginama astronominei valandai</p>
+        <p>** Akademinė valanda prilyginama astronominei valandai</p>
         <!--kTOV4_25-->
         <!-- 25 lentelė -->
         <p><b>25 lentelė. Dėstytojo vesti kompetencijų tobulinimo renginiai</b></p>
@@ -2157,7 +2689,7 @@
         <button class="plus-button" type="button" onclick="kTOV4_25()">+</button><br><br>
         <p>* Mokymo (si), tyrimų, bendrosios, dalykinės.
         <br>
-        ** AP – akademinis personalas, NP – neakademinis personalas, VP – visas personalas.
+        ** <b>AP</b> – akademinis personalas, <b>NP</b> – neakademinis personalas, <b>VP</b> – visas personalas.
         </p>
         <!--kTOV4_26-->
         <!-- 26 lentelė.  -->
@@ -2229,7 +2761,149 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03studKryptis1" autocomplete="off"></textarea>
+            <select name="kTOV4_KV03studKryptis1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Šalis</label>
@@ -2244,22 +2918,160 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
-
             <input type="text" class="form-control text-center" name="kTOV4_KV03nr2" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03studKryptis2" autocomplete="off"></textarea>
+            <select name="kTOV4_KV03studKryptis2" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
-
             <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03salis2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-
             <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03institucija2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-4 mb-3">
-
             <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas2" autocomplete="off"></textarea>
           </div>
         </div>
@@ -2404,7 +3216,7 @@
         <div id="add_to_meN091">
         </div>
         <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
-        <p class="text-justify">*veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
+        <p class="text-justify">* Veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
           vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
           karjeros planavimo veiklose, diskusijose ir pan.</p>
         <!-- kTOV4_S -->
@@ -2448,7 +3260,149 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studKryptis1" autocomplete="off"></textarea>
+            <select name="kV5_KT02studKryptis1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
@@ -2470,7 +3424,149 @@
             <input type="text" class="form-control text-center" name="kV5_KT02nr2" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studKryptis2" autocomplete="off"></textarea>
+            <select name="kV5_KT02studKryptis2" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas2" autocomplete="off"></textarea>
@@ -2490,33 +3586,174 @@
 
         </div>
         <button class="plus-button" type="button" onclick="kt02()">+</button><br><br>
-        <p>* V – verslumo tematika; SA/DP – socialinės atsakomybės, darnios plėtros tematika</p>
+        <p>* <b>V</b> – verslumo tematika; <b>SA/DP</b> – socialinės atsakomybės, darnios plėtros tematika</p>
 
         <!-- kV5_KT01 -->
         <!-- 31 lentelė. -->
         <p class="font-weight-bold">31 lentelė. Baigiamieji darbai (užsakomieji darbai),
           pritaikyti užsakovo poreikiams, regiono ar visos šalies raidai</p>
         <div class="form-row">
-          <div class="col-md-1 mb-3">
+          <div class="col-md-1 mb-">
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="kV5_KT01nr1" autocomplete="off" value="1" readonly="readonly">
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studKryptis1" autocomplete="off"></textarea>
+            <select name="kV5_KT01studKryptis1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr1" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas1" autocomplete="off"></textarea>
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-
           </div>
           <div class="col-md-6 mb-3">
             <label for="">Darbo tema</label>
@@ -2532,7 +3769,7 @@
         </div>
         <button class="plus-button" type="button" onclick="kt01()">+</button><br><br>
 
-        <p class="text-justify">Į socialinę atsakomybę ir inovacijas orientuotos veiklos su Vilniaus miesto savivaldybe ir visuomeninėmis organizacijomis.<i> (32 lentelė)</i></p>
+        <p class="text-center"><b>Į socialinę atsakomybę ir inovacijas orientuotos veiklos su Vilniaus miesto savivaldybe ir visuomeninėmis organizacijomis.</b><i> (32 lentelė)</i></p>
         <!-- kV5_32 -->
         <!-- 32 lentelė.  -->
         <p class="font-weight-bold">
@@ -2754,7 +3991,7 @@
         </div>
         <button class="plus-button" type="button" onclick="kV5_34()">+</button>
 
-        <p class="font-weight-bold"> <br><br>Kita informacija:</p>
+        <p class="font-weight-bold"><br><br>Kita informacija:</p>
         <div class="form-row">
           <div class="col-md-12 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kV5_kitaInfo" autocomplete="off"></textarea>
@@ -2986,7 +4223,68 @@
               </div>
           <div class="col-md-4 mb-3">
             <label for="">Mokslo kryptis***</label>
-            <textarea type="text" rows="1" class="form-control " name="mokslKrypt` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <select name="mokslKrypt` + value4 + `"  class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Gamtos mokslai N">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Fizika">Fizika</option>
+              <option class="others" value="Chemija">Chemija</option>
+              <option class="others" value="Biochemija">Biochemija</option>
+              <option class="others" value="Geologija">Geologija</option>
+              <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+              <option class="others" value="Paleontologija">Paleontologija</option>
+              <option class="others" value="Astronomija">Astronomija</option>
+              <option class="others" value="Informatika">Informatika</option>
+              <option class="others" value="Biologija">Biologija</option>
+              <option class="others" value="Biofizika">Biofizika</option>
+              <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+              <option class="others" value="Botanika">Botanika</option>
+              <option class="others" value="Zoologija">Zoologija</option>
+              </optgroup>
+                <optgroup label="Technologijos mokslai T">
+                  <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                  <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                </optgroup>
+                <optgroup label="Medicinos ir sveikatos mokslai M">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Slauga">Slauga</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai A">
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                  <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                  <option class="others" value="Miškotyra">Miškotyra</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai S">
+                  <option class="others" value="Teisė">Teisė</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai H">
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                  <option class="others" value="Filologija">Filologija</option>
+                  <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                  <option class="others" value="Etnologija">Etnologija</option>
+                </optgroup>
+            </select>
           </div>
           </div>
                 <div id="add_to_me04` + div4 + `">
@@ -3115,7 +4413,149 @@
           <input type="text" class="form-control text-center" name="nD2_D02nr` + value8 + `" placeholder="" autocomplete="off" value="` + value8 + `" readonly="readonly">
         </div>
         <div class="col-md-3 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="nD2_D02studKrypt` + value8 + `" placeholder="" autocomplete="off"></textarea>
+          <select name="nD2_D02studKrypt` + value8 + `" class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Matematikos mokslai">
+            <option class="others" value="Matematika">Matematika</option>
+            <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+            <option class="others" value="Statistika">Statistika</option>
+            </optgroup>
+              <optgroup label="Informatikos mokslai">
+                <option class="others" value="Informatika">Informatika</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+              </optgroup>
+              <optgroup label="Fiziniai mokslai">
+                <option class="others" value="Chemija">Chemija</option>
+                <option class="others" value="Fizika">Fizika</option>
+                <option class="others" value="Geologija">Geologija</option>
+                <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+              </optgroup>
+              <optgroup label="Gyvybės mokslai">
+                <option class="others" value="Biologija">Biologija</option>
+                <option class="others" value="Genetika">Genetika</option>
+                <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                <option class="others" value="Biofizika">Biofizika</option>
+                <option class="others" value="Biochemija">Biochemija</option>
+                <option class="others" value="Ekologija">Ekologija</option>
+              </optgroup>
+              <optgroup label="Inžinerijos mokslai">
+                <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+              </optgroup>
+              <optgroup label="Technologijų mokslai">
+                <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+              </optgroup>
+              <optgroup label="Sveikatos mokslai">
+                <option class="others" value="Medicina">Medicina</option>
+                <option class="others" value="Odontologija">Odontologija</option>
+                <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                <option class="others" value="Farmacija">Farmacija</option>
+                <option class="others" value="Reabilitacija">Reabilitacija</option>
+                <option class="others" value="Mityba">Mityba</option>
+                <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                <option class="others" value="Kosmetologija">Kosmetologija</option>
+              </optgroup>
+              <optgroup label="Veterinarijos mokslai">
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Žemės ūkio mokslai">
+                <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                <option class="others" value="Agronomija">Agronomija</option>
+                <option class="others" value="Miškininkystė">Miškininkystė</option>
+                <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                <option class="others" value="Maisto studijos">Maisto studijos</option>
+              </optgroup>
+              <optgroup label="Socialiniai mokslai">
+                <option class="others" value="Ekonomika">Ekonomika</option>
+                <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                <option class="others" value="Sociologija">Sociologija</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Antropologija">Antropologija</option>
+                <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                <option class="others" value="Psichologija">Psichologija</option>
+                <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                <option class="others" value="Komunikacija">Komunikacija</option>
+                <option class="others" value="Leidyba">Leidyba</option>
+                <option class="others" value="Žurnalistika">Žurnalistika</option>
+              </optgroup>
+              <optgroup label="Teisė">
+                <option class="others" value="Teisė">Teisė</option>
+              </optgroup>
+              <optgroup label="Verslo ir viešoji vadyba">
+                <option class="others" value="Verslas">Verslas</option>
+                <option class="others" value="Vadyba">Vadyba</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Rinkodara">Rinkodara</option>
+                <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+              </optgroup>
+              <optgroup label="Ugdymo mokslai">
+                <option class="others" value="Pedagogika">Pedagogika</option>
+                <option class="others" value="Edukologija">Edukologija</option>
+                <option class="others" value="Andragogika">Andragogika</option>
+              </optgroup>
+              <optgroup label="Humanitariniai mokslai">
+                <option class="others" value="Lingvistika">Lingvistika</option>
+                <option class="others" value="Literatūrologija">Literatūrologija</option>
+                <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                <option class="others" value="Vertimas">Vertimas</option>
+                <option class="others" value="Regiono studijos">Regiono studijos</option>
+                <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                <option class="others" value="Istorija">Istorija</option>
+                <option class="others" value="Archeologija">Archeologija</option>
+                <option class="others" value="Filosofija">Filosofija</option>
+                <option class="others" value="Teologija">Teologija</option>
+                <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                <option class="others" value="Religijos studijos">Religijos studijos</option>
+                <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                <option class="others" value="Menotyra">Menotyra</option>
+              </optgroup>
+              <optgroup label="Menai">
+                <option class="others" value="Dailė">Dailė</option>
+                <option class="others" value="Dizainas">Dizainas</option>
+                <option class="others" value="Muzika">Muzika</option>
+                <option class="others" value="Teatras">Teatras</option>
+                <option class="others" value="Kinas">Kinas</option>
+                <option class="others" value="Šokis">Šokis</option>
+                <option class="others" value="Medijų menas">Medijų menas</option>
+                <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                <option class="others" value="Architektūra">Architektūra</option>
+                <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+              </optgroup>
+              <optgroup label="Sportas">
+                <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+              </optgroup>
+          </select>
         </div>
         <div class="col-md-4 mb-3">
           <textarea type="text" rows="1" class="form-control" name="nD2_D02veikla` + value8 + `" placeholder="" autocomplete="off"></textarea>
@@ -3157,7 +4597,149 @@
             <input type="text" class="form-control text-center" name="nD2_D03nr` + value9 + `" placeholder="" autocomplete="off" value="` + value9 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="nD2_D03studKryptis` + value9 + `" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_D03studKryptis` + value9 + `" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
@@ -3355,7 +4937,68 @@
                   </div>
                 <div class="col-md-5 mb-3">
                   <label for="">Mokslo kryptis****</label>
-                  <textarea type="text" rows="1" class="form-control " name="tMTEP3_T01mokslKrypt` + value12 + `" placeholder="" autocomplete="off"></textarea>
+                  <select name="tMTEP3_T01mokslKrypt` + value12 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <optgroup label="Gamtos mokslai N">
+                    <option class="others" value="Matematika">Matematika</option>
+                    <option class="others" value="Fizika">Fizika</option>
+                    <option class="others" value="Chemija">Chemija</option>
+                    <option class="others" value="Biochemija">Biochemija</option>
+                    <option class="others" value="Geologija">Geologija</option>
+                    <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+                    <option class="others" value="Paleontologija">Paleontologija</option>
+                    <option class="others" value="Astronomija">Astronomija</option>
+                    <option class="others" value="Informatika">Informatika</option>
+                    <option class="others" value="Biologija">Biologija</option>
+                    <option class="others" value="Biofizika">Biofizika</option>
+                    <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+                    <option class="others" value="Botanika">Botanika</option>
+                    <option class="others" value="Zoologija">Zoologija</option>
+                    </optgroup>
+                      <optgroup label="Technologijos mokslai T">
+                        <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+                        <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                        <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                        <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                        <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                        <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+                        <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                        <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+                        <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                        <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                      </optgroup>
+                      <optgroup label="Medicinos ir sveikatos mokslai M">
+                        <option class="others" value="Medicina">Medicina</option>
+                        <option class="others" value="Odontologija">Odontologija</option>
+                        <option class="others" value="Farmacija">Farmacija</option>
+                        <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                        <option class="others" value="Slauga">Slauga</option>
+                      </optgroup>
+                      <optgroup label="Žemės ūkio mokslai A">
+                        <option class="others" value="Agronomija">Agronomija</option>
+                        <option class="others" value="Veterinarija">Veterinarija</option>
+                        <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+                        <option class="others" value="Miškotyra">Miškotyra</option>
+                      </optgroup>
+                      <optgroup label="Socialiniai mokslai S">
+                        <option class="others" value="Teisė">Teisė</option>
+                        <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                        <option class="others" value="Vadyba">Vadyba</option>
+                        <option class="others" value="Ekonomika">Ekonomika</option>
+                        <option class="others" value="Sociologija">Sociologija</option>
+                        <option class="others" value="Psichologija">Psichologija</option>
+                        <option class="others" value="Edukologija">Edukologija</option>
+                        <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+                      </optgroup>
+                      <optgroup label="Humanitariniai mokslai H">
+                        <option class="others" value="Filosofija">Filosofija</option>
+                        <option class="others" value="Teologija">Teologija</option>
+                        <option class="others" value="Menotyra">Menotyra</option>
+                        <option class="others" value="Filologija">Filologija</option>
+                        <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+                        <option class="others" value="Etnologija">Etnologija</option>
+                      </optgroup>
+                  </select>
                 </div>
               </div>
               <div id="add_to_me12` + div12 + `">
@@ -3433,7 +5076,68 @@
   <div class="col-md-4 mb-3">
     <br>
     <label for="">Mokslo kryptis**</label>
-    <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T02mokslKrypt` + value13 + `" placeholder="" autocomplete="off"></textarea>
+    <select name="tMTEP3_T02mokslKrypt` + value13 + `" class="form-select form-control">
+      <option value=""></option>
+      <optgroup label="Gamtos mokslai N">
+      <option class="others" value="Matematika">Matematika</option>
+      <option class="others" value="Fizika">Fizika</option>
+      <option class="others" value="Chemija">Chemija</option>
+      <option class="others" value="Biochemija">Biochemija</option>
+      <option class="others" value="Geologija">Geologija</option>
+      <option class="others" value="Fizinė geografija">Fizinė geografija</option>
+      <option class="others" value="Paleontologija">Paleontologija</option>
+      <option class="others" value="Astronomija">Astronomija</option>
+      <option class="others" value="Informatika">Informatika</option>
+      <option class="others" value="Biologija">Biologija</option>
+      <option class="others" value="Biofizika">Biofizika</option>
+      <option class="others" value="Ekologija ir aplinkotyra">Ekologija ir aplinkotyra</option>
+      <option class="others" value="Botanika">Botanika</option>
+      <option class="others" value="Zoologija">Zoologija</option>
+      </optgroup>
+        <optgroup label="Technologijos mokslai T">
+          <option class="others" value="Elektros ir elektronikos inžinerija">Elektros ir elektronikos inžinerija</option>
+          <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+          <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+          <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+          <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+          <option class="others" value="Energetika ir termoinžinerija">Energetika ir termoinžinerija</option>
+          <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+          <option class="others" value="Medžiagų inžinerija">Medžiagų inžinerija</option>
+          <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+          <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+        </optgroup>
+        <optgroup label="Medicinos ir sveikatos mokslai M">
+          <option class="others" value="Medicina">Medicina</option>
+          <option class="others" value="Odontologija">Odontologija</option>
+          <option class="others" value="Farmacija">Farmacija</option>
+          <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+          <option class="others" value="Slauga">Slauga</option>
+        </optgroup>
+        <optgroup label="Žemės ūkio mokslai A">
+          <option class="others" value="Agronomija">Agronomija</option>
+          <option class="others" value="Veterinarija">Veterinarija</option>
+          <option class="others" value="Gyvūnų mokslai">Gyvūnų mokslai</option>
+          <option class="others" value="Miškotyra">Miškotyra</option>
+        </optgroup>
+        <optgroup label="Socialiniai mokslai S">
+          <option class="others" value="Teisė">Teisė</option>
+          <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+          <option class="others" value="Vadyba">Vadyba</option>
+          <option class="others" value="Ekonomika">Ekonomika</option>
+          <option class="others" value="Sociologija">Sociologija</option>
+          <option class="others" value="Psichologija">Psichologija</option>
+          <option class="others" value="Edukologija">Edukologija</option>
+          <option class="others" value="Komunikacija ir informacija">Komunikacija ir informacija</option>
+        </optgroup>
+        <optgroup label="Humanitariniai mokslai H">
+          <option class="others" value="Filosofija">Filosofija</option>
+          <option class="others" value="Teologija">Teologija</option>
+          <option class="others" value="Menotyra">Menotyra</option>
+          <option class="others" value="Filologija">Filologija</option>
+          <option class="others" value="Istorija ir archeologija">Istorija ir archeologija</option>
+          <option class="others" value="Etnologija">Etnologija</option>
+        </optgroup>
+    </select>
   </div>
   <div class="col-md-3 mb-3">
     <br>
@@ -4559,7 +6263,149 @@
             <input type="text" class="form-control text-center" name="kTOV4_KV03nr` + value27 + `" autocomplete="off" value="` + value27 + `" readonly="readonly">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="kTOV4_KV03studKryptis` + value27 + `" autocomplete="off"></textarea>
+            <select name="kTOV4_KV03studKryptis` + value27 + `" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control" name="kTOV4_KV03salis` + value27 + `" autocomplete="off"></textarea>
@@ -4779,7 +6625,149 @@
             <input type="text" class="form-control text-center" name="kV5_KT02nr` + value32 + `" autocomplete="off" value="` + value32 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studKryptis` + value32 + `" autocomplete="off"></textarea>
+              <select name="kV5_KT02studKryptis` + value32 + `"  class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas` + value32 + `" autocomplete="off"></textarea>
@@ -4828,15 +6816,157 @@
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="kV5_KT01nr` + value31 + `" autocomplete="off" value="` + value31 + `" readonly="readonly">
           </div>
-          <div class="col-md-2 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Studijų kryptis</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studKryptis` + value31 + `" autocomplete="off"></textarea>
+              <select name="kV5_KT01studKryptis` + value31 + `" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Matematikos mokslai">
+              <option class="others" value="Matematika">Matematika</option>
+              <option class="others" value="Taikomoji matematika">Taikomoji matematika</option>
+              <option class="others" value="Statistika">Statistika</option>
+              </optgroup>
+                <optgroup label="Informatikos mokslai">
+                  <option class="others" value="Informatika">Informatika</option>
+                  <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                  <option class="others" value="Programų sistemos">Programų sistemos</option>
+                  <option class="others" value="Informatikos inžinerija">Informatikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Fiziniai mokslai">
+                  <option class="others" value="Chemija">Chemija</option>
+                  <option class="others" value="Fizika">Fizika</option>
+                  <option class="others" value="Geologija">Geologija</option>
+                  <option class="others" value="Aplinkotyra">Aplinkotyra</option>
+                  <option class="others" value="Gamtinė geografija">Gamtinė geografija</option>
+                </optgroup>
+                <optgroup label="Gyvybės mokslai">
+                  <option class="others" value="Biologija">Biologija</option>
+                  <option class="others" value="Genetika">Genetika</option>
+                  <option class="others" value="Mikrobiologija">Mikrobiologija</option>
+                  <option class="others" value="Molekulinė biologija">Molekulinė biologija</option>
+                  <option class="others" value="Biofizika">Biofizika</option>
+                  <option class="others" value="Biochemija">Biochemija</option>
+                  <option class="others" value="Ekologija">Ekologija</option>
+                </optgroup>
+                <optgroup label="Inžinerijos mokslai">
+                  <option class="others" value="Saugos inžinerija">Saugos inžinerija</option>
+                  <option class="others" value="Bioinžinerija">Bioinžinerija</option>
+                  <option class="others" value="Aplinkos inžinerija">Aplinkos inžinerija</option>
+                  <option class="others" value="Matavimų inžinerija">Matavimų inžinerija</option>
+                  <option class="others" value="Statybos inžinerija">Statybos inžinerija</option>
+                  <option class="others" value="Mechanikos inžinerija">Mechanikos inžinerija</option>
+                  <option class="others" value="Jūrų inžinerija">Jūrų inžinerija</option>
+                  <option class="others" value="Elektros inžinerija">Elektros inžinerija</option>
+                  <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                  <option class="others" value="Gamybos inžinerija">Gamybos inžinerija</option>
+                  <option class="others" value="Chemijos inžinerija">Chemijos inžinerija</option>
+                  <option class="others" value="Transporto inžinerija">Transporto inžinerija</option>
+                  <option class="others" value="Energijos inžinerija">Energijos inžinerija</option>
+                  <option class="others" value="Aeronautikos inžinerija">Aeronautikos inžinerija</option>
+                </optgroup>
+                <optgroup label="Technologijų mokslai">
+                  <option class="others" value="Gamtos išteklių technologijos">Gamtos išteklių technologijos</option>
+                  <option class="others" value="Polimerų ir tekstilės technologijos">Polimerų ir tekstilės technologijos</option>
+                  <option class="others" value="Medžiagų technologijos">Medžiagų technologijos</option>
+                  <option class="others" value="Jūrų technologijos">Jūrų technologijos</option>
+                  <option class="others" value="Biotechnologijos">Biotechnologijos</option>
+                  <option class="others" value="Maisto technologijos">Maisto technologijos</option>
+                  <option class="others" value="Viešasis maitinimas">Viešasis maitinimas</option>
+                </optgroup>
+                <optgroup label="Sveikatos mokslai">
+                  <option class="others" value="Medicina">Medicina</option>
+                  <option class="others" value="Odontologija">Odontologija</option>
+                  <option class="others" value="Burnos priežiūra">Burnos priežiūra</option>
+                  <option class="others" value="Visuomenės sveikata">Visuomenės sveikata</option>
+                  <option class="others" value="Farmacija">Farmacija</option>
+                  <option class="others" value="Reabilitacija">Reabilitacija</option>
+                  <option class="others" value="Mityba">Mityba</option>
+                  <option class="others" value="Slauga ir akušerija">Slauga ir akušerija</option>
+                  <option class="others" value="Medicinos technologijos">Medicinos technologijos</option>
+                  <option class="others" value="Kosmetologija">Kosmetologija</option>
+                </optgroup>
+                <optgroup label="Veterinarijos mokslai">
+                  <option class="others" value="Veterinarija">Veterinarija</option>
+                </optgroup>
+                <optgroup label="Žemės ūkio mokslai">
+                  <option class="others" value="Žemės ūkis">Žemės ūkis</option>
+                  <option class="others" value="Agronomija">Agronomija</option>
+                  <option class="others" value="Miškininkystė">Miškininkystė</option>
+                  <option class="others" value="Gyvulininkystė">Gyvulininkystė</option>
+                  <option class="others" value="Žuvininkystė">Žuvininkystė</option>
+                  <option class="others" value="Maisto studijos">Maisto studijos</option>
+                </optgroup>
+                <optgroup label="Socialiniai mokslai">
+                  <option class="others" value="Ekonomika">Ekonomika</option>
+                  <option class="others" value="Politikos mokslai">Politikos mokslai</option>
+                  <option class="others" value="Sociologija">Sociologija</option>
+                  <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                  <option class="others" value="Antropologija">Antropologija</option>
+                  <option class="others" value="Visuomeninė geografija">Visuomeninė geografija</option>
+                  <option class="others" value="Psichologija">Psichologija</option>
+                  <option class="others" value="Visuomenės saugumas">Visuomenės saugumas</option>
+                  <option class="others" value="Informacijos paslaugos">Informacijos paslaugos</option>
+                  <option class="others" value="Komunikacija">Komunikacija</option>
+                  <option class="others" value="Leidyba">Leidyba</option>
+                  <option class="others" value="Žurnalistika">Žurnalistika</option>
+                </optgroup>
+                <optgroup label="Teisė">
+                  <option class="others" value="Teisė">Teisė</option>
+                </optgroup>
+                <optgroup label="Verslo ir viešoji vadyba">
+                  <option class="others" value="Verslas">Verslas</option>
+                  <option class="others" value="Vadyba">Vadyba</option>
+                  <option class="others" value="Finansai">Finansai</option>
+                  <option class="others" value="Apskaita">Apskaita</option>
+                  <option class="others" value="Rinkodara">Rinkodara</option>
+                  <option class="others" value="Žmonių išteklių vadyba">Žmonių išteklių vadyba</option>
+                  <option class="others" value="Viešasis administravimas">Viešasis administravimas</option>
+                  <option class="others" value="Turizmas ir poilsis">Turizmas ir poilsis</option>
+                </optgroup>
+                <optgroup label="Ugdymo mokslai">
+                  <option class="others" value="Pedagogika">Pedagogika</option>
+                  <option class="others" value="Edukologija">Edukologija</option>
+                  <option class="others" value="Andragogika">Andragogika</option>
+                </optgroup>
+                <optgroup label="Humanitariniai mokslai">
+                  <option class="others" value="Lingvistika">Lingvistika</option>
+                  <option class="others" value="Literatūrologija">Literatūrologija</option>
+                  <option class="others" value="Klasikinės studijos">Klasikinės studijos</option>
+                  <option class="others" value="Filologija pagal kalbą">Filologija pagal kalbą</option>
+                  <option class="others" value="Vertimas">Vertimas</option>
+                  <option class="others" value="Regiono studijos">Regiono studijos</option>
+                  <option class="others" value="Kalbos studijos">Kalbos studijos</option>
+                  <option class="others" value="Istorija">Istorija</option>
+                  <option class="others" value="Archeologija">Archeologija</option>
+                  <option class="others" value="Filosofija">Filosofija</option>
+                  <option class="others" value="Teologija">Teologija</option>
+                  <option class="others" value="Paveldo studijos">Paveldo studijos</option>
+                  <option class="others" value="Religijos studijos">Religijos studijos</option>
+                  <option class="others" value="Kultūros studijos">Kultūros studijos</option>
+                  <option class="others" value="Menotyra">Menotyra</option>
+                </optgroup>
+                <optgroup label="Menai">
+                  <option class="others" value="Dailė">Dailė</option>
+                  <option class="others" value="Dizainas">Dizainas</option>
+                  <option class="others" value="Muzika">Muzika</option>
+                  <option class="others" value="Teatras">Teatras</option>
+                  <option class="others" value="Kinas">Kinas</option>
+                  <option class="others" value="Šokis">Šokis</option>
+                  <option class="others" value="Medijų menas">Medijų menas</option>
+                  <option class="others" value="Meno objektų restauravimas">Meno objektų restauravimas</option>
+                  <option class="others" value="Architektūra">Architektūra</option>
+                  <option class="others" value="Kraštovaizdžio architektūra">Kraštovaizdžio architektūra</option>
+                </optgroup>
+                <optgroup label="Sportas">
+                  <option class="others" value="Pasiekimų sportas">Pasiekimų sportas</option>
+                  <option class="others" value="Laisvalaikio sportas">Laisvalaikio sportas</option>
+                </optgroup>
+            </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr` + value31 + `" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
             <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas` + value31 + `" autocomplete="off"></textarea>
           </div>
