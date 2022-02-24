@@ -79,10 +79,10 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               <input type="text" class="form-control text-center " rows="1" name="nr<%=numb%>" placeholder="" autocomplete="off" value="<%=numb%>" readonly="readonly">
             </div>
             <div class="col-md-5 mb-3">
-              <textarea type="text" class="form-control textarea" rows="1" name="dalykas<%=numb%>" placeholder="" autocomplete="off" wrap="wrap" id="the_textarea4"><%=user.dalykas%></textarea>
+              <textarea type="text" class="form-control textarea" rows="1" name="dalykas<%=numb%>" placeholder="" autocomplete="off"><%=user.dalykas%></textarea>
             </div>
             <div class="col-md-1 mb-3">
-              <textarea type="text" class="form-control textarea" rows="1" name="grupe<%=numb%>" placeholder="" autocomplete="off" wrap="wrap" id="the_textarea5"><%=user.grupe%></textarea>
+              <textarea type="text" class="form-control textarea" rows="1" name="grupe<%=numb%>" placeholder="" autocomplete="off"><%=user.grupe%></textarea>
             </div>
             <div class="col-md-1 mb-3">
               <select name="semestras<%=numb%>" class="form-select form-control">
@@ -3466,8 +3466,8 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               <label for="">Veikla orientuota į socialinės atskirties mažinimą</label>
               <select name="kV5_33veiklOrientavim<%=numb33%>" class="form-select form-control">
                 <option value=""></option>
-                <option class="others" <%if (user.studKryptis === "Taip") { %> selected <% } %> value="Taip">Taip</option>
-                <option class="others" <%if (user.studKryptis === "Ne") { %> selected <% } %> value="Ne">Ne</option>
+                <option class="others" <%if (user.veiklOrientavim === "Taip") { %> selected <% } %> value="Taip">Taip</option>
+                <option class="others" <%if (user.veiklOrientavim === "Ne") { %> selected <% } %> value="Ne">Ne</option>
               </select>
             </div>
             <div class="col-md-4 mb-3">
@@ -6252,8 +6252,8 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
                   <div class="col-md-2 mb-3">
                     <select name="kV5_KT02darboTema` + value32 + `" class="form-select form-control">
                       <option value=""></option>
-                      <option class="others" value="verslumo tematika">V</option>
-                      <option class="others" value="socialinės atsakomybės, darnios plėtros tematika">SA/DP</option>
+                      <option class="others" value="Verslumo tematika">V</option>
+                      <option class="others" value="Socialinės atsakomybės, darnios plėtros tematika">SA/DP</option>
                     </select>
                   </div>
                 </div>
