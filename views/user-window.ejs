@@ -109,8 +109,8 @@
             <label for="">Pagrindinė, nepagrindinė darbovietė</label>
             <select name="darbovietesTipas" class="form-select form-control" required>
               <option value="nepasirinkta"></option>
-              <option class="others" <%if (user.destytojas.darbovietesTipas === "P") { %> selected <% } %> value="P">Pagrindinė</option>
-              <option class="others" <%if (user.destytojas.darbovietesTipas === "N") { %> selected <% } %> value="N">Nepagrindinė</option>
+              <option class="others" <%if (user.destytojas.darbovietesTipas === "Pagrindinė") { %> selected <% } %> value="Pagrindinė">Pagrindinė</option>
+              <option class="others" <%if (user.destytojas.darbovietesTipas === "Nepagrindinė") { %> selected <% } %> value="Nepagrindinė">Nepagrindinė</option>
             </select>
           </div>
         </div>

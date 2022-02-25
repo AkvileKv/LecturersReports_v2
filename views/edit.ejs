@@ -1,4 +1,4 @@
-Neakademinis personalas<%- include('partials/headerLecturer') %>
+<%- include('partials/headerLecturer') %>
 
 <div class="container">
   <div class="jumbotron ">
@@ -34,7 +34,8 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               <textarea type="text" rows="1" class="form-control" name="pareigos" autocomplete="off" readonly="readonly"><%=user.destytojas.pareigos%></textarea>
             </div>
             <div class="col-md-3 mb-3">
-              <label>Pagrindinė (P), nepagrindinė (N) darbovietė</label>
+              <br>
+              <label>Darbovietės tipas</label>
               <textarea type="text" rows="1" class="form-control" name="darbovTipas" autocomplete="off" readonly="readonly"><%=user.destytojas.darbovietesTipas%></textarea>
             </div>
             <div class="col-md-2 mb-3">
@@ -1294,8 +1295,6 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
             </div>
             <div class="col-md-2 mb-3">
               <label for="">Publikacijos tipas
-                <b>(kodai
-                  01-08)</b>
               </label>
               <select name="tMTEP3_T02tipas<%=numb13%>" class="form-select form-control">
                 <option value=""></option>
@@ -1310,7 +1309,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               </select>
             </div>
             <div class="col-md-2 mb-3">
-              <br>
+
               <label for="">Mokslo sritis*</label>
               <select name="tMTEP3_T02mokslSrit<%=numb13%>" class="form-select form-control">
                 <option value=""></option>
@@ -1323,7 +1322,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               </select>
             </div>
             <div class="col-md-4 mb-3">
-              <br>
+
               <label for="">Mokslo kryptis**</label>
               <select name="tMTEP3_T02mokslKrypt<%=numb13%>" class="form-select form-control">
                 <option value=""></option>
@@ -1389,7 +1388,6 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               </select>
             </div>
             <div class="col-md-3 mb-3">
-              <br>
               <label for="">Duomenų bazė</label>
               <textarea type="text" rows="1" class="form-control " name="tMTEP3_T02duomBaze<%=numb13%>" placeholder="" autocomplete="off"><%=user.duomBaze%></textarea>
             </div>
@@ -1673,7 +1671,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
 
           </div>
           <button class="plus-button" type="button" onclick="t06()">+</button><br><br>
-          <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+          <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai. Nuoroda:
             <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610</a>
             <br>
             <b>PASTABA</b> : pridedami kūrėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos autorių pavardės</i>)
@@ -2830,7 +2828,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
           <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
           <!--kTOV4_29-->
           <!-- 29 lentelė.  -->
-          <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais: mokslo ir švietimo institucijomis (ŠV), regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis (SP), darbdaviais (D)</b></p>
+          <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais</b></p>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
@@ -2839,7 +2837,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               <label for="">Veikla*</label>
             </div>
             <div class="col-md-5 mb-3">
-              <label for="">Socialinis partneris</label>
+              <label for="">Socialinis partneris**</label>
             </div>
           </div>
           <% var value65 = 0; %>
@@ -2853,7 +2851,12 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla<%=value65%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
             </div>
             <div class="col-md-5 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris<%=value65%>" placeholder="" autocomplete="off"><%=user.socPartneris%></textarea>
+              <select name="kTOV4_29socPartneris<%=value65%>" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" <%if (user.socPartneris === "Mokslo ir švietimo institucijos") { %> selected <% } %> value="Mokslo ir švietimo institucijos">ŠV</option>
+                <option class="others" <%if (user.socPartneris === "Regioninės valdymo struktūros, socialinių partnerių organizacijos") { %> selected <% } %> value="Regioninės valdymo struktūros, socialinių partnerių organizacijos">SP</option>
+                <option class="others" <%if (user.socPartneris === "Darbdaviai") { %> selected <% } %> value="Darbdaviai">D</option>
+              </select>
             </div>
           </div>
           <% }) %>
@@ -2864,7 +2867,8 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
           <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
           <p class="text-justify">* Veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
             vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
-            karjeros planavimo veiklose, diskusijose ir pan.</p>
+            karjeros planavimo veiklose, diskusijose ir pan. <br>
+          ** <b>ŠV</b> – Mokslo ir švietimo institucijomis, <b>SP</b> – Regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis, <b>D</b> – Darbdaviais.</p>
           <!-- kTOV4_S -->
           <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
           <div class="form-row">
@@ -4508,8 +4512,6 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
     </div>
   <div class="col-md-2 mb-3">
     <label for="">Publikacijos tipas
-      <b>(kodai
-        01-08)</b>
     </label>
     <select name="tMTEP3_T02tipas` + value13 + `" class="form-select form-control">
       <option value=""></option>
@@ -4524,7 +4526,6 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
     </select>
   </div>
   <div class="col-md-2 mb-3">
-    <br />
     <label for="">Mokslo sritis*</label>
     <select name="tMTEP3_T02mokslSrit` + value13 + `" class="form-select form-control">
       <option value=""></option>
@@ -4537,7 +4538,7 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
     </select>
   </div>
   <div class="col-md-4 mb-3">
-    <br>
+
     <label for="">Mokslo kryptis**</label>
     <select name="tMTEP3_T02mokslKrypt` + value13 + `" class="form-select form-control">
       <option value=""></option>
@@ -4603,7 +4604,6 @@ Neakademinis personalas<%- include('partials/headerLecturer') %>
     </select>
   </div>
   <div class="col-md-3 mb-3">
-    <br>
     <label for="">Duomenų bazė</label>
     <textarea type="text"  rows="1" class="form-control " name="tMTEP3_T02duomBaze` + value13 + `" placeholder="" autocomplete="off"></textarea>
   </div>

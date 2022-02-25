@@ -32,7 +32,8 @@
             <textarea type="text" rows="1" class="form-control" name="pareigos" autocomplete="off" readonly="readonly"><%=user.destytojas.pareigos%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <label>Pagrindinė (P), nepagrindinė (N) darbovietė</label>
+            <br>
+            <label>Darbovietės tipas</label>
             <textarea type="text" rows="1" class="form-control" name="darbovTipas" autocomplete="off" readonly="readonly"><%=user.destytojas.darbovietesTipas%></textarea>
           </div>
           <div class="col-md-2 mb-3">
@@ -3188,8 +3189,8 @@
         <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
         <!--kTOV4_29-->
         <!-- 29 lentelė.  -->
-        <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais: mokslo ir švietimo institucijomis (ŠV), regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis (SP), darbdaviais (D)</b></p>
-        <div class="form-row">
+          <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais</b></p>
+          <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="kTOV4_29nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
@@ -3199,8 +3200,14 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <label for="">Socialinis partneris</label>
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris1" placeholder="" autocomplete="off"></textarea>
+            <label for="">Socialinis partneris**</label>
+            <!-- <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris1" placeholder="" autocomplete="off"></textarea> -->
+            <select name="kTOV4_29socPartneris1" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
+              <option class="others" value="Regioninės valdymo struktūros, socialinių partnerių organizacijos">SP</option>
+              <option class="others" value="Darbdaviai">D</option>
+            </select>
           </div>
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center" name="kTOV4_29nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
@@ -3209,7 +3216,12 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris2" placeholder="" autocomplete="off"></textarea>
+            <select name="kTOV4_29socPartneris2" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
+              <option class="others" value="Regioninės valdymo struktūros, socialinių partnerių organizacijos">SP</option>
+              <option class="others" value="Darbdaviai">D</option>
+            </select>
           </div>
         </div>
         <div id="add_to_meN091">
@@ -3217,7 +3229,9 @@
         <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
         <p class="text-justify">* Veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
           vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
-          karjeros planavimo veiklose, diskusijose ir pan.</p>
+          karjeros planavimo veiklose, diskusijose ir pan. <br>
+        ** <b>ŠV</b> – Mokslo ir švietimo institucijomis, <b>SP</b> – Regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis, <b>D</b> – Darbdaviais.</p>
+
         <!-- kTOV4_S -->
         <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
         <div class="form-row">
@@ -6588,7 +6602,12 @@
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
             </div>
             <div class="col-md-5 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris` + value65 + `" placeholder="" autocomplete="off"></textarea>
+              <select name="kTOV4_29socPartneris` + value65 + `" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
+                <option class="others" value="Regioninės valdymo struktūros, socialinių partnerių organizacijos">SP</option>
+                <option class="others" value="Darbdaviai">D</option>
+              </select>
             </div>
           </div>
                 <div id="add_to_meN09` + div65 + `">
