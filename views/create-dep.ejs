@@ -23,22 +23,21 @@
             <input type="text" class="form-control text-center" name="mV2_D04nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            <label for=""><br>Studijų kryptis</label>
+            <label for="">Studijų kryptis</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D04studKryptis1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
-            <input type="number" class="form-control text-center" name="mV2_D04studProgr1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
+              <textarea rows="1" type="text" class="form-control " name="mV2_D04studProgr1" placeholder="" autocomplete="off"></textarea>
+                </div>
           <div class="col-md-3 mb-3">
-            <label for=""><br>Valstybinis programos kodas</label>
+            <label for="">Valstybinis programos kodas</label>
             <textarea rows="1" type="text" class="form-control text" name="mV2_D04progrKodas1" placeholder="" autocomplete="off"></textarea>
           </div>
-
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3">
-            <label for="">SKVC direktoriaus įsakymo Nr., data
+            <label for=""><br>SKVC direktoriaus įsakymo Nr., data
             </label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D04isakNrData1" placeholder="" autocomplete="off"></textarea>
           </div>
@@ -53,7 +52,7 @@
             <textarea rows="1" type="text" class="form-control " name="mV2_D04akreditLaikot1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <label for="">ECTS
+            <label for=""><br>ECTS
             </label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D04eCTS1" placeholder="" autocomplete="off"></textarea>
           </div>
@@ -103,7 +102,6 @@
 
    <!-- 3 lentelė -->
   <!-- praleista -->
-
 
         <br><br>
         <p class=" font-weight-bold text-center">2. METODINĖ VEIKLA. DALYVAVIMAS STUDIJŲ PROGRAMŲ KOKYBĖS UŽTIKRINIMO VEIKLOJE. STUDIJŲ POPULIARINIMAS</p>
@@ -172,7 +170,7 @@
             <input type="text" class="form-control text-center" name="mV2_M04nr<%=numb6%>" value="<%=numb6%>" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <label for=""><br><Br>Dėstytojas
+            <label for="">Dėstytojas
               (pavardė, vardas)
             </label>
             <textarea rows="1" type="text" class="form-control " name="mV2_M04destytojas<%=numb6%>" value="" placeholder="" autocomplete="off"><%=varpav%></textarea>
@@ -185,56 +183,61 @@
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="">Dalyko (modulio) pavadinimas</label>
+            <label for="">Dalyko pavadinimas</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_M04dalykPavad<%=numb6%>" value="" placeholder="" autocomplete="off"><%=user.dalykPavad%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <label for=""><br>Dalyko (modulio) apimtis kr.</label>
+            <label for="">Dalyko apimtis kr.</label>
             <input type="number" class="form-control text-center" name="mV2_M04apimtisKredit<%=numb6%>" value="<%=user.apimtisKredit%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-3 mb-3">
-            <label for="">Parengtas atestacijai (P) Atestuotas (A) Atestuotas su sąlyga (AS) Neatestuotas (NA)</label>
+            <label for="">Būsena*</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_M04busena<%=numb6%>" value="" placeholder="" autocomplete="off"><%=user.busena%></textarea>
           </div>
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond11" name="yond12" value="<%=numb6%>">
+        <p class="text-justify">
+          *<b> P</b> – Parengtas atestacijai,
+          <b>A</b> – Atestuotas,
+          <b>AS</b> – Atestuotas su sąlyga,
+          <b>NA</b> – Neatestuotas.
+        </p>
 
         <!-- 6 lentelė. -->
         <!-- mV2_D06 -->
         <div class="form-row">
           <div class="col-md-12 mb-3">
-            <label for=""><b>Vykdomų studijų programų tobulinimas (įsigaliojus ar pasikeitus studijų krypties reglamentui, profesijos standartui, atsižvelgus į išorinio vertinimo ekspertų išvadas, grįžtamojo ryšio (socialinių partnerių/ socialinių dalininkų) apklausų rezultatus) </b></label>
+            <label for=""><b>6 lentelė. Vykdomų studijų programų tobulinimas (įsigaliojus ar pasikeitus studijų krypties reglamentui,
+              profesijos standartui, atsižvelgus į išorinio vertinimo ekspertų išvadas, grįžtamojo ryšio (socialinių partnerių/
+               socialinių dalininkų) apklausų rezultatus) </b></label>
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <br>
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="mV2_D06nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <br>
             <label for="">Studijų programa</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D06studProgr1" placeholder="" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-2 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Valstybinis programos kodas</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D06progrKodas1" placeholder="" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-6 mb-3">
-            <br>
+          <div class="col-md-5 mb-3">
             <label for="">Atlikti patobulinimai</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D06atlPatobulin1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-6 mb-3">
             <label for="">Patobulinimą iniciajavusios priežastys</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinPriezast1" placeholder="" autocomplete="off"></textarea>
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-5 mb-3">
             <label for="">Patobulinimus pagrindžiantys įrodymai*</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinIrod1" placeholder="" autocomplete="off"></textarea>
           </div>
@@ -264,11 +267,11 @@
     <label for=""><br></label>
     <input type="text" class="form-control text-center" name="mV2_D01nr<%=numb7%>" value="<%=numb7%>" placeholder="" autocomplete="off" readonly="readonly">
   </div>
-  <div class="col-md-6 mb-3">
+  <div class="col-md-5 mb-3">
     <label for="">Dėstytojas (pavardė, vardas)</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D01destytojas<%=numb7%>" placeholder="" autocomplete="off"><%=varpav%></textarea>
   </div>
-  <div class="col-md-5 mb-3">
+  <div class="col-md-6 mb-3">
     <label for="">Komitetas</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D01komitetas<%=numb7%>" placeholder="" autocomplete="off"><%=user.komitetas%></textarea>
   </div>
@@ -306,21 +309,21 @@
     <label for=""><br></label>
     <input type="text" class="form-control text-center" name="mV2_D02nr<%=numb8%>" value="<%=numb8%>" placeholder="" autocomplete="off" readonly="readonly">
   </div>
-  <div class="col-md-4 mb-3">
+  <div class="col-md-5 mb-3">
     <label for="">Dėstytojas (pavardė, vardas)</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D02destytojas<%=numb8%>" value="" placeholder="" autocomplete="off"><%=varpav%></textarea>
   </div>
-  <div class="col-md-7 mb-3">
+  <div class="col-md-6 mb-3">
     <label for="">Studijų kryptis</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D02studProgr<%=numb8%>" value="" placeholder="" autocomplete="off"><%=user.studKryptis%></textarea>
   </div>
   <div class="col-md-1 mb-3">
   </div>
-  <div class="col-md-6 mb-3">
+  <div class="col-md-5 mb-3">
     <label for="">Veikla</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D02veikla<%=numb8%>" value="" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
   </div>
-  <div class="col-md-5 mb-3">
+  <div class="col-md-6 mb-3">
     <label for="">Rezultatai</label>
     <textarea rows="1" type="text" class="form-control " name="mV2_D02rezultatai<%=numb8%>" value="" placeholder="" autocomplete="off"><%=user.rezultatai%></textarea>
   </div>
@@ -438,7 +441,6 @@
               apie studijų galimybes, studentų mobilumo skatinimas ir pan. ir kas neįrašoma į 23 lentelę.) </b></label>
           </div>
         </div>
-
         <% var numba9 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -446,23 +448,21 @@
         <% numba9++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <label for=""><br></label>
+            <label for=""><br><br></label>
             <input type="text" class="form-control text-center" name="mV2_S01nr<%=numba9%>" placeholder="" autocomplete="off" value="<%=numba9%>" readonly="readonly">
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Dėstytojas
+          <div class="col-md-4 mb-3">
+            <label for=""><br>Dėstytojas
               (pavardė, vardas)
             </label>
             <textarea rows="1" type="text" class="form-control " name="mV2_S01destytojas<%=numba9%>" value="" placeholder="" autocomplete="off"><%=varpav%></textarea>
           </div>
-          <div class="col-md-11 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Veiklos pobūdis (paskaitos, straipsnio, pranešimo, renginio pavadinimas)</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_S01veikla<%=numba9%>" placeholder="" value="" autocomplete="off"><%=user.veikla%></textarea>
           </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Data, vieta</label>
+          <div class="col-md-3 mb-3">
+            <label for=""><br>Data, vieta</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_S01dataVieta<%=numba9%>" value="" placeholder="" autocomplete="off"><%=user.dataVieta%></textarea>
           </div>
         </div>
@@ -507,7 +507,6 @@
         <button class="plus-button" type="button" onclick="mv2s()">+</button><br><br>
 
 
-        <br><br>
         <div class="form-row">
           <div class="col-md-12 mb-3">
             <label for=""><b>3. TAIKOMŲJŲ MOKSLINIŲ TYRIMŲ IR EKSPERIMENTINĖS PLĖTROS
@@ -570,7 +569,7 @@
         <!-- 13 lentelė. -->
         <!-- TMTEP3_T02 -->
         <p class="font-weight-bold">
-          11 lentelė. Mokslo monografijų, mokslo darbų, straipsnių publikavimas su Vilniaus kolegijos prieskyra
+          13 lentelė. Mokslo monografijų, mokslo darbų, straipsnių publikavimas su Vilniaus kolegijos prieskyra
         </p>
         <style>
           table,
@@ -588,35 +587,42 @@
           <tr>
             <td rowspan="8"></td>
             <td><b>01</b></td>
-            <td>tarptautiniu mastu pripažintų užsienio leidyklų išleistos mokslo monografijos, mokslo darbai, mokslo straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of Science</i>ar <i>Scopus</i> duomenų
+            <td>tarptautiniu mastu pripažintų užsienio leidyklų išleistos mokslo monografijos, mokslo darbai, mokslo
+              straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of Science</i>ar <i>Scopus</i> duomenų
               bazėje referuojamų
               leidinių sąrašą, turinčiuose citavimo indeksą</td>
           </tr>
           <tr>
             <td><b>02</b></td>
-            <td>mokslo straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų leidinių sąrašą, neturinčių citavimo indekso </td>
+            <td>mokslo straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of
+              Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų leidinių sąrašą, neturinčių citavimo indekso </td>
           </tr>
           <tr>
             <td><b>03</b></td>
-            <td>mokslo straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų Konferencijos darbų (<i>Conference Proceedings</i>) leidinių sąrašą</td>
+            <td>mokslo straipsniai recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of
+              Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų Konferencijos darbų (<i>Conference Proceedings</i>) leidinių sąrašą</td>
           </tr>
           <tr>
             <td><b>04</b></td>
-            <td>pranešimų / straipsnių santraukos recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate Analytics Web of Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų santraukų (<i>Abstracts</i>) leidinių sąrašą </td>
+            <td>pranešimų / straipsnių santraukos recenzuojamuose mokslo leidiniuose, įtrauktuose į <i>Clarivate
+              Analytics Web of Science</i> ar <i>Scopus</i> duomenų bazėje referuojamų santraukų (<i>Abstracts</i>) leidinių sąrašą </td>
           </tr>
           <tr>
             <td><b>05</b></td>
-            <td>mokslo straipsniai užsienio ir Lietuvos recenzuojamuose mokslo leidiniuose, įtrauktuose į tarptautines duomenų bazes ir nepriskirtuose
+            <td>mokslo straipsniai užsienio ir Lietuvos recenzuojamuose mokslo leidiniuose, įtrauktuose į tarptautines
+              duomenų bazes ir nepriskirtuose
               <b>01</b> ir <b>02</b> grupei
             </td>
           </tr>
           <tr>
             <td><b>06</b></td>
-            <td>mokslo straipsniai užsienio ir Lietuvos recenzuojamuose Konferencijos darbų leidiniuose, įtrauktuose į tarptautines duomenų bazes ir nepriskirtini <b>03</b> grupei</td>
+            <td>mokslo straipsniai užsienio ir Lietuvos recenzuojamuose Konferencijos darbų leidiniuose, įtrauktuose į
+              tarptautines duomenų bazes ir nepriskirtini <b>03</b> grupei</td>
           </tr>
           <tr>
             <td><b>07</b></td>
-            <td>pranešimų konferencijose užsienyje ir Lietuvoje santraukos ir nepriskirtinos <b>04</b> leidinių grupei. Recenzuojami, bet netalpinami tarptautinėse duomenų bazėse konferencijų straipsniai.</td>
+            <td>pranešimų konferencijose užsienyje ir Lietuvoje santraukos ir nepriskirtinos <b>04</b> leidinių grupei.
+              Recenzuojami, bet netalpinami tarptautinėse duomenų bazėse konferencijų straipsniai.</td>
           </tr>
           <tr>
             <td><b>08</b></td>
@@ -627,7 +633,6 @@
         <%  users.forEach(function(user){ %>
         <%  user.destytojas.tMTEP3_T02.forEach(function(user){ %>
         <% numb13++ %>
-
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
@@ -643,21 +648,19 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Publikacijos tipas
-              <b>(kodai
-                01-08)</b>
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T02tipas<%=numb13%>" placeholder="" value="" autocomplete="off"><%=user.tipas%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <label for="">Mokslo <br>sritis*</label>
+            <label for="">Mokslo sritis*</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T02mokslSrit<%=numb13%>" placeholder="" value="" autocomplete="off"><%=user.mokslSrit%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="">Mokslo<br>kryptis**</label>
+            <label for="">Mokslo kryptis**</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T02mokslKrypt<%=numb13%>" placeholder="" value="" autocomplete="off"><%=user.mokslKrypt%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <label for=""><br>Duomenų bazė</label>
+            <label for="">Duomenų bazė</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T02duomBaze<%=numb13%>" placeholder="" value="" autocomplete="off"><%=user.duomBaze%></textarea>
           </div>
         </div>
@@ -674,9 +677,23 @@
 
           <!-- 14 lentelė. -->
         <!-- TMTEP3_T03 -->
-        <p class="text-left font-weight-bold">T.03 TMTEP ir meno veiklos rezultatų pristatymas mokslinėse konferencijose, seminaruose</p>
-        <p class="text-center font-weight-bold">Pilnas bibliografinis aprašas:</p>
-        <p class="text-center">Pavardė, V. (Metai). Straipsnio antraštė. Žurnalo antraštė, Nr., p. nuo-iki... , ISSN.</p>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for=""><b>14 lentelė. TMTEP ir meno veiklos rezultatų pristatymas mokslinėse/praktinėse renginiuose
+              (konferencijose, seminaruose, kt.) </b></label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <label for=""><br></label>
+          </div>
+          <div class="col-md-8 mb-3">
+          <label for="">Pavardė, V. Pranešimo pavadinimas. <i>Renginio pavadinimas,</i> vieta, data.</label>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="">Renginio tipas**</label>
+          </div>
+        </div>
 
         <% var numb14 = 0; %>
         <%  users.forEach(function(user){ %>
@@ -698,11 +715,12 @@
         <% }) %>
         <input type="hidden" id="yond27" name="yond28" value="<%=numb14%>">
 
-        <p> *pateikti įrodymus (nuoroda į programąir pan.)</p>
+        <p> * Pateikti įrodymus (nuoroda į programąir pan.)<br>
+        ** Seminaras, konferencija, kt.</p>
 
         <!-- 15 lentelė. -->
         <!-- TMTEP3_T04 -->
-        <p class="text-left font-weight-bold">T.04 Konsultacijos užsakovams, jeigu už jas nėra atlyginama</p>
+        <p class="text-left font-weight-bold">15 lentelė. Konsultacijos užsakovams</p>
         <% var numb15 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -714,13 +732,13 @@
             <label for=""><br></label>
             <input type="text" class="form-control text-center" name="tMTEP3_T04nr<%=numb15%>" placeholder="" autocomplete="off" value="<%=numb15%>" readonly="readonly">
           </div>
-          <div class="col-md-7 mb-3">
+          <div class="col-md-6 mb-3">
             <label for="">Konsultantas
               (pavardė, vardas)
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T04konsultantas<%=numb15%>" placeholder="" value="" autocomplete="off"><%=varpav%></textarea>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-5 mb-3">
             <label for="">Užsakovas</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T04uzsakovas<%=numb15%>" placeholder="" value="" autocomplete="off"><%=user.uzsakovas%></textarea>
           </div>
@@ -741,7 +759,7 @@
               <option class="others" value="Atlygintinai">Atlygintinai</option>
               <option class="others" value="Neatlygintinai">Neatlygintinai</option>
             </select> -->
-            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04atlygArNe" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
 
         </div>
@@ -750,29 +768,30 @@
         <% }) %>
         <input type="hidden" id="yond29" name="yond30" value="<%=numb15%>">
 
-<!-- BAIGTA -->
-
         <!-- 16.1 lentelė.  -->
         <!-- TMTEP3_T05 -->
-        <p class="font-weight-bold">14.1. Mokslinių darbų, metodinių leidinių recenzavimas ir ekspertavimas; dalyvavimas
-          įvairiose vertinimo komisijose; seminarų, mokymų užsakovams organizavimas ir vedimas;
-          žodyno / žinyno, straipsnių rinkinio galutinės redakcijos rankraščio parengimas; kūrinių
-          parengimas leidybai (kalbos redagavimui, vertimui); mokslo darbų vertimas į anglų kalbą. </p>
+        <p class="font-weight-bold">16.1. lentelė. Mokslinių darbų, metodinių leidinių
+          recenzavimas ir ekspertavimas; dalyvavimas įvairiose vertinimo komisijose; seminarų,
+           mokymų užsakovams organizavimas ir vedimas; žodyno / žinyno, straipsnių rinkinio
+           galutinės redakcijos rankraščio parengimas; kūrinių parengimas leidybai (kalbos
+           redagavimui, vertimui); mokslo darbų vertimas į anglų kalbą  </p>
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
           </div>
+          <div class="col-md-2 mb-3">
+            <label for="">Dėstytojas (pavardė, vardas)</label>
+          </div>
           <div class="col-md-4 mb-3">
             <label for="">Veiklos pavadinimas</label>
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Veiklos rezultatas </label>
           </div>
           <div class="col-md-2 mb-3">
-            <label for="">Dėstytojas
-              (pavardė, vardas)
-            </label>
+            <label for="">Atlygintinai/ Neatlygintinai</label>
           </div>
+
         </div>
         <% var numb16 = 0; %>
         <%  users.forEach(function(user){ %>
@@ -783,94 +802,173 @@
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center" name="tMTEP3_T05nr<%=numb16%>" placeholder="" autocomplete="off" value="<%=numb16%>" readonly="readonly">
           </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklPavad<%=numb16%>" placeholder="" value="" autocomplete="off"><%=user.veiklPavad%></textarea>
+          <div class="col-md-2 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05destytojas<%=numb16%>" placeholder="" autocomplete="off"><%=varpav%></textarea>
           </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklRezult<%=numb16%>" placeholder="" value="" autocomplete="off"><%=user.veiklRezult%></textarea>
+          <div class="col-md-4 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklPavad<%=numb16%>" placeholder="" autocomplete="off"><%=user.veiklPavad%></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklRezult<%=numb16%>" placeholder="" autocomplete="off"><%=user.veiklRezult%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05destytojas<%=numb16%>" placeholder="" value="" autocomplete="off"><%=varpav%></textarea>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T05atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond31" name="yond32" value="<%=numb16%>">
 
-        <!-- TMTEP3_T06 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.06</th>
-            <th style="width:92%">Dailės ir dizaino veikla, jeigu už ją nėra atlyginama</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td>- personalinė paroda užsienyje, dalyvavimas tarptautinėje parodoje užsienyje;<br>
-              - personalinė paroda, dalyvavimas tarptautinėje parodoje Lietuvoje;<br>
-              - dalyvavimas personalinėje / kolektyvinėje parodoje Lietuvoje.
-            </td>
-          </tr>
-        </table>
-        <% var numb17 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <%  user.destytojas.tMTEP3_T06.forEach(function(user){ %>
-        <% numb17++ %>
+        <!-- 16.2. lentelė NEW -->
+        <p><b>16.2. Narystė profesiniuose tinkluose, atstovavimas Kolegijai asociacijose, organizacijose, išorės institucijų darbo grupėse ir kt.</b></p>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <label for=""><br></label>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="">Dėstytojas (pavardė, vardas)</label>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="">Profesinio tinklo / asociacijos / orgzanizacijos / ... / pavadinimas</label>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="">Pastabos</label>
+            </div>
+          </div>
+
+          <% var numb162 = 0; %>
+          <%  users.forEach(function(user){ %>
+          <% var varpav = user.vardas + " " + user.pavarde; %>
+          <%  user.destytojas.tMTEP3_142.forEach(function(user){ %>
+          <% numb162++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="tMTEP3_T06nr<%=numb17%>" placeholder="" autocomplete="off" value="<%=numb17%>" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Autorius/bendraautorius
-              (Pavardė, vardas)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.autorius%></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Meno sritis*, pavadinimas</label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06menoSrit<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.menoSrit%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="tMTEP3_162nr<%=numb162%>" placeholder="" autocomplete="off" value="<%=numb162%>" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <label for="">Pobūdis
-              <i>(premjera ar pakartojimas)</i>
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06pobudis<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.pobudis%></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_162destytojas<%=numb162%>" placeholder="" autocomplete="off"><%=varpav%></textarea>
           </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Realizavimo vieta, vieši įvertinimai</label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06realizVieta<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.realizVieta%></textarea>
+          <div class="col-md-4 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_162pavadinimas<%=numb162%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Data</label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06data<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.data%></textarea>
+          <div class="col-md-4 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_162pastabos<%=numb162%>" placeholder="" autocomplete="off"><%=user.pastabos%></textarea>
           </div>
         </div>
         <% }) %>
         <% }) %>
-        <input type="hidden" id="yond33" name="yond34" value="<%=numb17%>">
+        <input type="hidden" id="yond_new1" name="yond_new2" value="<%=numb162%>">
 
-        <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
-          <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610</a>
-          <br>
-          <b>PASTABA</b> : pridedami kūrėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos autorių pavardės</i>)
-        </p>
+        <!-- 16.3 lentelė -->
+        <p><b>16.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų
+          </b></p>
+          <div class="form-row">
+            <div class="col-md-1 mb-3">
+              <label for=""><br></label>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="">Rengėjas
+                (pavardė, vardas)
+              </label>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="">Pavadinimas</label>
+            </div>
+            <div class="col-md-3 mb-3">
+            <label for="">Užsakovas</label>
+            </div>
+          </div>
+        <% var numb163 = 0; %>
+        <%  users.forEach(function(user){ %>
+          <% var varpav = user.vardas + " " + user.pavarde; %>
+        <%  user.destytojas.tMTEP3_143.forEach(function(user){ %>
+        <% numb163++ %>
+        <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="tMTEP3_T06nr<%=numb163%>" placeholder="" autocomplete="off" value="<%=numb163%>" readonly="readonly">
+          </div>
+          <div class="col-md-4 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb163%>" placeholder="" value="" autocomplete="off"><%=varpav%></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06menoSrit<%=numb163%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
+          </div>
+          <div class="col-md-3 mb-3">
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_143uzsakovas<%=numb163%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
+          </div>
+        </div>
+        <% }) %>
+        <% }) %>
+        <input type="hidden" id="yond_new3" name="yond_new4" value="<%=numb163%>">
+
+        <!-- 17 lentelė. -->
+        <!-- TMTEP3_T06 -->
+        <p><b>17 lentelė. Dailės ir dizaino veikla (personalinė paroda užsienyje, dalyvavimas tarptautinėje parodoje užsienyje; personalinė paroda,
+          dalyvavimas tarptautinėje parodoje Lietuvoje; dalyvavimas personalinėje / kolektyvinėje parodoje Lietuvoje)
+          </b></p>
+       <% var numb17 = 0; %>
+       <%  users.forEach(function(user){ %>
+       <%  user.destytojas.tMTEP3_T06.forEach(function(user){ %>
+       <% numb17++ %>
+       <div class="form-row">
+         <div class="col-md-1 mb-3">
+           <label for=""><br></label>
+           <input type="text" class="form-control text-center" name="tMTEP3_T06nr<%=numb17%>" placeholder="" autocomplete="off" value="<%=numb17%>" readonly="readonly">
+         </div>
+         <div class="col-md-6 mb-3">
+           <label for="">Autorius/bendraautorius
+             (pavardė, vardas)
+           </label>
+           <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.autorius%></textarea>
+         </div>
+         <div class="col-md-5 mb-3">
+           <label for="">Meno sritis*, pavadinimas</label>
+           <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06menoSrit<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.menoSrit%></textarea>
+         </div>
+         <div class="col-md-1 mb-3">
+         </div>
+         <div class="col-md-2 mb-3">
+           <label for="">Pobūdis
+           </label>
+           <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06pobudis<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.pobudis%></textarea>
+         </div>
+         <div class="col-md-4 mb-3">
+           <label for="">Realizavimo vieta, vieši įvertinimai</label>
+           <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06realizVieta<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.realizVieta%></textarea>
+         </div>
+         <div class="col-md-3 mb-3">
+           <label for="">Data</label>
+           <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06data<%=numb17%>" placeholder="" value="" autocomplete="off"><%=user.data%></textarea>
+         </div>
+         <div class="col-md-2 mb-3">
+            <label for="">Atlygintinai/ Neatlygintinai</label>
+           <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+             <option value=""></option>
+             <option class="others" value="Atlygintinai">Atlygintinai</option>
+             <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+           </select> -->
+           <textarea type="text" rows="1" class="form-control" name="tMTEP3_T06atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+         </div>
+       </div>
+       <% }) %>
+       <% }) %>
+       <input type="hidden" id="yond33" name="yond34" value="<%=numb17%>">
+       <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
+         <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610</a>
+         <br>
+         <b>PASTABA</b> : pridedami kūrėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos autorių pavardės</i>)
+       </p>
+       <!-- 18 lentelė. -->
         <!-- TMTEP3_T07 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.07</th>
-            <th style="width:92%">Teatro veikla (jai priskiriama teatro kūrybos, kino ar televizijos kūrybos veikla ir jos rezultatai), jeigu už ją nėra atlyginama</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td>- spektaklis, kino, televizijos filmas pastatytas (parodytas) užsienyje;<br>
-              - spektaklis, kino, televizijos filmas pastatytas (parodytas) Lietuvoje;<br>
-              - vaidmuo, atliktas teatro, kino, televizijos renginyje užsienyje;<br>
-              - vaidmuo, atliktas Lietuvos teatro, kino, televizijos renginyje.
-            </td>
-          </tr>
-        </table>
+        <p><b>18 lentelė. Teatro veikla (jai priskiriama teatro kūrybos, kino ar televizijos kūrybos veikla ir jos rezultatai (spektaklis, kino, televizijos
+          filmas pastatytas (parodytas) užsienyje; spektaklis, kino, televizijos filmas pastatytas (parodytas) Lietuvoje; vaidmuo, atliktas teatro, kino,
+          televizijos renginyje užsienyje; vaidmuo, atliktas Lietuvos teatro, kino, televizijos renginyje))
+          </b></p>
         <% var numb18 = 0; %>
         <%  users.forEach(function(user){ %>
         <%  user.destytojas.tMTEP3_T07.forEach(function(user){ %>
@@ -892,17 +990,26 @@
           </div>
           <div class="col-md-1 mb-3">
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Pavadinimas </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T07pavadinimas<%=numb18%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for=""> Atlikimo vieta, vieši įvertinimai</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T07atlikVieta<%=numb18%>" placeholder="" value="" autocomplete="off"><%=user.atlikVieta%></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label for=""> Data</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T07data<%=numb18%>" placeholder="" value="" autocomplete="off"><%=user.data%></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="">Atlygintinai/ Neatlygintinai</label>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T07atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
         </div>
         <% }) %>
@@ -912,21 +1019,12 @@
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
+        <!-- 19 lentelė. -->
         <!-- TMTEP3_T08 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.08</th>
-            <th style="width:92%">Choreografijos ir šokio kūrybos veikla (apima choreografiją ir šokio atlikimą), jeigu už ją nėra atlyginama</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td>- baleto, šokio kompozicijos ir pan. choreografija, režisavimas užsienyje;<br>
-              - baleto, šokio kompozicijos ir pan. choreografija, režisavimas Lietuvoje;<br>
-              - solinė ar ansamblinė šokio partija, atlikta spektaklyje užsienyje;<br>
-              - solinė ar ansamblinė šokio partija, atlikta spektaklyje Lietuvos scenoje.
-            </td>
-          </tr>
-        </table>
+        <p><b>19 lentelė. Choreografijos ir šokio kūrybos veikla (apima choreografiją ir šokio atlikimą (baleto, šokio kompozicijos ir pan. choreografija,
+          režisavimas užsienyje; baleto, šokio kompozicijos ir pan. choreografija, režisavimas Lietuvoje; solinė ar ansamblinė šokio partija, atlikta
+          spektaklyje užsienyje; solinė ar ansamblinė šokio partija, atlikta spektaklyje Lietuvos scenoje))
+          </b></p>
         <% var numb19 = 0; %>
         <%  users.forEach(function(user){ %>
         <%  user.destytojas.tMTEP3_T08.forEach(function(user){ %>
@@ -939,8 +1037,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="">Atlikėjas/dalyvis
-              (<b>Pavardė</b>, vardas)
-
+              (pavardė, vardas)
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T08atlikejas<%=numb19%>" placeholder="" value="" autocomplete="off"><%=user.atlikejas%></textarea>
           </div>
@@ -951,20 +1048,28 @@
           </div>
           <div class="col-md-1 mb-3">
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Pavadinimas
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T08pavadinimas<%=numb19%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Atlikimo vieta, vieši įvertinimai
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T08atlikVieta<%=numb19%>" placeholder="" value="" autocomplete="off"><%=user.atlikVieta%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="">Data
-            </label>
+            <label for="">Data</label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T08data<%=numb19%>" placeholder="" value="" autocomplete="off"><%=user.data%></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="">Atlygintinai/ Neatlygintinai</label>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T07atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
 
         </div>
@@ -975,19 +1080,13 @@
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
+
+        <!-- 20 lentelė. -->
         <!-- TMTEP3_T09 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.09</th>
-            <th style="width:92%">Muzikos veikla, jeigu už ją nėra atlyginama</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td>- autorinis koncertas, muzikinis scenos veikalas (opera, baletas ir pan.), koncertinis kūrinys, rečitalis ar dalis koncerto programos, atlikti užsienio renginiuose;<br>
-              - autorinis koncertas, muzikinis scenos veikalas (opera, baletas ir pan.), koncertinis kūrinys, rečitalis ar dalis koncerto programos, atlikti Lietuvoje.
-            </td>
-          </tr>
-        </table>
+        <p><b>20 lentelė. Muzikos veikla (autorinis koncertas, muzikinis scenos veikalas (opera, baletas ir pan.), koncertinis kūrinys, rečitalis ar dalis koncerto programos,
+           atlikti užsienio renginiuose; autorinis koncertas, muzikinis scenos veikalas (opera, baletas ir pan.), koncertinis kūrinys, rečitalis ar dalis koncerto programos,
+           atlikti Lietuvoje)
+          </b></p>
         <% var numb20 = 0; %>
         <%  users.forEach(function(user){ %>
         <%  user.destytojas.tMTEP3_T09.forEach(function(user){ %>
@@ -1001,7 +1100,6 @@
           <div class="col-md-6 mb-3">
             <label for="">Atlikėjas/dalyvis
               (<b>Pavardė</b>, vardas)
-
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T09atlikejas<%=numb20%>" placeholder="" value="" autocomplete="off"><%=user.atlikejas%></textarea>
           </div>
@@ -1012,12 +1110,12 @@
           </div>
           <div class="col-md-1 mb-3">
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Pavadinimas
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T09pavadinimas<%=numb20%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="">Atlikimo vieta, vieši įvertinimai
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T09atlikVieta<%=numb20%>" placeholder="" value="" autocomplete="off"><%=user.atlikVieta%></textarea>
@@ -1027,22 +1125,28 @@
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T09data<%=numb20%>" placeholder="" value="" autocomplete="off"><%=user.data%></textarea>
           </div>
+          <div class="col-md-2 mb-3">
+             <label for="">Atlygintinai/ Neatlygintinai</label>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T09atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+          </div>
 
         </div>
-        <% }) %>
-        <% }) %>
+      <% }) %>
+      <% }) %>
         <input type="hidden" id="yond39" name="yond40" value="<%=numb20%>">
 
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
+
+        <!-- 21 lentelė. -->
         <!-- TMTEP3_T10 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.10</th>
-            <th style="width:92%">Meno projektų kuravimas ir vadyba, jeigu už tai nėra atlyginama</th>
-          </tr>
-        </table>
+        <p><b>21 lentelė. Meno projektų kuravimas ir vadyba </b></p>
         <% var numb21 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -1082,23 +1186,28 @@
             </label>
             <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk<%=numb21%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T10ktKomentarai<%=numb21%>" placeholder="" value="" autocomplete="off"><%=user.ktKomentarai%></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="">Atlygintinai/ Neatlygintinai</label>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T10atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond41" name="yond42" value="<%=numb21%>">
 
+        <!-- 22 lentelė -->
         <!-- TMTEP3_T11 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.11</th>
-            <th style="width:92%">Meno renginių vedimas, jeigu už tai nėra atlyginama</th>
-          </tr>
-        </table>
+        <p><b>22 lentelė. Meno renginių vedimas  </b></p>
         <% var numb22 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -1138,23 +1247,29 @@
             </label>
             <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk<%=numb22%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
             </label>
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T11ktKomentarai<%=numb22%>" placeholder="" value="" autocomplete="off"><%=user.ktKomentarai%></textarea>
+          </div>
+          <div class="col-md-2 mb-3">
+             <label for="">Atlygintinai/ Neatlygintinai</label>
+            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="Atlygintinai">Atlygintinai</option>
+              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
+            </select> -->
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T11atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
           </div>
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond43" name="yond44" value="<%=numb22%>">
+
+        <!-- 23 lentelė. -->
         <!-- TMTEP3_T12 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.12</th>
-            <th style="width:92%">TMTEP ir meno veiklos populiarinimas (viešų paskaitų skaitymas, dalyvavimas radijo ir televizijos laidose, dalyvavimas viešose konferencijose, diskusijose, populiarinimui skirtų leidinių rengimas ir skelbimas ir kt.)
-            </th>
-          </tr>
-        </table>
+        <p><b>23 lentelė. TMTEP ir meno veiklos populiarinimas (viešų paskaitų skaitymas, dalyvavimas radijo ir
+           televizijos laidose, dalyvavimas viešose konferencijose, diskusijose, populiarinimui skirtų leidinių rengimas ir skelbimas ir kt.) </b></p>
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for="">
@@ -1197,14 +1312,12 @@
         <% }) %>
         <input type="hidden" id="yond45" name="yond46" value="<%=numb23%>">
 
-        <!-- TMTEP3_T13 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.13</th>
-            <th style="width:92%">Studentų rengimas studentų profesinio meistriškumo konkursui, olimpiadai, varžyboms / konferencijoms / straipsnio rengimui</th>
-          </tr>
-        </table>
 
+
+        <!-- TMTEP3_T13 -->
+        <!-- 25 lentelė. -->
+        <p><b>25 lentelė. Studentų rengimas studentų profesinio meistriškumo konkursui,
+          olimpiadai, varžyboms, konferencijoms, straipsnio rengimui </b></p>
         <% var numb24 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -1248,14 +1361,11 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond47" name="yond48" value="<%=numb24%>">
+
         <!-- TMTEP3_T14 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.14</th>
-            <th style="width:92%">Kita švietėjiška veikla (jaunųjų talentų mokyklų (akademijų) veiklų organizavimas ir dalyvavimas jose, stovyklų vaikams, paauglių, senjorų užimtumo renginių, kuriuos organizuojant panaudojamos mokslinės ir praktinės
-              žinios bei gebėjimai, taikomųjų mokslinių tyrimų rezultatai, vykdymas)</th>
-          </tr>
-        </table>
+        <!-- 24 lentelė. -->
+        <p><b>24 lentelė. Kita švietėjiška veikla (jaunųjų talentų mokyklų (akademijų) veiklų organizavimas  ir dalyvavimas jose, stovyklų vaikams, paauglių, senjorų užimtumo
+          renginių, kuriuos organizuojant panaudojamos mokslinės ir praktinės žinios bei gebėjimai, taikomųjų mokslinių tyrimų rezultatai, vykdymas) </b></p>
         <% var numb25 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
@@ -1295,184 +1405,6 @@
         <% }) %>
         <input type="hidden" id="yond49" name="yond50" value="<%=numb25%>">
 
-        <!-- TMTEP3_T15 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.15</th>
-            <th style="width:92%"><span class='notbold'><b>Neformalus mokymas</b>. Mokymosi formų ir „kelio“ (modelio) pasirinkimo galimybių įvairovė.</span>
-
-            </th>
-          </tr>
-        </table>
-
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br><br>
-            </label>
-            <input type="text" class="form-control text-center" name="tMTEP3_T15nr1" value="1" placeholder="" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Mokymų pavadinimas* ir tipas (<b>K</b>; <b>S</b>; <b>KT</b>)**
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15mokymai1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for=""><br>Vykdytojai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15vykdytojai1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for=""><br>Užsakovai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15uzsakovas1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Sutarties suma
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15suma1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Sutarties Nr., data
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15nrData1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Klausytojų
-              skaičius
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15klausytojai1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Trukmė val.
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15trukme1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br><br>
-            </label>
-            <input type="text" class="form-control text-center" name="tMTEP3_T15nr2" value="2" placeholder="" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Mokymų pavadinimas* ir tipas (<b>K</b>; <b>S</b>; <b>KT</b>)**
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15mokymai2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for=""><br>Vykdytojai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15vykdytojai2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for=""><br>Užsakovai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15uzsakovas2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Sutarties suma
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15suma2" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Sutarties Nr., data
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T15nrData2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Klausytojų
-              skaičius
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15klausytojai2" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Trukmė val.
-            </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T15trukme2" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-        </div>
-        <div id="add_to_me61">
-
-        </div>
-        <button class="plus-button" type="button" onclick="t15()">+</button><br><br>
-
-        <p>*Nurodykite seminaro, kursų, o <u>ne atskirų paskaitų</u> temas. Seminarų vykdytojai gali būti keli.<br>
-          ** Kvalifikacijos tobulinimo kursai <b>(K)</b>, seminarai <b>(S)</b>, kita <b>(KT)</b>.
-        </p>
-
-
-        <!-- TMTEP3_T16 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.16</th>
-            <th style="width:92%">Parengti norminiai dokumentai</th>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br>
-            </label>
-            <input type="text" class="form-control text-center" name="tMTEP3_T16nr1" value="1" placeholder="" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Pavadinimas
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16pavadinimas1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Užsakovas
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16uzsakovas1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-11 mb-3">
-            <label for="">Rengėjai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16rengejai1" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <div id="add_to_me71">
-
-        </div>
-        <button class="plus-button" type="button" onclick="t16()">+</button><br><br>
-
-        <!-- TMTEP3_T17 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.17</th>
-            <th style="width:92%"><span class='notbold'><b>Pakomentuokite <u>svarbiausius</u> katedros</b> mokslo (meno) veiklai <b>renginius</b> (tikslas, tikslinė grupė, dalyvių įvairovė)</span></th>
-          </tr>
-        </table>
-        <br>
-        <div class="form-row">
-          <div class="col-md-12 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="tMTEP3_T17komentaras" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-
-
-        <!-- TMTEP3_T18 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">T.18</th>
-            <th style="width:92%">Pakomentuokite akademinio personalo veiklos rezultatyvumą fakultete</th>
-          </tr>
-        </table>
-        <br>
-        <div class="form-row">
-          <div class="col-md-12 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="tMTEP3_T18komentaras" placeholder="" autocomplete="off"></textarea>
-          </div>
-
-        </div>
-
-
-
         <!-- TMTEP_S -->
         <div class="form-row">
           <div class="col-md-12 mb-3 text-center">
@@ -1481,7 +1413,7 @@
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <label for="">Nr.</label>
+            <label for=""><br></label>
             <input type="text" class="form-control text-center" name="tMTEP3_Snr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
@@ -1510,2202 +1442,10 @@
         <button class="plus-button" type="button" onclick="tmteps()">+</button><br><br>
 
         <!-- kTOV4 -->
-        <p class="text-center font-weight-bold">4. KOMPETENCIJŲ TOBULINIMAS IR ORGANIZACINĖ VEIKLA</p>
+        <!-- IŠKIRPTA -->
 
-        <!-- KV01-->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.01</b></td>
-            <td><b>Dėstytojo kvalifikacijos tobulinimas (Lietuvoje)</b></td>
-          </tr>
-        </table>
-        <br>
-        <table style="width:100%">
-          <tr>
-            <td style="width: 17%;">Kvalifikacijos tobulinimo forma</td>
-            <td style="width: 33%;">Pavadinimas</td>
-            <td style="width: 17%;">Pažymėjimo Nr. (arba) įsakymo data ir Nr.</td>
-            <td style="width: 8%;">Trukmė <b>valandomis</b></td>
-            <td>Dalyvis</td>
-          </tr>
-        </table>
-        <br>
-        <!-- kTOV4_KV01dalykines_komp -->
-        <p style="text-align: center;"><b>Dalykinės kompetencijos</b></p>
-        <% var number1 = 0;  %>
-        <% var stazuotessk = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% if (user.busena != "nesukurta") stazuotessk++; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.stazuotes.forEach(function(user){ %>
-        <% number1++ %>
-        <% if (number1==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykStazuotespavad<%=number1%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykStazuotespazymNr<%=number1%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dstaz<%=number1%>" name="kTOV4_KV01dalykStazuotestrukmeVal<%=number1%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="ja<%=number1%>" name="kTOV4_KV01dalykStazuotesdalyvis<%=number1%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykStazuotespavad<%=number1%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykStazuotespazymNr<%=number1%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dstaz<%=number1%>" name="kTOV4_KV01dalykStazuotestrukmeVal<%=number1%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="ja<%=number1%>" name="kTOV4_KV01dalykStazuotesdalyvis<%=number1%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
 
-        <% var number2 = 0; %>
-        <% var seminarusk = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var loopn=1; %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% if (user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.seminarai.lenght != 0) {%>
-        <%  if (loopn==1) seminarusk++; %>
-        <% loopn++; %>
-        <%    } %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.seminarai.forEach(function(user){ %>
-        <% number2++ %>
-        <% if (number2==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykSeminaraipavad<%=number2%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykSeminaraipazymNr<%=number2%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dsem<%=number2%>" name="kTOV4_KV01dalykSeminaraitrukmeVal<%=number2%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="2ja<%=number2%>" name="kTOV4_KV01dalykSeminaraidalyvis<%=number2%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykSeminaraipavad<%=number2%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykSeminaraipazymNr<%=number2%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dsem<%=number2%>" name="kTOV4_KV01dalykSeminaraitrukmeVal<%=number2%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="2ja<%=number2%>" name="kTOV4_KV01dalykSeminaraidalyvis<%=number2%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var number3 = 0; %>
-        <% var konfsk = 0; %>
-        <%  users.forEach(function(user){ %>
-
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% if (user.busena != "nesukurta") konfsk++ %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.konferencijos.forEach(function(user){ %>
-        <% number3++ %>
-        <% if (number3==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKonfpavad<%=number3%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKonfpazymNr<%=number3%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dkonf<%=number3%>" name="kTOV4_KV01dalykKonftrukmeVal<%=number3%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="3ja<%=number3%>" name="kTOV4_KV01dalykKonfdalyvis<%=number3%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKonfpavad<%=number3%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKonfpazymNr<%=number3%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dkonf<%=number3%>" name="kTOV4_KV01dalykKonftrukmeVal<%=number3%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="3ja<%=number3%>" name="kTOV4_KV01dalykKonfdalyvis<%=number3%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var number4 = 0; %>
-        <% var kursusk = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") kursusk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.kursai.forEach(function(user){ %>
-        <% number4++ %>
-        <% if (number4==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKursaipavad<%=number4%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKursaipazymNr<%=number4%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dkurs<%=number4%>" name="kTOV4_KV01dalykKursaitrukmeVal<%=number4%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="4ja<%=number4%>" name="kTOV4_KV01dalykKursaidalyvis<%=number4%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKursaipavad<%=number4%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKursaipazymNr<%=number4%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dkurs<%=number4%>" name="kTOV4_KV01dalykKursaitrukmeVal<%=number4%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="4ja<%=number4%>" name="kTOV4_KV01dalykKursaidalyvis<%=number4%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <%  var dalykkompsk = 0; %>
-        <%  var didakkompsk = 0; %>
-        <%  var bendrkompsk = 0; %>
-        <%  users.forEach(function(user){ %>
-
-        <% if (user.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.dalyvavoDalyk == true) dalykkompsk++ %>
-        <% if (user.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.dalyvavoDidak == true) didakkompsk++ %>
-        <% if (user.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.dalyvavoBendr == true) bendrkompsk++ %>
-        <% }) %>
-        <br>
-        <!-- kTOV4_KV01didaktines_komp -->
-        <p style="text-align: center;"><b>Didaktinės kompetencijos </b></p>
-
-        <% var number5 = 0; %>
-        <% var dstazuotessk = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dstazuotessk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.stazuotes.forEach(function(user){ %>
-        <% number5++ %>
-        <% if (number5==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakStazuotespavad<%=number5%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakStazuotespazymNr<%=number5%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="distaz<%=number5%>" name="kTOV4_KV01didakStazuotestrukmeVal<%=number5%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="5ja<%=number5%>" name="kTOV4_KV01didakStazuotesdalyvis<%=number5%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakStazuotespavad<%=number5%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakStazuotespazymNr<%=number5%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="distaz<%=number5%>" name="kTOV4_KV01didakStazuotestrukmeVal<%=number5%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="5ja<%=number5%>" name="kTOV4_KV01didakStazuotesdalyvis<%=number5%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-
-        <% var number6 = 0; %>
-        <% var dseminarusk = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% if (user.busena != "nesukurta") dseminarusk++ %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.seminarai.forEach(function(user){ %>
-        <% number6++ %>
-        <% if (number6==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakSeminaraipavad<%=number6%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakSeminaraipazymNr<%=number6%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="disem<%=number6%>" name="kTOV4_KV01didakSeminaraitrukmeVal<%=number6%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="6ja<%=number6%>" name="kTOV4_KV01didakSeminaraidalyvis<%=number6%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakSeminaraipavad<%=number6%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakSeminaraipazymNr<%=number6%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="disem<%=number6%>" name="kTOV4_KV01didakSeminaraitrukmeVal<%=number6%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="6ja<%=number6%>" name="kTOV4_KV01didakSeminaraidalyvis<%=number6%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var dkonfsk = 0; %>
-        <% var number7 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dkonfsk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.konferencijos.forEach(function(user){ %>
-        <% number7++ %>
-        <% if (number7==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKonfpavad<%=number7%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKonfpazymNr<%=number7%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dikonf<%=number7%>" name="kTOV4_KV01didakKonftrukmeVal<%=number7%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="7ja<%=number7%>" name="kTOV4_KV01didakKonfdalyvis<%=number7%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKonfpavad<%=number7%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKonfpazymNr<%=number7%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dikonf<%=number7%>" name="kTOV4_KV01didakKonftrukmeVal<%=number7%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="7ja<%=number7%>" name="kTOV4_KV01didakKonfdalyvis<%=number7%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var dkursusk = 0; %>
-        <% var number8 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dkursusk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.kursai.forEach(function(user){ %>
-        <% number8++ %>
-        <% if (number8==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKursaipavad<%=number8%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKursaipazymNr<%=number8%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dikurs<%=number8%>" name="kTOV4_KV01didakKursaitrukmeVal<%=number8%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="8ja<%=number8%>" name="kTOV4_KV01didakKursaidalyvis<%=number8%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKursaipavad<%=number8%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01didakKursaipazymNr<%=number8%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dikurs<%=number8%>" name="kTOV4_KV01didakKursaitrukmeVal<%=number8%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="8ja<%=number8%>" name="kTOV4_KV01didakKursaidalyvis<%=number8%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-
-
-
-        <br>
-        <!-- kTOV4_KV01bendrosios_komp -->
-        <p style="text-align: center;"><b>Bendrosios kompetencijos </b></p>
-        <% var bstazuotessk = 0; %>
-        <% var number9 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bstazuotessk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.stazuotes.forEach(function(user){ %>
-        <% number9++ %>
-        <% if (number9==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrStazuotespavad<%=number9%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrStazuotespazymNr<%=number9%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bstaz<%=number9%>" name="kTOV4_KV01bendrStazuotestrukmeVal<%=number9%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="9ja<%=number9%>" name="kTOV4_KV01bendrStazuotesdalyvis<%=number9%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrStazuotespavad<%=number9%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrStazuotespazymNr<%=number9%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bstaz<%=number9%>" name="kTOV4_KV01bendrStazuotestrukmeVal<%=number9%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="9ja<%=number9%>" name="kTOV4_KV01bendrStazuotesdalyvis<%=number9%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var bseminarusk = 0; %>
-        <% var number10 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bseminarusk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.seminarai.forEach(function(user){ %>
-        <% number10++ %>
-        <% if (number10==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrSeminaraipavad<%=number10%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrSeminaraipazymNr<%=number10%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bsem<%=number10%>" name="kTOV4_KV01bendrSeminaraitrukmeVal<%=number10%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="10ja<%=number10%>" name="kTOV4_KV01bendrSeminaraidalyvis<%=number10%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrSeminaraipavad<%=number10%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrSeminaraipazymNr<%=number10%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bsem<%=number10%>" name="kTOV4_KV01bendrSeminaraitrukmeVal<%=number10%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="10ja<%=number10%>" name="kTOV4_KV01bendrSeminaraidalyvis<%=number10%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var bkonfsk = 0; %>
-        <% var number11 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bkonfsk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.konferencijos.forEach(function(user){ %>
-        <% number11++ %>
-        <% if (number11==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKonfpavad<%=number11%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKonfpazymNr<%=number11%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bkonf<%=number11%>" name="kTOV4_KV01bendrKonftrukmeVal<%=number11%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="11ja<%=number11%>" name="kTOV4_KV01bendrKonfdalyvis<%=number11%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKonfpavad<%=number11%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKonfpazymNr<%=number11%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bkonf<%=number11%>" name="kTOV4_KV01bendrKonftrukmeVal<%=number11%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="11ja<%=number11%>" name="kTOV4_KV01bendrKonfdalyvis<%=number11%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var bkursusk = 0; %>
-        <% var number12 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bkursusk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.kursai.forEach(function(user){ %>
-        <% number12++ %>
-        <% if (number12==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKursaipavad<%=number12%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKursaipazymNr<%=number12%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bkurs<%=number12%>" name="kTOV4_KV01bendrKursaitrukmeVal<%=number12%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="12ja<%=number12%>" name="kTOV4_KV01bendrKursaidalyvis<%=number12%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKursaipavad<%=number12%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKursaipazymNr<%=number12%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bkurs<%=number12%>" name="kTOV4_KV01bendrKursaitrukmeVal<%=number12%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="12ja<%=number12%>" name="kTOV4_KV01bendrKursaidalyvis<%=number12%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <br>
-        <!-- kTOV4_KV02-->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.02</b></td>
-            <td><b>Dėstytojo kvalifikacijos tobulinimas (užsienyje)</b></td>
-          </tr>
-        </table>
-        <br>
-        <table style="width:100%">
-          <tr>
-            <td style="width: 17%;">Kvalifikacijos tobulinimo forma</td>
-            <td style="width: 33%;">Pavadinimas</td>
-            <td style="width: 17%;">Pažymėjimo Nr. (arba) įsakymo data ir Nr.</td>
-            <td style="width: 8%;">Trukmė <b>valandomis</b></td>
-            <td>Dalyvis</td>
-          </tr>
-        </table>
-        <!-- kTOV4_KV02dalykines_komp -->
-        <br>
-        <p style="text-align: center;"><b>Dalykinės kompetencijos</b></p>
-        <% var stazuotessk2 = 0; %>
-        <% var number13 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") stazuotessk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.stazuotes.forEach(function(user){ %>
-        <% number13++ %>
-        <% if (number13==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykStazuotespavad<%=number13%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykStazuotespazymNr<%=number13%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dastaz<%=number13%>" name="kTOV4_KV02dalykStazuotestrukmeVal<%=number13%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="13ja<%=number13%>" name="kTOV4_KV02dalykStazuotesdalyvis<%=number13%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykStazuotespavad<%=number13%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykStazuotespazymNr<%=number13%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dastaz<%=number13%>" name="kTOV4_KV02dalykStazuotestrukmeVal<%=number13%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="13ja<%=number13%>" name="kTOV4_KV02dalykStazuotesdalyvis<%=number13%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var seminarusk2 = 0; %>
-        <% var number14 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") seminarusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.seminarai.forEach(function(user){ %>
-        <% number14++ %>
-        <% if (number14==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykSeminaraipavad<%=number14%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykSeminaraipazymNr<%=number14%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dasem<%=number14%>" name="kTOV4_KV02dalykSeminaraitrukmeVal<%=number14%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="14ja<%=number14%>" name="kTOV4_KV02dalykSeminaraidalyvis<%=number14%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykSeminaraipavad<%=number14%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykSeminaraipazymNr<%=number14%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dasem<%=number14%>" name="kTOV4_KV02dalykSeminaraitrukmeVal<%=number14%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="14ja<%=number14%>" name="kTOV4_KV02dalykSeminaraidalyvis<%=number14%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var konfsk2 = 0; %>
-        <% var number15 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") konfsk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.konferencijos.forEach(function(user){ %>
-        <% number15++ %>
-        <% if (number15==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykKonfpavad<%=number15%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykKonfpazymNr<%=number15%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dakonf<%=number15%>" name="kTOV4_KV02dalykKonftrukmeVal<%=number15%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="15ja<%=number15%>" name="kTOV4_KV02dalykKonfdalyvis<%=number15%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykKonfpavad<%=number15%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02dalykKonfpazymNr<%=number15%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dakonf<%=number15%>" name="kTOV4_KV02dalykKonftrukmeVal<%=number15%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="15ja<%=number15%>" name="kTOV4_KV02dalykKonfdalyvis<%=number15%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var kursusk2 = 0; %>
-        <% var number16 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") kursusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.kursai.forEach(function(user){ %>
-        <% number16++ %>
-        <% if (number16==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02dalykKursaipavad<%=number16%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02dalykKursaipazymNr<%=number16%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dakurs<%=number16%>" name="kTOV4_KV02dalykKursaitrukmeVal<%=number16%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="16ja<%=number16%>" name="kTOV4_KV02dalykKursaidalyvis<%=number16%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02dalykKursaipavad<%=number16%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02dalykKursaipazymNr<%=number16%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="dakurs<%=number16%>" name="kTOV4_KV02dalykKursaitrukmeVal<%=number16%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="16ja<%=number16%>" name="kTOV4_KV02dalykKursaidalyvis<%=number16%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-
-        <!-- kTOV4_KV02didaktines_komp -->
-        <br>
-        <p style="text-align: center;"><b>Didaktinės kompetencijos </b></p>
-        <% var dstazuotessk2 = 0; %>
-        <% var number17 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dstazuotessk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.stazuotes.forEach(function(user){ %>
-        <% number17++ %>
-        <% if (number17==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02didakStazuotespavad<%=number17%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02didakStazuotespazymNr<%=number17%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didstaz<%=number17%>" name="kTOV4_KV02didakStazuotestrukmeVal<%=number17%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="17ja<%=number17%>" name="kTOV4_KV02didakStazuotesdalyvis<%=number17%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02didakStazuotespavad<%=number17%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02didakStazuotespazymNr<%=number17%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didstaz<%=number17%>" name="kTOV4_KV02didakStazuotestrukmeVal<%=number17%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="17ja<%=number17%>" name="kTOV4_KV02didakStazuotesdalyvis<%=number17%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var dseminarusk2 = 0; %>
-        <% var number18 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dseminarusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.seminarai.forEach(function(user){ %>
-        <% number18++ %>
-        <% if (number18==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV02didakSeminaraipavad<%=number18%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakSeminaraipazymNr<%=number18%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didsem<%=number18%>" name="kTOV4_KV02didakSeminaraitrukmeVal<%=number18%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="18ja<%=number18%>" name="kTOV4_KV02didakSeminaraidalyvis<%=number18%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakSeminaraipavad<%=number18%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakSeminaraipazymNr<%=number18%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didsem<%=number18%>" name="kTOV4_KV02didakSeminaraitrukmeVal<%=number18%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="18ja<%=number18%>" name="kTOV4_KV02didakSeminaraidalyvis<%=number18%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var dkonfsk2 = 0; %>
-        <% var number19 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dkonfsk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.konferencijos.forEach(function(user){ %>
-        <% number19++ %>
-        <% if (number19==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKonfpavad<%=number19%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKonfpazymNr<%=number19%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didkonf<%=number19%>" name="kTOV4_KV02didakKonftrukmeVal<%=number19%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="19ja<%=number19%>" name="kTOV4_KV02didakKonfdalyvis<%=number19%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1"type="text" class="form-control " name="kTOV4_KV02didakKonfpavad<%=number19%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKonfpazymNr<%=number19%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didkonf<%=number19%>" name="kTOV4_KV02didakKonftrukmeVal<%=number19%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="19ja<%=number19%>" name="kTOV4_KV02didakKonfdalyvis<%=number19%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var dkursusk2 = 0; %>
-        <% var number20 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") dkursusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.kursai.forEach(function(user){ %>
-        <% number20++ %>
-        <% if (number20==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKursaipavad<%=number20%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKursaipazymNr<%=number20%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didkurs<%=number20%>" name="kTOV4_KV02didakKursaitrukmeVal<%=number20%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " id="20ja<%=number20%>" name="kTOV4_KV02didakKursaidalyvis<%=number20%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKursaipavad<%=number20%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02didakKursaipazymNr<%=number20%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="didkurs<%=number20%>" name="kTOV4_KV02didakKursaitrukmeVal<%=number20%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " id="20ja<%=number20%>" name="kTOV4_KV02didakKursaidalyvis<%=number20%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <br>
-        <!-- kTOV4_KV02bendrosios_komp -->
-        <p style="text-align: center;"><b>Bendrosios kompetencijos </b></p>
-
-        <% var bstazuotessk2 = 0; %>
-        <% var number21 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% if (user.busena != "nesukurta") bstazuotessk2++ %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.stazuotes.forEach(function(user){ %>
-        <% number21++ %>
-        <% if (number21==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Stažuotės</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrStazuotespavad<%=number21%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrStazuotespazymNr<%=number21%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bestaz<%=number21%>" name="kTOV4_KV02bendrStazuotestrukmeVal<%=number21%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="21ja<%=number21%>" name="kTOV4_KV02bendrStazuotesdalyvis<%=number21%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrStazuotespavad<%=number21%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrStazuotespazymNr<%=number21%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bestaz<%=number21%>" name="kTOV4_KV02bendrStazuotestrukmeVal<%=number21%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="21ja<%=number21%>" name="kTOV4_KV02bendrStazuotesdalyvis<%=number21%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var bseminarusk2 = 0; %>
-        <% var number22 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bseminarusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.seminarai.forEach(function(user){ %>
-        <% number22++ %>
-        <% if (number22==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Seminarai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrSeminaraipavad<%=number22%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrSeminaraipazymNr<%=number22%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="besem<%=number22%>" name="kTOV4_KV02bendrSeminaraitrukmeVal<%=number22%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="22ja<%=number22%>" name="kTOV4_KV02bendrSeminaraidalyvis<%=number22%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrSeminaraipavad<%=number22%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrSeminaraipazymNr<%=number22%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="besem<%=number22%>" name="kTOV4_KV02bendrSeminaraitrukmeVal<%=number22%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="22ja<%=number22%>" name="kTOV4_KV02bendrSeminaraidalyvis<%=number22%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <% var bkonfsk2 = 0; %>
-        <% var number23 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bkonfsk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.konferencijos.forEach(function(user){ %>
-        <% number23++ %>
-        <% if (number23==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Konferencijos</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKonfpavad<%=number23%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKonfpazymNr<%=number23%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bekonf<%=number23%>" name="kTOV4_KV02bendrKonftrukmeVal<%=number23%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="23ja<%=number23%>" name="kTOV4_KV02bendrKonfdalyvis<%=number23%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKonfpavad<%=number23%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKonfpazymNr<%=number23%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bekonf<%=number23%>" name="kTOV4_KV02bendrKonftrukmeVal<%=number23%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="23ja<%=number23%>" name="kTOV4_KV02bendrKonfdalyvis<%=number23%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-
-        <% var bkursusk2 = 0; %>
-        <% var number24 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bkursusk2++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.kursai.forEach(function(user){ %>
-        <% number24++ %>
-        <% if (number24==1){%>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for="">Kursai</label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKursaipavad<%=number24%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKursaipazymNr<%=number24%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bekurs<%=number24%>" name="kTOV4_KV02bendrKursaitrukmeVal<%=number24%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="24ja<%=number24%>" name="kTOV4_KV02bendrKursaidalyvis<%=number24%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } else{ %>
-        <div class="form-row">
-          <div class="col-md-2 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKursaipavad<%=number24%>" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_KV02bendrKursaipazymNr<%=number24%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calchours2()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="bekurs<%=number24%>" name="kTOV4_KV02bendrKursaitrukmeVal<%=number24%>"
-              value="<%=user.trukmeVal%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="24ja<%=number24%>" name="kTOV4_KV02bendrKursaidalyvis<%=number24%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-        </div>
-        <%    } %>
-        <% }) %>
-        <% }) %>
-        <%  var dalykkompsk2 = 0; %>
-        <%  var didakkompsk2 = 0; %>
-        <%  var bendrkompsk2 = 0; %>
-        <%  users.forEach(function(user){ %>
-
-        <% if (user.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.dalyvavoDalyk == true) dalykkompsk2++ %>
-        <% if (user.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.dalyvavoDidak == true) didakkompsk2++ %>
-        <% if (user.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.dalyvavoBendr == true) bendrkompsk2++ %>
-        <% }) %>
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.01</b></td>
-            <td><b>Dėstytojo kvalifikacijos tobulinimas (Lietuvoje)</b></td>
-          </tr>
-        </table>
-        <br>
-        <table style="width:100%">
-          <tr>
-            <td colspan="3"></td>
-            <td colspan="4" style="text-align: center;"><b>Dėstytojų, tobulinusių kvalifikaciją, <b>skaičius</b></td>
-          </tr>
-          <tr>
-            <td style="width: 25%; text-align: center;"> Kvalifikacijos tobulinimo sritis</td>
-            <td style="width: 25%; text-align: center;"><b>Dėstytojų, tobulinusių kvalifikaciją, <b>skaičius</b></td>
-            <td style="width: 16.6%; text-align: center;"><b> Trukmė <b>valandomis</b></td>
-            <td style="width: 8.5%; text-align: center;">stažuotėse</td>
-            <td style="width: 8.5%; text-align: center;">seminaruose</td>
-            <td style="width: 8.35%; text-align: center;">konferencijose</td>
-            <td style="width: 8.35%; text-align: center;">kursuose</td>
-          </tr>
-
-
-        </table>
-        <br>
-
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Dalykinės kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control text-center" name="dalykinesLTdestytojuSk" value="<%=dalykkompsk%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" id="dalykLT" onchange="calchours()" name="dalykinesLTtrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here" name="dalykinesLTstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here2" name="dalykinesLTseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here3" name="dalykinesLTkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here4" name="dalykinesLTkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Didaktinės kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control  text-center" name="didaktinesLTdestytojuSk" value="<%=didakkompsk%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calchours()" id="didakLT" name="didaktinesLTtrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here5" name="didaktinesLTstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here6" name="didaktinesLTseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here7" name="didaktinesLTkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here8" name="didaktinesLTkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Bendrosios kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control  text-center" name="bendrosiosLTdestytojuSk" value="<%=bendrkompsk%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calchours()" id="bLT" name="bendrosiosLTtrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here9" name="bendrosiosLTstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here10" name="bendrosiosLTseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here11" name="bendrosiosLTkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here12" name="bendrosiosLTkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.02</b></td>
-            <td><b>Dėstytojo kvalifikacijos tobulinimas (užsienyje)</b></td>
-          </tr>
-        </table>
-        <br>
-        <table style="width:100%">
-          <tr>
-            <td colspan="3"></td>
-            <td colspan="4" style="text-align: center;"><b>Dėstytojų, tobulinusių kvalifikaciją, <b>skaičius</b></td>
-          </tr>
-          <tr>
-            <td style="width: 25%; text-align: center;"> Kvalifikacijos tobulinimo sritis</td>
-            <td style="width: 25%; text-align: center;"><b>Dėstytojų, tobulinusių kvalifikaciją, <b>skaičius</b></td>
-            <td style="width: 16.6%; text-align: center;"><b> Trukmė <b>valandomis</b></td>
-            <td style="width: 8.5%; text-align: center;">stažuotėse</td>
-            <td style="width: 8.5%; text-align: center;">seminaruose</td>
-            <td style="width: 8.35%; text-align: center;">konferencijose</td>
-            <td style="width: 8.35%; text-align: center;">kursuose</td>
-          </tr>
-
-
-        </table>
-        <br>
-
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Dalykinės kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control text-center" name="dalykinesNeLtdestytojuSk" value="<%=dalykkompsk2%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calchours2()" id="dalykneLT" name="dalykinesNeLttrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here13" name="dalykinesNeLtstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here14" name="dalykinesNeLtseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here15" name="dalykinesNeLtkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here16" name="dalykinesNeLtkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Didaktinės kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control  text-center" name="didaktinesNeLtdestytojuSk" value="<%=didakkompsk2%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calchours2()" id="didakneLT" name="didaktinesNeLttrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here17" name="didaktinesNeLtstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here18" name="didaktinesNeLtseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here19" name="didaktinesNeLtkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here20" name="didaktinesNeLtkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label>Bendrosios kompetencijos</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control  text-center" name="bendrosiosNeLtdestytojuSk" value="<%=bendrkompsk2%>" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calchours2()" id="bneLT" name="bendrosiosNeLttrukmeVal" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here21" name="bendrosiosNeLtstazuotSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here22" name="bendrosiosNeLtseminarSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here23" name="bendrosiosNeLtkonferencSk" value="" autocomplete="off">
-          </div>
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" onchange="calculate()" id="here24" name="bendrosiosNeLtkursaiSk" value="" autocomplete="off">
-          </div>
-        </div>
-
-
-        <br>
-        <br>
-        <!-- Kv.03 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.03</b></td>
-            <td><b>Paskaitos, skaitytos dėstymo vizitų užsienyje metu.</b></td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label><br></label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label>Dėstytojas
-              (pavardė, vardas)
-            </label>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label>Šalis</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label>Institucija</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label>Dalykas (tema)</label>
-          </div>
-        </div>
-        <% var kv03var = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_KV03.forEach(function(user){ %>
-        <% kv03var++; %>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="number" class="form-control  text-center" name="kTOV4_KV03nr<%=kv03var%>" readonly="readonly" value="<%=kv03var%>" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV03destytojas<%=kv03var%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV03salis<%=kv03var%>" value="" autocomplete="off"><%=user.salis%></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV03institucija<%=kv03var%>" value="" autocomplete="off"><%=user.institucija%></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV03dalykas<%=kv03var%>" value="" autocomplete="off"><%=user.dalykas%></textarea>
-          </div>
-        </div>
-        <% }) %>
-        <% }) %>
-        <br>
-        <!-- Kv.04 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.04</b></td>
-            <td>Dėstytojų (išvykstančių / atvykstančių) tarptautinio judumo dinamika per pastaruosius <span style="color:red"><b>3</b></span> <b>metus</b> </td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-12 mb-3">
-            <textarea type="text" class="form-control " name="kTOV4_KV04judrumoDinamika" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <br>
-        <!-- Kv.05 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kv.05</b></td>
-            <td style="text-align: center;"><b>Tarptautiškumo poveikis fakulteto veiklai</b></td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-12 mb-3">
-            <textarea type="text" class="form-control " name="kTOV4_KV05poveikisVeiklai" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <br>
-        <!-- kTOV4_O01_1 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>O.01</b></td>
-            <td style="text-align: left;"><b>Organizacinė veikla</b></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td style="text-align: left;">- darbas katedros posėdžiuose, kituose Kolegijos darbuotojų posėdžiuose;<br>
-              - darbas Kolegijos direktoriaus, fakulteto dekano sudarytose darbo grupėse;<br>
-              - vadovavimas studentų mokslinei draugijai;<br>
-              - studentų grupių kuravimas
-            </td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""></label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Dėstytojas
-              (pavardė, vardas)
-            </label>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Veiklos pobūdis</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Įsak. Nr. ir data</label>
-          </div>
-        </div>
-        <% var numb28 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_O01.kTOV4_O01_1.forEach(function(user){ %>
-        <% numb28++ %>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_O01_1nr<%=numb28%>" value="<%=numb28%>" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_1destytojas<%=numb28%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_1veiklPobud<%=numb28%>" value="" autocomplete="off"><%=user.veiklPobud%></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_1isakNrData<%=numb28%>" value="" autocomplete="off"><%=user.isakNrData%></textarea>
-          </div>
-        </div>
-        <% }) %>
-        <% }) %>
-        <input type="hidden" id="yond55" name="yond56" value="<%=numb28%>">
-
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"> </td>
-            <td style="text-align: left;">- renginių, išvykų, ekskursijų, parodų, mugių ir kitų veiklų, nesusijusių su studijų procesu, studentams organizavimas ir dalyvavimas jose;<br>
-              - renginių Kolegijos bendruomenei ir visuomenei organizavimas;<br>
-              - savanorystės ir kitokių socialinių projektų organizavimas ir vykdymas;<br>
-              - projektinė veikla, jeigu už ją nėra atlyginama (užsakomųjų projektų (veiklų) paieška, projektų paraiškų rengimas)
-
-            </td>
-          </tr>
-        </table>
-        <!-- kTOV4_O01_2 -->
-        <% var numb29 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
-        <% numb29++ %>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kTOV4_O01_2nr<%=numb29%>" value="<%=numb29%>" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Dėstytojas
-              (pavardė, vardas)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_2destytojas<%=numb29%>" value="" autocomplete="off"><%=varpav%></textarea>
-          </div>
-          <div class="col-md-8 mb-3">
-            <label for="">Veiklos pobūdis</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_2veiklPobud<%=numb29%>" value="" autocomplete="off"><%=user.veiklPobud%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for=""><br>Data, vieta</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_2dataVieta<%=numb29%>" value="" autocomplete="off"><%=user.dataVieta%></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Dalyvių skaičius (tikslinė grupė)</label>
-            <input type="number" class="form-control text-center" name="kTOV4_O01_2dalyvSk<%=numb29%>" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for=""><br>Kiti komentarai</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_2ktKomentarai<%=numb29%>" value="" autocomplete="off"><%=user.ktKomentarai%></textarea>
-          </div>
-        </div>
-        <% }) %>
-        <% }) %>
-        <input type="hidden" id="yond57" name="yond58" value="<%=numb29%>">
-
-
-
-
-        <!-- kTOV4_O02 -->
-        <table style="width: 100%">
-          <tr>
-            <th style="width:8%">O.02</th>
-            <th style="width:92%"><span class='notbold'>Bendradarbiavimas su socialiniais partneriais: <b>mokslo ir švietimo institucijomis</b> (ŠV), <b>regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis</b> (SP),
-                <b>darbdaviais</b> (D)</span></th>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br>
-            </label>
-            <input type="text" class="form-control text-center" name="kTOV4_O02nr1" value="1" placeholder="" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="">Vilniaus kolegijos atstovas(ai)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02atstovas1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="">Partnerinė institucija, organizacija
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02partneriai1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Bendradarbiavimo forma*
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02forma1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for=""><br>Rezultatai
-              (sutartys, projektai, kt. veikla)
-
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02rezultatai1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for=""><br>Sudaryta sutartis/ sutarties objektas
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02sutartis1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Bendradarbiavimo tipas (ŠV, SP, D)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_O02tipas1" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-
-        <div id="add_to_me91">
-
-        </div>
-        <button class="plus-button" type="button" onclick="kTOV4_O02()">+</button><br><br>
-        <p class="text-justify"><i>* studijų programų rengimas ir tobulinimas; baigiamųjų darbų temų formulavimas; konsultavimas rengiant kursinius ir baigiamuosius darbus; studentų baigiamųjų darbų recenzavimas; studentų profesinės veiklos praktikų organizavimas;
-            studijų programos atskirų dalykų/modulių dėstymas, dalyvavimas bendruose seminaruose, projektuose ir kt.veikla.</i></p>
-
-
-
-        <!-- kTOV4_S -->
-        <div class="form-row">
-          <div class="col-md-12 mb-3 text-center">
-            <label for=""><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></label>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for="">Nr.</label>
-            <input type="text" class="form-control text-center" name="kTOV4_Snr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Stiprybės:</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Tobulintini aspektai:</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina1" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_Snr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina2" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <div id="add_to_me101">
-
-        </div>
-        <button class="plus-button" type="button" onclick="kTOV4_S()">+</button><br><br>
-
-
-
-        <p style="text-align: center;"><b>5. KITA VEIKLA</b></p>
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.01</b></td>
-            <td style="text-align: left;"><b> Baigiamieji darbai, parengti pagal įmonių ir įstaigų užsakymus</b>
-
-            </td>
-          </tr>
-        </table>
-        <!-- kV5_KT01 -->
-        <% var numb31 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kV5_KT01.forEach(function(user){ %>
-        <% numb31++ %>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_KT01nr<%=numb31%>" value="<%=numb31%>" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Diplomanto pavardė, vardas</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT01diplomantas<%=numb31%>" value="" autocomplete="off"><%=user.diplomantas%></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Studijų programa</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT01studProgr<%=numb31%>" value="" autocomplete="off"><%=user.studProgr%></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Darbo tema</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT01darboTema<%=numb31%>" value="" autocomplete="off"><%=user.darboTema%></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Užsakovas</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT01uzsakovas<%=numb31%>" value="" autocomplete="off"><%=user.uzsakovas%></textarea>
-          </div>
-        </div>
-        <% }) %>
-        <% }) %>
-        <input type="hidden" id="yond61" name="yond62" value="<%=numb31%>">
-
-        <p class="text-justify"><i>Analizuojama įgyvendintų studentų baigiamųjų darbų (projektų), jų tiriamosios veiklos rezultatų bei studentų pasiūlytų inovacijų aktualumas ir potenciali įtaka bendruomenės, regiono, valstybės poreikiams/ plėtros prioritetams ir raidai.
-          </i></p>
-
-        <!-- kV5_KT02 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.02</b></td>
-            <td style="text-align: left;"><b> Baigiamieji darbai socialinės atsakomybės ir darnios plėtros tematika</b>
-
-            </td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""> </label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Diplomanto pavardė, vardas</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Studijų programa</label>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Darbo tema</label>
-          </div>
-        </div>
-        <% var numb32 = 0; %>
-        <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kV5_KT02.kV5_KT02_array.forEach(function(user){ %>
-        <% numb32++ %>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kV5_KT02nr<%=numb32%>" value="<%=numb32%>" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT02diplomantas<%=numb32%>" value="" autocomplete="off"><%=user.diplomantas%></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT02studProgr<%=numb32%>" value="" autocomplete="off"><%=user.studProgr%></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT02darboTema<%=numb32%>" value="" autocomplete="off"><%=user.darboTema%></textarea>
-          </div>
-        </div>
-        <% }) %>
-        <% }) %>
-        <input type="hidden" id="yond63" name="yond64" value="<%=numb32%>">
-
-        <!-- kV5_KT03 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.03</b></td>
-            <td style="text-align: left;"><b> Kuruojamų programų absolventų įsidarbinimas</b>
-
-            </td>
-          </tr>
-        </table>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <br>
-            <label for=""> </label>
-            <input type="text" class="form-control text-center" name="kV5_KT03nr1" value="1" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <br>
-            <label for="">Studijų programa</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT03studProgr1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <br>
-            <label for="">Baigusių studijas iki
-              2021-07-01 skaičius
-            </label>
-            <input type="number" onchange="calc4()" id="baig1" class="form-control text-center" name="kV5_KT03baigSk1" autocomplete="off" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Įregistruotų
-              Užimtumo tarnyboje
-              2022-06-01 skaičius
-            </label>
-            <input type="number" onchange="calc4()" id="ireg1" class="form-control text-center" name="kV5_KT03iregUzimtumSk1" autocomplete="off" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
-          </div>
-          <div class="col-md-2 mb-3">
-            <br>
-            <label for="">Įsidarbinimo lygis, %
-            </label>
-            <input type="number" onchange="calc4()" id="proc1" class="form-control text-center" name="kV5_KT03isidarbinProc1" readonly="readonly" autocomplete="off">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kV5_KT03nr2" value="2" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
-          </div>
-          <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT03studProgr2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc4()" id="baig2" name="kV5_KT03baigSk2" autocomplete="off" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control  text-center" onchange="calc4()" id="ireg2" name="kV5_KT03iregUzimtumSk2" autocomplete="off" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control  text-center" onchange="calc4()" id="proc2" name="kV5_KT03isidarbinProc2" readonly="readonly" autocomplete="off">
-          </div>
-        </div>
-        <div id="add_to_me111">
-
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <button class="plus-button" type="button" onclick="kV5_KT03()">+</button><br><br>
-          </div>
-          <div class="col-md-3 mb-3 text-right">
-            <label class="text-right">Is viso:</label>
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control text-center" id="baigsk" name="kV5_KT03isVisoBaigSk" readonly="readonly" autocomplete="off">
-          </div>
-          <div class="col-md-3 mb-3">
-            <input type="number" class="form-control text-center" id="iregsk" name="kV5_KT03isVisoIregUzimt" readonly="readonly" autocomplete="off">
-          </div>
-          <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" id="isvisoproc" name="kV5_KT03isVisoIsidarbProc" readonly="readonly" autocomplete="off">
-          </div>
-        </div>
-
-
-        <!-- kV5_KT04 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.04</b></td>
-            <td style="text-align: left;"><b>Užsakomoji veikla (kurios veiklos metu sudaroma sutartis)</b>
-
-            </td>
-          </tr>
-        </table>
-
-
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_KT04nr1" value="1" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Autorius (pavardė, vardas)</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04autorius1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Veiklos tipas* (E, K,V, Kt)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04veiklTipas1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Pavadinimas
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04pavadinimas1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Sutarties Nr., data
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04sutartNr1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="">Užsakovai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04uzsakovas1" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Užsakymo suma
-            </label>
-            <input type="number" class="form-control text-center" name="kV5_KT04uzsakSuma1" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_KT04nr2" value="2" autocomplete="off" readonly="readonly">
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="">Autorius (pavardė, vardas)</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04autorius2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Veiklos tipas* (E, K,V, Kt)
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04veiklTipas2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Pavadinimas
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04pavadinimas2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-1 mb-3">
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Sutarties Nr., data
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04sutartNr2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="">Užsakovai
-            </label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_KT04uzsakovas2" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-2 mb-3">
-            <label for="">Užsakymo suma
-            </label>
-            <input type="number" class="form-control text-center" name="kV5_KT04uzsakSuma2" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
-          </div>
-        </div>
-        <div id="add_to_me121">
-
-        </div>
-        <button class="plus-button" type="button" onclick="kV5_KT04()">+</button><br><br>
-        <p>* Užsakomieji tyrimai (<b>T</b>), teisinių aktų, programų ir kt. ekspertavimas (<b>E</b>), konsultacijos (<b>K</b>) ir kita (<b>Kt</b>).</p>
-
-
-        <!-- kV5_KT05 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.05</b></td>
-            <td style="text-align: left;"><b>Darnaus vystymosi strateginių nuostatų įgyvendinimas katedros veikloje</b>
-
-
-
-            </td>
-          </tr>
-        </table>
-        <br>
-
-
-
-        <table style="width:100%">
-          <tr>
-            <td style="width: 50%; text-align: center;"><b>Veiklos pavadinimas</b></td>
-            <td style="text-align: center;">
-              <b>Sklaidos įrodymai</b>
-            </td>
-
-
-
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Fakulteto dėstytojų, administracijos ir studentų bendradarbiavimas įgyvendinant į darnų vystymąsi orientuotus projektus</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT05bendradarbiavSklaid"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Į darnų vystymąsi orientuota praktinė veikla (išteklių tausojimas; „žalieji pirkimai“, transporto strategija, atliekų kiekio mažinimas ir rūšiavimas, gyvensenos kaita ir pan.)</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT05praktVeiklSklaid"></textarea>
-            </td>
-
-
-
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Dalyvavimas vietos bendruomenės/ miesto darnaus vystymosi veiklose.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT05dalyvavSklaid"></textarea>
-            </td>
-
-
-
-          </tr>
-        </table>
-        <br><br><br>
-        <!-- kV5_KT06 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.06</b></td>
-            <td style="text-align: left;"><b>Vykdoma katedros vystymosi strateginių nuostatų ir veiklos rezultatų sklaida visuomenei</b>
-
-            </td>
-          </tr>
-        </table>
-        <br>
-
-        <table style="width:100%">
-          <tr>
-            <td style="width: 50%; text-align: center;"><b>Veiklos pavadinimas</b></td>
-            <td style="text-align: center;">
-              <b>Sklaidos įrodymai</b>
-            </td>
-
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Mokslo populiarinimas ir mokslinių tyrimų rezultatų sklaida – visuomenei, suinteresuotoms šalims, susijusių sektorių/ sričių politiką formuojančioms ir įgyvendinančioms institucijoms.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; height: 70px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06moklsPopSklaid"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Taikomieji/ užsakomieji tyrimai ir (ar) mokslinių tyrimų rezultatų perteikimas verslo įmonėms, nevyriausybinėms organizacijoms, valstybės institucijoms.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06tyrimuSklaid"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Moderniosios kultūros ir kultūros paveldo komunikacija, dalyvavimas kultūriniame gyvenime vietos, nacionaliniu, tarptautiniu mastu.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06modernKultSklaid"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Į bendrojo lavinimo ir kitokias mokyklas orientuota veikla.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06bendrLavinSklaid"></textarea>
-            </td>
-
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Veikla, orientuota į socialinės atskirties grupes, specialiųjų paslaugų ir paramos teikimas (už Kolegijos ribų).</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06socAtskirtSklaid"></textarea>
-            </td>
-
-          </tr>
-          <tr>
-            <td style="width: 50%;"> Aplinkos apsauga ir gamtos išteklių tausojimas ir kt.</td>
-            <td>
-                <textarea type="text" class="form-control " style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" name="kV5_KT06aplinkApsaugSklaid"></textarea>
-            </td>
-
-          </tr>
-        </table>
-        <br> <br>
-        <!-- kV5_KT07 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.07</b></td>
-            <td style="text-align: left;"><b>Studentų darnaus vystymosi kompetencijų ugdymas </b>
-
-            </td>
-          </tr>
-        </table>
-        <br>
-        <div class="col-md-12 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kV5_KT07kompUgdymas" autocomplete="off"></textarea>
-        </div>
-
-        <br>
-        <!-- kV5_KT08 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.08</b></td>
-            <td style="text-align: left;"><b>Studijų programos rezultatų, nukreiptų darnaus vystymosi kompetencijoms ugdyti, formulavimas</b>
-
-            </td>
-          </tr>
-        </table>
-        <br>
-        <div class="col-md-12 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kV5_KT08rezFormulavimas" autocomplete="off" placeholder=""></textarea>
-        </div>
-        <p><i><u>Analizuojama</u></i> kaip formuluojami studijų rezultatai, nukreipti darnaus
-          vystymosi kompetencijoms ugdyti ir kokiai gebėjimų kategorijai (pagal <i>Studijų pakopų aprašą</i>) jos yra priskirtos, kokie taikomi studijų ir vertinimo metodai.</p>
-        <br>
-        <!-- kV5_KT09 -->
-        <table style="width:100%">
-          <tr>
-            <td style="width: 8%;"><b>Kt.09</b></td>
-            <td style="text-align: left;"><b>Darnaus vystymosi temų, aktualių regiono ir visos šalies raidai, įtraukimas į studijų dalykus, studentų praktikas ir baigiamuosius darbus</b>
-
-            </td>
-          </tr>
-        </table>
-        <br>
-        <div class="col-md-12 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="kV5_KT09darnVystItrauk" autocomplete="off" placeholder=""></textarea>
-        </div>
-        <p><i><u>Analizuojama</u></i> kaip darnaus vystymosi temos yra įtrauktos į studijų dalykų aprašus,
-          kokia darnaus vystymosi temų aprėptis pagal sritis – socialinę (kultūros), ekonomikos, aplinkos apsaugos.</p>
-        <br>
-        <!-- veiklSavinalize -->
-        <div class="form-row">
-          <div class="col-md-12 mb-3 text-center">
-            <label for=""><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></label>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <label for="">Nr.</label>
-            <input type="text" class="form-control text-center" name="veiklSavinalizenr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="">Stiprybės:</label>
-            <textarea rows="1" type="text" class="form-control " name="veiklSavinalizestiprybes1" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="">Tobulintini aspektai:</label>
-            <textarea rows="1" type="text" class="form-control " name="veiklSavinalizetobulintina1" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="veiklSavinalizenr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="veiklSavinalizestiprybes2" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="veiklSavinalizetobulintina2" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-        <div id="add_to_me131">
-
-        </div>
-        <button class="plus-button" type="button" onclick="veiklSavinalize()">+</button><br><br>
-        <br>
-        <div class="form-row">
-          <div class="col-md-12 mb-3 text-left">
-            <label for=""><b>Išvados apie katedros veiklą</b></label>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-12 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="isvadosApieVeikl" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
+        <!-- IŠKIRPTA -->
 
         <input type="hidden" id="yonder" name="yonder2" value="1">
         <input type="hidden" id="yonder3" name="yonder4" value="1">
@@ -3731,31 +1471,10 @@
 
 
 
+        <!-- input type="hidden" ISKIRPTA YRA-->
 
-        <input type="hidden" id="number" name="number2" value="<%=number1%>">
-        <input type="hidden" id="number3" name="number4" value="<%=number2%>">
-        <input type="hidden" id="number5" name="number6" value="<%=number3%>">
-        <input type="hidden" id="number7" name="number8" value="<%=number4%>">
-        <input type="hidden" id="number9" name="number10" value="<%=number5%>">
-        <input type="hidden" id="number11" name="number12" value="<%=number6%>">
-        <input type="hidden" id="number13" name="number14" value="<%=number7%>">
-        <input type="hidden" id="number15" name="number16" value="<%=number8%>">
-        <input type="hidden" id="number17" name="number18" value="<%=number9%>">
-        <input type="hidden" id="number19" name="number20" value="<%=number10%>">
-        <input type="hidden" id="number21" name="number22" value="<%=number11%>">
-        <input type="hidden" id="number23" name="number24" value="<%=number12%>">
-        <input type="hidden" id="number25" name="number26" value="<%=number13%>">
-        <input type="hidden" id="number27" name="number28" value="<%=number14%>">
-        <input type="hidden" id="number29" name="number30" value="<%=number15%>">
-        <input type="hidden" id="number31" name="number32" value="<%=number16%>">
-        <input type="hidden" id="number33" name="number34" value="<%=number17%>">
-        <input type="hidden" id="number35" name="number36" value="<%=number18%>">
-        <input type="hidden" id="number37" name="number38" value="<%=number19%>">
-        <input type="hidden" id="number39" name="number40" value="<%=number20%>">
-        <input type="hidden" id="number41" name="number42" value="<%=number21%>">
-        <input type="hidden" id="number43" name="number44" value="<%=number22%>">
-        <input type="hidden" id="number45" name="number46" value="<%=number23%>">
-        <input type="hidden" id="number47" name="number48" value="<%=number24%>">
+
+
         <!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
       </div>
