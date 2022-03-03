@@ -482,7 +482,7 @@ var kV5_39Schema = new mongoose.Schema({
   kryptys: String,
   aprasymas: String
 });
-var veiklSavinaliz_Schema = new mongoose.Schema({
+var veiklSavinalize_Schema = new mongoose.Schema({
   nr: String,
   stiprybes: String,
   tobulintina: String
@@ -734,7 +734,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       },
       kV5_41: [kV5_33Schema], //41 lentelė
       veiklSavinalize: {
-        veiklSavinaliz_array: [veiklSavinaliz_Schema],
+        veiklSavinalize_array: [veiklSavinalize_Schema],
         isvadosApieVeikl: String
       }
     }
