@@ -187,8 +187,7 @@ var kompetencijuSchema = new mongoose.Schema({
   pazymNr: String,
   trukmeValLT: Number,
   trukmeValNeLT: Number,
-  destytojas: String,
-  dalyvavoKomp: Boolean
+  destytojas: String
 });
 var kTOV4_25Schema = new mongoose.Schema({
   nr: String,
@@ -589,7 +588,11 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         bendrosios: [kompetencijuSchema],
         dalykines: [kompetencijuSchema],
         isVisoValLT: Number,
-        isVisoValNeLT: Number
+        isVisoValNeLT: Number,
+        dalyvavoMokymosiKomp: Boolean,
+        dalyvavoTyrimuKomp: Boolean,
+        dalyvavoBendrKomp: Boolean,
+        dalyvavoDalykKomp: Boolean
       }
     },
     kTOV4_25: [kTOV4_25Schema], //25 lentelė

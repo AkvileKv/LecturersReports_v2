@@ -883,6 +883,7 @@ app.post("/create", function(req, res) {
               trukmeValLT: joinedkTOV4_mokymotrukmeValLT,
               trukmeValNeLT: joinedkTOV4_mokymotrukmeValNeLT
             })
+            foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
           }
           for (let i = 1; i <= parseInt(req.body.new8); i++) {
             var kTOV4_tyrimupavadi = kTOV4_tyrimupavadcommand + i;
@@ -899,6 +900,7 @@ app.post("/create", function(req, res) {
               trukmeValLT: joinedkTOV4_tyrimutrukmeValLT,
               trukmeValNeLT: joinedkTOV4_tyrimutrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
           }
           for (let i = 1; i <= parseInt(req.body.new10); i++) {
             var kTOV4_bendrosiospavadi = kTOV4_bendrosiospavadcommand + i;
@@ -915,6 +917,7 @@ app.post("/create", function(req, res) {
               trukmeValLT: joinedkTOV4_bendrosiostrukmeValLT,
               trukmeValNeLT: joinedkTOV4_bendrosiostrukmeValNeLT
             })
+            foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
           }
           for (let i = 1; i <= parseInt(req.body.new12); i++) {
             var kTOV4_dalykpavadi = kTOV4_dalykpavadcommand + i;
@@ -931,9 +934,10 @@ app.post("/create", function(req, res) {
               trukmeValLT: joinedkTOV4_dalyktrukmeValLT,
               trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
           }
           foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
-            foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
+          foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
 
           for (let i = 1; i <= parseInt(req.body.new14); i++) {
             var kTOV4_25renginysTemai = kTOV4_25renginysTemacommand + i;
@@ -1474,13 +1478,12 @@ app.post("/update", (req, res) => {
         foundUser.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
         foundUser.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
         foundUser.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
-        // ar reikes?
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.dalyvavoDalyk = false;
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.dalyvavoDidak = false;
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.dalyvavoBendr = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.dalyvavoDalyk = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.dalyvavoDidak = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.dalyvavoBendr = false;
+        // UPDATE post. Skaiciui "dalyvavusiu" nustatyti Vedejo ataskaitoje
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
+
         //-----------
         foundUser.destytojas.kTOV4_25 = new Array();
         foundUser.destytojas.kTOV4_26 = new Array();
@@ -2615,13 +2618,11 @@ app.post("/submit", function(req, res) {
         foundUser.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
         foundUser.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
         foundUser.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
-        // ar reikes?
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01dalykines_komp.dalyvavoDalyk = false;
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01didaktines_komp.dalyvavoDidak = false;
-        // foundUser.destytojas.kTOV4_KV01.kTOV4_KV01bendrosios_komp.dalyvavoBendr = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02dalykines_komp.dalyvavoDalyk = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02didaktines_komp.dalyvavoDidak = false;
-        // foundUser.destytojas.kTOV4_KV02.kTOV4_KV02bendrosios_komp.dalyvavoBendr = false;
+        // SUBMIT post. Skaiciui "dalyvavusiu" nustatyti Vedejo ataskaitoje
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
+        foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
         //-----------
         foundUser.destytojas.kTOV4_25 = new Array();
         foundUser.destytojas.kTOV4_26 = new Array();
@@ -3247,6 +3248,7 @@ app.post("/submit", function(req, res) {
               trukmeValLT: joinedkTOV4_mokymotrukmeValLT,
               trukmeValNeLT: joinedkTOV4_mokymotrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
           }
           }
           for (let i = 1; i <= parseInt(req.body.new8); i++) {
@@ -3267,6 +3269,7 @@ app.post("/submit", function(req, res) {
               trukmeValLT: joinedkTOV4_tyrimutrukmeValLT,
               trukmeValNeLT: joinedkTOV4_tyrimutrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
           }
           }
           for (let i = 1; i <= parseInt(req.body.new10); i++) {
@@ -3287,6 +3290,7 @@ app.post("/submit", function(req, res) {
               trukmeValLT: joinedkTOV4_bendrosiostrukmeValLT,
               trukmeValNeLT: joinedkTOV4_bendrosiostrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
           }
           }
           for (let i = 1; i <= parseInt(req.body.new12); i++) {
@@ -3307,6 +3311,7 @@ app.post("/submit", function(req, res) {
               trukmeValLT: joinedkTOV4_dalyktrukmeValLT,
               trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
             })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
           }
         }
           foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
