@@ -1446,7 +1446,7 @@ app.post("/update", (req, res) => {
         var kV5_34finansavimcommand = "req.body.kV5_34finansavim";
         var kV5_34rezultataicommand = "req.body.kV5_34rezultatai";
         var kV5_34salisDatacommand = "req.body.kV5_34salisData";
-        //masyvu isvalymas
+        //masyvu isvalymas update
         foundUser.destytojas.kD1_K01.kD1_K01_array = new Array();
         foundUser.destytojas.nD2_M02 = new Array();
         foundUser.destytojas.nD2_M03 = new Array();
@@ -1505,6 +1505,7 @@ app.post("/update", (req, res) => {
         foundUser.destytojas.kV5_33 = new Array();
         foundUser.destytojas.kV5_34 = new Array();
 
+        //ciklai
         //Irasinejimas i DB prasideda:
         for (let i = 1; i <= parseInt(req.body.yond2); i++) {
           var iteracija = i;
@@ -2043,6 +2044,7 @@ app.post("/update", (req, res) => {
             trukmeValLT: joinedkTOV4_mokymotrukmeValLT,
             trukmeValNeLT: joinedkTOV4_mokymotrukmeValNeLT
           })
+              foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
         }
         for (let i = 1; i <= parseInt(req.body.new8); i++) {
           var kTOV4_tyrimupavadi = kTOV4_tyrimupavadcommand + i;
@@ -2059,6 +2061,7 @@ app.post("/update", (req, res) => {
             trukmeValLT: joinedkTOV4_tyrimutrukmeValLT,
             trukmeValNeLT: joinedkTOV4_tyrimutrukmeValNeLT
           })
+            foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
         }
         for (let i = 1; i <= parseInt(req.body.new10); i++) {
           var kTOV4_bendrosiospavadi = kTOV4_bendrosiospavadcommand + i;
@@ -2075,6 +2078,7 @@ app.post("/update", (req, res) => {
             trukmeValLT: joinedkTOV4_bendrosiostrukmeValLT,
             trukmeValNeLT: joinedkTOV4_bendrosiostrukmeValNeLT
           })
+          foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
         }
         for (let i = 1; i <= parseInt(req.body.new12); i++) {
           var kTOV4_dalykpavadi = kTOV4_dalykpavadcommand + i;
@@ -2091,6 +2095,7 @@ app.post("/update", (req, res) => {
             trukmeValLT: joinedkTOV4_dalyktrukmeValLT,
             trukmeValNeLT: joinedkTOV4_dalyktrukmeValNeLT
           })
+          foundUser.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
         }
         foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
         foundUser.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
@@ -2384,7 +2389,7 @@ app.post("/submit", function(req, res) {
       console.log(err);
     } else {
       if (foundUser) {
-
+//deklaracijos submit
         var nrcommand = "req.body.nr";
         var dalykascommand = "req.body.dalykas";
         var grupecommand = "req.body.grupe";
@@ -2586,7 +2591,7 @@ app.post("/submit", function(req, res) {
         var kV5_34finansavimcommand = "req.body.kV5_34finansavim";
         var kV5_34rezultataicommand = "req.body.kV5_34rezultatai";
         var kV5_34salisDatacommand = "req.body.kV5_34salisData";
-        //masyvu isvalymas
+        //masyvu isvalymas submit
         foundUser.destytojas.kD1_K01.kD1_K01_array = new Array();
         foundUser.destytojas.nD2_M02 = new Array();
         foundUser.destytojas.nD2_M03 = new Array();
@@ -2644,6 +2649,7 @@ app.post("/submit", function(req, res) {
         foundUser.destytojas.kV5_33 = new Array();
         foundUser.destytojas.kV5_34 = new Array();
 
+        //ciklai
       //Irasinejimas i DB prasideda:
         for (let i = 1; i <= parseInt(req.body.yond2); i++) {
           var iteracija = i;
