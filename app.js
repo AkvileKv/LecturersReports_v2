@@ -3663,127 +3663,143 @@ app.post("/create-dep", (req, res) => {
 
     } else {
       if (foundUser) {
-        var desnrcommand = "req.body.desnr";
-        var vardPavardcommand = "req.body.vardPavard";
-        var issilavinimascommand = "req.body.issilavinimas";
-        var pareigoscommand = "req.body.pareigos";
-        var darbovTipascommand = "req.body.darbovTipas";
-        var praktinStazascommand = "req.body.praktinStazas";
-        var pedagogStazascommand = "req.body.pedagogStazas";
-        var mV2_M01nrcommand = "req.body.mV2_M01nr";
-        var mV2_M01veiklPavadcommand = "req.body.mV2_M01veiklPavad";
-        var mV2_M01veiklRezultcommand = "req.body.mV2_M01veiklRezult";
-        var mV2_M01destytojascommand = "req.body.mV2_M01destytojas";
-        var mV2_M02nrcommand = "req.body.mV2_M02nr";
-        var bibliografAprcommand = "req.body.bibliografApr";
-        var tipascommand = "req.body.tipas";
-        var mokslSritcommand = "req.body.mokslSrit";
-        var mokslKryptcommand = "req.body.mokslKrypt";
-        var katedracommand = "req.body.katedra";
-        var mV2_M03nrcommand = "req.body.mV2_M03nr";
-        var mV2_M03studProgrcommand = "req.body.mV2_M03studProgr";
-        var mV2_M03dalykPavadcommand = "req.body.mV2_M03dalykPavad";
-        var mV2_M03apimtisKreditcommand = "req.body.mV2_M03apimtisKredit";
-        var mV2_M03destytojascommand = "req.body.mV2_M03destytojas";
+        // 1 lentelė
+        var mV2_D04nrcommand = "req.body.mV2_D04nr";
+        var mV2_D04studKryptiscommand = "req.body.mV2_D04studKryptis";
+        var mV2_D04studProgrcommand = "req.body.mV2_D04studProgr";
+        var mV2_D04progrKodascommand = "req.body.mV2_D04progrKodas";
+        var mV2_D04isakNrDatacommand = "req.body.mV2_D04isakNrData";
+        var mV2_D04studKryptAkreditcommand = "req.body.mV2_D04studKryptAkredit";
+        var mV2_D04eCTS1command = "req.body.mV2_D04eCTS";
+        // 2 lent
+        var lent2_nrcommand = "req.body.lent2_nr";
+        var lent2_pavVardcommand = "req.body.lent2_pavVard";
+        var lent2_pareigoscommand = "req.body.lent2_pareigos";
+        var lent2_darbovTipascommand = "req.body.lent2_darbovTipas";
+        var lent2_pedagogStazascommand = "req.body.lent2_pedagogStazas";
+        var lent2_praktinStazascommand = "req.body.lent2_praktinStazas";
+        //3 lent
+        var lent3_nrcommand = "req.body.lent3_nr";
+        var lent3_studKryptiscommand = "req.body.lent3_studKryptis";
+        var lent3_studProgrcommand = "req.body.lent3_studProgr";
+        var lent3_destytojascommand = "req.body.lent3_destytojas";
+        var lent3_imonIstaigcommand = "req.body.lent3_imonIstaig"
+        // 4 lent
+          var lent4_nrcommand = "req.body.lent4_nr";
+          var lent4_bibliografAprcommand = "req.body.lent4_bibliografApr";
+          var lent4_mokslSritcommand = "req.body.lent4_tipas";
+          var lent4_mokslSritcommand = "req.body.lent4_mokslSrit";
+          var lent4_mokslKryptcommand = "req.body.lent4_mokslKrypt";
+          var lent4_katedracommand = "req.body.lent4_katedra";
+        // 5 lent
         var mV2_M04nrcommand = "req.body.mV2_M04nr";
+        var mV2_M04destytojascommand = "req.body.mV2_M04destytojas";
         var mV2_M04studProgrcommand = "req.body.mV2_M04studProgr";
         var mV2_M04dalykPavadcommand = "req.body.mV2_M04dalykPavad";
-        var mV2_M04busenacommand = "req.body.mV2_M04busena";
         var mV2_M04apimtisKreditcommand = "req.body.mV2_M04apimtisKredit";
-        var mV2_M04destytojascommand = "req.body.mV2_M04destytojas";
-        var mV2_D01nrcommand = "req.body.mV2_D01nr";
-        var mV2_D01studProgrcommand = "req.body.mV2_D01studProgr";
-        var mV2_D01veiklacommand = "req.body.mV2_D01veikla";
-        var mV2_D01rezultataicommand = "req.body.mV2_D01rezultatai";
-        var mV2_D01destytojascommand = "req.body.mV2_D01destytojas";
-        var mV2_D02nrcommand = "req.body.mV2_D02nr";
-        var mV2_D02studProgrcommand = "req.body.mV2_D02studProgr";
-        var mV2_D02veiklacommand = "req.body.mV2_D02veikla";
-        var mV2_D02rezultataicommand = "req.body.mV2_D02rezultatai";
-        var mV2_D02destytojascommand = "req.body.mV2_D02destytojas";
-        var mV2_D03nrcommand = "req.body.mV2_D03nr";
-        var mV2_D03studProgrcommand = "req.body.mV2_D03studProgr";
-        var mV2_D03veiklacommand = "req.body.mV2_D03veikla";
-        var mV2_D03rezultataicommand = "req.body.mV2_D03rezultatai";
-        var mV2_D03destytojascommand = "req.body.mV2_D03destytojas";
-        var mV2_D04nrcommand = "req.body.mV2_D04nr";
-        var mV2_D04studProgrApimtcommand = "req.body.mV2_D04studProgrApimt";
-        var mV2_D04progrKodascommand = "req.body.mV2_D04progrKodas";
-        var mV2_D04studKryptiscommand = "req.body.mV2_D04studKryptis";
-        var mV2_D04rezultataicommand = "req.body.mV2_D04rezultatai";
-        var mV2_D05nrcommand = "req.body.mV2_D05nr";
-        var mV2_D05studProgrcommand = "req.body.mV2_D05studProgr";
-        var mV2_D05dalykPavadcommand = "req.body.mV2_D05dalykPavad";
-        var mV2_D05dalykPaskirtcommand = "req.body.mV2_D05dalykPaskirt";
-        var mV2_D05destytojascommand = "req.body.mV2_D05destytojas";
-        var mV2_D05uzsienKalbacommand = "req.body.mV2_D05uzsienKalba";
-        var mV2_D05apimtisKreditcommand = "req.body.mV2_D05apimtisKredit";
+        var mV2_M04busenacommand = "req.body.mV2_M04busena";
+        // 6 lent
         var mV2_D06nrcommand = "req.body.mV2_D06nr";
         var mV2_D06studProgrcommand = "req.body.mV2_D06studProgr";
         var mV2_D06progrKodascommand = "req.body.mV2_D06progrKodas";
         var mV2_D06atlPatobulincommand = "req.body.mV2_D06atlPatobulin";
         var mV2_D06tobulinPriezastcommand = "req.body.mV2_D06tobulinPriezast";
         var mV2_D06tobulinIrodcommand = "req.body.mV2_D06tobulinIrod";
-        var mV2_D08nrcommand = "req.body.mV2_D08nr";
-        var mV2_D08studKryptiscommand = "req.body.mV2_D08studKryptis";
-        var mV2_D08studProgrcommand = "req.body.mV2_D08studProgr";
-        var mV2_D08progrKodascommand = "req.body.mV2_D08progrKodas";
-        var mV2_D08isakDatacommand = "req.body.mV2_D08isakData";
-        var mV2_D08numatomDatacommand = "req.body.mV2_D08numatomData";
+        // 7 lent
+        var mV2_D01nrcommand = "req.body.mV2_D01nr";
+        var mV2_D01destytojascommand = "req.body.mV2_D01destytojas";
+        var mV2_D01komitetascommand = "req.body.mV2_D01komitetas";
+        var mV2_D01veiklacommand = "req.body.mV2_D01veikla";
+        var mV2_D01rezultataicommand = "req.body.mV2_D01rezultatai";
+        //8 lent
+        var mV2_D02nrcommand = "req.body.mV2_D02nr";
+        var mV2_D02destytojascommand = "req.body.mV2_D02destytojas";
+        var mV2_D02studKryptcommand = "req.body.mV2_D02studKrypt";
+        var mV2_D02veiklacommand = "req.body.mV2_D02veikla";
+        var mV2_D02rezultataicommand = "req.body.mV2_D02rezultatai";
+        //9 lent
+        var mV2_D03nrcommand = "req.body.mV2_D03nr";
+        var mV2_D03destytojascommand = "req.body.mV2_D03destytojas";
+        var mV2_D03studKryptiscommand = "req.body.mV2_D03studKryptis";
+        var mV2_D03studProgrcommand = "req.body.mV2_D03studProgr";
+        var mV2_D03veiklacommand = "req.body.mV2_D03veikla";
+        var mV2_D03rezultataicommand = "req.body.mV2_D03rezultatai";
+        
+        //baigiau 03.15
+
+        // 10 lent
+        var mV2_M03nrcommand = "req.body.mV2_M03nr";
+        var mV2_M03studProgrcommand = "req.body.mV2_M03studProgr";
+        var mV2_M03dalykPavadcommand = "req.body.mV2_M03dalykPavad";
+        var mV2_M03apimtisKreditcommand = "req.body.mV2_M03apimtisKredit";
+        var mV2_M03destytojascommand = "req.body.mV2_M03destytojas";
+        //11 lent
         var mV2_S01nrcommand = "req.body.mV2_S01nr";
         var mV2_S01veiklacommand = "req.body.mV2_S01veikla";
         var mV2_S01dataVietacommand = "req.body.mV2_S01dataVieta";
         var mV2_S01destytojascommand = "req.body.mV2_S01destytojas";
+        //mV2_S
         var mV2_Snrcommand = "req.body.mV2_Snr";
         var mV2_Sstiprybescommand = "req.body.mV2_Sstiprybes";
         var mV2_Stobulintinacommand = "req.body.mV2_Stobulintina";
+        // 12 lent
         var tMTEP3_T01nrcommand = "req.body.tMTEP3_T01nr";
         var tyrTematcommand = "req.body.tyrTemat";
         var tyrGrupcommand = "req.body.tyrGrup";
         var tMTEP3_T01mokslSritcommand = "req.body.tMTEP3_T01mokslSrit";
         var tMTEP3_T01mokslKryptcommand = "req.body.tMTEP3_T01mokslKrypt";
         var tMTEP3_T01destytojascommand = "req.body.tMTEP3_T01destytojas";
+        // 13 lent
         var tMTEP3_T02nrcommand = "req.body.tMTEP3_T02nr";
         var tMTEP3_T02bibliografAprcommand = "req.body.tMTEP3_T02bibliografApr";
         var tMTEP3_T02tipascommand = "req.body.tMTEP3_T02tipas";
         var tMTEP3_T02mokslSritcommand = "req.body.tMTEP3_T02mokslSrit";
         var tMTEP3_T02mokslKryptcommand = "req.body.tMTEP3_T02mokslKrypt";
         var tMTEP3_T02duomBazecommand = "req.body.tMTEP3_T02duomBaze";
+        //14 lent
         var tMTEP3_T03nrcommand = "req.body.tMTEP3_T03nr";
         var tMTEP3_T03pilnasBiblAprcommand = "req.body.tMTEP3_T03pilnasBiblApr";
+        //15 lent
         var tMTEP3_T04nrcommand = "req.body.tMTEP3_T04nr";
         var tMTEP3_T04uzsakovascommand = "req.body.tMTEP3_T04uzsakovas";
         var tMTEP3_T04temacommand = "req.body.tMTEP3_T04tema";
         var tMTEP3_T04datacommand = "req.body.tMTEP3_T04data";
         var tMTEP3_T04konsultantascommand = "req.body.tMTEP3_T04konsultantas";
+        // 16.1 lent
         var tMTEP3_T05nrcommand = "req.body.tMTEP3_T05nr";
         var tMTEP3_T05veiklPavadcommand = "req.body.tMTEP3_T05veiklPavad";
         var tMTEP3_T05veiklRezultcommand = "req.body.tMTEP3_T05veiklRezult";
         var tMTEP3_T05destytojascommand = "req.body.tMTEP3_T05destytojas";
+        //16.2
+        //17 lent
         var tMTEP3_T06nrcommand = "req.body.tMTEP3_T06nr";
         var tMTEP3_T06autoriuscommand = "req.body.tMTEP3_T06autorius";
         var tMTEP3_T06menoSritcommand = "req.body.tMTEP3_T06menoSrit";
         var tMTEP3_T06pobudiscommand = "req.body.tMTEP3_T06pobudis";
         var tMTEP3_T06realizVietacommand = "req.body.tMTEP3_T06realizVieta";
         var tMTEP3_T06datacommand = "req.body.tMTEP3_T06data";
+        //18 lent
         var tMTEP3_T07nrcommand = "req.body.tMTEP3_T07nr";
         var tMTEP3_T07atlikejascommand = "req.body.tMTEP3_T07atlikejas";
         var tMTEP3_T07menoSritcommand = "req.body.tMTEP3_T07menoSrit";
         var tMTEP3_T07pavadinimascommand = "req.body.tMTEP3_T07pavadinimas";
         var tMTEP3_T07atlikVietacommand = "req.body.tMTEP3_T07atlikVieta";
         var tMTEP3_T07datacommand = "req.body.tMTEP3_T07data";
+        //19 lent
         var tMTEP3_T08Snrcommand = "req.body.tMTEP3_T08Snr";
         var tMTEP3_T08atlikejascommand = "req.body.tMTEP3_T08atlikejas";
         var tMTEP3_T08menoSritcommand = "req.body.tMTEP3_T08menoSrit";
         var tMTEP3_T08pavadinimascommand = "req.body.tMTEP3_T08pavadinimas";
         var tMTEP3_T08atlikVietacommand = "req.body.tMTEP3_T08atlikVieta";
         var tMTEP3_T08datacommand = "req.body.tMTEP3_T08data";
+        //20 lent
         var tMTEP3_T09nrcommand = "req.body.tMTEP3_T09nr";
         var tMTEP3_T09atlikejascommand = "req.body.tMTEP3_T09atlikejas";
         var tMTEP3_T09menoSritcommand = "req.body.tMTEP3_T09menoSrit";
         var tMTEP3_T09pavadinimascommand = "req.body.tMTEP3_T09pavadinimas";
         var tMTEP3_T09atlikVietacommand = "req.body.tMTEP3_T09atlikVieta";
         var tMTEP3_T09datacommand = "req.body.tMTEP3_T09data";
+        //21 lent
         var tMTEP3_T10nrcommand = "req.body.tMTEP3_T10nr";
         var tMTEP3_T10destytojascommand = "req.body.tMTEP3_T10destytojas";
         var tMTEP3_T10veiklPobudcommand = "req.body.tMTEP3_T10veiklPobud";
@@ -3791,6 +3807,7 @@ app.post("/create-dep", (req, res) => {
         var tMTEP3_T10dataVietacommand = "req.body.tMTEP3_T10dataVieta";
         var tMTEP3_T10dalyvSkcommand = "req.body.tMTEP3_T10dalyvSk";
         var tMTEP3_T10ktKomentaraicommand = "req.body.tMTEP3_T10ktKomentarai";
+        //22 lent
         var tMTEP3_T11nrcommand = "req.body.tMTEP3_T11nr";
         var tMTEP3_T11destytojascommand = "req.body.tMTEP3_T11destytojas";
         var tMTEP3_T11veiklPobudcommand = "req.body.tMTEP3_T11veiklPobud";
@@ -3798,36 +3815,29 @@ app.post("/create-dep", (req, res) => {
         var tMTEP3_T11dataVietacommand = "req.body.tMTEP3_T11dataVieta";
         var tMTEP3_T11dalyvSkcommand = "req.body.tMTEP3_T11dalyvSk";
         var tMTEP3_T11ktKomentaraicommand = "req.body.tMTEP3_T11ktKomentarai";
+        //23 lent
         var tMTEP3_T12nrcommand = "req.body.tMTEP3_T12nr";
         var tMTEP3_T12destytojascommand = "req.body.tMTEP3_T12destytojas";
         var tMTEP3_T12veiklPobudcommand = "req.body.tMTEP3_T12veiklPobud";
         var tMTEP3_T12dataVietacommand = "req.body.tMTEP3_T12dataVieta";
+        //24 lent
+        var tMTEP3_T14nrcommand = "req.body.tMTEP3_T14nr";
+        var tMTEP3_T14destytojascommand = "req.body.tMTEP3_T14destytojas";
+        var tMTEP3_T14renginyscommand = "req.body.tMTEP3_T14renginys";
+        var tMTEP3_T14veiklPobudcommand = "req.body.tMTEP3_T14veiklPobud";
+        var tMTEP3_T14dataVietacommand = "req.body.tMTEP3_T14dataVieta";
+        //25 lent
         var tMTEP3_T13nrcommand = "req.body.tMTEP3_T13nr";
         var tMTEP3_T13destytojascommand = "req.body.tMTEP3_T13destytojas";
         var tMTEP3_T13studDuomcommand = "req.body.tMTEP3_T13studDuom";
         var tMTEP3_T13renginioPavadcommand = "req.body.tMTEP3_T13renginioPavad";
         var tMTEP3_T13rezultatascommand = "req.body.tMTEP3_T13rezultatas";
         var tMTEP3_T13datacommand = "req.body.tMTEP3_T13data";
-        var tMTEP3_T14nrcommand = "req.body.tMTEP3_T14nr";
-        var tMTEP3_T14destytojascommand = "req.body.tMTEP3_T14destytojas";
-        var tMTEP3_T14renginyscommand = "req.body.tMTEP3_T14renginys";
-        var tMTEP3_T14veiklPobudcommand = "req.body.tMTEP3_T14veiklPobud";
-        var tMTEP3_T14dataVietacommand = "req.body.tMTEP3_T14dataVieta";
-        var tMTEP3_T15nrcommand = "req.body.tMTEP3_T15nr";
-        var tMTEP3_T15mokymaicommand = "req.body.tMTEP3_T15mokymai";
-        var tMTEP3_T15vykdytojaicommand = "req.body.tMTEP3_T15vykdytojai";
-        var tMTEP3_T15uzsakovascommand = "req.body.tMTEP3_T15uzsakovas";
-        var tMTEP3_T15sumacommand = "req.body.tMTEP3_T15suma";
-        var tMTEP3_T15nrDatacommand = "req.body.tMTEP3_T15nrData";
-        var tMTEP3_T15klausytojaicommand = "req.body.tMTEP3_T15klausytojai";
-        var tMTEP3_T15trukmecommand = "req.body.tMTEP3_T15trukme";
-        var tMTEP3_T16nrcommand = "req.body.tMTEP3_T16nr";
-        var tMTEP3_T16pavadinimascommand = "req.body.tMTEP3_T16pavadinimas";
-        var tMTEP3_T16uzsakovascommand = "req.body.tMTEP3_T16uzsakovas";
-        var tMTEP3_T16rengejaicommand = "req.body.tMTEP3_T16rengejai";
+        //TMTEP_S
         var tMTEP3_Snrcommand = "req.body.tMTEP3_Snr";
         var tMTEP3_Sstiprybescommand = "req.body.tMTEP3_Sstiprybes";
         var tMTEP3_Stobulintinacommand = "req.body.tMTEP3_Stobulintina";
+
         var kTOV4_KV01dalykStazuotespavadcommand = "req.body.kTOV4_KV01dalykStazuotespavad";
         var kTOV4_KV01dalykStazuotespavadcommand = "req.body.kTOV4_KV01dalykStazuotespavad";
         var kTOV4_KV01dalykStazuotespazymNrcommand = "req.body.kTOV4_KV01dalykStazuotespazymNr";
@@ -3845,135 +3855,41 @@ app.post("/create-dep", (req, res) => {
         var kTOV4_KV01dalykKursaipazymNrcommand = "req.body.kTOV4_KV01dalykKursaipazymNr";
         var kTOV4_KV01dalykKursaitrukmeValcommand = "req.body.kTOV4_KV01dalykKursaitrukmeVal";
         var kTOV4_KV01dalykKursaidalyviscommand = "req.body.kTOV4_KV01dalykKursaidalyvis";
-        var kTOV4_KV01didakStazuotespavadcommand = "req.body.kTOV4_KV01didakStazuotespavad";
-        var kTOV4_KV01didakStazuotespazymNrcommand = "req.body.kTOV4_KV01didakStazuotespazymNr";
-        var kTOV4_KV01didakStazuotestrukmeValcommand = "req.body.kTOV4_KV01didakStazuotestrukmeVal";
-        var kTOV4_KV01didakStazuotesdalyviscommand = "req.body.kTOV4_KV01didakStazuotesdalyvis";
-        var kTOV4_KV01didakSeminaraipavadcommand = "req.body.kTOV4_KV01didakSeminaraipavad";
-        var kTOV4_KV01didakSeminaraipazymNrcommand = "req.body.kTOV4_KV01didakSeminaraipazymNr";
-        var kTOV4_KV01didakSeminaraitrukmeValcommand = "req.body.kTOV4_KV01didakSeminaraitrukmeVal";
-        var kTOV4_KV01didakSeminaraidalyviscommand = "req.body.kTOV4_KV01didakSeminaraidalyvis";
-        var kTOV4_KV01didakKonfpavadcommand = "req.body.kTOV4_KV01didakKonfpavad";
-        var kTOV4_KV01didakKonfpazymNrcommand = "req.body.kTOV4_KV01didakKonfpazymNr";
-        var kTOV4_KV01didakKonftrukmeValcommand = "req.body.kTOV4_KV01didakKonftrukmeVal";
-        var kTOV4_KV01didakKonfdalyviscommand = "req.body.kTOV4_KV01didakKonfdalyvis";
-        var kTOV4_KV01didakKursaipavadcommand = "req.body.kTOV4_KV01didakKursaipavad";
-        var kTOV4_KV01didakKursaipazymNrcommand = "req.body.kTOV4_KV01didakKursaipazymNr";
-        var kTOV4_KV01didakKursaitrukmeValcommand = "req.body.kTOV4_KV01didakKursaitrukmeVal";
-        var kTOV4_KV01didakKursaidalyviscommand = "req.body.kTOV4_KV01didakKursaidalyvis";
-        var kTOV4_KV01bendrStazuotespavadcommand = "req.body.kTOV4_KV01bendrStazuotespavad";
-        var kTOV4_KV01bendrStazuotespazymNrcommand = "req.body.kTOV4_KV01bendrStazuotespazymNr";
-        var kTOV4_KV01bendrStazuotestrukmeValcommand = "req.body.kTOV4_KV01bendrStazuotestrukmeVal";
-        var kTOV4_KV01bendrStazuotesdalyviscommand = "req.body.kTOV4_KV01bendrStazuotesdalyvis";
-        var kTOV4_KV01bendrSeminaraipavadcommand = "req.body.kTOV4_KV01bendrSeminaraipavad";
-        var kTOV4_KV01bendrSeminaraipazymNrcommand = "req.body.kTOV4_KV01bendrSeminaraipazymNr";
-        var kTOV4_KV01bendrSeminaraitrukmeValcommand = "req.body.kTOV4_KV01bendrSeminaraitrukmeVal";
-        var kTOV4_KV01bendrSeminaraidalyviscommand = "req.body.kTOV4_KV01bendrSeminaraidalyvis";
-        var kTOV4_KV01bendrKonfpavadcommand = "req.body.kTOV4_KV01bendrKonfpavad";
-        var kTOV4_KV01bendrKonfpazymNrcommand = "req.body.kTOV4_KV01bendrKonfpazymNr";
-        var kTOV4_KV01bendrKonftrukmeValcommand = "req.body.kTOV4_KV01bendrKonftrukmeVal";
-        var kTOV4_KV01bendrKonfdalyviscommand = "req.body.kTOV4_KV01bendrKonfdalyvis";
-        var kTOV4_KV01bendrKursaipavadcommand = "req.body.kTOV4_KV01bendrKursaipavad";
-        var kTOV4_KV01bendrKursaipazymNrcommand = "req.body.kTOV4_KV01bendrKursaipazymNr";
-        var kTOV4_KV01bendrKursaitrukmeValcommand = "req.body.kTOV4_KV01bendrKursaitrukmeVal";
-        var kTOV4_KV01bendrKursaidalyviscommand = "req.body.kTOV4_KV01bendrKursaidalyvis";
 
-        var kTOV4_KV02dalykStazuotespavadcommand = "req.body.kTOV4_KV02dalykStazuotespavad";
-        var kTOV4_KV02dalykStazuotespavadcommand = "req.body.kTOV4_KV02dalykStazuotespavad";
-        var kTOV4_KV02dalykStazuotespazymNrcommand = "req.body.kTOV4_KV02dalykStazuotespazymNr";
-        var kTOV4_KV02dalykStazuotestrukmeValcommand = "req.body.kTOV4_KV02dalykStazuotestrukmeVal";
-        var kTOV4_KV02dalykStazuotesdalyviscommand = "req.body.kTOV4_KV02dalykStazuotesdalyvis";
-        var kTOV4_KV02dalykSeminaraipavadcommand = "req.body.kTOV4_KV02dalykSeminaraipavad";
-        var kTOV4_KV02dalykSeminaraipazymNrcommand = "req.body.kTOV4_KV02dalykSeminaraipazymNr";
-        var kTOV4_KV02dalykSeminaraitrukmeValcommand = "req.body.kTOV4_KV02dalykSeminaraitrukmeVal";
-        var kTOV4_KV02dalykSeminaraidalyviscommand = "req.body.kTOV4_KV02dalykSeminaraidalyvis";
-        var kTOV4_KV02dalykKonfpavadcommand = "req.body.kTOV4_KV02dalykKonfpavad";
-        var kTOV4_KV02dalykKonfpazymNrcommand = "req.body.kTOV4_KV02dalykKonfpazymNr";
-        var kTOV4_KV02dalykKonftrukmeValcommand = "req.body.kTOV4_KV02dalykKonftrukmeVal";
-        var kTOV4_KV02dalykKonfdalyviscommand = "req.body.kTOV4_KV02dalykKonfdalyvis";
-        var kTOV4_KV02dalykKursaipavadcommand = "req.body.kTOV4_KV02dalykKursaipavad";
-        var kTOV4_KV02dalykKursaipazymNrcommand = "req.body.kTOV4_KV02dalykKursaipazymNr";
-        var kTOV4_KV02dalykKursaitrukmeValcommand = "req.body.kTOV4_KV02dalykKursaitrukmeVal";
-        var kTOV4_KV02dalykKursaidalyviscommand = "req.body.kTOV4_KV02dalykKursaidalyvis";
-        var kTOV4_KV02didakStazuotespavadcommand = "req.body.kTOV4_KV02didakStazuotespavad";
-        var kTOV4_KV02didakStazuotespazymNrcommand = "req.body.kTOV4_KV02didakStazuotespazymNr";
-        var kTOV4_KV02didakStazuotestrukmeValcommand = "req.body.kTOV4_KV02didakStazuotestrukmeVal";
-        var kTOV4_KV02didakStazuotesdalyviscommand = "req.body.kTOV4_KV02didakStazuotesdalyvis";
-        var kTOV4_KV02didakSeminaraipavadcommand = "req.body.kTOV4_KV02didakSeminaraipavad";
-        var kTOV4_KV02didakSeminaraipazymNrcommand = "req.body.kTOV4_KV02didakSeminaraipazymNr";
-        var kTOV4_KV02didakSeminaraitrukmeValcommand = "req.body.kTOV4_KV02didakSeminaraitrukmeVal";
-        var kTOV4_KV02didakSeminaraidalyviscommand = "req.body.kTOV4_KV02didakSeminaraidalyvis";
-        var kTOV4_KV02didakKonfpavadcommand = "req.body.kTOV4_KV02didakKonfpavad";
-        var kTOV4_KV02didakKonfpazymNrcommand = "req.body.kTOV4_KV02didakKonfpazymNr";
-        var kTOV4_KV02didakKonftrukmeValcommand = "req.body.kTOV4_KV02didakKonftrukmeVal";
-        var kTOV4_KV02didakKonfdalyviscommand = "req.body.kTOV4_KV02didakKonfdalyvis";
-        var kTOV4_KV02didakKursaipavadcommand = "req.body.kTOV4_KV02didakKursaipavad";
-        var kTOV4_KV02didakKursaipazymNrcommand = "req.body.kTOV4_KV02didakKursaipazymNr";
-        var kTOV4_KV02didakKursaitrukmeValcommand = "req.body.kTOV4_KV02didakKursaitrukmeVal";
-        var kTOV4_KV02didakKursaidalyviscommand = "req.body.kTOV4_KV02didakKursaidalyvis";
-        var kTOV4_KV02bendrStazuotespavadcommand = "req.body.kTOV4_KV02bendrStazuotespavad";
-        var kTOV4_KV02bendrStazuotespazymNrcommand = "req.body.kTOV4_KV02bendrStazuotespazymNr";
-        var kTOV4_KV02bendrStazuotestrukmeValcommand = "req.body.kTOV4_KV02bendrStazuotestrukmeVal";
-        var kTOV4_KV02bendrStazuotesdalyviscommand = "req.body.kTOV4_KV02bendrStazuotesdalyvis";
-        var kTOV4_KV02bendrSeminaraipavadcommand = "req.body.kTOV4_KV02bendrSeminaraipavad";
-        var kTOV4_KV02bendrSeminaraipazymNrcommand = "req.body.kTOV4_KV02bendrSeminaraipazymNr";
-        var kTOV4_KV02bendrSeminaraitrukmeValcommand = "req.body.kTOV4_KV02bendrSeminaraitrukmeVal";
-        var kTOV4_KV02bendrSeminaraidalyviscommand = "req.body.kTOV4_KV02bendrSeminaraidalyvis";
-        var kTOV4_KV02bendrKonfpavadcommand = "req.body.kTOV4_KV02bendrKonfpavad";
-        var kTOV4_KV02bendrKonfpazymNrcommand = "req.body.kTOV4_KV02bendrKonfpazymNr";
-        var kTOV4_KV02bendrKonftrukmeValcommand = "req.body.kTOV4_KV02bendrKonftrukmeVal";
-        var kTOV4_KV02bendrKonfdalyviscommand = "req.body.kTOV4_KV02bendrKonfdalyvis";
-        var kTOV4_KV02bendrKursaipavadcommand = "req.body.kTOV4_KV02bendrKursaipavad";
-        var kTOV4_KV02bendrKursaipazymNrcommand = "req.body.kTOV4_KV02bendrKursaipazymNr";
-        var kTOV4_KV02bendrKursaitrukmeValcommand = "req.body.kTOV4_KV02bendrKursaitrukmeVal";
-        var kTOV4_KV02bendrKursaidalyviscommand = "req.body.kTOV4_KV02bendrKursaidalyvis";
+        //29 lent
         var kTOV4_KV03nrcommand = "req.body.kTOV4_KV03nr";
         var kTOV4_KV03destytojascommand = "req.body.kTOV4_KV03destytojas";
         var kTOV4_KV03saliscommand = "req.body.kTOV4_KV03salis";
         var kTOV4_KV03institucijacommand = "req.body.kTOV4_KV03institucija";
         var kTOV4_KV03dalykascommand = "req.body.kTOV4_KV03dalykas";
+        // 31.1 lent
         var kTOV4_O01_1nrcommand = "req.body.kTOV4_O01_1nr";
         var kTOV4_O01_1destytojascommand = "req.body.kTOV4_O01_1destytojas";
         var kTOV4_O01_1veiklPobudcommand = "req.body.kTOV4_O01_1veiklPobud";
         var kTOV4_O01_1isakNrDatacommand = "req.body.kTOV4_O01_1isakNrData";
+        // 31.2 lent
         var kTOV4_O01_2nrcommand = "req.body.kTOV4_O01_2nr";
         var kTOV4_O01_2destytojascommand = "req.body.kTOV4_O01_2destytojas";
         var kTOV4_O01_2veiklPobudcommand = "req.body.kTOV4_O01_2veiklPobud";
         var kTOV4_O01_2dataVietacommand = "req.body.kTOV4_O01_2dataVieta";
         var kTOV4_O01_2dalyvSkcommand = "req.body.kTOV4_O01_2dalyvSk";
         var kTOV4_O01_2ktKomentaraicommand = "req.body.kTOV4_O01_2ktKomentarai";
-        var kTOV4_O02nrcommand = "req.body.kTOV4_O02nr";
-        var kTOV4_O02atstovascommand = "req.body.kTOV4_O02atstovas";
-        var kTOV4_O02partneriaicommand = "req.body.kTOV4_O02partneriai";
-        var kTOV4_O02formacommand = "req.body.kTOV4_O02forma";
-        var kTOV4_O02rezultataicommand = "req.body.kTOV4_O02rezultatai";
-        var kTOV4_O02sutartiscommand = "req.body.kTOV4_O02sutartis";
-        var kTOV4_O02tipascommand = "req.body.kTOV4_O02tipas";
+        //kTOV4_S
         var kTOV4_Snrcommand = "req.body.kTOV4_Snr";
         var kTOV4_Sstiprybescommand = "req.body.kTOV4_Sstiprybes";
         var kTOV4_Stobulintinacommand = "req.body.kTOV4_Stobulintina";
+        //36 lent
+        var kV5_KT02nrcommand = "req.body.kV5_KT02nr";
+        var kV5_KT02diplomantascommand = "req.body.kV5_KT02diplomantas";
+        var kV5_KT02studProgrcommand = "req.body.kV5_KT02studProgr";
+        var kV5_KT02darboTemacommand = "req.body.kV5_KT02darboTema";
+        //37 lent
         var kV5_KT01nrcommand = "req.body.kV5_KT01nr";
         var kV5_KT01diplomantascommand = "req.body.kV5_KT01diplomantas";
         var kV5_KT01studProgrcommand = "req.body.kV5_KT01studProgr";
         var kV5_KT01darboTemacommand = "req.body.kV5_KT01darboTema";
         var kV5_KT01uzsakovascommand = "req.body.kV5_KT01uzsakovas";
-        var kV5_KT02nrcommand = "req.body.kV5_KT02nr";
-        var kV5_KT02diplomantascommand = "req.body.kV5_KT02diplomantas";
-        var kV5_KT02studProgrcommand = "req.body.kV5_KT02studProgr";
-        var kV5_KT02darboTemacommand = "req.body.kV5_KT02darboTema";
-        var kV5_KT03nrcommand = "req.body.kV5_KT03nr";
-        var kV5_KT03studProgrcommand = "req.body.kV5_KT03studProgr";
-        var kV5_KT03baigSkcommand = "req.body.kV5_KT03baigSk";
-        var kV5_KT03iregUzimtumSkcommand = "req.body.kV5_KT03iregUzimtumSk";
-        var kV5_KT03isidarbinProccommand = "req.body.kV5_KT03isidarbinProc";
-        var kV5_KT04nrcommand = "req.body.kV5_KT04nr";
-        var kV5_KT04autoriuscommand = "req.body.kV5_KT04autorius";
-        var kV5_KT04veiklTipascommand = "req.body.kV5_KT04veiklTipas";
-        var kV5_KT04pavadinimascommand = "req.body.kV5_KT04pavadinimas";
-        var kV5_KT04sutartNrcommand = "req.body.kV5_KT04sutartNr";
-        var kV5_KT04uzsakovascommand = "req.body.kV5_KT04uzsakovas";
-        var kV5_KT04uzsakSumacommand = "req.body.kV5_KT04uzsakSuma";
-        var veiklSavinalizenrcommand = "req.body.veiklSavinalizenr";
+        //veiklSavinalize
         var veiklSavinalizestiprybescommand = "req.body.veiklSavinalizestiprybes";
         var veiklSavinalizetobulintinacommand = "req.body.veiklSavinalizetobulintina";
 

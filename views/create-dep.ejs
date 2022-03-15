@@ -215,29 +215,29 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label><br></label>
-            <input type="number" class="form-control text-center" name="desnr<%=visuvar%>" readonly="readonly" value="<%=visuvar%>" autocomplete="off">
+            <input type="number" class="form-control text-center" name="lent2_nr<%=visuvar%>" readonly="readonly" value="<%=visuvar%>" autocomplete="off">
           </div>
           <div class="col-md-11 mb-3">
             <label>Pavardė, vardas </label>
-            <textarea type="text" rows="1" class="form-control" name="vardPavard<%=visuvar%>" autocomplete="off"><%=pavVar%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent2_pavVard<%=visuvar%>" autocomplete="off"><%=pavVar%></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3"><br>
             <label>Pareigos</label>
-            <textarea type="text" rows="1" class="form-control" name="pareigos<%=visuvar%>" autocomplete="off"><%=user.destytojas.pareigos%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent2_pareigos<%=visuvar%>" autocomplete="off"><%=user.destytojas.pareigos%></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label>Pagrindinė (P), nepagrindinė (N) darbovietė</label>
-            <textarea type="text" rows="1" class="form-control" name="darbovTipas<%=visuvar%>" autocomplete="off"><%=user.destytojas.darbovietesTipas%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent2_darbovTipas<%=visuvar%>" autocomplete="off"><%=user.destytojas.darbovietesTipas%></textarea>
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control  text-center" min="0" name="pedagogStazas<%=visuvar%>" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=visuvar%>" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control  text-center" min="0" name="praktinStazas<%=visuvar%>" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=visuvar%>" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
         <% }) %>
@@ -253,11 +253,11 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kKPP1_3nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent3_nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis</label>
-            <select name="kKPP1_3studKryptis1" class="form-select form-control">
+            <select name="lent3_studKryptis1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -403,17 +403,17 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kKPP1_3studProgr1" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent3_studProgr1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Dėstytojas-praktikas*</label>
-            <textarea type="text" rows="1" class="form-control" name="kKPP1_3destytojas1" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent3_destytojas1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-11 mb-3">
             <label for="">Įmonė, įstaiga, organizacija</label>
-            <textarea type="text" rows="1" class="form-control " name="kKPP1_3imonIstaig1" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent3_imonIstaig1" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me21">
@@ -441,19 +441,19 @@
           <% numb4++ %>
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="mV2_M02nr<%=numb4%>" value="<%=numb4%>" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent4_nr<%=numb4%>" value="<%=numb4%>" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-11 mb-3">
             <label for=""><b>Pilnas bibliografinis aprašas</b>:
               Pavardė, V., (Metai). Pavadinimas. Leidykla/spaustuvė.
               Tiražas, p. skaičius, ISBN</label>
-            <textarea type="text" rows="1" class="form-control " name="bibliografApr<%=numb4%>" value="" placeholder="" autocomplete="off"><%=user.bibliografApr%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent4_bibliografApr<%=numb4%>" placeholder="" autocomplete="off"><%=user.bibliografApr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Tipas*</label>
-            <select name="tipas<%=numb4%>" class="form-select form-control">
+            <select name="lent4_tipas<%=numb4%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.tipas === "Vadovėliai") { %> selected <% } %> value="Vadovėliai">V</option>
               <option class="others" <%if (user.tipas === "Mokomosios knygos") { %> selected <% } %> value="Mokomosios knygos">MK</option>
@@ -464,7 +464,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Mokslo sritis**</label>
-            <select name="mokslSrit<%=numb4%>" class="form-select form-control">
+            <select name="lent4_mokslSrit<%=numb4%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.mokslSrit === "Humanitariniai mokslai") { %> selected <% } %> value="Humanitariniai mokslai">H</option>
               <option class="others" <%if (user.mokslSrit === "Socialiniai mokslai") { %> selected <% } %> value="Socialiniai mokslai">S</option>
@@ -476,7 +476,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Mokslo kryptis***</label>
-            <select name="mokslKrypt<%=numb4%>" class="form-select form-control">
+            <select name="lent4_mokslKrypt<%=numb4%>" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Gamtos mokslai N">
                 <option class="others" <%if (user.mokslKrypt === "Matematika") { %> selected <% } %> value="Matematika">Matematika</option>
@@ -704,7 +704,7 @@
 
         <% var numb8 = 0; %>
         <%  users.forEach(function(user){ %>
-<% var pavVar = user.pavarde + " " + user.vardas; %>
+          <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_D02.forEach(function(user){ %>
         <% numb8++ %>
         <div class="form-row">
@@ -1065,6 +1065,8 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="yond17" name="yond18" value="<%=numb9%>">
+
+<!-- baigiau 03.15 -->
 
         <!-- 10 lentelė -->
         <!-- mV2_M03 -->
@@ -1583,13 +1585,12 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Atlygintinai/ Neatlygintinai</label>
-            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+            <select name="tMTEP3_T04atlygArNe<%=numb15%>" class="form-select form-control">
               <option value=""></option>
-              <option class="others" value="Atlygintinai">Atlygintinai</option>
-              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
-            </select> -->
-            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T04atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
-          </div>
+              <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+              <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+            </select>
+            </div>
         </div>
 
         <% }) %>
@@ -1640,12 +1641,11 @@
             <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklRezult<%=numb16%>" placeholder="" autocomplete="off"><%=user.veiklRezult%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <!-- <select name="tMTEP3_T04atlygArNe" class="form-select form-control">
+            <select name="tMTEP3_T05atlygArNe<%=numb16%>" class="form-select form-control">
               <option value=""></option>
-              <option class="others" value="Atlygintinai">Atlygintinai</option>
-              <option class="others" value="Neatlygintinai">Neatlygintinai</option>
-            </select> -->
-            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T05atlygArNe" placeholder="" autocomplete="off"><%=user.atlygArNe%></textarea>
+              <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
+              <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+            </select>
           </div>
         </div>
         <% }) %>
@@ -3221,7 +3221,7 @@
         <% }) %>
         <input type="hidden" id="yond55" name="yond56" value="<%=numb28%>">
 
-        <!-- 31.1 lentelė -->
+        <!-- 31.2 lentelė -->
         <!-- kTOV4_O01_2 -->
         <p class="font-weight-bold">
           31.2. lentelė. Renginių, išvykų, ekskursijų, parodų, mugių ir kitų veiklų, studentams
@@ -4705,6 +4705,7 @@
 </div>
 
 <!-- ---ALL SCRIPTS--- -->
+
 <!-- for tables: 1, 3, 6, 30, mV2_S, 32, 34, TMTEP_S, 35, kTOV4_S, 39, veiklSavinalize   -->
 <!-- mV2_D04 -->
 <!-- 1 table -->
@@ -4930,11 +4931,11 @@
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kKPP1_3nr1` + value2 + `" placeholder="" autocomplete="off" value="` + value2 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent3_nr1` + value2 + `" placeholder="" autocomplete="off" value="` + value2 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
               <label for="">Studijų kryptis</label>
-              <select name="kKPP1_3studKryptis` + value2 + `"class="form-select form-control">
+              <select name="lent3_studKryptis` + value2 + `"class="form-select form-control">
                 <option value=""></option>
                 <optgroup label="Matematikos mokslai">
                   <option class="others" value="Matematika">Matematika</option>
@@ -5080,17 +5081,17 @@
           </div>
           <div class="col-md-4 mb-3">
   <label for="">Studijų programa</label>
-            <textarea rows="1" type="text" class="form-control " name="kKPP1_3studProgr` + value2 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent3_studProgr` + value2 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-4 mb-3">
     <label for="">Dėstytojas-praktikas*</label>
-            <textarea rows="1" type="text" class="form-control" name="kKPP1_3destytojas` + value2 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent3_destytojas` + value2 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-11 mb-3">
             <label for="">Įmonė, įstaiga, organizacija</label>
-            <textarea type="text" rows="1" class="form-control" name="kKPP1_3imonIstaig` + value2 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent3_imonIstaig` + value2 + `"placeholder="" autocomplete="off"></textarea>
           </div>
 
         </div>
@@ -6189,609 +6190,8 @@
   }
 </script>
 
-<!-- sutvarkyti koda zemiau: -->
-<script>
-  var array = [];
-  var array2 = [];
-  var array3 = [];
-  var array4 = [];
-  var array5 = [];
-  var array6 = [];
-  var array7 = [];
-  var array8 = [];
-  var array9 = [];
-  var array10 = [];
-  var array11 = [];
-  var array12 = [];
-  var array13 = [];
-  var array14 = [];
-  var array15 = [];
-  var array16 = [];
-  var array17 = [];
-  var array18 = [];
-  var array19 = [];
-  var array20 = [];
-  var array21 = [];
-  var array22 = [];
-  var array23 = [];
-  var array24 = [];
+<!-- CALCULATIONS -->
 
-  var skaicius = 0;
-  var skaicius2 = 0;
-  var skaicius3 = 0;
-  var skaicius4 = 0;
-  var skaicius5 = 0;
-  var skaicius6 = 0;
-  var skaicius7 = 0;
-  var skaicius8 = 0;
-  var skaicius9 = 0;
-  var skaicius10 = 0;
-  var skaicius11 = 0;
-  var skaicius12 = 0;
-  var skaicius13 = 0;
-  var skaicius14 = 0;
-  var skaicius15 = 0;
-  var skaicius16 = 0;
-  var skaicius17 = 0;
-  var skaicius18 = 0;
-  var skaicius19 = 0;
-  var skaicius20 = 0;
-  var skaicius21 = 0;
-  var skaicius22 = 0;
-  var skaicius23 = 0;
-  var skaicius24 = 0;
-  var ja = "ja";
-  var ja2 = "2ja";
-  var ja3 = "3ja";
-  var ja4 = "4ja";
-  var ja5 = "5ja";
-  var ja6 = "6ja";
-  var ja7 = "7ja";
-  var ja8 = "8ja";
-  var ja9 = "9ja";
-  var ja10 = "10ja";
-  var ja11 = "11ja";
-  var ja12 = "12ja";
-  var ja13 = "13ja";
-  var ja14 = "14ja";
-  var ja15 = "15ja";
-  var ja16 = "16ja";
-  var ja17 = "17ja";
-  var ja18 = "18ja";
-  var ja19 = "19ja";
-  var ja20 = "20ja";
-  var ja21 = "21ja";
-  var ja22 = "22ja";
-  var ja23 = "23ja";
-  var ja24 = "24ja";
-  window.onload = calculate();
-
-  function calculate() {
-    for (let i = 1; i <= document.getElementById("number").value; i++) {
-      var b = ja + i;
-      var dalyvis123 = document.getElementById(b).value;
-      if (array.includes(dalyvis123)) {
-
-      } else {
-        skaicius++;
-        array.push(dalyvis123);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number3").value; i++) {
-      var bw = ja2 + i;
-      var dalyvis123a = document.getElementById(bw).value;
-      if (array2.includes(dalyvis123a)) {
-
-      } else {
-        skaicius2++;
-        array2.push(dalyvis123a);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number5").value; i++) {
-      var bd = ja3 + i;
-      var dalyvis123d = document.getElementById(bd).value;
-      if (array3.includes(dalyvis123d)) {
-
-      } else {
-        skaicius3++;
-        array3.push(dalyvis123d);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number7").value; i++) {
-      var be = ja4 + i;
-      var dalyvis123e = document.getElementById(be).value;
-      if (array4.includes(dalyvis123e)) {
-
-      } else {
-        skaicius4++;
-        array4.push(dalyvis123e);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number9").value; i++) {
-      var br = ja5 + i;
-      var dalyvis123r = document.getElementById(br).value;
-      if (array5.includes(dalyvis123r)) {
-
-      } else {
-        skaicius5++;
-        array5.push(dalyvis123r);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number11").value; i++) {
-      var bt = ja6 + i;
-      var dalyvis123t = document.getElementById(bt).value;
-      if (array6.includes(dalyvis123t)) {
-
-      } else {
-        skaicius6++;
-        array6.push(dalyvis123t);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number13").value; i++) {
-      var by = ja7 + i;
-      var dalyvis123y = document.getElementById(by).value;
-      if (array7.includes(dalyvis123y)) {
-
-      } else {
-        skaicius7++;
-        array7.push(dalyvis123y);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number15").value; i++) {
-      var bu = ja8 + i;
-      var dalyvis123u = document.getElementById(bu).value;
-      if (array8.includes(dalyvis123u)) {
-
-      } else {
-        skaicius8++;
-        array8.push(dalyvis123u);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number17").value; i++) {
-      var bi = ja9 + i;
-      var dalyvis123i = document.getElementById(bi).value;
-      if (array9.includes(dalyvis123i)) {
-
-      } else {
-        skaicius9++;
-        array9.push(dalyvis123i);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number19").value; i++) {
-      var bo = ja10 + i;
-      var dalyvis123o = document.getElementById(bo).value;
-      if (array10.includes(dalyvis123o)) {
-
-      } else {
-        skaicius10++;
-        array10.push(dalyvis123o);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number21").value; i++) {
-      var bp = ja11 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array11.includes(dalyvis123p)) {
-
-      } else {
-        skaicius11++;
-        array11.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number23").value; i++) {
-      var bp = ja12 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array12.includes(dalyvis123p)) {
-
-      } else {
-        skaicius12++;
-        array12.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number25").value; i++) {
-      var bo = ja13 + i;
-      var dalyvis123o = document.getElementById(bo).value;
-      if (array13.includes(dalyvis123o)) {
-
-      } else {
-        skaicius13++;
-        array13.push(dalyvis123o);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number27").value; i++) {
-      var bp = ja14 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array14.includes(dalyvis123p)) {
-
-      } else {
-        skaicius14++;
-        array14.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number29").value; i++) {
-      var bp = ja15 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array15.includes(dalyvis123p)) {
-
-      } else {
-        skaicius15++;
-        array15.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number31").value; i++) {
-      var bp = ja16 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array16.includes(dalyvis123p)) {
-
-      } else {
-        skaicius16++;
-        array16.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number33").value; i++) {
-      var bo = ja17 + i;
-      var dalyvis123o = document.getElementById(bo).value;
-      if (array17.includes(dalyvis123o)) {
-
-      } else {
-        skaicius17++;
-        array17.push(dalyvis123o);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number35").value; i++) {
-      var bp = ja18 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array18.includes(dalyvis123p)) {
-
-      } else {
-        skaicius18++;
-        array18.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number37").value; i++) {
-      var bp = ja19 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array19.includes(dalyvis123p)) {
-
-      } else {
-        skaicius19++;
-        array19.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number39").value; i++) {
-      var bp = ja20 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array20.includes(dalyvis123p)) {
-
-      } else {
-        skaicius20++;
-        array20.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number41").value; i++) {
-      var bp = ja21 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array21.includes(dalyvis123p)) {
-
-      } else {
-        skaicius21++;
-        array21.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number43").value; i++) {
-      var bp = ja22 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array22.includes(dalyvis123p)) {
-
-      } else {
-        skaicius22++;
-        array22.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number45").value; i++) {
-      var bp = ja23 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array23.includes(dalyvis123p)) {
-
-      } else {
-        skaicius23++;
-        array23.push(dalyvis123p);
-      }
-    }
-    for (let i = 1; i <= document.getElementById("number47").value; i++) {
-      var bp = ja24 + i;
-      var dalyvis123p = document.getElementById(bp).value;
-      if (array24.includes(dalyvis123p)) {
-
-      } else {
-        skaicius24++;
-        array24.push(dalyvis123p);
-      }
-    }
-
-    document.getElementById("here").value = skaicius;
-    document.getElementById("here2").value = skaicius2;
-    document.getElementById("here3").value = skaicius3;
-    document.getElementById("here4").value = skaicius4;
-    document.getElementById("here5").value = skaicius5;
-    document.getElementById("here6").value = skaicius6;
-    document.getElementById("here7").value = skaicius7;
-    document.getElementById("here8").value = skaicius8;
-    document.getElementById("here9").value = skaicius9;
-    document.getElementById("here10").value = skaicius10;
-    document.getElementById("here11").value = skaicius11;
-    document.getElementById("here12").value = skaicius12;
-    document.getElementById("here13").value = skaicius13;
-    document.getElementById("here14").value = skaicius14;
-    document.getElementById("here15").value = skaicius15;
-    document.getElementById("here16").value = skaicius16;
-    document.getElementById("here17").value = skaicius17;
-    document.getElementById("here18").value = skaicius18;
-    document.getElementById("here19").value = skaicius19;
-    document.getElementById("here20").value = skaicius20;
-    document.getElementById("here21").value = skaicius21;
-    document.getElementById("here22").value = skaicius22;
-    document.getElementById("here23").value = skaicius23;
-    document.getElementById("here24").value = skaicius24;
-  }
-</script>
-<script>
-  window.onload = calc4();
-
-  function calc4() {
-
-    var idarbnum = 0;
-    var baignum = 0;
-    var baig = "baig";
-    var ireg = "ireg";
-    var proc = "proc";
-    var fullproc = 0;
-    for (let zx = 1; zx <= value11 - 1; zx++) {
-      var bendras = baig + zx;
-      var bendras2 = ireg + zx;
-      var bendras3 = proc + zx;
-      var num00 = document.getElementById(bendras).value;
-      if (num00 == 0) {
-        document.getElementById(bendras3).value = 0;
-      } else {
-        var num01 = document.getElementById(bendras2).value;
-        num00 = parseFloat(num00);
-        num01 = parseFloat(num01);
-        if (num01 > num00) {
-          document.getElementById(bendras3).value = 100;
-        } else {
-          var num000 = parseFloat(num00);
-          var num001 = parseFloat(num01);
-          var num002 = num001 / num000 * 100;
-          num002 = num002.toFixed(2);
-          idarbnum = idarbnum + num001;
-          baignum = baignum + num000;
-          document.getElementById(bendras3).value = num002;
-        }
-
-      }
-
-    }
-    document.getElementById("baigsk").value = baignum;
-    document.getElementById("iregsk").value = idarbnum;
-    fullproc = idarbnum / baignum * 100;
-    fullproc = fullproc.toFixed(2);
-    document.getElementById("isvisoproc").value = fullproc;
-  }
-</script>
-<script>
-  window.onload = calchours();
-
-  function calchours() {
-
-    var dalykstaz = "dstaz";
-    var dalykseminarai = "dsem";
-    var dalykkonf = "dkonf";
-    var dalykkursai = "dkurs";
-    var didakstaz = "distaz";
-    var didakseminarai = "disem";
-    var didakkonf = "dikonf";
-    var didakkursai = "dikurs";
-    var dalykval = 0;
-    var didakval = 0;
-    var bval = 0;
-
-    for (let i = 1; i <= document.getElementById("number").value; i++) {
-      var dalykstazi = dalykstaz + i;
-      var jdalykstaz = document.getElementById(dalykstazi).value;
-      var jjdalykstaz = parseFloat(jdalykstaz) || 0;
-      dalykval = dalykval + jjdalykstaz;
-    }
-    for (let i = 1; i <= document.getElementById("number3").value; i++) {
-      var dalykseminaraii = dalykseminarai + i;
-      var jdalykseminarai = document.getElementById(dalykseminaraii).value;
-      var jjdalykseminarai = parseFloat(jdalykseminarai) || 0;
-      dalykval = dalykval + jjdalykseminarai;
-    }
-    for (let i = 1; i <= document.getElementById("number5").value; i++) {
-      var dalykkonfi = dalykkonf + i;
-      var jdalykkonf = document.getElementById(dalykkonfi).value;
-      var jjdalykkonf = parseFloat(jdalykkonf) || 0;
-      dalykval = dalykval + jjdalykkonf;
-    }
-    for (let i = 1; i <= document.getElementById("number7").value; i++) {
-      var dalykkursaii = dalykkursai + i;
-      var jdalykkursai = document.getElementById(dalykkursaii).value;
-      var jjdalykkursai = parseFloat(jdalykkursai) || 0;
-      dalykval = dalykval + jjdalykkursai;
-    }
-    for (let i = 1; i <= document.getElementById("number9").value; i++) {
-      var didakstazi = didakstaz + i;
-      var jdidakstaz = document.getElementById(didakstazi).value;
-      var jjdidakstaz = parseFloat(jdidakstaz) || 0;
-      didakval = didakval + jjdidakstaz;
-    }
-    for (let i = 1; i <= document.getElementById("number11").value; i++) {
-      var didakseminaraii = didakseminarai + i;
-      var jdidakseminarai = document.getElementById(didakseminaraii).value;
-      var jjdidakseminarai = parseFloat(jdidakseminarai) || 0;
-      didakval = didakval + jjdidakseminarai;
-    }
-    for (let i = 1; i <= document.getElementById("number13").value; i++) {
-      var didakkonfi = didakkonf + i;
-      var jdidakkonf = document.getElementById(didakkonfi).value;
-      var jjdidakkonf = parseFloat(jdidakkonf) || 0;
-      didakval = didakval + jjdidakkonf;
-    }
-    for (let i = 1; i <= document.getElementById("number15").value; i++) {
-      var didakkursaii = didakkursai + i;
-      var jdidakkursai = document.getElementById(didakkursaii).value;
-      var jjdidakkursai = parseFloat(jdidakkursai) || 0;
-      didakval = didakval + jjdidakkursai;
-    }
-    var bstaz = "bstaz";
-    var bseminarai = "bsem";
-    var bkonf = "bkonf";
-    var bkursai = "bkurs";
-    for (let i = 1; i <= document.getElementById("number17").value; i++) {
-      var bstazi = bstaz + i;
-      var jbstaz = document.getElementById(bstazi).value;
-      var jjbstaz = parseFloat(jbstaz) || 0;
-      bval = bval + jjbstaz;
-    }
-    for (let i = 1; i <= document.getElementById("number19").value; i++) {
-      var bseminaraii = bseminarai + i;
-      var jbseminarai = document.getElementById(bseminaraii).value;
-      var jjbseminarai = parseFloat(jbseminarai) || 0;
-      bval = bval + jjbseminarai;
-    }
-    for (let i = 1; i <= document.getElementById("number21").value; i++) {
-      var bkonfi = bkonf + i;
-      var jbkonf = document.getElementById(bkonfi).value;
-      var jjbkonf = parseFloat(jbkonf) || 0;
-      bval = bval + jjbkonf;
-    }
-    for (let i = 1; i <= document.getElementById("number23").value; i++) {
-      var bkursaii = bkursai + i;
-      var jbkursai = document.getElementById(bkursaii).value;
-      var jjbkursai = parseFloat(jbkursai) || 0;
-      bval = bval + jjbkursai;
-    }
-    document.getElementById("dalykLT").value = dalykval;
-    document.getElementById("didakLT").value = didakval;
-    document.getElementById("bLT").value = bval;
-  }
-</script>
-<script>
-  window.onload = calchours2();
-
-  function calchours2() {
-
-
-    var dalykstaz2 = "dastaz";
-    var dalykseminarai2 = "dasem";
-    var dalykkonf2 = "dakonf";
-    var dalykkursai2 = "dakurs";
-    var didakstaz2 = "didstaz";
-    var didakseminarai2 = "didsem";
-    var didakkonf2 = "didkonf";
-    var didakkursai2 = "didkurs";
-    var bstaz2 = "bestaz";
-    var bseminarai2 = "besem";
-    var bkonf2 = "bekonf";
-    var bkursai2 = "bekurs";
-
-    var dalykval2 = 0;
-    var didakval2 = 0;
-    var bval2 = 0;
-
-    for (let i = 1; i <= document.getElementById("number25").value; i++) {
-      var dalykstaz2i = dalykstaz2 + i;
-      var jdalykstaz2 = document.getElementById(dalykstaz2i).value;
-      var jjdalykstaz2 = parseFloat(jdalykstaz2) || 0;
-      dalykval2 = dalykval2 + jjdalykstaz2;
-    }
-    for (let i = 1; i <= document.getElementById("number27").value; i++) {
-      var dalykseminarai2i = dalykseminarai2 + i;
-      var jdalykseminarai2 = document.getElementById(dalykseminarai2i).value;
-      var jjdalykseminarai2 = parseFloat(jdalykseminarai2) || 0;
-      dalykval2 = dalykval2 + jjdalykseminarai2;
-    }
-    for (let i = 1; i <= document.getElementById("number29").value; i++) {
-      var dalykkonf2i = dalykkonf2 + i;
-      var jdalykkonf2 = document.getElementById(dalykkonf2i).value;
-      var jjdalykkonf2 = parseFloat(jdalykkonf2) || 0;
-      dalykval2 = dalykval2 + jjdalykkonf2;
-    }
-    for (let i = 1; i <= document.getElementById("number31").value; i++) {
-      var dalykkursai2i = dalykkursai2 + i;
-      var jdalykkursai2 = document.getElementById(dalykkursai2i).value;
-      var jjdalykkursai2 = parseFloat(jdalykkursai2) || 0;
-      dalykval2 = dalykval2 + jjdalykkursai2;
-    }
-    for (let i = 1; i <= document.getElementById("number33").value; i++) {
-      var didakstaz2i = didakstaz2 + i;
-      var jdidakstaz2 = document.getElementById(didakstaz2i).value;
-      var jjdidakstaz2 = parseFloat(jdidakstaz2) || 0;
-      didakval2 = didakval2 + jjdidakstaz2;
-    }
-    for (let i = 1; i <= document.getElementById("number35").value; i++) {
-      var didakseminarai2i = didakseminarai2 + i;
-      var jdidakseminarai2 = document.getElementById(didakseminarai2i).value;
-      var jjdidakseminarai2 = parseFloat(jdidakseminarai2) || 0;
-      didakval2 = didakval2 + jjdidakseminarai2;
-    }
-    for (let i = 1; i <= document.getElementById("number37").value; i++) {
-      var didakkonf2i = didakkonf2 + i;
-      var jdidakkonf2 = document.getElementById(didakkonf2i).value;
-      var jjdidakkonf2 = parseFloat(jdidakkonf2) || 0;
-      didakval2 = didakval2 + jjdidakkonf2;
-    }
-    for (let i = 1; i <= document.getElementById("number39").value; i++) {
-      var didakkursai2i = didakkursai2 + i;
-      var jdidakkursai2 = document.getElementById(didakkursai2i).value;
-      var jjdidakkursai2 = parseFloat(jdidakkursai2) || 0;
-      didakval2 = didakval2 + jjdidakkursai2;
-    }
-    for (let i = 1; i <= document.getElementById("number41").value; i++) {
-      var bstaz2i = bstaz2 + i;
-      var jbstaz2 = document.getElementById(bstaz2i).value;
-      var jjbstaz2 = parseFloat(jbstaz2) || 0;
-      bval2 = bval2 + jjbstaz2;
-    }
-    for (let i = 1; i <= document.getElementById("number43").value; i++) {
-      var bseminarai2i = bseminarai2 + i;
-      var jbseminarai2 = document.getElementById(bseminarai2i).value;
-      var jjbseminarai2 = parseFloat(jbseminarai2) || 0;
-      bval2 = bval2 + jjbseminarai2;
-    }
-    for (let i = 1; i <= document.getElementById("number45").value; i++) {
-      var bkonf2i = bkonf2 + i;
-      var jbkonf2 = document.getElementById(bkonf2i).value;
-      var jjbkonf2 = parseFloat(jbkonf2) || 0;
-      bval2 = bval2 + jjbkonf2;
-    }
-    for (let i = 1; i <= document.getElementById("number47").value; i++) {
-      var bkursai2i = bkursai2 + i;
-      var jbkursai2 = document.getElementById(bkursai2i).value;
-      var jjbkursai2 = parseFloat(jbkursai2) || 0;
-      bval2 = bval2 + jjbkursai2;
-    }
-
-    document.getElementById("dalykneLT").value = dalykval2;
-    document.getElementById("didakneLT").value = didakval2;
-    document.getElementById("bneLT").value = bval2;
-  }
-</script>
-<script>
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  }
-</script>
-
-
-<!-- Mano geri scriptai, reiktu pritaikyti tik: -->
 <!-- kTOV4_KV01 -->
 <!-- kTOV4_26 -->
 <!-- 26 table -->
