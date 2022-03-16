@@ -1066,8 +1066,6 @@
         <% }) %>
         <input type="hidden" id="yond17" name="yond18" value="<%=numb9%>">
 
-<!-- baigiau 03.15 -->
-
         <!-- 10 lentelė -->
         <!-- mV2_M03 -->
         <div class="form-row">
@@ -1218,7 +1216,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="">Tyrimo tematika, metodai ir apimtis*</label>
-            <textarea rows="1" type="text" class="form-control " name="tyrTemat<%=numb12%>" placeholder="" value="" autocomplete="off"><%=user.tyrTemat%></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T01tyrTemat<%=numb12%>" placeholder="" value="" autocomplete="off"><%=user.tyrTemat%></textarea>
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Tyrėjas (pavardė, vardas) </label>
@@ -1228,7 +1226,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Tyrimų grupė**</label>
-              <select name="tyrGrup<%=numb12%>" class="form-select form-control">
+              <select name="tMTEP3_T01tyrGrup<%=numb12%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.tyrGrup === "Studijų kokybės bei kompetencijų užtikrinimo tyrimai") { %> selected <% } %> value="Studijų kokybės bei kompetencijų užtikrinimo tyrimai">T01</option>
               <option class="others" <%if (user.tyrGrup === "Verslo aplinkos ir darbo rinkos analizės tyrimai") { %> selected <% } %> value="Verslo aplinkos ir darbo rinkos analizės tyrimai">T02</option>
@@ -1676,16 +1674,16 @@
         <% numb162++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="tMTEP3_162nr<%=numb162%>" placeholder="" autocomplete="off" value="<%=numb162%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent162_nr<%=numb162%>" placeholder="" autocomplete="off" value="<%=numb162%>" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_162destytojas<%=numb162%>" placeholder="" autocomplete="off"><%=pavVar%></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent162_destytojas<%=numb162%>" placeholder="" autocomplete="off"><%=pavVar%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_162pavadinimas<%=numb162%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent162_pavadinimas<%=numb162%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_162pastabos<%=numb162%>" placeholder="" autocomplete="off"><%=user.pastabos%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent162_pastabos<%=numb162%>" placeholder="" autocomplete="off"><%=user.pastabos%></textarea>
           </div>
         </div>
         <% }) %>
@@ -1693,6 +1691,7 @@
         <input type="hidden" id="yond_new1" name="yond_new2" value="<%=numb162%>">
 
         <!-- 16.3 lentelė -->
+        <!-- TMTEP3_T16 -->
         <p><b>16.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų
           </b></p>
         <div class="form-row">
@@ -1718,16 +1717,16 @@
         <% numb163++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="tMTEP3_T06nr<%=numb163%>" placeholder="" autocomplete="off" value="<%=numb163%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="tMTEP3_T16nr<%=numb163%>" placeholder="" autocomplete="off" value="<%=numb163%>" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb163%>" placeholder="" value="" autocomplete="off"><%=pavVar%></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16autorius<%=numb163%>" placeholder="" value="" autocomplete="off"><%=pavVar%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06menoSrit<%=numb163%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16menoSrit<%=numb163%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_143uzsakovas<%=numb163%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T16uzsakovas<%=numb163%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
           </div>
         </div>
         <% }) %>
@@ -1895,7 +1894,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Atlygintinai/ Neatlygintinai</label>
-            <select name="tMTEP3_T07atlygArNe<%=numb19%>" class="form-select form-control">
+            <select name="tMTEP3_T08atlygArNe<%=numb19%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
@@ -2711,13 +2710,13 @@
         <% numb27_new++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_27nr<%=numb27_new%>" placeholder="" autocomplete="off" value="<%=numb27_new%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent27_nr<%=numb27_new%>" placeholder="" autocomplete="off" value="<%=numb27_new%>" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_27renginysTema<%=numb27_new%>" autocomplete="off"><%=user.renginysTema%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent27_renginysTema<%=numb27_new%>" autocomplete="off"><%=user.renginysTema%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <select name="kTOV4_27kompGrupe<%=numb27_new%>" class="form-select form-control">
+            <select name="lent27_kompGrupe<%=numb27_new%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.kompGrupe === "Mokymo (si)") { %> selected <% } %> value="Mokymo (si)">Mokymo (si)</option>
               <option class="others" <%if (user.kompGrupe === "Tyrimų") { %> selected <% } %> value="Tyrimų">Tyrimų</option>
@@ -2726,7 +2725,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <select name="kTOV4_27skirta<%=numb27_new%>" class="form-select form-control">
+            <select name="lent27_skirta<%=numb27_new%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.skirta === "Akademinis personalas") { %> selected <% } %> value="Akademinis personalas">AP</option>
               <option class="others" <%if (user.skirta === "Neakademinis personalas") { %> selected <% } %> value="Neakademinis personalas">NP</option>
@@ -2734,10 +2733,10 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_27lektorius<%=numb27_new%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent27_lektorius<%=numb27_new%>" autocomplete="off"><%=varpav%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_27lektTipas<%=numb27_new%>" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent27_lektTipas<%=numb27_new%>" autocomplete="off"></textarea>
           </div>
         </div>
         <% }) %>
@@ -2779,16 +2778,16 @@
         <% numb28_new++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_28nr<%=numb28_new%>" placeholder="" autocomplete="off" value="<%=numb28_new%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent28_nr<%=numb28_new%>" placeholder="" autocomplete="off" value="<%=numb28_new%>" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="kTOV4_28destytojas<%=numb28_new%>" autocomplete="off"><%=pavVar%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent28_destytojas<%=numb28_new%>" autocomplete="off"><%=pavVar%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_28imonIstaig<%=numb28_new%>" autocomplete="off"><%=user.imonIstaig%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent28_imonIstaig<%=numb28_new%>" autocomplete="off"><%=user.imonIstaig%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <select name="kTOV4_28kompGrupe<%=numb28_new%>" class="form-select form-control">
+            <select name="lent28_kompGrupe<%=numb28_new%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.kompGrupe === "Mokymo (si)") { %> selected <% } %> value="Mokymo (si)">Mokymo (si)</option>
               <option class="others" <%if (user.kompGrupe === "Tyrimų") { %> selected <% } %> value="Tyrimų">Tyrimų</option>
@@ -2797,10 +2796,10 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="kTOV4_28trukmeVal<%=numb28_new%>" min="0" value="<%=user.trukmeVal%>" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="lent28_trukmeVal<%=numb28_new%>" min="0" value="<%=user.trukmeVal%>" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kTOV4_28data<%=numb28_new%>" autocomplete="off"><%=user.data%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent28_data<%=numb28_new%>" autocomplete="off"><%=user.data%></textarea>
           </div>
         </div>
         <% }) %>
@@ -3007,15 +3006,15 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label><br></label>
-            <input type="number" class="form-control  text-center" name="kTOV4_30nr1" readonly="readonly" value="1" autocomplete="off">
+            <input type="number" class="form-control  text-center" name="lent30_nr1" readonly="readonly" value="1" autocomplete="off">
           </div>
           <div class="col-md-4 mb-3">
             <label>Dėstytojas (pavardė, vardas)</label>
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_30destytojas1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_destytojas1" value="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label>Studijų kryptis</label>
-            <select name="kTOV4_30studKryptis1" class="form-select form-control">
+            <select name="lent30_studKryptis1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -3161,17 +3160,17 @@
           </div>
           <div class="col-md-4 mb-3">
             <label>Šalis</label>
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_30salis1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_salis1" value="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3">
             <label>Institucija</label>
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_30institucija1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_institucija1" value="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-7 mb-3">
             <label>Dalykas / tema / projektas</label>
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_30dalykas1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_dalykas1" value="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me41">
@@ -3314,10 +3313,10 @@
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control  text-center" name="kTOV4_32nr1" readonly="readonly" value="1" autocomplete="off">
+            <input type="number" class="form-control  text-center" name="lent32_nr1" readonly="readonly" value="1" autocomplete="off">
           </div>
           <div class="col-md-3 mb-3">
-            <select name="kTOV4_32studKryptis1" class="form-select form-control">
+            <select name="lent32_studKryptis1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -3462,10 +3461,10 @@
             </select>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_32studProgr1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent32_studProgr1" value="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_32strategPartner1" value="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent32_strategPartner1" value="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me61">
@@ -3498,16 +3497,16 @@
         <% iterationNr33++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kV5_bcp33nr<%=iterationNr33%>" placeholder="" autocomplete="off" value="<%=iterationNr33%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent33_nr<%=iterationNr33%>" placeholder="" autocomplete="off" value="<%=iterationNr33%>" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="kV5_bcp33veikla<%=iterationNr33%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent33_veikla<%=iterationNr33%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="kV5_bcp33socPartneris<%=iterationNr33%>" placeholder="" autocomplete="off"><%=user.socPartneris%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent33_socPartneris<%=iterationNr33%>" placeholder="" autocomplete="off"><%=user.socPartneris%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control" name="kV5_bcp33destytojas<%=iterationNr33%>" placeholder="" autocomplete="off"><%=pavVar%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent33_destytojas<%=iterationNr33%>" placeholder="" autocomplete="off"><%=pavVar%></textarea>
           </div>
         </div>
         <% }) %>
@@ -3522,13 +3521,13 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_bcp34nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent34_nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų kryptis</label>
-            <select name="kV5_bcp34studKryptis1" class="form-select form-control">
+            <select name="lent34_studKryptis1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -3674,29 +3673,29 @@
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_bcp34studProgr1" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent34_studProgr1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
 
         </div>
@@ -3711,14 +3710,14 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_35nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent35_nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
 
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų kryptis</label>
-            <select name="kV5_35studKryptis1" class="form-select form-control">
+            <select name="lent35_studKryptis1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -3864,53 +3863,53 @@
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_35studProgr1" placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent35_studProgr1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
 
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2017 - 2018 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2018 - 2019 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
 
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2020 - 2021 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2021 - 2022 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
 
         </div>
@@ -4305,35 +4304,35 @@
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_34nr<%=numb34%>" autocomplete="off" value="<%=numb34%>" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent38_nr<%=numb34%>" autocomplete="off" value="<%=numb34%>" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Projektų/programų/ mainų pavadinimas</label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34pavadinimas<%=numb34%>" autocomplete="off"><%=user.pavadinimas%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_pavadinimas<%=numb34%>" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Projekto vykdytojas, partneriai</label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34vykdytPartner<%=numb34%>" autocomplete="off"><%=user.vykdytPartner%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_vykdytPartner<%=numb34%>" autocomplete="off"><%=user.vykdytPartner%></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Dalyviai
               (dėstytojai ir studentai)
             </label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34dalyviai<%=numb34%>" autocomplete="off"><%=user.dalyviai%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_dalyviai<%=numb34%>" autocomplete="off"><%=user.dalyviai%></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Finansavimo šaltinis</label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34finansavim<%=numb34%>" autocomplete="off"><%=user.finansavim%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_finansavim<%=numb34%>" autocomplete="off"><%=user.finansavim%></textarea>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Rezultatai</label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34rezultatai<%=numb34%>" autocomplete="off"><%=user.rezultatai%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_rezultatai<%=numb34%>" autocomplete="off"><%=user.rezultatai%></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Šalis, data</label>
-            <textarea type="text" rows="1" class="form-control" name="kV5_34salisData<%=numb34%>" autocomplete="off"><%=user.salisData%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent38_salisData<%=numb34%>" autocomplete="off"><%=user.salisData%></textarea>
           </div>
         </div>
         <% }) %>
@@ -4355,13 +4354,13 @@
         </div>
         <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kV5_KT02nr1" value="1" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent39_nr1" value="1" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_39kryptys1" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent39_kryptys1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kV5_39aprasymas1" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent39_aprasymas1" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me111">
@@ -5183,15 +5182,15 @@
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label><br></label>
-              <input type="number" class="form-control  text-center" name="kTOV4_30nr` + value4 + `"readonly="readonly" value="` + value4 + `" autocomplete="off">
+              <input type="number" class="form-control  text-center" name="lent30_nr` + value4 + `"readonly="readonly" value="` + value4 + `" autocomplete="off">
               </div>
           <div class="col-md-4 mb-3">
           <label>Dėstytojas (pavardė, vardas)</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_30destytojas` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_destytojas` + value4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
               <label>Studijų kryptis</label>
-            <select name="kTOV4_30studKryptis` + value4 + `"  class="form-select form-control">
+            <select name="lent30_studKryptis` + value4 + `"  class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -5337,17 +5336,17 @@
           </div>
           <div class="col-md-4 mb-3">
             <label>Šalis</label>
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_30salis` + value4 + `" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_salis` + value4 + `" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3">
               <label>Institucija</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_30institucija` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_institucija` + value4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-7 mb-3">
               <label>Dalykas / tema / projektas</label>
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_30dalykas` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_dalykas` + value4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
 
@@ -5421,10 +5420,10 @@
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_32nr` + value6 + `" value="` + value6 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent32_nr` + value6 + `" value="` + value6 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <select name="kTOV4_32studKryptis` + value6 + `" class="form-select form-control">
+            <select name="lent32_studKryptis` + value6 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -5569,10 +5568,10 @@
             </select>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_32studProgr` + value6 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent32_studProgr` + value6 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_32strategPartner` + value6 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent32_strategPartner` + value6 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
                 <div id="add_to_me6` + div6 + `">
@@ -5606,13 +5605,13 @@
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_bcp34nr` + value7 + `" value="` + value7 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent34_nr` + value7 + `" value="` + value7 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
             </div>
           <div class="col-md-5 mb-3">
         <label for="">Studijų kryptis</label>
-              <select name="kV5_bcp34studKryptis` + value7 + `" class="form-select form-control">
+              <select name="lent34_studKryptis` + value7 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -5758,30 +5757,30 @@
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų programa</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_bcp34studProgr` + value7 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent34_studProgr` + value7 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
             </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk1_` + value7 + `"
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_` + value7 + `"
             value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk2_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk3_` + value7 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_` + value7 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk4_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_sabp34studentuSk5_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
                 <div id="add_to_me7` + div7 + `">
@@ -5854,13 +5853,13 @@
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="kV5_35nr` + value9 + `" value="` + value9 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent35_nr` + value9 + `" value="` + value9 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-5 mb-3">
               <label for="">Studijų kryptis</label>
-            <select name="kV5_35studKryptis` + value9 + `" class="form-select form-control">
+            <select name="lent35_studKryptis` + value9 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -6006,54 +6005,54 @@
           </div>
           <div class="col-md-5 mb-3">
           <label for="">Studijų programa</label>
-            <textarea rows="1" type="text" class="form-control " name="kV5_35studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent35_studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
 
           </div>
           <div class="col-md-2 mb-3">
           <label for=""><br>2017 - 2018 m. m. Bendras</label>
-          <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk1_` + value9 + `"value=""
+          <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_` + value9 + `"value=""
           autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}"></div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk1_` + value9 + `"value=""
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_` + value9 + `"value=""
             autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
               <label for=""><br>2018 - 2019 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
         </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk3_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
 
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk3_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2020 - 2021 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2021 - 2022 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="kV5_35studentuSk5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
         </div>
                 <div id="add_to_me9` + div9 + `">
