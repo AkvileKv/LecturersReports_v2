@@ -404,7 +404,6 @@
             </select>
           </div>
         </div>
-
         <div id="add_to_me061">
 
         </div>
@@ -4198,7 +4197,7 @@
                   <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br><br></label>
-            <input type="text" class="form-control text-center" name="nD2_M02nr` + value4 + `" placeholder="" autocomplete="off" value="` + value4 + `" readonly="readonly">
+            <input type="text" name="nD2_M02nr` + value4 + `" placeholder="" autocomplete="off" value="` + value4 + `" readonly="readonly" class="form-control text-center">
           </div>
           <div class="col-md-11 mb-3">
             <label for=""><b>Pilnas bibliografinis aprašas:</b> Pavardė, V., (Metai).
@@ -7327,6 +7326,8 @@
     }
   }
 </script>
+
+<!-- AUTO SIZE for textarea -->
 <script>
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
