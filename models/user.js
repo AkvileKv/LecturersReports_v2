@@ -306,10 +306,10 @@ var mV2_M02Schema = new mongoose.Schema({
 });
 var mV2_M03Schema = new mongoose.Schema({
   nr: String,
+  destytojas: String,
   studProgr: String,
   dalykPavad: String,
-  apimtisKredit: Number,
-  destytojas: String
+  apimtisKredit: Number
 });
 var mV2_M04Schema = new mongoose.Schema({
   nr: String,
@@ -351,9 +351,9 @@ var mV2_D03Schema = new mongoose.Schema({
 });
 var mV2_S01Schema = new mongoose.Schema({
   nr: String,
+  destytojas: String,
   veikla: String,
-  dataVieta: String,
-  destytojas: String
+  dataVieta: String
 });
 var mV2_SSchema = new mongoose.Schema({
   nr: String,
@@ -363,24 +363,25 @@ var mV2_SSchema = new mongoose.Schema({
 var tMTEP3_kT01Schema = new mongoose.Schema({
   nr: String,
   tyrTemat: String,
+  destytojas: String,
   tyrGrup: String,
   mokslSrit: String,
   mokslKrypt: String,
-  destytojas: String
+
 });
 var tMTEP3_kT04Schema = new mongoose.Schema({
   nr: String,
+  konsultantas: String,
   uzsakovas: String,
   tema: String,
   data: String,
-  konsultantas: String,
   atlygArNe: String
 });
 var tMTEP3_kT05Schema = new mongoose.Schema({
   nr: String,
+  destytojas: String,
   veiklPavad: String,
   veiklRezult: String,
-  destytojas: String,
   atlygArNe: String
 });
 var tMTEP3_162Schema = new mongoose.Schema({
