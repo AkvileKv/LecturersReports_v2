@@ -3875,27 +3875,29 @@ app.post("/create-dep", (req, res) => {
         var kTOV4_KV01dalykKompTrukmeValLTcommand = "req.body.kTOV4_KV01dalykKompTrukmeValLT";
         var kTOV4_KV01dalykKompTrukmeValNeLTcommand = "req.body.kTOV4_KV01dalykKompTrukmeValNeLT";
         var kTOV4_KV01dalykStazuotesdalyviscommand = "req.body.kTOV4_KV01dalykStazuotesdalyvis";
+
         //26 lent
         //mokymosi
-        var tyrimuLTdestytojuSkcommand = "req.body.tyrimuLTdestytojuSk";
-        var mokymosiLTtrukmeValcommand = "req.body.mokymosiLTtrukmeVal";
-        var mokymosiNeLttrukmeValcommand = "req.body.mokymosiNeLttrukmeVal";
-        var mokymosiIsVisoValcommand = "req.body.mokymosiIsVisoVal";
+        // var tyrimuLTdestytojuSkcommand = "req.body.tyrimuLTdestytojuSk";
+        // var mokymosiLTtrukmeValcommand = "req.body.mokymosiLTtrukmeVal";
+        // var mokymosiNeLttrukmeValcommand = "req.body.mokymosiNeLttrukmeVal";
+        // var mokymosiIsVisoValcommand = "req.body.mokymosiIsVisoVal";
         //tyrimu
-        var mokymosiLTdestytojuSkcommand = "req.body.mokymosiLTdestytojuSk";
-        var tyrimuLTtrukmeValcommand = "req.body.tyrimuLTtrukmeVal";
-        var tyrimuNeLttrukmeValcommand = "req.body.tyrimuNeLttrukmeVal";
-        var tyrimuIsVisoValcommand = "req.body.tyrimuIsVisoVal";
+        // var mokymosiLTdestytojuSkcommand = "req.body.mokymosiLTdestytojuSk";
+        // var tyrimuLTtrukmeValcommand = "req.body.tyrimuLTtrukmeVal";
+        // var tyrimuNeLttrukmeValcommand = "req.body.tyrimuNeLttrukmeVal";
+        // var tyrimuIsVisoValcommand = "req.body.tyrimuIsVisoVal";
         //bendrosios
-        var bendrosiosLTdestytojuSkcommand = "req.body.bendrosiosLTdestytojuSk";
-        var bendrosiosLTtrukmeValcommand = "req.body.bendrosiosLTtrukmeVal";
-        var bendrosiosNeLttrukmeValcommand = "req.body.bendrosiosNeLttrukmeVal";
-        var bendrosiosIsVisoValcommand = "req.body.bendrosiosIsVisoVal";
+        // var bendrosiosLTdestytojuSkcommand = "req.body.bendrosiosLTdestytojuSk";
+        // var bendrosiosLTtrukmeValcommand = "req.body.bendrosiosLTtrukmeVal";
+        // var bendrosiosNeLttrukmeValcommand = "req.body.bendrosiosNeLttrukmeVal";
+        // var bendrosiosIsVisoValcommand = "req.body.bendrosiosIsVisoVal";
         //dalykines
-        var dalykinesLTdestytojuSkcommand = "req.body.dalykinesLTdestytojuSk";
-        var dalykinesLTtrukmeValcommand = "req.body.dalykinesLTtrukmeVal";
-        var dalykinesNeLttrukmeValcommand = "req.body.dalykinesNeLttrukmeVal";
-        var dalykinesIsVisoValcommand = "req.body.dalykinesIsVisoVal";
+        // var dalykinesLTdestytojuSkcommand = "req.body.dalykinesLTdestytojuSk";
+        // var dalykinesLTtrukmeValcommand = "req.body.dalykinesLTtrukmeVal";
+        // var dalykinesNeLttrukmeValcommand = "req.body.dalykinesNeLttrukmeVal";
+        // var dalykinesIsVisoValcommand = "req.body.dalykinesIsVisoVal";
+
         //27 lent
         var lent27_nrcommand = "req.body.lent27_nr";
         var lent27_renginysTemacommand = "req.body.lent27_renginysTema";
@@ -4033,71 +4035,6 @@ app.post("/create-dep", (req, res) => {
         // var command = "req.body.kV5_KT01darboTema";
         // var command = "req.body.kV5_KT01uzsakovas";
 
-
-        // for (let i = 1; i <= parseInt(req.body.deslist); i++) {
-        //   var vardPavardcommandi = vardPavardcommand + i;
-        //   var issilavinimascommandi = issilavinimascommand + i;
-        //   var pareigoscommandi = pareigoscommand + i;
-        //   var darbovTipascommandi = darbovTipascommand + i;
-        //   var praktinStazascommandi = praktinStazascommand + i;
-        //   var pedagogStazascommandi = pedagogStazascommand + i;
-        //   var joinedvardPavardcommand = eval(vardPavardcommandi);
-        //   var joinedpareigoscommand = eval(pareigoscommandi);
-        //   var joineddarbovTipascommand = eval(darbovTipascommandi);
-        //   var joinedpraktinStazascommand = eval(praktinStazascommandi);
-        //   var joinedpedagogStazascommand = eval(pedagogStazascommandi);
-        //   var joinedissilavinimascommand = eval(issilavinimascommandi);
-        //   foundUser.katedrosVedejas.kDS1.push({
-        //     nr: i,
-        //     vardPavard: joinedvardPavardcommand,
-        //     issilavinimas: joinedissilavinimascommand,
-        //     pareigos: joinedpareigoscommand,
-        //     darbovTipas: joineddarbovTipascommand,
-        //     pedagogStazas: joinedpedagogStazascommand,
-        //     praktinStazas: joinedpraktinStazascommand
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond6); i++) {
-        //   var mV2_M01nrcommandi = mV2_M01nrcommand + i;
-        //   var mV2_M01veiklPavadcommandi = mV2_M01veiklPavadcommand + i;
-        //   var mV2_M01veiklRezultcommandi = mV2_M01veiklRezultcommand + i;
-        //   var mV2_M01destytojascommandi = mV2_M01destytojascommand + i;
-        //   var joinedmV2_M01nr = eval(mV2_M01nrcommandi);
-        //   var joinedmV2_M01veiklPavad = eval(mV2_M01veiklPavadcommandi);
-        //   var joinedmV2_M01veiklRezult = eval(mV2_M01veiklRezultcommandi);
-        //   var joinedmV2_M01destytojas = eval(mV2_M01destytojascommandi);
-        //   foundUser.katedrosVedejas.mV2.mV2_M01.push({
-        //     nr: joinedmV2_M01nr,
-        //     veiklPavad: joinedmV2_M01veiklPavad,
-        //     veiklRezult: joinedmV2_M01veiklRezult,
-        //     destytojas: joinedmV2_M01destytojas
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond8); i++) {
-        //   var mV2_M02nrcommandi = mV2_M02nrcommand + i;
-        //   var bibliografAprcommandi = bibliografAprcommand + i;
-        //   var tipascommandi = tipascommand + i;
-        //   var mokslSritcommandi = mokslSritcommand + i;
-        //   var mokslKryptcommandi = mokslKryptcommand + i;
-        //   var katedracommandi = katedracommand + i;
-        //   var joinedmV2_M02nr = eval(mV2_M02nrcommandi);
-        //   var joinedbibliografApr = eval(bibliografAprcommandi);
-        //   var joinedtipas = eval(tipascommandi);
-        //   var joinedmokslSrit = eval(mokslSritcommandi);
-        //   var joinedmokslKrypt = eval(mokslKryptcommandi);
-        //   var joinedkatedra = eval(katedracommandi);
-        //   foundUser.katedrosVedejas.mV2.mV2_M02.push({
-        //     nr: joinedmV2_M02nr,
-        //     bibliografApr: joinedbibliografApr,
-        //     destytojas: joinedbibliografApr,
-        //     tipas: joinedtipas,
-        //     mokslSrit: joinedmokslSrit,
-        //     mokslKrypt: joinedmokslKrypt,
-        //     katedra: joinedkatedra
-        //   })
-        // }
-
-
         // 1 lentelė
         for (let i = 1; i <= parseInt(req.body.table1_name); i++) {
           // var mV2_D04nrcommandi = mV2_D04nrcommand + i;
@@ -4128,6 +4065,7 @@ app.post("/create-dep", (req, res) => {
             eCTS: eval(mV2_D04eCTS1command + i)
           })
         }
+        // 2 lentelė
         for (let i = 1; i <= parseInt(req.body.table2_name); i++) {
           foundUser.katedrosVedejas.kDS1.push({
             nr: eval(lent2_nrcommand + i),
@@ -4138,6 +4076,7 @@ app.post("/create-dep", (req, res) => {
             praktinStazas:eval(lent2_praktinStazascommand + i)
           })
         }
+        // 3 lentelė
         for (let i = 1; i <= parseInt(req.body.table3_name); i++) {
           foundUser.katedrosVedejas.kKPP1_3.push({
             nr: eval(lent3_nrcommand + i),
@@ -4147,6 +4086,7 @@ app.post("/create-dep", (req, res) => {
             imonIstaig: eval(lent3_imonIstaigcommand + i)
           })
         }
+        // 4 lentelė
         for (let i = 1; i <= parseInt(req.body.table4_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M02.push({
             nr: eval(lent4_nrcommand + i),
@@ -4156,6 +4096,7 @@ app.post("/create-dep", (req, res) => {
             mokslKrypt: eval(lent4_mokslKryptcommand + i)
           })
         }
+        // 5 lentelė
         for (let i = 1; i <= parseInt(req.body.table5_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M04.push({
             nr: eval(mV2_M04nrcommand + i),
@@ -4166,6 +4107,7 @@ app.post("/create-dep", (req, res) => {
             busena:eval(mV2_M04busenacommand + i)
           })
         }
+        // 6 lentelė
         for (let i = 1; i <= parseInt(req.body.table6_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D06.push({
             nr: eval(mV2_D06nrcommand + i),
@@ -4176,6 +4118,7 @@ app.post("/create-dep", (req, res) => {
             tobulinIrod:eval(mV2_D06tobulinIrodcommand + i)
           })
         }
+        // 7 lentelė
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D01.push({
             nr: eval(mV2_D01nrcommand + i),
@@ -4185,6 +4128,7 @@ app.post("/create-dep", (req, res) => {
             rezultatai: eval(mV2_D01rezultataicommand + i)
           })
         }
+        // 8 lentelė
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
         foundUser.katedrosVedejas.mV2.mV2_D02.push({
         nr: eval(mV2_D02nrcommand + i),
@@ -4194,6 +4138,7 @@ app.post("/create-dep", (req, res) => {
         destytojas: eval(mV2_D02rezultataicommand + i)
           })
         }
+        // 9 lentelė
         for (let i = 1; i <= parseInt(req.body.table9_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D03.push({
         nr: eval(mV2_D03nrcommand + i),
@@ -4204,6 +4149,7 @@ app.post("/create-dep", (req, res) => {
         destytojas:eval(mV2_D03rezultataicommand + i)
           })
         }
+        // 10 lentelė
         for (let i = 1; i <= parseInt(req.body.table10_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M03.push({
             nr: eval(mV2_M03nrcommand + i),
@@ -4213,17 +4159,7 @@ app.post("/create-dep", (req, res) => {
             destytojas: eval(mV2_M03destytojascommand + i)
           })
         }
-        //
-        // for (let i = 1; i <= parseInt(req.body.yonder8); i++) {
-        //   foundUser.katedrosVedejas.mV2.mV2_D08.push({
-        //     nr: joinedmV2_D08nr,
-        //     studKryptis: joinedmV2_D08studKryptis,
-        //     studProgr: joinedmV2_D08studProgr,
-        //     progrKodas: joinedmV2_D08progrKodas,
-        //     isakData: joinedmV2_D08isakData,
-        //     numatomData: joinedmV2_D08numatomData
-        //   })
-        // }
+        // 11 lentelė
         for (let i = 1; i <= parseInt(req.body.table11_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_S01.push({
             nr: eval(mV2_S01nrcommand + i),
@@ -4239,6 +4175,7 @@ app.post("/create-dep", (req, res) => {
             tobulintina: eval(mV2_Stobulintinacommand + i)
           })
         }
+        // 12 lentelė
         for (let i = 1; i <= parseInt(req.body.table12_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T01.push({
             nr: eval(tMTEP3_T01nrcommand + i),
@@ -4249,6 +4186,7 @@ app.post("/create-dep", (req, res) => {
             mokslKrypt:eval(tMTEP3_T01mokslKryptcommand + i)
           })
         }
+        // 13 lentelė
         for (let i = 1; i <= parseInt(req.body.table13_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T02.push({
         nr: eval(tMTEP3_T02nrcommand + i),
@@ -4259,15 +4197,17 @@ app.post("/create-dep", (req, res) => {
         duomBaze:eval(tMTEP3_T02duomBazecommand + i)
           })
         }
+        // 14 lentelė
         for (let i = 1; i <= parseInt(req.body.table14_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T03.push({
-            nr: eval(tMTEP3_T03nrcommand + i),
-            pilnasBiblApr: eval(tMTEP3_T03pilnasBiblAprcommand + i),
-            rengTipas: eval(tMTEP3_T03rengTipascommand + i)
+          nr: eval(tMTEP3_T03nrcommand + i),
+          pilnasBiblApr: eval(tMTEP3_T03pilnasBiblAprcommand + i),
+          rengTipas: eval(tMTEP3_T03rengTipascommand + i)
           })
         }
+        // 15 lentelė
         for (let i = 1; i <= parseInt(req.body.table15_name); i++) {
-          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T04.push({
+        foundUser.katedrosVedejas.tMTEP3.tMTEP3_T04.push({
         nr: eval(tMTEP3_T04nrcommand + i),
         konsultantas: eval(tMTEP3_T04konsultantascommand + i),
         uzsakovas: eval(tMTEP3_T04uzsakovascommand + i),
@@ -4291,13 +4231,6 @@ app.post("/create-dep", (req, res) => {
             destytojas: eval(lent162_destytojascommand + i),
             pavadinimas: eval(lent162_pavadinimascommand + i),
             pastabos: eval(lent162_pastaboscommand + i)
-            //template
-            // nr: eval(lent2_nrcommand + i),
-            // vardPavard: eval( + i),
-            // pareigos: eval( + i),
-            // darbovTipas: eval( + i),
-            // pedagogStazas: eval( + i),
-            // praktinStazas:eval( + i)
           })
         }
         for (let i = 1; i <= parseInt(req.body.table163_name); i++) {
@@ -4315,693 +4248,313 @@ app.post("/create-dep", (req, res) => {
             menoSrit: eval(tMTEP3_T06menoSritcommand + i),
             pobudis: eval(tMTEP3_T06pobudiscommand + i),
             realizVieta: eval(tMTEP3_T06realizVietacommand + i),
-            data:eval(tMTEP3_T06datacommand + i),
-            atlygArNe:eval(tMTEP3_T06atlygArNecommand + i)
+            data: eval(tMTEP3_T06datacommand + i),
+            atlygArNe: eval(tMTEP3_T06atlygArNecommand + i)
           })
         }
-        // for (let r = 1; r <= parseInt(req.body.yond36); r++) {
+        for (let i = 1; i <= parseInt(req.body.table18_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T07.push({
+            nr: eval(tMTEP3_T07nrcommand + i),
+            atlikejas: eval(tMTEP3_T07atlikejascommand + i),
+            menoSrit: eval(tMTEP3_T07menoSritcommand + i),
+            pavadinimas: eval(tMTEP3_T07pavadinimascommand + i),
+            atlikVieta: eval(tMTEP3_T07atlikVietacommand + i),
+            data:eval(tMTEP3_T07datacommand + i),
+            atlygArNe:eval(tMTEP3_T07atlygArNecommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table19_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T08.push({
+            nr: eval(tMTEP3_T08Snrcommand + i),
+            atlikejas: eval(tMTEP3_T08atlikejascommand + i),
+            menoSrit: eval(tMTEP3_T08menoSritcommand + i),
+            pavadinimas: eval(tMTEP3_T08pavadinimascommand + i),
+            atlikVieta: eval(tMTEP3_T08atlikVietacommand + i),
+            data: eval(tMTEP3_T08datacommand + i),
+            atlygArNe: eval(tMTEP3_T08atlygArNecommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table20_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T09.push({
+            nr: eval(tMTEP3_T09Snrcommand + i),
+            atlikejas: eval(tMTEP3_T09atlikejascommand + i),
+            menoSrit: eval(tMTEP3_T09menoSritcommand + i),
+            pavadinimas: eval(tMTEP3_T09pavadinimascommand + i),
+            atlikVieta: eval(tMTEP3_T09atlikVietacommand + i),
+            data: eval(tMTEP3_T09datacommand + i),
+            atlygArNe: eval(tMTEP3_T09atlygArNecommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table21_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T10.push({
+            nr: eval(tMTEP3_T10nrcommand + i),
+            destytojas: eval(tMTEP3_T10destytojascommand + i),
+            veiklPobud: eval(tMTEP3_T10veiklPobudcommand + i),
+            veiklTiksl: eval(tMTEP3_T10veiklTikslcommand + i),
+            dataVieta: eval(tMTEP3_T10dataVietacommand + i),
+            dalyvSk:eval(tMTEP3_T10dalyvSkcommand + i),
+            ktKomentarai:eval(tMTEP3_T10ktKomentaraicommand + i),
+            atlygArNe:eval(tMTEP3_T10atlygArNecommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table22_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T11.push({
+            nr: eval(tMTEP3_T11nrcommand + i),
+            destytojas: eval(tMTEP3_T11destytojascommand + i),
+            veiklPobud: eval(tMTEP3_T11veiklPobudcommand + i),
+            veiklTiksl: eval(tMTEP3_T11veiklTikslcommand + i),
+            dataVieta: eval(tMTEP3_T11dataVietacommand + i),
+            dalyvSk:eval(tMTEP3_T11dalyvSkcommand + i),
+            ktKomentarai:eval(tMTEP3_T11ktKomentaraicommand + i),
+            atlygArNe:eval(tMTEP3_T11atlygArNecommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table23_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T12.push({
+            nr: eval(tMTEP3_T12nrcommand + i),
+            destytojas: eval(tMTEP3_T12destytojascommand + i),
+            veiklPobud: eval(tMTEP3_T12veiklPobudcommand + i),
+            dataVieta: eval(tMTEP3_T12dataVietacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table24_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T14.push({
+            nr: eval(tMTEP3_T14nrcommand + i),
+            destytojas: eval(tMTEP3_T14destytojascommand + i),
+            renginys: eval(tMTEP3_T14renginyscommand + i),
+            veiklPobud: eval(tMTEP3_T14veiklPobudcommand + i),
+            dataVieta: eval(tMTEP3_T14dataVietacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table25_name); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_T13.push({
+            nr: eval(tMTEP3_T13nrcommand + i),
+            destytojas: eval(tMTEP3_T13destytojascommand + i),
+            studDuom: eval(tMTEP3_T13studDuomcommand + i),
+            renginioPavad: eval(tMTEP3_T13renginioPavadcommand + i),
+            rezultatas: eval(tMTEP3_T13rezultatascommand + i),
+            data:eval(tMTEP3_T13datacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.yonder16); i++) {
+          foundUser.katedrosVedejas.tMTEP3.tMTEP3_S.push({
+            nr: eval(tMTEP3_Snrcommand + i),
+            stiprybes: eval(tMTEP3_Sstiprybescommand + i),
+            tobulintina: eval(tMTEP3_Stobulintinacommand + i)
+          })
+        }
+        //26 lent priedas
+        // mokymosi
+        for (let i = 1; i <= parseInt(req.body.table261_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosi.push({
+            pavadinimas: eval(kTOV4_KV01mokymosiKomppavadcommand + i),
+            pazymNr: eval(kTOV4_KV01mokymosiKomppazymNrcommand + i),
+            trukmeValLT: eval(kTOV4_KV01mokymosiKomptrukmeValLTcommand + i),
+            trukmeValNeLT: eval(kTOV4_KV01mokymosiKomptrukmeValNeLTcommand + i),
+            destytojas: eval(kTOV4_KV01mokymosiKompdalyviscommand + i)
+          })
+        }
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.mokymosiIsVisoValLT = req.body.kTOV4_trukmeMokymValLT1,
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.mokymosiIsVisoValNeLT = req.body.kTOV4_trukmeMokymValNeLT1
 
-        //   var joinedtMTEP3_T07data = eval(tMTEP3_T07dataiteracija);
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T07.push({
-        //     nr: joinedtMTEP3_T07nr,
-        //     atlikejas: joinedtMTEP3_T07atlikejas,
-        //     menoSrit: joinedtMTEP3_T07menoSrit,
-        //     pavadinimas: joinedtMTEP3_T07pavadinimas,
-        //     atlikVieta: joinedtMTEP3_T07atlikVieta,
-        //     data: joinedtMTEP3_T07data
-        //   })
-        // }
-        // for (let s = 1; s <= parseInt(req.body.yond38); s++) {
+        for (let i = 1; i <= parseInt(req.body.table262_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimu.push({
+            pavadinimas: eval(kTOV4_KV01tyrimuKomppavadcommand + i),
+            pazymNr: eval(kTOV4_KV01tyrimuKomppazymNrcommand + i),
+            trukmeValLT: eval(kTOV4_KV01tyrimuKomptrukmeValLTcommand + i),
+            trukmeValNeLT: eval(kTOV4_KV01tyrimuKomptrukmeValNeLTcommand + i),
+            destytojas: eval(kTOV4_KV01tyrimuKompdalyviscommand + i)
+          })
+        }
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.tyrimuIsVisoValLT = req.body.kTOV4_trukmeTyrimValLT2,
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.tyrimuIsVisoValNeLT = req.body.kTOV4_trukmeTyrimValNeLT2
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T08.push({
-        //     nr: joinedtMTEP3_T08Snr,
-        //     atlikejas: joinedtMTEP3_T08atlikejas,
-        //     menoSrit: joinedtMTEP3_T08menoSrit,
-        //     pavadinimas: joinedtMTEP3_T08pavadinimas,
-        //     atlikVieta: joinedtMTEP3_T08atlikVieta,
-        //     data: joinedtMTEP3_T08data
-        //   })
-        // }
-        // for (let t = 1; t <= parseInt(req.body.yond40); t++) {
+        for (let i = 1; i <= parseInt(req.body.table263_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosios.push({
+            pavadinimas: eval(kTOV4_KV01bendrKomppavadcommand + i),
+            pazymNr: eval(kTOV4_KV01bendrKomppazymNrcommand + i),
+            trukmeValLT: eval(kTOV4_KV01bendrKomptrukmeValLTcommand + i),
+            trukmeValNeLT: eval(kTOV4_KV01bendrKomptrukmeValNeLTcommand + i),
+            destytojas: eval(kTOV4_KV01bendrKompdalyviscommand + i)
+          })
+        }
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.bendrosiosIsVisoValLT = req.body.kTOV4_trukmeBendrValLT3,
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.bendrosiosIsVisoValNeLT = req.body.kTOV4_trukmeBendrValNeLT3
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T09.push({
-        //     nr: joinedtMTEP3_T09nr,
-        //     atlikejas: joinedtMTEP3_T09atlikejas,
-        //     menoSrit: joinedtMTEP3_T09menoSrit,
-        //     pavadinimas: joinedtMTEP3_T09pavadinimas,
-        //     atlikVieta: joinedtMTEP3_T09atlikVieta,
-        //     data: joinedtMTEP3_T09data
-        //   })
-        // }
-        // for (let u = 1; u <= parseInt(req.body.yond42); u++) {
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T10.push({
-        //     nr: joinedtMTEP3_T10nr,
-        //     destytojas: joinedtMTEP3_T10destytojas,
-        //     veiklPobud: joinedtMTEP3_T10veiklPobud,
-        //     veiklTiksl: joinedtMTEP3_T10veiklTiksl,
-        //     dataVieta: joinedtMTEP3_T10dataVieta,
-        //     dalyvSk: joinedtMTEP3_T10dalyvSk,
-        //     ktKomentarai: joinedtMTEP3_T10ktKomentarai
-        //   })
-        // }
-        // for (let v = 1; v <= parseInt(req.body.yond44); v++) {
+        for (let i = 1; i <= parseInt(req.body.table264_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosios.push({
+            pavadinimas: eval(kTOV4_KV01dalykKomppavadcommand + i),
+            pazymNr: eval(kTOV4_KV01dalykKomppazymNrcommand + i),
+            trukmeValLT: eval(kTOV4_KV01dalykKompTrukmeValLTcommand + i),
+            trukmeValNeLT: eval(kTOV4_KV01dalykKompTrukmeValNeLTcommand + i),
+            destytojas: eval(kTOV4_KV01dalykStazuotesdalyviscommand + i)
+          })
+        }
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.dalykinesIsVisoValLT = req.body.kTOV4_trukmeDalykValLT4,
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.dalykinesIsVisoValNeLT = req.body.kTOV4_trukmeDalykValNeLT4
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T11.push({
-        //     nr: joinedtMTEP3_T11nr,
-        //     destytojas: joinedtMTEP3_T11destytojas,
-        //     veiklPobud: joinedtMTEP3_T11veiklPobud,
-        //     veiklTiksl: joinedtMTEP3_T11veiklTiksl,
-        //     dataVieta: joinedtMTEP3_T11dataVieta,
-        //     dalyvSk: joinedtMTEP3_T11dalyvSk,
-        //     ktKomentarai: joinedtMTEP3_T11ktKomentarai
-        //   })
-        // }
-        // for (let w = 1; w <= parseInt(req.body.yond46); w++) {
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLTbendr,
+        foundUser.katedrosVedejas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLTbendr,
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T12.push({
-        //     nr: joinedtMTEP3_T12nr,
-        //     destytojas: joinedtMTEP3_T12destytojas,
-        //     veiklPobud: joinedtMTEP3_T12veiklPobud,
-        //     dataVieta: joinedtMTEP3_T12dataVieta
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond48); i++) {
+          //26 lent
+          //mokymosi
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.mokymosi.destytojuSk = req.body.mokymosiLTdestytojuSk,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.mokymosi.trukmeValLT = req.body.mokymosiLTtrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.mokymosi.trukmeValNeLT = req.body.mokymosiNeLttrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.mokymosi.isVisoVal = req.body.mokymosiIsVisoVal,
+          //tyrimu
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.tyrimu.destytojuSk = req.body.tyrimuLTdestytojuSk,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.tyrimu.trukmeValLT = req.body.tyrimuLTtrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.tyrimu.trukmeValNeLT = req.body.tyrimuNeLttrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.tyrimu.isVisoVal = req.body.tyrimuIsVisoVal,
+          //bendrosios
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.bendrosios.destytojuSk = req.body.bendrosiosLTdestytojuSk,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.bendrosios.trukmeValLT = req.body.bendrosiosLTtrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.bendrosios.trukmeValNeLT = req.body.bendrosiosNeLttrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.bendrosios.isVisoVal = req.body.bendrosiosIsVisoVal,
+          //dalykines
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.dalykines.destytojuSk = req.body.dalykinesLTdestytojuSk,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.dalykines.trukmeValLT = req.body.dalykinesLTtrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.dalykines.trukmeValNeLT = req.body.dalykinesNeLttrukmeVal,
+          foundUser.katedrosVedejas.kTOV4_KV01.kTOV4_26.dalykines.isVisoVal = req.body.dalykinesIsVisoVal
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T13.push({
-        //     nr: joinedtMTEP3_T13nr,
-        //     destytojas: joinedtMTEP3_T13destytojas,
-        //     studDuom: joinedtMTEP3_T13studDuom,
-        //     renginioPavad: joinedtMTEP3_T13renginioPavad,
-        //     rezultatas: joinedtMTEP3_T13rezultatas,
-        //     data: joinedtMTEP3_T13data
-        //   })
-        // }
-        // for (let y = 1; y <= parseInt(req.body.yond50); y++) {
+          for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
+            foundUser.katedrosVedejas.kTOV4.kTOV4_27.push({
+              nr: eval(lent27_nrcommand + i),
+              renginysTema: eval(lent27_renginysTemacommand + i),
+              kompGrupe: eval(lent27_kompGrupecommand + i),
+              skirta: eval(lent27_skirtacommand + i),
+              lektorius: eval(lent27_lektoriuscommand + i),
+              lektTipas: eval(lent27_lektTipascommand + i)
+            })
+          }
+          for (let i = 1; i <= parseInt(req.body.table28_name); i++) {
+            foundUser.katedrosVedejas.kTOV4.kTOV4_28.push({
+              nr: eval(lent28_nrcommand + i),
+              destytojas: eval(lent28_destytojascommand + i),
+              imonIstaig: eval(lent28_imonIstaigcommand + i),
+              kompGrupe: eval(lent28_kompGrupecommand + i),
+              trukmeVal: eval(lent28_trukmeValcommand + i),
+              data: eval(lent28_datacommand + i)
+            })
+          }
+        for (let i = 1; i <= parseInt(req.body.table29_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_KV03.push({
+            nr: eval(kTOV4_KV03nrcommand + i),
+            destytojas: eval(kTOV4_KV03destytojascommand + i),
+            studKryptis: eval(kTOV4_KV03studKryptiscommand + i),
+            salis: eval(kTOV4_KV03saliscommand + i),
+            institucija: eval(kTOV4_KV03institucijacommand + i),
+            dalykas: eval(kTOV4_KV03dalykascommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_30.push({
+            nr: eval(lent30_nrcommand + i),
+            destytojas: eval(lent30_destytojascommand + i),
+            studKryptis: eval(lent30_studKryptiscommand + i),
+            salis: eval(lent30_saliscommand + i),
+            institucija: eval(lent30_institucijacommand + i),
+            dalykas: eval(lent30_dalykascommand + i)
 
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T14.push({
-        //     nr: joinedtMTEP3_T14nr,
-        //     destytojas: joinedtMTEP3_T14destytojas,
-        //     renginys: joinedtMTEP3_T14renginys,
-        //     veiklPobud: joinedtMTEP3_T14veiklPobud,
-        //     dataVieta: joinedtMTEP3_T14dataVieta
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yonder12); i++) {
-
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T15.push({
-        //     nr: joinedtMTEP3_T15nr,
-        //     mokymai: joinedtMTEP3_T15mokymai,
-        //     vykdytojai: joinedtMTEP3_T15vykdytojai,
-        //     uzsakovas: joinedtMTEP3_T15uzsakovas,
-        //     suma: joinedtMTEP3_T15suma,
-        //     nrData: joinedtMTEP3_T15nrData,
-        //     klausytojai: joinedtMTEP3_T15klausytojai,
-        //     trukme: joinedtMTEP3_T15trukme
-        //   })
-        // }
-
-        // foundUser.katedrosVedejas.tMTEP3.tMTEP3_T17.komentaras = req.body.tMTEP3_T17komentaras,
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_T18.komentaras = req.body.tMTEP3_T18komentaras
-        //
-        // for (let i = 1; i <= parseInt(req.body.yonder16); i++) {
-        //   var tMTEP3_Snri = tMTEP3_Snrcommand + i;
-        //   var tMTEP3_Sstiprybesi = tMTEP3_Sstiprybescommand + i;
-        //   var tMTEP3_Stobulintinai = tMTEP3_Stobulintinacommand + i;
-        //   var tMTEP3_Snr = eval(tMTEP3_Snri);
-        //   var tMTEP3_Sstiprybes = eval(tMTEP3_Sstiprybesi);
-        //   var tMTEP3_Stobulintina = eval(tMTEP3_Stobulintinai);
-        //   foundUser.katedrosVedejas.tMTEP3.tMTEP3_S.push({
-        //     nr: tMTEP3_Snr,
-        //     stiprybes: tMTEP3_Sstiprybes,
-        //     tobulintina: tMTEP3_Stobulintina
-        //   })
-        // }
-        // // //kTOV4_KV01
-        // // //kTOV4_KV01dalykines_komp
-        // for (let ba = 1; ba <= parseInt(req.body.number2); ba++) {
-        //   var kTOV4_KV01dalykStazuotespavaditeracija = kTOV4_KV01dalykStazuotespavadcommand + ba;
-        //   var kTOV4_KV01dalykStazuotespazymNriteracija = kTOV4_KV01dalykStazuotespazymNrcommand + ba;
-        //   var kTOV4_KV01dalykStazuotestrukmeValiteracija = kTOV4_KV01dalykStazuotestrukmeValcommand + ba;
-        //   var kTOV4_KV01dalykStazuotesdalyvisi = kTOV4_KV01dalykStazuotesdalyviscommand + ba;
-        //   var joinedkTOV4_KV01dalykStazuotespavad = eval(kTOV4_KV01dalykStazuotespavaditeracija);
-        //   var joinedkTOV4_KV01dalykStazuotespazymNr = eval(kTOV4_KV01dalykStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV01dalykStazuotestrukmeVal = eval(kTOV4_KV01dalykStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV01dalykStazuotesdalyvis = eval(kTOV4_KV01dalykStazuotesdalyvisi);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01dalykines_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV01dalykStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV01dalykStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV01dalykStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01dalykStazuotesdalyvis
-        //   })
-        // }
-        // for (let bb = 1; bb <= parseInt(req.body.number4); bb++) {
-        //   var kTOV4_KV01dalykSeminaraipavaditeracija = kTOV4_KV01dalykSeminaraipavadcommand + bb;
-        //   var kTOV4_KV01dalykSeminaraipazymNriteracija = kTOV4_KV01dalykSeminaraipazymNrcommand + bb;
-        //   var kTOV4_KV01dalykSeminaraitrukmeValiteracija = kTOV4_KV01dalykSeminaraitrukmeValcommand + bb;
-        //   var kTOV4_KV01dalykSeminaraidalyvisi = kTOV4_KV01dalykSeminaraidalyviscommand + bb;
-        //   var joinedkTOV4_KV01dalykSeminaraipavad = eval(kTOV4_KV01dalykSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV01dalykSeminaraipazymNr = eval(kTOV4_KV01dalykSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV01dalykSeminaraitrukmeVal = eval(kTOV4_KV01dalykSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV01dalykSeminaraidalyvis = eval(kTOV4_KV01dalykSeminaraidalyvisi);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01dalykines_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV01dalykSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV01dalykSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01dalykSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01dalykSeminaraidalyvis
-        //   })
-        // }
-        // for (let bc = 1; bc <= parseInt(req.body.number6); bc++) {
-        //   var kTOV4_KV01dalykKonfpavaditeracija = kTOV4_KV01dalykKonfpavadcommand + bc;
-        //   var kTOV4_KV01dalykKonfpazymNriteracija = kTOV4_KV01dalykKonfpazymNrcommand + bc;
-        //   var kTOV4_KV01dalykKonftrukmeValiteracija = kTOV4_KV01dalykKonftrukmeValcommand + bc;
-        //   var kTOV4_KV01dalykKonfdalyvisiteracija = kTOV4_KV01dalykKonfdalyviscommand + bc;
-        //   var joinedkTOV4_KV01dalykKonfpavad = eval(kTOV4_KV01dalykKonfpavaditeracija);
-        //   var joinedkTOV4_KV01dalykKonfpazymNr = eval(kTOV4_KV01dalykKonfpazymNriteracija);
-        //   var joinedkTOV4_KV01dalykKonftrukmeVal = eval(kTOV4_KV01dalykKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV01dalykKonfdalyvis = eval(kTOV4_KV01dalykKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01dalykines_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV01dalykKonfpavad,
-        //     pazymNr: joinedkTOV4_KV01dalykKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV01dalykKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01dalykKonfdalyvis
-        //   })
-        // }
-        // for (let bd = 1; bd <= parseInt(req.body.number8); bd++) {
-        //   var kTOV4_KV01dalykKursaipavaditeracija = kTOV4_KV01dalykKursaipavadcommand + bd;
-        //   var kTOV4_KV01dalykKursaipazymNriteracija = kTOV4_KV01dalykKursaipazymNrcommand + bd;
-        //   var kTOV4_KV01dalykKursaitrukmeValiteracija = kTOV4_KV01dalykKursaitrukmeValcommand + bd;
-        //   var kTOV4_KV01dalykKursaidalyvisiteracija = kTOV4_KV01dalykKursaidalyviscommand + bd;
-        //   var joinedkTOV4_KV01dalykKursaipavad = eval(kTOV4_KV01dalykKursaipavaditeracija);
-        //   var joinedkTOV4_KV01dalykKursaipazymNr = eval(kTOV4_KV01dalykKursaipazymNriteracija);
-        //   var joinedkTOV4_KV01dalykKursaitrukmeVal = eval(kTOV4_KV01dalykKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV01dalykKursaidalyvis = eval(kTOV4_KV01dalykKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01dalykines_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV01dalykKursaipavad,
-        //     pazymNr: joinedkTOV4_KV01dalykKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01dalykKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01dalykKursaidalyvis
-        //   })
-        // }
-        // //kTOV4_KV01didaktines_komp
-        // for (let be = 1; be <= parseInt(req.body.number10); be++) {
-        //   var kTOV4_KV01didakStazuotespavaditeracija = kTOV4_KV01didakStazuotespavadcommand + be;
-        //   var kTOV4_KV01didakStazuotespazymNriteracija = kTOV4_KV01didakStazuotespazymNrcommand + be;
-        //   var kTOV4_KV01didakStazuotestrukmeValiteracija = kTOV4_KV01didakStazuotestrukmeValcommand + be;
-        //   var kTOV4_KV01didakStazuotesdalyvisiteracija = kTOV4_KV01didakStazuotesdalyviscommand + be;
-        //   var joinedkTOV4_KV01didakStazuotespavad = eval(kTOV4_KV01didakStazuotespavaditeracija);
-        //   var joinedkTOV4_KV01didakStazuotespazymNr = eval(kTOV4_KV01didakStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV01didakStazuotestrukmeVal = eval(kTOV4_KV01didakStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV01didakStazuotesdalyvis = eval(kTOV4_KV01didakStazuotesdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01didaktines_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV01didakStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV01didakStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV01didakStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01didakStazuotesdalyvis
-        //   })
-        // }
-        // for (let bf = 1; bf <= parseInt(req.body.number12); bf++) {
-        //   var kTOV4_KV01didakSeminaraipavaditeracija = kTOV4_KV01didakSeminaraipavadcommand + bf;
-        //   var kTOV4_KV01didakSeminaraipazymNriteracija = kTOV4_KV01didakSeminaraipazymNrcommand + bf;
-        //   var kTOV4_KV01didakSeminaraitrukmeValiteracija = kTOV4_KV01didakSeminaraitrukmeValcommand + bf;
-        //   var kTOV4_KV01didakSeminaraidalyvisiteracija = kTOV4_KV01didakSeminaraidalyviscommand + bf;
-        //   var joinedkTOV4_KV01didakSeminaraipavad = eval(kTOV4_KV01didakSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV01didakSeminaraipazymNr = eval(kTOV4_KV01didakSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV01didakSeminaraitrukmeVal = eval(kTOV4_KV01didakSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV01didakSeminaraidalyvis = eval(kTOV4_KV01didakSeminaraidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01didaktines_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV01didakSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV01didakSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01didakSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01didakSeminaraidalyvis
-        //   })
-        // }
-        // for (let bg = 1; bg <= parseInt(req.body.number14); bg++) {
-        //   var kTOV4_KV01didakKonfpavaditeracija = kTOV4_KV01didakKonfpavadcommand + bg;
-        //   var kTOV4_KV01didakKonfpazymNriteracija = kTOV4_KV01didakKonfpazymNrcommand + bg;
-        //   var kTOV4_KV01didakKonftrukmeValiteracija = kTOV4_KV01didakKonftrukmeValcommand + bg;
-        //   var kTOV4_KV01didakKonfdalyvisiteracija = kTOV4_KV01didakKonfdalyviscommand + bg;
-        //   var joinedkTOV4_KV01didakKonfpavad = eval(kTOV4_KV01didakKonfpavaditeracija);
-        //   var joinedkTOV4_KV01didakKonfpazymNr = eval(kTOV4_KV01didakKonfpazymNriteracija);
-        //   var joinedkTOV4_KV01didakKonftrukmeVal = eval(kTOV4_KV01didakKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV01didakKonfdalyvis = eval(kTOV4_KV01didakKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01didaktines_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV01didakKonfpavad,
-        //     pazymNr: joinedkTOV4_KV01didakKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV01didakKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01didakKonfdalyvis
-        //   })
-        // }
-        // for (let bh = 1; bh <= parseInt(req.body.number16); bh++) {
-        //   var kTOV4_KV01didakKursaipavaditeracija = kTOV4_KV01didakKursaipavadcommand + bh;
-        //   var kTOV4_KV01didakKursaipazymNriteracija = kTOV4_KV01didakKursaipazymNrcommand + bh;
-        //   var kTOV4_KV01didakKursaitrukmeValiteracija = kTOV4_KV01didakKursaitrukmeValcommand + bh;
-        //   var kTOV4_KV01didakKursaidalyvisiteracija = kTOV4_KV01didakKursaidalyviscommand + bh;
-        //   var joinedkTOV4_KV01didakKursaipavad = eval(kTOV4_KV01didakKursaipavaditeracija);
-        //   var joinedkTOV4_KV01didakKursaipazymNr = eval(kTOV4_KV01didakKursaipazymNriteracija);
-        //   var joinedkTOV4_KV01didakKursaitrukmeVal = eval(kTOV4_KV01didakKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV01didakKursaidalyvis = eval(kTOV4_KV01didakKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01didaktines_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV01didakKursaipavad,
-        //     pazymNr: joinedkTOV4_KV01didakKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01didakKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01didakKursaidalyvis
-        //   })
-        // }
-        // //kTOV4_KV01bendrosios_komp
-        // for (let bi = 1; bi <= parseInt(req.body.number18); bi++) {
-        //   var kTOV4_KV01bendrStazuotespavaditeracija = kTOV4_KV01bendrStazuotespavadcommand + bi;
-        //   var kTOV4_KV01bendrStazuotespazymNriteracija = kTOV4_KV01bendrStazuotespazymNrcommand + bi;
-        //   var kTOV4_KV01bendrStazuotestrukmeValiteracija = kTOV4_KV01bendrStazuotestrukmeValcommand + bi;
-        //   var kTOV4_KV01bendrStazuotesdalyvisiteracija = kTOV4_KV01bendrStazuotesdalyviscommand + bi;
-        //   var joinedkTOV4_KV01bendrStazuotespavad = eval(kTOV4_KV01bendrStazuotespavaditeracija);
-        //   var joinedkTOV4_KV01bendrStazuotespazymNr = eval(kTOV4_KV01bendrStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV01bendrStazuotestrukmeVal = eval(kTOV4_KV01bendrStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV01bendrStazuotesdalyvis = eval(kTOV4_KV01bendrStazuotesdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01bendrosios_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV01bendrStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV01bendrStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV01bendrStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01bendrStazuotesdalyvis
-        //   })
-        // }
-        // for (let bj = 1; bj <= parseInt(req.body.number20); bj++) {
-        //   var kTOV4_KV01bendrSeminaraipavaditeracija = kTOV4_KV01bendrSeminaraipavadcommand + bj;
-        //   var kTOV4_KV01bendrSeminaraipazymNriteracija = kTOV4_KV01bendrSeminaraipazymNrcommand + bj;
-        //   var kTOV4_KV01bendrSeminaraitrukmeValiteracija = kTOV4_KV01bendrSeminaraitrukmeValcommand + bj;
-        //   var kTOV4_KV01bendrSeminaraidalyvisiteracija = kTOV4_KV01bendrSeminaraidalyviscommand + bj;
-        //   var joinedkTOV4_KV01bendrSeminaraipavad = eval(kTOV4_KV01bendrSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV01bendrSeminaraipazymNr = eval(kTOV4_KV01bendrSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV01bendrSeminaraitrukmeVal = eval(kTOV4_KV01bendrSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV01bendrSeminaraidalyvis = eval(kTOV4_KV01bendrSeminaraidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01bendrosios_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV01bendrSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV01bendrSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01bendrSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01bendrSeminaraidalyvis
-        //   })
-        // }
-        // for (let bk = 1; bk <= parseInt(req.body.number22); bk++) {
-        //   var kTOV4_KV01bendrKonfpavaditeracija = kTOV4_KV01bendrKonfpavadcommand + bk;
-        //   var kTOV4_KV01bendrKonfpazymNriteracija = kTOV4_KV01bendrKonfpazymNrcommand + bk;
-        //   var kTOV4_KV01bendrKonftrukmeValiteracija = kTOV4_KV01bendrKonftrukmeValcommand + bk;
-        //   var kTOV4_KV01bendrKonfdalyvisiteracija = kTOV4_KV01bendrKonfdalyviscommand + bk;
-        //   var joinedkTOV4_KV01bendrKonfpavad = eval(kTOV4_KV01bendrKonfpavaditeracija);
-        //   var joinedkTOV4_KV01bendrKonfpazymNr = eval(kTOV4_KV01bendrKonfpazymNriteracija);
-        //   var joinedkTOV4_KV01bendrKonftrukmeVal = eval(kTOV4_KV01bendrKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV01bendrKonfdalyvis = eval(kTOV4_KV01bendrKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01bendrosios_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV01bendrKonfpavad,
-        //     pazymNr: joinedkTOV4_KV01bendrKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV01bendrKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01bendrKonfdalyvis
-        //   })
-        // }
-        // for (let bl = 1; bl <= parseInt(req.body.number24); bl++) {
-        //   var kTOV4_KV01bendrKursaipavaditeracija = kTOV4_KV01bendrKursaipavadcommand + bl;
-        //   var kTOV4_KV01bendrKursaipazymNriteracija = kTOV4_KV01bendrKursaipazymNrcommand + bl;
-        //   var kTOV4_KV01bendrKursaitrukmeValiteracija = kTOV4_KV01bendrKursaitrukmeValcommand + bl;
-        //   var kTOV4_KV01bendrKursaidalyvisiteracija = kTOV4_KV01bendrKursaidalyviscommand + bl;
-        //   var joinedkTOV4_KV01bendrKursaipavad = eval(kTOV4_KV01bendrKursaipavaditeracija);
-        //   var joinedkTOV4_KV01bendrKursaipazymNr = eval(kTOV4_KV01bendrKursaipazymNriteracija);
-        //   var joinedkTOV4_KV01bendrKursaitrukmeVal = eval(kTOV4_KV01bendrKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV01bendrKursaidalyvis = eval(kTOV4_KV01bendrKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_KV01bendrosios_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV01bendrKursaipavad,
-        //     pazymNr: joinedkTOV4_KV01bendrKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV01bendrKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV01bendrKursaidalyvis
-        //   })
-        // }
-        // //kTOV4_KV02
-        // //kTOV4_KV02dalykines_komp
-        // for (let bm = 1; bm <= parseInt(req.body.number26); bm++) {
-        //   var kTOV4_KV02dalykStazuotespavaditeracija = kTOV4_KV02dalykStazuotespavadcommand + bm;
-        //   var kTOV4_KV02dalykStazuotespazymNriteracija = kTOV4_KV02dalykStazuotespazymNrcommand + bm;
-        //   var kTOV4_KV02dalykStazuotestrukmeValiteracija = kTOV4_KV02dalykStazuotestrukmeValcommand + bm;
-        //   var kTOV4_KV02dalykStazuotesdalyvisiteracija = kTOV4_KV02dalykStazuotesdalyviscommand + bm;
-        //   var joinedkTOV4_KV02dalykStazuotespavad = eval(kTOV4_KV02dalykStazuotespavaditeracija);
-        //   var joinedkTOV4_KV02dalykStazuotespazymNr = eval(kTOV4_KV02dalykStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV02dalykStazuotestrukmeVal = eval(kTOV4_KV02dalykStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV02dalykStazuotesdalyvis = eval(kTOV4_KV02dalykStazuotesdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02dalykines_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV02dalykStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV02dalykStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV02dalykStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02dalykStazuotesdalyvis
-        //   })
-        // }
-        // for (let bn = 1; bn <= parseInt(req.body.number28); bn++) {
-        //   var kTOV4_KV02dalykSeminaraipavaditeracija = kTOV4_KV02dalykSeminaraipavadcommand + bn;
-        //   var kTOV4_KV02dalykSeminaraipazymNriteracija = kTOV4_KV02dalykSeminaraipazymNrcommand + bn;
-        //   var kTOV4_KV02dalykSeminaraitrukmeValiteracija = kTOV4_KV02dalykSeminaraitrukmeValcommand + bn;
-        //   var kTOV4_KV02dalykSeminaraidalyvisiteracija = kTOV4_KV02dalykSeminaraidalyviscommand + bn;
-        //   var joinedkTOV4_KV02dalykSeminaraipavad = eval(kTOV4_KV02dalykSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV02dalykSeminaraipazymNr = eval(kTOV4_KV02dalykSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV02dalykSeminaraitrukmeVal = eval(kTOV4_KV02dalykSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV02dalykSeminaraidalyvis = eval(kTOV4_KV02dalykSeminaraidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02dalykines_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV02dalykSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV02dalykSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02dalykSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02dalykSeminaraidalyvis
-        //   })
-        // }
-        // for (let bo = 1; bo <= parseInt(req.body.number30); bo++) {
-        //   var kTOV4_KV02dalykKonfpavaditeracija = kTOV4_KV02dalykKonfpavadcommand + bo;
-        //   var kTOV4_KV02dalykKonfpazymNriteracija = kTOV4_KV02dalykKonfpazymNrcommand + bo;
-        //   var kTOV4_KV02dalykKonftrukmeValiteracija = kTOV4_KV02dalykKonftrukmeValcommand + bo;
-        //   var kTOV4_KV02dalykKonfdalyvisiteracija = kTOV4_KV02dalykKonfdalyviscommand + bo;
-        //   var joinedkTOV4_KV02dalykKonfpavad = eval(kTOV4_KV02dalykKonfpavaditeracija);
-        //   var joinedkTOV4_KV02dalykKonfpazymNr = eval(kTOV4_KV02dalykKonfpazymNriteracija);
-        //   var joinedkTOV4_KV02dalykKonftrukmeVal = eval(kTOV4_KV02dalykKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV02dalykKonfdalyvis = eval(kTOV4_KV02dalykKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02dalykines_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV02dalykKonfpavad,
-        //     pazymNr: joinedkTOV4_KV02dalykKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV02dalykKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02dalykKonfdalyvis
-        //   })
-        // }
-        // for (let bp = 1; bp <= parseInt(req.body.number32); bp++) {
-        //   var kTOV4_KV02dalykKursaipavaditeracija = kTOV4_KV02dalykKursaipavadcommand + bp;
-        //   var kTOV4_KV02dalykKursaipazymNriteracija = kTOV4_KV02dalykKursaipazymNrcommand + bp;
-        //   var kTOV4_KV02dalykKursaitrukmeValiteracija = kTOV4_KV02dalykKursaitrukmeValcommand + bp;
-        //   var kTOV4_KV02dalykKursaidalyvisiteracija = kTOV4_KV02dalykKursaidalyviscommand + bp;
-        //   var joinedkTOV4_KV02dalykKursaipavad = eval(kTOV4_KV02dalykKursaipavaditeracija);
-        //   var joinedkTOV4_KV02dalykKursaipazymNr = eval(kTOV4_KV02dalykKursaipazymNriteracija);
-        //   var joinedkTOV4_KV02dalykKursaitrukmeVal = eval(kTOV4_KV02dalykKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV02dalykKursaidalyvis = eval(kTOV4_KV02dalykKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02dalykines_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV02dalykKursaipavad,
-        //     pazymNr: joinedkTOV4_KV02dalykKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02dalykKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02dalykKursaidalyvis
-        //   })
-        // }
-        // //kTOV4_KV02didaktines_komp
-        // for (let bq = 1; bq <= parseInt(req.body.number34); bq++) {
-        //   var kTOV4_KV02didakStazuotespavaditeracija = kTOV4_KV02didakStazuotespavadcommand + bq;
-        //   var kTOV4_KV02didakStazuotespazymNriteracija = kTOV4_KV02didakStazuotespazymNrcommand + bq;
-        //   var kTOV4_KV02didakStazuotestrukmeValiteracija = kTOV4_KV02didakStazuotestrukmeValcommand + bq;
-        //   var kTOV4_KV02didakStazuotesdalyvisiteracija = kTOV4_KV02didakStazuotesdalyviscommand + bq;
-        //   var joinedkTOV4_KV02didakStazuotespavad = eval(kTOV4_KV02didakStazuotespavaditeracija);
-        //   var joinedkTOV4_KV02didakStazuotespazymNr = eval(kTOV4_KV02didakStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV02didakStazuotestrukmeVal = eval(kTOV4_KV02didakStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV02didakStazuotesdalyvis = eval(kTOV4_KV02didakStazuotesdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02didaktines_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV02didakStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV02didakStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV02didakStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02didakStazuotesdalyvis
-        //   })
-        // }
-        // for (let br = 1; br <= parseInt(req.body.number36); br++) {
-        //   var kTOV4_KV02didakSeminaraipavaditeracija = kTOV4_KV02didakSeminaraipavadcommand + br;
-        //   var kTOV4_KV02didakSeminaraipazymNriteracija = kTOV4_KV02didakSeminaraipazymNrcommand + br;
-        //   var kTOV4_KV02didakSeminaraitrukmeValiteracija = kTOV4_KV02didakSeminaraitrukmeValcommand + br;
-        //   var kTOV4_KV02didakSeminaraidalyvisiteracija = kTOV4_KV02didakSeminaraidalyviscommand + br;
-        //   var joinedkTOV4_KV02didakSeminaraipavad = eval(kTOV4_KV02didakSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV02didakSeminaraipazymNr = eval(kTOV4_KV02didakSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV02didakSeminaraitrukmeVal = eval(kTOV4_KV02didakSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV02didakSeminaraidalyvis = eval(kTOV4_KV02didakSeminaraidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02didaktines_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV02didakSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV02didakSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02didakSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02didakSeminaraidalyvis
-        //   })
-        // }
-        // for (let bs = 1; bs <= parseInt(req.body.number38); bs++) {
-        //   var kTOV4_KV02didakKonfpavaditeracija = kTOV4_KV02didakKonfpavadcommand + bs;
-        //   var kTOV4_KV02didakKonfpazymNriteracija = kTOV4_KV02didakKonfpazymNrcommand + bs;
-        //   var kTOV4_KV02didakKonftrukmeValiteracija = kTOV4_KV02didakKonftrukmeValcommand + bs;
-        //   var kTOV4_KV02didakKonfdalyvisiteracija = kTOV4_KV02didakKonfdalyviscommand + bs;
-        //   var joinedkTOV4_KV02didakKonfpavad = eval(kTOV4_KV02didakKonfpavaditeracija);
-        //   var joinedkTOV4_KV02didakKonfpazymNr = eval(kTOV4_KV02didakKonfpazymNriteracija);
-        //   var joinedkTOV4_KV02didakKonftrukmeVal = eval(kTOV4_KV02didakKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV02didakKonfdalyvis = eval(kTOV4_KV02didakKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02didaktines_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV02didakKonfpavad,
-        //     pazymNr: joinedkTOV4_KV02didakKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV02didakKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02didakKonfdalyvis
-        //   })
-        // }
-        // for (let bt = 1; bt <= parseInt(req.body.number40); bt++) {
-        //   var kTOV4_KV02didakKursaipavaditeracija = kTOV4_KV02didakKursaipavadcommand + bt;
-        //   var kTOV4_KV02didakKursaipazymNriteracija = kTOV4_KV02didakKursaipazymNrcommand + bt;
-        //   var kTOV4_KV02didakKursaitrukmeValiteracija = kTOV4_KV02didakKursaitrukmeValcommand + bt;
-        //   var kTOV4_KV02didakKursaidalyvisiteracija = kTOV4_KV02didakKursaidalyviscommand + bt;
-        //   var joinedkTOV4_KV02didakKursaipavad = eval(kTOV4_KV02didakKursaipavaditeracija);
-        //   var joinedkTOV4_KV02didakKursaipazymNr = eval(kTOV4_KV02didakKursaipazymNriteracija);
-        //   var joinedkTOV4_KV02didakKursaitrukmeVal = eval(kTOV4_KV02didakKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV02didakKursaidalyvis = eval(kTOV4_KV02didakKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02didaktines_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV02didakKursaipavad,
-        //     pazymNr: joinedkTOV4_KV02didakKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02didakKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02didakKursaidalyvis
-        //   })
-        // }
-        // //kTOV4_KV02bendrosios_komp
-        // for (let bu = 1; bu <= parseInt(req.body.number42); bu++) {
-        //   var kTOV4_KV02bendrStazuotespavaditeracija = kTOV4_KV02bendrStazuotespavadcommand + bu;
-        //   var kTOV4_KV02bendrStazuotespazymNriteracija = kTOV4_KV02bendrStazuotespazymNrcommand + bu;
-        //   var kTOV4_KV02bendrStazuotestrukmeValiteracija = kTOV4_KV02bendrStazuotestrukmeValcommand + bu;
-        //   var kTOV4_KV02bendrStazuotesdalyvisiteracija = kTOV4_KV02bendrStazuotesdalyviscommand + bu;
-        //   var joinedkTOV4_KV02bendrStazuotespavad = eval(kTOV4_KV02bendrStazuotespavaditeracija);
-        //   var joinedkTOV4_KV02bendrStazuotespazymNr = eval(kTOV4_KV02bendrStazuotespazymNriteracija);
-        //   var joinedkTOV4_KV02bendrStazuotestrukmeVal = eval(kTOV4_KV02bendrStazuotestrukmeValiteracija);
-        //   var joinedkTOV4_KV02bendrStazuotesdalyvis = eval(kTOV4_KV02bendrStazuotesdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02bendrosios_komp.stazuotes.push({
-        //     pavadinimas: joinedkTOV4_KV02bendrStazuotespavad,
-        //     pazymNr: joinedkTOV4_KV02bendrStazuotespazymNr,
-        //     trukmeVal: joinedkTOV4_KV02bendrStazuotestrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02bendrStazuotesdalyvis
-        //   })
-        // }
-        // for (let bv = 1; bv <= parseInt(req.body.number44); bv++) {
-        //   var kTOV4_KV02bendrSeminaraipavaditeracija = kTOV4_KV02bendrSeminaraipavadcommand + bv;
-        //   var kTOV4_KV02bendrSeminaraipazymNriteracija = kTOV4_KV02bendrSeminaraipazymNrcommand + bv;
-        //   var kTOV4_KV02bendrSeminaraitrukmeValiteracija = kTOV4_KV02bendrSeminaraitrukmeValcommand + bv;
-        //   var kTOV4_KV02bendrSeminaraidalyvisiteracija = kTOV4_KV02bendrSeminaraidalyviscommand + bv;
-        //   var joinedkTOV4_KV02bendrSeminaraipavad = eval(kTOV4_KV02bendrSeminaraipavaditeracija);
-        //   var joinedkTOV4_KV02bendrSeminaraipazymNr = eval(kTOV4_KV02bendrSeminaraipazymNriteracija);
-        //   var joinedkTOV4_KV02bendrSeminaraitrukmeVal = eval(kTOV4_KV02bendrSeminaraitrukmeValiteracija);
-        //   var joinedkTOV4_KV02bendrSeminaraidalyvis = eval(kTOV4_KV02bendrSeminaraidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02bendrosios_komp.seminarai.push({
-        //     pavadinimas: joinedkTOV4_KV02bendrSeminaraipavad,
-        //     pazymNr: joinedkTOV4_KV02bendrSeminaraipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02bendrSeminaraitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02bendrSeminaraidalyvis
-        //   })
-        // }
-        // for (let bw = 1; bw <= parseInt(req.body.number46); bw++) {
-        //   var kTOV4_KV02bendrKonfpavaditeracija = kTOV4_KV02bendrKonfpavadcommand + bw;
-        //   var kTOV4_KV02bendrKonfpazymNriteracija = kTOV4_KV02bendrKonfpazymNrcommand + bw;
-        //   var kTOV4_KV02bendrKonftrukmeValiteracija = kTOV4_KV02bendrKonftrukmeValcommand + bw;
-        //   var kTOV4_KV02bendrKonfdalyvisiteracija = kTOV4_KV02bendrKonfdalyviscommand + bw;
-        //   var joinedkTOV4_KV02bendrKonfpavad = eval(kTOV4_KV02bendrKonfpavaditeracija);
-        //   var joinedkTOV4_KV02bendrKonfpazymNr = eval(kTOV4_KV02bendrKonfpazymNriteracija);
-        //   var joinedkTOV4_KV02bendrKonftrukmeVal = eval(kTOV4_KV02bendrKonftrukmeValiteracija);
-        //   var joinedkTOV4_KV02bendrKonfdalyvis = eval(kTOV4_KV02bendrKonfdalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02bendrosios_komp.konferencijos.push({
-        //     pavadinimas: joinedkTOV4_KV02bendrKonfpavad,
-        //     pazymNr: joinedkTOV4_KV02bendrKonfpazymNr,
-        //     trukmeVal: joinedkTOV4_KV02bendrKonftrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02bendrKonfdalyvis
-        //   })
-        // }
-        // for (let bx = 1; bx <= parseInt(req.body.number48); bx++) {
-        //   var kTOV4_KV02bendrKursaipavaditeracija = kTOV4_KV02bendrKursaipavadcommand + bx;
-        //   var kTOV4_KV02bendrKursaipazymNriteracija = kTOV4_KV02bendrKursaipazymNrcommand + bx;
-        //   var kTOV4_KV02bendrKursaitrukmeValiteracija = kTOV4_KV02bendrKursaitrukmeValcommand + bx;
-        //   var kTOV4_KV02bendrKursaidalyvisiteracija = kTOV4_KV02bendrKursaidalyviscommand + bx;
-        //   var joinedkTOV4_KV02bendrKursaipavad = eval(kTOV4_KV02bendrKursaipavaditeracija);
-        //   var joinedkTOV4_KV02bendrKursaipazymNr = eval(kTOV4_KV02bendrKursaipazymNriteracija);
-        //   var joinedkTOV4_KV02bendrKursaitrukmeVal = eval(kTOV4_KV02bendrKursaitrukmeValiteracija);
-        //   var joinedkTOV4_KV02bendrKursaidalyvis = eval(kTOV4_KV02bendrKursaidalyvisiteracija);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.kTOV4_KV02bendrosios_komp.kursai.push({
-        //     pavadinimas: joinedkTOV4_KV02bendrKursaipavad,
-        //     pazymNr: joinedkTOV4_KV02bendrKursaipazymNr,
-        //     trukmeVal: joinedkTOV4_KV02bendrKursaitrukmeVal,
-        //     dalyvis: joinedkTOV4_KV02bendrKursaidalyvis
-        //   })
-        // }
-        // foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.destytojuSk = req.body.dalykinesLTdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.trukmeVal = req.body.dalykinesLTtrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.stazuotSk = req.body.dalykinesLTstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.seminarSk = req.body.dalykinesLTseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.konferencSk = req.body.dalykinesLTkonferencSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.dalykinesLT.kursaiSk = req.body.dalykinesLTkursaiSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.destytojuSk = req.body.didaktinesLTdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.trukmeVal = req.body.didaktinesLTtrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.stazuotSk = req.body.didaktinesLTstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.seminarSk = req.body.didaktinesLTseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.konferencSk = req.body.didaktinesLTkonferencSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.didaktinesLT.kursaiSk = req.body.didaktinesLTkursaiSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.destytojuSk = req.body.bendrosiosLTdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.trukmeVal = req.body.bendrosiosLTtrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.stazuotSk = req.body.bendrosiosLTstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.seminarSk = req.body.bendrosiosLTseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.konferencSk = req.body.bendrosiosLTkonferencSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.bendrosiosLT.kursaiSk = req.body.bendrosiosLTkursaiSk,
-        //
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.destytojuSk = req.body.dalykinesNeLtdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.trukmeVal = req.body.dalykinesNeLttrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.stazuotSk = req.body.dalykinesNeLtstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.seminarSk = req.body.dalykinesNeLtseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.konferencSk = req.body.dalykinesNeLtkonferencSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.dalykinesNeLt.kursaiSk = req.body.dalykinesNeLtkursaiSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.destytojuSk = req.body.didaktinesNeLtdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.trukmeVal = req.body.didaktinesNeLttrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.stazuotSk = req.body.didaktinesNeLtstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.seminarSk = req.body.didaktinesNeLtseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.konferencSk = req.body.didaktinesNeLtkonferencSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.didaktinesNeLt.kursaiSk = req.body.didaktinesNeLtkursaiSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.destytojuSk = req.body.bendrosiosNeLtdestytojuSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.trukmeVal = req.body.bendrosiosNeLttrukmeVal,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.stazuotSk = req.body.bendrosiosNeLtstazuotSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.seminarSk = req.body.bendrosiosNeLtseminarSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.kursuoseSk = req.body.bendrosiosNeLtkursaiSk,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV02.bendrosiosNeLt.konferencSk = req.body.bendrosiosNeLtkonferencSk
-        //
-        //
-        //
-        //
-        // for (let i = 1; i <= parseInt(req.body.yonder28); i++) {
-        //   var kTOV4_KV03nrcommandi = kTOV4_KV03nrcommand + i;
-        //   var kTOV4_KV03destytojascommandi = kTOV4_KV03destytojascommand + i;
-        //   var kTOV4_KV03saliscommandi = kTOV4_KV03saliscommand + i;
-        //   var kTOV4_KV03institucijacommandi = kTOV4_KV03institucijacommand + i;
-        //   var kTOV4_KV03dalykascommandi = kTOV4_KV03dalykascommand + i;
-        //   var joinedkTOV4_KV03nr = eval(kTOV4_KV03nrcommandi);
-        //   var joinedkTOV4_KV03destytojas = eval(kTOV4_KV03destytojascommandi);
-        //   var joinedkTOV4_KV03salis = eval(kTOV4_KV03saliscommandi);
-        //   var joinedkTOV4_KV03institucija = eval(kTOV4_KV03institucijacommandi);
-        //   var joinedkTOV4_KV03dalykas = eval(kTOV4_KV03dalykascommandi);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV03.push({
-        //     nr: joinedkTOV4_KV03nr,
-        //     destytojas: joinedkTOV4_KV03destytojas,
-        //     salis: joinedkTOV4_KV03salis,
-        //     institucija: joinedkTOV4_KV03institucija,
-        //     dalykas: joinedkTOV4_KV03dalykas
-        //   })
-        // }
-        // foundUser.katedrosVedejas.kTOV4.kTOV4_KV04.judrumoDinamika = req.body.kTOV4_KV04judrumoDinamika,
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_KV05.poveikisVeiklai = req.body.kTOV4_KV05poveikisVeiklai
-        //
-        // for (let i = 1; i <= parseInt(req.body.yond56); i++) {
-        //   var kTOV4_O01_1nri = kTOV4_O01_1nrcommand + i;
-        //   var kTOV4_O01_1destytojasi = kTOV4_O01_1destytojascommand + i;
-        //   var kTOV4_O01_1veiklPobudi = kTOV4_O01_1veiklPobudcommand + i;
-        //   var kTOV4_O01_1isakNrDatai = kTOV4_O01_1isakNrDatacommand + i;
-        //   var joinedkTOV4_O01_1nr = eval(kTOV4_O01_1nri);
-        //   var joinedkTOV4_O01_1destytojas = eval(kTOV4_O01_1destytojasi);
-        //   var joinedkTOV4_O01_1veiklPobud = eval(kTOV4_O01_1veiklPobudi);
-        //   var joinedkTOV4_O01_1isakNrData = eval(kTOV4_O01_1isakNrDatai);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_1.push({
-        //     nr: joinedkTOV4_O01_1nr,
-        //     destytojas: joinedkTOV4_O01_1destytojas,
-        //     veiklPobud: joinedkTOV4_O01_1veiklPobud,
-        //     isakNrData: joinedkTOV4_O01_1isakNrData
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond58); i++) {
-        //   var kTOV4_O01_2nri = kTOV4_O01_2nrcommand + i;
-        //   var kTOV4_O01_2destytojasi = kTOV4_O01_2destytojascommand + i;
-        //   var kTOV4_O01_2veiklPobudi = kTOV4_O01_2veiklPobudcommand + i;
-        //   var kTOV4_O01_2dataVietai = kTOV4_O01_2dataVietacommand + i;
-        //   var kTOV4_O01_2dalyvSki = kTOV4_O01_2dalyvSkcommand + i;
-        //   var kTOV4_O01_2ktKomentaraii = kTOV4_O01_2ktKomentaraicommand + i;
-        //   var joinedkTOV4_O01_2nr = eval(kTOV4_O01_2nri);
-        //   var joinedkTOV4_O01_2destytojas = eval(kTOV4_O01_2destytojasi);
-        //   var joinedkTOV4_O01_2veiklPobud = eval(kTOV4_O01_2veiklPobudi);
-        //   var joinedkTOV4_O01_2dataVieta = eval(kTOV4_O01_2dataVietai);
-        //   var joinedkTOV4_O01_2dalyvSk = eval(kTOV4_O01_2dalyvSki);
-        //   var joinedkTOV4_O01_2ktKomentarai = eval(kTOV4_O01_2ktKomentaraii);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_2.push({
-        //     nr: joinedkTOV4_O01_2nr,
-        //     destytojas: joinedkTOV4_O01_2destytojas,
-        //     veiklPobud: joinedkTOV4_O01_2veiklPobud,
-        //     dataVieta: joinedkTOV4_O01_2dataVieta,
-        //     dalyvSk: joinedkTOV4_O01_2dalyvSk,
-        //     ktKomentarai: joinedkTOV4_O01_2ktKomentarai
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yonder18); i++) {
-        //   var kTOV4_O02nri = kTOV4_O02nrcommand + i;
-        //   var kTOV4_O02atstovasi = kTOV4_O02atstovascommand + i;
-        //   var kTOV4_O02partneriaii = kTOV4_O02partneriaicommand + i;
-        //   var kTOV4_O02formai = kTOV4_O02formacommand + i;
-        //   var kTOV4_O02rezultataii = kTOV4_O02rezultataicommand + i;
-        //   var kTOV4_O02sutartisi = kTOV4_O02sutartiscommand + i;
-        //   var kTOV4_O02tipasi = kTOV4_O02tipascommand + i;
-        //   var joinedkTOV4_O02nr = eval(kTOV4_O02nri);
-        //   var joinedkTOV4_O02atstovas = eval(kTOV4_O02atstovasi);
-        //   var joinedkTOV4_O02partneriai = eval(kTOV4_O02partneriaii);
-        //   var joinedkTOV4_O02forma = eval(kTOV4_O02formai);
-        //   var joinedkTOV4_O02rezultatai = eval(kTOV4_O02rezultataii);
-        //   var joinedkTOV4_O02sutartis = eval(kTOV4_O02sutartisi);
-        //   var joinedkTOV4_O02tipas = eval(kTOV4_O02tipasi);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_O02.push({
-        //     nr: joinedkTOV4_O02nr,
-        //     atstovas: joinedkTOV4_O02atstovas,
-        //     partneriai: joinedkTOV4_O02partneriai,
-        //     forma: joinedkTOV4_O02forma,
-        //     rezultatai: joinedkTOV4_O02rezultatai,
-        //     sutartis: joinedkTOV4_O02sutartis,
-        //     tipas: joinedkTOV4_O02tipas
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yonder20); i++) {
-        //   var kTOV4_Snri = kTOV4_Snrcommand + i;
-        //   var kTOV4_Sstiprybesi = kTOV4_Sstiprybescommand + i;
-        //   var kTOV4_Stobulintinai = kTOV4_Stobulintinacommand + i;
-        //   var joinedkTOV4_Snr = eval(kTOV4_Snri);
-        //   var joinedkTOV4_Sstiprybes = eval(kTOV4_Sstiprybesi);
-        //   var joinedkTOV4_Stobulintina = eval(kTOV4_Stobulintinai);
-        //   foundUser.katedrosVedejas.kTOV4.kTOV4_S.push({
-        //     nr: joinedkTOV4_Snr,
-        //     stiprybes: joinedkTOV4_Sstiprybes,
-        //     tobulintina: joinedkTOV4_Stobulintina
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond62); i++) {
-        //   var kV5_KT01nri = kV5_KT01nrcommand + i;
-        //   var kV5_KT01diplomantasi = kV5_KT01diplomantascommand + i;
-        //   var kV5_KT01studProgri = kV5_KT01studProgrcommand + i;
-        //   var kV5_KT01darboTemai = kV5_KT01darboTemacommand + i;
-        //   var kV5_KT01uzsakovasi = kV5_KT01uzsakovascommand + i;
-        //   var joinedkV5_KT01nr = eval(kV5_KT01nri);
-        //   var joinedkV5_KT01diplomantas = eval(kV5_KT01diplomantasi);
-        //   var joinedkV5_KT01studProgr = eval(kV5_KT01studProgri);
-        //   var joinedkV5_KT01darboTema = eval(kV5_KT01darboTemai);
-        //   var joinedkV5_KT01uzsakovas = eval(kV5_KT01uzsakovasi);
-        //   foundUser.katedrosVedejas.kV5.kV5_KT01.push({
-        //     nr: joinedkV5_KT01nr,
-        //     diplomantas: joinedkV5_KT01diplomantas,
-        //     studProgr: joinedkV5_KT01studProgr,
-        //     darboTema: joinedkV5_KT01darboTema,
-        //     uzsakovas: joinedkV5_KT01uzsakovas
-        //   })
-        // }
-        // for (let i = 1; i <= parseInt(req.body.yond64); i++) {
-        //   var kV5_KT02nri = kV5_KT02nrcommand + i;
-        //   var kV5_KT02diplomantasi = kV5_KT02diplomantascommand + i;
-        //   var kV5_KT02studProgri = kV5_KT02studProgrcommand + i;
-        //   var kV5_KT02darboTemai = kV5_KT02darboTemacommand + i;
-        //   var joinedkV5_KT02nr = eval(kV5_KT02nri);
-        //   var joinedkV5_KT02diplomantas = eval(kV5_KT02diplomantasi);
-        //   var joinedkV5_KT02studProgr = eval(kV5_KT02studProgri);
-        //   var joinedkV5_KT02darboTema = eval(kV5_KT02darboTemai);
-        //   foundUser.katedrosVedejas.kV5.kV5_KT02.push({
-        //     nr: joinedkV5_KT02nr,
-        //     diplomantas: joinedkV5_KT02diplomantas,
-        //     studProgr: joinedkV5_KT02studProgr,
-        //     darboTema: joinedkV5_KT02darboTema
-        //   })
-        // }
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table311_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_1.push({
+            nr: eval(kTOV4_O01_1nrcommand + i),
+            destytojas: eval(kTOV4_O01_1destytojascommand + i),
+            veiklPobud: eval(kTOV4_O01_1veiklPobudcommand + i),
+            isakNrData: eval(kTOV4_O01_1isakNrDatacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table312_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_2.push({
+            nr: eval(kTOV4_O01_2nrcommand + i),
+            destytojas: eval(kTOV4_O01_2destytojascommand + i),
+            veiklPobud: eval(kTOV4_O01_2veiklPobudcommand + i),
+            dataVieta: eval(kTOV4_O01_2dataVietacommand + i),
+            ktKomentarai: eval(kTOV4_O01_2ktKomentaraicommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.tablekTOV4_S_name); i++) {
+          foundUser.katedrosVedejas.kTOV4.kTOV4_S.push({
+            nr: eval(kTOV4_Snrcommand + i),
+            stiprybes: eval(kTOV4_Sstiprybescommand + i),
+            tobulintina: eval(kTOV4_Stobulintinacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table32_name); i++) {
+          foundUser.katedrosVedejas.kV5.kV5_32.push({
+            nr: eval(lent32_nrcommand + i),
+            studKryptis: eval(lent32_studKryptiscommand + i),
+            studProgr: eval(lent32_studProgrcommand + i),
+            strategPartner: eval(lent32_strategPartnercommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table33_name); i++) {
+          foundUser.katedrosVedejas.kV5.kV5_33.push({
+            nr: eval(lent33_nrcommand + i),
+            veikla: eval(lent33_veiklacommand + i),
+            socPartneris: eval(lent33_socPartneriscommand + i),
+            destytojas: eval(lent33_destytojascommand + i)
+            //template
+            // nr: eval(lent2_nrcommand + i),
+            // vardPavard: eval( + i),
+            // pareigos: eval( + i),
+            // darbovTipas: eval( + i),
+            // pedagogStazas: eval( + i),
+            // praktinStazas:eval( + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table34_name); i++) {
+          foundUser.katedrosVedejas.kV5.kV5_34.push({
+            nr: eval(lent34_nrcommand + i),
+            studKryptis: eval(lent34_studKryptiscommand + i),
+            studProgr: eval(lent34_studProgrcommand + i),
+            studentuSk1: eval(lent34_studentuSk1_command + i),
+            studentuSk2: eval(lent34_studentuSk2_command + i),
+            studentuSk3: eval(lent34_studentuSk3_command + i),
+            studentuSk4: eval(lent34_studentuSk4_command + i),
+            studentuSk5: eval(lent34_studentuSk5_command + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table35_name); i++) {
+          foundUser.katedrosVedejas.kV5.kV5_35.push({
+            nr: eval(lent35_nrcommand + i),
+            studKryptis: eval(lent35_studKryptiscommand + i),
+            studProgr: eval(lent35_studProgrcommand + i),
+            studentuSk1: eval(lent35_studentuSkBendr1_command + i),
+            pasPartnerSk1: eval(lent35_studentuSk1_command + i),
+            studentuSk2: eval(lent35_studentuSkBendr2_command + i),
+            pasPartnerSk2: eval(lent35_studentuSk2_command + i),
+            studentuSk3: eval(lent35_studentuSkBendr3_command + i),
+            pasPartnerSk3: eval(lent35_studentuSk3_command + i),
+            studentuSk4: eval(lent35_studentuSkBendr4_command + i),
+            pasPartnerSk4: eval(lent35_studentuSk4_command + i),
+            studentuSk5: eval(lent35_studentuSkBendr5_command + i),
+            pasPartnerSk5: eval(lent35_studentuSk5_command + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table36_name); i++) {
+        foundUser.katedrosVedejas.kV5.kV5_KT02.push({
+        nr: eval(kV5_KT02nrcommand + i),
+        studKryptis: eval(kV5_KT02studKryptiscommand + i),
+        studProgr: eval(kV5_KT02studProgrcommand + i),
+        diplomantas: eval(kV5_KT02diplomantascommand + i),
+        darboTema: eval(kV5_KT02darboTemacommand + i)
+          })
+        }
+        for (let i = 1; i <= parseInt(req.body.table37_name); i++) {
+            foundUser.katedrosVedejas.kV5.kV5_KT01.push({
+            nr: eval(kV5_KT01nrcommand + i),
+            studKryptis: eval(kV5_KT01studKryptiscommand + i),
+            studProgr: eval(kV5_KT01studProgrcommand + i),
+            diplomantas: eval(kV5_KT01diplomantascommand + i),
+            darboTema: eval(kV5_KT01darboTemacommand + i),
+            uzsakovas: eval(kV5_KT01uzsakovascommand + i)
+          })
+        }
+//BAIGTA 03.21
         // for (let i = 1; i <= parseInt(req.body.yonder22); i++) {
         //   var kV5_KT03nri = kV5_KT03nrcommand + i;
         //   var kV5_KT03studProgri = kV5_KT03studProgrcommand + i;

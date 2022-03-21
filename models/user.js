@@ -112,7 +112,7 @@ var tMTEP3_T06Schema = new mongoose.Schema({
   data: String,
   atlygArNe: String
 });
-var tMTEP3_T07Schema = new mongoose.Schema({
+var tMTEP3_T07T08T09Schema = new mongoose.Schema({
   nr: String,
   atlikejas: String,
   menoSrit: String,
@@ -121,25 +121,25 @@ var tMTEP3_T07Schema = new mongoose.Schema({
   data: String,
   atlygArNe: String
 });
-var tMTEP3_T08Schema = new mongoose.Schema({
-  nr: String,
-  atlikejas: String,
-  menoSrit: String,
-  pavadinimas: String,
-  atlikVieta: String,
-  data: String,
-  atlygArNe: String
-});
-var tMTEP3_T09Schema = new mongoose.Schema({
-  nr: String,
-  atlikejas: String,
-  menoSrit: String,
-  pavadinimas: String,
-  atlikVieta: String,
-  data: String,
-  atlygArNe: String
-});
-var tMTEP3_T10Schema = new mongoose.Schema({
+// var tMTEP3_T08Schema = new mongoose.Schema({
+//   nr: String,
+//   atlikejas: String,
+//   menoSrit: String,
+//   pavadinimas: String,
+//   atlikVieta: String,
+//   data: String,
+//   atlygArNe: String
+// });
+// var tMTEP3_T09Schema = new mongoose.Schema({
+//   nr: String,
+//   atlikejas: String,
+//   menoSrit: String,
+//   pavadinimas: String,
+//   atlikVieta: String,
+//   data: String,
+//   atlygArNe: String
+// });
+var tMTEP3_T10T11Schema = new mongoose.Schema({ //20,21 vedejo; 19,20 destytojo
   nr: String,
   destytojas: String,
   veiklPobud: String,
@@ -149,16 +149,16 @@ var tMTEP3_T10Schema = new mongoose.Schema({
   ktKomentarai: String,
   atlygArNe: String
 });
-var tMTEP3_T11Schema = new mongoose.Schema({
-  nr: String,
-  destytojas: String,
-  veiklPobud: String,
-  veiklTiksl: String,
-  dataVieta: String,
-  dalyvSk: Number,
-  ktKomentarai: String,
-  atlygArNe: String
-});
+// var tMTEP3_T11Schema = new mongoose.Schema({
+//   nr: String,
+//   destytojas: String,
+//   veiklPobud: String,
+//   veiklTiksl: String,
+//   dataVieta: String,
+//   dalyvSk: Number,
+//   ktKomentarai: String,
+//   atlygArNe: String
+// });
 var tMTEP3_T12Schema = new mongoose.Schema({
   nr: String,
   veiklPobud: String,
@@ -396,13 +396,13 @@ var tMTEP3_kT16Schema = new mongoose.Schema({
   pavadinimas: String,
   uzsakovas: String
 });
-var tMTEP3_kT12Schema = new mongoose.Schema({
+var tMTEP3_kT12Schema = new mongoose.Schema({ // 23 vedejo
   nr: String,
   destytojas: String,
   veiklPobud: String,
   dataVieta: String
 });
-var tMTEP3_kT13Schema = new mongoose.Schema({
+var tMTEP3_kT13Schema = new mongoose.Schema({ //24 vedejo
   nr: String,
   destytojas: String,
   studDuom: String,
@@ -410,7 +410,7 @@ var tMTEP3_kT13Schema = new mongoose.Schema({
   rezultatas: String,
   data: String
 });
-var tMTEP3_kT14Schema = new mongoose.Schema({
+var tMTEP3_kT14Schema = new mongoose.Schema({ //24 vedejo
   nr: String,
   destytojas: String,
   renginys: String,
@@ -564,11 +564,11 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     tMTEP3_142: [tMTEP3_142Schema], //14.2
     tMTEP3_143: [tMTEP3_143Schema], //14.3
     tMTEP3_T06: [tMTEP3_T06Schema], //15
-    tMTEP3_T07: [tMTEP3_T07Schema], //16
-    tMTEP3_T08: [tMTEP3_T08Schema], //17
-    tMTEP3_T09: [tMTEP3_T09Schema], //18
-    tMTEP3_T10: [tMTEP3_T10Schema], //19
-    tMTEP3_T11: [tMTEP3_T11Schema], //20
+    tMTEP3_T07: [tMTEP3_T07T08T09Schema], //16
+    tMTEP3_T08: [tMTEP3_T07T08T09Schema], //17
+    tMTEP3_T09: [tMTEP3_T07T08T09Schema], //18
+    tMTEP3_T10: [tMTEP3_T10T11Schema], //19
+    tMTEP3_T11: [tMTEP3_T10T11Schema], //20
     tMTEP3_T12: [tMTEP3_T12Schema], //21
     tMTEP3_T13: [tMTEP3_T13Schema], //22
     tMTEP3_T14: [tMTEP3_T14Schema], //23
@@ -651,11 +651,11 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       tMTEP3_T05: [tMTEP3_kT05Schema], //16.1
       tMTEP3_162: [tMTEP3_162Schema], //16.2
       tMTEP3_T06: [tMTEP3_T06Schema], //17
-      tMTEP3_T07: [tMTEP3_T07Schema], //18
-      tMTEP3_T08: [tMTEP3_T08Schema], // 19
-      tMTEP3_T09: [tMTEP3_T09Schema], //20
-      tMTEP3_T10: [tMTEP3_T10Schema], //21
-      tMTEP3_T11: [tMTEP3_T11Schema], //22
+      tMTEP3_T07: [tMTEP3_T07T08T09Schema], //18
+      tMTEP3_T08: [tMTEP3_T07T08T09Schema], // 19
+      tMTEP3_T09: [tMTEP3_T07T08T09Schema], //20
+      tMTEP3_T10: [tMTEP3_T10T11Schema], //21
+      tMTEP3_T11: [tMTEP3_T10T11Schema], //22
       tMTEP3_T12: [tMTEP3_kT12Schema], //23
       tMTEP3_T13: [tMTEP3_kT13Schema], //25
       tMTEP3_T14: [tMTEP3_kT14Schema], //24
