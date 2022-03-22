@@ -203,7 +203,7 @@
         </div>
         <div id="add_to_me11">
         </div>
-        <button class="plus-button" type="button" onclick="d04()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable01()">+</button><br><br>
 
         <!-- 2 lentelė -->
         <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
@@ -418,7 +418,7 @@
         </div>
         <div id="add_to_me21">
         </div>
-        <button class="plus-button" type="button" onclick="d05()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable03()">+</button><br><br>
         <p class="text-justify">* Pavardė, vardas</p>
         <input type="hidden" id="yonder3" name="yonder4" value="">
 
@@ -646,7 +646,7 @@
         </div>
         <div id="add_to_me31">
         </div>
-        <button class="plus-button" type="button" onclick="d06()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable06()">+</button><br><br>
         <p>*Patobulinimus pagrindžiantys įrodymai – direktoriaus įsak., studijų komitetų posėdžių protokolai (įsak. / protokolo Nr., data)</p>
         <p><i><b>Prašome atkreipti dėmesį į VK strateginės partnerystės Programos priemonę: ne rečiau kaip kas dvejus metus turi būti atliekama studijų
               programų peržiūra studijų kryptyse, įtraukiant verslumo ir socialinės atsakomybės ugdymo aspektus, įtraukiant strateginius partnerius </b></i></p>
@@ -3177,7 +3177,7 @@
         </div>
         <div id="add_to_me41">
         </div>
-        <button class="plus-button" type="button" onclick="d08()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable30()">+</button><br><br>
 
         <br>
         <!-- 31.1 lentelė -->
@@ -3470,7 +3470,7 @@
         </div>
         <div id="add_to_me61">
         </div>
-        <button class="plus-button" type="button" onclick="t15()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable32()">+</button><br><br>
 
         <br>
         <!-- kV5_bcp33 -->
@@ -3702,7 +3702,7 @@
         </div>
         <div id="add_to_me71">
         </div>
-        <button class="plus-button" type="button" onclick="t16()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable34()">+</button><br><br>
         <p class="text-justify">* Jeigu fakultete yra padalinys atsakingas už praktikas, katedra šios lentelės nepildo. <br>
           * Lentelė pildoma nuo strateginės partnerystės Programos įgyvendinimo pradžios.</p>
 
@@ -3916,7 +3916,7 @@
         </div>
         <div id="add_to_me91">
         </div>
-        <button class="plus-button" type="button" onclick="new_35()">+</button><br><br>
+        <button class="plus-button" type="button" onclick="addButtonTable35()">+</button><br><br>
         <p class="text-justify">* Jeigu fakultete yra padalinys atsakingas už praktikas, katedra šios lentelės nepildo. <br>
           * Lentelė pildoma nuo strateginės partnerystės Programos įgyvendinimo pradžios.</p>
 
@@ -4295,7 +4295,6 @@
         <% }) %>
         <input type="hidden" id="table37_id" name="table37_name" value="<%=numb31%>">
 
-<!-- BAIGTA 03.21 -->
         <!-- 38 lentelė.  -->
         <p class="font-weight-bold">
           38 lentelė. Dalyvavimas Lietuvos ir tarptautiniuose projektuose ir programose, tarptautiniuose mainuose.*(Erasmus+ ir kt.), ES struktūrinių fondų projektuose.</p>
@@ -4339,7 +4338,7 @@
         </div>
         <% }) %>
         <% }) %>
-        <input type="hidden" id="new31" name="new32" value="<%=numb34%>">
+        <input type="hidden" id="table38_id" name="table38_name" value="<%=numb34%>">
         <br>
         <!-- 39 lentelė -->
         <p><b>39 lentelė. Fakulteto socialinės atsakomybės ir darnios plėtros kryptys, prie kurių įgyvendinimo prisideda katedra</b></p>
@@ -4367,7 +4366,7 @@
         </div>
         <div id="add_to_me111">
         </div>
-        <button class="plus-button" type="button" onclick="new39()">+</button>
+        <button class="plus-button" type="button" onclick="addButtonTable39()">+</button>
         <br>
         <br>
         <!-- kV5_32 -->
@@ -4418,6 +4417,7 @@
         <% } %>
         <% }) %>
         <% }) %>
+        <input type="hidden" id="table401_id" name="table401_name" value="<%=iterationNr401%>">
         <!-- 40 lentelė 2  -->
         <!-- Aplinkosauginės iniciatyvos -->
         <% var iterationNr402 = 0; %>
@@ -4451,6 +4451,7 @@
         <% } %>
         <% }) %>
         <% }) %>
+        <input type="hidden" id="table402_id" name="table402_name" value="<%=iterationNr402%>">
         <!-- 40 lentelė 3  -->
         <!-- Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas -->
         <% var iterationNr403 = 0; %>
@@ -4484,6 +4485,7 @@
         <% } %>
         <% }) %>
         <% }) %>
+        <input type="hidden" id="table403_id" name="table403_name" value="<%=iterationNr403%>">
         <!-- 40 lentelė 4  -->
         <!-- Lietuvos etnokultūros puoselėjimas -->
         <% var iterationNr404 = 0; %>
@@ -4500,7 +4502,7 @@
             <textarea type="text" rows="1" class="form-control " name="lent40_etnoaprasymas<%=iterationNr404%>" autocomplete="off"><%=user.aprasymas%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="lent40_savdestytojas<%=iterationNr404%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent40_etnodestytojas<%=iterationNr404%>" autocomplete="off"><%=varpav%></textarea>
           </div>
         </div>
         <%  } else { %>
@@ -4511,13 +4513,13 @@
             <textarea type="text" rows="1" class="form-control " name="lent40_etnoaprasymas<%=iterationNr404%>" autocomplete="off"><%=user.aprasymas%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="lent40_savdestytojas<%=iterationNr404%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea type="text" rows="1" class="form-control " name="lent40_etnodestytojas<%=iterationNr404%>" autocomplete="off"><%=varpav%></textarea>
           </div>
         </div>
         <% } %>
         <% }) %>
         <% }) %>
-
+          <input type="hidden" id="table404_id" name="table404_name" value="<%=iterationNr404%>">
 
         <!-- 40 lentelė 5  -->
         <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
@@ -4552,7 +4554,7 @@
         <% } %>
         <% }) %>
         <% }) %>
-
+          <input type="hidden" id="table405_id" name="table405_name" value="<%=iterationNr405%>">
         <!-- kV5_33 -->
         <!-- 41 lentelė.  -->
         <p class="font-weight-bold">
@@ -4606,7 +4608,7 @@
         <% }) %>
         <% }) %>
         <p>* Tyrimas, konsultacija be finansinio atlygio ir t.t.</p>
-
+        <input type="hidden" id="table41_id" name="table41_name" value="<%=iterationNr41%>">
         <!-- veiklSavinalize -->
         <div class="form-row">
           <div class="col-md-12 mb-3 text-center">
@@ -4665,20 +4667,9 @@
         <input type="hidden" id="table32_id" name="table32_name" value="1">
         <input type="hidden" id="table34_id" name="table34_name" value="1">
         <input type="hidden" id="table35_id" name="table35_name" value="1">
+        <input type="hidden" id="table39_id" name="table39_name" value="1">
+        <input type="hidden" id="tableVeiklS_id" name="tableVeiklS_name" value="2">
 
-<!-- old -->
-
-        <!-- new -->
-        <input type="hidden" id="new33" name="new34" value="1">
-        <input type="hidden" id="new_39" name="new_40" value="1">
-
-        <!-- 26 table -->
-        <input type="hidden" id="it26_1" name="it26_1n" value="<%=iterationNr261%>">
-        <input type="hidden" id="it26_2" name="it26_2n" value="<%=iterationNr262%>">
-        <input type="hidden" id="it26_3" name="it26_3n" value="<%=iterationNr263%>">
-        <input type="hidden" id="it26_4" name="it26_4n" value="<%=iterationNr264%>">
-
-        <!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
       </div>
       <div class="row">
@@ -4704,7 +4695,7 @@
   var div1 = 1;
   var asd1 = "add_to_me1";
 
-  function d04() {
+  function addButtonTable01() {
     var bendr1 = asd1 + div1;
     div1++;
     document.getElementById(bendr1).innerHTML +=
@@ -4917,7 +4908,7 @@
   var div2 = 1;
   var asd2 = "add_to_me2";
 
-  function d05() {
+  function addButtonTable03() {
     var bendr2 = asd2 + div2;
     div2++;
     document.getElementById(bendr2).innerHTML +=
@@ -5112,7 +5103,7 @@
   var div3 = 1;
   var asd3 = "add_to_me3";
 
-  function d06() {
+  function addButtonTable06() {
     var bendr3 = asd3 + div3;
     div3++;
     document.getElementById(bendr3).innerHTML +=
@@ -5168,7 +5159,7 @@
   var div4 = 1;
   var asd4 = "add_to_me4";
 
-  function d08() {
+  function addButtonTable30() {
     var bendr4 = asd4 + div4;
     div4++;
     document.getElementById(bendr4).innerHTML +=
@@ -5346,7 +5337,7 @@
 
                 <div id="add_to_me4` + div4 + `">
               `;
-    document.getElementById("yonder7").value = value4;
+    document.getElementById("table30_id").value = value4;
     value4++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
@@ -5403,11 +5394,11 @@
 
 <!-- 32 table -->
 <script>
-  var value6 = 3;
+  var value6 = 2;
   var div6 = 1;
   var asd6 = "add_to_me6";
 
-  function t15() {
+  function addButtonTable32() {
     var bendr6 = asd6 + div6;
     div6++;
     document.getElementById(bendr6).innerHTML +=
@@ -5591,7 +5582,7 @@
   var div7 = 1;
   var asd7 = "add_to_me7";
 
-  function t16() {
+  function addButtonTable34() {
     var bendr7 = asd7 + div7;
     div7++;
     document.getElementById(bendr7).innerHTML +=
@@ -5877,7 +5868,7 @@
   var div9 = 1;
   var asd9 = "add_to_me9";
 
-  function new_35() {
+  function addButtonTable35() {
     var bendr9 = asd9 + div9;
     div9++;
     document.getElementById(bendr9).innerHTML +=
@@ -6110,7 +6101,7 @@
   var div11 = 1;
   var asd11 = "add_to_me11";
 
-  function new39() {
+  function addButtonTable39() {
     var bendr11 = asd11 + div11;
     div11++;
     document.getElementById(bendr11).innerHTML +=
@@ -6128,7 +6119,7 @@
         </div>
                 <div id="add_to_me11` + div11 + `">
               `;
-    document.getElementById("new_39").value = value11;
+    document.getElementById("table39_id").value = value11;
     value11++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
@@ -6167,7 +6158,7 @@
         </div>
                 <div id="add_to_me13` + div13 + `">
               `;
-    document.getElementById("yonder25").value = value13;
+    document.getElementById("tableVeiklS_id").value = value13;
     value13++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
@@ -6227,7 +6218,7 @@
     var trukmNeLT4 = "trukmNeLT4_";
 
     // 1 table
-    for (let zx = 1; zx <= document.getElementById("it26_1").value; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table261_id").value; zx++) {
       var bendrasLT_1 = trukmLT1 + zx;
       var bendrasNeLT_1 = trukmNeLT1 + zx;
 
@@ -6240,7 +6231,7 @@
       console.log(trukmeNeLTnum26_1);
     }
     // 2 table
-    for (let zx = 1; zx <= document.getElementById("it26_2").value; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table262_id").value; zx++) {
       var bendrasLT_2 = trukmLT2 + zx;
       var bendrasNeLT_2 = trukmNeLT2 + zx;
 
@@ -6252,7 +6243,7 @@
       trukmeNeLTnum26_2 = trukmeNeLTnum26_2 + num001;
     }
     // 3 table
-    for (let zx = 1; zx <= document.getElementById("it26_3").value; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table263_id").value; zx++) {
       var bendrasLT_3 = trukmLT3 + zx;
       var bendrasNeLT_3 = trukmNeLT3 + zx;
 
@@ -6264,7 +6255,7 @@
       trukmeNeLTnum26_3 = trukmeNeLTnum26_3 + num001;
     }
     // // 4 table
-    for (let zx = 1; zx <= document.getElementById("it26_4").value; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table264_id").value; zx++) {
       var bendrasLT_4 = trukmLT4 + zx;
       var bendrasNeLT_4 = trukmNeLT4 + zx;
 
