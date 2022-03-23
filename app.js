@@ -3776,7 +3776,7 @@ app.post("/create-dep", (req, res) => {
         //16.3 lent
         var tMTEP3_T16nrcommand = "req.body.tMTEP3_T16nr";
         var tMTEP3_T16autoriuscommand = "req.body.tMTEP3_T16autorius";
-        var tMTEP3_T16menoSritcommand = "req.body.tMTEP3_T16menoSrit";
+        var tMTEP3_T16pavadinimascommand = "req.body.tMTEP3_T16pavadinimas";
         var tMTEP3_T16uzsakovascommand = "req.body.tMTEP3_T16uzsakovas";
         //17 lent
         var tMTEP3_T06nrcommand = "req.body.tMTEP3_T06nr";
@@ -4036,7 +4036,7 @@ app.post("/create-dep", (req, res) => {
         // var command = "req.body.kV5_KT01darboTema";
         // var command = "req.body.kV5_KT01uzsakovas";
 
-        // 1 lentelė
+        // 1 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table1_name); i++) {
           // var mV2_D04nrcommandi = mV2_D04nrcommand + i;
           // var mV2_D04studKryptiscommandi = mV2_D04studKryptiscommand + i;
@@ -4066,7 +4066,7 @@ app.post("/create-dep", (req, res) => {
             eCTS: eval(mV2_D04eCTS1command + i)
           })
         }
-        // 2 lentelė
+        // 2 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table2_name); i++) {
           foundUser.katedrosVedejas.kDS1.push({
             nr: eval(lent2_nrcommand + i),
@@ -4077,7 +4077,7 @@ app.post("/create-dep", (req, res) => {
             praktinStazas:eval(lent2_praktinStazascommand + i)
           })
         }
-        // 3 lentelė
+        // 3 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table3_name); i++) {
           foundUser.katedrosVedejas.kKPP1_3.push({
             nr: eval(lent3_nrcommand + i),
@@ -4087,7 +4087,7 @@ app.post("/create-dep", (req, res) => {
             imonIstaig: eval(lent3_imonIstaigcommand + i)
           })
         }
-        // 4 lentelė
+        // 4 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table4_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M02.push({
             nr: eval(lent4_nrcommand + i),
@@ -4097,7 +4097,7 @@ app.post("/create-dep", (req, res) => {
             mokslKrypt: eval(lent4_mokslKryptcommand + i)
           })
         }
-        // 5 lentelė
+        // 5 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table5_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M04.push({
             nr: eval(mV2_M04nrcommand + i),
@@ -4108,7 +4108,7 @@ app.post("/create-dep", (req, res) => {
             busena:eval(mV2_M04busenacommand + i)
           })
         }
-        // 6 lentelė
+        // 6 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table6_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D06.push({
             nr: eval(mV2_D06nrcommand + i),
@@ -4119,7 +4119,7 @@ app.post("/create-dep", (req, res) => {
             tobulinIrod:eval(mV2_D06tobulinIrodcommand + i)
           })
         }
-        // 7 lentelė
+        // 7 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D01.push({
             nr: eval(mV2_D01nrcommand + i),
@@ -4129,38 +4129,39 @@ app.post("/create-dep", (req, res) => {
             rezultatai: eval(mV2_D01rezultataicommand + i)
           })
         }
-        // 8 lentelė
+        // 8 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
         foundUser.katedrosVedejas.mV2.mV2_D02.push({
         nr: eval(mV2_D02nrcommand + i),
-        studKryptis: eval(mV2_D02destytojascommand + i),
-        veikla: eval(mV2_D02studKryptcommand + i),
-        rezultatai: eval(mV2_D02veiklacommand + i),
-        destytojas: eval(mV2_D02rezultataicommand + i)
+        destytojas: eval(mV2_D02destytojascommand + i),
+        studKryptis: eval(mV2_D02studKryptcommand + i),
+        veikla: eval(mV2_D02veiklacommand + i),
+        rezultatai: eval(mV2_D02rezultataicommand + i)
           })
         }
-        // 9 lentelė
+        // 9 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table9_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_D03.push({
         nr: eval(mV2_D03nrcommand + i),
-        studKryptis: eval(mV2_D03destytojascommand + i),
-        studProgr: eval(mV2_D03studKryptiscommand + i),
-        veikla: eval(mV2_D03studProgrcommand + i),
-        rezultatai: eval(mV2_D03veiklacommand + i),
-        destytojas:eval(mV2_D03rezultataicommand + i)
+        destytojas: eval(mV2_D03destytojascommand + i),
+        studKryptis: eval(mV2_D03studKryptiscommand + i),
+        studProgr: eval(mV2_D03studProgrcommand + i),
+        veikla: eval(mV2_D03veiklacommand + i),
+        rezultatai :eval(mV2_D03rezultataicommand + i)
           })
         }
-        // 10 lentelė
+        // 10 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table10_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_M03.push({
             nr: eval(mV2_M03nrcommand + i),
+            destytojas: eval(mV2_M03destytojascommand + i),
             studProgr: eval(mV2_M03studProgrcommand + i),
             dalykPavad: eval(mV2_M03dalykPavadcommand + i),
-            apimtisKredit: eval(mV2_M03apimtisKreditcommand + i),
-            destytojas: eval(mV2_M03destytojascommand + i)
+            apimtisKredit: eval(mV2_M03apimtisKreditcommand + i)
+
           })
         }
-        // 11 lentelė
+        // 11 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table11_name); i++) {
           foundUser.katedrosVedejas.mV2.mV2_S01.push({
             nr: eval(mV2_S01nrcommand + i),
@@ -4176,7 +4177,7 @@ app.post("/create-dep", (req, res) => {
             tobulintina: eval(mV2_Stobulintinacommand + i)
           })
         }
-        // 12 lentelė
+        // 12 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table12_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T01.push({
             nr: eval(tMTEP3_T01nrcommand + i),
@@ -4187,7 +4188,7 @@ app.post("/create-dep", (req, res) => {
             mokslKrypt:eval(tMTEP3_T01mokslKryptcommand + i)
           })
         }
-        // 13 lentelė
+        // 13 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table13_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T02.push({
         nr: eval(tMTEP3_T02nrcommand + i),
@@ -4195,10 +4196,10 @@ app.post("/create-dep", (req, res) => {
         tipas: eval(tMTEP3_T02tipascommand + i),
         mokslSrit: eval(tMTEP3_T02mokslSritcommand + i),
         mokslKrypt: eval(tMTEP3_T02mokslKryptcommand + i),
-        duomBaze:eval(tMTEP3_T02duomBazecommand + i)
+        duomBaze: eval(tMTEP3_T02duomBazecommand + i)
           })
         }
-        // 14 lentelė
+        // 14 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table14_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T03.push({
           nr: eval(tMTEP3_T03nrcommand + i),
@@ -4206,7 +4207,7 @@ app.post("/create-dep", (req, res) => {
           rengTipas: eval(tMTEP3_T03rengTipascommand + i)
           })
         }
-        // 15 lentelė
+        // 15 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table15_name); i++) {
         foundUser.katedrosVedejas.tMTEP3.tMTEP3_T04.push({
         nr: eval(tMTEP3_T04nrcommand + i),
@@ -4217,6 +4218,7 @@ app.post("/create-dep", (req, res) => {
         atlygArNe: eval(tMTEP3_T04atlygArNecommand + i)
           })
         }
+        // 16 lentelė 1 create-dep
         for (let i = 1; i <= parseInt(req.body.table161_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T05.push({
             nr: eval(tMTEP3_T05nrcommand + i),
@@ -4226,6 +4228,7 @@ app.post("/create-dep", (req, res) => {
             atlygArNe: eval(tMTEP3_T05atlygArNecommand + i)
           })
         }
+        // 16 lentelė 2 create-dep
         for (let i = 1; i <= parseInt(req.body.table162_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_162.push({
             nr: eval(lent162_nrnrcommand + i),
@@ -4233,15 +4236,16 @@ app.post("/create-dep", (req, res) => {
             pavadinimas: eval(lent162_pavadinimascommand + i),
             pastabos: eval(lent162_pastaboscommand + i)
           })
-        }
+        } // 16 lentelė 3 create-dep
         for (let i = 1; i <= parseInt(req.body.table163_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T16.push({
             nr: eval(tMTEP3_T16nrcommand + i),
             rengejai: eval(tMTEP3_T16autoriuscommand + i),
-            pavadinimas: eval(tMTEP3_T16menoSritcommand + i),
+            pavadinimas: eval(tMTEP3_T16pavadinimascommand + i),
             uzsakovas: eval(tMTEP3_T16uzsakovascommand + i)
           })
         }
+        // 17 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table17_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T06.push({
             nr: eval(tMTEP3_T06nrcommand + i),
@@ -4252,7 +4256,7 @@ app.post("/create-dep", (req, res) => {
             data: eval(tMTEP3_T06datacommand + i),
             atlygArNe: eval(tMTEP3_T06atlygArNecommand + i)
           })
-        }
+        } // 18 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table18_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T07.push({
             nr: eval(tMTEP3_T07nrcommand + i),
@@ -4263,7 +4267,7 @@ app.post("/create-dep", (req, res) => {
             data:eval(tMTEP3_T07datacommand + i),
             atlygArNe:eval(tMTEP3_T07atlygArNecommand + i)
           })
-        }
+        } // 19 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table19_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T08.push({
             nr: eval(tMTEP3_T08Snrcommand + i),
@@ -4274,7 +4278,7 @@ app.post("/create-dep", (req, res) => {
             data: eval(tMTEP3_T08datacommand + i),
             atlygArNe: eval(tMTEP3_T08atlygArNecommand + i)
           })
-        }
+        } // 20 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table20_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T09.push({
             nr: eval(tMTEP3_T09nrcommand + i),
@@ -4285,7 +4289,7 @@ app.post("/create-dep", (req, res) => {
             data: eval(tMTEP3_T09datacommand + i),
             atlygArNe: eval(tMTEP3_T09atlygArNecommand + i)
           })
-        }
+        } // 21 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table21_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T10.push({
             nr: eval(tMTEP3_T10nrcommand + i),
@@ -4297,7 +4301,7 @@ app.post("/create-dep", (req, res) => {
             ktKomentarai:eval(tMTEP3_T10ktKomentaraicommand + i),
             atlygArNe:eval(tMTEP3_T10atlygArNecommand + i)
           })
-        }
+        } // 22 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table22_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T11.push({
             nr: eval(tMTEP3_T11nrcommand + i),
@@ -4309,7 +4313,7 @@ app.post("/create-dep", (req, res) => {
             ktKomentarai:eval(tMTEP3_T11ktKomentaraicommand + i),
             atlygArNe:eval(tMTEP3_T11atlygArNecommand + i)
           })
-        }
+        } // 23 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table23_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T12.push({
             nr: eval(tMTEP3_T12nrcommand + i),
@@ -4317,7 +4321,7 @@ app.post("/create-dep", (req, res) => {
             veiklPobud: eval(tMTEP3_T12veiklPobudcommand + i),
             dataVieta: eval(tMTEP3_T12dataVietacommand + i)
           })
-        }
+        } // 24 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table24_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T14.push({
             nr: eval(tMTEP3_T14nrcommand + i),
@@ -4326,7 +4330,7 @@ app.post("/create-dep", (req, res) => {
             veiklPobud: eval(tMTEP3_T14veiklPobudcommand + i),
             dataVieta: eval(tMTEP3_T14dataVietacommand + i)
           })
-        }
+        } // 25 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table25_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_T13.push({
             nr: eval(tMTEP3_T13nrcommand + i),
@@ -4334,17 +4338,17 @@ app.post("/create-dep", (req, res) => {
             studDuom: eval(tMTEP3_T13studDuomcommand + i),
             renginioPavad: eval(tMTEP3_T13renginioPavadcommand + i),
             rezultatas: eval(tMTEP3_T13rezultatascommand + i),
-            data:eval(tMTEP3_T13datacommand + i)
+            data: eval(tMTEP3_T13datacommand + i)
           })
         }
-        for (let i = 1; i <= parseInt(req.body.yonder16); i++) {
+        for (let i = 1; i <= parseInt(req.body.tMTEP3_S_name); i++) {
           foundUser.katedrosVedejas.tMTEP3.tMTEP3_S.push({
             nr: eval(tMTEP3_Snrcommand + i),
             stiprybes: eval(tMTEP3_Sstiprybescommand + i),
             tobulintina: eval(tMTEP3_Stobulintinacommand + i)
           })
         }
-        //26 lent priedas
+        // 26 lentelė create-dep priedas
         // mokymosi
         for (let i = 1; i <= parseInt(req.body.table261_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosi.push({
@@ -4357,7 +4361,7 @@ app.post("/create-dep", (req, res) => {
         }
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosiIsVisoValLT = req.body.kTOV4_trukmeMokymValLT1,
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosiIsVisoValNeLT = req.body.kTOV4_trukmeMokymValNeLT1
-
+        // tyrimu
         for (let i = 1; i <= parseInt(req.body.table262_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimu.push({
             pavadinimas: eval(kTOV4_KV01tyrimuKomppavadcommand + i),
@@ -4369,7 +4373,7 @@ app.post("/create-dep", (req, res) => {
         }
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimuIsVisoValLT = req.body.kTOV4_trukmeTyrimValLT2,
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimuIsVisoValNeLT = req.body.kTOV4_trukmeTyrimValNeLT2
-
+        //bendrosios
         for (let i = 1; i <= parseInt(req.body.table263_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosios.push({
             pavadinimas: eval(kTOV4_KV01bendrKomppavadcommand + i),
@@ -4381,7 +4385,7 @@ app.post("/create-dep", (req, res) => {
         }
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosiosIsVisoValLT = req.body.kTOV4_trukmeBendrValLT3,
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosiosIsVisoValNeLT = req.body.kTOV4_trukmeBendrValNeLT3
-
+        //dalykines
         for (let i = 1; i <= parseInt(req.body.table264_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.dalykines.push({
             pavadinimas: eval(kTOV4_KV01dalykKomppavadcommand + i),
@@ -4396,7 +4400,6 @@ app.post("/create-dep", (req, res) => {
 
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLTbendr,
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLTbendr,
-
           //26 lent
           //mokymosi
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.mokymosi.destytojuSk = req.body.mokymosiLTdestytojuSk,
@@ -4418,7 +4421,7 @@ app.post("/create-dep", (req, res) => {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.trukmeValLT = req.body.dalykinesLTtrukmeVal,
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.trukmeValNeLT = req.body.dalykinesNeLttrukmeVal,
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.isVisoVal = req.body.dalykinesIsVisoVal
-
+          // 27 lentelė create-dep
           for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
             foundUser.katedrosVedejas.kTOV4.kTOV4_27.push({
               nr: eval(lent27_nrcommand + i),
@@ -4428,7 +4431,7 @@ app.post("/create-dep", (req, res) => {
               lektorius: eval(lent27_lektoriuscommand + i),
               lektTipas: eval(lent27_lektTipascommand + i)
             })
-          }
+          } // 28 lentelė create-dep
           for (let i = 1; i <= parseInt(req.body.table28_name); i++) {
             foundUser.katedrosVedejas.kTOV4.kTOV4_28.push({
               nr: eval(lent28_nrcommand + i),
@@ -4438,7 +4441,7 @@ app.post("/create-dep", (req, res) => {
               trukmeVal: eval(lent28_trukmeValcommand + i),
               data: eval(lent28_datacommand + i)
             })
-          }
+          } // 29 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table29_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_KV03.push({
             nr: eval(kTOV4_KV03nrcommand + i),
@@ -4448,7 +4451,7 @@ app.post("/create-dep", (req, res) => {
             institucija: eval(kTOV4_KV03institucijacommand + i),
             dalykas: eval(kTOV4_KV03dalykascommand + i)
           })
-        }
+        } // 30 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_30.push({
             nr: eval(lent30_nrcommand + i),
@@ -4457,9 +4460,9 @@ app.post("/create-dep", (req, res) => {
             salis: eval(lent30_saliscommand + i),
             institucija: eval(lent30_institucijacommand + i),
             dalykas: eval(lent30_dalykascommand + i)
-
+//BAIGTA
           })
-        }
+        } // 31 lentelė create-dep 1
         for (let i = 1; i <= parseInt(req.body.table311_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_1.push({
             nr: eval(kTOV4_O01_1nrcommand + i),
@@ -4467,7 +4470,7 @@ app.post("/create-dep", (req, res) => {
             veiklPobud: eval(kTOV4_O01_1veiklPobudcommand + i),
             isakNrData: eval(kTOV4_O01_1isakNrDatacommand + i)
           })
-        }
+        } // 31 lentelė create-dep 2
         for (let i = 1; i <= parseInt(req.body.table312_name); i++) {
           foundUser.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_2.push({
             nr: eval(kTOV4_O01_2nrcommand + i),
@@ -4483,7 +4486,7 @@ app.post("/create-dep", (req, res) => {
             stiprybes: eval(kTOV4_Sstiprybescommand + i),
             tobulintina: eval(kTOV4_Stobulintinacommand + i)
           })
-        }
+        } // 32 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table32_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_32.push({
             nr: eval(lent32_nrcommand + i),
@@ -4491,22 +4494,15 @@ app.post("/create-dep", (req, res) => {
             studProgr: eval(lent32_studProgrcommand + i),
             strategPartner: eval(lent32_strategPartnercommand + i)
           })
-        }
+        } // 33 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table33_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_33.push({
             nr: eval(lent33_nrcommand + i),
             veikla: eval(lent33_veiklacommand + i),
             socPartneris: eval(lent33_socPartneriscommand + i),
             destytojas: eval(lent33_destytojascommand + i)
-            //template
-            // nr: eval(lent2_nrcommand + i),
-            // vardPavard: eval( + i),
-            // pareigos: eval( + i),
-            // darbovTipas: eval( + i),
-            // pedagogStazas: eval( + i),
-            // praktinStazas:eval( + i)
           })
-        }
+        } // 34 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table34_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_34.push({
             nr: eval(lent34_nrcommand + i),
@@ -4518,7 +4514,7 @@ app.post("/create-dep", (req, res) => {
             studentuSk4: eval(lent34_studentuSk4_command + i),
             studentuSk5: eval(lent34_studentuSk5_command + i)
           })
-        }
+        } // 35 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table35_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_35.push({
             nr: eval(lent35_nrcommand + i),
@@ -4535,7 +4531,7 @@ app.post("/create-dep", (req, res) => {
             studentuSk5: eval(lent35_studentuSkBendr5_command + i),
             pasPartnerSk5: eval(lent35_studentuSk5_command + i)
           })
-        }
+        } // 36 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table36_name); i++) {
         foundUser.katedrosVedejas.kV5.kV5_KT02.push({
         nr: eval(kV5_KT02nrcommand + i),
@@ -4544,7 +4540,7 @@ app.post("/create-dep", (req, res) => {
         diplomantas: eval(kV5_KT02diplomantascommand + i),
         darboTema: eval(kV5_KT02darboTemacommand + i)
           })
-        }
+        } // 37 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table37_name); i++) {
             foundUser.katedrosVedejas.kV5.kV5_KT01.push({
             nr: eval(kV5_KT01nrcommand + i),
@@ -4554,7 +4550,7 @@ app.post("/create-dep", (req, res) => {
             darboTema: eval(kV5_KT01darboTemacommand + i),
             uzsakovas: eval(kV5_KT01uzsakovascommand + i)
           })
-        }
+        } // 38 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table38_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_38.push({
             nr: eval(lent38_nrcommand + i),
@@ -4565,44 +4561,44 @@ app.post("/create-dep", (req, res) => {
             rezultatai: eval(lent38_rezultataicommand + i),
             salisData: eval(lent38_salisDatacommand + i)
           })
-        }
+        } // 39 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table39_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_39.push({
             nr: eval(lent39_nrcommand + i),
             kryptys: eval(lent39_kryptyscommand + i),
             aprasymas: eval(lent39_aprasymascommand + i)
           })
-        }
+        } // 40 lentelė create-dep 1
         for (let i = 1; i <= parseInt(req.body.table401_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_40.socAtskMaz.push({
             aprasymas: eval(lent40_socAprasymascommand + i),
             destytojas: eval(lent40_socDestytojascommand + i)
           })
-        }
+        } // 40 lentelė create-dep 2
         for (let i = 1; i <= parseInt(req.body.table402_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_40.aplinkosaugInic.push({
             aprasymas: eval(lent40_aplinkAprasymascommand + i),
             destytojas: eval(lent40_aplinkDestytojascommand + i)
           })
-        }
+        } // 40 lentelė create-dep 3
         for (let i = 1; i <= parseInt(req.body.table403_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_40.lietValstybPuosel.push({
             aprasymas: eval(lent40_valstybAprasymascommand + i),
             destytojas: eval(lent40_valstybDestytojascommand + i)
           })
-        }
+        } // 40 lentelė create-dep 4
         for (let i = 1; i <= parseInt(req.body.table404_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_40.lietEtnokPuos.push({
             aprasymas: eval(lent40_etnoAprasymascommand + i),
             destytojas: eval(lent40_etnoDestytojascommand + i)
           })
-        }
+        } // 40 lentelė create-dep 5
         for (let i = 1; i <= parseInt(req.body.table405_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_40.savanorystIniciatyv.push({
             aprasymas: eval(lent40_savAprasymascommand + i),
             destytojas: eval(lent40_savDestytojascommand + i)
           })
-        }
+        } // 41 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table41_name); i++) {
           foundUser.katedrosVedejas.kV5.kV5_41.push({
             nr: eval(lent41_nrcommand + i),
@@ -4619,11 +4615,18 @@ app.post("/create-dep", (req, res) => {
           foundUser.katedrosVedejas.kV5.veiklSavinalize.veiklSavinalize_array.push({
             stiprybes: eval(veiklSavinalizestiprybescommand + i),
             tobulintina: eval(veiklSavinalizetobulintinacommand + i)
+            //template
+            // nr: eval(lent2_nrcommand + i),
+            // vardPavard: eval( + i),
+            // pareigos: eval( + i),
+            // darbovTipas: eval( + i),
+            // pedagogStazas: eval( + i),
+            // praktinStazas:eval( + i)
           })
         }
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl
 
-         //foundUser.busenaVedejo = req.body.ataskaitos_busena,
+         foundUser.busenaVedejo = req.body.ataskaitos_busena,
          foundUser.updated_for = req.user.id
 
         foundUser.save(function(err) {

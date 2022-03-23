@@ -660,7 +660,7 @@
         </div>
         <% var numb7 = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_D01.forEach(function(user){ %>
         <% numb7++ %>
         <div class="form-row">
@@ -702,7 +702,7 @@
 
         <% var numb8 = 0; %>
         <%  users.forEach(function(user){ %>
-          <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_D02.forEach(function(user){ %>
         <% numb8++ %>
         <div class="form-row">
@@ -886,7 +886,7 @@
 
         <% var numb9 = 0; %>
         <%  users.forEach(function(user){ %>
-  <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_D03.forEach(function(user){ %>
         <% numb9++ %>
         <div class="form-row">
@@ -1090,7 +1090,7 @@
         </div>
         <% var numb5 = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_M03.forEach(function(user){ %>
         <% numb5++ %>
         <div class="form-row">
@@ -1128,7 +1128,7 @@
         </div>
         <% var numba9 = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.nD2_S01.forEach(function(user){ %>
         <% numba9++ %>
         <div class="form-row">
@@ -1204,7 +1204,7 @@
         <p class="text-left font-weight-bold">12 lentelė. Taikomųjų mokslinių tyrimų, eksperimentų atlikimas </p>
         <% var numb12 = 0; %>
         <%  users.forEach(function(user){ %>
-  <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T01.forEach(function(user){ %>
         <% numb12++ %>
         <div class="form-row">
@@ -1224,7 +1224,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Tyrimų grupė**</label>
-              <select name="tMTEP3_T01tyrGrup<%=numb12%>" class="form-select form-control">
+            <select name="tMTEP3_T01tyrGrup<%=numb12%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.tyrGrup === "Studijų kokybės bei kompetencijų užtikrinimo tyrimai") { %> selected <% } %> value="Studijų kokybės bei kompetencijų užtikrinimo tyrimai">T01</option>
               <option class="others" <%if (user.tyrGrup === "Verslo aplinkos ir darbo rinkos analizės tyrimai") { %> selected <% } %> value="Verslo aplinkos ir darbo rinkos analizės tyrimai">T02</option>
@@ -1499,8 +1499,7 @@
 
         <p><b>* H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
           <b>T</b> – Technologijos mokslai.
-          <br><b>**</b> Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr"
-          target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
+          <br><b>**</b> Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
 
         <!-- 14 lentelė. -->
@@ -1586,7 +1585,7 @@
               <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
             </select>
-            </div>
+          </div>
         </div>
 
         <% }) %>
@@ -1710,7 +1709,7 @@
         </div>
         <% var numb163 = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_143.forEach(function(user){ %>
         <% numb163++ %>
         <div class="form-row">
@@ -1718,13 +1717,13 @@
             <input type="text" class="form-control text-center" name="tMTEP3_T16nr<%=numb163%>" placeholder="" autocomplete="off" value="<%=numb163%>" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16autorius<%=numb163%>" placeholder="" value="" autocomplete="off"><%=pavVar%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="tMTEP3_T16autorius<%=numb163%>" placeholder="" value="" autocomplete="off"><%=pavVar%></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_T16menoSrit<%=numb163%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="tMTEP3_T16pavadinimas<%=numb163%>" placeholder="" value="" autocomplete="off"><%=user.pavadinimas%></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="tMTEP3_T16uzsakovas<%=numb163%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="tMTEP3_T16uzsakovas<%=numb163%>" placeholder="" autocomplete="off"><%=user.uzsakovas%></textarea>
           </div>
         </div>
         <% }) %>
@@ -1780,7 +1779,7 @@
               <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
             </select>
-            </div>
+          </div>
         </div>
         <% }) %>
         <% }) %>
@@ -1795,10 +1794,10 @@
         <p><b>18 lentelė. Teatro veikla (jai priskiriama teatro kūrybos, kino ar televizijos kūrybos veikla ir jos rezultatai (spektaklis, kino, televizijos
             filmas pastatytas (parodytas) užsienyje; spektaklis, kino, televizijos filmas pastatytas (parodytas) Lietuvoje; vaidmuo, atliktas teatro, kino,
             televizijos renginyje užsienyje; vaidmuo, atliktas Lietuvos teatro, kino, televizijos renginyje))
-        </b></p>
+          </b></p>
         <% var numb18 = 0; %>
         <%  users.forEach(function(user){ %>
-            <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T07.forEach(function(user){ %>
         <% numb18++ %>
         <div class="form-row">
@@ -1837,7 +1836,7 @@
               <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
             </select>
-            </div>
+          </div>
         </div>
         <% }) %>
         <% }) %>
@@ -1854,7 +1853,7 @@
           </b></p>
         <% var numb19 = 0; %>
         <%  users.forEach(function(user){ %>
-            <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T08.forEach(function(user){ %>
         <% numb19++ %>
         <div class="form-row">
@@ -1916,7 +1915,7 @@
           </b></p>
         <% var numb20 = 0; %>
         <%  users.forEach(function(user){ %>
-            <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T09.forEach(function(user){ %>
         <% numb20++ %>
         <div class="form-row">
@@ -2018,7 +2017,7 @@
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
             </select>
           </div>
-       </div>
+        </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table21_id" name="table21_name" value="<%=numb21%>">
@@ -2028,7 +2027,7 @@
         <p><b>22 lentelė. Meno renginių vedimas </b></p>
         <% var numb22 = 0; %>
         <%  users.forEach(function(user){ %>
-          <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T11.forEach(function(user){ %>
         <% numb22++ %>
         <div class="form-row">
@@ -2108,7 +2107,7 @@
         </div>
         <% var numb23 = 0; %>
         <%  users.forEach(function(user){ %>
-    <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T12.forEach(function(user){ %>
         <% numb23++ %>
         <div class="form-row">
@@ -2135,7 +2134,7 @@
             renginių, kuriuos organizuojant panaudojamos mokslinės ir praktinės žinios bei gebėjimai, taikomųjų mokslinių tyrimų rezultatai, vykdymas) </b></p>
         <% var numb25 = 0; %>
         <%  users.forEach(function(user){ %>
-    <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T14.forEach(function(user){ %>
         <% numb25++ %>
         <div class="form-row">
@@ -2176,7 +2175,7 @@
             olimpiadai, varžyboms, konferencijoms, straipsnio rengimui</b></p>
         <% var numb24 = 0; %>
         <%  users.forEach(function(user){ %>
-<% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.tMTEP3_T13.forEach(function(user){ %>
         <% numb24++ %>
         <div class="form-row">
@@ -2577,8 +2576,7 @@
             <input type="number" id="isVisoTrukmeValLT26" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" class="form-control text-center" name="kTOV4_trukmeValLTbendr" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValNeLT26" class="form-control text-center"
-            name="kTOV4_trukmeValNeLTbendr" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off" value="0">
+            <input type="number" id="isVisoTrukmeValNeLT26" class="form-control text-center" name="kTOV4_trukmeValNeLTbendr" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off" value="0">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2744,7 +2742,7 @@
         <% }) %>
         <input type="hidden" id="table27_id" name="table27_name" value="<%=numb27_new%>">
         <p>* Mokymo (si), tyrimų, bendrosios, dalykinės. <br>
-        ** <b>AP</b> – akademinis personalas, <b>NP</b> – neakademinis personalas, <b>VP</b> – Visas personalasas. <br>
+          ** <b>AP</b> – akademinis personalas, <b>NP</b> – neakademinis personalas, <b>VP</b> – Visas personalasas. <br>
         </p>
 
         <!-- kTOV4_28 new-->
@@ -2773,7 +2771,7 @@
         </div>
         <% var numb28_new = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_26.forEach(function(user){ %>
         <% numb28_new++ %>
         <div class="form-row">
@@ -3230,7 +3228,7 @@
         </p>
         <% var numb312 = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
         <% numb312++ %>
         <div class="form-row">
@@ -3493,7 +3491,7 @@
         </div>
         <% var iterationNr33 = 0; %>
         <%  users.forEach(function(user){ %>
-          <% var pavVar = user.pavarde + " " + user.vardas; %>
+        <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_29.forEach(function(user){ %>
         <% iterationNr33++ %>
         <div class="form-row">
@@ -4101,7 +4099,7 @@
             <textarea rows="1" type="text" class="form-control " name="kV5_KT02diplomantas<%=numb32%>" value="" autocomplete="off"><%=user.diplomantas%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-          <select name="kV5_KT02darboTema<%=numb32%>" class="form-select form-control">
+            <select name="kV5_KT02darboTema<%=numb32%>" class="form-select form-control">
               <option value=""></option>
               <option class="others" <%if (user.darboTema === "Verslumo tematika") { %> selected <% } %> value="Verslumo tematika">V</option>
               <option class="others" <%if (user.darboTema === "Socialinės atsakomybės, darnios plėtros tematika") { %> selected <% } %> value="Socialinės atsakomybės, darnios plėtros tematika">SA/DP</option>
@@ -4519,7 +4517,7 @@
         <% } %>
         <% }) %>
         <% }) %>
-          <input type="hidden" id="table404_id" name="table404_name" value="<%=iterationNr404%>">
+        <input type="hidden" id="table404_id" name="table404_name" value="<%=iterationNr404%>">
 
         <!-- 40 lentelė 5  -->
         <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
@@ -4554,7 +4552,7 @@
         <% } %>
         <% }) %>
         <% }) %>
-          <input type="hidden" id="table405_id" name="table405_name" value="<%=iterationNr405%>">
+        <input type="hidden" id="table405_id" name="table405_name" value="<%=iterationNr405%>">
         <!-- kV5_33 -->
         <!-- 41 lentelė.  -->
         <p class="font-weight-bold">
@@ -4669,7 +4667,7 @@
         <input type="hidden" id="table35_id" name="table35_name" value="1">
         <input type="hidden" id="table39_id" name="table39_name" value="1">
         <input type="hidden" id="tableVeiklS_id" name="tableVeiklS_name" value="2">
-
+<!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
       </div>
       <div class="row">
@@ -6291,7 +6289,7 @@
     // priedas 6 lenteles
     document.getElementById("mokymosiLTtrukmeVal").value = trukmeLTnum26_1;
     document.getElementById("mokymosiNeLttrukmeVal").value = trukmeNeLTnum26_1;
-    document.getElementById("mokymosiIsVisoVal").value = trukmeLTnum26_1 +trukmeNeLTnum26_1;
+    document.getElementById("mokymosiIsVisoVal").value = trukmeLTnum26_1 + trukmeNeLTnum26_1;
 
     document.getElementById("tyrimuLTtrukmeVal").value = trukmeLTnum26_2;
     document.getElementById("tyrimuNeLttrukmeVal").value = trukmeNeLTnum26_2;
