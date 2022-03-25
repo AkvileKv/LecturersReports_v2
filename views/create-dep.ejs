@@ -420,7 +420,6 @@
         </div>
         <button class="plus-button" type="button" onclick="addButtonTable03()">+</button><br><br>
         <p class="text-justify">* Pavardė, vardas</p>
-        <input type="hidden" id="yonder3" name="yonder4" value="">
 
 
         <br><br>
@@ -2274,7 +2273,7 @@
         <% var iterationNr261 = 0; %>
         <%  users.forEach(function(user){ %>
         <% if (user.busena != "nesukurta") mokymosiKompSk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
+        <% var pavVard = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
         <% iterationNr261++ %>
         <% if (iterationNr261==1){%>
@@ -2297,7 +2296,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <% } else { %>
@@ -2320,7 +2319,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <% } %>
@@ -2349,7 +2348,7 @@
         <% var iterationNr262 = 0; %>
         <%  users.forEach(function(user){ %>
         <% if (user.busena != "nesukurta") tyrimuKompSk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
+    <% var pavVard = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
         <% iterationNr262++ %>
         <% if (iterationNr262==1){%>
@@ -2372,7 +2371,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <%    } else{ %>
@@ -2395,7 +2394,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuStazuotesdalyvis<%=iterationNr262%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <%    } %>
@@ -2423,7 +2422,7 @@
         <% var iterationNr263 = 0; %>
         <%  users.forEach(function(user){ %>
         <% if (user.busena != "nesukurta") bendrKompSk++ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
+          <% var pavVard = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
         <% iterationNr263++ %>
         <% if (iterationNr263==1){%>
@@ -2446,7 +2445,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <%    } else{ %>
@@ -2469,7 +2468,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <%    } %>
@@ -2496,7 +2495,7 @@
         <% var iterationNr264 = 0;  %>
         <% var dalykKompSk = 0; %>
         <%  users.forEach(function(user){ %>
-        <% var varpav = user.vardas + " " + user.pavarde; %>
+      <% var pavVard = user.pavarde + " " + user.vardas; %>
         <% if (user.busena != "nesukurta") dalykKompSk++; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
         <% iterationNr264++ %>
@@ -2520,7 +2519,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="ja<%=iterationNr264%>" name="kTOV4_KV01dalykStazuotesdalyvis<%=iterationNr264%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <%    } else{ %>
@@ -2543,7 +2542,7 @@
               value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" class="form-control" id="ja<%=iterationNr264%>" name="kTOV4_KV01dalykStazuotesdalyvis<%=iterationNr264%>" autocomplete="off"><%=varpav%></textarea>
+            <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=pavVard%></textarea>
           </div>
         </div>
         <% } %>
@@ -4667,7 +4666,7 @@
         <input type="hidden" id="table35_id" name="table35_name" value="1">
         <input type="hidden" id="table39_id" name="table39_name" value="1">
         <input type="hidden" id="tableVeiklS_id" name="tableVeiklS_name" value="2">
-<!------------------- PABAIGA----------- -->
+        <!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
       </div>
       <div class="row">
@@ -4914,7 +4913,7 @@
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="lent3_nr1` + value2 + `" placeholder="" autocomplete="off" value="` + value2 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent3_nr` + value2 + `" placeholder="" autocomplete="off" value="` + value2 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
               <label for="">Studijų kryptis</label>

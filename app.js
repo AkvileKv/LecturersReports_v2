@@ -3874,7 +3874,7 @@ app.post("/create-dep", (req, res) => {
         var kTOV4_KV01dalykKomppazymNrcommand = "req.body.kTOV4_KV01dalykKomppazymNr";
         var kTOV4_KV01dalykKompTrukmeValLTcommand = "req.body.kTOV4_KV01dalykKompTrukmeValLT";
         var kTOV4_KV01dalykKompTrukmeValNeLTcommand = "req.body.kTOV4_KV01dalykKompTrukmeValNeLT";
-        var kTOV4_KV01dalykStazuotesdalyviscommand = "req.body.kTOV4_KV01dalykStazuotesdalyvis";
+        var kTOV4_KV01dalykKompdalyviscommand = "req.body.kTOV4_KV01dalykKompdalyvis";
 
         //26 lent
         //mokymosi
@@ -4038,23 +4038,6 @@ app.post("/create-dep", (req, res) => {
 
         // 1 lentelė create-dep
         for (let i = 1; i <= parseInt(req.body.table1_name); i++) {
-          // var mV2_D04nrcommandi = mV2_D04nrcommand + i;
-          // var mV2_D04studKryptiscommandi = mV2_D04studKryptiscommand + i;
-          // var mV2_D04studProgrcommandi = mV2_D04studProgrcommand + i;
-          // var mV2_D04progrKodascommandi = mV2_D04progrKodascommand + i;
-          // var mV2_D04isakNrDatacommandi = mV2_D04isakNrDatacommand + i;
-          // var mV2_D04studKryptAkreditcommandi = mV2_D04studKryptAkreditcommand + i;
-          // var mV2_D04akreditLaikotcommandi = mV2_D04akreditLaikotcommand + i;
-          // var mV2_D04eCTS1commandi = mV2_D04eCTS1command + i;
-
-          // var joinedmV2_D04nr = eval(mV2_D04nrcommand + i);
-          // var joinedmV2_D04studKryptis = eval(mV2_D04studKryptiscommand + i);
-          // var joinedmV2_D04studProgr = eval(mV2_D04studProgrcommand + i);
-          // var joinedmV2_D04progrKodas = eval(mV2_D04progrKodascommand + i);
-          // var joinedmV2_D04isakNrData = eval(mV2_D04isakNrDatacommand + i);
-          // var joinedmV2_D04studKryptAkredit = eval(mV2_D04studKryptAkreditcommand + i);
-          // var joinedmV2_D04akreditLaikot = eval(mV2_D04akreditLaikotcommand + i);
-          // var joinedmV2_D04eCTS1 = eval(mV2_D04eCTS1command + i);
           foundUser.katedrosVedejas.kKPP1_1.push({
             nr: eval(mV2_D04nrcommand + i),
             studKryptis: eval(mV2_D04studKryptiscommand + i),
@@ -4392,7 +4375,7 @@ app.post("/create-dep", (req, res) => {
             pazymNr: eval(kTOV4_KV01dalykKomppazymNrcommand + i),
             trukmeValLT: eval(kTOV4_KV01dalykKompTrukmeValLTcommand + i),
             trukmeValNeLT: eval(kTOV4_KV01dalykKompTrukmeValNeLTcommand + i),
-            destytojas: eval(kTOV4_KV01dalykStazuotesdalyviscommand + i)
+            destytojas: eval(kTOV4_KV01dalykKompdalyviscommand + i)
           })
         }
         foundUser.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.dalykinesIsVisoValLT = req.body.kTOV4_trukmeDalykValLT4,
