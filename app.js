@@ -4025,8 +4025,8 @@ app.post("/create-dep", (req, res) => {
         var lent41_laikascommand = "req.body.lent41_laikas";
         var lent41_vietacommand = "req.body.lent41_vieta";
         //veiklSavinalize
-        var veiklSavinalizestiprybescommand = "req.body.veiklSavianalizenr";
-        var veiklSavinalizetobulintinacommand = "req.body.veiklSavinalizetobulintina";
+        var veiklSavinalizestiprybescommand = "req.body.veiklSavianalizStiprybes";
+        var veiklSavinalizetobulintinacommand = "req.body.veiklSavianalizTobulintina";
 
         //template
         // var command = "req.body.kV5_KT01nr";
