@@ -33,7 +33,7 @@
       <div class="form-group ">
        <!-- -----------------PRADŽIA----------- -->
 
-        <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
+      <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
         <% var visuvar = 0; %>
           <%  user.katedrosVedejas.kDS1.forEach(function(user){ %>
            <% visuvar++; %>
@@ -48,9 +48,7 @@
               <div class="print_helper"><%=user.vardPavard%></div>
               </div>
               <div class="col-md-7 mb-3">
-               <label>Išsilavinimas
-                 (Studijų sritis, kryptis. Kvalifikacinis laipsnis,
-                 mokslinis laipsnis)
+               <label>Išsilavinimas (Studijų sritis, kryptis. Kvalifikacinis laipsnis, mokslinis laipsnis)
                  </label>
                 <textarea type="text" rows="1" class="form-control textarea the_textarea" name="issilavinimas<%=visuvar%>" readonly="readonly"  autocomplete="off"><%=user.issilavinimas%></textarea>
               <div class="print_helper"><%=user.issilavinimas%></div>

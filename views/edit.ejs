@@ -98,11 +98,11 @@
               </select>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" id="plan<%=numb%>" onchange="calc4()" value="<%=user.planuotosVal%>" class="form-control text-center textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" id="plan<%=numb%>" onchange="calcTable2()" value="<%=user.planuotosVal%>" class="form-control text-center textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" id="atl<%=numb%>" onchange="calc4()" value="<%=user.atliktosVal%>" class="form-control text-center textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" id="atl<%=numb%>" onchange="calcTable2()" value="<%=user.atliktosVal%>" class="form-control text-center textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -130,10 +130,10 @@
               <label for="">Iš jų srautais</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" class="form-control text-center" name="isJuSrautaisValPlan" value="<%=user.destytojas.kD1_K01.isJuSrautaisValPlan%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" min="0" id="srautaisPlan" onchange="calcTable2()" class="form-control text-center" name="isJuSrautaisValPlan" value="<%=user.destytojas.kD1_K01.isJuSrautaisValPlan%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" class="form-control text-center" name="isJuSrautaisValAtl" value="<%=user.destytojas.kD1_K01.isJuSrautaisValAtl%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" min="0" id="srautaisAtl" onchange="calcTable2()" class="form-control text-center" name="isJuSrautaisValAtl" value="<%=user.destytojas.kD1_K01.isJuSrautaisValAtl%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
           <div class="form-row">
@@ -141,10 +141,10 @@
               <label class="" for="">Iš jų užsienio kalba</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" class="form-control text-center" name="isJuUzsienioValPlan" value="<%=user.destytojas.kD1_K01.isJuUzsienioValPlan%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" min="0" id="uzsienioPlan" onchange="calcTable2()" class="form-control text-center" name="isJuUzsienioValPlan" value="<%=user.destytojas.kD1_K01.isJuUzsienioValPlan%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" class="form-control text-center" name="isJuUzsienioValAtl" value="<%=user.destytojas.kD1_K01.isJuUzsienioValAtl%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" min="0" id="uzsienioAtl" onchange="calcTable2()" class="form-control text-center" name="isJuUzsienioValAtl" value="<%=user.destytojas.kD1_K01.isJuUzsienioValAtl%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
           <div class="form-row">
@@ -3600,10 +3600,10 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="plan` + value1 + `"  onchange="calc4()" class="form-control text-center textarea" name="planuotosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="plan` + value1 + `"  onchange="calcTable2()" class="form-control text-center textarea" name="planuotosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="atl` + value1 + `"  onchange="calc4()" class="form-control text-center textarea" name="atliktosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="atl` + value1 + `"  onchange="calcTable2()" class="form-control text-center textarea" name="atliktosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
         <div id="add_to_me01` + div + `">
@@ -6895,26 +6895,56 @@
 <!-- kD1_K01 -->
 <!-- 2 table -->
 <script>
-  function calc4() {
+  window.onload = calcTable2();
+  function calcTable2() {
+    var srautaisPlanValString = document.getElementById("srautaisPlan").value;
+    var srautaisAtlValString = document.getElementById("srautaisAtl").value;
+    var uzsienioPlanValString = document.getElementById("uzsienioPlan").value;
+    var uzsienioAtlValString = document.getElementById("uzsienioAtl").value;
 
-    var planuotanum4 = 0;
-    var atliktanum4 = 0;
-    var plan = "plan";
-    var atl = "atl";
+    //convert from string to float
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisAtlValSk = parseFloat(srautaisAtlValString) || 0;
+    var uzsienioPlanValSk = parseFloat(uzsienioPlanValString) || 0;
+    var uzsienioAtlValSk = parseFloat(uzsienioAtlValString) || 0;
+
+    var visoPlanSuma = srautaisPlanValSk + uzsienioPlanValSk;
+    var visoAtlSuma = srautaisAtlValSk + uzsienioAtlValSk;
+
+    var planuotaVal = 0;
+    var atliktaVal = 0;
+    var planuota = "plan";
+    var atlikta = "atl";
+
     for (let zx = 1; zx <= value1 - 1; zx++) {
-      var bendras = plan + zx;
-      var bendras2 = atl + zx;
+      var bendras = planuota + zx;
+      var bendras2 = atlikta + zx;
 
-      var num00 = document.getElementById(bendras).value;
-      var num01 = document.getElementById(bendras2).value;
-      var num000 = parseFloat(num00) || 0;
-      var num001 = parseFloat(num01) || 0;
-      planuotanum4 = planuotanum4 + num000;
-      atliktanum4 = atliktanum4 + num001;
+      var bendrPlanString = document.getElementById(bendras).value;
+      var bendrAtlString = document.getElementById(bendras2).value;
+      var bendrPlanSk = parseFloat(bendrPlanString) || 0;
+      var bendrAtlSk = parseFloat(bendrAtlString) || 0;
+      planuotaVal = planuotaVal + bendrPlanSk;
+      atliktaVal = atliktaVal + bendrAtlSk;
+    }
+    document.getElementById("planuota4").value = planuotaVal;
+    document.getElementById("atlikta4").value = atliktaVal;
+
+    if (visoPlanSuma == planuotaVal) {
+      document.getElementById("srautaisPlan").style.color = "black";
+      document.getElementById("uzsienioPlan").style.color = "black";
+    } else if (visoPlanSuma !== planuotaVal) {
+      document.getElementById("srautaisPlan").style.color = "red";
+      document.getElementById("uzsienioPlan").style.color = "red";
     }
 
-    document.getElementById("planuota4").value = planuotanum4;
-    document.getElementById("atlikta4").value = atliktanum4;
+    if (visoAtlSuma == atliktaVal) {
+      document.getElementById("srautaisAtl").style.color = "black";
+      document.getElementById("uzsienioAtl").style.color = "black";
+    } else if (visoAtlSuma !== atliktaVal) {
+      document.getElementById("srautaisAtl").style.color = "red";
+      document.getElementById("uzsienioAtl").style.color = "red";
+    }
   }
 </script>
 <!-- kTOV4_KV01 -->
