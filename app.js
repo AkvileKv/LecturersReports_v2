@@ -1506,7 +1506,7 @@ app.post("/update", (req, res) => {
         for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
           foundUser.destytojas.kTOV4_KV03.push({
             nr: eval(kTOV4_KV03nrcommand + i),
-            studKryptis: (kTOV4_KV03studKryptiscommand + i),
+            studKryptis: eval(kTOV4_KV03studKryptiscommand + i),
             salis: eval(kTOV4_KV03saliscommand + i),
             institucija: eval(kTOV4_KV03institucijacommand + i),
             dalykas: eval(kTOV4_KV03dalykascommand + i)
@@ -2039,7 +2039,7 @@ app.post("/submit", function(req, res) {
             })
           }
         } // 7 lentelė submit
-        for (let h = 1; h <= parseInt(req.body.table7_name); h++) {
+        for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           if (eval(nD2_D03studKryptiscommand + i) != "" || eval(nD2_D03studProgrcommand + i) != "" ||
           eval(nD2_D03veiklacommand + i) != "" || eval(nD2_D03rezultataicommand + i) != "") {
             foundUser.destytojas.nD2_D03.push({
@@ -2423,16 +2423,16 @@ app.post("/submit", function(req, res) {
               socPartneris: eval(kTOV4_29socPartneriscommand + i)
             })
           }
-        } // savianalize
+        } // savianalize lentelė submit
         for (let i = 1; i <= parseInt(req.body.tablekTOV4_S_name); i++) {
-          if (eval(eval(kTOV4_Sstiprybescommand + i) + i) != "" || eval(kTOV4_Stobulintinacommand + i) != "") {
+          if (eval(kTOV4_Sstiprybescommand + i) != "" || eval(kTOV4_Stobulintinacommand + i) != "") {
             foundUser.destytojas.kTOV4_S.push({
               nr: eval(kTOV4_Snrcommand + i),
               stiprybes: eval(kTOV4_Sstiprybescommand + i),
               tobulintina: eval(kTOV4_Stobulintinacommand + i)
             })
           }
-        } // 30 lentelė update
+        } // 30 lentelė submit
         for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
           if (eval(kV5_KT02studKryptiscommand + i) != "" || eval(kV5_KT02diplomantascommand + i) != "" ||
             eval(kV5_KT02studProgrcommand + i) != "" || eval(kV5_KT02darboTemacommand + i) != "") {
@@ -2444,7 +2444,7 @@ app.post("/submit", function(req, res) {
                 darboTema: eval(kV5_KT02darboTemacommand + i)
               })
           }
-        } // 31 lentelė update
+        } // 31 lentelė submit
         for (let i = 1; i <= parseInt(req.body.table31_name); i++) {
           if (eval(kV5_KT01studKryptiscommand + i) != "" || eval(kV5_KT01diplomantascommand + i) != "" ||
           eval(kV5_KT01studProgrcommand + i) != "" || eval(kV5_KT01darboTemacommand + i) != "" ||
@@ -2459,7 +2459,7 @@ app.post("/submit", function(req, res) {
               })
           }
         }
-        // 32 table
+        // 32 table submit
         for (let i = 1; i <= parseInt(req.body.table321_name); i++) {
           if (eval(kV5_32socaprasymascommand + i) != "") {
             foundUser.destytojas.kV5_32.socAtskMaz.push({
@@ -2468,7 +2468,7 @@ app.post("/submit", function(req, res) {
           }
         }
         for (let i = 1; i <= parseInt(req.body.table322_name); i++) {
-          if (joinedkV5_32aplinkaprasymas != "") {
+          if (eval(kV5_32aplinkaprasymascommand + i) != "") {
             foundUser.destytojas.kV5_32.aplinkosaugInic.push({
               aprasymas: eval(kV5_32aplinkaprasymascommand + i)
             })
@@ -2556,8 +2556,8 @@ app.get("/create-dep", function(req, res) {
         let vedejoKatedra = req.user.katedra;
 
         User.find({
-          katedra: vedejoKatedra
-          //busena: "užrakinta"
+          katedra: vedejoKatedra,
+          busena: "užrakinta"
         }, function(err, users) {
           if (err) {
             console.log(err);
