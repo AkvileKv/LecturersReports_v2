@@ -706,7 +706,7 @@ app.post("/create", function(req, res) {
           for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
             foundUser.destytojas.kTOV4_KV03.push({
               nr: eval(kTOV4_KV03nrcommand + i),
-              studKryptis: (kTOV4_KV03studKryptiscommand + i),
+              studKryptis: eval(kTOV4_KV03studKryptiscommand + i),
               salis: eval(kTOV4_KV03saliscommand + i),
               institucija: eval(kTOV4_KV03institucijacommand + i),
               dalykas: eval(kTOV4_KV03dalykascommand + i)
@@ -2383,11 +2383,11 @@ app.post("/submit", function(req, res) {
           }
         } // 27 lentelė submit
         for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
-          if ((kTOV4_KV03studKryptiscommand + i) != "" || eval(kTOV4_KV03saliscommand + i) != "" ||
+          if (eval(kTOV4_KV03studKryptiscommand + i) != "" || eval(kTOV4_KV03saliscommand + i) != "" ||
             eval(kTOV4_KV03institucijacommand + i) != "" || eval(kTOV4_KV03dalykascommand + i) != "") {
               foundUser.destytojas.kTOV4_KV03.push({
                 nr: eval(kTOV4_KV03nrcommand + i),
-                studKryptis: (kTOV4_KV03studKryptiscommand + i),
+                studKryptis: eval(kTOV4_KV03studKryptiscommand + i),
                 salis: eval(kTOV4_KV03saliscommand + i),
                 institucija: eval(kTOV4_KV03institucijacommand + i),
                 dalykas: eval(kTOV4_KV03dalykascommand + i)

@@ -2845,10 +2845,10 @@
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_29nr<%=value65%>" placeholder="" autocomplete="off" value="<%=value65%>" readonly="readonly">
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-8 mb-3">
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla<%=value65%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
             </div>
-            <div class="col-md-5 mb-3">
+            <div class="col-md-3 mb-3">
               <select name="kTOV4_29socPartneris<%=value65%>" class="form-select form-control">
                 <option value=""></option>
                 <option class="others" <%if (user.socPartneris === "Mokslo ir švietimo institucijos") { %> selected <% } %> value="Mokslo ir švietimo institucijos">ŠV</option>
@@ -6016,11 +6016,16 @@
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-8 mb-3">
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
             </div>
-            <div class="col-md-5 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="kTOV4_29socPartneris` + value65 + `" placeholder="" autocomplete="off"></textarea>
+            <div class="col-md-3 mb-3">
+              <select name="kTOV4_29socPartneris` + value65 + `" class="form-select form-control">
+                <option value=""></option>
+                <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
+                <option class="others" value="Regioninės valdymo struktūros, socialinių partnerių organizacijos">SP</option>
+                <option class="others" value="Darbdaviai">D</option>
+              </select>
             </div>
           </div>
                 <div id="add_to_meN09` + div65 + `">
