@@ -32,12 +32,7 @@
         <!-- išvedama destytojo ataskaita, kurią vedėjas gali redaguoti ir pakartotinai išsaugoti duomenų bazėje-->
 
         <!-- vedejas perziuri ataskaita, kuria pateike destytojas, o vedejas papilde ir pateike pakartotinai  -->
-
-
 <%if (user.busena === "užrakintaVedėjo") { %>
-        <!--ar reikia ???-->
-        <input type="hidden" class="form-control" name="yondbusena" value="<%=user.busena%>">
-
         <br>
         <!-- MYGTUKAI -->
         <div class=" text-center noprint">
@@ -47,7 +42,7 @@
     <% if (user.busena === "užrakintaVedėjo") { %>
         <p class="lead text-danger noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į administratorių.</p>
     <% } else { %>
-        <input type="text" name="ataskaitos_busena" value="užrakintaVedėjo" hidden>
+        <!-- <input type="text" name="ataskaitos_busena" value="užrakintaVedėjo" hidden> -->
         <div class="row noprint">
           <div class="text-center">
             <button type="submit" class="btn btn-danger" onclick="return confirm('Ar tikrai norite pateikti ataskaitą? Ataskaita bus užrakinta, daugiau nebegalėsite jos redaguoti');">PATEIKTI</button>
@@ -2739,7 +2734,7 @@
               <td>Kitos veiklos</td>
               <td>
                 <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                  style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kontaktD%> </textarea>
+                  style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kitosVeikl%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.kitosVeikl%></div>
               </td>
             </tr>
@@ -2778,21 +2773,17 @@
           <br>
           <!-- formos pabaiga -->
 
-          <!-- destytojas pateikia ataskaita (busena: uzrakinta), vedejas gali redaguoti ja -->
+          <!-- destytojas pateikia ataskaita (busena: uzrakinta), vedejas tada gali redaguoti/atnaujinti ja -->
   <% } else if (user.busena === "užrakinta"){ %>
-          <!--ar reikia ???-->
-          <input type="hidden" class="form-control" name="yondbusena" value="<%=user.busena%>">
 
           <br>
           <!-- MYGTUKAI -->
-          <!-- <input type="text" name="ataskaitos_busena" value="užrakinta" hidden> -->
           <div class="row noprint">
             <div class="text-center">
               <button type="submit" name="ataskaitos_busena" value="užrakinta" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
             </div>
           </div>
           <br>
-          <!-- <input type="text" name="ataskaitos_busena" value="užrakintaVedėjo" hidden> -->
           <div class="row noprint">
             <div class="text-left">
               <button type="submit" name="ataskaitos_busena" value="užrakintaVedėjo" class="btn btn-danger"
@@ -6348,7 +6339,7 @@
           <p><b>Katedros vedėjo (-s) išvados apie suplanuotą ir įvykdytą (jei neįvykdyta – nurodyti priežastis) dėstytojo veiklą.</b></p>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <textarea type="text" class="form-control textarea the_textarea"><%=user.destytojas.katedrosV_isvados%></textarea>
+              <textarea type="text" class="form-control textarea the_textarea" name="vedejo_katedrosV_isvados"><%=user.destytojas.katedrosV_isvados%></textarea>
               <div class="print_helper"><%=user.destytojas.katedrosV_isvados%></div>
             </div>
           </div>
@@ -6365,7 +6356,7 @@
               <td style="text-align: center;">1.</td>
               <td> Kontaktinis darbas</td>
               <td>
-                <textarea type="text" class="form-control textarea the_textarea"
+                <textarea type="text" class="form-control textarea the_textarea" name="vedejo_kontaktD"
                   style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kontaktD%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.kontaktD%></div>
               </td>
@@ -6374,7 +6365,7 @@
               <td style="text-align: center;">2.</td>
               <td>Nekontaktinis darbas</td>
               <td>
-                <textarea type="text" class="form-control textarea the_textarea"
+                <textarea type="text" class="form-control textarea the_textarea" name="vedejo_neKontaktD"
                   style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.neKontaktD%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.neKontaktD%></div>
               </td>
@@ -6383,7 +6374,7 @@
               <td style="text-align: center;">3.</td>
               <td>TMTEP vykdymas, meno taikomųjų ir profesionaliojo meno veiklų rezultatų skelbimas ir viešinimas</td>
               <td>
-                <textarea type="text" class="form-control textarea the_textarea"
+                <textarea type="text" class="form-control textarea the_textarea" name="vedejo_tMTEP_vykdymas"
                   style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas%></div>
               </td>
@@ -6392,7 +6383,7 @@
               <td style="text-align: center;">4.</td>
               <td>Kompetencijų tobulinimas ir organizacinė veikla</td>
               <td>
-                <textarea type="text" class="form-control textarea the_textarea"
+                <textarea type="text" class="form-control textarea the_textarea" name="vedejo_kompTobulinimas"
                   style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kompTobulinimas%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.kompTobulinimas%></div>
               </td>
@@ -6401,8 +6392,8 @@
               <td style="text-align: center;">5.</td>
               <td>Kitos veiklos</td>
               <td>
-                <textarea type="text" class="form-control textarea the_textarea"
-                  style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kontaktD%> </textarea>
+                <textarea type="text" class="form-control textarea the_textarea" name="vedejo_kitosVeikl"
+                  style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.destytojas.katedrosV_rekomendacijos.kitosVeikl%> </textarea>
                 <div class="print_helper"><%=user.destytojas.katedrosV_rekomendacijos.kitosVeikl%></div>
               </td>
             </tr>
@@ -6439,6 +6430,9 @@
             <input type="text" style="border: none;" class="edit-left" id="currentDate3" value="" maxlength="10">
           </div>
           <br>
+
+<% } else { %>
+    <p class="lead text-danger noprint">Dėstytojas nėra pateikęs ataskaitos, redagavimas nėra galimas.</p>
   <% } %>
 
         </div>

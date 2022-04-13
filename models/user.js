@@ -617,7 +617,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     kV5_33: [kV5_33Schema], //33 lentelė
     kV5_34: [kV5_34Schema], //34
     kV5_kitaInfo: String,
-    katedrosV_isvados: String,
+    katedrosV_isvados: String, //katedros vedejas pildo
     katedrosV_rekomendacijos: {
       kontaktD: String,
       neKontaktD: String,
