@@ -4,18 +4,18 @@
   <div class="jumbotron ">
 
     <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> Dėstytojo ataskaitos redagavimas</h1>
+    <p class="lead text-center text-danger">Ataskaitos būsena: <%=user.busena%></p>
     <form action="/update-report-lec-admin" method="post">
+
       <div class="form-group ">
         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
         <!-- išvedama visa dėstytojo ataskaita, kurią adminas gali redaguoti ir pakartotinai išsaugoti duomenų bazėje pas naudotoją-->
-
-        <div class="form-group ">
 
           <br>
           <!-- MYGTUKAI -->
           <div class="row noprint">
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
             </div>
           </div>
           <br>
@@ -3627,7 +3627,7 @@
             </tr>
           </table>
 
-      </div>
+
       </div>
 
     </form>
