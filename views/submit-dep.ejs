@@ -41,10 +41,14 @@
     <form action="/submit-dep" method="post">
 
       <% if (user.busenaVedejo === "užrakinta") { %>
+        <br>
+      <div class="text-center">
       <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
-      <p class="lead text-danger noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į administratorių.</p>
+      </div>
+      <p class="lead text-danger noprint text-center">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į administratorių.</p>
       <% } else { %>
-      <p class="lead text-danger noprint">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
+        <br>
+      <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
       <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
       <div class="row noprint">
         <div class="text-center">
@@ -52,7 +56,7 @@
         </div>
       </div>
       <% } %>
-      <br><br><br><br>
+      <br><br>
       <div class="form-group ">
         <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
 

@@ -6,14 +6,14 @@
 
     <%if ( logedInUser.busenaVedejo === "redaguojama" || logedInUser.busenaVedejo === "užrakinta") { %>
 
-    <p class="lead">Ataskaitos sukūrimas nėra galimas. Ataskaita yra <%=logedInUser.busenaVedejo%></p>
+    <p class="lead text-center text-danger">Ataskaitos sukūrimas nėra galimas. Ataskaita yra <%=logedInUser.busenaVedejo%></p>
 
     <% } else if (logedInUser.busenaVedejo === "nesukurta") { %>
 
-    <br><br><br><br>
-
+    <br><br>
     <form action="/create-dep" method="post">
       <div class="form-group ">
+      <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
         <!-- 1 lentelė -->
         <!-- mV2_D04 -->
         <p class=" font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
@@ -210,7 +210,7 @@
         <p class=" font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
         <% var numb2 = 0; %>
         <%  users.forEach(function(user){ %>
-          <%  if (user.busena === "užrakinta" || user.busena === "užrakintaVedėjo"){ %>
+        <%  if (user.busena === "užrakinta" || user.busena === "užrakintaVedėjo"){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
         <% numb2++; %>
         <div class="form-row">
@@ -2349,7 +2349,7 @@
         <% var iterationNr262 = 0; %>
         <%  users.forEach(function(user){ %>
         <% if (user.busena != "nesukurta") tyrimuKompSk++ %>
-    <% var pavVard = user.pavarde + " " + user.vardas; %>
+        <% var pavVard = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
         <% iterationNr262++ %>
         <% if (iterationNr262==1){%>
@@ -2423,7 +2423,7 @@
         <% var iterationNr263 = 0; %>
         <%  users.forEach(function(user){ %>
         <% if (user.busena != "nesukurta") bendrKompSk++ %>
-          <% var pavVard = user.pavarde + " " + user.vardas; %>
+        <% var pavVard = user.pavarde + " " + user.vardas; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
         <% iterationNr263++ %>
         <% if (iterationNr263==1){%>
@@ -2496,7 +2496,7 @@
         <% var iterationNr264 = 0;  %>
         <% var dalykKompSk = 0; %>
         <%  users.forEach(function(user){ %>
-      <% var pavVard = user.pavarde + " " + user.vardas; %>
+        <% var pavVard = user.pavarde + " " + user.vardas; %>
         <% if (user.busena != "nesukurta") dalykKompSk++; %>
         <%  user.destytojas.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
         <% iterationNr264++ %>
@@ -4669,6 +4669,7 @@
         <input type="hidden" id="tableVeiklS_id" name="tableVeiklS_name" value="2">
         <!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
+
       </div>
       <div class="row">
         <div class="text-center">

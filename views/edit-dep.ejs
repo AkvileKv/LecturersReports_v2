@@ -7,14 +7,15 @@
 
     <%if ( user.busenaVedejo === "nesukurta" || user.busenaVedejo === "užrakinta") { %>
 
-    <p class="lead">Ataskaitos redagavimas nėra galimas. Ataskaita yra <%=user.busenaVedejo%></p>
+    <p class="lead text-center text-danger">Ataskaitos redagavimas nėra galimas. Ataskaita yra <%=user.busenaVedejo%></p>
 
     <% } else if (user.busenaVedejo === "redaguojama") { %>
 
-    <br><br><br><br>
+    <br><br>
     <form action="/edit-dep" method="post">
 
       <div class="form-group ">
+      <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
         <!-- 1 lentelė -->
         <!-- mV2_D04 -->
         <p class=" font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
@@ -4545,7 +4546,7 @@
       </div>
     </form>
     <% } else {  %>
-    <p class="lead">Ataskaitos sukūrimas nėra galimas. Ataskaitos būsena neapibrėžta, kreipkitės į administratorių</p>
+    <p class="lead text-center text-danger">Ataskaitos sukūrimas nėra galimas. Ataskaitos būsena neapibrėžta, kreipkitės į administratorių</p>
     <% } %>
   </div>
 </div>
