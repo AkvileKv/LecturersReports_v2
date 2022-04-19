@@ -121,24 +121,6 @@ var tMTEP3_T07T08T09Schema = new mongoose.Schema({
   data: String,
   atlygArNe: String
 });
-// var tMTEP3_T08Schema = new mongoose.Schema({
-//   nr: String,
-//   atlikejas: String,
-//   menoSrit: String,
-//   pavadinimas: String,
-//   atlikVieta: String,
-//   data: String,
-//   atlygArNe: String
-// });
-// var tMTEP3_T09Schema = new mongoose.Schema({
-//   nr: String,
-//   atlikejas: String,
-//   menoSrit: String,
-//   pavadinimas: String,
-//   atlikVieta: String,
-//   data: String,
-//   atlygArNe: String
-// });
 var tMTEP3_T10T11Schema = new mongoose.Schema({ //20,21 vedejo; 19,20 destytojo
   nr: String,
   destytojas: String,
@@ -149,16 +131,6 @@ var tMTEP3_T10T11Schema = new mongoose.Schema({ //20,21 vedejo; 19,20 destytojo
   ktKomentarai: String,
   atlygArNe: String
 });
-// var tMTEP3_T11Schema = new mongoose.Schema({
-//   nr: String,
-//   destytojas: String,
-//   veiklPobud: String,
-//   veiklTiksl: String,
-//   dataVieta: String,
-//   dalyvSk: Number,
-//   ktKomentarai: String,
-//   atlygArNe: String
-// });
 var tMTEP3_T12Schema = new mongoose.Schema({
   nr: String,
   veiklPobud: String,
@@ -745,8 +717,10 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   }
 });
 
+var options = {indexes: [{'t': -1, 'd._id': 1}]};
+
 userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(mongooseHistory);
+userSchema.plugin(mongooseHistory, options);
 
 const User = mongoose.model("User", userSchema);
 

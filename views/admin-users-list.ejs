@@ -16,12 +16,11 @@
           <a type="button" class="btn btn-primary" href="/admin-edit-user/<%= user._id %>"> Redaguoti</a>
           <a type="button" class="btn btn-secondary" href="/admin-all-user-reports/<%= user._id %>"> Ataskaitos</a>
           <form action="/delete" method="post">
-            <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Are you sure you want to delete this record?');" value="<%=user._id%>">Ištrinti</button>
+            <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti naudotoją?');" value="<%=user._id%>">Ištrinti</button>
           </form>
         </div>
       </div>
     </div>
-
 
     <% }) %>
 

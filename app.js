@@ -132,6 +132,38 @@ app.post("/login", (req, res) => {
   //}
 });
 
+//TEST METHOD
+app.get("/historyLog", (req, res) => {
+
+  if (req.isAuthenticated()) {
+
+    historyUser.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+
+          User.find({}, function(err, users_history) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render("historyLog", {
+                users_history: users_history
+              });
+            }
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+//
+
 app.post("/create", function(req, res) {
   if (req.isAuthenticated()) {
 
