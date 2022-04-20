@@ -70,7 +70,7 @@ app.post("/register", (req, res) => {
     busenaVedejo: "nesukurta",
     role: "dėstytojas",
     rolesKeitimas: false,
-    updated_for: "User Registration"
+    updated_for: "New User Registration"
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -133,21 +133,23 @@ app.post("/login", (req, res) => {
 });
 
 //TEST METHOD
-app.get("/historyLog", (req, res) => {
+app.get("/admin-history-log", (req, res) => {
+
+var HistoryUser = User.historyModel();
 
   if (req.isAuthenticated()) {
 
-    historyUser.findById(req.user.id, function(err, foundUser) {
+    User.findById(req.user.id, function(err, foundUser) {
       if (err) {
         console.log(err);
       } else {
         if (foundUser.role === "administratorius") {
 
-          User.find({}, function(err, users_history) {
+          HistoryUser.find({}, function(err, users_history) {
             if (err) {
               console.log(err);
             } else {
-              res.render("historyLog", {
+              res.render("admin-history-log", {
                 users_history: users_history
               });
             }
@@ -843,7 +845,7 @@ app.post("/create", function(req, res) {
             })
           }
           foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
-            foundUser.updated_for = req.user.id,
+            foundUser.updated_for = req.user.username,
             foundUser.busena = req.body.ataskaitos_busena
 
           foundUser.save(function(err) {
@@ -1642,7 +1644,7 @@ app.post("/update", (req, res) => {
           })
         }
         foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
-          foundUser.updated_for = req.user.id,
+          foundUser.updated_for = req.user.username,
           foundUser.busena = req.body.ataskaitos_busena
 
         foundUser.save(function(err) {
@@ -2558,7 +2560,7 @@ app.post("/submit", function(req, res) {
           }
         }
         foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
-          foundUser.updated_for = req.user.id,
+          foundUser.updated_for = req.user.username,
           foundUser.busena = req.body.ataskaitos_busena
 
         foundUser.save(function(err) {
@@ -3543,7 +3545,7 @@ app.post("/create-dep", (req, res) => {
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.id
+          foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {
@@ -4557,7 +4559,7 @@ app.post("/edit-dep", (req, res) => {
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.id
+          foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {
@@ -5748,7 +5750,7 @@ app.post("/submit-dep", function(req, res) {
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.id
+          foundUser.updated_for = req.user.username
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");
@@ -5819,34 +5821,43 @@ app.post("/update-user", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser) {
-          if (foundUser.rolesKeitimas === true) {
-            foundUser.role = req.body.role
-            //console.log(foundUser.role);
-          }
-          foundUser.updated_for = req.user.id,
-            foundUser.vardas = req.body.vardas,
-            foundUser.pavarde = req.body.pavarde,
-            foundUser.katedra = req.body.katedra,
-            foundUser.fakultetas = req.body.fakultetas,
-            foundUser.destytojas.issilavinimas = req.body.issilavinimas,
-            foundUser.destytojas.darbovietesTipas = req.body.darbovietesTipas,
-            foundUser.destytojas.pareigos = req.body.pareigos,
-            foundUser.destytojas.pedagogStazas = req.body.pedagogStazas,
-            foundUser.destytojas.praktVeiklStazas = req.body.praktVeiklStazas,
-            foundUser.updated_for = req.user.id
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              if (foundUser.rolesKeitimas === true && foundUser.role != req.body.role) {
+                foundUser.role = req.body.role
+              }
+
+              if (foundUser.vardas != req.body.vardas) {
+                foundUser.vardas = req.body.vardas
+              } else if (foundUser.pavarde != req.body.pavarde) {
+                foundUser.pavarde = req.body.pavarde
+              } else if (foundUser.katedra != req.body.katedra) {
+                foundUser.katedra = req.body.katedra
+              } else if (foundUser.fakultetas != req.body.fakultetas) {
+                foundUser.fakultetas = req.body.fakultetas
+              } else if (foundUser.destytojas.issilavinimas != req.body.issilavinimas) {
+                foundUser.destytojas.issilavinimas = req.body.issilavinimas
+              } else if (foundUser.destytojas.darbovietesTipas != req.body.darbovietesTipas) {
+                foundUser.destytojas.darbovietesTipas = req.body.darbovietesTipas
+              } else if (foundUser.destytojas.pareigos != req.body.pareigos) {
+                foundUser.destytojas.pareigos = req.body.pareigos
+              } else if (foundUser.destytojas.pedagogStazas != req.body.pedagogStazas) {
+                foundUser.destytojas.pedagogStazas = req.body.pedagogStazas
+              } else if (foundUser.destytojas.praktVeiklStazas != req.body.praktVeiklStazas) {
+                foundUser.destytojas.praktVeiklStazas = req.body.praktVeiklStazas
+              } else {
+
+              }
+               foundUser.updated_for = req.user.username
 
           foundUser.save(function(err) {
             if (!err) {
               console.log("Dėstytojas info succesfully updated ");
               if (foundUser.role === "dėstytojas") {
-                //console.log("dest");
                 res.redirect("/user-window");
               } else if (foundUser.role === "katedros vedėjas") {
-                //console.log("vedej");
                 res.redirect("/user-window-dep");
               } else {
                 res.redirect("/login");
@@ -5865,6 +5876,7 @@ app.post("/update-user", function(req, res) {
     res.redirect("/login");
   }
 });
+
 //Katedros vedėjas atnaujina savo info
 app.post("/update-user-dep", function(req, res) {
   if (req.isAuthenticated()) {
@@ -5877,12 +5889,12 @@ app.post("/update-user-dep", function(req, res) {
           if (foundUser.rolesKeitimas === true) {
             foundUser.role = req.body.role
           }
-          foundUser.updated_for = req.user.id,
+          foundUser.updated_for = req.user.username,
             foundUser.vardas = req.body.vardas,
             foundUser.pavarde = req.body.pavarde,
             foundUser.katedra = req.body.katedra,
             foundUser.fakultetas = req.body.fakultetas,
-            foundUser.updated_for = req.user.id
+            foundUser.updated_for = req.user.username
 
           foundUser.save(function(err) {
             if (!err) {
@@ -5982,7 +5994,7 @@ app.post("/update-user-info-dep", (req, res) => {
     } else {
       if (foundUser) {
         foundUser.busena = req.body.busena,
-          foundUser.updated_for = req.user._id
+          foundUser.updated_for = req.user.username
         foundUser.save(function(err) {
           if (!err) {
             res.redirect("/dep-lecturers-list");
@@ -7367,7 +7379,7 @@ app.post("/update-report-lecturer-dep", (req, res) => {
 
             foundUser.busena = req.body.ataskaitos_busena
         }
-        foundUser.updated_for = req.user.id
+        foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {
@@ -7456,7 +7468,7 @@ app.post("/update-profile-admin", function(req, res) {
         if (foundUser) {
           foundUser.vardas = req.body.vardas,
             foundUser.pavarde = req.body.pavarde,
-            foundUser.updated_for = req.user.id //id- savo id paimti
+            foundUser.updated_for = req.user.username //username- savo username paimti
           foundUser.save(function(err) {
             if (!err) {
               console.log("User info succesfully updated");
@@ -7616,7 +7628,7 @@ app.post("/update-user-info-admin", (req, res) => {
           foundUser.rolesKeitimas = req.body.rolesKeitimas,
           foundUser.busena = req.body.busena,
           foundUser.busenaVedejo = req.body.busenaVedejo,
-          foundUser.updated_for = req.user._id //id- prisijungusio userio id paimti iš DB reikia _id
+          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
         foundUser.save(function(err) {
           if (!err) {
             res.redirect("/admin-users-list");
@@ -8370,7 +8382,7 @@ app.post("/update-report-lec-admin", (req, res) => {
           foundUser.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
           foundUser.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
 
-          foundUser.updated_for = req.user.id
+          foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {
@@ -9357,7 +9369,7 @@ app.post("/update-report-dep-admin", (req, res) => {
         }
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
-          foundUser.updated_for = req.user.id
+          foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {

@@ -1,0 +1,26 @@
+<%- include('partials/headerAdmin') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Sistemos logai</h1>
+
+    <%  users_history.forEach(function(users_history){ %>
+    <div class="">
+      <div class="">
+      <span class="">Data ir laikas: <%=users_history.t%>;</span>
+      <span class="">Kas atliko: <%=users_history.d.updated_for%>;</span>
+      <span class="">Veiksmas: <%=users_history.o%>;</span>
+      <span class="">Naudotojas: <%=users_history.d.username%></span>
+<br>
+      </div>
+    </div>
+    <% }) %>
+
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>
