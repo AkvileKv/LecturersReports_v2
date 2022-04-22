@@ -84,6 +84,7 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
+  //2 rolem negalima prisijungti vienu metu
   //   if (req.isAuthenticated()) {
   // console.log("autentifikavo");
   //     User.findById(req.user.id, function(err, foundUser) {
@@ -114,9 +115,19 @@ app.post("/login", (req, res) => {
         failureRedirect: '/login'
       })(req, res, function() {
         User.findById(req.user.id, function(err, foundUser) {
+
           if (err) {
             console.log(err);
           } else {
+            var a = req.user.username;
+            foundUser.updated_for = "Login to the system" +" "+ a;
+            // console.log(a);
+            foundUser.save(function(err) {
+              if (err) {
+                 console.log(err);
+              }
+            });
+
             if (foundUser.role === "dėstytojas") {
               res.redirect("/user-window");
             } else if (foundUser.role === "katedros vedėjas") {
@@ -124,6 +135,8 @@ app.post("/login", (req, res) => {
             } else if (foundUser.role === "administratorius") {
               res.redirect("/admin-window");
             }
+
+
           }
         });
       });
@@ -5825,32 +5838,19 @@ app.post("/update-user", function(req, res) {
             console.log(err);
           } else {
             if (foundUser) {
-              if (foundUser.rolesKeitimas === true && foundUser.role != req.body.role) {
+              if (foundUser.rolesKeitimas === true) {
                 foundUser.role = req.body.role
               }
-
-              if (foundUser.vardas != req.body.vardas) {
-                foundUser.vardas = req.body.vardas
-              } else if (foundUser.pavarde != req.body.pavarde) {
-                foundUser.pavarde = req.body.pavarde
-              } else if (foundUser.katedra != req.body.katedra) {
-                foundUser.katedra = req.body.katedra
-              } else if (foundUser.fakultetas != req.body.fakultetas) {
-                foundUser.fakultetas = req.body.fakultetas
-              } else if (foundUser.destytojas.issilavinimas != req.body.issilavinimas) {
-                foundUser.destytojas.issilavinimas = req.body.issilavinimas
-              } else if (foundUser.destytojas.darbovietesTipas != req.body.darbovietesTipas) {
-                foundUser.destytojas.darbovietesTipas = req.body.darbovietesTipas
-              } else if (foundUser.destytojas.pareigos != req.body.pareigos) {
-                foundUser.destytojas.pareigos = req.body.pareigos
-              } else if (foundUser.destytojas.pedagogStazas != req.body.pedagogStazas) {
-                foundUser.destytojas.pedagogStazas = req.body.pedagogStazas
-              } else if (foundUser.destytojas.praktVeiklStazas != req.body.praktVeiklStazas) {
-                foundUser.destytojas.praktVeiklStazas = req.body.praktVeiklStazas
-              } else {
-
-              }
-               foundUser.updated_for = req.user.username
+              foundUser.vardas = req.body.vardas,
+              foundUser.pavarde = req.body.pavarde,
+              foundUser.katedra = req.body.katedra,
+              foundUser.fakultetas = req.body.fakultetas,
+              foundUser.destytojas.issilavinimas = req.body.issilavinimas,
+              foundUser.destytojas.darbovietesTipas = req.body.darbovietesTipas,
+              foundUser.destytojas.pareigos = req.body.pareigos,
+              foundUser.destytojas.pedagogStazas = req.body.pedagogStazas,
+              foundUser.destytojas.praktVeiklStazas = req.body.praktVeiklStazas,
+              foundUser.updated_for = req.user.username
 
           foundUser.save(function(err) {
             if (!err) {

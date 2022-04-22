@@ -474,7 +474,6 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   katedra: String,
   rolesKeitimas: Boolean,
   updated_for: String,
-
   destytojas: {
     pareigos: String, //1 lentelė
     darbovietesTipas: String,
@@ -599,7 +598,6 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     },
     ataskaitosPateikimoData: String,
   },
-
   katedrosVedejas: {
     kKPP1_1: [kKPP1_1Schema], //1 lentelė
     kDS1: [kDS1Schema], // 2
@@ -717,7 +715,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   }
 });
 
-var options = {indexes: [{'t': -1, 'd._id': 1}]};
+var options = {diffOnly: true};
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(mongooseHistory, options);

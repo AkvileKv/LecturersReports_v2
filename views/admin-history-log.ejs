@@ -8,13 +8,14 @@
     <%  users_history.forEach(function(users_history){ %>
     <div class="">
       <div class="">
-      <span class="">Data ir laikas: <%=users_history.t%>;</span>
-      <span class="">Kas atliko: <%=users_history.d.updated_for%>;</span>
-      <span class="">Veiksmas: <%=users_history.o%>;</span>
-      <span class="">Naudotojas: <%=users_history.d.username%></span>
-<br>
+      <span class=""><span class="font-weight-bold">Data ir laikas:</span> <%=users_history.t%>;</span> <br>
+      <span class=""><span class="font-weight-bold">Veiksmas:</span> <%=users_history.o%>;</span>
+      <span class=""><span class="font-weight-bold">Kas atliko:</span> <%=users_history.d.updated_for%>;</span>
+      <span class=""><span class="font-weight-bold">Naudotojas:</span> <%=users_history.d._id%>.</span>
+
       </div>
     </div>
+    <br>
     <% }) %>
 
 
