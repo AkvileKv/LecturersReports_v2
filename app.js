@@ -136,7 +136,6 @@ app.post("/login", (req, res) => {
               res.redirect("/admin-window");
             }
 
-
           }
         });
       });
@@ -145,10 +144,10 @@ app.post("/login", (req, res) => {
   //}
 });
 
-//TEST METHOD
+//TEST METHOD FOR LOG
 app.get("/admin-history-log", (req, res) => {
 
-var HistoryUser = User.historyModel();
+var HistoryUser = User.historyModel(); //nebetinka naujam diff saugojimui
 
   if (req.isAuthenticated()) {
 
@@ -157,14 +156,18 @@ var HistoryUser = User.historyModel();
         console.log(err);
       } else {
         if (foundUser.role === "administratorius") {
-
-          HistoryUser.find({}, function(err, users_history) {
+//paimti id is HistoryUser, pagal ji rasti username su UserFind
+        document.getDiffs(([findQuery]), function(err, users_history) {
             if (err) {
               console.log(err);
             } else {
-              res.render("admin-history-log", {
-                users_history: users_history
-              });
+                if (err) {
+                  console.log(err);
+                } else {
+                  res.render("admin-history-log", {
+                    users_history: users_history
+                  });
+                }
             }
           });
         } else {

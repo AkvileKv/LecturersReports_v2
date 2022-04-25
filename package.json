@@ -18,6 +18,8 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.0.5",
     "mongoose-history": "^0.8.0",
+    "mongoose-history-diff": "^1.0.6",
+    "mongoose-history-plugin": "^3.0.1",
     "nodemon": "^2.0.14",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
