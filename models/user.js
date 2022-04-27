@@ -748,9 +748,8 @@ userSchema.plugin(passportLocalMongoose);
 // userSchema.plugin(diffPlugin);
 //diffSchema.plugin(diffPlugin);
 userSchema.plugin(mongooseHistoryPlugin(options));
-// let Tank = mongoose.model('tank', userSchema);
 
-
+// `User` is a "Model", a subclass of `mongoose.Model`.
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
