@@ -106,16 +106,7 @@ app.post("/login", (req, res) => {
   //use a Model (User) to create new documents (user) using `new`:
   const user = new User({
     username: req.body.username,
-    password: req.body.password,
-    // History property is optional by default
-__history: {
-  event: 'registered',
-  user: undefined, // An object id of the user that generate the event
-  reason: undefined,
-  data: undefined, // Additional data to save with the event
-  type: undefined, // One of 'patch', 'minor', 'major'. If undefined defaults to 'major'
-  method: 'newTank' // Optional and intended for method reference
-}
+    password: req.body.password
   });
 
   req.login(user, function(err) {
@@ -132,13 +123,6 @@ __history: {
           } else {
             var a = req.user.username;
             foundUser.updated_for = "Login to the system" +" "+ a;
-            // History property is optional by default
-foundUser.__history = {
-  event: 'updated',
-  method: 'updateTank'
-};
-var b = foundUser.__history.event;
-console.log(b);            // console.log(a);
             foundUser.save(function(err) {
               if (err) {
                  console.log(err);
@@ -161,17 +145,10 @@ console.log(b);            // console.log(a);
   //}
 });
 
-//TEST METHOD FOR LOG
+// METHOD FOR LOG
 app.get("/admin-history-log", (req, res) => {
 
-//var HistoryUser = User.__history(); //nebetinka naujam diff saugojimui
-const userDoc = new User({
-  // History property is optional by default
-__history: {
-event: 'log',
-method: 'login to the system' // Optional and intended for method reference
-}
-});
+//var HistoryUser = User.historyModel();
 
   if (req.isAuthenticated()) {
 
@@ -180,24 +157,7 @@ method: 'login to the system' // Optional and intended for method reference
         console.log(err);
       } else {
         if (foundUser.role === "administratorius") {
-//paimti id is HistoryUser, pagal ji rasti username su UserFind
-// var a = req.__history.version;
-// console.log(a);
-// userDoc.__history = {
-//   event: 'updated',
-//   method: 'updateTank'
-// };
-// var b = foundUser.__history.event;
-// console.log(b);
-
-let query = {
-    find: {}, // Must be an object
-    select: {}, // Must be an object
-    limit: 5
-  };
-console.log(userDoc.getDiffs(query));
-
-        User.find({}, function(err, users_history) {
+        HistoryUser.find({}, function(err, users_history) {
             if (err) {
               console.log(err);
             } else {
@@ -220,7 +180,6 @@ console.log(userDoc.getDiffs(query));
     res.redirect("/login");
   }
 });
-//
 
 app.post("/create", function(req, res) {
   if (req.isAuthenticated()) {
