@@ -17,6 +17,7 @@
       <%if (users_history.d.role != null) { %> <span class="" ><span class="font-weight-bold">Rolė:</span> <%=users_history.d.role%></span> <br> <% } %>
       <%if (users_history.d.rolesKeitimas != null) { %> <span class="" ><span class="font-weight-bold">Rolės keitimas:</span> <%=users_history.d.rolesKeitimas%></span> <br> <% } %>
       <span class=""><span class="font-weight-bold">Data ir laikas:</span> <%=users_history.t%></span> <br>
+        <span class=""><span class="font-weight-bold">X:</span> <%=users_history.version%></span> <br>
       <span class=""><span class="font-weight-bold">Veiksmas:</span> </span>
       <select name="" class="form-select form-control" readonly>
         <option class="others" <%if (users_history.o == "i") { %> selected <% } %>value="i">Sukūrimas</option>

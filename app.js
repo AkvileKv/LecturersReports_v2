@@ -148,7 +148,7 @@ app.post("/login", (req, res) => {
 // METHOD FOR LOG
 app.get("/admin-history-log", (req, res) => {
 
-//var HistoryUser = User.historyModel();
+var HistoryUser = User.historyModel();
 
   if (req.isAuthenticated()) {
 
