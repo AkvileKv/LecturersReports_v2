@@ -122,7 +122,7 @@ app.post("/login", (req, res) => {
             console.log(err);
           } else {
             var a = req.user.username;
-            foundUser.updated_for = "Login to the system" +" "+ a;
+            foundUser.updated_for = "Login to the system as" +" "+ a;
             foundUser.save(function(err) {
               if (err) {
                  console.log(err);
@@ -148,7 +148,9 @@ app.post("/login", (req, res) => {
 // METHOD FOR LOG
 app.get("/admin-history-log", (req, res) => {
 
-var HistoryUser = User.historyModel();
+//var HistoryUser = User.historyModel();
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
 
   if (req.isAuthenticated()) {
 
@@ -157,19 +159,21 @@ var HistoryUser = User.historyModel();
         console.log(err);
       } else {
         if (foundUser.role === "administratorius") {
-        HistoryUser.find({}, function(err, users_history) {
-            if (err) {
-              console.log(err);
-            } else {
-                if (err) {
-                  console.log(err);
-                } else {
-                  res.render("admin-history-log", {
-                    users_history: users_history
-                  });
-                }
-            }
+
+          MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("reportsDB_v2");
+            dbo.collection("__historiesPlugin").find({}).toArray(function(err, users_history) {
+              if (err) console.log(err);
+              //console.log(users_history);
+
+              res.render("admin-history-log", {
+                users_history: users_history
+              });
+              db.close();
+            });
           });
+
         } else {
           console.log("You do not have permission");
           res.redirect("/login");

@@ -720,6 +720,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
 
 let options = {
   mongoose: mongoose, // A mongoose instance
+  modelName: '__historiesPlugin', // Name of the collection for the histories
   userCollection: 'users', // Colletcion to ref when you pass an user id
   userCollectionIdType: false, // Type for user collection ref id, defaults to ObjectId
   accountCollection: 'accounts', // Collection to ref when you pass an account id or the item has an account property
@@ -733,7 +734,7 @@ let options = {
   noDiffSave: false, // If true save event even if there are no changes
   noDiffSaveOnMethods: ['delete'], // If a method is in this list, it saves history even if there is no diff.
   noEventSave: true, // If false save only when __history property is passed
-  modelName: '__historiesPlugin', // Name of the collection for the histories
+
   embeddedDocument: false, // Is this a sub document
   embeddedModelName: '', // Name of model if used with embedded document
 

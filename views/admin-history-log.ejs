@@ -8,23 +8,82 @@
     <%  users_history.forEach(function(users_history){ %>
 
     <div class="">
-      <%if (users_history.d.vardas != null) { %> <span class="" ><span class="font-weight-bold">Vardas:</span> <%=users_history.d.vardas%></span> <br> <% } %>
-      <%if (users_history.d.pavarde != null) { %><span class=""><span class="font-weight-bold">Pavardė:</span> <%=users_history.d.pavarde%></span> <br> <% } %>
-      <%if (users_history.d.fakultetas != null) { %> <span class="" ><span class="font-weight-bold">Fakultetas:</span> <%=users_history.d.fakultetas%></span> <br> <% } %>
-      <%if (users_history.d.katedra != null) { %> <span class="" ><span class="font-weight-bold">Katedra:</span> <%=users_history.d.katedra%></span> <br> <% } %>
-      <%if (users_history.d.busenaVedejo != null) { %> <span class="" ><span class="font-weight-bold">Vedėjo ataskaitos būsena:</span> <%=users_history.d.busenaVedejo%></span> <br> <% } %>
-      <%if (users_history.d.busena != null) { %> <span class="" ><span class="font-weight-bold">Dėstytojo ataskaitos būsena:</span> <%=users_history.d.busena%></span> <br> <% } %>
-      <%if (users_history.d.role != null) { %> <span class="" ><span class="font-weight-bold">Rolė:</span> <%=users_history.d.role%></span> <br> <% } %>
-      <%if (users_history.d.rolesKeitimas != null) { %> <span class="" ><span class="font-weight-bold">Rolės keitimas:</span> <%=users_history.d.rolesKeitimas%></span> <br> <% } %>
-      <span class=""><span class="font-weight-bold">Data ir laikas:</span> <%=users_history.t%></span> <br>
-        <span class=""><span class="font-weight-bold">X:</span> <%=users_history.version%></span> <br>
-      <span class=""><span class="font-weight-bold">Veiksmas:</span> </span>
-      <select name="" class="form-select form-control" readonly>
-        <option class="others" <%if (users_history.o == "i") { %> selected <% } %>value="i">Sukūrimas</option>
-        <option class="others" <%if (users_history.o == "u") { %> selected <% } %>value="u">Redagavimas</option>
-      </select>
-      <span class=""><span class="font-weight-bold">Kas atliko:</span> <%=users_history.d.updated_for%></span> <br>
-      <span class=""><span class="font-weight-bold" name="idUser">Kuriam naudotojui:</span> <%=users_history.d._id%></span>
+      <span class=""><span class="font-weight-bold">Data:</span> <%=users_history.timestamp%></span> <br>
+      <%if (users_history.diff.updated_for != undefined  && users_history.diff.updated_for.length != 0) { %>
+      <%if (users_history.diff.updated_for.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Kas įvyko:</span> <%=users_history.diff.updated_for[0]%></span> <br>
+      <% } else { %>
+
+      <span class=""><span class="font-weight-bold">Kas atliko: </span> <%=users_history.diff.updated_for[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.vardas != undefined  && users_history.diff.vardas.length != 0) { %>
+      <%if (users_history.diff.vardas.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Vardas:</span> <%=users_history.diff.vardas[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Vardas. Buvusi reikšmė:</span> <%=users_history.diff.vardas[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Vardas. Nauja reikšmė:</span> <%=users_history.diff.vardas[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.pavarde != undefined  && users_history.diff.pavarde.length != 0) { %>
+      <%if (users_history.diff.pavarde.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Pavardė:</span> <%=users_history.diff.pavarde[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Pavardė. Buvusi reikšmė:</span> <%=users_history.diff.pavarde[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Pavardė. Nauja reikšmė:</span> <%=users_history.diff.pavarde[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.fakultetas != undefined  && users_history.diff.fakultetas.length != 0) { %>
+      <%if (users_history.diff.fakultetas.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Fakultetas:</span> <%=users_history.diff.fakultetas[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Fakultetas. Buvusi reikšmė:</span> <%=users_history.diff.fakultetas[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Fakultetas. Nauja reikšmė:</span> <%=users_history.diff.fakultetas[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.katedra != undefined  && users_history.diff.katedra.length != 0) { %>
+      <%if (users_history.diff.katedra.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Katedra:</span> <%=users_history.diff.katedra[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Katedra. Buvusi reikšmė:</span> <%=users_history.diff.katedra[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Katedra. Nauja reikšmė:</span> <%=users_history.diff.katedra[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.busenaVedejo != undefined  && users_history.diff.busenaVedejo.length != 0) { %>
+      <%if (users_history.diff.busenaVedejo.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Vedėjo ataskaitos būsena:</span> <%=users_history.diff.busenaVedejo[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Vedėjo ataskaitos būsena. Buvusi reikšmė:</span> <%=users_history.diff.busenaVedejo[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Vedėjo ataskaitos būsena. Nauja reikšmė:</span> <%=users_history.diff.busenaVedejo[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.busena != undefined  && users_history.diff.busena.length != 0) { %>
+      <%if (users_history.diff.busena.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Dėstytojo ataskaitos būsena:</span> <%=users_history.diff.busena[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Dėstytojo ataskaitos būsena. Buvusi reikšmė:</span> <%=users_history.diff.busena[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Dėstytojo ataskaitos būsena. Nauja reikšmė:</span> <%=users_history.diff.busena[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.role != undefined  && users_history.diff.role.length != 0) { %>
+      <%if (users_history.diff.role.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Rolė:</span> <%=users_history.diff.role[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Rolė. Buvusi reikšmė:</span> <%=users_history.diff.role[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Rolė. Nauja reikšmė:</span> <%=users_history.diff.role[1]%></span> <br>
+      <% } %>
+      <% } %>
+      <%if (users_history.diff.rolesKeitimas != undefined  && users_history.diff.rolesKeitimas.length != 0) { %>
+      <%if (users_history.diff.rolesKeitimas.length == 1) { %>
+      <span class=""><span class="font-weight-bold">Rolės keitimas:</span> <%=users_history.diff.rolesKeitimas[0]%></span> <br>
+      <% } else { %>
+      <span class=""><span class="font-weight-bold">Rolės keitimas. Buvusi reikšmė:</span> <%=users_history.diff.rolesKeitimas[0]%></span> <br>
+      <span class=""><span class="font-weight-bold">Rolės keitimas. Nauja reikšmė:</span> <%=users_history.diff.rolesKeitimas[1]%></span> <br>
+      <% } %>
+      <% } %>
+
+      <span class=""><span class="font-weight-bold" name="idUser">Kuriam naudotojui:</span> <%=users_history.collectionId%></span> <br>
+
     </div>
 
     <br>
