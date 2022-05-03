@@ -70,7 +70,7 @@ app.post("/register", (req, res) => {
     busenaVedejo: "nesukurta",
     role: "dėstytojas",
     rolesKeitimas: false,
-    updated_for: "New User Registration"
+    updated_for: "Registracija"
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -122,7 +122,7 @@ app.post("/login", (req, res) => {
             console.log(err);
           } else {
             var a = req.user.username;
-            foundUser.updated_for = "Login to the system as" +" "+ a;
+            foundUser.updated_for = "Prisijungimas" +" "+ a;
             foundUser.save(function(err) {
               if (err) {
                  console.log(err);
@@ -162,11 +162,12 @@ var url = "mongodb://localhost:27017/";
 
           MongoClient.connect(url, function(err, db) {
             if (err) throw err;
+
             var dbo = db.db("reportsDB_v2");
             dbo.collection("__historiesPlugin").find({}).toArray(function(err, users_history) {
-              if (err) console.log(err);
+              if (err) throw err;
+              //console.log(err);
               //console.log(users_history);
-
               res.render("admin-history-log", {
                 users_history: users_history
               });
