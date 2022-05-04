@@ -11,8 +11,6 @@
           <th scope="col">Data</th>
           <!-- <th scope="col">Prisijungęs naudotojas</th> -->
           <th scope="col">Kas įvyko/atliko</th>
-          <th scope="col">Vardas</th>
-          <th scope="col">Pavardė</th>
           <th scope="col">Fakultetas</th>
           <th scope="col">Katedra</th>
           <th scope="col">Vedėjo ataskaitos būsena</th>
@@ -34,30 +32,6 @@
             <span class=""><span class="font-weight-bold"></span> <%=users_history.diff.updated_for[0]%></span> <br>
             <% } else { %>
             <span class=""><span class="font-weight-bold"></span> <%=users_history.diff.updated_for[1]%></span> <br>
-            <% } %>
-            <% } else { %>
-            -
-            <% } %>
-          </td>
-          <td>
-            <%if (users_history.diff.vardas != undefined  && users_history.diff.vardas.length != 0) { %>
-            <%if (users_history.diff.vardas.length == 1) { %>
-            <span class=""> <%=users_history.diff.vardas[0]%></span> <br>
-            <% } else { %>
-            <span class=""><span class="font-weight-bold">Buvusi reikšmė:</span> <%=users_history.diff.vardas[0]%></span> <br>
-            <span class=""><span class="font-weight-bold">Nustatyta reikšmė:</span> <%=users_history.diff.vardas[1]%></span> <br>
-            <% } %>
-            <% } else { %>
-            -
-            <% } %>
-          </td>
-          <td>
-            <%if (users_history.diff.pavarde != undefined  && users_history.diff.pavarde.length != 0) { %>
-            <%if (users_history.diff.pavarde.length == 1) { %>
-            <span class=""> <%=users_history.diff.pavarde[0]%></span> <br>
-            <% } else { %>
-            <span class=""><span class="font-weight-bold">Buvusi reikšmė:</span> <%=users_history.diff.pavarde[0]%></span> <br>
-            <span class=""><span class="font-weight-bold">Nustatyta reikšmė:</span> <%=users_history.diff.pavarde[1]%></span> <br>
             <% } %>
             <% } else { %>
             -
