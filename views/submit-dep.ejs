@@ -5,6 +5,19 @@
 <div class="container">
   <div class="jumbotron ">
 
+
+
+    <h1 class="text-center noprint">Katedros veiklos ataskaitos pateikimas</h1>
+    <%if ( user.busenaVedejo === "nesukurta") { %>
+
+    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
+
+    <% } else if (user.katedra == null || user.fakultetas == null) { %>
+
+    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
+
+    <% } else { %>
+      
     <div class="printable">
       <div class="text-center">
         <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
@@ -31,23 +44,16 @@
       </div>
     </div>
 
-    <h1 class="text-center noprint">Katedros veiklos ataskaitos pateikimas</h1>
-    <%if ( user.busenaVedejo === "nesukurta") { %>
-
-    <p class="lead">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
-
-    <% } else { %>
-
     <form action="/submit-dep" method="post">
 
       <% if (user.busenaVedejo === "užrakinta") { %>
-        <br>
+      <br>
       <div class="text-center">
-      <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
+        <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
       </div>
       <p class="lead text-danger noprint text-center">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į administratorių.</p>
       <% } else { %>
-        <br>
+      <br>
       <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
       <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
       <div class="row noprint">
@@ -235,7 +241,7 @@
             <div class="print_helper"><%=user.mokslKrypt%></div>
           </div>
           <% }) %>
-              <input type="hidden" id="table4_id" name="table4_name" value="<%=numb4%>">
+          <input type="hidden" id="table4_id" name="table4_name" value="<%=numb4%>">
         </div>
         <input type="hidden" id="table4_id" name="table4_name" value="<%=numb4%>">
         <p class="text-justify">*<b> V</b> – vadovėliai, <b>MK</b> – mokomosios knygos, <b>ML</b> – kiti metodiniai leidiniai, <b>KM</b> – konferencijų medžiaga ir <b>Kt </b>– kita.
@@ -1525,12 +1531,12 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0"
+              onkeyup="if(this.value<0){this.value= this.value * -1}" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0"
+              onkeyup="if(this.value<0){this.value= this.value * -1}" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -1551,12 +1557,12 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -1601,12 +1607,12 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -1627,15 +1633,15 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
+              name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text"readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off" ><%=user.destytojas%></textarea>
+            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=user.destytojas%></textarea>
             <div class="print_helper"><%=user.destytojas%></div>
           </div>
         </div>
@@ -1676,15 +1682,15 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>"
+              name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>"
+              name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" autocomplete="off" ><%=user.destytojas%></textarea>
+            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" autocomplete="off"><%=user.destytojas%></textarea>
             <div class="print_helper"><%=user.destytojas%></div>
           </div>
         </div>
@@ -1702,12 +1708,12 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>"
+              name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>"
+              name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -1751,15 +1757,15 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>"
+              name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>"
+              name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off" ><%=user.destytojas%></textarea>
+            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=user.destytojas%></textarea>
             <div class="print_helper"><%=user.destytojas%></div>
           </div>
         </div>
@@ -1777,15 +1783,15 @@
             <div class="print_helper"><%=user.pazymNr%></div>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>"
+              name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" readonly="readonly" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>"
+              name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off" ><%=user.destytojas%></textarea>
+            <textarea rows="1" type="text" readonly="readonly" class="form-control the_textarea" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=user.destytojas%></textarea>
             <div class="print_helper"><%=user.destytojas%></div>
           </div>
         </div>
@@ -1815,7 +1821,7 @@
             <label style="text-align: right;" for="">Iš viso:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValLT26" min="0" name="kTOV4_trukmeValLTbendr" onkeyup="if(this.value<0){this.value= this.value * -1}" class="form-control text-center"  readonly="readonly" autocomplete="off">
+            <input type="number" id="isVisoTrukmeValLT26" min="0" name="kTOV4_trukmeValLTbendr" onkeyup="if(this.value<0){this.value= this.value * -1}" class="form-control text-center" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
             <input type="number" id="isVisoTrukmeValNeLT26" min="0" name="kTOV4_trukmeValNeLTbendr" class="form-control text-center" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off" value="0">
@@ -2916,7 +2922,7 @@
           <p><%=user.vardas%> <%=user.pavarde%></p>
         </div>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" id="currentDate" value=""  maxlength="10">
+          <input type="text" style="  border: none;" class="edit-left" id="currentDate" value="" maxlength="10">
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -2928,10 +2934,11 @@
         </div>
         <div class="database-result-edit ">
           <p class="edit-left">Prodekanas (-ė)</p>
-          <p><%=foundFaculty.prodekanas%><p>
+          <p><%=foundFaculty.prodekanas%>
+          <p>
         </div>
         <div class="database-result-edit ">
-            <input type="text" style="  border: none;" class="edit-left" id="currentDate2" value=""  maxlength="10">
+          <input type="text" style="  border: none;" class="edit-left" id="currentDate2" value="" maxlength="10">
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -3075,14 +3082,14 @@
   document.getElementById("currentDate5").placeholder = todayDate;
 </script>
 <script>
-var tx = document.getElementsByTagName('textarea');
-for (var i = 0; i < tx.length; i++) {
-  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-  tx[i].addEventListener("input", OnInput, false);
-}
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
+  }
 
-function OnInput(e) {
-  this.style.height = 'auto';
-  this.style.height = (this.scrollHeight) + 'px';
-}
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
 </script>

@@ -4,25 +4,47 @@
   <div class="jumbotron ">
 
     <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
+<br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Fakultetas</th>
+          <th scope="col">Katedra</th>
+          <th scope="col">Rolė</th>
+          <th scope="col">Naudotojas</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
 
     <%  users.forEach(function(user){ %>
     <div class="database-result-edit ">
-      <div class="edit-left">
-        <%= user.role %> <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
-      </div>
-
-      <div class="">
-        <div class="btn-group" role="group" aria-label="" id="group">
-          <a type="button" class="btn btn-primary" href="/admin-edit-user/<%= user._id %>"> Redaguoti</a>
-          <a type="button" class="btn btn-secondary" href="/admin-all-user-reports/<%= user._id %>"> Ataskaitos</a>
-          <form action="/delete" method="post">
-            <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti naudotoją?');" value="<%=user._id%>">Ištrinti</button>
-          </form>
+    <tbody>
+      <tr>
+        <td><%=user.fakultetas%></td>
+        <td><%=user.katedra%></td>
+        <td><%=user.role%></td>
+        <td scope="row">
+          <div class="edit-left">
+            <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+          </div>
+        </td>
+        <td>
+          <div class="">
+            <div class="btn-group" role="group" aria-label="" id="group">
+              <a type="button" class="btn btn-primary" href="/admin-edit-user/<%= user._id %>"> Redaguoti</a>
+              <a type="button" class="btn btn-secondary" href="/admin-all-user-reports/<%= user._id %>"> Ataskaitos</a>
+              <form action="/delete" method="post">
+                <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti naudotoją?');" value="<%=user._id%>">Ištrinti</button>
+              </form>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
         </div>
-      </div>
-    </div>
-
     <% }) %>
+
+  </table>
 
   </div>
 </div>

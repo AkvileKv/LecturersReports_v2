@@ -7,19 +7,27 @@
 
     <div class="printable">
       <div class="text-center">
-        <p>VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETAS</p>
-        <p><%=katedraUpper%> KATEDRA</p>
-        <p class="font-weight-bold">DĖSTYTOJO DARBO ATASKAITA</p>
+        <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
+        <p class="font-weight-bold"><%=katedraUpper%> KATEDRA</p>
+
+        <div class="text-right">
+          <p>TVIRTINU</p>
+          <p>Dekanas</p>
+          <p class="">(Parašas)</p>
+          <p><%=foundFaculty.dekanas%>
+          <p>
+        </div>
+        <br>
         <p class="font-weight-bold">
           <script>
+            document.write(new Date().getFullYear() - 1)
+          </script>
+          –
+          <script>
             document.write(new Date().getFullYear())
-          </script> m. m.
+          </script> M. M. DĖSTYTOJO DARBO ATASKAITA
         </p>
-      </div>
-
-      <div class="database-result-edit ">
-        <p class="edit-left font-weight-bold"> <%=user.destytojas.pareigos%> </p>
-        <p class="font-weight-bold"><%=vardasUpper%> <%=pavardeUpper%></p>
+      
       </div>
     </div>
 
@@ -59,7 +67,7 @@
             </div>
             <div class="col-md-11 mb-3">
               <label>Pavardė, vardas</label>
-              <textarea type="text" rows="1" class="form-control" name="vardPavard" autocomplete="off" readonly="readonly"><%=user.vardas + " " + user.pavarde%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="vardPavard" autocomplete="off" readonly="readonly"><%=user.pavarde + " " + user.vardas%></textarea>
             </div>
             <div class="col-md-1 mb-3">
             </div>

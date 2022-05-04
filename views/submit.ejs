@@ -5,6 +5,19 @@
 <div class="container">
   <div class="jumbotron ">
 
+
+
+    <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas</h1>
+
+    <%if ( user.busena === "nesukurta") { %>
+
+    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
+
+    <% } else if (user.katedra == null || user.fakultetas == null) { %>
+    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
+
+    <% } else { %>
+
     <div class="printable">
       <div class="text-center">
         <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
@@ -30,14 +43,6 @@
         <br>
       </div>
     </div>
-
-    <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas</h1>
-
-    <%if ( user.busena === "nesukurta") { %>
-
-    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
-
-    <% } else { %>
 
     <form action="/submit" method="post">
 

@@ -9,24 +9,29 @@
   <div class="jumbotron ">
     <form action="/update-profile-admin" method="post">
 
-      <div class="form-group ">
+      <div class="form-group">
 
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Vardas:</label>
             <input type="text" class="form-control " name="vardas" value="<%=user.vardas%>" placeholder="" required>
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Pavardė:</label>
             <input type="text" class="form-control " name="pavarde" value="<%=user.pavarde%>" placeholder="" required>
           </div>
         </div>
-
-
+        <br>
         <div class="row">
-          <div class="col-md-6 mb-3 text-center">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 text-center">
             <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
           </div>
         </div>

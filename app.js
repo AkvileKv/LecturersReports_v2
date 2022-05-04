@@ -9489,7 +9489,7 @@ app.get("/admin-faculties-edit/:facultyId", (req, res) => {
   }
 });
 
-// Aadministratorius sukuria fakultetą
+// Aadministratorius atnaujina fakultetą
 app.post("/edit-faculty", (req, res) => {
 
   Faculty.findById(req.body.id, function(err, foundFaculty) {
@@ -9511,6 +9511,22 @@ app.post("/edit-faculty", (req, res) => {
       }
     }
   });
+});
+
+// Administratorius ištrina naudotoją iš DB
+app.post("/delete-faculty", function(req, res) {
+
+  Faculty.deleteOne({
+      _id: req.body.deleteById
+    },
+    function(err) {
+      if (!err) {
+        res.redirect("/admin-faculties-list");
+      } else {
+        res.send(err);
+      }
+    }
+  );
 });
 
 app.listen(3000, function() {
