@@ -4,23 +4,44 @@
   <div class="jumbotron ">
 
     <h1 class="text-center">Visų katedros dėstytojų sąrašas</h1>
-
-    <%  users.forEach(function(user){ %>
-    <div class="database-result-edit ">
-      <div class="edit-left">
-        <%= user.role %> <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+    <br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Katedra</th>
+          <th scope="col">Ataskaitos būsena</th>
+          <th scope="col">Rolė</th>
+          <th scope="col">Naudotojas</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <%  users.forEach(function(user){ %>
+      <% if (user.rolesKeitimas == false && user.role == "katedros vedėjas"){ %>
+      <%  } else { %>
+      <div class="database-result-edit ">
+        <tbody>
+          <tr>
+            <td><%=user.katedra%></td>
+            <td><%=user.busena%></td>
+            <td><%= user.role %></td>
+            <td><span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span></td>
+            <td>
+              <div class="text-right">
+                <div class="btn-group" role="group" aria-label="" id="group">
+                  <a type="button" class="btn btn-primary" href="/dep-edit-user/<%= user._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-secondary" href="/dep-lecturer-report/<%= user._id %>"> Ataskaita</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </div>
+      <% } %>
 
-      <div class="">
-        <div class="btn-group" role="group" aria-label="" id="group">
-          <a type="button" class="btn btn-primary" href="/dep-edit-user/<%= user._id %>"> Redaguoti</a>
-          <a type="button" class="btn btn-secondary" href="/dep-lecturer-report/<%= user._id %>"> Ataskaita</a>
-        </div>
-      </div>
-    </div>
 
-    <% }) %>
+      <% }) %>
 
+    </table>
   </div>
 </div>
 
