@@ -17,13 +17,20 @@
       </thead>
       <%  users.forEach(function(user){ %>
       <% if (user.rolesKeitimas == false && user.role == "katedros vedėjas"){ %>
+        <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
       <%  } else { %>
       <div class="database-result-edit ">
         <tbody>
           <tr>
             <td><%=user.katedra%></td>
             <td><%=user.busena%></td>
-            <td><%= user.role %></td>
+            <td>
+              <%if (user.rolesKeitimas == true){ %>
+              katedros vedėjas / dėstytojas
+              <%  } else { %>
+              <%=user.role%>
+              <%  } %>
+            </td>
             <td><span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span></td>
             <td>
               <div class="text-right">

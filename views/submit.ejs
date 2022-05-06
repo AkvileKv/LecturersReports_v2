@@ -13,7 +13,7 @@
 
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
 
-    <% } else if (user.katedra == null || user.fakultetas == null) { %>
+    <% } else if (user.katedra == "" || user.fakultetas == "") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
 
     <% } else { %>

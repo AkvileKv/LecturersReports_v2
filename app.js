@@ -868,6 +868,13 @@ app.post("/create", function(req, res) {
             foundUser.updated_for = req.user.username,
             foundUser.busena = req.body.ataskaitos_busena
 
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+
+foundUser.destytojas.ivykiuDatos.sukurimas = dateTime
+
           foundUser.save(function(err) {
             if (!err) {
               console.log("Succesfully created");
@@ -1666,6 +1673,13 @@ app.post("/update", (req, res) => {
         foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
           foundUser.busena = req.body.ataskaitos_busena
+
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date+' '+time;
+
+          foundUser.destytojas.ivykiuDatos.atnaujinimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
@@ -2582,6 +2596,13 @@ app.post("/submit", function(req, res) {
         foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
           foundUser.busena = req.body.ataskaitos_busena
+
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date+' '+time;
+
+          foundUser.destytojas.ivykiuDatos.pateikimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
@@ -3566,6 +3587,13 @@ app.post("/create-dep", (req, res) => {
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
           foundUser.updated_for = req.user.username
+
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date+' '+time;
+
+          foundUser.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
@@ -4580,6 +4608,13 @@ app.post("/edit-dep", (req, res) => {
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
           foundUser.updated_for = req.user.username
+
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date+' '+time;
+
+          foundUser.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
@@ -5771,6 +5806,14 @@ app.post("/submit-dep", function(req, res) {
 
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
           foundUser.updated_for = req.user.username
+
+          var today = new Date();
+          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date+' '+time;
+
+          foundUser.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");

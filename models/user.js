@@ -599,8 +599,12 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       kompTobulinimas: String,
       kitosVeikl: String
     },
-    ataskaitosPateikimoData: String,
-  },
+    ivykiuDatos: {
+      sukurimas:  Date,
+      atnaujinimas: Date,
+      pateikimas: Date
+    }
+  }, // dėstytojas end
   katedrosVedejas: {
     kKPP1_1: [kKPP1_1Schema], //1 lentelė
     kDS1: [kDS1Schema], // 2
@@ -714,8 +718,13 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         veiklSavinalize_array: [veiklSavinalize_Schema],
         isvadosApieVeikl: String
       }
+    },
+    ivykiuDatos: {
+      sukurimas:  Date,
+      atnaujinimas: Date,
+      pateikimas: Date
     }
-  }
+  } //vedejo end
 });
 
 let options = {
