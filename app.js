@@ -5944,6 +5944,7 @@ app.post("/update-user-dep", function(req, res) {
             foundUser.pavarde = req.body.pavarde,
             foundUser.katedra = req.body.katedra,
             foundUser.fakultetas = req.body.fakultetas,
+            foundUser.katedrosVedejas.katedrosDestytojuSk= req.body.katedrosDestytojuSkaicius,
             foundUser.updated_for = req.user.username
 
           foundUser.save(function(err) {
@@ -5977,20 +5978,25 @@ app.get("/dep-lecturers-list", (req, res) => {
 
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
-      let vedejoKatedra = req.user.katedra
+      let vedejoKatedra;
+      if (req.user.katedra === "") {
+        vedejoKatedra = "nepriskirta";
+      } else {
+        vedejoKatedra = req.user.katedra
+      }
       if (err) {
         console.log(err);
       } else {
         if (foundUser.role === "katedros vedėjas") {
           User.find({
             katedra: vedejoKatedra,
-
           }, function(err, users) {
             if (err) {
               console.log(err);
             } else {
               res.render("dep-lecturers-list", {
-                users: users
+                users: users,
+                depUser: foundUser
               });
             }
           });

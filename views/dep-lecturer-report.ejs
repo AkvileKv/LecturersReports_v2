@@ -5,6 +5,10 @@
 <div class="container">
   <div class="jumbotron ">
 
+    <h1 class="text-center noprint">Dėstytojo <%=user.vardas%> <%=user.pavarde%> ataskaitos redagavimas</h1>
+    <% if (user.katedra == "" || user.fakultetas == "") { %>
+    <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, nėra nepriskirta katedra ir/arba fakultetas.</p>
+        <% } else { %>
     <div class="printable">
       <div class="text-center">
         <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
@@ -31,7 +35,6 @@
       </div>
     </div>
 
-    <h1 class="text-center noprint">Dėstytojo <%=user.vardas%> <%=user.pavarde%> ataskaitos redagavimas</h1>
     <form action="/update-report-lecturer-dep" method="post">
 
       <div class="form-group ">
@@ -6438,13 +6441,14 @@
           <input type="text" style="border: none;" class="edit-left" id="currentDate3" value="" maxlength="10">
         </div>
         <br>
-
         <% } else { %>
         <p class="lead text-danger noprint text-center">Dėstytojas nėra pateikęs ataskaitos, redagavimas nėra galimas.</p>
         <% } %>
-
       </div>
     </form>
+          <% } %>
+
+
   </div>
 </div>
 

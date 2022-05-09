@@ -606,6 +606,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
     }
   }, // dėstytojas end
   katedrosVedejas: {
+    katedrosDestytojuSk: Number,
     kKPP1_1: [kKPP1_1Schema], //1 lentelė
     kDS1: [kDS1Schema], // 2
     kKPP1_3: [kKPP1_3Schema], //3

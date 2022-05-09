@@ -207,7 +207,7 @@
 
         <!-- 2 lentelė -->
         <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
-        <p class=" font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
+        <p class="font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
         <% var numb2 = 0; %>
         <%  users.forEach(function(user){ %>
         <%  if (user.busena === "užrakinta" || user.busena === "užrakintaVedėjo"){ %>
@@ -243,6 +243,7 @@
         </div>
         <% }%>
         <% }) %>
+
         <input type="hidden" id="table2_id" name="table2_name" value="<%=numb2%>">
 
         <!-- 3 lentelė -->
@@ -4671,12 +4672,17 @@
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
 
       </div>
+      <%  if (numb2 == logedInUser.katedrosVedejas.katedrosDestytojuSk){ %>
       <div class="row">
         <div class="text-center">
           <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti?');">IŠSAUGOTI</button>
         </div>
       </div>
-
+      <% } else { %>
+        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
+        <p class="lead text-info text-center">Dėstytojų pateiktos ataskaitos: <%=numb2%></p>
+        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%></p>
+      <% } %>
     </form>
     <% } else {  %>
     <p class="lead">Ataskaitos sukūrimas nėra galimas. Ataskaitos būsena neapibrėžta, kreipkitės į administratorių</p>
