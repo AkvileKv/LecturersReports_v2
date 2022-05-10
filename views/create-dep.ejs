@@ -10,9 +10,15 @@
 
     <% } else if (logedInUser.busenaVedejo === "nesukurta") { %>
 
-    <br><br>
+
     <form action="/create-dep" method="post">
       <div class="form-group ">
+        <%  if (numb2 != logedInUser.katedrosVedejas.katedrosDestytojuSk){ %>
+<p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. Ne visi dėstytojai yra pateikę ataskaitas.</p>
+        <% } else { %>
+
+        <% } %>
+            <br><br>
       <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
         <!-- 1 lentelė -->
         <!-- mV2_D04 -->
@@ -4679,7 +4685,7 @@
         </div>
       </div>
       <% } else { %>
-        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
+        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. Ne visi dėstytojai yra pateikę ataskaitas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
         <p class="lead text-info text-center">Dėstytojų pateiktos ataskaitos: <%=numb2%></p>
         <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%></p>
       <% } %>

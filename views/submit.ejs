@@ -2695,8 +2695,9 @@
           <input type="text" style="  border: none;" class="edit-left" name="date" id="currentDate4" value="" maxlength="10">
           <p class="text-center font-italic">(parašas)</p>
         </div>
+        <br>
         <!-- dėstytojo formos pabaiga -->
-
+<p class="lead text-danger text-center noprint">--- Toliau pildo katedros vedėjas ---</p>
         <br>
         <p><b>Katedros vedėjo (-s) išvados apie suplanuotą ir įvykdytą (jei neįvykdyta – nurodyti priežastis) dėstytojo veiklą.</b></p>
         <div class="form-row">
@@ -2773,6 +2774,8 @@
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
+        <p class="lead text-danger text-center noprint">------</p>
+        <br>
         <div class="database-result-edit ">
           <p class="edit-left">Su išvadomis ir katedros vedėjo (-os) vertinimu susipažinau</p>
           <p><%=user.vardas%> <%=user.pavarde%></p>
@@ -2785,7 +2788,8 @@
 
         <div class="text-left">
           <br>
-          <p>Susipažinau, <input type="text" class="text-left" style="border: none;" size="43" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti"> </p>
+          <p>Susipažinau,
+        <input type="text" class="text-left" style="border: none;" size="48" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti"> </p>
           <p>Prodekanas (-ė)</p>
           <p class="font-italic">(parašas)</p>
           <p><%=foundFaculty.prodekanas%></p>
