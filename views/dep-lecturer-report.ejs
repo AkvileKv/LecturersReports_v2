@@ -2681,8 +2681,8 @@
           <p class="edit-left">Dėstytojas</p>
           <p><%=user.vardas%> <%=user.pavarde%></p>
         </div>
-        <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" name="date" id="currentDate4" value="" maxlength="10">
+        <div class="database-result-edit">
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.destytojas.ataskaitosPateikimoData%>" readonly>
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <!-- dėstytojo formos pabaiga -->
@@ -6330,6 +6330,7 @@
         </div>
         <button class="plus-button" type="button" onclick="kV5_34()">+</button>
 
+        <div <%if (user.destytojas.kV5_kitaInfo === "") { %> class="noprint" <% } %>>
         <p class="font-weight-bold"> <br><br>Kita informacija:</p>
         <div class="form-row">
           <div class="col-md-12 mb-3">
@@ -6337,12 +6338,13 @@
           </div>
         </div>
         <br>
+        </div>
         <div class="database-result-edit ">
           <p class="edit-left">Dėstytojas</p>
           <p><%=user.vardas%> <%=user.pavarde%></p>
         </div>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" name="date" id="currentDate4" value="" maxlength="10">
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.destytojas.ataskaitosPateikimoData%>" readonly>
           <p class="text-center font-italic">(parašas)</p>
         </div>
 

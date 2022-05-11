@@ -57,7 +57,7 @@
         <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
       </div>
       <div class="row noprint">
-        <p class="lead text-danger noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į katedros vedėją.</p>
+        <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į katedros vedėją.</p>
       </div>
       <% } else { %>
       <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
@@ -2692,7 +2692,14 @@
           <p><%=user.vardas%> <%=user.pavarde%></p>
         </div>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" name="date" id="currentDate4" value="" maxlength="10">
+
+        <%if (user.busena == "redaguojama") { %>
+            <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" id="currentDate4" value="" maxlength="10">
+          <% } else if (user.busena == "užrakintaVedėjo" || user.busena == "užrakinta") { %>
+            <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.destytojas.ataskaitosPateikimoData%>" readonly>
+          <% } else { %>
+            -
+          <%  } %>
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -2811,7 +2818,8 @@
   document.getElementById("currentDate").placeholder = todayDate;
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
-  document.getElementById("currentDate4").placeholder = todayDate;
+  // document.getElementById("currentDate4").placeholder = todayDate;
+  document.getElementById("currentDate4").value = todayDate;
 </script>
 <script>
   var tx = document.getElementsByTagName('textarea');

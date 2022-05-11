@@ -2594,15 +2594,16 @@ app.post("/submit", function(req, res) {
           }
         }
         foundUser.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
-          foundUser.updated_for = req.user.username,
-          foundUser.busena = req.body.ataskaitos_busena
+        foundUser.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
+        foundUser.updated_for = req.user.username,
+        foundUser.busena = req.body.ataskaitos_busena
 
           var today = new Date();
           var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
           var dateTime = date+' '+time;
 
-          foundUser.destytojas.ivykiuDatos.pateikimas = dateTime
+        foundUser.destytojas.ivykiuDatos.pateikimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
@@ -2631,7 +2632,7 @@ app.get("/create-dep", function(req, res) {
 
         User.find({
           katedra: vedejoKatedra,
-          busena: "užrakinta"
+          $or:[{busena: "užrakinta"},{busena:"užrakintaVedėjo"}]
         }, function(err, users) {
           if (err) {
             console.log(err);
@@ -7434,6 +7435,13 @@ app.post("/update-report-lecturer-dep", (req, res) => {
             foundUser.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
 
             foundUser.busena = req.body.ataskaitos_busena
+
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+
+            foundUser.destytojas.ivykiuDatos.pateikimasVedejo = dateTime
         }
         foundUser.updated_for = req.user.username
 

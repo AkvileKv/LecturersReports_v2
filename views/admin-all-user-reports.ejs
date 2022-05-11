@@ -12,7 +12,8 @@
           <th scope="col">Sukūrimo data</th>
           <th scope="col">Atnaujinimo data</th>
           <th scope="col">Pateikimo data</th>
-            <th scope="col">Ataskaitos būsena</th>
+          <th scope="col">Pateikimo data (pateikia katedros vedėjas)</th>
+          <th scope="col">Ataskaitos būsena</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -39,6 +40,13 @@
                   -
                   <% } else { %>
                   <%= user.destytojas.ivykiuDatos.pateikimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.destytojas.ivykiuDatos == undefined || user.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.destytojas.ivykiuDatos.pateikimasVedejo %>
                   <% } %>
                 </td>
                 <td><%= user.busena %></td>
@@ -69,6 +77,9 @@
                   <% } else { %>
                   <%= user.katedrosVedejas.ivykiuDatos.pateikimas %>
                   <% } %>
+                </td>
+                <td>
+                  <p class="text-info">neegzistuoja</p>
                 </td>
                 <td><%= user.busenaVedejo %></td>
                 <td>
@@ -101,6 +112,13 @@
               <%= user.destytojas.ivykiuDatos.pateikimas %>
               <% } %>
             </td>
+            <td>
+              <% if (user.destytojas.ivykiuDatos == undefined || user.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.destytojas.ivykiuDatos.pateikimasVedejo %>
+              <% } %>
+            </td>
             <td><%= user.busena %></td>
             <td>
               <div class="text-right">
@@ -131,6 +149,9 @@
               <% } else { %>
               <%= user.katedrosVedejas.ivykiuDatos.pateikimas %>
               <% } %>
+            </td>
+            <td>
+              <p class="text-info">neegzistuoja</p>
             </td>
             <td><%= user.busenaVedejo %></td>
             <td>
