@@ -605,7 +605,9 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       pateikimas: Date,
       pateikimasVedejo: Date
     },
-    ataskaitosPateikimoData: String
+    ataskaitosPateikimoData: String,
+    ataskaitosPateikimoDataVedejo: String,
+    vedejoVardasPavarde: String
   }, // dėstytojas end
   katedrosVedejas: {
     katedrosDestytojuSk: Number,

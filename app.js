@@ -6854,6 +6854,9 @@ app.post("/update-report-lecturer-dep", (req, res) => {
             foundUser.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
             foundUser.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
 
+            foundUser.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
+            foundUser.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
+
             foundUser.busena = req.body.ataskaitos_busena
 
         } else if (req.body.ataskaitos_busena == "užrakintaVedėjo") { //busena perduodama paspaudus mygtuka
@@ -7434,6 +7437,8 @@ app.post("/update-report-lecturer-dep", (req, res) => {
             foundUser.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
             foundUser.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
 
+            foundUser.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
+            foundUser.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
             foundUser.busena = req.body.ataskaitos_busena
 
             var today = new Date();

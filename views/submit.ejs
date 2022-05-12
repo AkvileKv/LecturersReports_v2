@@ -8,7 +8,7 @@
 
 
     <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas</h1>
-
+    <br>
     <%if ( user.busena === "nesukurta") { %>
 
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
@@ -2773,11 +2773,29 @@
 
         <div class="database-result-edit ">
           <p class="edit-left">Katedros vedėjas (-a)</p>
-          <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė">
+          <%if (user.busena == "užrakinta") { %>
+              <% if (user.destytojas.vedejoVardasPavarde == undefined) { %>
+                <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
+                <% } else { %>
+                  <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>" readonly>
+                  <% } %>
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>" readonly>
+            <% } else { %>
+                      <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė" readonly>
+            <%  } %>
+
         </div>
         <br>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" id="currentDate" value="" maxlength="10">
+          <%if (user.busena == "užrakinta") { %>
+              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="">
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
+            <% } else { %>
+                  <input type="text" style="border: none;" class="edit-left" value="" maxlength="10" readonly placeholder="">
+            <%  } %>
+
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -2815,7 +2833,6 @@
 </div>
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
-  document.getElementById("currentDate").placeholder = todayDate;
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
   // document.getElementById("currentDate4").placeholder = todayDate;

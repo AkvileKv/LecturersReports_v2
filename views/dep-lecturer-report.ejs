@@ -51,7 +51,7 @@
         </div>
         <br>
         <% if (user.busena === "užrakintaVedėjo") { %>
-        <p class="lead text-danger noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į administratorių.</p>
+        <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į administratorių.</p>
         <% } else { %>
         <!-- <input type="text" name="ataskaitos_busena" value="užrakintaVedėjo" hidden> -->
         <div class="row noprint">
@@ -2755,11 +2755,27 @@
 
         <div class="database-result-edit ">
           <p class="edit-left">Katedros vedėjas (-a)</p>
-          <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė">
+          <%if (user.busena == "užrakinta") { %>
+              <% if (user.destytojas.vedejoVardasPavarde == undefined) { %>
+                <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
+                <% } else { %>
+                  <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>">
+                  <% } %>
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>" readonly>
+            <% } else { %>
+              -
+            <%  } %>
         </div>
         <br>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" id="currentDate" value="" maxlength="10">
+          <%if (user.busena == "užrakinta") { %>
+              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" id="currentDate" value="" maxlength="10">
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
+            <% } else { %>
+              -
+            <%  } %>
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -2775,7 +2791,7 @@
 
         <div class="text-left">
           <br>
-          <p>Susipažinau, <input type="text" class="text-left" style="border: none;" size="43" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti"> </p>
+          <p>Susipažinau, <input type="text" class="text-left" style="border: none;" size="47" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti"> </p>
           <p>Prodekanas (-ė)</p>
           <p class="font-italic">(parašas)</p>
           <p><%=foundFaculty.prodekanas%></p>
@@ -6418,11 +6434,32 @@
 
         <div class="database-result-edit ">
           <p class="edit-left">Katedros vedėjas (-a)</p>
-          <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė">
+          <%if (user.busena == "užrakinta") { %>
+              <% if (user.destytojas.vedejoVardasPavarde == undefined) { %>
+                <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
+                <% } else { %>
+                  <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>">
+                  <% } %>
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.destytojas.vedejoVardasPavarde%>" readonly>
+            <% } else { %>
+              -
+            <%  } %>
         </div>
         <br>
         <div class="database-result-edit ">
-          <input type="text" style="  border: none;" class="edit-left" id="currentDate" value="" maxlength="10">
+          <%if (user.busena == "užrakinta") { %>
+            <% if (user.destytojas.ataskaitosPateikimoDataVedejo == undefined || user.destytojas.ataskaitosPateikimoDataVedejo == undefined) { %>
+                <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" id="currentDate" value="" maxlength="10">
+              <% } else { %>
+                <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>">
+                <% } %>
+            <% } else if (user.busena == "užrakintaVedėjo") { %>
+              <p class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>"></p>
+
+            <% } else { %>
+              -
+            <%  } %>
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -9936,10 +9973,9 @@
 
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
-  document.getElementById("currentDate").placeholder = todayDate;
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
-  document.getElementById("currentDate4").placeholder = todayDate;
+  document.getElementById("currentDate").value = todayDate;
 </script>
 
 <script>
