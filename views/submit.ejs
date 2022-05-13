@@ -5,19 +5,13 @@
 <div class="container">
   <div class="jumbotron ">
 
-
-
     <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas</h1>
-    <br>
+
     <%if ( user.busena === "nesukurta") { %>
-
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
-
     <% } else if (user.katedra == "" || user.fakultetas == "") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
-
     <% } else { %>
-
     <div class="printable">
       <div class="text-center">
         <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
@@ -112,22 +106,22 @@
           <p class="font-weight-bold">2 lentelė. Kontaktinis darbas</p>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label><br><br></label>
+              <label><br></label>
             </div>
-            <div class="col-md-5 mb-3">
-              <label><br>Dalykas</label>
+            <div class="col-md-4 mb-3">
+              <label>Dalykas</label>
             </div>
-            <div class="col-md-1 mb-3">
+            <div class="col-md-2 mb-3">
               <label>Akademinė grupė</label>
             </div>
-            <div class="col-md-1 mb-3">
-              <label><br>Semestras</label>
+            <div class="col-md-1 mb-3 text-center">
+              <label>Semestras</label>
             </div>
-            <div class="col-md-2 mb-3">
-              <label><br>Planuota</label>
+            <div class="col-md-2 mb-3 text-center">
+              <label>Planuota</label>
             </div>
-            <div class="col-md-2 mb-3">
-              <label><br>Atlikta</label>
+            <div class="col-md-2 mb-3 text-center">
+              <label>Atlikta </label>
             </div>
           </div>
           <% var numb = 0; %>
@@ -135,25 +129,28 @@
           <% numb++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <input type="text" readonly="readonly" class="form-control text-center " rows="1" name="nr<%=numb%>" placeholder="" autocomplete="off" value="<%=numb%>">
+              <input type="text" readonly="readonly" class="form-control text-center the_textarea" rows="1" name="nr<%=numb%>" placeholder="" autocomplete="off" value="<%=numb%>">
+              <div class="print_helper"><%=numb%></div>
             </div>
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
               <textarea type="text" readonly="readonly" class="form-control the_textarea textarea" rows="1" name="dalykas<%=numb%>" placeholder="" autocomplete="off"><%=user.dalykas%></textarea>
               <div class="print_helper"><%=user.dalykas%></div>
             </div>
-            <div class="col-md-1 mb-3">
+            <div class="col-md-2 mb-3">
               <textarea type="text" readonly="readonly" class="form-control the_textarea textarea" rows="1" name="grupe<%=numb%>" placeholder="" autocomplete="off"><%=user.grupe%></textarea>
               <div class="print_helper"><%=user.grupe%></div>
             </div>
             <div class="col-md-1 mb-3">
-              <textarea type="text" readonly="readonly" class="form-control the_textarea textarea" rows="1" name="semestras<%=numb%>" placeholder="" autocomplete="off"><%=user.semestras%></textarea>
-              <div class="print_helper"><%=user.semestras%></div>
+              <textarea type="text" readonly="readonly" class="form-control text-center the_textarea textarea" rows="1" name="semestras<%=numb%>" placeholder="" autocomplete="off"><%=user.semestras%></textarea>
+              <div class="print_helper text-center"><%=user.semestras%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" value="<%=user.planuotosVal%>" class="form-control text-center textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
+              <input type="number" readonly="readonly" value="<%=user.planuotosVal%>" class="form-control text-center the_textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
+                <div class="print_helper text-center"><%=user.planuotosVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" value="<%=user.atliktosVal%>" class="form-control text-center textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
+              <input type="number" readonly="readonly" value="<%=user.atliktosVal%>" class="form-control text-center the_textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
+                <div class="print_helper text-center"><%=user.atliktosVal%></div>
             </div>
           </div>
           <% }) %>
@@ -164,10 +161,12 @@
               <label for="">Iš viso val.</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" value="<%=user.destytojas.kD1_K01.isVisoValPlan%>" class="form-control text-center" name="kD1_K01isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly">
+              <input type="number" value="<%=user.destytojas.kD1_K01.isVisoValPlan%>" class="form-control text-center the_textarea" name="kD1_K01isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly">
+                <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isVisoValPlan%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" value="<%=user.destytojas.kD1_K01.isVisoValAtl%>" class="form-control text-center" name="kD1_K01isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly">
+              <input type="number" value="<%=user.destytojas.kD1_K01.isVisoValAtl%>" class="form-control text-center the_textarea" name="kD1_K01isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly">
+                <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isVisoValAtl%></div>
             </div>
           </div>
           <div class="form-row">
@@ -175,10 +174,12 @@
               <label for="">Iš jų srautais</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center" name="isJuSrautaisValPlan" value="<%=user.destytojas.kD1_K01.isJuSrautaisValPlan%>" autocomplete="off">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="isJuSrautaisValPlan" value="<%=user.destytojas.kD1_K01.isJuSrautaisValPlan%>" autocomplete="off">
+              <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isJuSrautaisValPlan%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center" name="isJuSrautaisValAtl" value="<%=user.destytojas.kD1_K01.isJuSrautaisValAtl%>" autocomplete="off">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="isJuSrautaisValAtl" value="<%=user.destytojas.kD1_K01.isJuSrautaisValAtl%>" autocomplete="off">
+              <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isJuSrautaisValAtl%></div>
             </div>
           </div>
           <div class="form-row">
@@ -186,10 +187,12 @@
               <label class="" for="">Iš jų užsienio kalba</label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center" name="isJuUzsienioValPlan" value="<%=user.destytojas.kD1_K01.isJuUzsienioValPlan%>" placeholder="" autocomplete="off">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="isJuUzsienioValPlan" value="<%=user.destytojas.kD1_K01.isJuUzsienioValPlan%>" placeholder="" autocomplete="off">
+              <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isJuUzsienioValPlan%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center" name="isJuUzsienioValAtl" value="<%=user.destytojas.kD1_K01.isJuUzsienioValAtl%>" placeholder="" autocomplete="off">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="isJuUzsienioValAtl" value="<%=user.destytojas.kD1_K01.isJuUzsienioValAtl%>" placeholder="" autocomplete="off">
+              <div class="print_helper text-center"><%=user.destytojas.kD1_K01.isJuUzsienioValAtl%></div>
             </div>
           </div>
           <br>
@@ -1742,12 +1745,14 @@
             </div>
           </div>
           <br>
-          <p style="text-align: left;"><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos kompetencijų tobulinimo ir orgnizacinės veiklos valandos:</b></p>
+          <div <%if (user.destytojas.kTOV4.priezastys === "") { %> class="noprint" <% } %>>
+          <p class="text-left"><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos kompetencijų tobulinimo ir orgnizacinės veiklos valandos:</b></p>
           <div class="form-row">
-            <div class="col-md-12 mb-3 text-right">
+            <div class="col-md-12 mb-3">
               <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="kTOV4priezastys" autocomplete="off"><%=user.destytojas.kTOV4.priezastys%></textarea>
               <div class="print_helper"><%=user.destytojas.kTOV4.priezastys%></div>
             </div>
+          </div>
           </div>
           <br>
         </div>
@@ -2678,10 +2683,11 @@
           <br>
         </div>
         <div <%if (user.destytojas.kV5_kitaInfo === "") { %> class="noprint" <% } %>>
-          <p class="font-weight-bold">Kita informacija:</p>
+          <p class="font-weight-bold text-left">Kita informacija:</p>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <textarea type="text" rows="1" readonly="readonly" class="form-control the_textarea " name="kV5_kitaInfo" autocomplete="off"><%=user.destytojas.kV5_kitaInfo%></textarea>
+              <textarea type="text" rows="1" readonly="readonly" class="form-control the_textarea textarea" name="kV5_kitaInfo" autocomplete="off"><%=user.destytojas.kV5_kitaInfo%></textarea>
+              <div class="print_helper"><%=user.destytojas.kV5_kitaInfo%></div>
             </div>
           </div>
           <br>
@@ -2835,9 +2841,9 @@
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
-  // document.getElementById("currentDate4").placeholder = todayDate;
   document.getElementById("currentDate4").value = todayDate;
 </script>
+
 <script>
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {

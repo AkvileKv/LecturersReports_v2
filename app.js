@@ -5853,7 +5853,23 @@ app.get("/user-window-dep", function(req, res) {
 
 
 app.get("/logout", function(req, res) {
+
+  User.findById(req.user.id, function(err, foundUser) {
+
+    if (err) {
+      console.log(err);
+    } else {
+    var a = req.user.username;
+      foundUser.updated_for = "Atsijungimas" +" "+ a;
+      foundUser.save(function(err) {
+        if (err) {
+           console.log(err);
+        }
+      });
+    }
   req.logout();
+  });
+
   console.log("Logout ivykdytas");
   res.redirect('/');
 });

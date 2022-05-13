@@ -4685,9 +4685,10 @@
         </div>
       </div>
       <% } else { %>
-        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. Ne visi dėstytojai yra pateikę ataskaitas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
-        <p class="lead text-info text-center">Dėstytojų pateiktos ataskaitos: <%=numb2%></p>
-        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%></p>
+        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. <br>Ne visi dėstytojai yra pateikę ataskaitas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
+        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%>, iš jų ataskaitas yra pateikę: <span class="text-danger"><%=numb2%></span>.</p>
+        <p  text-center"> </p>
+
       <% } %>
     </form>
     <% } else {  %>
