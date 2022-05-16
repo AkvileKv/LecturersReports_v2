@@ -2795,12 +2795,16 @@
         <br>
         <div class="database-result-edit ">
           <%if (user.busena == "užrakinta") { %>
-              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="">
-            <% } else if (user.busena == "užrakintaVedėjo") { %>
-              <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
-            <% } else { %>
-                  <input type="text" style="border: none;" class="edit-left" value="" maxlength="10" readonly placeholder="">
-            <%  } %>
+              <% if (user.destytojas.ataskaitosPateikimoDataVedejo == undefined) { %>
+                  <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="Data">
+              <% } else { %>
+                  <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
+              <% } %>
+          <% } else if (user.busena == "užrakintaVedėjo") { %>
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
+          <% } else { %>
+          <input type="text" style="border: none;" class="edit-left" value="" maxlength="10" readonly placeholder="Data" readonly>
+          <%  } %>
 
           <p class="text-center font-italic">(parašas)</p>
         </div>
