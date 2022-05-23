@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 const mongooseHistory = require('mongoose-history');
-const mongooseHistoryPlugin = require('mongoose-history-plugin');;
+const mongooseHistoryPlugin = require('mongoose-history-plugin');
 //const diffPlugin = require('mongoose-history-diff');
 //const mongooseHistoryTrace = require('mongoose-history-trace');
 
