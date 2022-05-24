@@ -728,7 +728,8 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       sukurimas:  Date,
       atnaujinimas: Date,
       pateikimas: Date
-    }
+    },
+    ataskaitosPateikimoData: String
   } //vedejo end
 });
 

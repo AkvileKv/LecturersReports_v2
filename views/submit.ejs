@@ -75,8 +75,8 @@
           </div>
           <div class="col-md-3 mb-3">
             <label>Pavardė, vardas</label>
-            <textarea type="text" rows="1" class="form-control the_textarea" name="vardPavard" autocomplete="off" readonly="readonly"><%=user.vardas + " " + user.pavarde%></textarea>
-            <div class="print_helper"><%=user.vardas + " " + user.pavarde%></div>
+            <textarea type="text" rows="1" class="form-control the_textarea" name="vardPavard" autocomplete="off" readonly="readonly"><%=user.pavarde + " " + user.vardas%></textarea>
+            <div class="print_helper"><%=user.pavarde + " " + user.vardas%></div>
           </div>
           <div class="col-md-2 mb-3">
             <label>Pareigos</label>
@@ -90,12 +90,12 @@
           </div>
           <div class="col-md-2 mb-3">
             <label>Pedagoginis stažas</label>
-            <input type="number" class="form-control text-center the_textarea" name="pedagogStazas" readonly="readonly" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off">
+            <input type="number" class="form-control text-center the_textarea" name="pedagogStazas" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off" readonly="readonly">
             <div class="print_helper"><%=user.destytojas.pedagogStazas%></div>
           </div>
           <div class="col-md-2 mb-3">
             <label>Praktinės veiklos stažas</label>
-            <input type="number" class="form-control text-center the_textarea" name="praktinStazas" readonly="readonly" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off">
+            <input type="number" class="form-control text-center the_textarea" name="praktinStazas" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off" readonly="readonly">
             <div class="print_helper"><%=user.destytojas.praktVeiklStazas%></div>
           </div>
           <br>
@@ -716,8 +716,7 @@
         <!-- tMTEP3 -->
         <div <%if (user.destytojas.tMTEP3.isVisoValPlan === null) { %> class="noprint" <% } %>>
           <p class="text-center font-weight-bold">3. TAIKOMŲJŲ MOKSLINIŲ TYRIMŲ IR EKSPERIMENTINĖS
-            PLĖTROS (TMTEP) VYKDYMAS, MENO TAIKOMOJI VEIKLA, PROFESIONALIOJO MENO
-            VEIKLA, ŠIOS VEIKLOS REZULTATŲ SKELBIMAS IR VIEŠINIMAS</p>
+            PLĖTROS (TMTEP) VYKDYMAS, MENO TAIKOMOJI VEIKLA, PROFESIONALIOJO MENO VEIKLA, ŠIOS VEIKLOS REZULTATŲ SKELBIMAS IR VIEŠINIMAS</p>
           <div class="form-row">
             <div class="col-md-8 mb-3">
             </div>
@@ -759,11 +758,11 @@
               <label for=""><b>TMTEP ir meno veiklos populiarinimas</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="tMTEPmenoVeiklPop_planVal the_textarea" value="<%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="tMTEPmenoVeiklPop_planVal" value="<%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="tMTEPmenoVeiklPop_atlVal the_textarea" value="<%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="tMTEPmenoVeiklPop_atlVal" value="<%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal%></div>
             </div>
           </div>
@@ -772,11 +771,11 @@
               <label for=""><b>Studentų rengimas studentų profesinio meistriškumo konkursui, olimpiadai, varžyboms</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_planVal the_textarea" value="<%=user.destytojas.tMTEP3.studReng_planVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_planVal" value="<%=user.destytojas.tMTEP3.studReng_planVal%>" placeholder="(val. sk.)">
                 <div class="print_helper text-center"><%=user.destytojas.tMTEP3.studReng_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_atlVal the_textarea" value="<%=user.destytojas.tMTEP3.studReng_atlVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_atlVal" value="<%=user.destytojas.tMTEP3.studReng_atlVal%>" placeholder="(val. sk.)">
                 <div class="print_helper text-center"><%=user.destytojas.tMTEP3.studReng_atlVal%></div>
             </div>
           </div>
@@ -785,11 +784,11 @@
               <label for=""><b>Kita švietėjiška veikla</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="kitaVeikl_planVal the_textarea" value="<%=user.destytojas.tMTEP3.kitaVeikl_planVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="kitaVeikl_planVal" value="<%=user.destytojas.tMTEP3.kitaVeikl_planVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.destytojas.tMTEP3.kitaVeikl_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly" class="form-control  text-center the_textarea" name="kitaVeikl_atlVal the_textarea" value="<%=user.destytojas.tMTEP3.kitaVeikl_atlVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="kitaVeikl_atlVal" value="<%=user.destytojas.tMTEP3.kitaVeikl_atlVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.destytojas.tMTEP3.kitaVeikl_atlVal%></div>
             </div>
           </div>
@@ -1016,8 +1015,8 @@
           </div>
           <% }) %>
           <input type="hidden" id="table12_id" name="table12_name" value="<%=numb14%>">
-          <p>* Pateikti įrodymus (nuoroda į programą ir pan.). <br>
-            ** Seminaras, konferencija, kt.</p>
+          <p>* Seminaras, konferencija, kt.<br>
+          <b>PASTABA</b>: Pateikti įrodymus (nuoroda į programą ir pan.).</p>
           <br>
         </div>
 
@@ -2934,6 +2933,9 @@
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
+</script>
+<script>
+  var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate4").value = todayDate;
 </script>
 

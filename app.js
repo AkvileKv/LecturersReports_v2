@@ -5804,7 +5804,7 @@ app.post("/submit-dep", function(req, res) {
           }
         }
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
-
+        foundUser.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
           foundUser.busenaVedejo = req.body.ataskaitos_busena,
           foundUser.updated_for = req.user.username
 

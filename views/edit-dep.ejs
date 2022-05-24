@@ -6037,6 +6037,7 @@
               `;
     document.getElementById("tableVeiklS_id").value = value13;
     value13++;
+    // AUTO SIZE for textarea (new fields)
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -6050,7 +6051,7 @@
   }
 </script>
 
-<!-- AUTO SIZE for textarea -->
+<!-- AUTO SIZE for textarea (output fields)-->
 <script>
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
