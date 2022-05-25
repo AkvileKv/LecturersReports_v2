@@ -197,8 +197,8 @@
             <label for=""><br>Akreditavimo laikotarpis</label>
             <select name="mV2_D04akreditLaikot<%=numb1%>" class="form-select form-control">
               <option value=""></option>
-              <option class="others" <%if (user.akreditLaikot == "3") { %> selected <% } %>value="3">3 metai</option>
-              <option class="others" <%if (user.akreditLaikot == "7") { %> selected <% } %>value="7">7 metai</option>
+              <option class="others" <%if (user.akreditLaikot == "3 metai") { %> selected <% } %>value="3 metai">3 metai</option>
+              <option class="others" <%if (user.akreditLaikot == "7 metai") { %> selected <% } %>value="7 metai">7 metai</option>
             </select>
           </div>
           <div class="col-md-2 mb-3">
@@ -564,9 +564,7 @@
             <input type="text" class="form-control text-center" name="mV2_M04nr<%=numb6%>" value="<%=numb6%>" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="">Dėstytojas
-              (pavardė, vardas)
-            </label>
+            <label for="">Dėstytojas(pavardė, vardas)</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_M04destytojas<%=numb6%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
           </div>
           <div class="col-md-5 mb-3">
@@ -4742,8 +4740,8 @@
             </label>
             <select name="mV2_D04akreditLaikot` + value1 + `" class="form-select form-control">
               <option value=""></option>
-              <option class="others" value="3">3 metai</option>
-              <option class="others" value="7">7 metai</option>
+              <option class="others" value="3 metai">3 metai</option>
+              <option class="others" value="7 metai">7 metai</option>
             </select>
           </div>
           <div class="col-md-2 mb-3">

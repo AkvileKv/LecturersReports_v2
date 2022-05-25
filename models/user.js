@@ -598,7 +598,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       tMTEP_vykdymas: String,
       kompTobulinimas: String,
       kitosVeikl: String
-    },
+    }, //info iki cia panaudojama bus
     ivykiuDatos: {
       sukurimas:  Date,
       atnaujinimas: Date,

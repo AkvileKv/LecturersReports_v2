@@ -5805,15 +5805,15 @@ app.post("/submit-dep", function(req, res) {
         }
         foundUser.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
         foundUser.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
-          foundUser.busenaVedejo = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
+        foundUser.busenaVedejo = req.body.ataskaitos_busena,
+        foundUser.updated_for = req.user.username
 
           var today = new Date();
           var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
           var dateTime = date+' '+time;
 
-          foundUser.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+        foundUser.katedrosVedejas.ivykiuDatos.pateikimas = dateTime
 
         foundUser.save(function(err) {
           if (!err) {
