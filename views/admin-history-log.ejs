@@ -55,7 +55,7 @@
             <span class=""> <%=users_history.diff.katedra[0]%></span> <br>
             <% } else { %>
             <span class=""><span class="font-weight-bold">Buvusi reikšmė:</span> <%=users_history.diff.katedra[0]%></span> <br>
-            <span class=""><span class="font-weight-bold">Nustatyta reikšmė:</span> <%=users_history.diff.katedra[1]%></span> <br>
+            <span class=""><span class="font-weight-bold">Nustatyta reikšmė:</span><%=users_history.diff.katedra[1]%></span> <br>
             <% } %>
             <% } else { %>
             -
@@ -110,11 +110,11 @@
             <% } %>
           </td>
           <td>
-            <span class=""><span class="font-weight-bold" name="idUser"></span> <%=users_history.collectionId%></span> <br>
+            <span class=""><span class="font-weight-bold" name="idUser" id="userIDusername"></span> <%=users_history.collectionId%></span> <br>
           </td>
         </tr>
       </tbody>
-        </div>
+    </div>
 
     <% }) %>
     </table>
@@ -122,5 +122,10 @@
 </div>
 
 
-
 <%- include('partials/footer') %>
+
+<script type="text/javascript">
+  var userUsername;
+  document.getElementById("userIDusername").value = userUsername;
+// paima pagal ID iš user kolekcijos username
+</script>

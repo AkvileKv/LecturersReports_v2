@@ -4680,10 +4680,11 @@
         </div>
       </div>
       <% } else { %>
-        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. <br>Ne visi dėstytojai yra pateikę ataskaitas. Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
-        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%>, iš jų ataskaitas yra pateikę: <span class="text-danger"><%=numb2%></span>.</p>
-        <p  text-center"> </p>
-
+        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. <br>Ne visi dėstytojai yra pateikę ataskaitas.
+          Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
+        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.katedrosVedejas.katedrosDestytojuSk%>
+          , iš jų ataskaitas yra pateikę: <span class="text-danger"><%=numb2%></span>.</p>
+        <p text-center"> </p>
       <% } %>
     </form>
     <% } else {  %>
@@ -6235,7 +6236,7 @@
       var num001 = parseFloat(num01) || 0;
       trukmeLTnum26_1 = trukmeLTnum26_1 + num000;
       trukmeNeLTnum26_1 = trukmeNeLTnum26_1 + num001;
-      console.log(trukmeNeLTnum26_1);
+      //console.log(trukmeNeLTnum26_1);
     }
     // 2 table
     for (let zx = 1; zx <= document.getElementById("table262_id").value; zx++) {
