@@ -20,8 +20,9 @@
           <th scope="col">Kuriam naudotojui</th>
         </tr>
       </thead>
-
-    <%  users_history.forEach(function(users_history){ %>
+      <% var numb = 0; %>
+    <% users_history.forEach(function(users_history){ %>
+        <% numb++ %>
   <div class="database-result-edit ">
       <tbody>
         <tr>
@@ -110,22 +111,29 @@
             <% } %>
           </td>
           <td>
-            <span class=""><span class="font-weight-bold" name="idUser" id="userIDusername"></span> <%=users_history.collectionId%></span> <br>
+            <!-- <span hidden>Hello</span> -->
+
+            <input type="text" id="userIDusername<%=numb%>"value="<%=users_history.collectionId%>" readonly>
+
+
+
           </td>
         </tr>
       </tbody>
     </div>
 
     <% }) %>
+    <input type="hidden" id="numb_id" name="numb_name" value="<%=numb%>">
     </table>
   </div>
 </div>
-
-
-<%- include('partials/footer') %>
-
 <script type="text/javascript">
-  var userUsername;
-  document.getElementById("userIDusername").value = userUsername;
+  var valueNumb = document.getElementById("numb_id").value;
+  //valueNumb++;
+console.log(valueNumb);
+  //var userUsernameGood = document.getElementById("userIDusername").value;
+  //console.log(userUsernameGood);
 // paima pagal ID iš user kolekcijos username
 </script>
+
+<%- include('partials/footer') %>

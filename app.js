@@ -164,12 +164,13 @@ var url = "mongodb://localhost:27017/";
             if (err) throw err;
 
             var dbo = db.db("reportsDB_v2");
-            dbo.collection("__historiesPlugin").find({}).toArray(function(err, users_history) {
+            dbo.collection("__historiesPlugin").find({}).toArray(function(err, _historiesPlugin) {
               if (err) throw err;
-              //console.log(err);
-              //console.log(users_history);
+
+              //console.log(_historiesPlugin.collectionId);
+              //console.log(_historiesPlugin);
               res.render("admin-history-log", {
-                users_history: users_history
+                users_history: _historiesPlugin
               });
               db.close();
             });
