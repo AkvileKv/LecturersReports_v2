@@ -36,7 +36,7 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Vardas:</label>
-            <input type="text" class="form-control " name="vardas" value="<%=user.vardas%>" placeholder="" required>
+            <input type="text" class="form-control" name="vardas" value="<%=user.vardas%>" placeholder="" required>
           </div>
         </div>
         <div class="form-row">
@@ -44,7 +44,7 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Pavardė:</label>
-            <input type="text" class="form-control " name="pavarde" value="<%=user.pavarde%>" placeholder="" required>
+            <input type="text" class="form-control" name="pavarde" value="<%=user.pavarde%>" placeholder="" required>
           </div>
         </div>
         <div class="form-row">
@@ -52,7 +52,7 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Fakultetas:</label>
-            <input type="text" class="form-control " name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
+            <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
           </div>
         </div>
         <div class="form-row">
@@ -60,57 +60,14 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Katedra:</label>
-            <input type="text" class="form-control " name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
+            <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
           </div>
         </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Pareigos</label>
-            <select name="pareigos" class="form-select form-control">
-              <option value="nepasirinkta"></option>
-              <option class="others" <%if (user.destytojas.pareigos === "Asistentas") { %> selected <% } %> value="Asistentas">Asistentas</option>
-              <option class="others" <%if (user.destytojas.pareigos === "Lektorius") { %> selected <% } %> value="Lektorius">Lektorius</option>
-              <option class="others" <%if (user.destytojas.pareigos === "Docentas") { %> selected <% } %> value="Docentas">Docentas</option>
-              <option class="others" <%if (user.destytojas.pareigos === "Profesorius") { %> selected <% } %> value="Profesorius">Profesorius</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Pagrindinė, nepagrindinė darbovietė</label>
-            <select name="darbovietesTipas" class="form-select form-control" required>
-              <option value="nepasirinkta"></option>
-              <option class="others" <%if (user.destytojas.darbovietesTipas === "Pagrindinė") { %> selected <% } %> value="Pagrindinė">Pagrindinė</option>
-              <option class="others" <%if (user.destytojas.darbovietesTipas === "Nepagrindinė") { %> selected <% } %> value="Nepagrindinė">Nepagrindinė</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Pedagoginis stažas (metais)</label>
-            <input type="number" class="form-control " name="pedagogStazas" value="<%=user.destytojas.pedagogStazas%>" placeholder="" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Praktinės veiklos stažas (metais)</label>
-            <input type="number" class="form-control " name="praktVeiklStazas" value="<%=user.destytojas.praktVeiklStazas%>" placeholder="" required>
-          </div>
-        </div>
-        <br>
         <div class="row">
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
           </div>
         </div>
 

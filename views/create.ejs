@@ -29,7 +29,13 @@
           </div>
           <div class="col-md-4 mb-3"><br>
             <label>Pareigos</label>
-            <textarea type="text" rows="1" class="form-control" name="pareigos" autocomplete="off" readonly="readonly"><%=user.destytojas.pareigos%></textarea>
+            <select name="pareigos" class="form-select form-control">
+              <option value="nepasirinkta"></option>
+              <option class="others" <%if (user.mm2022_2023.destytojas.pareigos === "Asistentas") { %> selected <% } %> value="Asistentas">Asistentas</option>
+              <option class="others" <%if (user.mm2022_2023.destytojas.pareigos === "Lektorius") { %> selected <% } %> value="Lektorius">Lektorius</option>
+              <option class="others" <%if (user.mm2022_2023.destytojas.pareigos === "Docentas") { %> selected <% } %> value="Docentas">Docentas</option>
+              <option class="others" <%if (user.mm2022_2023.destytojas.pareigos === "Profesorius") { %> selected <% } %> value="Profesorius">Profesorius</option>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <br>
