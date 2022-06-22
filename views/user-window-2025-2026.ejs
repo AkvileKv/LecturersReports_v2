@@ -1,7 +1,7 @@
-<%- include('partials/headerLecturer') %>
+<%- include('partials/headerLecturer2025_2026') %>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Naudotojo <%=user.username%> aplinka</h1>
+  <h1 class="display-4">2025 - 2026 m. m. ataskaitos pildymo aplinka</h1>
   <%if ( user.role === "dėstytojas") { %>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena%></p>
   <% } else if (user.role === "katedros vedėjas") { %>
@@ -13,10 +13,9 @@
 
 <div class="container">
   <div class="jumbotron ">
-    <form action="/update-user" method="post">
 
       <div class="form-group ">
-        <h4 class="text-center">Jūsų asmeniniai duomenys</h4>
+        <h4 class="text-center">Jūsų duomenys:</h4>
         <%if ( user.rolesKeitimas === true) { %>
         <div class="form-row">
           <div class="col-md-3 mb-3">
@@ -35,30 +34,21 @@
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Vardas:</label>
-            <input type="text" class="form-control" name="vardas" value="<%=user.vardas%>" placeholder="" required>
+            <label for="">Fakultetas:</label>
+            <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
           </div>
         </div>
         <div class="form-row">
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Pavardė:</label>
-            <input type="text" class="form-control" name="pavarde" value="<%=user.pavarde%>" placeholder="" required>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            <label for="">Katedra:</label>
+            <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
           </div>
         </div>
 
       </div>
 
-    </form>
   </div>
 </div>
 

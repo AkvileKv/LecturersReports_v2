@@ -71,6 +71,7 @@ app.post("/register", (req, res) => {
     role: "dėstytojas",
     rolesKeitimas: false,
     updated_for: "Registracija",
+    currentYear: new Date().getFullYear()
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -893,6 +894,7 @@ foundUser.destytojas.ivykiuDatos.sukurimas = dateTime
     res.redirect("/login");
   }
 });
+
 app.post("/create-2022-2023", function(req, res) {
   if (req.isAuthenticated()) {
 
@@ -1280,7 +1282,6 @@ app.post("/create-2022-2023", function(req, res) {
 app.get("/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
         console.log(err);
@@ -1290,7 +1291,6 @@ app.get("/create", function(req, res) {
         });
       }
     });
-
   } else {
     res.redirect("/login");
   }
@@ -1299,7 +1299,6 @@ app.get("/create", function(req, res) {
 app.get("/create-2022-2023", function(req, res) {
 
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
         console.log(err);
@@ -1309,7 +1308,57 @@ app.get("/create-2022-2023", function(req, res) {
         });
       }
     });
+  } else {
+    res.redirect("/login");
+  }
+});
 
+app.get("/create-2023-2024", function(req, res) {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("create-2023-2024", {
+          user: foundUser
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/create-2024-2025", function(req, res) {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("create-2024-2025", {
+          user: foundUser
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/create-2025-2026", function(req, res) {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("create-2025-2026", {
+          user: foundUser
+        });
+      }
+    });
   } else {
     res.redirect("/login");
   }
@@ -1325,6 +1374,98 @@ app.get("/edit", function(req, res) {
       } else {
         if (foundUser.role === "dėstytojas") {
           res.render("edit", {
+            user: foundUser
+          });
+        } else {
+          console.log("User role unknown");
+          console.log(foundUser.role);
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/edit-2022-2023", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log("Error...");
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("edit-2022-2023", {
+            user: foundUser
+          });
+        } else {
+          console.log("User role unknown");
+          console.log(foundUser.role);
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/edit-2023-2024", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log("Error...");
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("edit-2023-2024", {
+            user: foundUser
+          });
+        } else {
+          console.log("User role unknown");
+          console.log(foundUser.role);
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/edit-2024-2025", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log("Error...");
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("edit-2024-2025", {
+            user: foundUser
+          });
+        } else {
+          console.log("User role unknown");
+          console.log(foundUser.role);
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/edit-2025-2026", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log("Error...");
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("edit-2025-2026", {
             user: foundUser
           });
         } else {
@@ -2114,6 +2255,138 @@ app.get("/submit", function(req, res) {
             console.log(err);
           } else {
             res.render("submit", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra),
+              vardasUpper: _.toUpper(foundUser.vardas),
+              pavardeUpper: _.toUpper(foundUser.pavarde)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/submit-2022-2023", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+
+      let currentUserFaculty = foundUser.fakultetas;
+
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("submit-2022-2023", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra),
+              vardasUpper: _.toUpper(foundUser.vardas),
+              pavardeUpper: _.toUpper(foundUser.pavarde)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/submit-2023-2024", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+
+      let currentUserFaculty = foundUser.fakultetas;
+
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("submit-2023-2024", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra),
+              vardasUpper: _.toUpper(foundUser.vardas),
+              pavardeUpper: _.toUpper(foundUser.pavarde)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/submit-2024-2025", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+
+      let currentUserFaculty = foundUser.fakultetas;
+
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("submit-2024-2025", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra),
+              vardasUpper: _.toUpper(foundUser.vardas),
+              pavardeUpper: _.toUpper(foundUser.pavarde)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/submit-2025-2026", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+
+      let currentUserFaculty = foundUser.fakultetas;
+
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("submit-2025-2026", {
               foundFaculty: foundFaculty,
               user: foundUser,
               fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -6286,6 +6559,94 @@ app.get("/user-window", function(req, res) {
       } else {
         if (foundUser.role === "dėstytojas") {
           res.render("user-window", {
+            user: foundUser
+          });
+        } else {
+          console.log("You don't have permission");
+          console.log("user-window nepraleidžia");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/user-window-2022-2023", function(req, res) {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("user-window-2022-2023", {
+            user: foundUser
+          });
+        } else {
+          console.log("You don't have permission");
+          console.log("user-window nepraleidžia");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/user-window-2023-2024", function(req, res) {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("user-window-2023-2024", {
+            user: foundUser
+          });
+        } else {
+          console.log("You don't have permission");
+          console.log("user-window nepraleidžia");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/user-window-2024-2025", function(req, res) {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("user-window-2024-2025", {
+            user: foundUser
+          });
+        } else {
+          console.log("You don't have permission");
+          console.log("user-window nepraleidžia");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/user-window-2025-2026", function(req, res) {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas") {
+          res.render("user-window-2025-2026", {
             user: foundUser
           });
         } else {

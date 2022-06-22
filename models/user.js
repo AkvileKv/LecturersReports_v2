@@ -467,6 +467,14 @@ var veiklSavinalize_Schema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({ //pagrindinė schema
   email: String,
   password: String,
+  role: String,
+  rolesKeitimas: Boolean,
+  vardas: String,
+  pavarde: String,
+  fakultetas: String,
+  katedra: String,
+  currentYear: String,
+
   busenaVedejo: String,
   busenaVedejo22_23: String,
   busenaVedejo23_24: String,
@@ -477,12 +485,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   busena23_24: String,
   busena24_25: String,
   busena25_26: String,
-  role: String,
-  vardas: String,
-  pavarde: String,
-  fakultetas: String,
-  katedra: String,
-  rolesKeitimas: Boolean,
+
   updated_for: String,
   mm2022_2023: {
 
