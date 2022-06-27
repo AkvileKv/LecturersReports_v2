@@ -1,5 +1,5 @@
 <div class="noprint">
-  <%- include('partials/headerLecturer2022_2023') %>
+<%- include('partials/headerLecturer2022_2023') %>
 </div>
 
 <div class="container">
@@ -7,7 +7,7 @@
 
     <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas 2022 - 2023 m. m.</h1>
 
-    <%if ( user.busena === "nesukurta") { %>
+    <%if ( user.busena22_23 === "nesukurta") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
     <% } else if (user.katedra == "" || user.fakultetas == "") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
