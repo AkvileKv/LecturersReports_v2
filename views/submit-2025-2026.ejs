@@ -9,7 +9,7 @@
 
     <%if ( user.busena === "nesukurta") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
-    <% } else if (user.katedra == "" || user.fakultetas == "") { %>
+  <% } else if (user.katedra == "" || user.fakultetas == "" || user.katedra == undefined || user.fakultetas == undefined) { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
     <% } else { %>
     <div class="printable">
