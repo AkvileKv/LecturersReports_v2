@@ -90,23 +90,23 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   //2 rolem negalima prisijungti vienu metu
-  //   if (req.isAuthenticated()) {
-  // console.log("autentifikavo");
-  //     User.findById(req.user.id, function(err, foundUser) {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         if (foundUser.role === "dėstytojas") {
-  //           res.redirect("/user-window");
-  //         } else if (foundUser.role === "katedros vedėjas") {
-  //           res.redirect("/user-window-dep");
-  //         } else if (foundUser.role === "administratorius") {
-  //           res.redirect("/admin-window");
-  //         }
-  //       }
-  //     });
-  //
-  // } else {
+    if (req.isAuthenticated()) {
+  console.log("autentifikavo");
+      User.findById(req.user.id, function(err, foundUser) {
+        if (err) {
+          console.log(err);
+        } else {
+          if (foundUser.role === "dėstytojas") {
+            res.redirect("/user-window");
+          } else if (foundUser.role === "katedros vedėjas") {
+            res.redirect("/user-window-dep");
+          } else if (foundUser.role === "administratorius") {
+            res.redirect("/admin-window");
+          }
+        }
+      });
+
+  } else {
 
   //use a Model (User) to create new documents (user) using `new`:
   const user = new User({
@@ -147,11 +147,65 @@ app.post("/login", (req, res) => {
       });
     }
   });
-  //}
+  }
 });
 
 // METHOD FOR LOG
-app.get("/admin-history-log", (req, res) => {
+app.get("/admin-history-log", (req, res, next) => {
+
+  var perPage = 1;
+  var page = req.params.page || 1;
+//var HistoryUser = User.historyModel();
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+
+          MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+
+            var dbo = db.db("reportsDB_v2");
+
+            dbo.collection("__historiesPlugin").find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage).toArray(function(err,_historiesPlugin){
+            //.toArray(function(err, _historiesPlugin) {
+              if (err) throw err;
+  dbo.collection("__historiesPlugin").countDocuments(), function(err,count){
+              //console.log(_historiesPlugin.collectionId);
+              //console.log(_historiesPlugin);
+              res.render("admin-history-log", {
+                users_history: _historiesPlugin,
+                current: page,
+                pages: Math.ceil(count / perPage)
+              });
+
+              db.close();
+              };
+            });
+          });
+
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/admin-history-log/:page", (req, res) => {
+
+  var perPage = 1;
+  var page = req.params.page || 1;
 
 //var HistoryUser = User.historyModel();
 var MongoClient = require('mongodb').MongoClient;
@@ -169,15 +223,23 @@ var url = "mongodb://localhost:27017/";
             if (err) throw err;
 
             var dbo = db.db("reportsDB_v2");
-            dbo.collection("__historiesPlugin").find({}).toArray(function(err, _historiesPlugin) {
+            dbo.collection("__historiesPlugin")
+            .find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage).toArray(function(err,_historiesPlugin){
+            //.toArray(function(err, _historiesPlugin) {
               if (err) throw err;
-
+  dbo.collection("__historiesPlugin").countDocuments({}).exec((err,count)=>{
               //console.log(_historiesPlugin.collectionId);
               //console.log(_historiesPlugin);
               res.render("admin-history-log", {
-                users_history: _historiesPlugin
+                users_history: _historiesPlugin,
+                current: page,
+                pages: Math.ceil(count / perPage)
               });
+
               db.close();
+              });
             });
           });
 
