@@ -6,10 +6,18 @@
 
 <div class="container">
   <div class="jumbotron ">
+<h4 class="text-center">Jūsų asmeniniai duomenys</h4>
+    <div class="form-row">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <label for="">El. paštas:</label>
+        <input type="text" class="form-control" name="vardas" value="<%=user.username%>" placeholder="" readonly>
+      </div>
+    </div>
     <form action="/update-user" method="post">
 
       <div class="form-group ">
-        <h4 class="text-center">Jūsų asmeniniai duomenys</h4>
         <%if ( user.rolesKeitimas === true) { %>
         <div class="form-row">
           <div class="col-md-3 mb-3">
@@ -24,14 +32,7 @@
           </div>
         </div>
         <% } %>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">El. paštas:</label>
-            <input type="text" class="form-control" name="vardas" value="<%=user.username%>" placeholder="" readonly>
-          </div>
-        </div>
+
         <div class="form-row">
           <div class="col-lg-3">
           </div>
