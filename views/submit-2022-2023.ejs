@@ -40,13 +40,13 @@
 
     <form action="/submit-2022-2023" method="post">
 
-      <% if (user.busena === "užrakinta") { %>
+      <% if (user.busena22_23 === "užrakinta") { %>
       <br>
       <div class="text-center">
         <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
       </div>
       <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į katedros vedėją.</p>
-      <% } else if (user.busena === "užrakintaVedėjo") { %>
+      <% } else if (user.busena22_23 === "užrakintaVedėjo") { %>
       <div class="text-center">
         <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
       </div>
@@ -2787,9 +2787,9 @@
         </div>
         <div class="database-result-edit ">
 
-        <%if (user.busena == "redaguojama") { %>
+        <%if (user.busena22_23 == "redaguojama") { %>
             <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" id="currentDate4" value="" maxlength="10">
-          <% } else if (user.busena == "užrakintaVedėjo" || user.busena == "užrakinta") { %>
+          <% } else if (user.busena22_23 == "užrakintaVedėjo" || user.busena22_23 == "užrakinta") { %>
             <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.mm2022_2023.destytojas.ataskaitosPateikimoData%>" readonly>
           <% } else { %>
             -
@@ -2867,13 +2867,13 @@
 
         <div class="database-result-edit ">
           <p class="edit-left">Katedros vedėjas (-a)</p>
-          <%if (user.busena == "užrakinta") { %>
+          <%if (user.busena22_23 == "užrakinta") { %>
               <% if (user.mm2022_2023.destytojas.vedejoVardasPavarde == undefined) { %>
                 <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
                 <% } else { %>
                   <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2022_2023.destytojas.vedejoVardasPavarde%>" readonly>
                   <% } %>
-            <% } else if (user.busena == "užrakintaVedėjo") { %>
+            <% } else if (user.busena22_23 == "užrakintaVedėjo") { %>
               <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2022_2023.destytojas.vedejoVardasPavarde%>" readonly>
             <% } else { %>
                 <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė" readonly>
@@ -2882,13 +2882,13 @@
         </div>
         <br>
         <div class="database-result-edit ">
-          <%if (user.busena == "užrakinta") { %>
+          <%if (user.busena22_23 == "užrakinta") { %>
               <% if (user.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo == undefined) { %>
                   <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="Data">
               <% } else { %>
                   <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
               <% } %>
-          <% } else if (user.busena == "užrakintaVedėjo") { %>
+          <% } else if (user.busena22_23 == "užrakintaVedėjo") { %>
           <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
           <% } else { %>
           <input type="text" style="border: none;" class="edit-left" value="" maxlength="10" readonly placeholder="Data" readonly>
