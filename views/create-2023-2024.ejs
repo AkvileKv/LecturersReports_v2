@@ -29,20 +29,30 @@
           </div>
           <div class="col-md-4 mb-3"><br>
             <label>Pareigos</label>
-            <textarea type="text" rows="1" class="form-control" name="pareigos" autocomplete="off" readonly="readonly"><%=user.destytojas.pareigos%></textarea>
+            <select name="pareigos" class="form-select form-control">
+              <option value="nepasirinkta"></option>
+              <option class="others" value="Asistentas">Asistentas</option>
+              <option class="others" value="Lektorius">Lektorius</option>
+              <option class="others" value="Docentas">Docentas</option>
+              <option class="others" value="Profesorius">Profesorius</option>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <br>
             <label>Darbovietės tipas</label>
-            <textarea type="text" rows="1" class="form-control" name="darbovTipas" autocomplete="off" readonly="readonly"><%=user.destytojas.darbovietesTipas%></textarea>
+            <select name="darbovTipas" class="form-select form-control" required>
+              <option value="nepasirinkta"></option>
+              <option class="others" value="Pagrindinė">Pagrindinė</option>
+              <option class="others" value="Nepagrindinė">Nepagrindinė</option>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control  text-center" min="0" name="pedagogStazas" readonly="readonly" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control text-center" name="pedagogStazas" autocomplete="off" value="" required min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control  text-center" min="0" name="praktinStazas" readonly="readonly" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="praktinStazas" value="" autocomplete="off" required min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
         <!-- kD1_K01 -->
@@ -382,7 +392,69 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control" name="nD2_M04studProgr1" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_M04studProgr1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Dalyko (modulio) pavadinimas</label>
@@ -773,7 +845,69 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr1" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_D03studProgr1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Veikla</label>
@@ -807,7 +941,69 @@
           <div class="col-md-4 mb-3">
             <br>
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr1" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_M03studProgr1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-5 mb-3">
             <br>
@@ -3085,7 +3281,69 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr1" autocomplete="off"></textarea>
+            <select name="kV5_KT02studProgr1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Darbo tema*</label>
@@ -3247,7 +3505,69 @@
             <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr2" autocomplete="off"></textarea>
+            <select name="kV5_KT02studProgr2" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <select name="kV5_KT02darboTema2" class="form-select form-control">
@@ -3420,7 +3740,69 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr1" autocomplete="off"></textarea>
+            <select name="kV5_KT01studProgr1" class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
@@ -3955,7 +4337,69 @@
                   <input type="text" class="form-control text-center" name="nD2_M04nr` + value6 + `" placeholder="" autocomplete="off" value="` + value6 + `" readonly="readonly">
                 </div>
                 <div class="col-md-3 mb-3">
-                  <textarea type="text" rows="1" class="form-control" name="nD2_M04studProgr` + value6 + `" placeholder="" autocomplete="off"></textarea>
+                  <select name="nD2_M04studProgr` + value6 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <optgroup label="Elektronikos ir informatikos fakultetas">
+                      <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                      <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                      <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                      <option class="others" value="Programų sistemos">Programų sistemos</option>
+                      <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Ekonomikos fakultetas">
+                      <option class="others" value="Apskaita">Apskaita</option>
+                      <option class="others" value="Bankininkystė">Bankininkystė</option>
+                      <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                      <option class="others" value="Finansai">Finansai</option>
+                      <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                      <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                      <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Verslo vadybos fakultetas">
+                      <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                      <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                      <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                      <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                      <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                      <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                      <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                      <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Sveikatos priežiūros fakultetas">
+                      <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                      <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                      <option class="others" value="Dietetika">Dietetika</option>
+                      <option class="others" value="Ergoterapija">Ergoterapija</option>
+                      <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                      <option class="others" value="Kineziterapija">Kineziterapija</option>
+                      <option class="others" value="Radiologija">Radiologija</option>
+                    </optgroup>
+                    <optgroup label="Agrotechnologijų fakultetas">
+                      <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                      <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                      <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                      <option class="others" value="Maisto technologija">Maisto technologija</option>
+                      <option class="others" value="Veterinarija">Veterinarija</option>
+                    </optgroup>
+                    <optgroup label="Pedagogikos fakultetas">
+                      <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                      <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                      <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                      <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                    </optgroup>
+                    <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                      <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Mados dizainas">Mados dizainas</option>
+                      <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                      <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                      <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                      <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                    </optgroup>
+                  </select>
                 </div>
                 <div class="col-md-4 mb-3">
                   <textarea type="text" rows="1" class="form-control " name="nD2_M04dalykPavad` + value6 + `" placeholder="" autocomplete="off"></textarea>
@@ -4377,7 +4821,69 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
+            <select name="nD2_D03studProgr` + value9 + `"class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <textarea type="text" rows="1" class="form-control" name="nD2_D03veikla` + value9 + `" placeholder="" autocomplete="off"></textarea>
@@ -4419,7 +4925,69 @@
                   <input type="text"  class="form-control text-center" name="nD2_M03nr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
                 </div>
                 <div class="col-md-4 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr` + value5 + `" placeholder="" autocomplete="off"></textarea>
+                  <select name="nD2_M03studProgr` + value5 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <optgroup label="Elektronikos ir informatikos fakultetas">
+                      <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                      <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                      <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                      <option class="others" value="Programų sistemos">Programų sistemos</option>
+                      <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Ekonomikos fakultetas">
+                      <option class="others" value="Apskaita">Apskaita</option>
+                      <option class="others" value="Bankininkystė">Bankininkystė</option>
+                      <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                      <option class="others" value="Finansai">Finansai</option>
+                      <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                      <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                      <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Verslo vadybos fakultetas">
+                      <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                      <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                      <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                      <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                      <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                      <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                      <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                      <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Sveikatos priežiūros fakultetas">
+                      <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                      <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                      <option class="others" value="Dietetika">Dietetika</option>
+                      <option class="others" value="Ergoterapija">Ergoterapija</option>
+                      <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                      <option class="others" value="Kineziterapija">Kineziterapija</option>
+                      <option class="others" value="Radiologija">Radiologija</option>
+                    </optgroup>
+                    <optgroup label="Agrotechnologijų fakultetas">
+                      <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                      <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                      <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                      <option class="others" value="Maisto technologija">Maisto technologija</option>
+                      <option class="others" value="Veterinarija">Veterinarija</option>
+                    </optgroup>
+                    <optgroup label="Pedagogikos fakultetas">
+                      <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                      <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                      <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                      <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                    </optgroup>
+                    <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                      <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Mados dizainas">Mados dizainas</option>
+                      <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                      <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                      <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                      <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                    </optgroup>
+                  </select>
                 </div>
                 <div class="col-md-5 mb-3">
                   <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad` + value5 + `" placeholder="" autocomplete="off"></textarea>
@@ -6412,7 +6980,69 @@
             <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas` + value32 + `" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr` + value32 + `" autocomplete="off"></textarea>
+            <select name="kV5_KT02studProgr` + value32 + `"class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-2 mb-3">
             <select name="kV5_KT02darboTema` + value32 + `" class="form-select form-control">
@@ -6603,7 +7233,69 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
-            <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr` + value31 + `" autocomplete="off"></textarea>
+            <select name="kV5_KT01studProgr` + value31 + `"class="form-select form-control">
+              <option value=""></option>
+              <optgroup label="Elektronikos ir informatikos fakultetas">
+                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                <option class="others" value="Programų sistemos">Programų sistemos</option>
+                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Ekonomikos fakultetas">
+                <option class="others" value="Apskaita">Apskaita</option>
+                <option class="others" value="Bankininkystė">Bankininkystė</option>
+                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                <option class="others" value="Finansai">Finansai</option>
+                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Verslo vadybos fakultetas">
+                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+              </optgroup>
+              <optgroup label="Sveikatos priežiūros fakultetas">
+                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                <option class="others" value="Dietetika">Dietetika</option>
+                <option class="others" value="Ergoterapija">Ergoterapija</option>
+                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                <option class="others" value="Kineziterapija">Kineziterapija</option>
+                <option class="others" value="Radiologija">Radiologija</option>
+              </optgroup>
+              <optgroup label="Agrotechnologijų fakultetas">
+                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                <option class="others" value="Maisto technologija">Maisto technologija</option>
+                <option class="others" value="Veterinarija">Veterinarija</option>
+              </optgroup>
+              <optgroup label="Pedagogikos fakultetas">
+                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+              </optgroup>
+              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                <option class="others" value="Mados dizainas">Mados dizainas</option>
+                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+              </optgroup>
+            </select>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studentas (pavardė, vardas)</label>
