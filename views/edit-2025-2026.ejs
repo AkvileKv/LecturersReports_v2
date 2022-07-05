@@ -49,11 +49,11 @@
             </div>
             <div class="col-md-2 mb-3">
               <label>Stažas metais <br>(pedagoginis)</label>
-              <input type="number" class="form-control  text-center" min="0" name="pedagogStazas" readonly="readonly" value="<%=user.mm2025_2026.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="pedagogStazas"   value="<%=user.mm2025_2026.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label>Stažas metais (praktinės veiklos)</label>
-              <input type="number" class="form-control  text-center" min="0" name="praktinStazas" readonly="readonly" value="<%=user.mm2025_2026.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="praktinStazas"   value="<%=user.mm2025_2026.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
 
@@ -1028,7 +1028,69 @@
               <input type="text" class="form-control text-center" name="nD2_M03nr<%=numb5%>" placeholder="" autocomplete="off" value="<%=numb5%>" readonly="readonly">
             </div>
             <div class="col-md-4 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr<%=numb5%>" placeholder="" autocomplete="off"><%=user.studProgr%></textarea>
+              <select name="nD2_M03studProgr<%=numb5%>" class="form-select form-control">
+                              <option value=""></option>
+                              <optgroup label="Elektronikos ir informatikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Elektronikos inžinerija") { %> selected <% } %> value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Informacijos sistemos") { %> selected <% } %> value="Informacijos sistemos">Informacijos sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Kompiuterių inžinerija") { %> selected <% } %> value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos") { %> selected <% } %> value="Programų sistemos">Programų sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos (studijos anglų kalba)") { %> selected <% } %> value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Ekonomikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Apskaita") { %> selected <% } %> value="Apskaita">Apskaita</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė") { %> selected <% } %> value="Bankininkystė">Bankininkystė</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė (studijos anglų kalba)") { %> selected <% } %> value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Finansai") { %> selected <% } %> value="Finansai">Finansai</option>
+                                <option class="others" <%if (user.studProgr === "Investicijos ir draudimas") { %> selected <% } %> value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika") { %> selected <% } %> value="Verslo ekonomika">Verslo ekonomika</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika (studijos anglų kalba)") { %> selected <% } %> value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Verslo vadybos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Organizacijų vadyba") { %> selected <% } %> value="Organizacijų vadyba">Organizacijų vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)") { %> selected <% } %> value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Reklamos vadyba") { %> selected <% } %> value="Reklamos vadyba">Reklamos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Ryšiai su visuomene") { %> selected <% } %> value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas") { %> selected <% } %> value="Tarptautinis verslas">Tarptautinis verslas</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas (studijos anglų kalba)") { %> selected <% } %> value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba") { %> selected <% } %> value="Turizmo vadyba">Turizmo vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba (studijos anglų kalba)") { %> selected <% } %> value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas") { %> selected <% } %> value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas (studijos anglų kalba)") { %> selected <% } %> value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Sveikatos priežiūros fakultetas">
+                                <option class="others" <%if (user.studProgr === "Bendrosios praktikos slauga") { %> selected <% } %> value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                                <option class="others" <%if (user.studProgr === "Biomedicininė diagnostika") { %> selected <% } %> value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                                <option class="others" <%if (user.studProgr === "Dietetika") { %> selected <% } %> value="Dietetika">Dietetika</option>
+                                <option class="others" <%if (user.studProgr === "Ergoterapija") { %> selected <% } %> value="Ergoterapija">Ergoterapija</option>
+                                <option class="others" <%if (user.studProgr === "Higieninė ir dekoratyvinė kosmetologija") { %> selected <% } %> value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                                <option class="others" <%if (user.studProgr === "Kineziterapija") { %> selected <% } %> value="Kineziterapija">Kineziterapija</option>
+                                <option class="others" <%if (user.studProgr === "Radiologija") { %> selected <% } %> value="Radiologija">Radiologija</option>
+                              </optgroup>
+                              <optgroup label="Agrotechnologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Agroverslo technologijos") { %> selected <% } %> value="Agroverslo technologijos">Agroverslo technologijos</option>
+                                <option class="others" <%if (user.studProgr === "Cheminė analizė") { %> selected <% } %> value="Cheminė analizė">Cheminė analizė</option>
+                                <option class="others" <%if (user.studProgr === "Kraštovaizdžio dizainas") { %> selected <% } %> value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Maisto technologija") { %> selected <% } %> value="Maisto technologija">Maisto technologija</option>
+                                <option class="others" <%if (user.studProgr === "Veterinarija") { %> selected <% } %> value="Veterinarija">Veterinarija</option>
+                              </optgroup>
+                              <optgroup label="Pedagogikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Lietuvių gestų kalbos vertimas") { %> selected <% } %> value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                                <option class="others" <%if (user.studProgr === "Pradinio ugdymo pedagogika") { %> selected <% } %> value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                                <option class="others" <%if (user.studProgr === "Socialinis darbas") { %> selected <% } %> value="Socialinis darbas">Socialinis darbas</option>
+                                <option class="others" <%if (user.studProgr === "Vaikystės pedagogika") { %> selected <% } %> value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                              </optgroup>
+                              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Įvaizdžio dizainas") { %> selected <% } %> value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba") { %> selected <% } %> value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba (studijos anglų kalba)") { %> selected <% } %> value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Mados dizainas") { %> selected <% } %> value="Mados dizainas">Mados dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Mados technologijos ir verslas") { %> selected <% } %> value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                                <option class="others" <%if (user.studProgr === "Muzikinis teatras") { %> selected <% } %> value="Muzikinis teatras">Muzikinis teatras</option>
+                                <option class="others" <%if (user.studProgr === "Populiarioji muzika") { %> selected <% } %> value="Populiarioji muzika">Populiarioji muzika</option>
+                                <option class="others" <%if (user.studProgr === "Šokio pedagogika") { %> selected <% } %> value="Šokio pedagogika">Šokio pedagogika</option>
+                              </optgroup>
+                            </select>
             </div>
             <div class="col-md-5 mb-3">
               <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad<%=numb5%>" placeholder="" autocomplete="off"><%=user.dalykPavad%></textarea>
@@ -3213,7 +3275,69 @@
               <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas<%=numb32%>" autocomplete="off"><%=user.diplomantas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr<%=numb32%>" autocomplete="off"><%=user.studProgr%></textarea>
+              <select name="kV5_KT02studProgr<%=numb32%>" class="form-select form-control">
+                              <option value=""></option>
+                              <optgroup label="Elektronikos ir informatikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Elektronikos inžinerija") { %> selected <% } %> value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Informacijos sistemos") { %> selected <% } %> value="Informacijos sistemos">Informacijos sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Kompiuterių inžinerija") { %> selected <% } %> value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos") { %> selected <% } %> value="Programų sistemos">Programų sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos (studijos anglų kalba)") { %> selected <% } %> value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Ekonomikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Apskaita") { %> selected <% } %> value="Apskaita">Apskaita</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė") { %> selected <% } %> value="Bankininkystė">Bankininkystė</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė (studijos anglų kalba)") { %> selected <% } %> value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Finansai") { %> selected <% } %> value="Finansai">Finansai</option>
+                                <option class="others" <%if (user.studProgr === "Investicijos ir draudimas") { %> selected <% } %> value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika") { %> selected <% } %> value="Verslo ekonomika">Verslo ekonomika</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika (studijos anglų kalba)") { %> selected <% } %> value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Verslo vadybos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Organizacijų vadyba") { %> selected <% } %> value="Organizacijų vadyba">Organizacijų vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)") { %> selected <% } %> value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Reklamos vadyba") { %> selected <% } %> value="Reklamos vadyba">Reklamos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Ryšiai su visuomene") { %> selected <% } %> value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas") { %> selected <% } %> value="Tarptautinis verslas">Tarptautinis verslas</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas (studijos anglų kalba)") { %> selected <% } %> value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba") { %> selected <% } %> value="Turizmo vadyba">Turizmo vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba (studijos anglų kalba)") { %> selected <% } %> value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas") { %> selected <% } %> value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas (studijos anglų kalba)") { %> selected <% } %> value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Sveikatos priežiūros fakultetas">
+                                <option class="others" <%if (user.studProgr === "Bendrosios praktikos slauga") { %> selected <% } %> value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                                <option class="others" <%if (user.studProgr === "Biomedicininė diagnostika") { %> selected <% } %> value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                                <option class="others" <%if (user.studProgr === "Dietetika") { %> selected <% } %> value="Dietetika">Dietetika</option>
+                                <option class="others" <%if (user.studProgr === "Ergoterapija") { %> selected <% } %> value="Ergoterapija">Ergoterapija</option>
+                                <option class="others" <%if (user.studProgr === "Higieninė ir dekoratyvinė kosmetologija") { %> selected <% } %> value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                                <option class="others" <%if (user.studProgr === "Kineziterapija") { %> selected <% } %> value="Kineziterapija">Kineziterapija</option>
+                                <option class="others" <%if (user.studProgr === "Radiologija") { %> selected <% } %> value="Radiologija">Radiologija</option>
+                              </optgroup>
+                              <optgroup label="Agrotechnologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Agroverslo technologijos") { %> selected <% } %> value="Agroverslo technologijos">Agroverslo technologijos</option>
+                                <option class="others" <%if (user.studProgr === "Cheminė analizė") { %> selected <% } %> value="Cheminė analizė">Cheminė analizė</option>
+                                <option class="others" <%if (user.studProgr === "Kraštovaizdžio dizainas") { %> selected <% } %> value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Maisto technologija") { %> selected <% } %> value="Maisto technologija">Maisto technologija</option>
+                                <option class="others" <%if (user.studProgr === "Veterinarija") { %> selected <% } %> value="Veterinarija">Veterinarija</option>
+                              </optgroup>
+                              <optgroup label="Pedagogikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Lietuvių gestų kalbos vertimas") { %> selected <% } %> value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                                <option class="others" <%if (user.studProgr === "Pradinio ugdymo pedagogika") { %> selected <% } %> value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                                <option class="others" <%if (user.studProgr === "Socialinis darbas") { %> selected <% } %> value="Socialinis darbas">Socialinis darbas</option>
+                                <option class="others" <%if (user.studProgr === "Vaikystės pedagogika") { %> selected <% } %> value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                              </optgroup>
+                              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Įvaizdžio dizainas") { %> selected <% } %> value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba") { %> selected <% } %> value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba (studijos anglų kalba)") { %> selected <% } %> value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Mados dizainas") { %> selected <% } %> value="Mados dizainas">Mados dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Mados technologijos ir verslas") { %> selected <% } %> value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                                <option class="others" <%if (user.studProgr === "Muzikinis teatras") { %> selected <% } %> value="Muzikinis teatras">Muzikinis teatras</option>
+                                <option class="others" <%if (user.studProgr === "Populiarioji muzika") { %> selected <% } %> value="Populiarioji muzika">Populiarioji muzika</option>
+                                <option class="others" <%if (user.studProgr === "Šokio pedagogika") { %> selected <% } %> value="Šokio pedagogika">Šokio pedagogika</option>
+                              </optgroup>
+                            </select>
             </div>
             <div class="col-md-2 mb-3">
               <select name="kV5_KT02darboTema<%=numb32%>" class="form-select form-control">
@@ -3390,7 +3514,69 @@
             </div>
             <div class="col-md-4 mb-3">
               <label for="">Studijų programa</label>
-              <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr<%=numb31%>" autocomplete="off"><%=user.studProgr%></textarea>
+              <select name="kV5_KT01studProgr<%=numb31%>" class="form-select form-control">
+                              <option value=""></option>
+                              <optgroup label="Elektronikos ir informatikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Elektronikos inžinerija") { %> selected <% } %> value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Informacijos sistemos") { %> selected <% } %> value="Informacijos sistemos">Informacijos sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Kompiuterių inžinerija") { %> selected <% } %> value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos") { %> selected <% } %> value="Programų sistemos">Programų sistemos</option>
+                                <option class="others" <%if (user.studProgr === "Programų sistemos (studijos anglų kalba)") { %> selected <% } %> value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Ekonomikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Apskaita") { %> selected <% } %> value="Apskaita">Apskaita</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė") { %> selected <% } %> value="Bankininkystė">Bankininkystė</option>
+                                <option class="others" <%if (user.studProgr === "Bankininkystė (studijos anglų kalba)") { %> selected <% } %> value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Finansai") { %> selected <% } %> value="Finansai">Finansai</option>
+                                <option class="others" <%if (user.studProgr === "Investicijos ir draudimas") { %> selected <% } %> value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika") { %> selected <% } %> value="Verslo ekonomika">Verslo ekonomika</option>
+                                <option class="others" <%if (user.studProgr === "Verslo ekonomika (studijos anglų kalba)") { %> selected <% } %> value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Verslo vadybos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Organizacijų vadyba") { %> selected <% } %> value="Organizacijų vadyba">Organizacijų vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)") { %> selected <% } %> value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Reklamos vadyba") { %> selected <% } %> value="Reklamos vadyba">Reklamos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Ryšiai su visuomene") { %> selected <% } %> value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas") { %> selected <% } %> value="Tarptautinis verslas">Tarptautinis verslas</option>
+                                <option class="others" <%if (user.studProgr === "Tarptautinis verslas (studijos anglų kalba)") { %> selected <% } %> value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba") { %> selected <% } %> value="Turizmo vadyba">Turizmo vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Turizmo vadyba (studijos anglų kalba)") { %> selected <% } %> value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas") { %> selected <% } %> value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                                <option class="others" <%if (user.studProgr === "Viešbučių ir restoranų verslas (studijos anglų kalba)") { %> selected <% } %> value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                              </optgroup>
+                              <optgroup label="Sveikatos priežiūros fakultetas">
+                                <option class="others" <%if (user.studProgr === "Bendrosios praktikos slauga") { %> selected <% } %> value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                                <option class="others" <%if (user.studProgr === "Biomedicininė diagnostika") { %> selected <% } %> value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                                <option class="others" <%if (user.studProgr === "Dietetika") { %> selected <% } %> value="Dietetika">Dietetika</option>
+                                <option class="others" <%if (user.studProgr === "Ergoterapija") { %> selected <% } %> value="Ergoterapija">Ergoterapija</option>
+                                <option class="others" <%if (user.studProgr === "Higieninė ir dekoratyvinė kosmetologija") { %> selected <% } %> value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                                <option class="others" <%if (user.studProgr === "Kineziterapija") { %> selected <% } %> value="Kineziterapija">Kineziterapija</option>
+                                <option class="others" <%if (user.studProgr === "Radiologija") { %> selected <% } %> value="Radiologija">Radiologija</option>
+                              </optgroup>
+                              <optgroup label="Agrotechnologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Agroverslo technologijos") { %> selected <% } %> value="Agroverslo technologijos">Agroverslo technologijos</option>
+                                <option class="others" <%if (user.studProgr === "Cheminė analizė") { %> selected <% } %> value="Cheminė analizė">Cheminė analizė</option>
+                                <option class="others" <%if (user.studProgr === "Kraštovaizdžio dizainas") { %> selected <% } %> value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Maisto technologija") { %> selected <% } %> value="Maisto technologija">Maisto technologija</option>
+                                <option class="others" <%if (user.studProgr === "Veterinarija") { %> selected <% } %> value="Veterinarija">Veterinarija</option>
+                              </optgroup>
+                              <optgroup label="Pedagogikos fakultetas">
+                                <option class="others" <%if (user.studProgr === "Lietuvių gestų kalbos vertimas") { %> selected <% } %> value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                                <option class="others" <%if (user.studProgr === "Pradinio ugdymo pedagogika") { %> selected <% } %> value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                                <option class="others" <%if (user.studProgr === "Socialinis darbas") { %> selected <% } %> value="Socialinis darbas">Socialinis darbas</option>
+                                <option class="others" <%if (user.studProgr === "Vaikystės pedagogika") { %> selected <% } %> value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                              </optgroup>
+                              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                                <option class="others" <%if (user.studProgr === "Įvaizdžio dizainas") { %> selected <% } %> value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba") { %> selected <% } %> value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                                <option class="others" <%if (user.studProgr === "Kultūrinės veiklos vadyba (studijos anglų kalba)") { %> selected <% } %> value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                                <option class="others" <%if (user.studProgr === "Mados dizainas") { %> selected <% } %> value="Mados dizainas">Mados dizainas</option>
+                                <option class="others" <%if (user.studProgr === "Mados technologijos ir verslas") { %> selected <% } %> value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                                <option class="others" <%if (user.studProgr === "Muzikinis teatras") { %> selected <% } %> value="Muzikinis teatras">Muzikinis teatras</option>
+                                <option class="others" <%if (user.studProgr === "Populiarioji muzika") { %> selected <% } %> value="Populiarioji muzika">Populiarioji muzika</option>
+                                <option class="others" <%if (user.studProgr === "Šokio pedagogika") { %> selected <% } %> value="Šokio pedagogika">Šokio pedagogika</option>
+                              </optgroup>
+                            </select>
             </div>
             <div class="col-md-4 mb-3">
               <label for="">Studentas (pavardė, vardas)</label>
@@ -3908,7 +4094,69 @@
                   <input type="text" class="form-control text-center" name="nD2_M04nr` + value6 + `" placeholder="" autocomplete="off" value="` + value6 + `" readonly="readonly">
                 </div>
                 <div class="col-md-3 mb-3">
-                  <textarea type="text" rows="1" class="form-control" name="nD2_M04studProgr` + value6 + `" placeholder="" autocomplete="off"></textarea>
+                  <select name="nD2_M04studProgr` + value6 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <optgroup label="Elektronikos ir informatikos fakultetas">
+                      <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                      <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                      <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                      <option class="others" value="Programų sistemos">Programų sistemos</option>
+                      <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Ekonomikos fakultetas">
+                      <option class="others" value="Apskaita">Apskaita</option>
+                      <option class="others" value="Bankininkystė">Bankininkystė</option>
+                      <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                      <option class="others" value="Finansai">Finansai</option>
+                      <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                      <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                      <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Verslo vadybos fakultetas">
+                      <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                      <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                      <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                      <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                      <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                      <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                      <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                      <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Sveikatos priežiūros fakultetas">
+                      <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                      <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                      <option class="others" value="Dietetika">Dietetika</option>
+                      <option class="others" value="Ergoterapija">Ergoterapija</option>
+                      <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                      <option class="others" value="Kineziterapija">Kineziterapija</option>
+                      <option class="others" value="Radiologija">Radiologija</option>
+                    </optgroup>
+                    <optgroup label="Agrotechnologijų fakultetas">
+                      <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                      <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                      <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                      <option class="others" value="Maisto technologija">Maisto technologija</option>
+                      <option class="others" value="Veterinarija">Veterinarija</option>
+                    </optgroup>
+                    <optgroup label="Pedagogikos fakultetas">
+                      <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                      <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                      <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                      <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                    </optgroup>
+                    <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                      <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Mados dizainas">Mados dizainas</option>
+                      <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                      <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                      <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                      <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                    </optgroup>
+                  </select>
                 </div>
                 <div class="col-md-4 mb-3">
                   <textarea type="text" rows="1" class="form-control " name="nD2_M04dalykPavad` + value6 + `" placeholder="" autocomplete="off"></textarea>
@@ -4333,7 +4581,69 @@
           </select>
         </div>
         <div class="col-md-2 mb-3">
-          <textarea type="text" rows="1" class="form-control " name="nD2_D03studProgr` + value9 + `" placeholder="" autocomplete="off"></textarea>
+          <select name="nD2_D03studProgr` + value9 + `"class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Elektronikos ir informatikos fakultetas">
+              <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+              <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+              <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+              <option class="others" value="Programų sistemos">Programų sistemos</option>
+              <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Ekonomikos fakultetas">
+              <option class="others" value="Apskaita">Apskaita</option>
+              <option class="others" value="Bankininkystė">Bankininkystė</option>
+              <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+              <option class="others" value="Finansai">Finansai</option>
+              <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+              <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+              <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Verslo vadybos fakultetas">
+              <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+              <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+              <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+              <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+              <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+              <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+              <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+              <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+              <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Sveikatos priežiūros fakultetas">
+              <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+              <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+              <option class="others" value="Dietetika">Dietetika</option>
+              <option class="others" value="Ergoterapija">Ergoterapija</option>
+              <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+              <option class="others" value="Kineziterapija">Kineziterapija</option>
+              <option class="others" value="Radiologija">Radiologija</option>
+            </optgroup>
+            <optgroup label="Agrotechnologijų fakultetas">
+              <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+              <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+              <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+              <option class="others" value="Maisto technologija">Maisto technologija</option>
+              <option class="others" value="Veterinarija">Veterinarija</option>
+            </optgroup>
+            <optgroup label="Pedagogikos fakultetas">
+              <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+              <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+              <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+              <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+            </optgroup>
+            <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+              <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+              <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+              <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Mados dizainas">Mados dizainas</option>
+              <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+              <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+              <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+              <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+            </optgroup>
+          </select>
         </div>
         <div class="col-md-3 mb-3">
           <textarea type="text" rows="1" class="form-control" name="nD2_D03veikla` + value9 + `" placeholder="" autocomplete="off"></textarea>
@@ -4376,7 +4686,69 @@
                   <input type="text"  class="form-control text-center" name="nD2_M03nr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
                 </div>
                 <div class="col-md-4 mb-3">
-                  <textarea type="text" rows="1" class="form-control " name="nD2_M03studProgr` + value5 + `" placeholder="" autocomplete="off"></textarea>
+                  <select name="nD2_M03studProgr` + value5 + `"class="form-select form-control">
+                    <option value=""></option>
+                    <optgroup label="Elektronikos ir informatikos fakultetas">
+                      <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                      <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                      <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                      <option class="others" value="Programų sistemos">Programų sistemos</option>
+                      <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Ekonomikos fakultetas">
+                      <option class="others" value="Apskaita">Apskaita</option>
+                      <option class="others" value="Bankininkystė">Bankininkystė</option>
+                      <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                      <option class="others" value="Finansai">Finansai</option>
+                      <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                      <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                      <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Verslo vadybos fakultetas">
+                      <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                      <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                      <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                      <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                      <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                      <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                      <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                      <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                      <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                    </optgroup>
+                    <optgroup label="Sveikatos priežiūros fakultetas">
+                      <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                      <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                      <option class="others" value="Dietetika">Dietetika</option>
+                      <option class="others" value="Ergoterapija">Ergoterapija</option>
+                      <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                      <option class="others" value="Kineziterapija">Kineziterapija</option>
+                      <option class="others" value="Radiologija">Radiologija</option>
+                    </optgroup>
+                    <optgroup label="Agrotechnologijų fakultetas">
+                      <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                      <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                      <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                      <option class="others" value="Maisto technologija">Maisto technologija</option>
+                      <option class="others" value="Veterinarija">Veterinarija</option>
+                    </optgroup>
+                    <optgroup label="Pedagogikos fakultetas">
+                      <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                      <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                      <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                      <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                    </optgroup>
+                    <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                      <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                      <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                      <option class="others" value="Mados dizainas">Mados dizainas</option>
+                      <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                      <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                      <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                      <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                    </optgroup>
+                  </select>
                 </div>
                 <div class="col-md-5 mb-3">
                   <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad` + value5 + `" placeholder="" autocomplete="off"></textarea>
@@ -6383,7 +6755,69 @@
                     <textarea type="text" rows="1" class="form-control " name="kV5_KT02diplomantas` + value32 + `" autocomplete="off"></textarea>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT02studProgr` + value32 + `" autocomplete="off"></textarea>
+                    <select name="kV5_KT02studProgr` + value32 + `"class="form-select form-control">
+                      <option value=""></option>
+                      <optgroup label="Elektronikos ir informatikos fakultetas">
+                        <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                        <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                        <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                        <option class="others" value="Programų sistemos">Programų sistemos</option>
+                        <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Ekonomikos fakultetas">
+                        <option class="others" value="Apskaita">Apskaita</option>
+                        <option class="others" value="Bankininkystė">Bankininkystė</option>
+                        <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                        <option class="others" value="Finansai">Finansai</option>
+                        <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                        <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                        <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Verslo vadybos fakultetas">
+                        <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                        <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                        <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                        <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                        <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                        <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                        <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                        <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                        <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                        <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Sveikatos priežiūros fakultetas">
+                        <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                        <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                        <option class="others" value="Dietetika">Dietetika</option>
+                        <option class="others" value="Ergoterapija">Ergoterapija</option>
+                        <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                        <option class="others" value="Kineziterapija">Kineziterapija</option>
+                        <option class="others" value="Radiologija">Radiologija</option>
+                      </optgroup>
+                      <optgroup label="Agrotechnologijų fakultetas">
+                        <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                        <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                        <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                        <option class="others" value="Maisto technologija">Maisto technologija</option>
+                        <option class="others" value="Veterinarija">Veterinarija</option>
+                      </optgroup>
+                      <optgroup label="Pedagogikos fakultetas">
+                        <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                        <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                        <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                        <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                      </optgroup>
+                      <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                        <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                        <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                        <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                        <option class="others" value="Mados dizainas">Mados dizainas</option>
+                        <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                        <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                        <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                        <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                      </optgroup>
+                    </select>
                   </div>
                   <div class="col-md-2 mb-3">
                     <select name="kV5_KT02darboTema` + value32 + `" class="form-select form-control">
@@ -6576,7 +7010,69 @@
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="">Studijų programa</label>
-                    <textarea type="text" rows="1" class="form-control " name="kV5_KT01studProgr` + value31 + `" autocomplete="off"></textarea>
+                    <select name="kV5_KT01studProgr` + value31 + `"class="form-select form-control">
+                      <option value=""></option>
+                      <optgroup label="Elektronikos ir informatikos fakultetas">
+                        <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+                        <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+                        <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+                        <option class="others" value="Programų sistemos">Programų sistemos</option>
+                        <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Ekonomikos fakultetas">
+                        <option class="others" value="Apskaita">Apskaita</option>
+                        <option class="others" value="Bankininkystė">Bankininkystė</option>
+                        <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+                        <option class="others" value="Finansai">Finansai</option>
+                        <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+                        <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+                        <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Verslo vadybos fakultetas">
+                        <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+                        <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+                        <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+                        <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+                        <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+                        <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+                        <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+                        <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+                        <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+                        <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+                      </optgroup>
+                      <optgroup label="Sveikatos priežiūros fakultetas">
+                        <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+                        <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+                        <option class="others" value="Dietetika">Dietetika</option>
+                        <option class="others" value="Ergoterapija">Ergoterapija</option>
+                        <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+                        <option class="others" value="Kineziterapija">Kineziterapija</option>
+                        <option class="others" value="Radiologija">Radiologija</option>
+                      </optgroup>
+                      <optgroup label="Agrotechnologijų fakultetas">
+                        <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+                        <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+                        <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+                        <option class="others" value="Maisto technologija">Maisto technologija</option>
+                        <option class="others" value="Veterinarija">Veterinarija</option>
+                      </optgroup>
+                      <optgroup label="Pedagogikos fakultetas">
+                        <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+                        <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+                        <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+                        <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+                      </optgroup>
+                      <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                        <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+                        <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+                        <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+                        <option class="others" value="Mados dizainas">Mados dizainas</option>
+                        <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+                        <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+                        <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+                        <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+                      </optgroup>
+                    </select>
                   </div>
                   <div class="col-md-4 mb-3">
               <label for="">Studentas (pavardė, vardas)</label>

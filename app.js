@@ -6231,7 +6231,7 @@ app.post("/update-2023-2024", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-2022-2023");
+            res.redirect("/user-window-2023-2024");
           }
         });
       } else {
@@ -6995,7 +6995,7 @@ app.post("/update-2024-2025", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-2022-2023");
+            res.redirect("/user-window-2024-2025");
           }
         });
       } else {
@@ -7005,7 +7005,7 @@ app.post("/update-2024-2025", (req, res) => {
   });
 }); //update 2024-2025
 
-app.post("/update-2022-2023", (req, res) => {
+app.post("/update-2025-2026", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
     if (err) {
@@ -7758,8 +7758,8 @@ app.post("/update-2022-2023", (req, res) => {
 
         foundUser.save(function(err) {
           if (!err) {
-            console.log("Succesfully updated");
-            res.redirect("/user-window-2022-2023");
+            console.log("Succesfully updated 2025-2026");
+            res.redirect("/user-window-2025-2026");
           }
         });
       } else {
@@ -7800,7 +7800,7 @@ app.get("/submit", function(req, res) {
   } else {
     res.redirect("/login");
   }
-});
+}); //OLD
 
 app.get("/submit-2022-2023", function(req, res) {
   if (req.isAuthenticated()) {
@@ -11512,7 +11512,7 @@ app.post("/submit-2024-2025", function(req, res) {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");
-            res.redirect("/submit-2022-2023");
+            res.redirect("/submit-2024-2025");
           }
         });
       } else {
@@ -12411,7 +12411,7 @@ app.post("/submit-2025-2026", function(req, res) {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");
-            res.redirect("/submit-2022-2023");
+            res.redirect("/submit-2025-2026");
           }
         });
       } else {
