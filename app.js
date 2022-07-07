@@ -1597,7 +1597,7 @@ app.post("/create-2022-2023", function(req, res) {
     foundUser.save(function(err) {
             if (!err) {
               console.log("Succesfully created 2022-2023");
-              res.redirect("/user-window-2022-2023");
+              res.redirect("/2022-2023/user-window");
             } else {
               console.log(err);
             }
@@ -2311,7 +2311,7 @@ app.post("/create-2023-2024", function(req, res) {
     foundUser.save(function(err) {
             if (!err) {
               console.log("Succesfully created 2023-2024");
-              res.redirect("/user-window-2023-2024");
+              res.redirect("/2023-2024/user-window");
             } else {
               console.log(err);
             }
@@ -3025,7 +3025,7 @@ app.post("/create-2024-2025", function(req, res) {
     foundUser.save(function(err) {
             if (!err) {
               console.log("Succesfully created 2024-2025");
-              res.redirect("/user-window-2024-2025");
+              res.redirect("/2024-2025/user-window");
             } else {
               console.log(err);
             }
@@ -3739,7 +3739,7 @@ app.post("/create-2025-2026", function(req, res) {
     foundUser.save(function(err) {
             if (!err) {
               console.log("Succesfully created 2025-2026");
-              res.redirect("/user-window-2025-2026");
+              res.redirect("/2025-2026/user-window");
             } else {
               console.log(err);
             }
@@ -3771,7 +3771,7 @@ app.get("/create", function(req, res) {
   }
 });
 
-app.get("/create-2022-2023", function(req, res) {
+app.get("/2022-2023/create", function(req, res) {
 
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -3788,7 +3788,7 @@ app.get("/create-2022-2023", function(req, res) {
   }
 });
 
-app.get("/create-2023-2024", function(req, res) {
+app.get("/2023-2024/create", function(req, res) {
 
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -3805,7 +3805,7 @@ app.get("/create-2023-2024", function(req, res) {
   }
 });
 
-app.get("/create-2024-2025", function(req, res) {
+app.get("/2024-2025/create", function(req, res) {
 
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -3822,7 +3822,7 @@ app.get("/create-2024-2025", function(req, res) {
   }
 });
 
-app.get("/create-2025-2026", function(req, res) {
+app.get("/2025-2026/create", function(req, res) {
 
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -3862,7 +3862,7 @@ app.get("/edit", function(req, res) {
   }
 });
 
-app.get("/edit-2022-2023", function(req, res) {
+app.get("/2022-2023/edit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -3885,7 +3885,7 @@ app.get("/edit-2022-2023", function(req, res) {
   }
 });
 
-app.get("/edit-2023-2024", function(req, res) {
+app.get("/2023-2024/edit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -3908,7 +3908,7 @@ app.get("/edit-2023-2024", function(req, res) {
   }
 });
 
-app.get("/edit-2024-2025", function(req, res) {
+app.get("/2024-2025/edit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -3931,7 +3931,7 @@ app.get("/edit-2024-2025", function(req, res) {
   }
 });
 
-app.get("/edit-2025-2026", function(req, res) {
+app.get("/2025-2026/edit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -5467,7 +5467,7 @@ app.post("/update-2022-2023", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-2022-2023");
+            res.redirect("/2022-2023/user-window");
           }
         });
       } else {
@@ -6231,7 +6231,7 @@ app.post("/update-2023-2024", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-2023-2024");
+            res.redirect("/2023-2024/user-window");
           }
         });
       } else {
@@ -6995,7 +6995,7 @@ app.post("/update-2024-2025", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-2024-2025");
+            res.redirect("/2024-2025/user-window");
           }
         });
       } else {
@@ -7759,7 +7759,7 @@ app.post("/update-2025-2026", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated 2025-2026");
-            res.redirect("/user-window-2025-2026");
+            res.redirect("/2025-2026/user-window");
           }
         });
       } else {
@@ -7802,7 +7802,7 @@ app.get("/submit", function(req, res) {
   }
 }); //OLD
 
-app.get("/submit-2022-2023", function(req, res) {
+app.get("/2022-2023/submit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -7835,7 +7835,7 @@ app.get("/submit-2022-2023", function(req, res) {
   }
 });
 
-app.get("/submit-2023-2024", function(req, res) {
+app.get("/2023-2024/submit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -7868,7 +7868,7 @@ app.get("/submit-2023-2024", function(req, res) {
   }
 });
 
-app.get("/submit-2024-2025", function(req, res) {
+app.get("/2024-2025/submit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -7901,7 +7901,7 @@ app.get("/submit-2024-2025", function(req, res) {
   }
 });
 
-app.get("/submit-2025-2026", function(req, res) {
+app.get("/2025-2026/submit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
@@ -15700,7 +15700,7 @@ app.get("/user-window", function(req, res) {
   }
 });
 
-app.get("/user-window-2022-2023", function(req, res) {
+app.get("/2022-2023/user-window", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -15722,7 +15722,7 @@ app.get("/user-window-2022-2023", function(req, res) {
   }
 });
 
-app.get("/user-window-2023-2024", function(req, res) {
+app.get("/2023-2024/user-window", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -15744,7 +15744,7 @@ app.get("/user-window-2023-2024", function(req, res) {
   }
 });
 
-app.get("/user-window-2024-2025", function(req, res) {
+app.get("/2024-2025/user-window", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -15766,7 +15766,7 @@ app.get("/user-window-2024-2025", function(req, res) {
   }
 });
 
-app.get("/user-window-2025-2026", function(req, res) {
+app.get("/2025-2026/user-window", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -19537,6 +19537,53 @@ app.post("/delete-faculty", function(req, res) {
       }
     }
   );
+});
+
+app.use('/*/*', (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+        res.render("404-admin");
+      } else if (foundUser.role === "katedros vedėjas"){
+          res.render("404-dep");
+        }  else if (foundUser.role === "dėstytojas"){
+            res.render("404-lecturer");
+          } else {
+          console.log("User role unknown");
+          res.redirect("/404");
+        }
+      }
+    });
+  } else {
+    res.render("404");
+  }
+});
+
+app.use('*', (req, res) => {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+        res.render("404-admin");
+      } else if (foundUser.role === "katedros vedėjas"){
+          res.render("404-dep");
+        }  else if (foundUser.role === "dėstytojas"){
+            res.render("404-lecturer");
+          } else {
+          console.log("User role unknown");
+          res.redirect("/404");
+        }
+      }
+    });
+  } else {
+    res.render("404");
+  }
 });
 
 app.listen(3000, function() {

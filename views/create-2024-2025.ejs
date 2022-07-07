@@ -13,7 +13,7 @@
 
     <form action="/create-2024-2025" method="post">
 
-      <div class="form-group ">
+        <div class="form-group" id="begin">
         <!-- 1 lentelė -->
         <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
         <div class="form-row">
@@ -4125,6 +4125,12 @@
     <% } %>
   </div>
 </div>
+
+<%if ( user.busena24_25 === "nesukurta") { %>
+  <div class="circle-button">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 
 <!-- ---ALL SCRIPTS--- -->

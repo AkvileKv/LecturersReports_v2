@@ -621,7 +621,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       ataskaitosPateikimoDataVedejo: String,
       vedejoVardasPavarde: String
 
-    }, // dėstytojas end
+    }, // dėstytojas end 2022-2023
     katedrosVedejas: {
       katedrosDestytojuSk: Number,
       kKPP1_1: [kKPP1_1Schema], //1 lentelė

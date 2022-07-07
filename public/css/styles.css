@@ -92,3 +92,23 @@ a {
 input:focus::placeholder {
   color: transparent;
 }
+
+/* back to begin button */
+.circle-button {
+  align-items: center;
+}
+.circle {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 20%;
+  background-color: lightgrey;
+  color: #FFF;
+  text-align: center;
+  line-height: 1;
+  padding: 16px 1px 1px 1px;
+  text-decoration: none;
+  font-size: 59%;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 3.5rem;
+}

@@ -1,7 +1,7 @@
 <%- include('partials/headerLecturer2022_2023') %>
 
-<div class="container ">
-  <div class="jumbotron ">
+<div class="container">
+  <div class="jumbotron">
 
     <h1 class="text-center">Dėstytojo darbo ataskaitos sukūrimas 2022 - 2023 m. m.</h1>
 
@@ -13,7 +13,7 @@
 
     <form action="/create-2022-2023" method="post">
 
-      <div class="form-group ">
+      <div class="form-group" id="begin">
         <!-- 1 lentelė -->
         <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
         <div class="form-row">
@@ -4115,6 +4115,7 @@
         </script>
 
       </div>
+     <%- %>
       <div class="row">
         <div class="text-center">
           <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti?');">IŠSAUGOTI</button>
@@ -4123,8 +4124,16 @@
 
     </form>
     <% } %>
+
+
   </div>
 </div>
+
+<%if ( user.busena22_23 === "nesukurta") { %>
+  <div class="circle-button">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 
 <!-- ---ALL SCRIPTS--- -->

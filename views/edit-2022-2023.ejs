@@ -13,8 +13,7 @@
 
     <form action="/update-2022-2023" method="post">
 
-      <div class="form-group ">
-        <div class="form-group ">
+        <div class="form-group" id="begin">
           <!-- 1 lentelė -->
           <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
           <div class="form-row">
@@ -422,7 +421,6 @@
               <input type="text" class="form-control text-center" name="nD2_M04nr<%=numb6%>" placeholder="" autocomplete="off" value="<%=numb6%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea type="text" rows="1" class="form-control" name="nD2_M04studProgr<%=numb6%>" placeholder="" autocomplete="off"><%=user.studProgr%></textarea>
               <select name="nD2_M04studProgr<%=numb6%>" class="form-select form-control">
                 <option value=""></option>
                 <optgroup label="Elektronikos ir informatikos fakultetas">
@@ -3880,6 +3878,11 @@
   </div>
 </div>
 
+<%if ( user.busena22_23 === "redaguojama") { %>
+  <div class="circle-button">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 
 
