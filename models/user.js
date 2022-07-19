@@ -467,13 +467,23 @@ var veiklSavinalize_Schema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({ //pagrindinė schema
   email: String,
   password: String,
-  role: String,
-  rolesKeitimas: Boolean,
   vardas: String,
   pavarde: String,
   fakultetas: String,
   katedra: String,
   currentYear: String,
+
+  role: String,
+  role22_23: String,
+  role23_24: String,
+  role24_25: String,
+  role25_26: String,
+
+  rolesKeitimas: Boolean,
+  rolesKeitimas22_23: Boolean,
+  rolesKeitimas23_24: Boolean,
+  rolesKeitimas24_25: Boolean,
+  rolesKeitimas25_26: Boolean,
 
   busenaVedejo: String,
   busenaVedejo22_23: String,
@@ -879,7 +889,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       ataskaitosPateikimoDataVedejo: String,
       vedejoVardasPavarde: String
 
-    }, // dėstytojas end
+    }, // dėstytojas end 2023-2024
     katedrosVedejas: {
       katedrosDestytojuSk: Number,
       kKPP1_1: [kKPP1_1Schema], //1 lentelė
@@ -1001,7 +1011,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         pateikimas: Date
       },
       ataskaitosPateikimoData: String
-    } //vedejo end
+    } //vedejo end 2023-2024
   },
   mm2024_2025: {
     destytojas: {
@@ -1137,7 +1147,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       ataskaitosPateikimoDataVedejo: String,
       vedejoVardasPavarde: String
 
-    }, // dėstytojas end
+    }, // dėstytojas end 2024-2025
     katedrosVedejas: {
       katedrosDestytojuSk: Number,
       kKPP1_1: [kKPP1_1Schema], //1 lentelė
@@ -1259,7 +1269,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         pateikimas: Date
       },
       ataskaitosPateikimoData: String
-    } //vedejo end
+    } //vedejo end 2024-2025
   },
   mm2025_2026: {
     destytojas: {
@@ -1395,7 +1405,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
       ataskaitosPateikimoDataVedejo: String,
       vedejoVardasPavarde: String
 
-    }, // dėstytojas end
+    }, // dėstytojas end 2025-2026
     katedrosVedejas: {
       katedrosDestytojuSk: Number,
       kKPP1_1: [kKPP1_1Schema], //1 lentelė
@@ -1517,7 +1527,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
         pateikimas: Date
       },
       ataskaitosPateikimoData: String
-    } //vedejo end
+    } //vedejo end 2025-2026
   }
 });
 

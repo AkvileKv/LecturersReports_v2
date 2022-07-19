@@ -8,22 +8,22 @@
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo%></p>
   <% } %>
 
-  <p class="lead">Rolė: <%=user.role%></p>
+  <p class="lead">Rolė: <%=user.role23_24%></p>
 </div>
 
 <div class="container">
   <div class="jumbotron ">
-
+    <form action="/update-user-2023-2024" method="post">
       <div class="form-group ">
         <h4 class="text-center"><%=user.vardas%> <%=user.pavarde%></h4>
-        <%if ( user.rolesKeitimas === true) { %>
+        <%if ( user.rolesKeitimas23_24 === true) { %>
         <div class="form-row">
           <div class="col-md-3 mb-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Rolė:</label>
             <select name="role" class="form-select">
-              <option style="color:gray" value="<%=user.role %>"> <%=user.role%> </option>
+              <option style="color:gray" value="<%=user.role23_24 %>"> <%=user.role23_24%> </option>
               <option class="others" value="dėstytojas">dėstytojas</option>
               <option class="others" value="katedros vedėjas">katedros vedėjas</option>
             </select>
@@ -47,7 +47,17 @@
           </div>
         </div>
 
+        <br>
+        <div class="row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          </div>
+        </div>
+
       </div>
+    </form>
 
   </div>
 </div>

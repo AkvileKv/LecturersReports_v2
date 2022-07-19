@@ -66,14 +66,22 @@ app.post("/register", (req, res) => {
 
   User.register({
     username: req.body.username,
-    busena: "nesukurta",
+    busena: "nesukurta", //delete
     busena22_23: "nesukurta",
     busena23_24: "nesukurta",
     busena24_25: "nesukurta",
     busena25_26: "nesukurta",
     busenaVedejo: "nesukurta",
     role: "dėstytojas",
-    rolesKeitimas: false,
+    role22_23: "dėstytojas",
+    role23_24: "dėstytojas",
+    role24_25: "dėstytojas",
+    role25_26: "dėstytojas",
+    rolesKeitimas: false, //delete
+    rolesKeitimas22_23: false,
+    rolesKeitimas23_24: false,
+    rolesKeitimas24_25: false,
+    rolesKeitimas25_26: false,
     updated_for: "Registracija",
     currentYear: new Date().getFullYear()
   }, req.body.password, function(err, user) {
@@ -15796,13 +15804,8 @@ app.post("/update-user", function(req, res) {
             console.log(err);
           } else {
             if (foundUser) {
-              if (foundUser.rolesKeitimas === true) {
-                foundUser.role = req.body.role
-              }
               foundUser.vardas = req.body.vardas,
               foundUser.pavarde = req.body.pavarde,
-              foundUser.katedra = req.body.katedra,
-              foundUser.fakultetas = req.body.fakultetas,
               foundUser.updated_for = req.user.username
 
           foundUser.save(function(err) {
@@ -15830,6 +15833,158 @@ app.post("/update-user", function(req, res) {
   }
 });
 
+app.post("/update-user-2022-2023", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              if (foundUser.rolesKeitimas22_23 === true) {
+                foundUser.role22_23 = req.body.role,
+                foundUser.role = req.body.role
+              }
+              foundUser.updated_for = req.user.username
+
+          foundUser.save(function(err) {
+            if (!err) {
+              console.log("Dėstytojas info succesfully updated ");
+              if (foundUser.role22_23 === "dėstytojas") {
+                res.redirect("/2022-2023/user-window");
+              } else if (foundUser.role22_23 === "katedros vedėjas") {
+                res.redirect("/user-window-dep"); // ???
+              } else {
+                res.redirect("/login");
+              }
+            } else {
+              console.log(err);
+            }
+          });
+
+        } else {
+          console.log("User does'f found");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.post("/update-user-2023-2024", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              if (foundUser.rolesKeitimas23_24 === true) {
+                foundUser.role23_24 = req.body.role,
+                foundUser.role = req.body.role
+              }
+              foundUser.updated_for = req.user.username
+
+          foundUser.save(function(err) {
+            if (!err) {
+              console.log("Dėstytojas info succesfully updated ");
+              if (foundUser.role23_24 === "dėstytojas") {
+                res.redirect("/2023-2024/user-window");
+              } else if (foundUser.role23_24 === "katedros vedėjas") {
+                res.redirect("/user-window-dep"); // ???
+              } else {
+                res.redirect("/login");
+              }
+            } else {
+              console.log(err);
+            }
+          });
+
+        } else {
+          console.log("User does'f found");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.post("/update-user-2024-2025", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              if (foundUser.rolesKeitimas24_25 === true) {
+                foundUser.role24_25 = req.body.role,
+                foundUser.role = req.body.role
+              }
+              foundUser.updated_for = req.user.username
+
+          foundUser.save(function(err) {
+            if (!err) {
+              console.log("Dėstytojas info succesfully updated ");
+              if (foundUser.role24_25 === "dėstytojas") {
+                res.redirect("/2024-2025/user-window");
+              } else if (foundUser.role24_25 === "katedros vedėjas") {
+                res.redirect("/user-window-dep"); // ???
+              } else {
+                res.redirect("/login");
+              }
+            } else {
+              console.log(err);
+            }
+          });
+
+        } else {
+          console.log("User does'f found");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.post("/update-user-2025-2026", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              if (foundUser.rolesKeitimas25_26 === true) {
+                foundUser.role25_26 = req.body.role,
+                foundUser.role = req.body.role
+              }
+              foundUser.updated_for = req.user.username
+
+          foundUser.save(function(err) {
+            if (!err) {
+              console.log("Dėstytojas info succesfully updated ");
+              if (foundUser.role25_26 === "dėstytojas") {
+                res.redirect("/2025-2026/user-window");
+              } else if (foundUser.role25_26 === "katedros vedėjas") {
+                res.redirect("/user-window-dep"); // ???
+              } else {
+                res.redirect("/login");
+              }
+            } else {
+              console.log(err);
+            }
+          });
+
+        } else {
+          console.log("User does'f found");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
 //Katedros vedėjas atnaujina savo info
 app.post("/update-user-dep", function(req, res) {
   if (req.isAuthenticated()) {
