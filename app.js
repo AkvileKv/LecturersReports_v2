@@ -143,9 +143,9 @@ app.post("/login", (req, res) => {
             });
 
             if (foundUser.role === "dėstytojas") {
-              res.redirect("/user-window");
+              res.redirect("/user-window-selection");
             } else if (foundUser.role === "katedros vedėjas") {
-              res.redirect("/user-window-dep");
+              res.redirect("/user-window-selection");
             } else if (foundUser.role === "administratorius") {
               res.redirect("/admin-window");
             }
@@ -15703,6 +15703,14 @@ app.get("/user-window", function(req, res) {
         }
       }
     });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/user-window-selection", function(req, res) {
+  if (req.isAuthenticated()) {
+  res.render("user-window-selection");
   } else {
     res.redirect("/login");
   }
