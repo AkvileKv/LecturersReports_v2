@@ -13410,7 +13410,7 @@ app.post("/create-dep", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully created");
-            res.redirect("/user-window-dep");
+            res.redirect("/user-window");
           }
         });
       } else {
@@ -14431,7 +14431,7 @@ app.post("/edit-dep", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully updated");
-            res.redirect("/user-window-dep");
+            res.redirect("/user-window");
           }
         });
       } else {
@@ -15629,7 +15629,7 @@ app.post("/submit-dep", function(req, res) {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully submitted");
-            res.redirect("/user-window-dep");
+            res.redirect("/user-window");
           }
         });
       } else {
@@ -15637,29 +15637,6 @@ app.post("/submit-dep", function(req, res) {
       }
     }
   });
-});
-
-app.get("/user-window-dep", function(req, res) {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        //console.log("Error...");
-        console.log(err);
-      } else {
-        if (foundUser.role === "katedros vedėjas") {
-          res.render("user-window-dep", {
-            user: foundUser
-          });
-        } else {
-          console.log("You do not have permission");
-          console.log("user-window-dep nepraleidžia");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
 });
 
 
@@ -15692,7 +15669,7 @@ app.get("/user-window", function(req, res) {
         //console.log("Error...");
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window", {
             user: foundUser
           });
@@ -15710,11 +15687,27 @@ app.get("/user-window", function(req, res) {
 
 app.get("/user-window-selection", function(req, res) {
   if (req.isAuthenticated()) {
-  res.render("user-window-selection");
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        //console.log("Error...");
+        console.log(err);
+      } else {
+        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+          res.render("user-window-selection", {
+            user: foundUser
+          });
+        } else {
+          console.log("You don't have permission");
+          res.redirect("/login");
+        }
+      }
+    });
   } else {
     res.redirect("/login");
   }
 });
+
+
 
 app.get("/2022-2023/user-window", function(req, res) {
   if (req.isAuthenticated()) {
@@ -15819,13 +15812,40 @@ app.post("/update-user", function(req, res) {
           foundUser.save(function(err) {
             if (!err) {
               console.log("Dėstytojas info succesfully updated ");
-              if (foundUser.role === "dėstytojas") {
+              if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
                 res.redirect("/user-window");
-              } else if (foundUser.role === "katedros vedėjas") {
-                res.redirect("/user-window-dep");
-              } else {
+              }  else {
                 res.redirect("/login");
               }
+            } else {
+              console.log(err);
+            }
+          });
+
+        } else {
+          console.log("User does'f found");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.post("/update-user-window-selection-role", function(req, res) {
+  if (req.isAuthenticated()) {
+
+    User.findById(req.user.id, function(err, foundUser) {
+          if (err) {
+            console.log(err);
+          } else {
+            if (foundUser) {
+              foundUser.role = req.body.role,
+              foundUser.updated_for = req.user.username
+
+          foundUser.save(function(err) {
+            if (!err) {
+                res.redirect("/user-window");
             } else {
               console.log(err);
             }
@@ -15861,7 +15881,7 @@ app.post("/update-user-2022-2023", function(req, res) {
               if (foundUser.role22_23 === "dėstytojas") {
                 res.redirect("/2022-2023/user-window");
               } else if (foundUser.role22_23 === "katedros vedėjas") {
-                res.redirect("/user-window-dep"); // ???
+                res.redirect("/user-window"); // ???
               } else {
                 res.redirect("/login");
               }
@@ -15899,7 +15919,7 @@ app.post("/update-user-2023-2024", function(req, res) {
               if (foundUser.role23_24 === "dėstytojas") {
                 res.redirect("/2023-2024/user-window");
               } else if (foundUser.role23_24 === "katedros vedėjas") {
-                res.redirect("/user-window-dep"); // ???
+                res.redirect("/user-window"); // ???
               } else {
                 res.redirect("/login");
               }
@@ -15937,7 +15957,7 @@ app.post("/update-user-2024-2025", function(req, res) {
               if (foundUser.role24_25 === "dėstytojas") {
                 res.redirect("/2024-2025/user-window");
               } else if (foundUser.role24_25 === "katedros vedėjas") {
-                res.redirect("/user-window-dep"); // ???
+                res.redirect("/user-window"); // ???
               } else {
                 res.redirect("/login");
               }
@@ -15975,7 +15995,7 @@ app.post("/update-user-2025-2026", function(req, res) {
               if (foundUser.role25_26 === "dėstytojas") {
                 res.redirect("/2025-2026/user-window");
               } else if (foundUser.role25_26 === "katedros vedėjas") {
-                res.redirect("/user-window-dep"); // ???
+                res.redirect("/user-window"); // ???
               } else {
                 res.redirect("/login");
               }
@@ -16021,7 +16041,7 @@ app.post("/update-user-dep", function(req, res) {
                 res.redirect("/user-window");
               } else if (foundUser.role === "katedros vedėjas") {
                 //console.log("vedejas");
-                res.redirect("/user-window-dep");
+                res.redirect("/user-window");
               } else {
                 res.redirect("/login");
               }
@@ -16096,7 +16116,7 @@ app.get("/dep-edit-user/:userId", (req, res) => {
               }
             });
           } else {
-            res.redirect("/user-window-dep");
+            res.redirect("/user-window");
           }
         } else {
           res.redirect("/home");
@@ -16166,7 +16186,7 @@ app.get("/dep-lecturer-report/:userId", (req, res) => {
               }
             });
           } else {
-            res.redirect("/user-window-dep");
+            res.redirect("/user-window");
           }
         } else {
           res.redirect("/home");
