@@ -1,10 +1,16 @@
+<%if ( user.role === "dėstytojas") { %>
 <%- include('partials/headerLecturer2025_2026') %>
+<% } else if (user.role === "katedros vedėjas") { %>
+<%- include('partials/headerDep') %>
+<% } %>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">2025 - 2026 m. m. ataskaitos pildymo aplinka</h1>
   <%if ( user.role === "dėstytojas") { %>
+    <h1>Dėstytojo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena25_26%></p>
   <% } else if (user.role === "katedros vedėjas") { %>
+    <h1>Katedros vedėjo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo%></p>
   <% } %>
 

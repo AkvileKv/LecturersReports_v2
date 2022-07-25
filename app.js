@@ -72,6 +72,10 @@ app.post("/register", (req, res) => {
     busena24_25: "nesukurta",
     busena25_26: "nesukurta",
     busenaVedejo: "nesukurta",
+    busenaVedejo22_23: "nesukurta",
+    busenaVedejo23_24: "nesukurta",
+    busenaVedejo24_25: "nesukurta",
+    busenaVedejo25_26: "nesukurta",
     role: "dėstytojas",
     role22_23: "dėstytojas",
     role23_24: "dėstytojas",
@@ -90,7 +94,7 @@ app.post("/register", (req, res) => {
       res.redirect("/register");
     } else {
       passport.authenticate("local")(req, res, function() {
-        res.redirect("/user-window");
+        res.redirect("/user-window-selection");
       });
     }
   });
@@ -15646,6 +15650,7 @@ app.get("/logout", function(req, res) {
 
     if (err) {
       console.log(err);
+      res.redirect('/login');
     } else {
     var a = req.user.username;
       foundUser.updated_for = "Atsijungimas" +" "+ a;
@@ -15715,7 +15720,7 @@ app.get("/2022-2023/user-window", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window-2022-2023", {
             user: foundUser
           });
@@ -15737,7 +15742,7 @@ app.get("/2023-2024/user-window", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+  if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window-2023-2024", {
             user: foundUser
           });
@@ -15759,7 +15764,7 @@ app.get("/2024-2025/user-window", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+  if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window-2024-2025", {
             user: foundUser
           });
@@ -15781,7 +15786,7 @@ app.get("/2025-2026/user-window", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+  if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window-2025-2026", {
             user: foundUser
           });
