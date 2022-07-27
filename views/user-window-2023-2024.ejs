@@ -1,7 +1,7 @@
 <%if ( user.role === "dėstytojas") { %>
 <%- include('partials/headerLecturer2023_2024') %>
 <% } else if (user.role === "katedros vedėjas") { %>
-<%- include('partials/headerDep') %>
+<%- include('partials/headerDep2023_2024') %>
 <% } %>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -11,7 +11,7 @@
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena23_24%></p>
   <% } else if (user.role === "katedros vedėjas") { %>
     <h1>Katedros vedėjo aplinka</h1>
-  <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo%></p>
+  <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo23_24%></p>
   <% } %>
 
 </div>
