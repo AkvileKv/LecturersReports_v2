@@ -37,8 +37,28 @@
           </div>
         </div>
 
-      </div>
+        <% if (user.role === "katedros vedėjas") { %>
+        <form action="/update-user-dep-2023-2024" method="post">
+          <div class="form-row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <lable for="">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu):</lable>
+              <input type="number" name="katedrosDestytojuSkaicius" value="<%=user.mm2023_2024.katedrosVedejas.katedrosDestytojuSk%>" class="form-control" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            </div>
+          </div>
+        </form>
+        <% } %>
 
+      </div>
   </div>
 </div>
 

@@ -11,8 +11,7 @@
 
     <% } else if (logedInUser.busenaVedejo22_23 === "nesukurta") { %>
 
-
-    <form action="..." method="post">
+    <form action="/dep-create-2022-2023" method="post">
       <div class="form-group ">
             <br><br>
       <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
@@ -212,7 +211,7 @@
         <p class="font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
         <% var numb2 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  if (user.busena === "užrakinta" || user.busena === "užrakintaVedėjo"){ %>
+        <%  if (user.busena22_23 === "užrakinta" || user.busena22_23 === "užrakintaVedėjo"){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
         <% numb2++; %>
         <div class="form-row">
@@ -228,19 +227,19 @@
           </div>
           <div class="col-md-4 mb-3"><br>
             <label>Pareigos</label>
-            <textarea type="text" rows="1" class="form-control" name="lent2_pareigos<%=numb2%>" autocomplete="off"><%=user.destytojas.pareigos%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent2_pareigos<%=numb2%>" autocomplete="off"><%=user.mm2022_2023.destytojas.pareigos%></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label>Pagrindinė (P), nepagrindinė (N) darbovietė</label>
-            <textarea type="text" rows="1" class="form-control" name="lent2_darbovTipas<%=numb2%>" autocomplete="off"><%=user.destytojas.darbovietesTipas%></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent2_darbovTipas<%=numb2%>" autocomplete="off"><%=user.mm2022_2023.destytojas.darbovietesTipas%></textarea>
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
         <% }%>
@@ -440,7 +439,7 @@
         <div class="form-row">
           <% var numb4 = 0; %>
           <%  users.forEach(function(user){ %>
-          <%  user.destytojas.nD2_M02.forEach(function(user){ %>
+          <%  user.mm2022_2023.destytojas.nD2_M02.forEach(function(user){ %>
           <% numb4++ %>
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
@@ -562,7 +561,7 @@
         <% var numb6 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_M04.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_M04.forEach(function(user){ %>
         <% numb6++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -665,7 +664,7 @@
         <% var numb7 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_D01.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_D01.forEach(function(user){ %>
         <% numb7++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -707,7 +706,7 @@
         <% var numb8 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_D02.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_D02.forEach(function(user){ %>
         <% numb8++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -891,7 +890,7 @@
         <% var numb9 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_D03.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_D03.forEach(function(user){ %>
         <% numb9++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1095,7 +1094,7 @@
         <% var numb5 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_M03.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_M03.forEach(function(user){ %>
         <% numb5++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1133,7 +1132,7 @@
         <% var numba9 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.nD2_S01.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.nD2_S01.forEach(function(user){ %>
         <% numba9++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1209,7 +1208,7 @@
         <% var numb12 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T01.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T01.forEach(function(user){ %>
         <% numb12++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1394,7 +1393,7 @@
         </table>
         <% var numb13 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  user.destytojas.tMTEP3_T02.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T02.forEach(function(user){ %>
         <% numb13++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1528,7 +1527,7 @@
 
         <% var numb14 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  user.destytojas.tMTEP3_T03.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T03.forEach(function(user){ %>
         <% numb14++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1554,7 +1553,7 @@
         <% var numb15 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T04.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T04.forEach(function(user){ %>
         <% numb15++ %>
 
         <div class="form-row">
@@ -1624,7 +1623,7 @@
         <% var numb16 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T05.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T05.forEach(function(user){ %>
         <% numb16++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1671,7 +1670,7 @@
         <% var numb162 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_142.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_142.forEach(function(user){ %>
         <% numb162++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1714,7 +1713,7 @@
         <% var numb163 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_143.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_143.forEach(function(user){ %>
         <% numb163++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1741,7 +1740,7 @@
           </b></p>
         <% var numb17 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  user.destytojas.tMTEP3_T06.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T06.forEach(function(user){ %>
         <% numb17++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1802,7 +1801,7 @@
         <% var numb18 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T07.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T07.forEach(function(user){ %>
         <% numb18++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1858,7 +1857,7 @@
         <% var numb19 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T08.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T08.forEach(function(user){ %>
         <% numb19++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1920,7 +1919,7 @@
         <% var numb20 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T09.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T09.forEach(function(user){ %>
         <% numb20++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -1977,7 +1976,7 @@
         <% var numb21 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T10.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T10.forEach(function(user){ %>
         <% numb21++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2032,7 +2031,7 @@
         <% var numb22 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T11.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T11.forEach(function(user){ %>
         <% numb22++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2112,7 +2111,7 @@
         <% var numb23 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T12.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T12.forEach(function(user){ %>
         <% numb23++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2139,7 +2138,7 @@
         <% var numb25 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.tMTEP3_T14.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.tMTEP3_T14.forEach(function(user){ %>
         <% numb25++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2180,7 +2179,7 @@
         <% var numb24 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <% user.destytojas.tMTEP3_T13.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.tMTEP3_T13.forEach(function(user){ %>
         <% numb24++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2276,9 +2275,9 @@
         <% var mokymosiKompSk = 0; %>
         <% var iterationNr261 = 0; %>
         <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") mokymosiKompSk++ %>
+        <% if (user.busena22_23 != "nesukurta") mokymosiKompSk++ %>
         <% var pavVard = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
         <% iterationNr261++ %>
         <% if (iterationNr261==1){%>
         <div class="form-row">
@@ -2351,9 +2350,9 @@
         <% var tyrimuKompSk = 0; %>
         <% var iterationNr262 = 0; %>
         <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") tyrimuKompSk++ %>
+        <% if (user.busena22_23 != "nesukurta") tyrimuKompSk++ %>
         <% var pavVard = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
         <% iterationNr262++ %>
         <% if (iterationNr262==1){%>
         <div class="form-row">
@@ -2425,9 +2424,9 @@
         <% var bendrKompSk = 0; %>
         <% var iterationNr263 = 0; %>
         <%  users.forEach(function(user){ %>
-        <% if (user.busena != "nesukurta") bendrKompSk++ %>
+        <% if (user.busena22_23 != "nesukurta") bendrKompSk++ %>
         <% var pavVard = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
         <% iterationNr263++ %>
         <% if (iterationNr263==1){%>
         <div class="form-row">
@@ -2500,8 +2499,8 @@
         <% var dalykKompSk = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVard = user.pavarde + " " + user.vardas; %>
-        <% if (user.busena != "nesukurta") dalykKompSk++; %>
-        <%  user.destytojas.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
+        <% if (user.busena22_23 != "nesukurta") dalykKompSk++; %>
+        <%  user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
         <% iterationNr264++ %>
         <% if (iterationNr264==1){%>
         <div class="form-row">
@@ -2592,10 +2591,10 @@
         <%  var dalykKompSk = 0; %>
 
         <%  users.forEach(function(user){ %>
-        <% if (user.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp == true) mokymosiKompSk++ %>
-        <% if (user.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp == true) tyrimuKompSk++ %>
-        <% if (user.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp == true) bendrKompSk++ %>
-        <% if (user.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp == true) dalykKompSk++ %>
+        <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp == true) mokymosiKompSk++ %>
+        <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp == true) tyrimuKompSk++ %>
+        <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp == true) bendrKompSk++ %>
+        <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp == true) dalykKompSk++ %>
         <% }) %>
 
         <br>
@@ -2708,7 +2707,7 @@
         <% var numb27_new = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kTOV4_25.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_25.forEach(function(user){ %>
         <% numb27_new++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2775,7 +2774,7 @@
         <% var numb28_new = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_26.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_26.forEach(function(user){ %>
         <% numb28_new++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -2835,7 +2834,7 @@
         <% var k29var = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_KV03.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_KV03.forEach(function(user){ %>
         <% k29var++; %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -3203,7 +3202,7 @@
         <% var numb311 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_O01.kTOV4_O01_1.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_1.forEach(function(user){ %>
         <% numb311++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -3232,7 +3231,7 @@
         <% var numb312 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
         <% numb312++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -3495,7 +3494,7 @@
         <% var iterationNr33 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
-        <%  user.destytojas.kTOV4_29.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kTOV4_29.forEach(function(user){ %>
         <% iterationNr33++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -3944,7 +3943,7 @@
         <% var numb32 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kV5_KT02.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kV5_KT02.forEach(function(user){ %>
         <% numb32++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -4120,7 +4119,7 @@
         <% var numb31 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <%  user.destytojas.kV5_KT01.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kV5_KT01.forEach(function(user){ %>
         <% numb31++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -4301,7 +4300,7 @@
           38 lentelė. Dalyvavimas Lietuvos ir tarptautiniuose projektuose ir programose, tarptautiniuose mainuose.*(Erasmus+ ir kt.), ES struktūrinių fondų projektuose.</p>
         <% var numb34 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  user.destytojas.kV5_34.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kV5_34.forEach(function(user){ %>
         <% numb34++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">
@@ -4390,7 +4389,7 @@
         <% var iterationNr401 = 0; %>
         <% users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% user.destytojas.kV5_32.socAtskMaz.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.kV5_32.socAtskMaz.forEach(function(user){ %>
         <% iterationNr401++ %>
         <% if (iterationNr401==1){%>
         <div class="form-row">
@@ -4424,7 +4423,7 @@
         <% var iterationNr402 = 0; %>
         <% users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% user.destytojas.kV5_32.socAtskMaz.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.kV5_32.socAtskMaz.forEach(function(user){ %>
         <% iterationNr402++ %>
         <% if (iterationNr402==1){%>
         <div class="form-row">
@@ -4458,7 +4457,7 @@
         <% var iterationNr403 = 0; %>
         <% users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% user.destytojas.kV5_32.lietValstybPuosel.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.kV5_32.lietValstybPuosel.forEach(function(user){ %>
         <% iterationNr403++ %>
         <% if (iterationNr403==1){%>
         <div class="form-row">
@@ -4492,7 +4491,7 @@
         <% var iterationNr404 = 0; %>
         <% users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% user.destytojas.kV5_32.lietEtnokPuos.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.kV5_32.lietEtnokPuos.forEach(function(user){ %>
         <% iterationNr404++ %>
         <% if (iterationNr404==1){%>
         <div class="form-row">
@@ -4527,7 +4526,7 @@
         <% var iterationNr405 = 0; %>
         <% users.forEach(function(user){ %>
         <% var varpav = user.vardas + " " + user.pavarde; %>
-        <% user.destytojas.kV5_32.savanorystIniciatyv.forEach(function(user){ %>
+        <% user.mm2022_2023.destytojas.kV5_32.savanorystIniciatyv.forEach(function(user){ %>
         <% iterationNr405++ %>
         <% if (iterationNr405==1){%>
         <div class="form-row">
@@ -4564,7 +4563,7 @@
         <p><b></b></p>
         <% var iterationNr41 = 0; %>
         <%  users.forEach(function(user){ %>
-        <%  user.destytojas.kV5_33.forEach(function(user){ %>
+        <%  user.mm2022_2023.destytojas.kV5_33.forEach(function(user){ %>
         <% iterationNr41++ %>
         <div class="form-row">
           <div class="col-md-1 mb-3">

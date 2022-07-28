@@ -8,10 +8,10 @@
   <h1 class="display-4">2022 - 2023 m. m. ataskaitos pildymo aplinka</h1>
 
   <%if ( user.role === "dėstytojas") { %>
-    <h1>Dėstytojo aplinka</h1>
+  <h1>Dėstytojo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena22_23%></p>
   <% } else if (user.role === "katedros vedėjas") { %>
-    <h1>Katedros vedėjo aplinka</h1>
+  <h1>Katedros vedėjo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo22_23%></p>
   <% } %>
 
@@ -19,28 +19,48 @@
 
 <div class="container">
   <div class="jumbotron ">
-      <div class="form-group ">
+    <div class="form-group ">
 
-        <h4 class="text-center"><%=user.vardas%> <%=user.pavarde%></h4>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Fakultetas:</label>
-            <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
-          </div>
+      <h4 class="text-center"><%=user.vardas%> <%=user.pavarde%></h4>
+      <div class="form-row">
+        <div class="col-lg-3">
         </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Katedra:</label>
-            <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
-          </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <label for="">Fakultetas:</label>
+          <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
         </div>
-
+      </div>
+      <div class="form-row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <label for="">Katedra:</label>
+          <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
+        </div>
       </div>
 
+      <% if (user.role === "katedros vedėjas") { %>
+      <form action="/update-user-dep-2022-2023" method="post">
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <lable for="">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu):</lable>
+            <input type="number" name="katedrosDestytojuSkaicius" value="<%=user.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%>" class="form-control" placeholder="">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          </div>
+        </div>
+      </form>
+      <% } %>
+
+    </div>
   </div>
 </div>
 
