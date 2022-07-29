@@ -254,7 +254,7 @@ var kKPP1_1Schema = new mongoose.Schema({
   progrKodas: String,
   isakNrData: String,
   studKryptAkredit: String,
-  akreditLaikot: Number,
+  akreditLaikot: String,
   eCTS: String
 });
 var kDS1Schema = new mongoose.Schema({
