@@ -3,7 +3,7 @@
 <div class="container">
   <div class="jumbotron ">
 
-    <h1 class="text-center">Katedros veiklos ataskaitos redagavimas</h1>
+    <h1 class="text-center">Katedros veiklos ataskaitos redagavimas 2025 - 2026 m. m.</h1>
 
     <%if ( user.busenaVedejo25_26 === "nesukurta" || user.busenaVedejo25_26 === "užrakinta") { %>
 
@@ -12,7 +12,7 @@
     <% } else if (user.busenaVedejo25_26 === "redaguojama") { %>
 
     <br><br>
-    <form action="/dep-edit-2025-2026" method="post">
+    <form action="/dep-update-2025-2026" method="post">
 
       <div class="form-group ">
       <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
