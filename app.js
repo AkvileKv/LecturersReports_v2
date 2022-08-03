@@ -12219,13 +12219,11 @@ app.post("/dep-update-2025-2026", (req, res) => {
   });
 });
 
-app.get("/submit-dep", function(req, res) {
+app.get("/department/2022-2023/submit", function(req, res) {
+
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
-
       let currentUserFaculty = foundUser.fakultetas;
-
       if (err) {
         console.log(err);
       } else {
@@ -12235,8 +12233,7 @@ app.get("/submit-dep", function(req, res) {
           if (err) {
             console.log(err);
           } else {
-
-            res.render("submit-dep", {
+            res.render("dep-submit-2022-2023", {
               foundFaculty: foundFaculty,
               user: foundUser,
               fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -12244,7 +12241,90 @@ app.get("/submit-dep", function(req, res) {
             });
           }
         });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2023-2024/submit", function(req, res) {
 
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("dep-submit-2023-2024", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2024-2025/submit", function(req, res) {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("dep-submit-2024-2025", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra)
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2025-2026/submit", function(req, res) {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      if (err) {
+        console.log(err);
+      } else {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("dep-submit-2025-2026", {
+              foundFaculty: foundFaculty,
+              user: foundUser,
+              fakultetasUpper: _.toUpper(foundUser.fakultetas),
+              katedraUpper: _.toUpper(foundUser.katedra)
+            });
+          }
+        });
       }
     });
   } else {
