@@ -13,7 +13,7 @@
 
 
     <form action="/dep-create-2023-2024" method="post">
-      <div class="form-group ">
+      <div class="form-group" id="begin">
             <br><br>
       <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
         <!-- 1 lentelė -->
@@ -5374,6 +5374,12 @@
     <% } %>
   </div>
 </div>
+
+<%if ( user.busenaVedejo23_24 === "nesukurta") { %>
+  <div class="circle-button">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 <!-- ---ALL SCRIPTS--- -->
 

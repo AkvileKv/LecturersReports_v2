@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <form action="/submit-dep" method="post">
+    <form action="/dep-submit-2023-2024" method="post">
 
       <% if (user.busenaVedejo23_24 === "užrakinta") { %>
       <br>
@@ -60,7 +60,7 @@
       </div>
       <% } %>
       <br><br>
-      <div class="form-group ">
+      <div class="form-group" id="begin">
         <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
 
         <!-- 1 lentelė -->
@@ -3022,6 +3022,12 @@
     <% } %>
   </div>
 </div>
+
+<%if ( user.busenaVedejo23_24 !== "nesukurta") { %>
+  <div class="circle-button noprint">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 <div class="noprint">
   <%- include('partials/footer') %>
