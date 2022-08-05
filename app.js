@@ -766,10 +766,10 @@ app.post("/create-2023-2024", function(req, res) {
           for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
             foundUser.mm2023_2024.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           } // 8 lentelė create-2022-2023
           for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -1245,10 +1245,10 @@ app.post("/create-2024-2025", function(req, res) {
           for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
             foundUser.mm2024_2025.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           } // 8 lentelė create-2022-2023
           for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -1724,10 +1724,10 @@ app.post("/create-2025-2026", function(req, res) {
           for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
             foundUser.mm2025_2026.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           } // 8 lentelė create-2025-2026
           for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -2414,10 +2414,10 @@ app.post("/update-2022-2023", (req, res) => {
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.mm2022_2023.destytojas.nD2_D03.push({
             nr: i,
-            studKryptis: eval("req.body.nD2_D03studProgr" + i),
-            studProgr: eval("req.body.nD2_D03veikla" + i),
-            veikla: eval("req.body.nD2_D03rezultatai" + i),
-            rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+            studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+            studProgr: eval("req.body.nD2_D03studProgr" + i),
+            veikla: eval("req.body.nD2_D03veikla" + i),
+            rezultatai: eval("req.body.nD2_D03rezultatai" + i)
           })
         } // 8 lentelė create-2022-2023
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -2943,10 +2943,10 @@ app.post("/update-2023-2024", (req, res) => {
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.mm2023_2024.destytojas.nD2_D03.push({
             nr: i,
-            studKryptis: eval("req.body.nD2_D03studProgr" + i),
-            studProgr: eval("req.body.nD2_D03veikla" + i),
-            veikla: eval("req.body.nD2_D03rezultatai" + i),
-            rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+            studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+            studProgr: eval("req.body.nD2_D03studProgr" + i),
+            veikla: eval("req.body.nD2_D03veikla" + i),
+            rezultatai: eval("req.body.nD2_D03rezultatai" + i)
           })
         } // 8 lentelė update-2023-2024
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -3472,10 +3472,10 @@ app.post("/update-2024-2025", (req, res) => {
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.mm2024_2025.destytojas.nD2_D03.push({
             nr: i,
-            studKryptis: eval("req.body.nD2_D03studProgr" + i),
-            studProgr: eval("req.body.nD2_D03veikla" + i),
-            veikla: eval("req.body.nD2_D03rezultatai" + i),
-            rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+            studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+            studProgr: eval("req.body.nD2_D03studProgr" + i),
+            veikla: eval("req.body.nD2_D03veikla" + i),
+            rezultatai: eval("req.body.nD2_D03rezultatai" + i)
           })
         } // 8 lentelė update-2024-2025
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -4001,10 +4001,10 @@ app.post("/update-2025-2026", (req, res) => {
         for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
           foundUser.mm2025_2026.destytojas.nD2_D03.push({
             nr: i,
-            studKryptis: eval("req.body.nD2_D03studProgr" + i),
-            studProgr: eval("req.body.nD2_D03veikla" + i),
-            veikla: eval("req.body.nD2_D03rezultatai" + i),
-            rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+            studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+            studProgr: eval("req.body.nD2_D03studProgr" + i),
+            veikla: eval("req.body.nD2_D03veikla" + i),
+            rezultatai: eval("req.body.nD2_D03rezultatai" + i)
           })
         } // 8 lentelė update-2025-2026
         for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
@@ -4674,10 +4674,10 @@ app.post("/submit-2022-2023", function(req, res) {
             eval("req.body.nD2_D03rezultatai" + i) != "" || eval("req.body.nD2_D03studKryptis" + i) != "") {
             foundUser.mm2022_2023.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           }
         } // 8 lentelė submit
@@ -5337,10 +5337,10 @@ app.post("/submit-2023-2024", function(req, res) {
             eval("req.body.nD2_D03rezultatai" + i) != "" || eval("req.body.nD2_D03studKryptis" + i) != "") {
             foundUser.mm2023_2024.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           }
         } // 8 lentelė submit
@@ -6000,10 +6000,10 @@ app.post("/submit-2024-2025", function(req, res) {
             eval("req.body.nD2_D03rezultatai" + i) != "" || eval("req.body.nD2_D03studKryptis" + i) != "") {
             foundUser.mm2024_2025.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           }
         } // 8 lentelė submit
@@ -6663,10 +6663,10 @@ app.post("/submit-2025-2026", function(req, res) {
             eval("req.body.nD2_D03rezultatai" + i) != "" || eval("req.body.nD2_D03studKryptis" + i) != "") {
             foundUser.mm2025_2026.destytojas.nD2_D03.push({
               nr: i,
-              studKryptis: eval("req.body.nD2_D03studProgr" + i),
-              studProgr: eval("req.body.nD2_D03veikla" + i),
-              veikla: eval("req.body.nD2_D03rezultatai" + i),
-              rezultatai: eval("req.body.nD2_D03studKryptis" + i)
+              studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
+              studProgr: eval("req.body.nD2_D03studProgr" + i),
+              veikla: eval("req.body.nD2_D03veikla" + i),
+              rezultatai: eval("req.body.nD2_D03rezultatai" + i)
             })
           }
         } // 8 lentelė submit
