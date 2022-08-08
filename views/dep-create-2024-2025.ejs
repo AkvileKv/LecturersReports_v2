@@ -3073,7 +3073,7 @@
             <label for="">Lektorius</label>
           </div>
           <div class="col-md-2 mb-3">
-            <label for="">VK lektorius / Išorės lektorius</label>
+            <label for="">Lektoriaus tipas</label>
           </div>
         </div>
         <% var numb27_new = 0; %>
@@ -3109,7 +3109,11 @@
             <textarea type="text" rows="1" class="form-control " name="lent27_lektorius<%=numb27_new%>" autocomplete="off"><%=varpav%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <textarea type="text" rows="1" class="form-control " name="lent27_lektTipas<%=numb27_new%>" autocomplete="off"></textarea>
+            <select name="lent27_lektTipas<%=numb27_new%>" class="form-select form-control">
+              <option value=""></option>
+              <option class="others" value="VK lektorius">VK lektorius</option>
+              <option class="others" value="Išorės lektorius">Išorės lektorius</option>
+            </select>
           </div>
         </div>
         <% }) %>
@@ -5375,7 +5379,7 @@
   </div>
 </div>
 
-<%if ( user.busenaVedejo24_25 === "nesukurta") { %>
+<%if ( logedInUser.busenaVedejo24_25 === "nesukurta") { %>
   <div class="circle-button">
     <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
   </div>
