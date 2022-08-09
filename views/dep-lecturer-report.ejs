@@ -43,14 +43,14 @@
         <!-- išvedama destytojo ataskaita, kurią vedėjas gali redaguoti ir pakartotinai išsaugoti duomenų bazėje-->
 
         <!-- vedejas perziuri ataskaita, kuria pateike destytojas, o vedejas papilde ir pateike pakartotinai  -->
-        <%if (user.busena === "užrakintaVedėjo") { %>
+        <%if (user.busena22_23 === "užrakintaVedėjo") { %>
         <br>
         <!-- MYGTUKAI -->
         <div class=" text-center noprint">
           <a type="button" class="btn btn-secondary " href="javascript:window.print()">Spausdinti</a>
         </div>
         <br>
-        <% if (user.busena === "užrakintaVedėjo") { %>
+        <% if (user.busena22_23 === "užrakintaVedėjo") { %>
         <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į administratorių.</p>
         <% } else { %>
         <!-- <input type="text" name="ataskaitos_busena" value="užrakintaVedėjo" hidden> -->
@@ -6365,6 +6365,7 @@
         </div>
 
         <br>
+        <!-- dėstytojo formos pabaiga -->
       <p class="lead text-danger text-center noprint">--- Toliau pildo katedros vedėjas ---</p>
         <br>
         <p><b>Katedros vedėjo (-s) išvados apie suplanuotą ir įvykdytą (jei neįvykdyta – nurodyti priežastis) dėstytojo veiklą.</b></p>
