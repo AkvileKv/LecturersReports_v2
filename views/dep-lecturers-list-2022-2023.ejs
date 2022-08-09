@@ -1,0 +1,59 @@
+<%- include('partials/headerDep2022_2023') %>
+
+<div class="container">
+  <div class="jumbotron ">
+    <h1 class="text-center">Visų katedros dėstytojų sąrašas 2022 - 2023 m. m.</h1>
+    <div class="">
+      <p class="lead text-center text-danger">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu): <%=depUser.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%></p>
+    </div>
+    <br>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Katedra</th>
+          <th scope="col">Ataskaitos būsena</th>
+          <th scope="col">Rolė</th>
+          <th scope="col">Naudotojas</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <%  users.forEach(function(user){ %>
+      <% if (user.rolesKeitimas22_23 == false && user.role22_23 == "katedros vedėjas"){ %>
+        <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
+      <%  } else { %>
+      <div class="database-result-edit ">
+        <tbody>
+          <tr>
+            <td><%=user.katedra%></td>
+            <td><%=user.busena22_23%></td>
+            <td>
+              <%if (user.rolesKeitimas22_23 == true){ %>
+              katedros vedėjas / dėstytojas
+              <%  } else { %>
+              <%=user.role22_23%>
+              <%  } %>
+            </td>
+            <td><span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span></td>
+            <td>
+              <div class="text-right">
+                <div class="btn-group" role="group" aria-label="" id="group">
+                  <a type="button" class="btn btn-primary" href="/department/2022-2023/edit-user/<%= user._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-secondary" href="/dep-lecturer-report/<%= user._id %>"> Ataskaita</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </div>
+      <% } %>
+
+      <% }) %>
+
+    </table>
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

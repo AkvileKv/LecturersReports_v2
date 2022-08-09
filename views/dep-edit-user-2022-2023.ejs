@@ -1,11 +1,11 @@
-<%- include('partials/headerDep') %>
+<%- include('partials/headerDep2022_2023') %>
 
 <div class="container">
   <div class="jumbotron ">
 
-    <h1 class="text-center">Dėstytojo <%=user.vardas%> <%=user.pavarde%> redagavimas</h1>
+    <h1 class="text-center">Dėstytojo <%=user.vardas%> <%=user.pavarde%> redagavimas 2022 - 2023 m. m.</h1>
     <br>
-    <form action="/update-user-info-dep" method="post">
+    <form action="/update-user-info-dep-2022-2023" method="post">
 
       <div class="form-group ">
          <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
@@ -16,10 +16,10 @@
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Dėstytojo ataskaitos būsena:</label>
             <select name="busena" class="form-select form-control" required>
-              <option class="others" <%if (user.busena === "nesukurta") { %> selected <% } %> value="nesukurta" disabled>Nesukurta</option>
-              <option class="others" <%if (user.busena === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
-              <option class="others" <%if (user.busena === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
-              <option class="others" <%if (user.busena === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo" disabled>Užrakinta katedros vedėjo</option>
+              <option class="others" <%if (user.busena22_23 === "nesukurta") { %> selected <% } %> value="nesukurta" disabled>Nesukurta</option>
+              <option class="others" <%if (user.busena22_23 === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
+              <option class="others" <%if (user.busena22_23 === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
+              <option class="others" <%if (user.busena22_23 === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo" disabled>Užrakinta katedros vedėjo</option>
             </select>
           </div>
         </div>
@@ -33,7 +33,6 @@
         </div>
 
       </div>
-
 
     </form>
 

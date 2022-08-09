@@ -15961,7 +15961,7 @@ app.post("/update-user-dep-2025-2026", function(req, res) {
   }
 });
 //-----------------Head of the DEPARTMENT------------------------------------
-app.get("/dep-lecturers-list", (req, res) => {
+app.get("/department/2022-2023/lecturers-list", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       let vedejoKatedra;
@@ -15980,7 +15980,112 @@ app.get("/dep-lecturers-list", (req, res) => {
             if (err) {
               console.log(err);
             } else {
-              res.render("dep-lecturers-list", {
+              res.render("dep-lecturers-list-2022-2023", {
+                users: users,
+                depUser: foundUser
+              });
+            }
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2023-2024/lecturers-list", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let vedejoKatedra;
+      if (req.user.katedra === "") {
+        vedejoKatedra = "nepriskirta";
+      } else {
+        vedejoKatedra = req.user.katedra
+      }
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          User.find({
+            katedra: vedejoKatedra,
+          }, function(err, users) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render("dep-lecturers-list-2023-2024", {
+                users: users,
+                depUser: foundUser
+              });
+            }
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2024-2025/lecturers-list", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let vedejoKatedra;
+      if (req.user.katedra === "") {
+        vedejoKatedra = "nepriskirta";
+      } else {
+        vedejoKatedra = req.user.katedra
+      }
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          User.find({
+            katedra: vedejoKatedra,
+          }, function(err, users) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render("dep-lecturers-list-2024-2025", {
+                users: users,
+                depUser: foundUser
+              });
+            }
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2025-2026/lecturers-list", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let vedejoKatedra;
+      if (req.user.katedra === "") {
+        vedejoKatedra = "nepriskirta";
+      } else {
+        vedejoKatedra = req.user.katedra
+      }
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          User.find({
+            katedra: vedejoKatedra,
+          }, function(err, users) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render("dep-lecturers-list-2025-2026", {
                 users: users,
                 depUser: foundUser
               });
@@ -15997,7 +16102,7 @@ app.get("/dep-lecturers-list", (req, res) => {
   }
 });
 
-app.get("/dep-edit-user/:userId", (req, res) => {
+app.get("/department/2022-2023/edit-user/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -16010,7 +16115,97 @@ app.get("/dep-edit-user/:userId", (req, res) => {
               if (err) {
                 console.log(err);
               } else {
-                res.render("dep-edit-user", {
+                res.render("dep-edit-user-2022-2023", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/user-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2023-2024/edit-user/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("dep-edit-user-2023-2024", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/user-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2024-2025/edit-user/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("dep-edit-user-2024-2025", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/user-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/department/2025-2026/edit-user/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "katedros vedėjas") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("dep-edit-user-2025-2026", {
                   user: user
                 });
               }
@@ -16029,17 +16224,74 @@ app.get("/dep-edit-user/:userId", (req, res) => {
 });
 
 //Katedros vedėjas atnaujina dėstytojo būseną
-app.post("/update-user-info-dep", (req, res) => {
+app.post("/update-user-info-dep-2022-2023", (req, res) => {
   User.findById(req.body.id, function(err, foundUser) {
     if (err) {
       console.log(err);
     } else {
       if (foundUser) {
-        foundUser.busena = req.body.busena,
+        foundUser.busena22_23 = req.body.busena,
           foundUser.updated_for = req.user.username
         foundUser.save(function(err) {
           if (!err) {
-            res.redirect("/dep-lecturers-list");
+            res.redirect("/department/2022-2023/lecturers-list");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+app.post("/update-user-info-dep-2023-2024", (req, res) => {
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.busena23_24 = req.body.busena,
+          foundUser.updated_for = req.user.username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/department/2023-2024/lecturers-list");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+app.post("/update-user-info-dep-2024-2025", (req, res) => {
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.busena24_25 = req.body.busena,
+          foundUser.updated_for = req.user.username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/department/2024-2025/lecturers-list");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+app.post("/update-user-info-dep-2025-2026", (req, res) => {
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.busena25_26 = req.body.busena,
+          foundUser.updated_for = req.user.username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/department/2025-2026/lecturers-list");
           }
         });
       } else {

@@ -1,0 +1,44 @@
+<%- include('partials/headerDep2025_2026') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Dėstytojo <%=user.vardas%> <%=user.pavarde%> redagavimas 2025 - 2026 m. m.</h1>
+    <br>
+    <form action="/update-user-info-dep-2025-2026" method="post">
+
+      <div class="form-group ">
+         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
+
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Dėstytojo ataskaitos būsena:</label>
+            <select name="busena" class="form-select form-control" required>
+              <option class="others" <%if (user.busena25_26 === "nesukurta") { %> selected <% } %> value="nesukurta" disabled>Nesukurta</option>
+              <option class="others" <%if (user.busena25_26 === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
+              <option class="others" <%if (user.busena25_26 === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
+              <option class="others" <%if (user.busena25_26 === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo" disabled>Užrakinta katedros vedėjo</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

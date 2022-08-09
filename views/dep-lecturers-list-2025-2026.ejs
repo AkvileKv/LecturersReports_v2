@@ -1,12 +1,10 @@
-<%- include('partials/headerDep') %>
+<%- include('partials/headerDep2025_2026') %>
 
 <div class="container">
   <div class="jumbotron ">
-
-    <h1 class="text-center">Visų katedros dėstytojų sąrašas</h1>
-
+    <h1 class="text-center">Visų katedros dėstytojų sąrašas 2025 - 2026 m. m.</h1>
     <div class="">
-      <p class="lead text-center text-danger">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu): <%=depUser.katedrosVedejas.katedrosDestytojuSk%></p>
+      <p class="lead text-center text-danger">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu): <%=depUser.mm2025_2026.katedrosVedejas.katedrosDestytojuSk%></p>
     </div>
     <br>
 
@@ -21,26 +19,26 @@
         </tr>
       </thead>
       <%  users.forEach(function(user){ %>
-      <% if (user.rolesKeitimas == false && user.role == "katedros vedėjas"){ %>
+      <% if (user.rolesKeitimas25_26 == false && user.role25_26 == "katedros vedėjas"){ %>
         <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
       <%  } else { %>
       <div class="database-result-edit ">
         <tbody>
           <tr>
             <td><%=user.katedra%></td>
-            <td><%=user.busena%></td>
+            <td><%=user.busena25_26%></td>
             <td>
-              <%if (user.rolesKeitimas == true){ %>
+              <%if (user.rolesKeitimas25_26 == true){ %>
               katedros vedėjas / dėstytojas
               <%  } else { %>
-              <%=user.role%>
+              <%=user.role25_26%>
               <%  } %>
             </td>
             <td><span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span></td>
             <td>
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
-                  <a type="button" class="btn btn-primary" href="/dep-edit-user/<%= user._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-primary" href="/department/2025-2026/edit-user/<%= user._id %>"> Redaguoti</a>
                   <a type="button" class="btn btn-secondary" href="/dep-lecturer-report/<%= user._id %>"> Ataskaita</a>
                 </div>
               </div>
@@ -49,7 +47,6 @@
         </tbody>
       </div>
       <% } %>
-
 
       <% }) %>
 
