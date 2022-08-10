@@ -16852,21 +16852,24 @@ app.post("/update-report-lecturer-dep-2022-2023", (req, res) => {
               salisData: eval("req.body.kV5_34salisData" + i)
             })
           }
-            foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
+            foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo
+            // vedėjas uzpildo update-report-lecturer-dep
+              foundUser.mm2022_2023.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
+              foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
+              foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
+              foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
+              foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
+              foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
 
-            //foundUser.updated_for = req.user.username,
-            //foundUser.busena22_23 = req.body.ataskaitos_busena
-
-            //var today = new Date();
-            //var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            //var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          //var dateTime = date+' '+time;
-
-            foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime
+            // var today = new Date();
+            // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            // var dateTime = date+' '+time;
+            // foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime
 
             foundUser.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
-            foundUser.mm2022_2023.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde
-
+            foundUser.mm2022_2023.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
+            foundUser.busena22_23 = req.body.ataskaitos_busena
 
         } else if (req.body.ataskaitos_busena == "užrakintaVedėjo") { //busena perduodama paspaudus mygtuka
           // 1 lentelė  submit-2022-2023
@@ -17446,33 +17449,32 @@ app.post("/update-report-lecturer-dep-2022-2023", (req, res) => {
             }
           }
           foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
-          foundUser.mm2022_2023.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
-          foundUser.updated_for = req.user.username,
-          foundUser.busena22_23 = req.body.ataskaitos_busena
+
+          // vedėjas uzpildo update-report-lecturer-dep
+            foundUser.mm2022_2023.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
+            foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
+            foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
+            foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
+            foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
+            foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
+
+            foundUser.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
+            foundUser.mm2022_2023.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
+            foundUser.busena22_23 = req.body.ataskaitos_busena
 
             var today = new Date();
             var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             var dateTime = date+' '+time;
 
-          foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas = dateTime
-            foundUser.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
-            foundUser.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena = req.body.ataskaitos_busena
-
-            var today = new Date();
-            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var dateTime = date+' '+time;
-
-            foundUser.destytojas.ivykiuDatos.pateikimasVedejo = dateTime
+            foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas = dateTime
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
 
         foundUser.save(function(err) {
           if (!err) {
-            res.redirect("/dep-lecturers-list");
+            res.redirect("/department/2022-2023/lecturers-list");
           }
         });
       } else {
