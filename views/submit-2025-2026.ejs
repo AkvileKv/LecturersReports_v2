@@ -301,12 +301,14 @@
             </div>
           </div>
           <br>
+              <div <%if (user.mm2025_2026.destytojas.nD2.priezastys === "") { %> class="noprint" <% } %>>
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos nekontaktinio darbo valandos</b></label>
               <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="nD2priezastys" placeholder="" autocomplete="off"><%=user.mm2025_2026.destytojas.nD2.priezastys%></textarea>
               <div class="print_helper"><%=user.mm2025_2026.destytojas.nD2.priezastys%></div>
             </div>
+                    </div>
           </div>
           <br>
         </div>
@@ -806,6 +808,7 @@
             </div>
           </div>
           <br>
+              <div <%if (user.mm2025_2026.destytojas.tMTEP3.priezastys === "") { %> class="noprint" <% } %>>
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos
@@ -815,6 +818,7 @@
               <div class="print_helper"><%=user.mm2025_2026.destytojas.tMTEP3.priezastys%></div>
             </div>
           </div>
+            </div>
           <br>
         </div>
 
