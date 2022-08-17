@@ -30,7 +30,7 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 
 app.use(bodyParser.urlencoded({
-  limit: '50mb',
+  limit: '100mb',
   extended: true,
   parameterLimit: 1000000
 }));
@@ -86,7 +86,12 @@ app.post("/register", (req, res) => {
     rolesKeitimas24_25: false,
     rolesKeitimas25_26: false,
     updated_for: "Registracija",
-    currentYear: new Date().getFullYear()
+    currentYear: new Date().getFullYear(),
+    active: true,
+    teachingYear22_23: false,
+    teachingYear23_24: false,
+    teachingYear24_25: false,
+    teachingYear25_26: false,
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -144,13 +149,12 @@ app.post("/login", (req, res) => {
                  console.log(err);
               }
             });
-
             if (foundUser.role === "dėstytojas") {
               res.redirect("/user-window-selection");
             } else if (foundUser.role === "katedros vedėjas") {
               res.redirect("/user-window-selection");
             } else if (foundUser.role === "administratorius") {
-              res.redirect("/admin-window");
+              res.redirect("/admin/profile");
             }
           }
         });
@@ -161,7 +165,7 @@ app.post("/login", (req, res) => {
 });
 
 // METHOD FOR LOG
-app.get("/admin-history-log", (req, res) => {
+app.get("/admin/history-log", (req, res) => {
 
 //var HistoryUser = User.historyModel();
 var MongoClient = require('mongodb').MongoClient;
@@ -15621,22 +15625,24 @@ app.post("/dep-submit-2025-2026", function(req, res) {
 app.get("/logout", function(req, res) {
 
   User.findById(req.user.id, function(err, foundUser) {
-
     if (err) {
+            console.log("err1");
       console.log(err);
+
       res.redirect('/login');
     } else {
     var a = req.user.username;
       foundUser.updated_for = "Atsijungimas" +" "+ a;
       foundUser.save(function(err) {
         if (err) {
+          console.log("err2");
            console.log(err);
+
         }
       });
     }
   req.logout();
   });
-
   console.log("Logout ivykdytas");
   res.redirect('/');
 });
@@ -19903,71 +19909,71 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
     } else {
       if (foundUser) {
         //masyvu isvalymas update
-        foundUser.mm2024_2025.destytojas.kD1_K01.kD1_K01_array = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_M02 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_M03 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_M04 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_D01 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_D02 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_D03 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_S01 = new Array();
-        foundUser.mm2024_2025.destytojas.nD2_S = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T01 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T02 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T03 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T04 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T05 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_142 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_143 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T06 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T07 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T08 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T09 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T10 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T11 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T12 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T13 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_T14 = new Array();
-        foundUser.mm2024_2025.destytojas.tMTEP3_S = new Array();
+        foundUser.mm2025_2026.destytojas.kD1_K01.kD1_K01_array = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_M02 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_M03 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_M04 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_D01 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_D02 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_D03 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_S01 = new Array();
+        foundUser.mm2025_2026.destytojas.nD2_S = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T01 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T02 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T03 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T04 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T05 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_142 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_143 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T06 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T07 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T08 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T09 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T10 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T11 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T12 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T13 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_T14 = new Array();
+        foundUser.mm2025_2026.destytojas.tMTEP3_S = new Array();
         //24 lentelė
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.mokymosi = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.mokymosi = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
         // UPDATE post. Skaiciui "dalyvavusiu" nustatyti Vedejo ataskaitoje
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
-        foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
+        foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
 
-        foundUser.mm2024_2025.destytojas.kTOV4_25 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_26 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_KV03 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_1 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_2 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_29 = new Array();
-        foundUser.mm2024_2025.destytojas.kTOV4_S = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_KT01 = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_KT02 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_25 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_26 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_KV03 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_1 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_2 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_29 = new Array();
+        foundUser.mm2025_2026.destytojas.kTOV4_S = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_KT01 = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_KT02 = new Array();
         //32 lentelė
-        foundUser.mm2024_2025.destytojas.kV5_32.socAtskMaz = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_32.aplinkosaugInic = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_32.lietValstybPuosel = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_32.lietEtnokPuos = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_32.savanorystIniciatyv = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_32.socAtskMaz = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_32.aplinkosaugInic = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_32.lietValstybPuosel = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_32.lietEtnokPuos = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_32.savanorystIniciatyv = new Array();
 
-        foundUser.mm2024_2025.destytojas.kV5_33 = new Array();
-        foundUser.mm2024_2025.destytojas.kV5_34 = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_33 = new Array();
+        foundUser.mm2025_2026.destytojas.kV5_34 = new Array();
 
         if (req.body.ataskaitos_busena == "užrakinta") {
           // 1 lentelė  update-2025-2026
-          foundUser.mm2024_2025.destytojas.darbovietesTipas = req.body.darbovTipas,
-          foundUser.mm2024_2025.destytojas.pareigos = req.body.pareigos,
-          foundUser.mm2024_2025.destytojas.pedagogStazas = req.body.pedagogStazas,
-          foundUser.mm2024_2025.destytojas.praktVeiklStazas = req.body.praktinStazas
+          foundUser.mm2025_2026.destytojas.darbovietesTipas = req.body.darbovTipas,
+          foundUser.mm2025_2026.destytojas.pareigos = req.body.pareigos,
+          foundUser.mm2025_2026.destytojas.pedagogStazas = req.body.pedagogStazas,
+          foundUser.mm2025_2026.destytojas.praktVeiklStazas = req.body.praktinStazas
           // 2 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table2_name); i++) {
-            foundUser.mm2024_2025.destytojas.kD1_K01.kD1_K01_array.push({
+            foundUser.mm2025_2026.destytojas.kD1_K01.kD1_K01_array.push({
               nr: i,
               dalykas: eval("req.body.dalykas" + i),
               grupe: eval("req.body.grupe" + i),
@@ -19976,30 +19982,30 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               atliktosVal: eval("req.body.atliktosVal" + i)
             })
           }
-          foundUser.mm2024_2025.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuSrautaisValPlan = req.body.isJuSrautaisValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuSrautaisValAtl = req.body.isJuSrautaisValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuUzsienioValPlan = req.body.isJuUzsienioValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuUzsienioValAtl = req.body.isJuUzsienioValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.priezastys = req.body.kD1_K01priezastys,
+          foundUser.mm2025_2026.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuSrautaisValPlan = req.body.isJuSrautaisValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuSrautaisValAtl = req.body.isJuSrautaisValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuUzsienioValPlan = req.body.isJuUzsienioValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuUzsienioValAtl = req.body.isJuUzsienioValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.priezastys = req.body.kD1_K01priezastys,
 
-            foundUser.mm2024_2025.destytojas.nD2.nekSuStud_planVal = req.body.nekSuStud_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.nekSuStud_atlVal = req.body.nekSuStud_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.pasirengDest_planVal = req.body.pasirengDest_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.pasirengDest_atlVal = req.body.pasirengDest_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.metod_planVal = req.body.metod_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.metod_atlVal = req.body.metod_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.dalyvSPKUV_planVal = req.body.dalyvSPKUV_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.dalyvSPKUV_atlVal = req.body.dalyvSPKUV_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.studPop_planVal = req.body.studPop_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.studPop_atlVal = req.body.studPop_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.isVisoValPlan = req.body.nD2isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.nD2.isVisoValAtl = req.body.nD2isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.nD2.priezastys = req.body.nD2priezastys
+            foundUser.mm2025_2026.destytojas.nD2.nekSuStud_planVal = req.body.nekSuStud_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.nekSuStud_atlVal = req.body.nekSuStud_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.pasirengDest_planVal = req.body.pasirengDest_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.pasirengDest_atlVal = req.body.pasirengDest_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.metod_planVal = req.body.metod_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.metod_atlVal = req.body.metod_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.dalyvSPKUV_planVal = req.body.dalyvSPKUV_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.dalyvSPKUV_atlVal = req.body.dalyvSPKUV_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.studPop_planVal = req.body.studPop_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.studPop_atlVal = req.body.studPop_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.isVisoValPlan = req.body.nD2isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.nD2.isVisoValAtl = req.body.nD2isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.nD2.priezastys = req.body.nD2priezastys
           // 3 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table3_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_M02.push({
+            foundUser.mm2025_2026.destytojas.nD2_M02.push({
               nr: i,
               bibliografApr: eval("req.body.bibliografApr" + i),
               tipas: eval("req.body.tipas" + i),
@@ -20009,7 +20015,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           }
           // 4 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table4_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_M04.push({
+            foundUser.mm2025_2026.destytojas.nD2_M04.push({
               nr: i,
               studProgr: eval("req.body.nD2_M04studProgr" + i),
               dalykPavad: eval("req.body.nD2_M04dalykPavad" + i),
@@ -20018,7 +20024,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 5 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table5_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_D01.push({
+            foundUser.mm2025_2026.destytojas.nD2_D01.push({
               nr: i,
               komitetas: eval("req.body.nD2_D01komitetas" + i),
               veikla: eval("req.body.nD2_D01veikla" + i),
@@ -20026,7 +20032,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 6 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table6_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_D02.push({
+            foundUser.mm2025_2026.destytojas.nD2_D02.push({
               nr: i,
               studKryptis: eval("req.body.nD2_D02studKrypt" + i),
               veikla: eval("req.body.nD2_D02veikla" + i),
@@ -20034,7 +20040,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 7 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_D03.push({
+            foundUser.mm2025_2026.destytojas.nD2_D03.push({
               nr: i,
               studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
               studProgr: eval("req.body.nD2_D03studProgr" + i),
@@ -20043,7 +20049,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 8 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_M03.push({
+            foundUser.mm2025_2026.destytojas.nD2_M03.push({
               nr: i,
               studProgr: eval("req.body.nD2_M03studProgr" + i),
               dalykPavad: eval("req.body.nD2_M03dalykPavad" + i),
@@ -20051,35 +20057,35 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 9 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table9_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_S01.push({
+            foundUser.mm2025_2026.destytojas.nD2_S01.push({
               nr: i,
               veikla: eval("req.body.nD2_S01veikla" + i),
               dataVieta: eval("req.body.nD2_S01dataVieta" + i)
             })
           } // savianalize  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.tablenD2_S_name); i++) {
-            foundUser.mm2024_2025.destytojas.nD2_S.push({
+            foundUser.mm2025_2026.destytojas.nD2_S.push({
               nr: i,
               stiprybes: eval("req.body.nD2_Sstiprybes" + i),
               tobulintina: eval("req.body.nD2_Stobulintina" + i)
             })
           }
-          foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_planVal = req.body.tMTEPveiklRez_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal = req.body.tMTEPveiklRez_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.menoVeikl_planVal = req.body.menoVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal = req.body.menoVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal = req.body.tMTEPmenoVeiklPop_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal = req.body.tMTEPmenoVeiklPop_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.studReng_planVal = req.body.studReng_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.studReng_atlVal = req.body.studReng_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.kitaVeikl_planVal = req.body.kitaVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.kitaVeikl_atlVal = req.body.kitaVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.isVisoValPlan = req.body.tMTEP3isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.tMTEP3.isVisoValAtl = req.body.tMTEP3isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.tMTEP3.priezastys = req.body.tMTEP3priezastys
+          foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPveiklRez_planVal = req.body.tMTEPveiklRez_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPveiklRez_atlVal = req.body.tMTEPveiklRez_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.menoVeikl_planVal = req.body.menoVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.menoVeikl_atlVal = req.body.menoVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal = req.body.tMTEPmenoVeiklPop_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal = req.body.tMTEPmenoVeiklPop_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.studReng_planVal = req.body.studReng_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.studReng_atlVal = req.body.studReng_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.kitaVeikl_planVal = req.body.kitaVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.kitaVeikl_atlVal = req.body.kitaVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.isVisoValPlan = req.body.tMTEP3isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.tMTEP3.isVisoValAtl = req.body.tMTEP3isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.tMTEP3.priezastys = req.body.tMTEP3priezastys
           // 10 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table10_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T01.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T01.push({
               nr: i,
               tyrTemat: eval("req.body.tyrTemat" + i),
               tyrGrup: eval("req.body.tyrGrup" + i),
@@ -20088,7 +20094,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 11 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table11_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T02.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T02.push({
               nr: i,
               bibliografApr: eval("req.body.tMTEP3_T02bibliografApr" + i),
               tipas: eval("req.body.tMTEP3_T02tipas" + i),
@@ -20098,14 +20104,14 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 12 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table12_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T03.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T03.push({
               nr: i,
               pilnasBiblApr: eval("req.body.tMTEP3_T03pilnasBiblApr" + i),
               rengTipas: eval("req.body.tMTEP3_T03rengTipas" + i)
             })
           } // 13 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table13_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T04.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T04.push({
               nr: i,
               uzsakovas: eval("req.body.tMTEP3_T04uzsakovas" + i),
               tema: eval("req.body.tMTEP3_T04tema" + i),
@@ -20114,7 +20120,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 14.1 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table141_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T05.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T05.push({
               nr: i,
               veiklPavad: eval("req.body.tMTEP3_T05veiklPavad" + i),
               veiklRezult: eval("req.body.tMTEP3_T05veiklRezult" + i),
@@ -20122,21 +20128,21 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 14.2 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table142_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_142.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_142.push({
               nr: i,
               pavadinimas: eval("req.body.tMTEP3_142pavadinimas" + i),
               pastabos: eval("req.body.tMTEP3_142pastabos" + i)
             })
           } // 14.3 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table143_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_143.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_143.push({
               nr: i,
               pavadinimas: eval("req.body.tMTEP3_143pavadinimas" + i),
               uzsakovas: eval("req.body.tMTEP3_143uzsakovas" + i)
             })
           } // 15 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table15_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T06.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T06.push({
               nr: i,
               autorius: eval("req.body.tMTEP3_T06autorius" + i),
               menoSrit: eval("req.body.tMTEP3_T06menoSrit" + i),
@@ -20147,7 +20153,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 16 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table16_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T07.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T07.push({
               nr: i,
               menoSrit: eval("req.body.tMTEP3_T07menoSrit" + i),
               pavadinimas: eval("req.body.tMTEP3_T07pavadinimas" + i),
@@ -20157,7 +20163,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 17 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table17_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T08.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T08.push({
               nr: i,
               menoSrit: eval("req.body.tMTEP3_T08menoSrit" + i),
               pavadinimas: eval("req.body.tMTEP3_T08pavadinimas" + i),
@@ -20167,7 +20173,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 18 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table18_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T09.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T09.push({
               nr: i,
               menoSrit: eval("req.body.tMTEP3_T09menoSrit" + i),
               pavadinimas: eval("req.body.tMTEP3_T09pavadinimas" + i),
@@ -20177,7 +20183,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 19 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table19_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T10.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T10.push({
               nr: i,
               veiklPobud: eval("req.body.tMTEP3_T10veiklPobud" + i),
               veiklTiksl: eval("req.body.tMTEP3_T10veiklTiksl" + i),
@@ -20188,7 +20194,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 20 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table20_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T11.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T11.push({
               nr: i,
               veiklPobud: eval("req.body.tMTEP3_T11veiklPobud" + i),
               veiklTiksl: eval("req.body.tMTEP3_T11veiklTiksl" + i),
@@ -20199,14 +20205,14 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 21 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table21_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T12.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T12.push({
               nr: i,
               veiklPobud: eval("req.body.tMTEP3_T12veiklPobud" + i),
               dataVieta: eval("req.body.tMTEP3_T12dataVieta" + i)
             })
           } // 22 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table22_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T13.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T13.push({
               nr: i,
               studDuom: eval("req.body.tMTEP3_T13studDuom" + i),
               renginioPavad: eval("req.body.tMTEP3_T13renginioPavad" + i),
@@ -20215,7 +20221,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 23 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table23_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_T14.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_T14.push({
               nr: i,
               renginys: eval("req.body.tMTEP3_T14renginys" + i),
               veiklPobud: eval("req.body.tMTEP3_T14veiklPobud" + i),
@@ -20223,62 +20229,62 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // savianalize
           for (let i = 1; i <= parseInt(req.body.tableTMTEP3_S_name); i++) {
-            foundUser.mm2024_2025.destytojas.tMTEP3_S.push({
+            foundUser.mm2025_2026.destytojas.tMTEP3_S.push({
               nr: i,
               stiprybes: eval("req.body.tMTEP3_Sstiprybes" + i),
               tobulintina: eval("req.body.tMTEP3_Stobulintina" + i)
             })
           }
-          foundUser.mm2024_2025.destytojas.kTOV4.kompTobulinimas_planVal = req.body.kTOV4kompTobulinimas_planVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.kompTobulinimas_atlVal = req.body.kTOV4kompTobulinimas_atlVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.organizacVeikl_planVal = req.body.kTOV4organizacVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.organizacVeikl_atlVal = req.body.kTOV4organizacVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.isVisoValPlan = req.body.kTOV4isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.kTOV4.isVisoValAtl = req.body.kTOV4isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.kTOV4.priezastys = req.body.kTOV4priezastys
+          foundUser.mm2025_2026.destytojas.kTOV4.kompTobulinimas_planVal = req.body.kTOV4kompTobulinimas_planVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.kompTobulinimas_atlVal = req.body.kTOV4kompTobulinimas_atlVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.organizacVeikl_planVal = req.body.kTOV4organizacVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.organizacVeikl_atlVal = req.body.kTOV4organizacVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.isVisoValPlan = req.body.kTOV4isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.kTOV4.isVisoValAtl = req.body.kTOV4isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.kTOV4.priezastys = req.body.kTOV4priezastys
           // 24 lentelė  update-2025-2026
           //mokymosi
           for (let i = 1; i <= parseInt(req.body.table241_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
               pavadinimas: eval("req.body.kTOV4_mokymopavad" + i),
               pazymNr: eval("req.body.kTOV4_mokymopazymNr" + i),
               trukmeValLT: eval("req.body.kTOV4_mokymotrukmeValLT" + i),
               trukmeValNeLT: eval("req.body.kTOV4_mokymotrukmeValNeLT" + i)
             })
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
           } // tyrimu
           for (let i = 1; i <= parseInt(req.body.table242_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.tyrimu.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.tyrimu.push({
               pavadinimas: eval("req.body.kTOV4_tyrimupavad" + i),
               pazymNr: eval("req.body.kTOV4_tyrimupazymNr" + i),
               trukmeValLT: eval("req.body.kTOV4_tyrimutrukmeValLT" + i),
               trukmeValNeLT: eval("req.body.kTOV4_tyrimutrukmeValNeLT" + i)
             })
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
           } //bendrosios
           for (let i = 1; i <= parseInt(req.body.table243_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.bendrosios.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.bendrosios.push({
               pavadinimas: eval("req.body.kTOV4_bendrosiospavad" + i),
               pazymNr: eval("req.body.kTOV4_bendrosiospazymNr" + i),
               trukmeValLT: eval("req.body.kTOV4_bendrosiostrukmeValLT" + i),
               trukmeValNeLT: eval("req.body.kTOV4_bendrosiostrukmeValNeLT" + i)
             })
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
           } //dalykines
           for (let i = 1; i <= parseInt(req.body.table244_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
               pavadinimas: eval("req.body.kTOV4_dalykpavad" + i),
               pazymNr: eval("req.body.kTOV4_dalykpazymNr" + i),
               trukmeValLT: eval("req.body.kTOV4_dalyktrukmeValLT" + i),
               trukmeValNeLT: eval("req.body.kTOV4_dalyktrukmeValNeLT" + i)
             })
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
           }
-          foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
+          foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
           // 25 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table25_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_25.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_25.push({
               nr: i,
               renginysTema: eval("req.body.kTOV4_25renginysTema" + i),
               kompGrupe: eval("req.body.kTOV4_25kompGrupe" + i),
@@ -20286,7 +20292,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 26 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table26_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_26.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_26.push({
               nr: i,
               imonIstaig: eval("req.body.kTOV4_26imonIstaig" + i),
               kompGrupe: eval("req.body.kTOV4_26kompGrupe" + i),
@@ -20295,7 +20301,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 27 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_KV03.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_KV03.push({
               nr: i,
               studKryptis: eval("req.body.kTOV4_KV03studKryptis" + i),
               salis: eval("req.body.kTOV4_KV03salis" + i),
@@ -20304,14 +20310,14 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 28.1 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table281_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_1.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_1.push({
               nr: i,
               veiklPobud: eval("req.body.kTOV4_O01_1veiklPobud" + i),
               isakNrData: eval("req.body.kTOV4_O01_1isakNrData" + i)
             })
           } // 28.2 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table282_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_2.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_2.push({
               nr: i,
               destytojas: eval("req.body.kTOV4_O01_2destytojas" + i),
               veiklPobud: eval("req.body.kTOV4_O01_2veiklPobud" + i),
@@ -20320,21 +20326,21 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 29 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table29_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_29.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_29.push({
               nr: i,
               veikla: eval("req.body.kTOV4_29veikla" + i),
               socPartneris: eval("req.body.kTOV4_29socPartneris" + i)
             })
           } // savianalize
           for (let i = 1; i <= parseInt(req.body.tablekTOV4_S_name); i++) {
-            foundUser.mm2024_2025.destytojas.kTOV4_S.push({
+            foundUser.mm2025_2026.destytojas.kTOV4_S.push({
               nr: i,
               stiprybes: eval("req.body.kTOV4_Sstiprybes" + i),
               tobulintina: eval("req.body.kTOV4_Stobulintina" + i)
             })
           } // 30 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_KT02.push({
+            foundUser.mm2025_2026.destytojas.kV5_KT02.push({
               nr: i,
               studKryptis: eval("req.body.kV5_KT02studKryptis" + i),
               diplomantas: eval("req.body.kV5_KT02diplomantas" + i),
@@ -20343,7 +20349,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 31 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table31_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_KT01.push({
+            foundUser.mm2025_2026.destytojas.kV5_KT01.push({
               nr: i,
               studKryptis: eval("req.body.kV5_KT01studKryptis" + i),
               diplomantas: eval("req.body.kV5_KT01diplomantas" + i),
@@ -20354,32 +20360,32 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           }
           // 32 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table321_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_32.socAtskMaz.push({
+            foundUser.mm2025_2026.destytojas.kV5_32.socAtskMaz.push({
               aprasymas: eval("req.body.kV5_32socaprasymas" + i)
             })
           }
           for (let i = 1; i <= parseInt(req.body.table322_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_32.aplinkosaugInic.push({
+            foundUser.mm2025_2026.destytojas.kV5_32.aplinkosaugInic.push({
               aprasymas: eval("req.body.kV5_32aplinkaprasymas" + i)
             })
           }
           for (let i = 1; i <= parseInt(req.body.table323_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_32.lietValstybPuosel.push({
+            foundUser.mm2025_2026.destytojas.kV5_32.lietValstybPuosel.push({
               aprasymas: eval("req.body.kV5_32valstybaprasymas" + i)
             })
           }
           for (let i = 1; i <= parseInt(req.body.table324_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_32.lietEtnokPuos.push({
+            foundUser.mm2025_2026.destytojas.kV5_32.lietEtnokPuos.push({
               aprasymas: eval("req.body.kV5_32etnoaprasymas" + i)
             })
           }
           for (let i = 1; i <= parseInt(req.body.table325_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_32.savanorystIniciatyv.push({
+            foundUser.mm2025_2026.destytojas.kV5_32.savanorystIniciatyv.push({
               aprasymas: eval("req.body.kV5_32savaprasymas" + i)
             })
           } // 33 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table33_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_33.push({
+            foundUser.mm2025_2026.destytojas.kV5_33.push({
               nr: i,
               veikla: eval("req.body.kV5_33veikla" + i),
               veiklPartner: eval("req.body.kV5_33veiklPartner" + i),
@@ -20391,7 +20397,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             })
           } // 34 lentelė  update-2025-2026
           for (let i = 1; i <= parseInt(req.body.table34_name); i++) {
-            foundUser.mm2024_2025.destytojas.kV5_34.push({
+            foundUser.mm2025_2026.destytojas.kV5_34.push({
               nr: i,
               pavadinimas: eval("req.body.kV5_34pavadinimas" + i),
               vykdytPartner: eval("req.body.kV5_34vykdytPartner" + i),
@@ -20401,36 +20407,36 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               salisData: eval("req.body.kV5_34salisData" + i)
             })
           }
-            foundUser.mm2024_2025.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo
+            foundUser.mm2025_2026.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo
             // vedėjas uzpildo update-report-lecturer-dep
-              foundUser.mm2024_2025.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
+              foundUser.mm2025_2026.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
 
             // var today = new Date();
             // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             // var dateTime = date+' '+time;
-            // foundUser.mm2024_2025.destytojas.ivykiuDatos.atnaujinimas = dateTime
+            // foundUser.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas = dateTime
 
-            foundUser.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
-            foundUser.mm2024_2025.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena24_25 = req.body.ataskaitos_busena
+            foundUser.mm2025_2026.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
+            foundUser.mm2025_2026.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
+            foundUser.busena25_26 = req.body.ataskaitos_busena
 
         } else if (req.body.ataskaitos_busena == "užrakintaVedėjo") { //busena perduodama paspaudus mygtuka
           // 1 lentelė  submit-2025-2026
-          foundUser.mm2024_2025.destytojas.darbovietesTipas = req.body.darbovTipas,
-          foundUser.mm2024_2025.destytojas.pareigos = req.body.pareigos,
-          foundUser.mm2024_2025.destytojas.pedagogStazas = req.body.pedagogStazas,
-          foundUser.mm2024_2025.destytojas.praktVeiklStazas = req.body.praktinStazas
+          foundUser.mm2025_2026.destytojas.darbovietesTipas = req.body.darbovTipas,
+          foundUser.mm2025_2026.destytojas.pareigos = req.body.pareigos,
+          foundUser.mm2025_2026.destytojas.pedagogStazas = req.body.pedagogStazas,
+          foundUser.mm2025_2026.destytojas.praktVeiklStazas = req.body.praktinStazas
           // 2 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table2_name); i++) {
             if (eval("req.body.dalykas" + i) != "" || eval("req.body.grupe" + i) != "" || eval("req.body.semestras" + i) != "" ||
               eval("req.body.planuotosVal" + i) != "" || eval("req.body.atliktosVal" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kD1_K01.kD1_K01_array.push({
+              foundUser.mm2025_2026.destytojas.kD1_K01.kD1_K01_array.push({
                 nr: i,
                 dalykas: eval("req.body.dalykas" + i),
                 grupe: eval("req.body.grupe" + i),
@@ -20440,32 +20446,32 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               })
             }
           }
-          foundUser.mm2024_2025.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuSrautaisValPlan = req.body.isJuSrautaisValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuSrautaisValAtl = req.body.isJuSrautaisValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuUzsienioValPlan = req.body.isJuUzsienioValPlan,
-            foundUser.mm2024_2025.destytojas.kD1_K01.isJuUzsienioValAtl = req.body.isJuUzsienioValAtl,
-            foundUser.mm2024_2025.destytojas.kD1_K01.priezastys = req.body.kD1_K01priezastys,
+          foundUser.mm2025_2026.destytojas.kD1_K01.isVisoValPlan = req.body.kD1_K01isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isVisoValAtl = req.body.kD1_K01isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuSrautaisValPlan = req.body.isJuSrautaisValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuSrautaisValAtl = req.body.isJuSrautaisValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuUzsienioValPlan = req.body.isJuUzsienioValPlan,
+            foundUser.mm2025_2026.destytojas.kD1_K01.isJuUzsienioValAtl = req.body.isJuUzsienioValAtl,
+            foundUser.mm2025_2026.destytojas.kD1_K01.priezastys = req.body.kD1_K01priezastys,
 
-            foundUser.mm2024_2025.destytojas.nD2.nekSuStud_planVal = req.body.nekSuStud_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.nekSuStud_atlVal = req.body.nekSuStud_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.pasirengDest_planVal = req.body.pasirengDest_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.pasirengDest_atlVal = req.body.pasirengDest_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.metod_planVal = req.body.metod_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.metod_atlVal = req.body.metod_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.dalyvSPKUV_planVal = req.body.dalyvSPKUV_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.dalyvSPKUV_atlVal = req.body.dalyvSPKUV_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.studPop_planVal = req.body.studPop_planVal,
-            foundUser.mm2024_2025.destytojas.nD2.studPop_atlVal = req.body.studPop_atlVal,
-            foundUser.mm2024_2025.destytojas.nD2.isVisoValPlan = req.body.nD2isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.nD2.isVisoValAtl = req.body.nD2isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.nD2.priezastys = req.body.nD2priezastys
+            foundUser.mm2025_2026.destytojas.nD2.nekSuStud_planVal = req.body.nekSuStud_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.nekSuStud_atlVal = req.body.nekSuStud_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.pasirengDest_planVal = req.body.pasirengDest_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.pasirengDest_atlVal = req.body.pasirengDest_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.metod_planVal = req.body.metod_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.metod_atlVal = req.body.metod_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.dalyvSPKUV_planVal = req.body.dalyvSPKUV_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.dalyvSPKUV_atlVal = req.body.dalyvSPKUV_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.studPop_planVal = req.body.studPop_planVal,
+            foundUser.mm2025_2026.destytojas.nD2.studPop_atlVal = req.body.studPop_atlVal,
+            foundUser.mm2025_2026.destytojas.nD2.isVisoValPlan = req.body.nD2isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.nD2.isVisoValAtl = req.body.nD2isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.nD2.priezastys = req.body.nD2priezastys
           // 3 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table3_name); i++) {
             if (eval("req.body.bibliografApr" + i) != "" || eval("req.body.tipas" + i) != "" ||
             eval("req.body.mokslSrit" + i) != "" || eval("req.body.mokslKrypt" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_M02.push({
+              foundUser.mm2025_2026.destytojas.nD2_M02.push({
                 nr: i,
                 bibliografApr: eval("req.body.bibliografApr" + i),
                 tipas: eval("req.body.tipas" + i),
@@ -20477,7 +20483,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table4_name); i++) {
             if (eval("req.body.nD2_M04studProgr" + i) != "" || eval("req.body.nD2_M04dalykPavad" + i) != "" ||
               eval("req.body.nD2_M04busena" + i) != "" || eval("req.body.nD2_M04apimtisKredit" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_M04.push({
+              foundUser.mm2025_2026.destytojas.nD2_M04.push({
                 nr: i,
                 studProgr: eval("req.body.nD2_M04studProgr" + i),
                 dalykPavad: eval("req.body.nD2_M04dalykPavad" + i),
@@ -20489,7 +20495,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table5_name); i++) {
             if (eval("req.body.nD2_D01komitetas" + i) != "" || eval("req.body.nD2_D01veikla" + i) != "" ||
               eval("req.body.nD2_D01rezultatai" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_D01.push({
+              foundUser.mm2025_2026.destytojas.nD2_D01.push({
                 nr: i,
                 komitetas: eval("req.body.nD2_D01komitetas" + i),
                 veikla: eval("req.body.nD2_D01veikla" + i),
@@ -20500,7 +20506,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table6_name); i++) {
             if (eval("req.body.nD2_D02studKrypt" + i) != "" || eval("req.body.nD2_D02veikla" + i) != "" ||
               eval("req.body.nD2_D02rezultatai" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_D02.push({
+              foundUser.mm2025_2026.destytojas.nD2_D02.push({
                 nr: i,
                 studKryptis: eval("req.body.nD2_D02studKrypt" + i),
                 veikla: eval("req.body.nD2_D02veikla" + i),
@@ -20511,7 +20517,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
             if (eval("req.body.nD2_D03studProgr" + i) != "" || eval("req.body.nD2_D03veikla" + i) != "" ||
               eval("req.body.nD2_D03rezultatai" + i) != "" || eval("req.body.nD2_D03studKryptis" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_D03.push({
+              foundUser.mm2025_2026.destytojas.nD2_D03.push({
                 nr: i,
                 studKryptis: eval("req.body.nD2_D03studKryptis"  + i),
                 studProgr: eval("req.body.nD2_D03studProgr" + i),
@@ -20523,7 +20529,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
             if (eval("req.body.nD2_M03studProgr" + i) != "" || eval("req.body.nD2_M03dalykPavad" + i) != "" ||
               eval("req.body.nD2_M03apimtisKredit" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_M03.push({
+              foundUser.mm2025_2026.destytojas.nD2_M03.push({
                 nr: i,
                 studProgr: eval("req.body.nD2_M03studProgr" + i),
                 dalykPavad: eval("req.body.nD2_M03dalykPavad" + i),
@@ -20533,7 +20539,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 9 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table9_name); i++) {
             if (eval("req.body.nD2_S01veikla" + i) != "" || eval("req.body.nD2_S01dataVieta" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_S01.push({
+              foundUser.mm2025_2026.destytojas.nD2_S01.push({
                 nr: i,
                 veikla: eval("req.body.nD2_S01veikla" + i),
                 dataVieta: eval("req.body.nD2_S01dataVieta" + i)
@@ -20542,32 +20548,32 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // savianalize submit
           for (let i = 1; i <= parseInt(req.body.tablenD2_S_name); i++) {
             if (eval("req.body.nD2_Sstiprybes" + i) != "" || eval("req.body.nD2_Stobulintina" + i) != "") {
-              foundUser.mm2024_2025.destytojas.nD2_S.push({
+              foundUser.mm2025_2026.destytojas.nD2_S.push({
                 nr: i,
                 stiprybes: eval("req.body.nD2_Sstiprybes" + i),
                 tobulintina: eval("req.body.nD2_Stobulintina" + i)
               })
             }
           }
-          foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_planVal = req.body.tMTEPveiklRez_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal = req.body.tMTEPveiklRez_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.menoVeikl_planVal = req.body.menoVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal = req.body.menoVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal = req.body.tMTEPmenoVeiklPop_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal = req.body.tMTEPmenoVeiklPop_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.studReng_planVal = req.body.studReng_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.studReng_atlVal = req.body.studReng_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.kitaVeikl_planVal = req.body.kitaVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.kitaVeikl_atlVal = req.body.kitaVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.tMTEP3.isVisoValPlan = req.body.tMTEP3isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.tMTEP3.isVisoValAtl = req.body.tMTEP3isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.tMTEP3.priezastys = req.body.tMTEP3priezastys
+          foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPveiklRez_planVal = req.body.tMTEPveiklRez_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPveiklRez_atlVal = req.body.tMTEPveiklRez_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.menoVeikl_planVal = req.body.menoVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.menoVeikl_atlVal = req.body.menoVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal = req.body.tMTEPmenoVeiklPop_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal = req.body.tMTEPmenoVeiklPop_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.studReng_planVal = req.body.studReng_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.studReng_atlVal = req.body.studReng_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.kitaVeikl_planVal = req.body.kitaVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.kitaVeikl_atlVal = req.body.kitaVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.tMTEP3.isVisoValPlan = req.body.tMTEP3isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.tMTEP3.isVisoValAtl = req.body.tMTEP3isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.tMTEP3.priezastys = req.body.tMTEP3priezastys
 
           // 10 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table10_name); i++) {
             if (eval("req.body.tyrTemat" + i) != "" || eval("req.body.tyrGrup" + i) != "" ||
               eval("req.body.tMTEP3_T01mokslSrit" + i) != "" || eval("req.body.tMTEP3_T01mokslKrypt" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T01.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T01.push({
                 nr: i,
                 tyrTemat: eval("req.body.tyrTemat" + i),
                 tyrGrup: eval("req.body.tyrGrup" + i),
@@ -20580,7 +20586,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T02bibliografApr" + i) != "" || eval("req.body.tMTEP3_T02tipas" + i) != "" ||
               eval("req.body.tMTEP3_T02mokslSrit" + i) != "" || eval("req.body.tMTEP3_T02mokslKrypt" + i) != "" ||
               eval("req.body.tMTEP3_T02duomBaze" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T02.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T02.push({
                 nr: i,
                 bibliografApr: eval("req.body.tMTEP3_T02bibliografApr" + i),
                 tipas: eval("req.body.tMTEP3_T02tipas" + i),
@@ -20592,7 +20598,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 12 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table12_name); i++) {
             if (eval("req.body.tMTEP3_T03pilnasBiblApr" + i) != "" || eval("req.body.tMTEP3_T03rengTipas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T03.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T03.push({
                 nr: i,
                 pilnasBiblApr: eval("req.body.tMTEP3_T03pilnasBiblApr" + i),
                 rengTipas: eval("req.body.tMTEP3_T03rengTipas" + i)
@@ -20602,7 +20608,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table13_name); i++) {
             if (eval("req.body.tMTEP3_T04uzsakovas" + i) != "" || eval("req.body.tMTEP3_T04tema" + i) != "" ||
               eval("req.body.tMTEP3_T04data" + i) != "" || eval("req.body.tMTEP3_T04atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T04.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T04.push({
                 nr: i,
                 uzsakovas: eval("req.body.tMTEP3_T04uzsakovas" + i),
                 tema: eval("req.body.tMTEP3_T04tema" + i),
@@ -20614,7 +20620,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table141_name); i++) {
             if (eval("req.body.tMTEP3_T05veiklPavad" + i) != "" || eval("req.body.tMTEP3_T05veiklRezult" + i) != "" ||
               eval("req.body.tMTEP3_T05atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T05.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T05.push({
                 nr: i,
                 veiklPavad: eval("req.body.tMTEP3_T05veiklPavad" + i),
                 veiklRezult: eval("req.body.tMTEP3_T05veiklRezult" + i),
@@ -20624,7 +20630,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 14.2 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table142_name); i++) {
             if (eval("req.body.tMTEP3_142pavadinimas" + i) != "" || eval("req.body.tMTEP3_142pastabos" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_142.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_142.push({
                 nr: i,
                 pavadinimas: eval("req.body.tMTEP3_142pavadinimas" + i),
                 pastabos: eval("req.body.tMTEP3_142pastabos" + i)
@@ -20633,7 +20639,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 14.3 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table143_name); i++) {
             if (eval("req.body.tMTEP3_143pavadinimas" + i) != "" || eval("req.body.tMTEP3_143uzsakovas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_143.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_143.push({
                 nr: i,
                 pavadinimas: eval("req.body.tMTEP3_143pavadinimas" + i),
                 uzsakovas: eval("req.body.tMTEP3_143uzsakovas" + i)
@@ -20644,7 +20650,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T06autorius" + i) != "" || eval("req.body.tMTEP3_T06menoSrit" + i) != ""
              || eval("req.body.tMTEP3_T06pobudis" + i) != "" || eval("req.body.tMTEP3_T06realizVieta" + i) != ""
              || eval("req.body.tMTEP3_T06data" + i) != "" || eval("req.body.tMTEP3_T06atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T06.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T06.push({
                 nr: i,
                 autorius: eval("req.body.tMTEP3_T06autorius" + i),
                 menoSrit: eval("req.body.tMTEP3_T06menoSrit" + i),
@@ -20659,7 +20665,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T07menoSrit" + i) != "" || eval("req.body.tMTEP3_T07pavadinimas" + i) != "" ||
               eval("req.body.tMTEP3_T07atlikVieta" + i) != "" || eval("req.body.tMTEP3_T07data" + i) != "" ||
               eval("req.body.tMTEP3_T07atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T07.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T07.push({
                 nr: i,
                 menoSrit: eval("req.body.tMTEP3_T07menoSrit" + i),
                 pavadinimas: eval("req.body.tMTEP3_T07pavadinimas" + i),
@@ -20673,7 +20679,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T08menoSrit" + i) != "" || eval("req.body.tMTEP3_T08pavadinimas" + i) != "" ||
               eval("req.body.tMTEP3_T08atlikVieta" + i) != "" || eval("req.body.tMTEP3_T08data" + i) != "" ||
               eval("req.body.tMTEP3_T08atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T08.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T08.push({
                 nr: i,
                 menoSrit: eval("req.body.tMTEP3_T08menoSrit" + i),
                 pavadinimas: eval("req.body.tMTEP3_T08pavadinimas" + i),
@@ -20687,7 +20693,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T09menoSrit" + i) != "" || eval("req.body.tMTEP3_T09pavadinimas" + i) != "" ||
               eval("req.body.tMTEP3_T09atlikVieta" + i) != "" || eval("req.body.tMTEP3_T09data" + i) != "" ||
               eval("req.body.tMTEP3_T09atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T09.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T09.push({
                 nr: i,
                 menoSrit: eval("req.body.tMTEP3_T09menoSrit" + i),
                 pavadinimas: eval("req.body.tMTEP3_T09pavadinimas" + i),
@@ -20701,7 +20707,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T10veiklPobud" + i) != "" || eval("req.body.tMTEP3_T10veiklTiksl" + i) != "" ||
               eval("req.body.tMTEP3_T10dataVieta" + i) != "" || eval("req.body.tMTEP3_T10dalyvSk" + i) != ""
               || eval("req.body.tMTEP3_T10ktKomentarai" + i) != "" || eval("req.body.tMTEP3_T10atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T10.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T10.push({
                 nr: i,
                 veiklPobud: eval("req.body.tMTEP3_T10veiklPobud" + i),
                 veiklTiksl: eval("req.body.tMTEP3_T10veiklTiksl" + i),
@@ -20716,7 +20722,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.tMTEP3_T11veiklPobud" + i) != "" || eval("req.body.tMTEP3_T11veiklTiksl" + i) != "" ||
               eval("req.body.tMTEP3_T11dataVieta" + i) != "" || eval("req.body.tMTEP3_T11dalyvSk" + i) != "" ||
               eval("req.body.tMTEP3_T11ktKomentarai" + i) != "" || eval("req.body.tMTEP3_T11atlygArNe" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T11.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T11.push({
                 nr: i,
                 veiklPobud: eval("req.body.tMTEP3_T11veiklPobud" + i),
                 veiklTiksl: eval("req.body.tMTEP3_T11veiklTiksl" + i),
@@ -20729,7 +20735,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 21 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table21_name); i++) {
             if (eval("req.body.tMTEP3_T12veiklPobud" + i) != "" || eval("req.body.tMTEP3_T12dataVieta" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T12.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T12.push({
                 nr: i,
                 veiklPobud: eval("req.body.tMTEP3_T12veiklPobud" + i),
                 dataVieta: eval("req.body.tMTEP3_T12dataVieta" + i)
@@ -20739,7 +20745,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table22_name); i++) {
             if (eval("req.body.tMTEP3_T13studDuom" + i) != "" || eval("req.body.tMTEP3_T13renginioPavad" + i) != "" ||
               eval("req.body.tMTEP3_T13rezultatas" + i) != "" || eval("req.body.tMTEP3_T13data" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T13.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T13.push({
                 nr: i,
                 studDuom: eval("req.body.tMTEP3_T13studDuom" + i),
                 renginioPavad: eval("req.body.tMTEP3_T13renginioPavad" + i),
@@ -20751,7 +20757,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table23_name); i++) {
             if (eval("req.body.tMTEP3_T14renginys" + i) != "" || eval("req.body.tMTEP3_T14veiklPobud" + i) != "" ||
               eval("req.body.tMTEP3_T14dataVieta" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_T14.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_T14.push({
                 nr: i,
                 renginys: eval("req.body.tMTEP3_T14renginys" + i),
                 veiklPobud: eval("req.body.tMTEP3_T14veiklPobud" + i),
@@ -20761,78 +20767,78 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // savianalize submit
           for (let i = 1; i <= parseInt(req.body.tableTMTEP3_S_name); i++) {
             if (eval("req.body.tMTEP3_Sstiprybes" + i) != "" || eval("req.body.tMTEP3_Stobulintina" + i) != "") {
-              foundUser.mm2024_2025.destytojas.tMTEP3_S.push({
+              foundUser.mm2025_2026.destytojas.tMTEP3_S.push({
                 nr: i,
                 stiprybes: eval("req.body.tMTEP3_Sstiprybes" + i),
                 tobulintina: eval("req.body.tMTEP3_Stobulintina" + i)
               })
             }
           }
-          foundUser.mm2024_2025.destytojas.kTOV4.kompTobulinimas_planVal = req.body.kTOV4kompTobulinimas_planVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.kompTobulinimas_atlVal = req.body.kTOV4kompTobulinimas_atlVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.organizacVeikl_planVal = req.body.kTOV4organizacVeikl_planVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.organizacVeikl_atlVal = req.body.kTOV4organizacVeikl_atlVal,
-            foundUser.mm2024_2025.destytojas.kTOV4.isVisoValPlan = req.body.kTOV4isVisoValPlan,
-            foundUser.mm2024_2025.destytojas.kTOV4.isVisoValAtl = req.body.kTOV4isVisoValAtl,
-            foundUser.mm2024_2025.destytojas.kTOV4.priezastys = req.body.kTOV4priezastys
+          foundUser.mm2025_2026.destytojas.kTOV4.kompTobulinimas_planVal = req.body.kTOV4kompTobulinimas_planVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.kompTobulinimas_atlVal = req.body.kTOV4kompTobulinimas_atlVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.organizacVeikl_planVal = req.body.kTOV4organizacVeikl_planVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.organizacVeikl_atlVal = req.body.kTOV4organizacVeikl_atlVal,
+            foundUser.mm2025_2026.destytojas.kTOV4.isVisoValPlan = req.body.kTOV4isVisoValPlan,
+            foundUser.mm2025_2026.destytojas.kTOV4.isVisoValAtl = req.body.kTOV4isVisoValAtl,
+            foundUser.mm2025_2026.destytojas.kTOV4.priezastys = req.body.kTOV4priezastys
 
           // 24 lentelė submit
           //mokymosi
           for (let i = 1; i <= parseInt(req.body.table241_name); i++) {
             if (eval("req.body.kTOV4_mokymopavad" + i) != "" || eval("req.body.kTOV4_mokymopazymNr" + i) != "" ||
               eval("req.body.kTOV4_mokymotrukmeValLT" + i) != "" || eval("req.body.kTOV4_mokymotrukmeValNeLT" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
                 pavadinimas: eval("req.body.kTOV4_mokymopavad" + i),
                 pazymNr: eval("req.body.kTOV4_mokymopazymNr" + i),
                 trukmeValLT: eval("req.body.kTOV4_mokymotrukmeValLT" + i),
                 trukmeValNeLT: eval("req.body.kTOV4_mokymotrukmeValNeLT" + i)
               })
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = true
             }
           } // tyrimu
           for (let i = 1; i <= parseInt(req.body.table242_name); i++) {
             if (eval("req.body.kTOV4_tyrimupavad" + i) != "" || eval("req.body.kTOV4_tyrimupazymNr" + i) != "" ||
               eval("req.body.kTOV4_tyrimutrukmeValLT" + i) != "" || eval("req.body.kTOV4_tyrimutrukmeValNeLT" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.tyrimu.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.tyrimu.push({
                 pavadinimas: eval("req.body.kTOV4_tyrimupavad" + i),
                 pazymNr: eval("req.body.kTOV4_tyrimupazymNr" + i),
                 trukmeValLT: eval("req.body.kTOV4_tyrimutrukmeValLT" + i),
                 trukmeValNeLT: eval("req.body.kTOV4_tyrimutrukmeValNeLT" + i)
               })
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = true
             }
           } //bendrosios
           for (let i = 1; i <= parseInt(req.body.table243_name); i++) {
             if (eval("req.body.kTOV4_bendrosiospavad" + i) != "" || eval("req.body.kTOV4_bendrosiospazymNr" + i) != "" ||
               eval("req.body.kTOV4_bendrosiostrukmeValLT" + i) != "" || eval("req.body.kTOV4_bendrosiostrukmeValNeLT" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.bendrosios.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.bendrosios.push({
                 pavadinimas: eval("req.body.kTOV4_bendrosiospavad" + i),
                 pazymNr: eval("req.body.kTOV4_bendrosiospazymNr" + i),
                 trukmeValLT: eval("req.body.kTOV4_bendrosiostrukmeValLT" + i),
                 trukmeValNeLT: eval("req.body.kTOV4_bendrosiostrukmeValNeLT" + i)
               })
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = true
             }
           } //dalykines
           for (let i = 1; i <= parseInt(req.body.table244_name); i++) {
             if (eval("req.body.kTOV4_dalykpavad" + i) != "" || eval("req.body.kTOV4_dalykpazymNr" + i) != "" ||
               eval("req.body.kTOV4_dalyktrukmeValLT" + i) != "" || eval("req.body.kTOV4_dalyktrukmeValNeLT" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalykines.push({
                 pavadinimas: eval("req.body.kTOV4_dalykpavad" + i),
                 pazymNr: eval("req.body.kTOV4_dalykpazymNr" + i),
                 trukmeValLT: eval("req.body.kTOV4_dalyktrukmeValLT" + i),
                 trukmeValNeLT: eval("req.body.kTOV4_dalyktrukmeValNeLT" + i)
               })
-              foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
+              foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = true
             }
           }
-          foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
-            foundUser.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
+          foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
+            foundUser.mm2025_2026.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
           // 25 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table25_name); i++) {
             if (eval("req.body.kTOV4_25renginysTema" + i) != "" || eval("req.body.kTOV4_25kompGrupe" + i) != "" ||
               eval("req.body.kTOV4_25skirta" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_25.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_25.push({
                 nr: i,
                 renginysTema: eval("req.body.kTOV4_25renginysTema" + i),
                 kompGrupe: eval("req.body.kTOV4_25kompGrupe" + i),
@@ -20843,7 +20849,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table26_name); i++) {
             if (eval("req.body.kTOV4_26imonIstaig" + i) != "" || eval("req.body.kTOV4_26kompGrupe" + i) != "" ||
               eval("req.body.kTOV4_26trukmeVal" + i) != "" || eval("req.body.kTOV4_26data" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_26.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_26.push({
                 nr: i,
                 imonIstaig: eval("req.body.kTOV4_26imonIstaig" + i),
                 kompGrupe: eval("req.body.kTOV4_26kompGrupe" + i),
@@ -20855,7 +20861,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
             if (eval("req.body.kTOV4_KV03studKryptis" + i) != "" || eval("req.body.kTOV4_KV03salis" + i) != "" ||
               eval("req.body.kTOV4_KV03institucija" + i) != "" || eval("req.body.kTOV4_KV03dalykas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_KV03.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_KV03.push({
                 nr: i,
                 studKryptis: eval("req.body.kTOV4_KV03studKryptis" + i),
                 salis: eval("req.body.kTOV4_KV03salis" + i),
@@ -20866,7 +20872,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 28.1 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table281_name); i++) {
             if (eval("req.body.kTOV4_O01_1veiklPobud" + i) != "" || eval("req.body.kTOV4_O01_1isakNrData" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_1.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_1.push({
                 nr: i,
                 veiklPobud: eval("req.body.kTOV4_O01_1veiklPobud" + i),
                 isakNrData: eval("req.body.kTOV4_O01_1isakNrData" + i)
@@ -20876,7 +20882,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table282_name); i++) {
             if (eval("req.body.kTOV4_O01_2destytojas" + i) != "" || eval("req.body.kTOV4_O01_2veiklPobud" + i) != "" ||
               eval("req.body.kTOV4_O01_2dataVieta" + i) != "" || eval("req.body.kTOV4_O01_2ktKomentarai" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_O01.kTOV4_O01_2.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_O01.kTOV4_O01_2.push({
                 nr: i,
                 destytojas: eval("req.body.kTOV4_O01_2destytojas" + i),
                 veiklPobud: eval("req.body.kTOV4_O01_2veiklPobud" + i),
@@ -20887,7 +20893,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // 29 lentelė submit
           for (let i = 1; i <= parseInt(req.body.table29_name); i++) {
             if (eval("req.body.kTOV4_29veikla" + i) != "" || eval("req.body.kTOV4_29socPartneris" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_29.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_29.push({
                 nr: i,
                 veikla: eval("req.body.kTOV4_29veikla" + i),
                 socPartneris: eval("req.body.kTOV4_29socPartneris" + i)
@@ -20896,7 +20902,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           } // savianalize lentelė submit
           for (let i = 1; i <= parseInt(req.body.tablekTOV4_S_name); i++) {
             if (eval("req.body.kTOV4_Sstiprybes" + i) != "" || eval("req.body.kTOV4_Stobulintina" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kTOV4_S.push({
+              foundUser.mm2025_2026.destytojas.kTOV4_S.push({
                 nr: i,
                 stiprybes: eval("req.body.kTOV4_Sstiprybes" + i),
                 tobulintina: eval("req.body.kTOV4_Stobulintina" + i)
@@ -20906,7 +20912,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
             if (eval("req.body.kV5_KT02studKryptis" + i) != "" || eval("req.body.kV5_KT02diplomantas" + i) != "" ||
               eval("req.body.kV5_KT02studProgr" + i) != "" || eval("req.body.kV5_KT02darboTema" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_KT02.push({
+              foundUser.mm2025_2026.destytojas.kV5_KT02.push({
                 nr: i,
                 studKryptis: eval("req.body.kV5_KT02studKryptis" + i),
                 diplomantas: eval("req.body.kV5_KT02diplomantas" + i),
@@ -20919,7 +20925,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.kV5_KT01studKryptis" + i) != "" || eval("req.body.kV5_KT01diplomantas" + i) != "" ||
               eval("req.body.kV5_KT01studProgr" + i) != "" || eval("req.body.kV5_KT01darboTema" + i) != "" ||
               eval("req.body.kV5_KT01uzsakovas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_KT01.push({
+              foundUser.mm2025_2026.destytojas.kV5_KT01.push({
                 nr: i,
                 studKryptis: eval("req.body.kV5_KT01studKryptis" + i),
                 diplomantas: eval("req.body.kV5_KT01diplomantas" + i),
@@ -20932,35 +20938,35 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
           // 32 table submit
           for (let i = 1; i <= parseInt(req.body.table321_name); i++) {
             if (eval("req.body.kV5_32socaprasymas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_32.socAtskMaz.push({
+              foundUser.mm2025_2026.destytojas.kV5_32.socAtskMaz.push({
               aprasymas: eval("req.body.kV5_32socaprasymas" + i)
               })
             }
           }
           for (let i = 1; i <= parseInt(req.body.table322_name); i++) {
             if (eval("req.body.kV5_32aplinkaprasymas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_32.aplinkosaugInic.push({
+              foundUser.mm2025_2026.destytojas.kV5_32.aplinkosaugInic.push({
               aprasymas: eval("req.body.kV5_32aplinkaprasymas" + i)
               })
             }
           }
           for (let i = 1; i <= parseInt(req.body.table323_name); i++) {
             if (eval("req.body.kV5_32valstybaprasymas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_32.lietValstybPuosel.push({
+              foundUser.mm2025_2026.destytojas.kV5_32.lietValstybPuosel.push({
               aprasymas: eval("req.body.kV5_32valstybaprasymas" + i)
               })
             }
           }
           for (let i = 1; i <= parseInt(req.body.table324_name); i++) {
             if (eval("req.body.kV5_32etnoaprasymas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_32.lietEtnokPuos.push({
+              foundUser.mm2025_2026.destytojas.kV5_32.lietEtnokPuos.push({
               aprasymas: eval("req.body.kV5_32etnoaprasymas" + i)
               })
             }
           }
           for (let i = 1; i <= parseInt(req.body.table325_name); i++) {
             if (eval("req.body.kV5_32savaprasymas" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_32.savanorystIniciatyv.push({
+              foundUser.mm2025_2026.destytojas.kV5_32.savanorystIniciatyv.push({
                 aprasymas: eval("req.body.kV5_32savaprasymas" + i)
               })
             }
@@ -20970,7 +20976,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               eval("req.body.kV5_33organizac" + i) != "" || eval("req.body.kV5_33veiklOrientavim" + i) != "" ||
               eval("req.body.kV5_33dalyviai" + i) != "" || eval("req.body.kV5_33laikas" + i) != "" ||
               eval("req.body.kV5_33vieta" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_33.push({
+              foundUser.mm2025_2026.destytojas.kV5_33.push({
                 nr: i,
                 veikla: eval("req.body.kV5_33veikla" + i),
                 veiklPartner: eval("req.body.kV5_33veiklPartner" + i),
@@ -20986,7 +20992,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
             if (eval("req.body.kV5_34pavadinimas" + i) != "" || eval("req.body.kV5_34vykdytPartner" + i) != "" ||
               eval("req.body.kV5_34dalyviai"  + i) != "" || eval("req.body.kV5_34finansavim" + i) != "" ||
               eval("req.body.kV5_34rezultatai" + i) != "" || eval("req.body.kV5_34salisData" + i) != "") {
-              foundUser.mm2024_2025.destytojas.kV5_34.push({
+              foundUser.mm2025_2026.destytojas.kV5_34.push({
                 nr: i,
                 pavadinimas: eval("req.body.kV5_34pavadinimas" + i),
                 vykdytPartner: eval("req.body.kV5_34vykdytPartner" + i),
@@ -20997,26 +21003,26 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               })
             }
           }
-          foundUser.mm2024_2025.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
+          foundUser.mm2025_2026.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
 
           // vedėjas uzpildo update-report-lecturer-dep
-            foundUser.mm2024_2025.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
-            foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
-            foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
-            foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
-            foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
-            foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
+            foundUser.mm2025_2026.destytojas.katedrosV_isvados = req.body.vedejo_katedrosV_isvados,
+            foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kontaktD = req.body.vedejo_kontaktD,
+            foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
+            foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
+            foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
+            foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
 
-            foundUser.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
-            foundUser.mm2024_2025.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena24_25 = req.body.ataskaitos_busena
+            foundUser.mm2025_2026.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
+            foundUser.mm2025_2026.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
+            foundUser.busena25_26 = req.body.ataskaitos_busena
 
             var today = new Date();
             var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             var dateTime = date+' '+time;
 
-            foundUser.mm2024_2025.destytojas.ivykiuDatos.pateikimas = dateTime
+            foundUser.mm2025_2026.destytojas.ivykiuDatos.pateikimas = dateTime
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
@@ -21036,7 +21042,7 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
 });
 
 //------------------ADMIN----------------------------------------
-app.get("/admin-window", function(req, res) {
+app.get("/admin/profile", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -21056,99 +21062,10 @@ app.get("/admin-window", function(req, res) {
     res.redirect("/login");
   }
 });
-
-app.get("/admin-users-list", (req, res, next) => {
-
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-
-          var perPage = 5;
-          var page = req.params.page || 1;
-
-          User.find({})
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function(err, users) {
-
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-
-app.get("/admin-users-list/:page", (req, res, next) => {
-
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-
-          var perPage = 5;
-          var page = req.params.page || 1;
-
-          User.find({})
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function(err, users) {
-
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-// Administratorius ištrina naudotoją iš DB
-app.post("/delete", function(req, res) {
-
-  User.deleteOne({
-      _id: req.body.deleteById
-    },
-    function(err) {
-      if (!err) {
-        res.redirect("/admin-users-list");
-      } else {
-        res.send(err);
-      }
-    }
-  );
-});
 // Administratorius atnaujina savo info
 app.post("/update-profile-admin", function(req, res) {
-  if (req.isAuthenticated()) {
 
+  if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
         console.log(err);
@@ -21174,8 +21091,89 @@ app.post("/update-profile-admin", function(req, res) {
     res.redirect("/login");
   }
 });
+// main list with ALL DB USERS
+app.get("/admin/users", (req, res, next) => {
 
-app.get("/admin-edit-user/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+// Administratorius ištrina naudotoją iš DB
+app.post("/delete", function(req, res) {
+
+  User.deleteOne({
+      _id: req.body.deleteById
+    },
+    function(err) {
+      if (!err) {
+        res.redirect("/admin/users");
+      } else {
+        res.send(err);
+      }
+    }
+  );
+});
+
+app.get("/admin/users/edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -21188,7 +21186,7 @@ app.get("/admin-edit-user/:userId", (req, res) => {
               if (err) {
                 console.log(err);
               } else {
-                res.render("admin-edit-user", {
+                res.render("admin-user-edit", {
                   user: user
                 });
               }
@@ -21205,6 +21203,102 @@ app.get("/admin-edit-user/:userId", (req, res) => {
     res.redirect("/login");
   }
 });
+// Administratorius atnaujina naudotojo info
+app.post("/update-user-info-admin", (req, res) => {
+
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.vardas = req.body.vardas,
+          foundUser.pavarde = req.body.pavarde,
+          foundUser.username = req.body.elpastas,
+          foundUser.fakultetas = req.body.fakultetas,
+          foundUser.katedra = req.body.katedra,
+          foundUser.role = req.body.role,
+          foundUser.rolesKeitimas = req.body.rolesKeitimas,
+          foundUser.busena = req.body.busena,
+          foundUser.busenaVedejo = req.body.busenaVedejo,
+          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/admin/users");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+// list 2022-2023 USERS
+app.get("/admin/2022-2023/users", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2022-2023", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2022-2023/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2022-2023", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
 
 app.get("/admin-edit-report-lec/:userId", (req, res) => {
   if (req.isAuthenticated()) {
@@ -21237,7 +21331,7 @@ app.get("/admin-edit-report-lec/:userId", (req, res) => {
   }
 });
 
-app.get("/admin-edit-report-dep/:userId", (req, res) => {
+app.get("/admin-report-dep-edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
@@ -21250,7 +21344,7 @@ app.get("/admin-edit-report-dep/:userId", (req, res) => {
               if (err) {
                 console.log(err);
               } else {
-                res.render("admin-edit-report-dep", {
+                res.render("admin-report-dep-edit", {
                   user: user
                 });
               }
@@ -21299,35 +21393,143 @@ app.get("/admin-all-user-reports/:userId", (req, res) => {
   }
 });
 
-// Administratorius atnaujina naudotojo info
-app.post("/update-user-info-admin", (req, res) => {
 
-  User.findById(req.body.id, function(err, foundUser) {
+
+
+app.get("/admin/faculties", (req, res) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          Faculty.find({}, function(err, faculties) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render("admin-faculties-list", {
+                faculties: faculties
+              });
+            }
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/faculties/create", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          res.render("admin-faculties-create");
+        } else {
+          console.log("User role unknown");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/admin/faculties/edit/:facultyId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.facultyId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            Faculty.findById((reqId), function(err, faculty) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-faculties-edit", {
+                  faculty: faculty
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+// Administratorius sukuria fakultetą
+app.post("/create-faculty", (req, res) => {
+  const faculty = new Faculty({
+    username: req.body.fakultetas,
+    dekanas: req.body.dekanas,
+    prodekanas: req.body.prodekanas
+  });
+  faculty.save(function(err) {
+    if (!err) {
+      console.log("Succesfully created");
+      res.redirect("/admin/faculties");
+    } else {
+      console.log(err);
+      //res.redirect("/admin/faculties");
+      // CATCH padaryti
+    }
+  });
+});
+// Administratorius atnaujina fakultetą
+app.post("/edit-faculty", (req, res) => {
+
+  Faculty.findById(req.body.id, function(err, foundFaculty) {
     if (err) {
       console.log(err);
     } else {
-      if (foundUser) {
-        foundUser.vardas = req.body.vardas,
-          foundUser.pavarde = req.body.pavarde,
-          foundUser.username = req.body.elpastas,
-          foundUser.fakultetas = req.body.fakultetas,
-          foundUser.katedra = req.body.katedra,
-          foundUser.role = req.body.role,
-          foundUser.rolesKeitimas = req.body.rolesKeitimas,
-          foundUser.busena = req.body.busena,
-          foundUser.busenaVedejo = req.body.busenaVedejo,
-          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
-        foundUser.save(function(err) {
+      if (foundFaculty) {
+          foundFaculty.username = req.body.fakultetas,
+          foundFaculty.dekanas = req.body.dekanas,
+          foundFaculty.prodekanas = req.body.prodekanas
+        foundFaculty.save(function(err) {
           if (!err) {
-            res.redirect("/admin-users-list");
+            console.log("Succesfully updated");
+            res.redirect("/admin/faculties");
           }
         });
       } else {
-        console.log("Does'f found");
+        console.log("Faculty does'f found");
       }
     }
   });
 });
+// Administratorius ištrina naudotoją iš DB
+app.post("/delete-faculty", function(req, res) {
+
+  Faculty.deleteOne({
+      _id: req.body.deleteById
+    },
+    function(err) {
+      if (!err) {
+        res.redirect("/admin/faculties");
+      } else {
+        res.send(err);
+      }
+    }
+  );
+});
+
+//TAISYTI viską su ataskaitom:
 // Administratorius atnaujina dėstytojo ataskaitą
 app.post("/update-report-lec-admin", (req, res) => {
 
@@ -22075,7 +22277,7 @@ app.post("/update-report-lec-admin", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully  updated");
-            res.redirect("/admin-users-list");
+            res.redirect("/admin/users");
           }
         });
       } else {
@@ -23062,7 +23264,7 @@ app.post("/update-report-dep-admin", (req, res) => {
         foundUser.save(function(err) {
           if (!err) {
             // console.log("Succesfully  updated");
-            res.redirect("/admin-users-list");
+            res.redirect("/admin/users");
           }
         });
       } else {
@@ -23070,142 +23272,6 @@ app.post("/update-report-dep-admin", (req, res) => {
       }
     }
   });
-});
-
-app.get("/admin-faculties-list", (req, res) => {
-
-  if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-
-          Faculty.find({}, function(err, faculties) {
-            if (err) {
-              console.log(err);
-            } else {
-              res.render("admin-faculties-list", {
-                faculties: faculties
-              });
-            }
-          });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-app.get("/admin-faculties-create", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          res.render("admin-faculties-create");
-        } else {
-          console.log("User role unknown");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-
-// Aadministratorius sukuria fakultetą
-
-app.get("/admin-faculties-edit/:facultyId", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.facultyId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            Faculty.findById((reqId), function(err, faculty) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-faculties-edit", {
-                  faculty: faculty
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin-window");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-
-app.post("/create-faculty", (req, res) => {
-  const faculty = new Faculty({
-    username: req.body.fakultetas,
-    dekanas: req.body.dekanas,
-    prodekanas: req.body.prodekanas
-  });
-  faculty.save(function(err) {
-    if (!err) {
-      console.log("Succesfully created");
-      res.redirect("/admin-faculties-list");
-    } else {
-      console.log(err);
-      //res.redirect("/admin-faculties-create");
-    }
-  });
-});
-// Aadministratorius atnaujina fakultetą
-app.post("/edit-faculty", (req, res) => {
-
-  Faculty.findById(req.body.id, function(err, foundFaculty) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundFaculty) {
-        foundFaculty.username = req.body.fakultetas,
-          foundFaculty.dekanas = req.body.dekanas,
-          foundFaculty.prodekanas = req.body.prodekanas
-        foundFaculty.save(function(err) {
-          if (!err) {
-            console.log("Succesfully updated");
-            res.redirect("/admin-faculties-list");
-          }
-        });
-      } else {
-        console.log("Faculty does'f found");
-      }
-    }
-  });
-});
-// Administratorius ištrina naudotoją iš DB
-app.post("/delete-faculty", function(req, res) {
-
-  Faculty.deleteOne({
-      _id: req.body.deleteById
-    },
-    function(err) {
-      if (!err) {
-        res.redirect("/admin-faculties-list");
-      } else {
-        res.send(err);
-      }
-    }
-  );
 });
 
 app.use('/*/*/*', (req, res) => {
