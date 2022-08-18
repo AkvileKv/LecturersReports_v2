@@ -472,7 +472,7 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   fakultetas: String,
   katedra: String,
   currentYear: String,
-  activeUser: Boolean,
+  activeUser: String,
 
   teachingYear22_23: Boolean,
   teachingYear23_24: Boolean,

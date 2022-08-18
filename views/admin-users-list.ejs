@@ -28,7 +28,7 @@
               </div>
             </td>
             <td>
-              <%if (user.active == true){ %>
+              <%if (user.activeUser == "aktyvus"){ %>
               aktyvus
               <%  } else { %>
               neaktyvus
@@ -80,7 +80,7 @@
         <% if (current == pages) { %>
             <li class="page-item disabled"><a class="page-link">Last</a></li>
         <% } else { %>
-            <li class="disabled"><a class="page-link" href="/admin-users/<%= pages %>">Last</a></li>
+            <li class="disabled"><a class="page-link" href="/admin/users/<%= pages %>">Last</a></li>
         <% } %>
     </ul>
 </nav>

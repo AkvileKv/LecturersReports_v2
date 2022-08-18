@@ -87,7 +87,7 @@ app.post("/register", (req, res) => {
     rolesKeitimas25_26: false,
     updated_for: "Registracija",
     currentYear: new Date().getFullYear(),
-    active: true,
+    activeUser: "aktyvus",
     teachingYear22_23: false,
     teachingYear23_24: false,
     teachingYear24_25: false,
@@ -21061,7 +21061,7 @@ app.get("/admin/profile", function(req, res) {
   } else {
     res.redirect("/login");
   }
-});
+}); //ok
 // Administratorius atnaujina savo info
 app.post("/update-profile-admin", function(req, res) {
 
@@ -21090,7 +21090,7 @@ app.post("/update-profile-admin", function(req, res) {
   } else {
     res.redirect("/login");
   }
-});
+});//ok
 // main list with ALL DB USERS
 app.get("/admin/users", (req, res, next) => {
 
@@ -21123,7 +21123,7 @@ app.get("/admin/users", (req, res, next) => {
   } else {
     res.redirect("/login");
   }
-});
+});//ok
 app.get("/admin/users/:page", (req, res, next) => {
 
   if (req.isAuthenticated()) {
@@ -21156,7 +21156,7 @@ app.get("/admin/users/:page", (req, res, next) => {
   } else {
     res.redirect("/login");
   }
-});
+});//ok
 // Administratorius ištrina naudotoją iš DB
 app.post("/delete", function(req, res) {
 
@@ -21171,7 +21171,7 @@ app.post("/delete", function(req, res) {
       }
     }
   );
-});
+});//ok
 
 app.get("/admin/users/edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
@@ -21211,15 +21211,14 @@ app.post("/update-user-info-admin", (req, res) => {
       console.log(err);
     } else {
       if (foundUser) {
-        foundUser.vardas = req.body.vardas,
+          foundUser.activeUser = req.body.isActive,
+          foundUser.vardas = req.body.vardas,
           foundUser.pavarde = req.body.pavarde,
           foundUser.username = req.body.elpastas,
           foundUser.fakultetas = req.body.fakultetas,
           foundUser.katedra = req.body.katedra,
           foundUser.role = req.body.role,
           foundUser.rolesKeitimas = req.body.rolesKeitimas,
-          foundUser.busena = req.body.busena,
-          foundUser.busenaVedejo = req.body.busenaVedejo,
           foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
         foundUser.save(function(err) {
           if (!err) {
@@ -21298,8 +21297,32 @@ app.get("/admin/2022-2023/users/:page", (req, res, next) => {
     res.redirect("/login");
   }
 });
+// Administratorius atnaujina naudotojo info
+app.post("/update-user-info-admin-2022-2023", (req, res) => {
 
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+          foundUser.role22_23 = req.body.role,
+          foundUser.rolesKeitimas22_23 = req.body.rolesKeitimas,
+          foundUser.busena22 = req.body.busena,
+          foundUser.busenaVedejo22 = req.body.busenaVedejo,
 
+          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/admin/users");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+//TAISYTI:
 app.get("/admin-edit-report-lec/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -21330,7 +21353,6 @@ app.get("/admin-edit-report-lec/:userId", (req, res) => {
     res.redirect("/login");
   }
 });
-
 app.get("/admin-report-dep-edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -21361,7 +21383,6 @@ app.get("/admin-report-dep-edit/:userId", (req, res) => {
     res.redirect("/login");
   }
 });
-
 app.get("/admin-all-user-reports/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -21392,8 +21413,7 @@ app.get("/admin-all-user-reports/:userId", (req, res) => {
     res.redirect("/login");
   }
 });
-
-
+//
 
 
 app.get("/admin/faculties", (req, res) => {
