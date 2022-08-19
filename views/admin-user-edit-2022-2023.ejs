@@ -1,10 +1,11 @@
-<%- include('partials/headerAdmin2022_2023)') %>
+<%- include('partials/headerAdmin2022_2023') %>
 
 <div class="container">
   <div class="jumbotron ">
 
-    <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> redagavimas</h1>
-    <form action="/update-user-info-admin" method="post">
+    <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> redagavimas 2022 - 2023 m. m.</h1>
+    <br>
+    <form action="/update-user-info-admin-2022-2023" method="post">
 
       <div class="form-group ">
         <!-- <h4 class="text-center">Jūsų duomenys</h4> -->
@@ -87,11 +88,11 @@
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Rolė:</label>
+            <label for="">Rolė 2022 - 2023 m. m.:</label>
             <select name="role" class="form-select form-control" required>
-              <option class="others" <%if (user.role === "dėstytojas") { %> selected <% } %> value="dėstytojas">Dėstytojas</option>
-              <option class="others" <%if (user.role === "katedros vedėjas") { %> selected <% } %> value="katedros vedėjas">Katedros vedėjas</option>
-              <option class="others" <%if (user.role === "administratorius") { %> selected <% } %> value="administratorius">Administratorius</option>
+              <option class="others" <%if (user.role22_23 === "dėstytojas") { %> selected <% } %> value="dėstytojas">Dėstytojas</option>
+              <option class="others" <%if (user.role22_23 === "katedros vedėjas") { %> selected <% } %> value="katedros vedėjas">Katedros vedėjas</option>
+              <option class="others" <%if (user.role22_23 === "administratorius") { %> selected <% } %> value="administratorius">Administratorius</option>
             </select>
           </div>
         </div>
@@ -99,10 +100,10 @@
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Savo rolės keitimas <span style="color:red">(galimas - tik kai katedros vedėjas yra ir dėstytojas)</span>*:</label>
+            <label for="">Savo rolės keitimas 2022 - 2023 m. m. <span style="color:red">(galimas - jei katedros vedėjas 2022 - 2023 m. m. yra ir dėstytojas)</span>*:</label>
             <select name="rolesKeitimas" class="form-select form-control" required>
-              <option class="others" <%if (user.rolesKeitimas === false) { %> selected <% } %> value=false>Negalimas</option>
-              <option class="others" <%if (user.rolesKeitimas === true) { %> selected <% } %> value=true>Galimas</option>
+              <option class="others" <%if (user.rolesKeitimas22_23 === false) { %> selected <% } %> value=false>Negalimas</option>
+              <option class="others" <%if (user.rolesKeitimas22_23 === true) { %> selected <% } %> value=true>Galimas</option>
             </select>
             <p>*Negalimas, kai naudotojas yra tik dėstytojas, arba tik katedros vedėjas</p>
           </div>
@@ -111,12 +112,12 @@
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Dėstytojo ataskaitos būsena:</label>
+            <label for="">Dėstytojo ataskaitos būsena 2022 - 2023 m. m.:</label>
             <select name="busena" class="form-select form-control" required>
-              <option class="others" <%if (user.busena === "nesukurta") { %> selected <% } %> value="nesukurta">Nesukurta</option>
-              <option class="others" <%if (user.busena === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
-              <option class="others" <%if (user.busena === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
-              <option class="others" <%if (user.busena === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo">Užrakinta katedros vedėjo</option>
+              <option class="others" <%if (user.busena22_23 === "nesukurta") { %> selected <% } %> value="nesukurta">Nesukurta</option>
+              <option class="others" <%if (user.busena22_23 === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
+              <option class="others" <%if (user.busena22_23 === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
+              <option class="others" <%if (user.busena22_23 === "užrakintaVedėjo") { %> selected <% } %> value="užrakintaVedėjo">Užrakinta katedros vedėjo</option>
             </select>
           </div>
         </div>
@@ -124,11 +125,11 @@
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Vedėjo ataskaitos būsena:</label>
+            <label for="">Vedėjo ataskaitos būsena 2022 - 2023 m. m.:</label>
             <select name="busenaVedejo" class="form-select form-control" required>
-              <option class="others" <%if (user.busenaVedejo === "nesukurta") { %> selected <% } %> value="nesukurta">Nesukurta</option>
-              <option class="others" <%if (user.busenaVedejo === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
-              <option class="others" <%if (user.busenaVedejo === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
+              <option class="others" <%if (user.busenaVedejo22_23 === "nesukurta") { %> selected <% } %> value="nesukurta">Nesukurta</option>
+              <option class="others" <%if (user.busenaVedejo22_23 === "redaguojama") { %> selected <% } %> value="redaguojama">Redaguojama</option>
+              <option class="others" <%if (user.busenaVedejo22_23 === "užrakinta") { %> selected <% } %> value="užrakinta">Užrakinta</option>
             </select>
           </div>
         </div>

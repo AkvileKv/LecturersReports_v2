@@ -3,7 +3,7 @@
 <div class="container">
   <div class="jumbotron ">
 
-    <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
+    <h1 class="text-center">Naudotojų sąrašas 2022 - 2023 m. m.</h1>
     <br>
     <table class="table table-hover">
       <thead>
@@ -37,11 +37,8 @@
             <td>
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
-                  <a type="button" class="btn btn-primary" href="/admin-user-edit/<%= user._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-primary" href="/admin/2022-2023/users/edit/<%= user._id %>"> Redaguoti</a>
                   <a type="button" class="btn btn-secondary" href="/admin-all-user-reports/<%= user._id %>"> Ataskaitos</a>
-                  <form action="/delete" method="post">
-                    <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti naudotoją?');" value="<%=user._id%>">Ištrinti</button>
-                  </form>
                 </div>
               </div>
             </td>
@@ -58,7 +55,7 @@
         <% if (current == 1) { %>
             <li class="page-item disabled"><a class="page-link">First</a></li>
         <% } else { %>
-            <li class="page-item"><a class="page-link" href="/admin-users-list/1">First</a></li>
+            <li class="page-item"><a class="page-link" href="/admin/2022-2023/users/1">First</a></li>
         <% } %>
         <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
         <% if (i !== 1) { %>
@@ -69,7 +66,7 @@
             <% if (i == current) { %>
                 <li class="page-item active"><a class="page-link"><%= i %></a></li>
             <% } else { %>
-                <li class="disabled"><a class="page-link" href="/admin-users-list/<%= i %>"><%= i %></a></li>
+                <li class="disabled"><a class="page-link" href="/admin/2022-2023/users/<%= i %>"><%= i %></a></li>
             <% } %>
             <% if (i == Number(current) + 4 && i < pages) { %>
                 <li class="disabled"><a class="page-link">...</a></li>
@@ -79,7 +76,7 @@
         <% if (current == pages) { %>
             <li class="page-item disabled"><a class="page-link">Last</a></li>
         <% } else { %>
-            <li class="disabled"><a class="page-link" href="/admin-users-list/<%= pages %>">Last</a></li>
+            <li class="disabled"><a class="page-link" href="/admin/2022-2023/users/<%= pages %>">Last</a></li>
         <% } %>
     </ul>
 </nav>

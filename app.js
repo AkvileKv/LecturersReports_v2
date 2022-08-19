@@ -21091,6 +21091,7 @@ app.post("/update-profile-admin", function(req, res) {
     res.redirect("/login");
   }
 });//ok
+
 // main list with ALL DB USERS
 app.get("/admin/users", (req, res, next) => {
 
@@ -21157,22 +21158,6 @@ app.get("/admin/users/:page", (req, res, next) => {
     res.redirect("/login");
   }
 });//ok
-// Administratorius ištrina naudotoją iš DB
-app.post("/delete", function(req, res) {
-
-  User.deleteOne({
-      _id: req.body.deleteById
-    },
-    function(err) {
-      if (!err) {
-        res.redirect("/admin/users");
-      } else {
-        res.send(err);
-      }
-    }
-  );
-});//ok
-
 app.get("/admin/users/edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -21202,7 +21187,7 @@ app.get("/admin/users/edit/:userId", (req, res) => {
   } else {
     res.redirect("/login");
   }
-});
+}); //ok
 // Administratorius atnaujina naudotojo info
 app.post("/update-user-info-admin", (req, res) => {
 
@@ -21230,191 +21215,21 @@ app.post("/update-user-info-admin", (req, res) => {
       }
     }
   });
-});
-// list 2022-2023 USERS
-app.get("/admin/2022-2023/users", (req, res, next) => {
+}); //ok
+// Administratorius ištrina naudotoją iš DB
+app.post("/delete", function(req, res) {
 
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
+  User.deleteOne({
+      _id: req.body.deleteById
+    },
+    function(err) {
+      if (!err) {
+        res.redirect("/admin/users");
       } else {
-        if (foundUser.role === "administratorius") {
-          var perPage = 5;
-          var page = req.params.page || 1;
-          User.find({}) // pagal metus perduoti
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function(err, users) {
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list-2022-2023", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-app.get("/admin/2022-2023/users/:page", (req, res, next) => {
-
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          var perPage = 5;
-          var page = req.params.page || 1;
-          User.find({}) // pagal metus perduoti
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function(err, users) {
-
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list-2022-2023", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-// Administratorius atnaujina naudotojo info
-app.post("/update-user-info-admin-2022-2023", (req, res) => {
-
-  User.findById(req.body.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundUser) {
-          foundUser.role22_23 = req.body.role,
-          foundUser.rolesKeitimas22_23 = req.body.rolesKeitimas,
-          foundUser.busena22 = req.body.busena,
-          foundUser.busenaVedejo22 = req.body.busenaVedejo,
-
-          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
-        foundUser.save(function(err) {
-          if (!err) {
-            res.redirect("/admin/users");
-          }
-        });
-      } else {
-        console.log("Does'f found");
+        res.send(err);
       }
     }
-  });
-});
-//TAISYTI:
-app.get("/admin-edit-report-lec/:userId", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.userId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            User.findById((reqId), function(err, user) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-edit-report-lec", {
-                  user: user
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin-window");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-app.get("/admin-report-dep-edit/:userId", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.userId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            User.findById((reqId), function(err, user) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-report-dep-edit", {
-                  user: user
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin-window");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-app.get("/admin-all-user-reports/:userId", (req, res) => {
-  if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.userId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            User.findById((reqId), function(err, user) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-all-user-reports", {
-                  user: user
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin-window");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
-//
-
+  );});//ok
 
 app.get("/admin/faculties", (req, res) => {
 
@@ -21461,7 +21276,6 @@ app.get("/admin/faculties/create", (req, res) => {
     res.redirect("/login");
   }
 });
-
 app.get("/admin/faculties/edit/:facultyId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -21548,8 +21362,517 @@ app.post("/delete-faculty", function(req, res) {
     }
   );
 });
+//end main list with ALL DB USERS
 
-//TAISYTI viską su ataskaitom:
+
+// USERS list by year
+app.get("/admin/2022-2023/users", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({
+            teachingYear22_23: true
+          })
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2022-2023", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2022-2023/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({teachingYear22_23: true}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2022-2023", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2023-2024/users", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({
+            teachingYear23_24: true
+          })
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2023-2024", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2023-2024/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({teachingYear23_24: true}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2023-2024", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2024-2025/users", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({
+            teachingYear24_25: true
+          })
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2024-2025", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2024-2025/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({teachingYear24_25: true}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2024-2025", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2025-2026/users", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({
+            teachingYear25_26: true
+          })
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2025-2026", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2025-2026/users/:page", (req, res, next) => {
+
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          var perPage = 5;
+          var page = req.params.page || 1;
+          User.find({teachingYear25_26: true}) // pagal metus perduoti
+            .skip((perPage * page) - perPage)
+            .limit(perPage).exec(function(err, users) {
+
+              if (err) throw err;
+              User.countDocuments({}).exec((err, count) => {
+                res.render("admin-users-list-2025-2026", {
+                  users: users,
+                  current: page,
+                  pages: Math.ceil(count / perPage)
+                });
+              });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+//edit user window
+app.get("/admin/2022-2023/users/edit/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-user-edit-2022-2023", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin/2022-2023/users");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2023-2024/users/edit/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-user-edit-2023-2024", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin/2023-2024/users");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2024-2025/users/edit/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-user-edit-2024-2025", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin/2024-2025/users");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2025-2026/users/edit/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-user-edit-2025-2026", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin/2025-2026/users");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+// Administratorius atnaujina naudotojo info
+app.post("/update-user-info-admin-2022-2023", (req, res) => {
+
+  User.findById(req.body.id, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+          foundUser.role22_23 = req.body.role,
+          foundUser.rolesKeitimas22_23 = req.body.rolesKeitimas,
+          foundUser.busena22 = req.body.busena,
+          foundUser.busenaVedejo22 = req.body.busenaVedejo,
+
+          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+        foundUser.save(function(err) {
+          if (!err) {
+            res.redirect("/admin/2022-2023/users");
+          }
+        });
+      } else {
+        console.log("Does'f found");
+      }
+    }
+  });
+});
+//end
+
+//bendram ?? TAISYTI:
+app.get("/admin/2022-2023/user-reports/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-all-user-reports", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin-edit-report-lec/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-edit-report-lec", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin-report-dep-edit/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.render("admin-report-dep-edit", {
+                  user: user
+                });
+              }
+            });
+          } else {
+            res.redirect("/admin-window");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
 // Administratorius atnaujina dėstytojo ataskaitą
 app.post("/update-report-lec-admin", (req, res) => {
 
@@ -23293,6 +23616,8 @@ app.post("/update-report-dep-admin", (req, res) => {
     }
   });
 });
+//end bendram ?? TAISYTI
+
 
 app.use('/*/*/*', (req, res) => {
   if (req.isAuthenticated()) {
