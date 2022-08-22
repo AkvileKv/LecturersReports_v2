@@ -92,19 +92,9 @@
             <select name="role" class="form-select form-control" required>
               <option class="others" <%if (user.role23_24 === "dėstytojas") { %> selected <% } %> value="dėstytojas">Dėstytojas</option>
               <option class="others" <%if (user.role23_24 === "katedros vedėjas") { %> selected <% } %> value="katedros vedėjas">Katedros vedėjas</option>
+              <option class="others" <%if (user.role23_24 === "dėstytojas ir katedros vedėjas") { %> selected <% } %> value="dėstytojas ir katedros vedėjas">Dėstytojas ir Katedros vedėjas</option>
+
               </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Savo rolės keitimas 2023 - 2024 m. m. <span style="color:red">(galimas - jei katedros vedėjas 2023 - 2024 m. m. yra ir dėstytojas)</span>*:</label>
-            <select name="rolesKeitimas" class="form-select form-control" required>
-              <option class="others" <%if (user.rolesKeitimas23_24 === false) { %> selected <% } %> value=false>Negalimas</option>
-              <option class="others" <%if (user.rolesKeitimas23_24 === true) { %> selected <% } %> value=true>Galimas</option>
-            </select>
-            <p>*Negalimas, kai naudotojas yra tik dėstytojas, arba tik katedros vedėjas</p>
           </div>
         </div>
         <div class="form-row">

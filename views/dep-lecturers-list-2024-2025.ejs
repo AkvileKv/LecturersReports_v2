@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <%  users.forEach(function(user){ %>
-      <% if (user.rolesKeitimas24_25 == false && user.role24_25 == "katedros vedėjas"){ %>
+      <% if (user.role24_25 == "katedros vedėjas"){ %>
         <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
       <%  } else { %>
       <div class="database-result-edit ">
@@ -28,7 +28,7 @@
             <td><%=user.katedra%></td>
             <td><%=user.busena24_25%></td>
             <td>
-              <%if (user.rolesKeitimas24_25 == true){ %>
+              <%if (user.role24_25 === "dėstytojas ir katedros vedėjas"){ %>
               katedros vedėjas / dėstytojas
               <%  } else { %>
               <%=user.role24_25%>

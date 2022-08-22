@@ -1,21 +1,27 @@
-<%if ( user.role === "dėstytojas") { %>
+<%if (user.role === "dėstytojas" && user.teachingYear22_23 === true) { %>
 <%- include('partials/headerLecturer2022_2023') %>
-<% } else if (user.role === "katedros vedėjas") { %>
+<% } else if (user.role === "katedros vedėjas" && user.teachingYear22_23 === true) { %>
 <%- include('partials/headerDep2022_2023') %>
+<% } else if (user.role === "dėstytojas" && user.teachingYear22_23 === false) { %>
+<%- include('partials/headerLecturer2022_2023_inactive') %>
+<% } else if (user.role === "katedros vedėjas" && user.teachingYear22_23 === false) { %>
+<%- include('partials/headerDep2022_2023_inactive') %>
 <% } %>
+
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">2022 - 2023 m. m. ataskaitos pildymo aplinka</h1>
 
-  <%if ( user.role === "dėstytojas") { %>
+  <%if ( user.role === "dėstytojas" && user.teachingYear22_23 === true) { %>
   <h1>Dėstytojo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena22_23%></p>
-  <% } else if (user.role === "katedros vedėjas") { %>
+  <% } else if (user.role === "katedros vedėjas"  && user.teachingYear22_23 === true) { %>
   <h1>Katedros vedėjo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo22_23%></p>
   <% } %>
 
 </div>
+  <%if (user.teachingYear22_23 === true) { %>
 
 <div class="container">
   <div class="jumbotron ">
@@ -63,6 +69,13 @@
     </div>
   </div>
 </div>
+<% } else if (user.teachingYear22_23 == false) { %>
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1>Jūs nesate priskirtas šiems mokslo metams</h1>
+    <p class="lead">Kilus klausimams kreipkitės į administratorių.</p>
+  </div>
+<% } %>
 
 
 <%- include('partials/footer') %>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DARBO ATASKAITOS</title>
+  <title>DĖSTYTOJŲ ATASKAITOS</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -16,30 +16,27 @@
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
   <!-- <script src="create-lec.js"></script> -->
 </head>
 
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">VIKO</h5>
+
+  <div class="dropdown show">
+    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      2025-2026 m. m.
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="/2022-2023/user-window">2022-2023 m. m.</a>
+      <a class="dropdown-item" href="/2023-2024/user-window">2023-2024 m. m.</a>
+      <a class="dropdown-item" href="/2024-2025/user-window">2024-2025 m. m.</a>
+      <a class="dropdown-item disabled" href="#">2025-2026 m. m.</a>
+       <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/user-window">Pradinis</a>
+    </div>
+  </div>
+  <a class="btn btn-outline-primary" href="/logout">Atsijungti</a>
+</div>
 
 
 <body>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">VIKO</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <!-- <a class="btn btn-outline-secondary" href="/admin/users">Naudotojai</a> -->
-    </nav>
-    <div class="dropdown show">
-      <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        2022-2023 m. m.
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item disabled" href="#">2022-2023 m. m.</a>
-        <a class="dropdown-item" href="/admin/2023-2024/users">2023-2024 m. m.</a>
-        <a class="dropdown-item" href="/admin/2024-2025/users">2024-2025 m. m.</a>
-        <a class="dropdown-item" href="/admin/2025-2026/users">2025-2026 m. m.</a>
-         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/admin/profile">Pradinis</a>
-      </div>
-    </div>
-    <a class="btn btn-outline-primary" href="/logout">Atsijungti</a>
-  </div>
