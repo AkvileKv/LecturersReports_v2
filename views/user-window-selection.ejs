@@ -15,8 +15,8 @@
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
     <select name="role" class="form-select">
-      <option class="others" value="dėstytojas">Dėstytojų ataskaitos</option>
-      <option class="others" value="katedros vedėjas">Katedros vedėjų ataskaitos</option>
+      <option class="others" <%if (user.rolesKeitimas === false && user.role === "katedros vedėjas") { %> disabled <% } %> value="dėstytojas">Dėstytojų ataskaitos</option>
+      <option class="others" <%if (user.rolesKeitimas === false && user.role === "dėstytojas") { %> disabled <% } %>value="katedros vedėjas">Katedros vedėjų ataskaitos</option>
     </select>
   </div>
 </div>
@@ -28,15 +28,6 @@
     <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite patvirtinti?');">PATVIRTINTI</button>
   </div>
 </div>
-
-      <!-- <div class="row">
-        <div class="col-lg-3">
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-          <a class="btn btn-outline-primary" href="/user-window">Dėstytojų ataskaitos</a>
-          <a class="btn btn-outline-primary" href="/user-window-dep">Katedros vedėjų ataskaitos</a>
-        </div>
-      </div> -->
 
     </form>
   </div>
