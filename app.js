@@ -65,7 +65,10 @@ app.post("/register", (req, res) => {
 
   User.register({
     username: req.body.username,
-    busena: "nesukurta", //delete
+    activeUser: "aktyvus",
+    currentYear: new Date().getFullYear(),
+    updated_for: "Registracija",
+    //ataskaitų būsenos
     busena22_23: "nesukurta",
     busena23_24: "nesukurta",
     busena24_25: "nesukurta",
@@ -75,23 +78,22 @@ app.post("/register", (req, res) => {
     busenaVedejo23_24: "nesukurta",
     busenaVedejo24_25: "nesukurta",
     busenaVedejo25_26: "nesukurta",
+    //rolės naudotojo
     role: "dėstytojas",
+    rolesKeitimas: false,
     role22_23: "dėstytojas",
     role23_24: "dėstytojas",
     role24_25: "dėstytojas",
     role25_26: "dėstytojas",
-    rolesKeitimas: false, //delete
-    rolesKeitimas22_23: false,
-    rolesKeitimas23_24: false,
-    rolesKeitimas24_25: false,
-    rolesKeitimas25_26: false,
-    updated_for: "Registracija",
-    currentYear: new Date().getFullYear(),
-    activeUser: "aktyvus",
+    //naudotojo atpažinimui
     teachingYear22_23: false,
     teachingYear23_24: false,
     teachingYear24_25: false,
     teachingYear25_26: false,
+    headOfTheDepartment22_23: false,
+    headOfTheDepartment23_24: false,
+    headOfTheDepartment24_25: false,
+    headOfTheDepartment25_26: false,
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -213,9 +215,15 @@ app.get("/2022-2023/create", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render("create-2022-2023", {
-          user: foundUser
-        });
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true){
+          res.render("create-2022-2023", {
+            user: foundUser
+          });
+        } else {
+          res.render("user-window-2022-2023", {
+            user: foundUser
+          });
+        }
       }
     });
   } else {
@@ -229,9 +237,15 @@ app.get("/2023-2024/create", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render("create-2023-2024", {
-          user: foundUser
-        });
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true){
+          res.render("create-2023-2024", {
+            user: foundUser
+          });
+        } else {
+          res.render("user-window-2023-2024", {
+            user: foundUser
+          });
+        }
       }
     });
   } else {
@@ -245,9 +259,15 @@ app.get("/2024-2025/create", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render("create-2024-2025", {
-          user: foundUser
-        });
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true){
+          res.render("create-2024-2025", {
+            user: foundUser
+          });
+        } else {
+          res.render("user-window-2024-2025", {
+            user: foundUser
+          });
+        }
       }
     });
   } else {
@@ -261,9 +281,15 @@ app.get("/2025-2026/create", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.render("create-2025-2026", {
-          user: foundUser
-        });
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true){
+          res.render("create-2025-2026", {
+            user: foundUser
+          });
+        } else {
+          res.render("user-window-2025-2026", {
+            user: foundUser
+          });
+        }
       }
     });
   } else {
@@ -2193,16 +2219,15 @@ app.get("/2022-2023/edit", function(req, res) {
 
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
-        console.log("Error...");
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true) {
           res.render("edit-2022-2023", {
             user: foundUser
           });
         } else {
+          res.redirect("/login");
           console.log("User role unknown");
-          console.log(foundUser.role);
         }
       }
     });
@@ -2215,15 +2240,14 @@ app.get("/2023-2024/edit", function(req, res) {
 
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
-        console.log("Error...");
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true) {
           res.render("edit-2023-2024", {
             user: foundUser
           });
         } else {
-          console.log("User role unknown");
+          res.redirect("/login");
           console.log(foundUser.role);
         }
       }
@@ -2237,15 +2261,14 @@ app.get("/2024-2025/edit", function(req, res) {
 
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
-        console.log("Error...");
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true) {
           res.render("edit-2024-2025", {
             user: foundUser
           });
         } else {
-          console.log("User role unknown");
+          res.redirect("/login");
           console.log(foundUser.role);
         }
       }
@@ -2259,15 +2282,14 @@ app.get("/2025-2026/edit", function(req, res) {
 
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
-        console.log("Error...");
         console.log(err);
       } else {
-        if (foundUser.role === "dėstytojas") {
+        if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true) {
           res.render("edit-2025-2026", {
             user: foundUser
           });
         } else {
-          console.log("User role unknown");
+          res.redirect("/login");
           console.log(foundUser.role);
         }
       }
@@ -4398,9 +4420,7 @@ app.get("/2022-2023/submit", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
-
       let currentUserFaculty = foundUser.fakultetas;
-
       if (err) {
         console.log(err);
       } else {
@@ -4428,11 +4448,8 @@ app.get("/2022-2023/submit", function(req, res) {
 });
 app.get("/2023-2024/submit", function(req, res) {
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
-
       let currentUserFaculty = foundUser.fakultetas;
-
       if (err) {
         console.log(err);
       } else {
@@ -4460,11 +4477,8 @@ app.get("/2023-2024/submit", function(req, res) {
 });
 app.get("/2024-2025/submit", function(req, res) {
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
-
       let currentUserFaculty = foundUser.fakultetas;
-
       if (err) {
         console.log(err);
       } else {
@@ -4492,11 +4506,8 @@ app.get("/2024-2025/submit", function(req, res) {
 });
 app.get("/2025-2026/submit", function(req, res) {
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, foundUser) {
-
       let currentUserFaculty = foundUser.fakultetas;
-
       if (err) {
         console.log(err);
       } else {
@@ -21764,7 +21775,6 @@ app.post("/update-user-info-admin-2022-2023", (req, res) => {
     } else {
       if (foundUser) {
           foundUser.role22_23 = req.body.role,
-          foundUser.rolesKeitimas22_23 = req.body.rolesKeitimas,
           foundUser.busena22 = req.body.busena,
           foundUser.busenaVedejo22 = req.body.busenaVedejo,
 

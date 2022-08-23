@@ -464,7 +464,7 @@ var veiklSavinalize_Schema = new mongoose.Schema({
   tobulintina: String
 });
 
-var userSchema = new mongoose.Schema({ //pagrindinė schema
+var userSchema = new mongoose.Schema({ //main schema
   email: String,
   password: String,
   vardas: String,
@@ -473,36 +473,36 @@ var userSchema = new mongoose.Schema({ //pagrindinė schema
   katedra: String,
   currentYear: String,
   activeUser: String,
-
+  updated_for: String,
+//naudotojo atpažinimui kaip dėstantis "dėstytojas"
   teachingYear22_23: Boolean,
   teachingYear23_24: Boolean,
   teachingYear24_25: Boolean,
   teachingYear25_26: Boolean,
-
+//naudotojo atpažinimui kaip dirbantis "katedros vedėjas"
+  headOfTheDepartment22_23: Boolean,
+  headOfTheDepartment23_24: Boolean,
+  headOfTheDepartment24_25: Boolean,
+  headOfTheDepartment25_26: Boolean,
+//rolė aplinkos pasirinkimui
   role: String,
+  rolesKeitimas: Boolean,
+
   role22_23: String,
   role23_24: String,
   role24_25: String,
   role25_26: String,
-
-  rolesKeitimas: Boolean,
-  rolesKeitimas22_23: Boolean,
-  rolesKeitimas23_24: Boolean,
-  rolesKeitimas24_25: Boolean,
-  rolesKeitimas25_26: Boolean,
-
+//ataskaitų būsenos
   busenaVedejo: String,
   busenaVedejo22_23: String,
   busenaVedejo23_24: String,
   busenaVedejo24_25: String,
   busenaVedejo25_26: String,
-  busena: String,
   busena22_23: String,
   busena23_24: String,
   busena24_25: String,
   busena25_26: String,
 
-  updated_for: String,
   mm2022_2023: {
 
     destytojas: {

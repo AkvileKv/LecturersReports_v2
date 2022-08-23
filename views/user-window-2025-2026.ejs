@@ -1,10 +1,10 @@
 <%if ( user.role === "dėstytojas" && user.teachingYear25_26 === true) { %>
 <%- include('partials/headerLecturer2025_2026') %>
-<% } else if (user.role === "katedros vedėjas" && user.teachingYear25_26 === true) { %>
+<% } else if (user.role === "katedros vedėjas" && user.headOfTheDepartment25_26 === true) { %>
 <%- include('partials/headerDep2025_2026') %>
 <% } else if (user.role === "dėstytojas" && user.teachingYear25_26 === false) { %>
 <%- include('partials/headerLecturer2025_2026_inactive') %>
-<% } else if (user.role === "katedros vedėjas" && user.teachingYear25_26 === false) { %>
+<% } else if (user.role === "katedros vedėjas" && user.headOfTheDepartment25_26 === false) { %>
 <%- include('partials/headerDep2025_2026_inactive') %>
 <% } %>
 
@@ -13,13 +13,13 @@
   <%if ( user.role === "dėstytojas" && user.teachingYear25_26 === true) { %>
     <h1>Dėstytojo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busena25_26%></p>
-  <% } else if (user.role === "katedros vedėjas" && user.teachingYear25_26 === true) { %>
+  <% } else if (user.role === "katedros vedėjas" && user.headOfTheDepartment25_26 === true) { %>
     <h1>Katedros vedėjo aplinka</h1>
   <p class="lead">Jūsų ataskaitos būsena: <%=user.busenaVedejo25_26%></p>
   <% } %>
 
 </div>
-  <%if (user.teachingYear25_26 === true) { %>
+  <%if (user.teachingYear25_26 === true || user.headOfTheDepartment25_26 === true) { %>
 <div class="container">
   <div class="jumbotron ">
 
@@ -65,7 +65,7 @@
       </div>
   </div>
 </div>
-<% } else if (user.teachingYear25_26 == false) { %>
+<% } else if (user.teachingYear25_26 == false && user.headOfTheDepartment25_26 === false) { %>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1>Jūs nesate priskirtas šiems mokslo metams</h1>
