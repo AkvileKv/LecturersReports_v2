@@ -493,7 +493,6 @@ var userSchema = new mongoose.Schema({ //main schema
   role24_25: String,
   role25_26: String,
 //ataskaitų būsenos
-  busenaVedejo: String,
   busenaVedejo22_23: String,
   busenaVedejo23_24: String,
   busenaVedejo24_25: String,

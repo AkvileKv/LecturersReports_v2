@@ -19,7 +19,7 @@
   <% } %>
 
 </div>
-  <%if (user.teachingYear24_25 === true || user.headOfTheDepartment24_25 === true) { %>
+  <%if (user.teachingYear24_25 === true && user.headOfTheDepartment24_25 === true) { %>
 <div class="container">
   <div class="jumbotron ">
       <div class="form-group ">
@@ -64,7 +64,79 @@
       </div>
   </div>
 </div>
-<% } else if (user.teachingYear24_25 === false && user.headOfTheDepartment24_25 === false) { %>
+<% } else if (user.role === "dėstytojas" && user.teachingYear24_25 === true && user.headOfTheDepartment24_25 === false) { %>
+  <div class="container">
+    <div class="jumbotron ">
+      <div class="form-group ">
+
+        <h4 class="text-center"><%=user.vardas%> <%=user.pavarde%></h4>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Fakultetas:</label>
+            <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Katedra:</label>
+            <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<% } else if (user.role === "katedros vedėjas" && user.teachingYear24_25 === false && user.headOfTheDepartment24_25 === true) { %>
+  <div class="container">
+    <div class="jumbotron ">
+      <div class="form-group ">
+
+        <h4 class="text-center"><%=user.vardas%> <%=user.pavarde%></h4>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Fakultetas:</label>
+            <input type="text" class="form-control" name="fakultetas" value="<%=user.fakultetas%>" placeholder="" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Katedra:</label>
+            <input type="text" class="form-control" name="katedra" value="<%=user.katedra%>" placeholder="" readonly>
+          </div>
+        </div>
+
+        <form action="/update-user-dep-2022-2023" method="post">
+          <div class="form-row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <lable for="">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu):</lable>
+              <input type="number" name="katedrosDestytojuSkaicius" value="<%=user.mm2024_2025.katedrosVedejas.katedrosDestytojuSk%>" class="form-control" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+<% } else { %>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1>Jūs nesate priskirtas šiems mokslo metams</h1>

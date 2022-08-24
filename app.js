@@ -73,7 +73,6 @@ app.post("/register", (req, res) => {
     busena23_24: "nesukurta",
     busena24_25: "nesukurta",
     busena25_26: "nesukurta",
-    busenaVedejo: "nesukurta",
     busenaVedejo22_23: "nesukurta",
     busenaVedejo23_24: "nesukurta",
     busenaVedejo24_25: "nesukurta",
@@ -208,6 +207,7 @@ var url = "mongodb://localhost:27017/";
   }
 });
 
+//---------------------LECTURER-------------------
 app.get("/2022-2023/create", function(req, res) {
 
   if (req.isAuthenticated()) {
@@ -7191,17 +7191,18 @@ app.post("/submit-2025-2026", function(req, res) {
 app.get("/department/2022-2023/create", function(req, res) {
   //turi isvesti visu destytoju info
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, logedInUser) {
       if (err) {
         console.log(err);
-      } else {
-
+      } else if (logedInUser.role === "katedros vedėjas" && logedInUser.headOfTheDepartment22_23 === true) {
         let vedejoKatedra = req.user.katedra;
-
         User.find({
           katedra: vedejoKatedra,
-          $or:[{busena22_23: "užrakinta"},{busena22_23:"užrakintaVedėjo"}]
+          $or: [{
+            busena22_23: "užrakinta"
+          }, {
+            busena22_23: "užrakintaVedėjo"
+          }]
         }, function(err, users) {
           if (err) {
             console.log(err);
@@ -7212,7 +7213,10 @@ app.get("/department/2022-2023/create", function(req, res) {
             });
           }
         });
-
+      } else {
+        res.render("user-window-2022-2023", {
+          user: logedInUser
+        });
       }
     });
   } else {
@@ -7222,17 +7226,18 @@ app.get("/department/2022-2023/create", function(req, res) {
 app.get("/department/2023-2024/create", function(req, res) {
   //turi isvesti visu destytoju info
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, logedInUser) {
       if (err) {
         console.log(err);
-      } else {
-
+      } else if (logedInUser.role === "katedros vedėjas" && logedInUser.headOfTheDepartment23_24 === true) {
         let vedejoKatedra = req.user.katedra;
-
         User.find({
           katedra: vedejoKatedra,
-          $or:[{busena23_24: "užrakinta"},{busena23_24:"užrakintaVedėjo"}]
+          $or: [{
+            busena23_24: "užrakinta"
+          }, {
+            busena23_24: "užrakintaVedėjo"
+          }]
         }, function(err, users) {
           if (err) {
             console.log(err);
@@ -7243,7 +7248,10 @@ app.get("/department/2023-2024/create", function(req, res) {
             });
           }
         });
-
+      } else {
+        res.render("user-window-2023-2024", {
+          user: logedInUser
+        });
       }
     });
   } else {
@@ -7257,10 +7265,8 @@ app.get("/department/2024-2025/create", function(req, res) {
     User.findById(req.user.id, function(err, logedInUser) {
       if (err) {
         console.log(err);
-      } else {
-
+      } else if (logedInUser.role === "katedros vedėjas" && logedInUser.headOfTheDepartment24_25 === true) {
         let vedejoKatedra = req.user.katedra;
-
         User.find({
           katedra: vedejoKatedra,
           $or:[{busena24_25: "užrakinta"},{busena24_25:"užrakintaVedėjo"}]
@@ -7274,7 +7280,11 @@ app.get("/department/2024-2025/create", function(req, res) {
             });
           }
         });
-
+      } else {
+        res.render("dep-create-2023-2024", {
+          users: users,
+          logedInUser: logedInUser
+        });
       }
     });
   } else {
@@ -7284,14 +7294,11 @@ app.get("/department/2024-2025/create", function(req, res) {
 app.get("/department/2025-2026/create", function(req, res) {
   //turi isvesti visu destytoju info
   if (req.isAuthenticated()) {
-
     User.findById(req.user.id, function(err, logedInUser) {
       if (err) {
         console.log(err);
-      } else {
-
+      } else if (logedInUser.role === "katedros vedėjas" && logedInUser.headOfTheDepartment25_26 === true) {
         let vedejoKatedra = req.user.katedra;
-
         User.find({
           katedra: vedejoKatedra,
           $or:[{busena25_26: "užrakinta"},{busena25_26:"užrakintaVedėjo"}]
@@ -7305,7 +7312,10 @@ app.get("/department/2025-2026/create", function(req, res) {
             });
           }
         });
-
+      } else {
+        res.render("user-window-2023-2024", {
+          user: logedInUser
+        });
       }
     });
   } else {
@@ -21213,8 +21223,18 @@ app.post("/update-user-info-admin", (req, res) => {
           foundUser.username = req.body.elpastas,
           foundUser.fakultetas = req.body.fakultetas,
           foundUser.katedra = req.body.katedra,
-          foundUser.role = req.body.role,
+
           foundUser.rolesKeitimas = req.body.rolesKeitimas,
+          foundUser.role = req.body.role,
+
+          foundUser.teachingYear22_23 = req.body.destymoMetai22_23,
+          foundUser.teachingYear23_24 = req.body.destymoMetai23_24,
+          foundUser.teachingYear24_25 = req.body.destymoMetai24_25,
+          foundUser.teachingYear25_26 = req.body.destymoMetai25_26,
+          foundUser.headOfTheDepartment22_23 = req.body.vedejoDarboMetai22_23,
+          foundUser.headOfTheDepartment23_24 = req.body.vedejoDarboMetai23_24,
+          foundUser.headOfTheDepartment24_25 = req.body.vedejoDarboMetai24_25,
+          foundUser.headOfTheDepartment25_26 = req.body.vedejoDarboMetai25_26,
           foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
         foundUser.save(function(err) {
           if (!err) {
@@ -21790,6 +21810,7 @@ app.post("/update-user-info-admin-2022-2023", (req, res) => {
     }
   });
 });
+
 //END
 
 //bendram ?? TAISYTI:

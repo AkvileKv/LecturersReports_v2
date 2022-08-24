@@ -110,6 +110,19 @@
             </select>
           </div>
         </div>
+        <p class="text-center" style="color:red">---</p>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">Savo rolės keitimas <span style="color:red">(galimas - tik kai katedros vedėjas yra ir dėstytojas)</span>*:</label>
+            <select name="rolesKeitimas" class="form-select form-control" required>
+              <option class="others" <%if (user.rolesKeitimas === false) { %> selected <% } %> value=false>Negalimas</option>
+              <option class="others" <%if (user.rolesKeitimas === true) { %> selected <% } %> value=true>Galimas</option>
+            </select>
+            <p>*Negalimas, kai naudotojas yra tik dėstytojas, arba tik katedros vedėjas</p>
+          </div>
+        </div>
         <div class="form-row">
           <div class="col-lg-3">
           </div>
@@ -122,16 +135,96 @@
             </select>
           </div>
         </div>
+        <br>
+        <p class="text-center" style="color:red">---Dėstytojo dėstymo metai---</p>
         <div class="form-row">
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <label for="">Savo rolės keitimas <span style="color:red">(galimas - tik kai katedros vedėjas yra ir dėstytojas)</span>*:</label>
-            <select name="rolesKeitimas" class="form-select form-control" required>
-              <option class="others" <%if (user.rolesKeitimas === false) { %> selected <% } %> value=false>Negalimas</option>
-              <option class="others" <%if (user.rolesKeitimas === true) { %> selected <% } %> value=true>Galimas</option>
+            <label for="">2022 - 2023 m. m.:</label>
+            <select name="destymoMetai22_23" class="form-select form-control" required>
+              <option class="others" <%if (user.teachingYear22_23 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.teachingYear22_23 === true) { %> selected <% } %> value=true>Taip</option>
             </select>
-            <p>*Negalimas, kai naudotojas yra tik dėstytojas, arba tik katedros vedėjas</p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2023 - 2024 m. m.:</label>
+            <select name="destymoMetai23_24" class="form-select form-control" required>
+              <option class="others" <%if (user.teachingYear23_24 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.teachingYear23_24 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2024 - 2025 m. m.:</label>
+            <select name="destymoMetai24_25" class="form-select form-control" required>
+              <option class="others" <%if (user.teachingYear24_25 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.teachingYear24_25 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2025 - 2026 m. m.:</label>
+            <select name="destymoMetai25_26" class="form-select form-control" required>
+              <option class="others" <%if (user.teachingYear25_26 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.teachingYear25_26 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <p class="text-center" style="color:red">---Katedros vedėjo darbo metai---</p>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2022 - 2023 m. m.:</label>
+            <select name="vedejoDarboMetai22_23" class="form-select form-control" required>
+              <option class="others" <%if (user.headOfTheDepartment22_23 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.headOfTheDepartment22_23 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2023 - 2024 m. m.:</label>
+            <select name="vedejoDarboMetai23_24" class="form-select form-control" required>
+              <option class="others" <%if (user.headOfTheDepartment23_24 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.headOfTheDepartment23_24 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2024 - 2025 m. m.:</label>
+            <select name="vedejoDarboMetai24_25" class="form-select form-control" required>
+              <option class="others" <%if (user.headOfTheDepartment24_25 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.headOfTheDepartment24_25 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-3">
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="">2025 - 2026 m. m.:</label>
+            <select name="vedejoDarboMetai25_26" class="form-select form-control" required>
+              <option class="others" <%if (user.headOfTheDepartment25_26 === false) { %> selected <% } %> value=false>Ne</option>
+              <option class="others" <%if (user.headOfTheDepartment25_26 === true) { %> selected <% } %> value=true>Taip</option>
+            </select>
           </div>
         </div>
         <br>
