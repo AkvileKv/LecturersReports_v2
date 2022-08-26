@@ -23,11 +23,13 @@
             <td><%=user.fakultetas%></td>
             <td><%=user.katedra%></td>
             <td>
-              <%if (user.rolesKeitimas22_23 == true){ %>
+              <%if (user.teachingYear22_23 === true && user.headOfTheDepartment22_23 === true){ %>
               katedros vedėjas / dėstytojas
-              <%  } else { %>
-              <%=user.role22_23%>
-              <%  } %>
+              <%  } else if (user.teachingYear22_23 === true){ %>
+              dėstytojas
+              <%  } else if (user.headOfTheDepartment22_23 === true){ %>
+                katedros vedėjas
+                <%  }  %>
             </td>
             <td scope="row">
               <div class="edit-left">

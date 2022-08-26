@@ -19,20 +19,20 @@
         </tr>
       </thead>
       <%  users.forEach(function(user){ %>
-      <% if (user.role24_25 == "katedros vedėjas"){ %>
-        <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
-      <%  } else { %>
-      <div class="database-result-edit ">
-        <tbody>
-          <tr>
-            <td><%=user.katedra%></td>
-            <td><%=user.busena24_25%></td>
-            <td>
-              <%if (user.role24_25 === "dėstytojas ir katedros vedėjas"){ %>
-              katedros vedėjas / dėstytojas
-              <%  } else { %>
-              <%=user.role24_25%>
-              <%  } %>
+        <% if (user.teachingYear24_25 === false && user.headOfTheDepartment24_25 === true){ %>
+          <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
+        <%  } else if (user.teachingYear24_25 === true || user.headOfTheDepartment24_25 === true){ %>
+        <div class="database-result-edit ">
+          <tbody>
+            <tr>
+              <td><%=user.katedra%></td>
+              <td><%=user.busena24_25%></td>
+              <td>
+                <%if (user.teachingYear24_25 === true && user.headOfTheDepartment24_25 === true){ %>
+                katedros vedėjas / dėstytojas
+                <%  } else { %>
+                dėstytojas
+                <%  } %>
             </td>
             <td><span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span></td>
             <td>

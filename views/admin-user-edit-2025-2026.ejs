@@ -89,13 +89,13 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Rolė 2025 - 2026 m. m.:</label>
-            <select name="role" class="form-select form-control" required>
-              <option class="others" <%if (user.role25_26 === "dėstytojas") { %> selected <% } %> value="dėstytojas">Dėstytojas</option>
-              <option class="others" <%if (user.role25_26 === "katedros vedėjas") { %> selected <% } %> value="katedros vedėjas">Katedros vedėjas</option>
-              <option class="others" <%if (user.role25_26 === "dėstytojas ir katedros vedėjas") { %> selected <% } %> value="dėstytojas ir katedros vedėjas">Dėstytojas ir Katedros vedėjas</option>
-              </select>
+            <input type="text" class="form-control" name="role" readonly
+            <%if (user.teachingYear25_26 === true && user.headOfTheDepartment25_26 === false) { %> value="Dėstytojas"
+              <% } else if (user.teachingYear25_26 === false && user.headOfTheDepartment25_26 === true){ %> value="Katedros vedėjas"
+              <% } else if (user.teachingYear25_26 === true && user.headOfTheDepartment25_26 === true){ %> value="Dėstytojas ir Katedros vedėjas" <% } %> >
           </div>
         </div>
+<%if (user.teachingYear25_26 === true) { %>
         <div class="form-row">
           <div class="col-lg-3">
           </div>
@@ -109,6 +109,8 @@
             </select>
           </div>
         </div>
+        <% } %>
+        <%if (user.headOfTheDepartment25_26 === true) { %>
         <div class="form-row">
           <div class="col-lg-3">
           </div>
@@ -121,6 +123,7 @@
             </select>
           </div>
         </div>
+          <% } %>
 
 <br>
         <div class="row">

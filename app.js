@@ -80,10 +80,6 @@ app.post("/register", (req, res) => {
     //rolės naudotojo
     role: "dėstytojas",
     rolesKeitimas: false,
-    role22_23: "dėstytojas",
-    role23_24: "dėstytojas",
-    role24_25: "dėstytojas",
-    role25_26: "dėstytojas",
     //naudotojo atpažinimui
     teachingYear22_23: false,
     teachingYear23_24: false,
@@ -21794,7 +21790,6 @@ app.post("/update-user-info-admin-2022-2023", (req, res) => {
       console.log(err);
     } else {
       if (foundUser) {
-          foundUser.role22_23 = req.body.role,
           foundUser.busena22 = req.body.busena,
           foundUser.busenaVedejo22 = req.body.busenaVedejo,
 
@@ -23721,3 +23716,19 @@ app.use('*', (req, res) => {
 app.listen(3000, function() {
   console.log("Reports App has started successfully on port 3000");
 });
+
+//TESTING
+// function myFunc(){
+//   var a = "labas";
+//   var b = "vakaras";
+//
+//   var c = a.concat(" ", b);
+//
+//   return console.log(c);
+// }
+//
+// myFunc();
+//
+// const newArray = 50;
+// const newArray2 = new Array(40);
+// console.log(Array.isArray(newArray));
