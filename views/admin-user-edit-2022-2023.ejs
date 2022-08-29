@@ -89,10 +89,9 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <label for="">Rolė 2022 - 2023 m. m.:</label>
-            <input type="text" class="form-control" name="role" readonly
-            <%if (user.teachingYear22_23 === true && user.headOfTheDepartment22_23 === false) { %> value="Dėstytojas"
-              <% } else if (user.teachingYear22_23 === false && user.headOfTheDepartment22_23 === true){ %> value="Katedros vedėjas"
-              <% } else if (user.teachingYear22_23 === true && user.headOfTheDepartment22_23 === true){ %> value="Dėstytojas ir Katedros vedėjas" <% } %> >
+            <input type="text" class="form-control" name="role" readonly <%if (user.teachingYear22_23 === true && user.headOfTheDepartment22_23 === false) { %> value="Dėstytojas"
+              <% } else if (user.teachingYear22_23 === false && user.headOfTheDepartment22_23 === true){ %> value="Katedros vedėjas" <% } else if (user.teachingYear22_23 === true && user.headOfTheDepartment22_23 === true){ %>
+              value="Dėstytojas ir Katedros vedėjas" <% } %>>
           </div>
         </div>
         <%if (user.teachingYear22_23 === true) { %>
@@ -123,7 +122,7 @@
             </select>
           </div>
         </div>
-  <% } %>
+        <% } %>
         <br>
         <div class="row">
           <div class="col-lg-3">

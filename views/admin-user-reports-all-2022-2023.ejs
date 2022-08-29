@@ -1,0 +1,175 @@
+<%- include('partials/headerAdmin2022_2023') %>
+
+<div class="container">
+  <div class="jumbotron ">
+
+    <h1 class="text-center">Naudotojo <%= user.vardas %> <%= user.pavarde %> ataskaitos</h1>
+    <br>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Sukūrimo data</th>
+          <th scope="col">Paskutinio atnaujinimo data</th>
+          <th scope="col">Pateikimo data</th>
+          <th scope="col">Pateikimo data (pateikia katedros vedėjas)</th>
+          <th scope="col">Ataskaitos būsena</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <div class="database-result-edit ">
+        <tbody>
+          <!-- Destytojas ir Vedejas viename -->
+            <%if (user.rolesKeitimas === true) { %>
+              <tr>
+                <td>
+                  <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.sukurimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.destytojas.ivykiuDatos.sukurimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.pateikimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.destytojas.ivykiuDatos.pateikimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.destytojas.ivykiuDatos.pateikimasVedejo %>
+                  <% } %>
+                </td>
+                <td><%= user.busena22_23 %></td>
+                <td>
+                  <div class="text-right">
+                    <a type="button" class="btn btn-primary" href="/admin/2022-2023/lecturers/edit-report/<%= user._id %>"> Dėstytojo ataskaita</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas == undefined) { %>
+                  -
+                  <% } else { %>
+                  <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas %>
+                  <% } %>
+                </td>
+                <td>
+                  <p class="text-info">laukas neegzistuoja</p>
+                </td>
+                <td><%= user.busenaVedejo22_23 %></td>
+                <td>
+                  <div class="text-right">
+                    <a type="button" class="btn btn-primary" href="/admin-report-dep-edit/<%= user._id %>"> Vedėjo ataskaita</a>
+                  </div>
+                </td>
+              </tr>
+          <!-- 1 eilute - tik Destytojas -->
+<% }  else if (user.rolesKeitimas === false && user.role === "dėstytojas") { %>
+          <tr>
+            <td>
+              <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.sukurimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.destytojas.ivykiuDatos.sukurimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.pateikimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.destytojas.ivykiuDatos.pateikimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2022_2023.destytojas.ivykiuDatos == undefined || user.mm2022_2023.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.destytojas.ivykiuDatos.pateikimasVedejo %>
+              <% } %>
+            </td>
+            <td><%= user.busena22_23 %></td>
+            <td>
+              <div class="text-right">
+                <a type="button" class="btn btn-primary" href="/admin/2022-2023/lecturers/edit-report/<%= user._id %>"> Dėstytojo ataskaita</a>
+              </div>
+            </td>
+          </tr>
+          <!-- 2 eilute - Vedejas -->
+        <% } else if (user.rolesKeitimas === false && user.role === "katedros vedėjas") {  %>
+          <tr>
+            <td>
+              <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2022_2023.katedrosVedejas.ivykiuDatos == undefined || user.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas %>
+              <% } %>
+            </td>
+            <td>
+              <p class="text-info">laukas neegzistuoja</p>
+            </td>
+            <td><%= user.busenaVedejo22_23 %></td>
+            <td>
+              <div class="text-right">
+                <a type="button" class="btn btn-primary" href="/admin-report-dep-edit/<%= user._id %>"> Vedėjo ataskaita</a>
+              </div>
+            </td>
+          </tr>
+          <% } else {  %>
+          <p class="lead">Ataskaitos redagavimas nėra galimas.</p>
+          <% } %>
+        </tbody>
+      </div>
+
+    </table>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>
