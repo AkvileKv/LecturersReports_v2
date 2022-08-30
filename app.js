@@ -13,11 +13,13 @@ const _ = require("lodash");
 
 const User = require('./models/user');
 const Faculty = require('./models/faculty');
-
+//created modules
 const homeRouter = require('./controllers/home');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 
+const dateTime = require('./assets/full-date-time');
+//---
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -298,7 +300,6 @@ app.post("/create-2022-2023", function(req, res) {
 
     User.findById(req.user.id, function(err, foundUser) {
       if (err) {
-        console.log("Error...");
         console.log(err);
       } else {
         if (foundUser) {
@@ -746,24 +747,8 @@ app.post("/create-2022-2023", function(req, res) {
 
   foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
   foundUser.updated_for = req.user.username,
-  foundUser.busena22_23 = req.body.ataskaitos_busena
-
-    // var today = new Date();
-    // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    // var dateTime = date + ' ' + time;
-    function getDateFull() {
-      var today = new Date();
-      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      var dateTime = date+' '+time;
-
-      return dateTime;
-    }
-    console.log(getDateFull());
-
-                foundUser.mm2022_2023.destytojas.ivykiuDatos.sukurimas =  getDateFull();
-    // foundUser.mm2022_2023.destytojas.ivykiuDatos.sukurimas = dateTime
+  foundUser.busena22_23 = req.body.ataskaitos_busena,
+  foundUser.mm2022_2023.destytojas.ivykiuDatos.sukurimas =  dateTime.getFullDateTime();
 
     foundUser.save(function(err) {
             if (!err) {
@@ -1235,14 +1220,8 @@ app.post("/create-2023-2024", function(req, res) {
 
   foundUser.mm2023_2024.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
   foundUser.updated_for = req.user.username,
-  foundUser.busena23_24 = req.body.ataskaitos_busena
-
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-
-    foundUser.mm2023_2024.destytojas.ivykiuDatos.sukurimas = dateTime
+  foundUser.busena23_24 = req.body.ataskaitos_busena,
+  foundUser.mm2023_2024.destytojas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
     foundUser.save(function(err) {
             if (!err) {
@@ -1714,14 +1693,8 @@ app.post("/create-2024-2025", function(req, res) {
 
   foundUser.mm2024_2025.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
   foundUser.updated_for = req.user.username,
-  foundUser.busena24_25 = req.body.ataskaitos_busena
-
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-
-    foundUser.mm2024_2025.destytojas.ivykiuDatos.sukurimas = dateTime
+  foundUser.busena24_25 = req.body.ataskaitos_busena,
+    foundUser.mm2024_2025.destytojas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
     foundUser.save(function(err) {
             if (!err) {
@@ -2193,14 +2166,8 @@ app.post("/create-2025-2026", function(req, res) {
 
   foundUser.mm2025_2026.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
   foundUser.updated_for = req.user.username,
-  foundUser.busena25_26 = req.body.ataskaitos_busena
-
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-
-    foundUser.mm2025_2026.destytojas.ivykiuDatos.sukurimas = dateTime
+  foundUser.busena25_26 = req.body.ataskaitos_busena,
+foundUser.mm2025_2026.destytojas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
     foundUser.save(function(err) {
             if (!err) {
@@ -2813,14 +2780,8 @@ app.post("/update-2022-2023", (req, res) => {
         }
           foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
-          foundUser.busena22_23 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.busena22_23 = req.body.ataskaitos_busena,
+          foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -3342,14 +3303,8 @@ app.post("/update-2023-2024", (req, res) => {
         }
           foundUser.mm2023_2024.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
-          foundUser.busena23_24 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2023_2024.destytojas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.busena23_24 = req.body.ataskaitos_busena,
+          foundUser.mm2023_2024.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -3871,14 +3826,8 @@ app.post("/update-2024-2025", (req, res) => {
         }
           foundUser.mm2024_2025.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
-          foundUser.busena24_25 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2024_2025.destytojas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.busena24_25 = req.body.ataskaitos_busena,
+          foundUser.mm2024_2025.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -4400,14 +4349,8 @@ app.post("/update-2025-2026", (req, res) => {
         }
           foundUser.mm2025_2026.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
           foundUser.updated_for = req.user.username,
-          foundUser.busena25_26 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.busena25_26 = req.body.ataskaitos_busena,
+          foundUser.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -5182,14 +5125,8 @@ app.post("/submit-2022-2023", function(req, res) {
         foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
         foundUser.mm2022_2023.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
         foundUser.updated_for = req.user.username,
-        foundUser.busena22_23 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-        foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas = dateTime
+        foundUser.busena22_23 = req.body.ataskaitos_busena,
+        foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -5845,14 +5782,8 @@ app.post("/submit-2023-2024", function(req, res) {
         foundUser.mm2023_2024.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
         foundUser.mm2023_2024.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
         foundUser.updated_for = req.user.username,
-        foundUser.busena23_24 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-        foundUser.mm2023_2024.destytojas.ivykiuDatos.pateikimas = dateTime
+        foundUser.busena23_24 = req.body.ataskaitos_busena,
+        foundUser.mm2023_2024.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -6508,14 +6439,8 @@ app.post("/submit-2024-2025", function(req, res) {
         foundUser.mm2024_2025.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
         foundUser.mm2024_2025.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
         foundUser.updated_for = req.user.username,
-        foundUser.busena24_25 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-        foundUser.mm2024_2025.destytojas.ivykiuDatos.pateikimas = dateTime
+        foundUser.busena24_25 = req.body.ataskaitos_busena,
+        foundUser.mm2024_2025.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -7171,14 +7096,8 @@ app.post("/submit-2025-2026", function(req, res) {
         foundUser.mm2025_2026.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
         foundUser.mm2025_2026.destytojas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
         foundUser.updated_for = req.user.username,
-        foundUser.busena25_26 = req.body.ataskaitos_busena
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-        foundUser.mm2025_2026.destytojas.ivykiuDatos.pateikimas = dateTime
+        foundUser.busena25_26 = req.body.ataskaitos_busena,
+        foundUser.mm2025_2026.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -7888,14 +7807,8 @@ app.post("/dep-create-2022-2023", (req, res) => {
         foundUser.mm2022_2023.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo22_23 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+          foundUser.updated_for = req.user.username,
+          foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -8466,14 +8379,8 @@ app.post("/dep-create-2023-2024", (req, res) => {
         foundUser.mm2023_2024.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo23_24 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+          foundUser.updated_for = req.user.username,
+          foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -9044,14 +8951,8 @@ app.post("/dep-create-2024-2025", (req, res) => {
         foundUser.mm2024_2025.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo24_25 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+          foundUser.updated_for = req.user.username,
+          foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -9622,14 +9523,8 @@ app.post("/dep-create-2025-2026", (req, res) => {
         foundUser.mm2025_2026.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo25_26 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-          var today = new Date();
-          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          var dateTime = date+' '+time;
-
-          foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas = dateTime
+          foundUser.updated_for = req.user.username,
+          foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -10320,14 +10215,8 @@ app.post("/dep-update-2022-2023", (req, res) => {
         foundUser.mm2022_2023.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo22_23 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -10956,14 +10845,8 @@ app.post("/dep-update-2023-2024", (req, res) => {
         foundUser.mm2023_2024.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo23_24 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -11592,14 +11475,8 @@ app.post("/dep-update-2024-2025", (req, res) => {
         foundUser.mm2024_2025.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo24_25 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -12228,14 +12105,8 @@ app.post("/dep-update-2025-2026", (req, res) => {
         foundUser.mm2025_2026.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
 
           foundUser.busenaVedejo25_26 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -13163,14 +13034,8 @@ app.post("/dep-submit-2022-2023", function(req, res) {
         foundUser.mm2022_2023.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
           foundUser.mm2022_2023.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
           foundUser.busenaVedejo22_23 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -13984,14 +13849,8 @@ app.post("/dep-submit-2023-2024", function(req, res) {
         foundUser.mm2023_2024.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
           foundUser.mm2023_2024.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
           foundUser.busenaVedejo23_24 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.pateikimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -14805,14 +14664,8 @@ app.post("/dep-submit-2024-2025", function(req, res) {
         foundUser.mm2024_2025.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
           foundUser.mm2024_2025.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
           foundUser.busenaVedejo24_25 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.pateikimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -15626,14 +15479,8 @@ app.post("/dep-submit-2025-2026", function(req, res) {
         foundUser.mm2025_2026.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl = req.body.isvadosApieVeikl,
           foundUser.mm2025_2026.katedrosVedejas.ataskaitosPateikimoData = req.body.ataskaitosPateikimoData,
           foundUser.busenaVedejo25_26 = req.body.ataskaitos_busena,
-          foundUser.updated_for = req.user.username
-
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-
-        foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas = dateTime
+          foundUser.updated_for = req.user.username,
+        foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         foundUser.save(function(err) {
           if (!err) {
@@ -17028,12 +16875,7 @@ app.post("/update-report-lecturer-dep-2022-2023", (req, res) => {
               foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
               foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
               foundUser.mm2022_2023.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
-
-            // var today = new Date();
-            // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            // var dateTime = date+' '+time;
-            // foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime
+            // foundUser.mm2022_2023.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
             foundUser.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2022_2023.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
@@ -17628,19 +17470,9 @@ app.post("/update-report-lecturer-dep-2022-2023", (req, res) => {
 
             foundUser.mm2022_2023.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2022_2023.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena22_23 = req.body.ataskaitos_busena
+            foundUser.busena22_23 = req.body.ataskaitos_busena,
 
-function getDateFull() {
-  var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var dateTime = date+' '+time;
-
-  return dateTime;
-}
-console.log(getDateFull());
-
-            foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas =  getDateFull();
+            foundUser.mm2022_2023.destytojas.ivykiuDatos.pateikimas =  dateTime.getFullDateTime();
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
@@ -18170,13 +18002,8 @@ app.post("/update-report-lecturer-dep-2023-2024", (req, res) => {
               foundUser.mm2023_2024.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
               foundUser.mm2023_2024.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
               foundUser.mm2023_2024.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
-              foundUser.mm2023_2024.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
-
-            // var today = new Date();
-            // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            // var dateTime = date+' '+time;
-            // foundUser.mm2023_2024.destytojas.ivykiuDatos.atnaujinimas = dateTime
+              foundUser.mm2023_2024.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
+            // foundUser.mm2023_2024.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
             foundUser.mm2023_2024.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2023_2024.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
@@ -18771,14 +18598,8 @@ app.post("/update-report-lecturer-dep-2023-2024", (req, res) => {
 
             foundUser.mm2023_2024.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2023_2024.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena23_24 = req.body.ataskaitos_busena
-
-            var today = new Date();
-            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var dateTime = date+' '+time;
-
-            foundUser.mm2023_2024.destytojas.ivykiuDatos.pateikimas = dateTime
+            foundUser.busena23_24 = req.body.ataskaitos_busena,
+            foundUser.mm2023_2024.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
@@ -19308,13 +19129,8 @@ app.post("/update-report-lecturer-dep-2024-2025", (req, res) => {
               foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
               foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
               foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
-              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
-
-            // var today = new Date();
-            // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            // var dateTime = date+' '+time;
-            // foundUser.mm2024_2025.destytojas.ivykiuDatos.atnaujinimas = dateTime
+              foundUser.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
+            // foundUser.mm2024_2025.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
             foundUser.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2024_2025.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
@@ -19909,14 +19725,8 @@ app.post("/update-report-lecturer-dep-2024-2025", (req, res) => {
 
             foundUser.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2024_2025.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena24_25 = req.body.ataskaitos_busena
-
-            var today = new Date();
-            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var dateTime = date+' '+time;
-
-            foundUser.mm2024_2025.destytojas.ivykiuDatos.pateikimas = dateTime
+            foundUser.busena24_25 = req.body.ataskaitos_busena,
+            foundUser.mm2024_2025.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
@@ -20446,13 +20256,8 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
               foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.neKontaktD = req.body.vedejo_neKontaktD,
               foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas = req.body.vedejo_tMTEP_vykdymas,
               foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kompTobulinimas = req.body.vedejo_kompTobulinimas,
-              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl
-
-            // var today = new Date();
-            // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            // var dateTime = date+' '+time;
-            // foundUser.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas = dateTime
+              foundUser.mm2025_2026.destytojas.katedrosV_rekomendacijos.kitosVeikl = req.body.vedejo_kitosVeikl,
+            // foundUser.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas = dateTime.getFullDateTime();
 
             foundUser.mm2025_2026.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2025_2026.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
@@ -21047,14 +20852,8 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
 
             foundUser.mm2025_2026.destytojas.ataskaitosPateikimoDataVedejo = req.body.ataskaitosPateikimoDataVedejo,
             foundUser.mm2025_2026.destytojas.vedejoVardasPavarde = req.body.vedejoVardasPavarde,
-            foundUser.busena25_26 = req.body.ataskaitos_busena
-
-            var today = new Date();
-            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var dateTime = date+' '+time;
-
-            foundUser.mm2025_2026.destytojas.ivykiuDatos.pateikimas = dateTime
+            foundUser.busena25_26 = req.body.ataskaitos_busena,
+            foundUser.mm2025_2026.destytojas.ivykiuDatos.pateikimas = dateTime.getFullDateTime();
 
         } //"užrakintaVedėjo"
         foundUser.updated_for = req.user.username
