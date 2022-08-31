@@ -7,7 +7,7 @@
     <p class="lead text-center text-danger">Ataskaitos būsena: <%=user.busena22_23%></p>
     <form action="/update-report-lec-admin" method="post">
 
-      <div class="form-group ">
+      <div class="form-group" id="begin">
         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
         <!-- išvedama visa dėstytojo ataskaita, kurią adminas gali redaguoti ir pakartotinai išsaugoti duomenų bazėje pas naudotoją-->
 
@@ -15,15 +15,7 @@
         <!-- MYGTUKAI -->
         <div class="row noprint">
           <div class="text-center">
-            <button type="submit" name="ataskaitos_busena" value="užrakinta" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
-          </div>
-        </div>
-        <br>
-        <div class="row noprint">
-          <div class="text-left">
-            <p class="lead text-danger noprint">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
-            <button type="submit" name="ataskaitos_busena" value="užrakintaVedėjo" class="btn btn-danger"
-              onclick="return confirm('Ar tikrai norite pateikti ataskaitą? Ataskaita bus užrakinta, daugiau nebegalėsite jos redaguoti');">PATEIKTI</button>
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
           </div>
         </div>
         <br>
@@ -163,7 +155,7 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for=""><b>Pateikite priežastis, jei atliktos kontaktinio darbo valandos nesutampa su planuotosiomis</b></label>
-              <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="kD1_K01priezastys" placeholder=""><%=user.mm2022_2023.destytojas.kD1_K01.priezastys%></textarea>
+              <textarea type="text" rows="1" class="form-control the_textarea" name="kD1_K01priezastys" placeholder=""><%=user.mm2022_2023.destytojas.kD1_K01.priezastys%></textarea>
               <div class="print_helper"><%=user.mm2022_2023.destytojas.kD1_K01.priezastys%></div>
             </div>
           </div>
@@ -2745,16 +2737,6 @@
           <br>
         </div>
         <br>
-        <div class="database-result-edit ">
-          <p class="edit-left">Dėstytojas</p>
-          <p><%=user.vardas%> <%=user.pavarde%></p>
-        </div>
-        <div class="database-result-edit ">
-          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.mm2022_2023.destytojas.ataskaitosPateikimoData%>" readonly>
-          <p class="text-center font-italic">(parašas)</p>
-        </div>
-
-        <br>
         <!-- dėstytojo formos pabaiga -->
         <p class="lead text-danger text-center noprint">--- Toliau pildo katedros vedėjas ---</p>
         <br>
@@ -2828,6 +2810,11 @@
 
   </div>
 </div>
+<%if ( user.busena22_23 !== "nesukurta") { %>
+  <div class="circle-button noprint">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+<% } %>
 
 
 <!-- ---ALL SCRIPTS--- -->
