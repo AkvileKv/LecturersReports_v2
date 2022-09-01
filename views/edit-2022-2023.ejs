@@ -62,22 +62,22 @@
           <p class="font-weight-bold">2 lentelė. Kontaktinis darbas</p>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label><br><br></label>
+              <label><br></label>
             </div>
-            <div class="col-md-5 mb-3">
-              <label><br>Dalykas</label>
+            <div class="col-md-4 mb-3">
+              <label>Dalykas</label>
             </div>
-            <div class="col-md-1 mb-3">
+            <div class="col-md-2 mb-3">
               <label>Akademinė grupė</label>
             </div>
             <div class="col-md-1 mb-3">
-              <label><br>Semestras</label>
+              <label>Semestras</label>
             </div>
-            <div class="col-md-2 mb-3">
-              <label><br>Planuota</label>
+            <div class="col-md-2 mb-3 text-center">
+              <label>Planuota</label>
             </div>
-            <div class="col-md-2 mb-3">
-              <label><br>Atlikta</label>
+            <div class="col-md-2 mb-3 text-center">
+              <label>Atlikta</label>
             </div>
           </div>
           <% var numb = 0; %>
@@ -87,10 +87,10 @@
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center " rows="1" name="nr<%=numb%>" placeholder="" autocomplete="off" value="<%=numb%>" readonly="readonly">
             </div>
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
               <textarea type="text" class="form-control textarea" rows="1" name="dalykas<%=numb%>" placeholder="" autocomplete="off"><%=user.dalykas%></textarea>
             </div>
-            <div class="col-md-1 mb-3">
+            <div class="col-md-2 mb-3">
               <textarea type="text" class="form-control textarea" rows="1" name="grupe<%=numb%>" placeholder="" autocomplete="off"><%=user.grupe%></textarea>
             </div>
             <div class="col-md-1 mb-3">
@@ -105,11 +105,11 @@
                 <option class="others" <%if (user.semestras === "7") { %> selected <% } %> value="7">VII</option>
               </select>
             </div>
-            <div class="col-md-2 mb-3">
+            <div class="col-md-2 mb-3 text-center">
               <input type="number" min="0" id="plan<%=numb%>" onchange="calcTable2()" value="<%=user.planuotosVal%>" class="form-control text-center textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
-            <div class="col-md-2 mb-3">
+            <div class="col-md-2 mb-3 text-center">
               <input type="number" min="0" id="atl<%=numb%>" onchange="calcTable2()" value="<%=user.atliktosVal%>" class="form-control text-center textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
