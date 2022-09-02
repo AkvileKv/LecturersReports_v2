@@ -52,17 +52,19 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <lable for="">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu):</lable>
-            <input type="number" name="katedrosDestytojuSkaicius" value="<%=user.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%>" class="form-control" placeholder="">
+            <input type="number" name="katedrosDestytojuSkaicius" value="<%=user.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%>" class="form-control" placeholder="" <% if (user.busenaVedejo22_23 !== "nesukurta") {%> readonly <%}%> >
           </div>
         </div>
         <br>
+
         <div class="row">
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-            <button type="submit" class="btn btn-primary " onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            <button type="submit" class="btn btn-primary" <% if (user.busenaVedejo22_23 !== "nesukurta") {%> disabled <%}%> onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
           </div>
         </div>
+
       </form>
       <% } %>
 

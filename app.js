@@ -24040,8 +24040,6 @@ app.post("/update-report-lec-admin-2025-2026", (req, res) => {
   });
 });
 
-// TAISYTI:
-// Administratorius atnaujina katedros vedėjo ataskaitą
 app.get("/admin/2022-2023/departments/edit-report/:userId", (req, res) => {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
@@ -24053,7 +24051,7 @@ app.get("/admin/2022-2023/departments/edit-report/:userId", (req, res) => {
           if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
             User.findById((reqId), function(err, user) {
               if (err) throw err;
-              res.render("admin-report-dep-edit", {
+              res.render("admin-edit-report-dep-2022-2023", {
                 user: user
               });
             });
@@ -24069,8 +24067,91 @@ app.get("/admin/2022-2023/departments/edit-report/:userId", (req, res) => {
     res.redirect("/login");
   }
 });
+app.get("/admin/2023-2024/departments/edit-report/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) throw err;
+              res.render("admin-edit-report-dep-2023-2024", {
+                user: user
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2024-2025/departments/edit-report/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) throw err;
+              res.render("admin-edit-report-dep-2024-2025", {
+                user: user
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+app.get("/admin/2025-2026/departments/edit-report/:userId", (req, res) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.user.id, function(err, foundUser) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function(err, user) {
+              if (err) throw err;
+              res.render("admin-edit-report-dep-2025-2026", {
+                user: user
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/home");
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+// TAISYTI:
 // Administratorius atnaujina katedros vedėjo ataskaitą
-app.post("/update-report-dep-admin", (req, res) => {
+app.post("/update-report-dep-admin-2022-2023", (req, res) => {
   User.findById(req.body.id, function(err, foundUser) {
     if (err) {
       console.log(err);
