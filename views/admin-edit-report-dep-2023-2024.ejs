@@ -4,10 +4,10 @@
   <div class="jumbotron ">
 
     <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> Katedros vedėjo ataskaitos redagavimas</h1>
-      <p class="lead text-center text-danger">Ataskaitos būsena: <%=user.busenaVedejo22_23%></p>
+      <p class="lead text-center text-danger">Ataskaitos būsena: <%=user.busenaVedejo23_24%></p>
     <form action="/update-report-dep-admin-2023-2024" method="post">
 
-      <div class="form-group">
+      <div class="form-group" id="begin">
         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
         <!-- išvedama visa Katedros vedėjo ataskaita, kurią adminas gali redaguoti ir pakartotinai išsaugoti duomenų bazėje pas naudotoją-->
         <br>
@@ -21,7 +21,7 @@
           <!-- mV2_D04 -->
           <p class=" font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
           <% var numb1 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kKPP1_1.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kKPP1_1.forEach(function(user){ %>
           <% numb1++; %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -198,8 +198,8 @@
               <label for=""><br>Akreditavimo laikotarpis</label>
               <select name="mV2_D04akreditLaikot<%=numb1%>" class="form-select form-control">
                 <option value=""></option>
-                <option class="others" <%if (user.akreditLaikot == "3") { %> selected <% } %>value="3">3 metai</option>
-                <option class="others" <%if (user.akreditLaikot == "7") { %> selected <% } %>value="7">7 metai</option>
+                <option class="others" <%if (user.akreditLaikot == "3 metai") { %> selected <% } %>value="3 metai">3 metai</option>
+                <option class="others" <%if (user.akreditLaikot == "7 metai") { %> selected <% } %>value="7 metai">7 metai</option>
               </select>
             </div>
             <div class="col-md-2 mb-3">
@@ -215,7 +215,7 @@
           <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
           <p class=" font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
           <% var numb2 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kDS1.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kDS1.forEach(function(user){ %>
           <% numb2++; %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -224,7 +224,7 @@
             </div>
             <div class="col-md-11 mb-3">
               <label>Pavardė, vardas </label>
-              <textarea type="text" rows="1" class="form-control" name="lent2_pavVard<%=numb2%>" autocomplete="off"><%=user.vardPavard%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="lent2_pavVard<%=numb2%>" autocomplete="off" readonly><%=user.vardPavard%></textarea>
             </div>
             <div class="col-md-1 mb-3">
             </div>
@@ -255,7 +255,7 @@
             </div>
           </div>
           <% var numb3 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kKPP1_3.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kKPP1_3.forEach(function(user){ %>
           <% numb3++; %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -440,7 +440,7 @@
 
           <div class="form-row">
             <% var numb4 = 0; %>
-            <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_M02.forEach(function(user){ %>
+            <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_M02.forEach(function(user){ %>
             <% numb4++ %>
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
@@ -557,7 +557,7 @@
             </div>
           </div>
           <% var numb6 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_M04.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_M04.forEach(function(user){ %>
           <% numb6++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -568,7 +568,7 @@
               <label for="">Dėstytojas
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="mV2_M04destytojas<%=numb6%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="mV2_M04destytojas<%=numb6%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Studijų programa</label>
@@ -614,7 +614,7 @@
             </div>
           </div>
           <% var numb6 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_D06.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_D06.forEach(function(user){ %>
           <% numb6++; %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -659,7 +659,7 @@
             </div>
           </div>
           <% var numb7 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_D01.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_D01.forEach(function(user){ %>
           <% numb7++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -668,7 +668,7 @@
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="mV2_D01destytojas<%=numb7%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea rows="1" type="text" class="form-control " readonly name="mV2_D01destytojas<%=numb7%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-6 mb-3">
               <label for="">Komitetas</label>
@@ -695,7 +695,7 @@
             </div>
           </div>
           <% var numb8 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_D02.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_D02.forEach(function(user){ %>
           <% numb8++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -704,7 +704,7 @@
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="mV2_D02destytojas<%=numb8%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea rows="1" type="text" class="form-control " readonly name="mV2_D02destytojas<%=numb8%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-6 mb-3">
               <label for="">Studijų kryptis</label>
@@ -873,7 +873,7 @@
             </div>
           </div>
           <% var numb9 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_D03.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_D03.forEach(function(user){ %>
           <% numb9++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -882,7 +882,7 @@
             </div>
             <div class="col-md-4 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="mV2_D03destytojas<%=numb9%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea rows="1" type="text" class="form-control " readonly name="mV2_D03destytojas<%=numb9%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
               <label for="">Studijų kryptis</label>
@@ -1072,14 +1072,14 @@
             </div>
           </div>
           <% var numb10 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_M03.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_M03.forEach(function(user){ %>
           <% numb10++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="mV2_M03nr<%=numb10%>" value="<%=numb10%>" autocomplete="off" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea type="text" rows="1" class="form-control " name="mV2_M03destytojas<%=numb10%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea type="text" rows="1" class="form-control " readonly name="mV2_M03destytojas<%=numb10%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
               <textarea type="text" rows="1" class="form-control " name="mV2_M03studProgr<%=numb10%>" autocomplete="off"><%=user.studProgr%></textarea>
@@ -1120,14 +1120,14 @@
             </div>
           </div>
           <% var numb11 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_S01.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_S01.forEach(function(user){ %>
           <% numb11++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="mV2_S01nr<%=numb11%>" placeholder="" autocomplete="off" value="<%=numb11%>" readonly="readonly">
             </div>
             <div class="col-md-4 mb-3">
-              <textarea rows="1" type="text" class="form-control " name="mV2_S01destytojas<%=numb11%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea rows="1" type="text" class="form-control " readonly name="mV2_S01destytojas<%=numb11%>" placeholder="" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <textarea rows="1" type="text" class="form-control " name="mV2_S01veikla<%=numb11%>" placeholder="" autocomplete="off"><%=user.veikla%></textarea>
@@ -1156,7 +1156,7 @@
             </div>
           </div>
           <% var v2_numbS = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.mV2.mV2_S.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.mV2.mV2_S.forEach(function(user){ %>
           <% v2_numbS++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1185,7 +1185,7 @@
           <!-- tMTEP3_T01 -->
           <p class="text-left font-weight-bold">12 lentelė. Taikomųjų mokslinių tyrimų, eksperimentų atlikimas </p>
           <% var numb12 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T01.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T01.forEach(function(user){ %>
           <% numb12++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1198,7 +1198,7 @@
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Tyrėjas (pavardė, vardas) </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T01destytojas<%=numb12%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea rows="1" readonly type="text" class="form-control " name="tMTEP3_T01destytojas<%=numb12%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-1 mb-3">
             </div>
@@ -1368,7 +1368,7 @@
             </tr>
           </table>
           <% var numb13 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T02.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T02.forEach(function(user){ %>
           <% numb13++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1500,7 +1500,7 @@
           </div>
 
           <% var numb14 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T03.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T03.forEach(function(user){ %>
           <% numb14++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1520,7 +1520,7 @@
           <!-- TMTEP3_T04 -->
           <p class="text-left font-weight-bold">15 lentelė. Konsultacijos užsakovams</p>
           <% var numb15 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T04.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T04.forEach(function(user){ %>
           <% numb15++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1531,7 +1531,7 @@
               <label for="">Konsultantas
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T04konsultantas<%=numb15%>" placeholder="" autocomplete="off"> <%=user.konsultantas%></textarea>
+              <textarea rows="1" readonly vtype="text" class="form-control " name="tMTEP3_T04konsultantas<%=numb15%>" placeholder="" autocomplete="off"> <%=user.konsultantas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Užsakovas</label>
@@ -1583,14 +1583,14 @@
             </div>
           </div>
           <% var numb16 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T05.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T05.forEach(function(user){ %>
           <% numb16++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="tMTEP3_T05nr<%=numb16%>" placeholder="" autocomplete="off" value="<%=numb16%>" readonly="readonly">
             </div>
             <div class="col-md-2 mb-3">
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05destytojas<%=numb16%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea rows="1" readonly type="text" class="form-control " name="tMTEP3_T05destytojas<%=numb16%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <textarea rows="1" type="text" class="form-control " name="tMTEP3_T05veiklPavad<%=numb16%>" placeholder="" autocomplete="off"><%=user.veiklPavad%></textarea>
@@ -1625,14 +1625,14 @@
             </div>
           </div>
           <% var numb162 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_162.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_162.forEach(function(user){ %>
           <% numb162++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="lent162_nr<%=numb162%>" placeholder="" autocomplete="off" value="<%=numb162%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea rows="1" type="text" class="form-control " name="lent162_destytojas<%=numb162%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea rows="1" type="text" readonly class="form-control " name="lent162_destytojas<%=numb162%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <textarea type="text" rows="1" class="form-control " name="lent162_pavadinimas<%=numb162%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
@@ -1664,14 +1664,14 @@
             </div>
           </div>
           <% var numb163 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T16.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T16.forEach(function(user){ %>
           <% numb163++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="tMTEP3_T16nr<%=numb163%>" placeholder="" autocomplete="off" value="<%=numb163%>" readonly="readonly">
             </div>
             <div class="col-md-4 mb-3">
-              <textarea rows="1" type="text" class="form-control" name="tMTEP3_T16autorius<%=numb163%>" placeholder="" autocomplete="off"> <%=user.rengejai%></textarea>
+              <textarea rows="1" readonly type="text" class="form-control" name="tMTEP3_T16autorius<%=numb163%>" placeholder="" autocomplete="off"> <%=user.rengejai%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <textarea rows="1" type="text" class="form-control" name="tMTEP3_T16pavadinimas<%=numb163%>" placeholder="" autocomplete="off"><%=user.pavadinimas%></textarea>
@@ -1689,7 +1689,7 @@
               dalyvavimas tarptautinėje parodoje Lietuvoje; dalyvavimas personalinėje / kolektyvinėje parodoje Lietuvoje)
             </b></p>
           <% var numb17 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T06.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T06.forEach(function(user){ %>
           <% numb17++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1700,7 +1700,7 @@
               <label for="">Autorius/bendraautorius
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb17%>" placeholder="" autocomplete="off"><%=user.autorius%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T06autorius<%=numb17%>" placeholder="" autocomplete="off"><%=user.autorius%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Meno sritis*, pavadinimas</label>
@@ -1747,7 +1747,7 @@
               televizijos renginyje užsienyje; vaidmuo, atliktas Lietuvos teatro, kino, televizijos renginyje))
             </b></p>
           <% var numb18 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T07.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T07.forEach(function(user){ %>
           <% numb18++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1800,7 +1800,7 @@
               spektaklyje užsienyje; solinė ar ansamblinė šokio partija, atlikta spektaklyje Lietuvos scenoje))
             </b></p>
           <% var numb19 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T08.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T08.forEach(function(user){ %>
           <% numb19++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1812,7 +1812,7 @@
               <label for="">Atlikėjas/dalyvis
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T08atlikejas<%=numb19%>" placeholder="" autocomplete="off"> <%=user.atlikejas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T08atlikejas<%=numb19%>" placeholder="" autocomplete="off"> <%=user.atlikejas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Meno sritis*, renginys
@@ -1859,7 +1859,7 @@
               atlikti Lietuvoje)
             </b></p>
           <% var numb20 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T09.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T09.forEach(function(user){ %>
           <% numb20++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1869,7 +1869,7 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="">Atlikėjas/dalyvis (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T09atlikejas<%=numb20%>" placeholder="" autocomplete="off"> <%=user.atlikejas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T09atlikejas<%=numb20%>" placeholder="" autocomplete="off"> <%=user.atlikejas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Meno sritis*, renginys
@@ -1913,7 +1913,7 @@
           <!-- TMTEP3_T10 -->
           <p><b>21 lentelė. Meno projektų kuravimas ir vadyba </b></p>
           <% var numb21 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T10.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T10.forEach(function(user){ %>
           <% numb21++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1923,7 +1923,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T10destytojas<%=numb21%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T10destytojas<%=numb21%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <label for="">Veiklos pobūdis</label>
@@ -1965,7 +1965,7 @@
           <!-- TMTEP3_T11 -->
           <p><b>22 lentelė. Meno renginių vedimas </b></p>
           <% var numb22 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T11.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T11.forEach(function(user){ %>
           <% numb22++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -1977,7 +1977,7 @@
               <label for="">Dėstytojas
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T11destytojas<%=numb22%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T11destytojas<%=numb22%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-4 mb-3">
               <label for="">Veiklos pobūdis
@@ -2038,14 +2038,14 @@
             </div>
           </div>
           <% var numb23 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T12.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T12.forEach(function(user){ %>
           <% numb23++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="tMTEP3_T12nr<%=numb23%>" placeholder="" autocomplete="off" value="<%=numb23%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea rows="1" type="text" class="form-control" name="tMTEP3_T12destytojas<%=numb23%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea rows="1" readonly type="text" class="form-control" name="tMTEP3_T12destytojas<%=numb23%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <textarea rows="1" type="text" class="form-control" name="tMTEP3_T12veiklPobud<%=numb23%>" placeholder="" autocomplete="off"><%=user.veiklPobud%></textarea>
@@ -2062,7 +2062,7 @@
           <p><b>24 lentelė. Kita švietėjiška veikla (jaunųjų talentų mokyklų (akademijų) veiklų organizavimas ir dalyvavimas jose, stovyklų vaikams, paauglių, senjorų užimtumo
               renginių, kuriuos organizuojant panaudojamos mokslinės ir praktinės žinios bei gebėjimai, taikomųjų mokslinių tyrimų rezultatai, vykdymas) </b></p>
           <% var numb24 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T14.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T14.forEach(function(user){ %>
           <% numb24++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2072,7 +2072,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T14destytojas<%=numb24%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T14destytojas<%=numb24%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-8 mb-3">
               <label for="">Renginys
@@ -2099,7 +2099,7 @@
           <p><b>25 lentelė. Studentų rengimas studentų profesinio meistriškumo konkursui,
               olimpiadai, varžyboms, konferencijoms, straipsnio rengimui</b></p>
           <% var numb25 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_T13.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_T13.forEach(function(user){ %>
           <% numb25++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2111,12 +2111,12 @@
               <label for="">Dėstytojas
                 (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T13destytojas<%=numb25%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T13destytojas<%=numb25%>" placeholder="" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
               <label for="">Studento pavardė, vardas, grupė
               </label>
-              <textarea rows="1" type="text" class="form-control " name="tMTEP3_T13studDuom<%=numb25%>" placeholder="" autocomplete="off"><%=user.studDuom%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="tMTEP3_T13studDuom<%=numb25%>" placeholder="" autocomplete="off"><%=user.studDuom%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Renginio pavadinimas, pasiekimų sritis
@@ -2157,7 +2157,7 @@
             </div>
           </div>
           <% var numbS = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.tMTEP3.tMTEP3_S.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.tMTEP3.tMTEP3_S.forEach(function(user){ %>
           <% numbS++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2194,7 +2194,7 @@
           <br>
           <!-- mokymosi -->
           <% var iterationNr261 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
           <% iterationNr261++ %>
           <% if (iterationNr261==1){%>
           <div class="form-row">
@@ -2264,7 +2264,7 @@
           <br>
           <!-- tyrimu -->
           <% var iterationNr262 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.tyrimu.forEach(function(user){ %>
           <% iterationNr262++ %>
           <% if (iterationNr262==1){%>
           <div class="form-row">
@@ -2333,7 +2333,7 @@
           <br>
           <!-- bendrosios -->
           <% var iterationNr263 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.bendrosios.forEach(function(user){ %>
           <% iterationNr263++ %>
           <% if (iterationNr263==1){%>
           <div class="form-row">
@@ -2402,7 +2402,7 @@
           <br>
           <!-- dalykines -->
           <% var iterationNr264 = 0;  %>
-          <%  user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kompetencijos.dalykines.forEach(function(user){ %>
           <% iterationNr264++ %>
           <% if (iterationNr264==1){%>
           <div class="form-row">
@@ -2503,7 +2503,7 @@
               <label>Mokymo(si) kompetencijos</label>
             </div>
             <div class="col-md-3 mb-3">
-              <input type="number" class="form-control  text-center" name="mokymosiLTdestytojuSk" value="<%=user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.mokymosi.destytojuSk%>" readonly="readonly" autocomplete="off">
+              <input type="number" class="form-control  text-center" name="mokymosiLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.mokymosi.destytojuSk%>" readonly="readonly" autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiLTtrukmeVal" name="mokymosiLTtrukmeVal" readonly="readonly" autocomplete="off">
@@ -2520,7 +2520,7 @@
               <label>Tyrimų kompetencijos</label>
             </div>
             <div class="col-md-3 mb-3">
-              <input type="number" class="form-control  text-center" name="tyrimuLTdestytojuSk" value="<%=user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.tyrimu.destytojuSk%>" readonly="readonly" autocomplete="off">
+              <input type="number" class="form-control  text-center" name="tyrimuLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.tyrimu.destytojuSk%>" readonly="readonly" autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuLTtrukmeVal" name="tyrimuLTtrukmeVal" readonly="readonly" autocomplete="off">
@@ -2537,7 +2537,7 @@
               <label>Bendrosios kompetencijos</label>
             </div>
             <div class="col-md-3 mb-3">
-              <input type="number" class="form-control  text-center" name="bendrosiosLTdestytojuSk" value="<%=user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.bendrosios.destytojuSk%>" readonly="readonly" autocomplete="off">
+              <input type="number" class="form-control  text-center" name="bendrosiosLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.bendrosios.destytojuSk%>" readonly="readonly" autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosLTtrukmeVal" name="bendrosiosLTtrukmeVal" readonly="readonly" autocomplete="off">
@@ -2554,7 +2554,7 @@
               <label>Dalykinės kompetencijos</label>
             </div>
             <div class="col-md-3 mb-3">
-              <input type="number" class="form-control text-center" name="dalykinesLTdestytojuSk" value="<%=user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.destytojuSk%>" readonly="readonly" autocomplete="off">
+              <input type="number" class="form-control text-center" name="dalykinesLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.destytojuSk%>" readonly="readonly" autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesLTtrukmeVal" name="dalykinesLTtrukmeVal" readonly="readonly" autocomplete="off">
@@ -2593,7 +2593,7 @@
             </div>
           </div>
           <% var numb27 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_27.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_27.forEach(function(user){ %>
           <% numb27++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2620,7 +2620,7 @@
               </select>
             </div>
             <div class="col-md-2 mb-3">
-              <textarea type="text" rows="1" class="form-control" name="lent27_lektorius<%=numb27%>" autocomplete="off"><%=user.lektorius%></textarea>
+              <textarea readonly type="text" rows="1" class="form-control" name="lent27_lektorius<%=numb27%>" autocomplete="off"><%=user.lektorius%></textarea>
             </div>
             <div class="col-md-2 mb-3">
               <textarea type="text" rows="1" class="form-control" name="lent27_lektTipas<%=numb27%>" autocomplete="off"><%=user.lektTipas%></textarea>
@@ -2657,14 +2657,14 @@
             </div>
           </div>
           <% var numb28 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_28.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_28.forEach(function(user){ %>
           <% numb28++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="lent28_nr<%=numb28%>" placeholder="" autocomplete="off" value="<%=numb28%>" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea type="text" rows="1" class="form-control" name="lent28_destytojas<%=numb28%>" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly type="text" rows="1" class="form-control" name="lent28_destytojas<%=numb28%>" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-2 mb-3">
               <textarea type="text" rows="1" class="form-control " name="lent28_imonIstaig<%=numb28%>" autocomplete="off"><%=user.imonIstaig%></textarea>
@@ -2714,14 +2714,14 @@
             </div>
           </div>
           <% var k29var = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_KV03.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV03.forEach(function(user){ %>
           <% k29var++; %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="number" class="form-control text-center" name="kTOV4_KV03nr<%=k29var%>" readonly="readonly" value="<%=k29var%>" autocomplete="off">
             </div>
             <div class="col-md-2 mb-3">
-              <textarea rows="1" type="text" class="form-control" name="kTOV4_KV03destytojas<%=k29var%>" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control" name="kTOV4_KV03destytojas<%=k29var%>" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-2 mb-3">
               <select name="kTOV4_KV03studKryptis<%=k29var%>" class="form-select form-control">
@@ -2885,7 +2885,7 @@
           <!-- 30 lentelė -->
           <p><b>30 lentelė. Atvykstančių dėstytojų tarptautinis judumas.</b></p>
           <% var numb30 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_30.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_30.forEach(function(user){ %>
           <% numb30++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -2894,7 +2894,7 @@
             </div>
             <div class="col-md-4 mb-3">
               <label>Dėstytojas (pavardė, vardas)</label>
-              <textarea rows="1" type="text" class="form-control" name="lent30_destytojas<%=numb30%>" autocomplete="off"><%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control" name="lent30_destytojas<%=numb30%>" autocomplete="off"><%=user.destytojas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
               <label>Studijų kryptis</label>
@@ -3083,14 +3083,14 @@
             </div>
           </div>
           <% var numb311 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_1.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_1.forEach(function(user){ %>
           <% numb311++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_O01_1nr<%=numb311%>" value="<%=numb311%>" autocomplete="off" readonly="readonly">
             </div>
             <div class="col-md-3 mb-3">
-              <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_1destytojas<%=numb311%>" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="kTOV4_O01_1destytojas<%=numb311%>" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-5 mb-3">
               <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_1veiklPobud<%=numb311%>" autocomplete="off"><%=user.veiklPobud%></textarea>
@@ -3109,7 +3109,7 @@
             organizavimas ir dalyvavimas jose; projektinė veikla (užsakomųjų projektų (veiklų) paieška, projektų paraiškų rengimas)
           </p>
           <% var numb312 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_O01.kTOV4_O01_2.forEach(function(user){ %>
           <% numb312++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3119,7 +3119,7 @@
             <div class="col-md-3 mb-3">
               <label for="">Dėstytojas (pavardė, vardas)
               </label>
-              <textarea rows="1" type="text" class="form-control " name="kTOV4_O01_2destytojas<%=numb312%>" autocomplete="off"> <%=user.destytojas%></textarea>
+              <textarea readonly rows="1" type="text" class="form-control " name="kTOV4_O01_2destytojas<%=numb312%>" autocomplete="off"> <%=user.destytojas%></textarea>
             </div>
             <div class="col-md-3 mb-3">
               <label for="">Veiklos pobūdis</label>
@@ -3154,7 +3154,7 @@
             </div>
           </div>
           <% var numbKTOV4S = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kTOV4.kTOV4_S.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_S.forEach(function(user){ %>
           <% numbKTOV4S++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3191,7 +3191,7 @@
             </div>
           </div>
           <% var numb32 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_32.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_32.forEach(function(user){ %>
           <% numb32++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3374,7 +3374,7 @@
             </div>
           </div>
           <% var iterationNr33 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_33.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_33.forEach(function(user){ %>
           <% iterationNr33++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3399,7 +3399,7 @@
           <!-- 34 lentelė -->
           <p><b>34 lentelė. Studentų, atliekančių baigiamąją praktiką pas strateginius partnerius, skaičius*</b></p>
           <% var iterationNr34 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_34.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_34.forEach(function(user){ %>
           <% iterationNr34++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3592,7 +3592,7 @@
           <!-- 35 lentelė -->
           <p><b>35 lentelė. Baigiamųjų darbų, parengtų pagal įmonių / įstaigų / organizacijų užsakymus, skaičius</b></p>
           <% var numb35 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_35.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_35.forEach(function(user){ %>
           <% numb35++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -3827,7 +3827,7 @@
             </div>
           </div>
           <% var numb36 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_KT02.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_KT02.forEach(function(user){ %>
           <% numb36++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4000,7 +4000,7 @@
           <!-- kV5_KT01 -->
           <p><b>37 lentelė. Baigiamieji darbai (užsakomieji darbai), pritaikyti užsakovo poreikiams, regiono ar visos šalies raidai</b></p>
           <% var numb37 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_KT01.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_KT01.forEach(function(user){ %>
           <% numb37++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4179,7 +4179,7 @@
           <p class="font-weight-bold">
             38 lentelė. Dalyvavimas Lietuvos ir tarptautiniuose projektuose ir programose, tarptautiniuose mainuose.*(Erasmus+ ir kt.), ES struktūrinių fondų projektuose.</p>
           <% var numb38 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_38.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_38.forEach(function(user){ %>
           <% numb38++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4232,7 +4232,7 @@
             </div>
           </div>
           <% var numb39 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_39.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_39.forEach(function(user){ %>
           <% numb39++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4269,7 +4269,7 @@
           <!-- 40 lentelė 1  -->
           <!-- Socialinės atskirties mažinimas -->
           <% var iterationNr401 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_40.socAtskMaz.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_40.socAtskMaz.forEach(function(user){ %>
           <% iterationNr401++ %>
           <% if (iterationNr401==1){%>
           <div class="form-row">
@@ -4300,7 +4300,7 @@
           <!-- 40 lentelė 2  -->
           <!-- Aplinkosauginės iniciatyvos -->
           <% var iterationNr402 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_40.aplinkosaugInic.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_40.aplinkosaugInic.forEach(function(user){ %>
           <% iterationNr402++ %>
           <% if (iterationNr402==1){%>
           <div class="form-row">
@@ -4331,7 +4331,7 @@
           <!-- 40 lentelė 3  -->
           <!-- Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas -->
           <% var iterationNr403 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_40.lietValstybPuosel.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_40.lietValstybPuosel.forEach(function(user){ %>
           <% iterationNr403++ %>
           <% if (iterationNr403==1){%>
           <div class="form-row">
@@ -4362,7 +4362,7 @@
           <!-- 40 lentelė 4  -->
           <!-- Lietuvos etnokultūros puoselėjimas -->
           <% var iterationNr404 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_40.lietEtnokPuos.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_40.lietEtnokPuos.forEach(function(user){ %>
           <% iterationNr404++ %>
           <% if (iterationNr404==1){%>
           <div class="form-row">
@@ -4394,7 +4394,7 @@
           <!-- 40 lentelė 5  -->
           <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
           <% var iterationNr405 = 0; %>
-          <% user.mm2022_2023.katedrosVedejas.kV5.kV5_40.savanorystIniciatyv.forEach(function(user){ %>
+          <% user.mm2023_2024.katedrosVedejas.kV5.kV5_40.savanorystIniciatyv.forEach(function(user){ %>
           <% iterationNr405++ %>
           <% if (iterationNr405==1){%>
           <div class="form-row">
@@ -4429,7 +4429,7 @@
           </p>
           <p><b></b></p>
           <% var iterationNr41 = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.kV5_41.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.kV5_41.forEach(function(user){ %>
           <% iterationNr41++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4492,7 +4492,7 @@
             </div>
           </div>
           <% var numbVeiklSavianal = 0; %>
-          <%  user.mm2022_2023.katedrosVedejas.kV5.veiklSavinalize.veiklSavinalize_array.forEach(function(user){ %>
+          <%  user.mm2023_2024.katedrosVedejas.kV5.veiklSavinalize.veiklSavinalize_array.forEach(function(user){ %>
           <% numbVeiklSavianal++ %>
           <div class="form-row">
             <div class="col-md-1 mb-3">
@@ -4518,7 +4518,7 @@
           </div>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <textarea type="text" rows="1" class="form-control" name="isvadosApieVeikl" placeholder="" autocomplete="off"><%=user.mm2022_2023.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl%></textarea>
+              <textarea type="text" rows="1" class="form-control" name="isvadosApieVeikl" placeholder="" autocomplete="off"><%=user.mm2023_2024.katedrosVedejas.kV5.veiklSavinalize.isvadosApieVeikl%></textarea>
             </div>
           </div>
 
@@ -4541,6 +4541,11 @@
     </form>
   </div>
 </div>
+
+  <div class="circle-button noprint">
+    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+  </div>
+
 
 <%- include('partials/footer') %>
 <!-- ---ALL SCRIPTS--- -->
@@ -4735,8 +4740,8 @@
             </label>
             <select name="mV2_D04akreditLaikot` + value1 + `" class="form-select form-control">
               <option value=""></option>
-              <option class="others" value="3">3 metai</option>
-              <option class="others" value="7">7 metai</option>
+              <option class="others" value="3 metai">3 metai</option>
+              <option class="others" value="7 metai">7 metai</option>
             </select>
           </div>
           <div class="col-md-2 mb-3">
@@ -6156,7 +6161,6 @@
     //isveda i "Is viso" langeli pagal ID
     document.getElementById("isVisoTrukmeValLT26").value = isVisoTrukmeLT24;
     document.getElementById("isVisoTrukmeValNeLT26").value = isVisotrukmeNeLT24;
-
 
     // priedas 6 lenteles
     document.getElementById("mokymosiLTtrukmeVal").value = trukmeLTnum26_1;
