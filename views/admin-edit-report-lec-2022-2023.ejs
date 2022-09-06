@@ -5,6 +5,7 @@
 
     <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> Dėstytojo ataskaitos redagavimas</h1>
     <p class="lead text-center text-danger">Ataskaitos būsena: <%=user.busena22_23%></p>
+
     <form action="/update-report-lec-admin-2022-2023" method="post">
 
       <div class="form-group" id="begin">
@@ -2802,8 +2803,7 @@
             </td>
           </tr>
         </table>
-
-
+        <input type="text" name="ataskaitos_busena" value="<%=user.busena22_23%>" hidden>
       </div>
 
     </form>
