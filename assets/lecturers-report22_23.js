@@ -4,8 +4,65 @@ const User = require('../models/user');
 const dateTime = require('./full-date-time'); //both files are in the same folder
 
 module.exports = {
+  //first function nr1 (for "update" and "submit")
+  clearLecReport: function(foundUser) {
+    foundUser.mm2022_2023.destytojas.kD1_K01.kD1_K01_array = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_M02 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_M03 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_M04 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_D01 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_D02 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_D03 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_S01 = new Array();
+    foundUser.mm2022_2023.destytojas.nD2_S = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T01 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T02 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T03 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T04 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T05 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_142 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_143 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T06 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T07 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T08 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T09 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T10 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T11 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T12 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T13 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_T14 = new Array();
+    foundUser.mm2022_2023.destytojas.tMTEP3_S = new Array();
+    //24 lentelė
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
+    // UPDATE post. Skaiciui "dalyvavusiu" nustatyti Vedejo ataskaitoje
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
+    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
 
-  // first function nr1 (for "create" and "update")
+    foundUser.mm2022_2023.destytojas.kTOV4_25 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_26 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_KV03 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_1 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_2 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_29 = new Array();
+    foundUser.mm2022_2023.destytojas.kTOV4_S = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_KT01 = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_KT02 = new Array();
+    //32 lentelė
+    foundUser.mm2022_2023.destytojas.kV5_32.socAtskMaz = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_32.aplinkosaugInic = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_32.lietValstybPuosel = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_32.lietEtnokPuos = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_32.savanorystIniciatyv = new Array();
+
+    foundUser.mm2022_2023.destytojas.kV5_33 = new Array();
+    foundUser.mm2022_2023.destytojas.kV5_34 = new Array();
+  },
+  //second function nr2 (for "create" and "update")
   updateLecReport: function(foundUser, req) {
     // 1 lentelė create-2022-2023
     foundUser.mm2022_2023.destytojas.darbovietesTipas = req.body.darbovTipas,
@@ -451,64 +508,6 @@ module.exports = {
     foundUser.mm2022_2023.destytojas.kV5_kitaInfo = req.body.kV5_kitaInfo,
       foundUser.updated_for = req.user.username,
       foundUser.busena22_23 = req.body.ataskaitos_busena
-  },
-  //second function nr2 (for "update" and "submit")
-  clearLecReport: function(foundUser) {
-    foundUser.mm2022_2023.destytojas.kD1_K01.kD1_K01_array = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_M02 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_M03 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_M04 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_D01 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_D02 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_D03 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_S01 = new Array();
-    foundUser.mm2022_2023.destytojas.nD2_S = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T01 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T02 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T03 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T04 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T05 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_142 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_143 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T06 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T07 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T08 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T09 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T10 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T11 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T12 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T13 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_T14 = new Array();
-    foundUser.mm2022_2023.destytojas.tMTEP3_S = new Array();
-    //24 lentelė
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.tyrimu = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.bendrosios = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalykines = new Array();
-    // UPDATE post. Skaiciui "dalyvavusiu" nustatyti Vedejo ataskaitoje
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp = false;
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp = false;
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp = false;
-    foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp = false;
-
-    foundUser.mm2022_2023.destytojas.kTOV4_25 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_26 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_KV03 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_1 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_2 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_29 = new Array();
-    foundUser.mm2022_2023.destytojas.kTOV4_S = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_KT01 = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_KT02 = new Array();
-    //32 lentelė
-    foundUser.mm2022_2023.destytojas.kV5_32.socAtskMaz = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_32.aplinkosaugInic = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_32.lietValstybPuosel = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_32.lietEtnokPuos = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_32.savanorystIniciatyv = new Array();
-
-    foundUser.mm2022_2023.destytojas.kV5_33 = new Array();
-    foundUser.mm2022_2023.destytojas.kV5_34 = new Array();
   },
   //third function nr3 (for "submit")
   checkAndUpdateLecReport: function(foundUser, req) {
