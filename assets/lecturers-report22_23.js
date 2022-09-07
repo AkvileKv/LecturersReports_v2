@@ -1,8 +1,6 @@
 var express = require('express');
 const User = require('../models/user');
 
-const dateTime = require('./full-date-time'); //both files are in the same folder
-
 module.exports = {
   //first function nr1 (for "update" and "submit")
   clearLecReport: function(foundUser) {
@@ -64,12 +62,12 @@ module.exports = {
   },
   //second function nr2 (for "create" and "update")
   updateLecReport: function(foundUser, req) {
-    // 1 lentelė create-2022-2023
+    // 1 lentelė
     foundUser.mm2022_2023.destytojas.darbovietesTipas = req.body.darbovTipas,
       foundUser.mm2022_2023.destytojas.pareigos = req.body.pareigos,
       foundUser.mm2022_2023.destytojas.pedagogStazas = req.body.pedagogStazas,
       foundUser.mm2022_2023.destytojas.praktVeiklStazas = req.body.praktinStazas
-    // 2 lentelė create-2022-2023
+    // 2 lentelė
     for (let i = 1; i <= parseInt(req.body.table2_name); i++) {
       foundUser.mm2022_2023.destytojas.kD1_K01.kD1_K01_array.push({
         nr: i,
@@ -101,7 +99,7 @@ module.exports = {
       foundUser.mm2022_2023.destytojas.nD2.isVisoValPlan = req.body.nD2isVisoValPlan,
       foundUser.mm2022_2023.destytojas.nD2.isVisoValAtl = req.body.nD2isVisoValAtl,
       foundUser.mm2022_2023.destytojas.nD2.priezastys = req.body.nD2priezastys
-    // 3 lentelė create-2022-2023
+    // 3 lentelė
     for (let i = 1; i <= parseInt(req.body.table3_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_M02.push({
         nr: i,
@@ -111,7 +109,7 @@ module.exports = {
         mokslKrypt: eval("req.body.mokslKrypt" + i)
       })
     }
-    // 4 lentelė create-2022-2023
+    // 4 lentelė
     for (let i = 1; i <= parseInt(req.body.table4_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_M04.push({
         nr: i,
@@ -120,7 +118,7 @@ module.exports = {
         busena: eval("req.body.nD2_M04busena" + i),
         apimtisKredit: eval("req.body.nD2_M04apimtisKredit" + i)
       })
-    } // 5 lentelė create-2022-2023
+    } // 5 lentelė
     for (let i = 1; i <= parseInt(req.body.table5_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_D01.push({
         nr: i,
@@ -128,7 +126,7 @@ module.exports = {
         veikla: eval("req.body.nD2_D01veikla" + i),
         rezultatai: eval("req.body.nD2_D01rezultatai" + i)
       })
-    } // 6 lentelė create-2022-2023
+    } // 6 lentelė
     for (let i = 1; i <= parseInt(req.body.table6_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_D02.push({
         nr: i,
@@ -136,7 +134,7 @@ module.exports = {
         veikla: eval("req.body.nD2_D02veikla" + i),
         rezultatai: eval("req.body.nD2_D02rezultatai" + i)
       })
-    } // 7 lentelė create-2022-2023
+    } // 7 lentelė
     for (let i = 1; i <= parseInt(req.body.table7_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_D03.push({
         nr: i,
@@ -145,7 +143,7 @@ module.exports = {
         veikla: eval("req.body.nD2_D03veikla" + i),
         rezultatai: eval("req.body.nD2_D03rezultatai" + i)
       })
-    } // 8 lentelė create-2022-2023
+    } // 8 lentelė
     for (let i = 1; i <= parseInt(req.body.table8_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_M03.push({
         nr: i,
@@ -153,14 +151,14 @@ module.exports = {
         dalykPavad: eval("req.body.nD2_M03dalykPavad" + i),
         apimtisKredit: eval("req.body.nD2_M03apimtisKredit" + i)
       })
-    } // 9 lentelė create-2022-2023
+    } // 9 lentelė
     for (let i = 1; i <= parseInt(req.body.table9_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_S01.push({
         nr: i,
         veikla: eval("req.body.nD2_S01veikla" + i),
         dataVieta: eval("req.body.nD2_S01dataVieta" + i)
       })
-    } // savianalize create-2022-2023
+    } // savianalize
     for (let i = 1; i <= parseInt(req.body.tablenD2_S_name); i++) {
       foundUser.mm2022_2023.destytojas.nD2_S.push({
         nr: i,
@@ -181,7 +179,7 @@ module.exports = {
       foundUser.mm2022_2023.destytojas.tMTEP3.isVisoValPlan = req.body.tMTEP3isVisoValPlan,
       foundUser.mm2022_2023.destytojas.tMTEP3.isVisoValAtl = req.body.tMTEP3isVisoValAtl,
       foundUser.mm2022_2023.destytojas.tMTEP3.priezastys = req.body.tMTEP3priezastys
-    // 10 lentelė create-2022-2023
+    // 10 lentelė
     for (let i = 1; i <= parseInt(req.body.table10_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T01.push({
         nr: i,
@@ -190,7 +188,7 @@ module.exports = {
         mokslSrit: eval("req.body.tMTEP3_T01mokslSrit" + i),
         mokslKrypt: eval("req.body.tMTEP3_T01mokslKrypt" + i)
       })
-    } // 11 lentelė create-2022-2023
+    } // 11 lentelė
     for (let i = 1; i <= parseInt(req.body.table11_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T02.push({
         nr: i,
@@ -200,14 +198,14 @@ module.exports = {
         mokslKrypt: eval("req.body.tMTEP3_T02mokslKrypt" + i),
         duomBaze: eval("req.body.tMTEP3_T02duomBaze" + i)
       })
-    } // 12 lentelė create-2022-2023
+    } // 12 lentelė
     for (let i = 1; i <= parseInt(req.body.table12_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T03.push({
         nr: i,
         pilnasBiblApr: eval("req.body.tMTEP3_T03pilnasBiblApr" + i),
         rengTipas: eval("req.body.tMTEP3_T03rengTipas" + i)
       })
-    } // 13 lentelė create-2022-2023
+    } // 13 lentelė
     for (let i = 1; i <= parseInt(req.body.table13_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T04.push({
         nr: i,
@@ -216,7 +214,7 @@ module.exports = {
         data: eval("req.body.tMTEP3_T04data" + i),
         atlygArNe: eval("req.body.tMTEP3_T04atlygArNe" + i)
       })
-    } // 14.1 lentelė create-2022-2023
+    } // 14.1 lentelė
     for (let i = 1; i <= parseInt(req.body.table141_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T05.push({
         nr: i,
@@ -224,21 +222,21 @@ module.exports = {
         veiklRezult: eval("req.body.tMTEP3_T05veiklRezult" + i),
         atlygArNe: eval("req.body.tMTEP3_T05atlygArNe" + i)
       })
-    } // 14.2 lentelė create-2022-2023
+    } // 14.2 lentelė
     for (let i = 1; i <= parseInt(req.body.table142_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_142.push({
         nr: i,
         pavadinimas: eval("req.body.tMTEP3_142pavadinimas" + i),
         pastabos: eval("req.body.tMTEP3_142pastabos" + i)
       })
-    } // 14.3 lentelė create-2022-2023
+    } // 14.3 lentelė
     for (let i = 1; i <= parseInt(req.body.table143_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_143.push({
         nr: i,
         pavadinimas: eval("req.body.tMTEP3_143pavadinimas" + i),
         uzsakovas: eval("req.body.tMTEP3_143uzsakovas" + i)
       })
-    } // 15 lentelė create-2022-2023
+    } // 15 lentelė
     for (let i = 1; i <= parseInt(req.body.table15_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T06.push({
         nr: i,
@@ -249,7 +247,7 @@ module.exports = {
         data: eval("req.body.tMTEP3_T06data" + i),
         atlygArNe: eval("req.body.tMTEP3_T06atlygArNe" + i)
       })
-    } // 16 lentelė create-2022-2023
+    } // 16 lentelė
     for (let i = 1; i <= parseInt(req.body.table16_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T07.push({
         nr: i,
@@ -259,7 +257,7 @@ module.exports = {
         data: eval("req.body.tMTEP3_T07data" + i),
         atlygArNe: eval("req.body.tMTEP3_T07atlygArNe" + i)
       })
-    } // 17 lentelė create-2022-2023
+    } // 17 lentelė
     for (let i = 1; i <= parseInt(req.body.table17_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T08.push({
         nr: i,
@@ -269,7 +267,7 @@ module.exports = {
         data: eval("req.body.tMTEP3_T08data" + i),
         atlygArNe: eval("req.body.tMTEP3_T08atlygArNe" + i)
       })
-    } // 18 lentelė create-2022-2023
+    } // 18 lentelė
     for (let i = 1; i <= parseInt(req.body.table18_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T09.push({
         nr: i,
@@ -279,7 +277,7 @@ module.exports = {
         data: eval("req.body.tMTEP3_T09data" + i),
         atlygArNe: eval("req.body.tMTEP3_T09atlygArNe" + i)
       })
-    } // 19 lentelė create-2022-2023
+    } // 19 lentelė
     for (let i = 1; i <= parseInt(req.body.table19_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T10.push({
         nr: i,
@@ -290,7 +288,7 @@ module.exports = {
         ktKomentarai: eval("req.body.tMTEP3_T10ktKomentarai" + i),
         atlygArNe: eval("req.body.tMTEP3_T10atlygArNe" + i)
       })
-    } // 20 lentelė create-2022-2023
+    } // 20 lentelė
     for (let i = 1; i <= parseInt(req.body.table20_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T11.push({
         nr: i,
@@ -301,14 +299,14 @@ module.exports = {
         ktKomentarai: eval("req.body.tMTEP3_T11ktKomentarai" + i),
         atlygArNe: eval("req.body.tMTEP3_T11atlygArNe" + i)
       })
-    } // 21 lentelė create-2022-2023
+    } // 21 lentelė
     for (let i = 1; i <= parseInt(req.body.table21_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T12.push({
         nr: i,
         veiklPobud: eval("req.body.tMTEP3_T12veiklPobud" + i),
         dataVieta: eval("req.body.tMTEP3_T12dataVieta" + i)
       })
-    } // 22 lentelė create-2022-2023
+    } // 22 lentelė
     for (let i = 1; i <= parseInt(req.body.table22_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T13.push({
         nr: i,
@@ -317,7 +315,7 @@ module.exports = {
         rezultatas: eval("req.body.tMTEP3_T13rezultatas" + i),
         data: eval("req.body.tMTEP3_T13data" + i)
       })
-    } // 23 lentelė create-2022-2023
+    } // 23 lentelė
     for (let i = 1; i <= parseInt(req.body.table23_name); i++) {
       foundUser.mm2022_2023.destytojas.tMTEP3_T14.push({
         nr: i,
@@ -340,7 +338,7 @@ module.exports = {
       foundUser.mm2022_2023.destytojas.kTOV4.isVisoValPlan = req.body.kTOV4isVisoValPlan,
       foundUser.mm2022_2023.destytojas.kTOV4.isVisoValAtl = req.body.kTOV4isVisoValAtl,
       foundUser.mm2022_2023.destytojas.kTOV4.priezastys = req.body.kTOV4priezastys
-    // 24 lentelė create-2022-2023
+    // 24 lentelė
     //mokymosi
     for (let i = 1; i <= parseInt(req.body.table241_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi.push({
@@ -380,7 +378,7 @@ module.exports = {
     }
     foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.isVisoValLT = req.body.kTOV4_trukmeValLT,
       foundUser.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.isVisoValNeLT = req.body.kTOV4_trukmeValNeLT
-    // 25 lentelė create-2022-2023
+    // 25 lentelė
     for (let i = 1; i <= parseInt(req.body.table25_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_25.push({
         nr: i,
@@ -388,7 +386,7 @@ module.exports = {
         kompGrupe: eval("req.body.kTOV4_25kompGrupe" + i),
         skirta: eval("req.body.kTOV4_25skirta" + i)
       })
-    } // 26 lentelė create-2022-2023
+    } // 26 lentelė
     for (let i = 1; i <= parseInt(req.body.table26_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_26.push({
         nr: i,
@@ -397,7 +395,7 @@ module.exports = {
         trukmeVal: eval("req.body.kTOV4_26trukmeVal" + i),
         data: eval("req.body.kTOV4_26data" + i)
       })
-    } // 27 lentelė create-2022-2023
+    } // 27 lentelė
     for (let i = 1; i <= parseInt(req.body.table27_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_KV03.push({
         nr: i,
@@ -406,14 +404,14 @@ module.exports = {
         institucija: eval("req.body.kTOV4_KV03institucija" + i),
         dalykas: eval("req.body.kTOV4_KV03dalykas" + i)
       })
-    } // 28.1 lentelė create-2022-2023
+    } // 28.1 lentelė
     for (let i = 1; i <= parseInt(req.body.table281_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_1.push({
         nr: i,
         veiklPobud: eval("req.body.kTOV4_O01_1veiklPobud" + i),
         isakNrData: eval("req.body.kTOV4_O01_1isakNrData" + i)
       })
-    } // 28.2 lentelė create-2022-2023
+    } // 28.2 lentelė
     for (let i = 1; i <= parseInt(req.body.table282_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_O01.kTOV4_O01_2.push({
         nr: i,
@@ -422,7 +420,7 @@ module.exports = {
         dataVieta: eval("req.body.kTOV4_O01_2dataVieta" + i),
         ktKomentarai: eval("req.body.kTOV4_O01_2ktKomentarai" + i)
       })
-    } // 29 lentelė create-2022-2023
+    } // 29 lentelė
     for (let i = 1; i <= parseInt(req.body.table29_name); i++) {
       foundUser.mm2022_2023.destytojas.kTOV4_29.push({
         nr: i,
@@ -436,7 +434,7 @@ module.exports = {
         stiprybes: eval("req.body.kTOV4_Sstiprybes" + i),
         tobulintina: eval("req.body.kTOV4_Stobulintina" + i)
       })
-    } // 30 lentelė create-2022-2023
+    } // 30 lentelė
     for (let i = 1; i <= parseInt(req.body.table30_name); i++) {
       foundUser.mm2022_2023.destytojas.kV5_KT02.push({
         nr: i,
@@ -445,7 +443,7 @@ module.exports = {
         studProgr: eval("req.body.kV5_KT02studProgr" + i),
         darboTema: eval("req.body.kV5_KT02darboTema" + i)
       })
-    } // 31 lentelė create-2022-2023
+    } // 31 lentelė
     for (let i = 1; i <= parseInt(req.body.table31_name); i++) {
       foundUser.mm2022_2023.destytojas.kV5_KT01.push({
         nr: i,
@@ -456,7 +454,7 @@ module.exports = {
         uzsakovas: eval("req.body.kV5_KT01uzsakovas" + i)
       })
     }
-    // 32 lentelė create-2022-2023
+    // 32 lentelė
     for (let i = 1; i <= parseInt(req.body.table321_name); i++) {
       foundUser.mm2022_2023.destytojas.kV5_32.socAtskMaz.push({
         aprasymas: eval("req.body.kV5_32socaprasymas" + i)
@@ -481,7 +479,7 @@ module.exports = {
       foundUser.mm2022_2023.destytojas.kV5_32.savanorystIniciatyv.push({
         aprasymas: eval("req.body.kV5_32savaprasymas" + i)
       })
-    } // 33 lentelė create-2022-2023
+    } // 33 lentelė
     for (let i = 1; i <= parseInt(req.body.table33_name); i++) {
       foundUser.mm2022_2023.destytojas.kV5_33.push({
         nr: i,
@@ -493,7 +491,7 @@ module.exports = {
         laikas: eval("req.body.kV5_33laikas" + i),
         vieta: eval("req.body.kV5_33vieta" + i)
       })
-    } // 34 lentelė create-2022-2023
+    } // 34 lentelė
     for (let i = 1; i <= parseInt(req.body.table34_name); i++) {
       foundUser.mm2022_2023.destytojas.kV5_34.push({
         nr: i,
@@ -511,7 +509,7 @@ module.exports = {
   },
   //third function nr3 (for "submit")
   checkAndUpdateLecReport: function(foundUser, req) {
-    // 1 lentelė 2022-2023
+    // 1 lentelė
     foundUser.mm2022_2023.destytojas.darbovietesTipas = req.body.darbovTipas,
       foundUser.mm2022_2023.destytojas.pareigos = req.body.pareigos,
       foundUser.mm2022_2023.destytojas.pedagogStazas = req.body.pedagogStazas,
