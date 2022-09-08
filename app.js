@@ -29,6 +29,8 @@ const depReport23_24 = require('./assets/departments-report23_24');
 const depReport24_25 = require('./assets/departments-report24_25');
 const depReport25_26 = require('./assets/departments-report25_26');
 
+const lectGetReport = require('./assets/lecturers-get-report');
+
 //---
 const app = express();
 
@@ -147,16 +149,11 @@ app.post("/login", (req, res) => {
         failureRedirect: '/login'
       })(req, res, function() {
         User.findById(req.user.id, function(err, foundUser) {
-
-          if (err) {
-            console.log(err);
-          } else {
+          try {
             var a = req.user.username;
             foundUser.updated_for = "Prisijungimas" + " " + a;
             foundUser.save(function(err) {
-              if (err) {
-                console.log(err);
-              }
+              if (err) throw err;
             });
             if (foundUser.role === "dėstytojas") {
               res.redirect("/user-window-selection");
@@ -165,6 +162,8 @@ app.post("/login", (req, res) => {
             } else if (foundUser.role === "administratorius") {
               res.redirect("/admin/profile");
             }
+          } catch (err) {
+            console.log(err);
           }
         });
       });
@@ -219,23 +218,7 @@ app.get("/admin/history-log", (req, res) => {
 app.get("/2022-2023/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      try {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true) {
-          res.render("create-2022-2023", {
-            user: foundUser
-          });
-        } else {
-          res.render("user-window-2022-2023", {
-            user: foundUser
-          });
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
-
+    lectGetReport.getCreateLecReport22_23(req, res);
   } else {
     res.redirect("/login");
   }
@@ -243,21 +226,7 @@ app.get("/2022-2023/create", function(req, res) {
 app.get("/2023-2024/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true) {
-          res.render("create-2023-2024", {
-            user: foundUser
-          });
-        } else {
-          res.render("user-window-2023-2024", {
-            user: foundUser
-          });
-        }
-      }
-    });
+    lectGetReport.getCreateLecReport23_24(req, res);
   } else {
     res.redirect("/login");
   }
@@ -265,21 +234,7 @@ app.get("/2023-2024/create", function(req, res) {
 app.get("/2024-2025/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true) {
-          res.render("create-2024-2025", {
-            user: foundUser
-          });
-        } else {
-          res.render("user-window-2024-2025", {
-            user: foundUser
-          });
-        }
-      }
-    });
+    lectGetReport.getCreateLecReport24_25(req, res);
   } else {
     res.redirect("/login");
   }
@@ -287,21 +242,7 @@ app.get("/2024-2025/create", function(req, res) {
 app.get("/2025-2026/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true) {
-          res.render("create-2025-2026", {
-            user: foundUser
-          });
-        } else {
-          res.render("user-window-2025-2026", {
-            user: foundUser
-          });
-        }
-      }
-    });
+    lectGetReport.getCreateLecReport25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -407,84 +348,28 @@ app.post("/create-2025-2026", function(req, res) {
 
 app.get("/2022-2023/edit", function(req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true) {
-          res.render("edit-2022-2023", {
-            user: foundUser
-          });
-        } else {
-          res.redirect("/login");
-          console.log("User role unknown");
-        }
-      }
-    });
+    lectGetReport.getUpdateLecReport22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2023-2024/edit", function(req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true) {
-          res.render("edit-2023-2024", {
-            user: foundUser
-          });
-        } else {
-          res.redirect("/login");
-          console.log(foundUser.role);
-        }
-      }
-    });
+  lectGetReport.getUpdateLecReport23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2024-2025/edit", function(req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true) {
-          res.render("edit-2024-2025", {
-            user: foundUser
-          });
-        } else {
-          res.redirect("/login");
-          console.log(foundUser.role);
-        }
-      }
-    });
+  lectGetReport.getUpdateLecReport24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2025-2026/edit", function(req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true) {
-          res.render("edit-2025-2026", {
-            user: foundUser
-          });
-        } else {
-          res.redirect("/login");
-          console.log(foundUser.role);
-        }
-      }
-    });
+  lectGetReport.getUpdateLecReport25_26(req, res);
   } else {
     res.redirect("/login");
   }
