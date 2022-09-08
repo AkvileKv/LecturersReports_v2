@@ -1,5 +1,7 @@
 var express = require('express');
 const User = require('../models/user');
+const Faculty = require('../models/faculty');
+const _ = require("lodash");
 
 module.exports = {
   getCreateLecReport22_23: function(req, res) {
@@ -125,6 +127,94 @@ module.exports = {
         } else {
           res.redirect("/login");
         }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getSubmitLecReport22_23: function(req, res) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      try {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) throw err;
+          res.render("submit-2022-2023", {
+            foundFaculty: foundFaculty,
+            user: foundUser,
+            fakultetasUpper: _.toUpper(foundUser.fakultetas),
+            katedraUpper: _.toUpper(foundUser.katedra),
+            vardasUpper: _.toUpper(foundUser.vardas),
+            pavardeUpper: _.toUpper(foundUser.pavarde)
+          });
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getSubmitLecReport23_24: function(req, res) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      try {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) throw err;
+          res.render("submit-2023-2024", {
+            foundFaculty: foundFaculty,
+            user: foundUser,
+            fakultetasUpper: _.toUpper(foundUser.fakultetas),
+            katedraUpper: _.toUpper(foundUser.katedra),
+            vardasUpper: _.toUpper(foundUser.vardas),
+            pavardeUpper: _.toUpper(foundUser.pavarde)
+          });
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getSubmitLecReport24_25: function(req, res) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      try {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) throw err;
+          res.render("submit-2024-2025", {
+            foundFaculty: foundFaculty,
+            user: foundUser,
+            fakultetasUpper: _.toUpper(foundUser.fakultetas),
+            katedraUpper: _.toUpper(foundUser.katedra),
+            vardasUpper: _.toUpper(foundUser.vardas),
+            pavardeUpper: _.toUpper(foundUser.pavarde)
+          });
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getSubmitLecReport25_26: function(req, res) {
+    User.findById(req.user.id, function(err, foundUser) {
+      let currentUserFaculty = foundUser.fakultetas;
+      try {
+        Faculty.findOne({
+          username: currentUserFaculty
+        }, function(err, foundFaculty) {
+          if (err) throw err;
+          res.render("submit-2025-2026", {
+            foundFaculty: foundFaculty,
+            user: foundUser,
+            fakultetasUpper: _.toUpper(foundUser.fakultetas),
+            katedraUpper: _.toUpper(foundUser.katedra),
+            vardasUpper: _.toUpper(foundUser.vardas),
+            pavardeUpper: _.toUpper(foundUser.pavarde)
+          });
+        });
       } catch (err) {
         console.log(err);
       }
