@@ -219,7 +219,7 @@ app.get("/admin/history-log", (req, res) => {
 app.get("/2022-2023/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    lectGetReport.getCreateLecReport22_23(req, res);
+    lectGetReport.getCreate22_23(req, res);
   } else {
     res.redirect("/login");
   }
@@ -227,7 +227,7 @@ app.get("/2022-2023/create", function(req, res) {
 app.get("/2023-2024/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    lectGetReport.getCreateLecReport23_24(req, res);
+    lectGetReport.getCreate23_24(req, res);
   } else {
     res.redirect("/login");
   }
@@ -235,7 +235,7 @@ app.get("/2023-2024/create", function(req, res) {
 app.get("/2024-2025/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    lectGetReport.getCreateLecReport24_25(req, res);
+    lectGetReport.getCreate24_25(req, res);
   } else {
     res.redirect("/login");
   }
@@ -243,7 +243,7 @@ app.get("/2024-2025/create", function(req, res) {
 app.get("/2025-2026/create", function(req, res) {
 
   if (req.isAuthenticated()) {
-    lectGetReport.getCreateLecReport25_26(req, res);
+    lectGetReport.getCreate25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -349,28 +349,28 @@ app.post("/create-2025-2026", function(req, res) {
 
 app.get("/2022-2023/edit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getUpdateLecReport22_23(req, res);
+    lectGetReport.getUpdate22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2023-2024/edit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getUpdateLecReport23_24(req, res);
+    lectGetReport.getUpdate23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2024-2025/edit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getUpdateLecReport24_25(req, res);
+    lectGetReport.getUpdate24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2025-2026/edit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getUpdateLecReport25_26(req, res);
+    lectGetReport.getUpdate25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -468,28 +468,28 @@ app.post("/update-2025-2026", (req, res) => {
 
 app.get("/2022-2023/submit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getSubmitLecReport22_23(req, res);
+    lectGetReport.getSubmit22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2023-2024/submit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getSubmitLecReport23_24(req, res);
+    lectGetReport.getSubmit23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2024-2025/submit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getSubmitLecReport24_25(req, res);
+    lectGetReport.getSubmit24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2025-2026/submit", function(req, res) {
   if (req.isAuthenticated()) {
-    lectGetReport.getSubmitLecReport25_26(req, res);
+    lectGetReport.getSubmit25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -620,9 +620,7 @@ app.get("/department/2025-2026/create", function(req, res) {
 app.post("/dep-create-2022-2023", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport22_23.updateDepReport(foundUser, req);
         foundUser.mm2022_2023.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
@@ -634,15 +632,15 @@ app.post("/dep-create-2022-2023", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-create-2023-2024", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport23_24.updateDepReport(foundUser, req);
         foundUser.mm2023_2024.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
@@ -655,19 +653,18 @@ app.post("/dep-create-2023-2024", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-create-2024-2025", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport24_25.updateDepReport(foundUser, req);
         foundUser.mm2024_2025.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
-
         foundUser.save(function(err) {
           if (!err) {
             console.log("Succesfully created 2024-2025");
@@ -677,17 +674,17 @@ app.post("/dep-create-2024-2025", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-create-2025-2026", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
-        depReport26_26.updateDepReport(foundUser, req);
+        depReport25_26.updateDepReport(foundUser, req);
         foundUser.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas = dateTime.getFullDateTime();
         foundUser.save(function(err) {
           if (err) throw err;
@@ -697,6 +694,8 @@ app.post("/dep-create-2025-2026", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
@@ -733,9 +732,7 @@ app.get("/department/2025-2026/edit", function(req, res) {
 app.post("/dep-update-2022-2023", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport22_23.clearDepReport(foundUser);
         depReport22_23.updateDepReport(foundUser, req);
@@ -748,15 +745,15 @@ app.post("/dep-update-2022-2023", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-update-2023-2024", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport23_24.clearDepReport(foundUser);
         depReport23_24.updateDepReport(foundUser, req);
@@ -770,15 +767,15 @@ app.post("/dep-update-2023-2024", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-update-2024-2025", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport24_25.clearDepReport(foundUser);
         depReport24_25.updateDepReport(foundUser, req);
@@ -791,15 +788,15 @@ app.post("/dep-update-2024-2025", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-update-2025-2026", (req, res) => {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport25_26.clearDepReport(foundUser);
         depReport25_26.updateDepReport(foundUser, req);
@@ -812,6 +809,8 @@ app.post("/dep-update-2025-2026", (req, res) => {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
@@ -852,9 +851,7 @@ app.get("/department/2025-2026/submit", function(req, res) {
 app.post("/dep-submit-2022-2023", function(req, res) {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport22_23.clearDepReport(foundUser);
         depReport22_23.checkAndUpdateDepReport(foundUser, req);
@@ -869,15 +866,15 @@ app.post("/dep-submit-2022-2023", function(req, res) {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-submit-2023-2024", function(req, res) {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport23_24.clearDepReport(foundUser);
         depReport23_24.checkAndUpdateDepReport(foundUser, req);
@@ -892,15 +889,15 @@ app.post("/dep-submit-2023-2024", function(req, res) {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-submit-2024-2025", function(req, res) {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport24_25.clearDepReport(foundUser);
         depReport24_25.checkAndUpdateDepReport(foundUser, req);
@@ -915,15 +912,15 @@ app.post("/dep-submit-2024-2025", function(req, res) {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
 app.post("/dep-submit-2025-2026", function(req, res) {
 
   User.findById(req.user.id, function(err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
+    try {
       if (foundUser) {
         depReport25_26.clearDepReport(foundUser);
         depReport25_26.checkAndUpdateDepReport(foundUser, req);
@@ -938,6 +935,8 @@ app.post("/dep-submit-2025-2026", function(req, res) {
       } else {
         console.log("User does'f found");
       }
+    } catch (err) {
+      console.log(err);
     }
   });
 });
@@ -966,10 +965,7 @@ app.get("/logout", function(req, res) {
 app.get("/user-window", function(req, res) {
   if (req.isAuthenticated()) {
     User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        //console.log("Error...");
-        console.log(err);
-      } else {
+      try {
         if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
           res.render("user-window", {
             user: foundUser
@@ -979,6 +975,8 @@ app.get("/user-window", function(req, res) {
           console.log("user-window nepraleidžia");
           res.redirect("/login");
         }
+      } catch (err) {
+        console.log(err);
       }
     });
   } else {
@@ -989,9 +987,7 @@ app.post("/update-user", function(req, res) {
   if (req.isAuthenticated()) {
 
     User.findById(req.user.id, function(err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
+      try {
         if (foundUser) {
           foundUser.vardas = req.body.vardas,
             foundUser.pavarde = req.body.pavarde,
@@ -1009,6 +1005,8 @@ app.post("/update-user", function(req, res) {
         } else {
           console.log("User does'f found");
         }
+      } catch (err) {
+        console.log(err);
       }
     });
   } else {

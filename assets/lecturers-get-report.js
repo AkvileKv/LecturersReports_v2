@@ -4,7 +4,7 @@ const Faculty = require('../models/faculty');
 const _ = require("lodash");
 
 module.exports = {
-  getCreateLecReport22_23: function(req, res) {
+  getCreate22_23: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true) {
@@ -21,7 +21,7 @@ module.exports = {
       }
     });
   },
-  getCreateLecReport23_24: function(req, res) {
+  getCreate23_24: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true) {
@@ -38,7 +38,7 @@ module.exports = {
       }
     });
   },
-  getCreateLecReport24_25: function(req, res) {
+  getCreate24_25: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true) {
@@ -55,7 +55,7 @@ module.exports = {
       }
     });
   },
-  getCreateLecReport25_26: function(req, res) {
+  getCreate25_26: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true) {
@@ -72,7 +72,7 @@ module.exports = {
       }
     });
   },
-  getUpdateLecReport22_23: function(req, res) {
+  getUpdate22_23: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear22_23 == true) {
@@ -87,7 +87,7 @@ module.exports = {
       }
     });
   },
-  getUpdateLecReport23_24: function(req, res) {
+  getUpdate23_24: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear23_24 == true) {
@@ -102,7 +102,7 @@ module.exports = {
       }
     });
   },
-  getUpdateLecReport24_25: function(req, res) {
+  getUpdate24_25: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear24_25 == true) {
@@ -117,7 +117,7 @@ module.exports = {
       }
     });
   },
-  getUpdateLecReport25_26: function(req, res) {
+  getUpdate25_26: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       try {
         if (foundUser.role === "dėstytojas" && foundUser.teachingYear25_26 == true) {
@@ -132,7 +132,7 @@ module.exports = {
       }
     });
   },
-  getSubmitLecReport22_23: function(req, res) {
+  getSubmit22_23: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       let currentUserFaculty = foundUser.fakultetas;
       try {
@@ -154,7 +154,7 @@ module.exports = {
       }
     });
   },
-  getSubmitLecReport23_24: function(req, res) {
+  getSubmit23_24: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       let currentUserFaculty = foundUser.fakultetas;
       try {
@@ -176,7 +176,7 @@ module.exports = {
       }
     });
   },
-  getSubmitLecReport24_25: function(req, res) {
+  getSubmit24_25: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       let currentUserFaculty = foundUser.fakultetas;
       try {
@@ -198,7 +198,7 @@ module.exports = {
       }
     });
   },
-  getSubmitLecReport25_26: function(req, res) {
+  getSubmit25_26: function(req, res) {
     User.findById(req.user.id, function(err, foundUser) {
       let currentUserFaculty = foundUser.fakultetas;
       try {
