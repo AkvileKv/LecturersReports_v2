@@ -1,5 +1,4 @@
-function calcTablekTOV4 () {
-    console.log('Hello!');
+function calcTablekTOV4() {
 
         var num21 = document.getElementById("num21").value;
         var num22 = document.getElementById("num22").value;

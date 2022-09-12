@@ -2,17 +2,22 @@
 
 <div class="container">
   <div class="jumbotron">
-    
+
     <h1 class="text-center">Dėstytojo darbo ataskaitos sukūrimas 2022 - 2023 m. m.</h1>
-    
+
     <%if ( user.busena22_23 === "redaguojama" || user.busena22_23 === "užrakinta" || user.busena22_23 === "užrakintaVedėjo") { %>
-    
+
     <p class="lead text-center text-danger">Ataskaitos sukūrimas nėra galimas. Ataskaita yra <%=user.busena22_23%></p>
-    
+
     <% } else { %>
-    
+
+      <button onclick="test()">Click me</button>
+      <p id="demo">d</p>
+
     <form action="/create-2022-2023" method="post">
-      
+
+
+
       <div class="form-group" id="begin">
         <!-- 1 lentelė -->
         <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
@@ -67,12 +72,12 @@
           <div class="col-md-5 mb-3">
             <label for=""><br>Dalykas</label>
             <textarea type="text" class="form-control textarea" rows="1" name="dalykas1" placeholder="" autocomplete="off"></textarea>
-            
+
           </div>
           <div class="col-md-1 mb-3">
             <label for="">Akademinė grupė</label>
             <textarea type="text" class="form-control textarea" rows="1" name="grupe1" placeholder="" autocomplete="off"></textarea>
-            
+
           </div>
           <div class="col-md-1 mb-3">
             <label for=""><br>Semestras</label>
@@ -128,7 +133,7 @@
         <div id="add_to_me011">
         </div>
         <button class="plus-button" type="button" onclick="addTable2()">+</button><br><br>
-        
+
         <div class="form-row">
           <div class="col-md-8 mb-3 text-right">
             <label for="">Iš viso val.</label>
@@ -168,7 +173,7 @@
             <textarea type="text" rows="1" class="form-control textarea" name="kD1_K01priezastys" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-        
+
         <!-- nD2 -->
         <p class="text-center font-weight-bold">2. NEKONTAKTINIS DARBAS</p>
         <div class="form-row">
@@ -254,7 +259,7 @@
             <textarea type="text" rows="1" class="form-control textarea" name="nD2priezastys" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-        
+
         <!--   nD2_M02 -->
         <!-- 3 lentelė. -->
         <div class="form-row">
@@ -370,14 +375,14 @@
           </div>
         </div>
         <div id="add_to_me041">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="m02()">+</button><br><br>
         <p class="text-justify">*<b> V</b> – vadovėliai, <b>MK</b> – mokomosios knygos, <b>ML</b> – kiti metodiniai leidiniai, <b>KM</b> – konferencijų medžiaga ir <b>Kt </b>– kita.
           <br>**<b> H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai,<b> N </b>– Gamtos mokslai,<b> A </b>– Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai, <b>T </b> – Technologijos mokslai.
           <br> *** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-        
+
         <!-- nD2_M04 -->
         <!-- 4 lentelė. -->
         <div class="form-row">
@@ -476,7 +481,7 @@
           </div>
         </div>
         <div id="add_to_me061">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="m04()">+</button><br><br>
         <p class="text-justify">
@@ -511,7 +516,7 @@
           </div>
         </div>
         <div id="add_to_me071">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="d01()">+</button><br><br>
         <!-- nD2_D02 -->
@@ -682,7 +687,7 @@
           </div>
         </div>
         <div id="add_to_me081">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="d02()">+</button><br><br>
         <!-- nD2_D03 -->
@@ -919,12 +924,12 @@
           </div>
         </div>
         <div id="add_to_me091">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="d03()">+</button><br><br>
         <p class="text-justify">* Parengta vertinimui (PV, numatomas vertinimo terminas)
           / Aktedituota (A, terminas iki kada, SKVC įsak. Nr. ir data).</p>
-        
+
         <!-- nD2_M03 -->
         <!-- 8 lentelė -->
         <div class="form-row">
@@ -1018,7 +1023,7 @@
         <div id="add_to_me051">
         </div>
         <button class="plus-button" type="button" onclick="m03()">+</button><br><br>
-        
+
         <!-- nD2_S01 -->
         <!-- 9 lentelė.  -->
         <div class="form-row">
@@ -1046,7 +1051,7 @@
           </div>
         </div>
         <div id="add_to_me101">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="s01()">+</button><br><br>
         <!-- nD2_S -->
@@ -1070,7 +1075,7 @@
           </div>
         </div>
         <div id="add_to_me111">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="s01_2()">+</button><br><br>
         <!-- tMTEP3 -->
@@ -1176,7 +1181,7 @@
           <div class="form-row">
           </div>
           <div class="col-md-1 mb-3">
-            
+
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Tyrimų grupė**</label>
@@ -1268,7 +1273,7 @@
           </div>
         </div>
         <div id="add_to_me121">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t01()">+</button><br><br>
         <p class="text-justify">* Jeigu tyrimas užsakomasis, nurodykite užsakovą. Jei tyrimas yra sudėtinė projekto dalis, nurodykite projekto pavadinimą.
@@ -1281,7 +1286,7 @@
           <br>**** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">
             https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-        
+
         <!-- TMTEP3_T02 -->
         <!-- 11 lentelė -->
         <p class="font-weight-bold">
@@ -1454,10 +1459,10 @@
           </div>
         </div>
         <div id="add_to_me131">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t02()">+</button><br><br>
-        
+
         <p>* <b>H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
           <b>T</b> – Technologijos mokslai.
           <br>** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
@@ -1489,7 +1494,7 @@
           </div>
         </div>
         <div id="add_to_me141">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t03()">+</button><br><br>
         <p>* Seminaras, konferencija, kt.<br>
@@ -1525,19 +1530,19 @@
             <!-- <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04atlygArNe1" placeholder="" autocomplete="off"></textarea> -->
           </div>
           <div class="col-md-1 mb-3">
-            
+
             <input type="text" class="form-control text-center" name="tMTEP3_T04nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04uzsakovas2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04tema2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T04data2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
@@ -1549,7 +1554,7 @@
           </div>
         </div>
         <div id="add_to_me151">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t04()">+</button><br><br>
         <p class="font-weight-bold">14.1.-14.3. lentelės. Ekspertinė veikla</p>
@@ -1598,7 +1603,7 @@
           </div>
         </div>
         <div id="add_to_me161">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t05()">+</button><br><br>
         <!-- 14.2. -->
@@ -1629,7 +1634,7 @@
           </div>
         </div>
         <div id="add_to_meN011">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="n142()">+</button><br><br>
         <!-- 14.3. -->
@@ -1659,10 +1664,10 @@
           </div>
         </div>
         <div id="add_to_meN021">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="n143()">+</button><br><br>
-        
+
         <!-- TMTEP3_T06 -->
         <!-- 15 lentelė.  -->
         <p class="font-weight-bold">
@@ -1712,7 +1717,7 @@
           </div>
         </div>
         <div id="add_to_me171">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t06()">+</button><br><br>
         <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai. Nuoroda:
@@ -1720,7 +1725,7 @@
           <br>
           <b>PASTABA</b> : pridedami kūrėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos autorių pavardės</i>)
         </p>
-        
+
         <!-- TMTEP3_T07 -->
         <!-- 16 lentelė.  -->
         <p class="font-weight-bold">
@@ -1765,13 +1770,13 @@
           </div>
         </div>
         <div id="add_to_me181">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t07()">+</button><br><br>
         <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
-        
+
         <!-- TMTEP3_T08 -->
         <!-- 17 lentelė.  -->
         <p class="font-weight-bold">
@@ -1816,13 +1821,13 @@
           </div>
         </div>
         <div id="add_to_me191">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t08()">+</button><br><br>
         <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
-        
+
         <!-- TMTEP3_T09 -->
         <!-- 18 lentelė.  -->
         <p class="font-weight-bold">
@@ -1865,15 +1870,15 @@
             </select>
           </div>
         </div>
-        
+
         <div id="add_to_me201">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t09()">+</button><br><br>
         <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
-        
+
         <!-- TMTEP3_T10 -->
         <!-- 19 lentelė.  -->
         <p class="font-weight-bold">
@@ -1923,7 +1928,7 @@
           </div>
         </div>
         <div id="add_to_me211">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t10()">+</button><br><br>
         <!-- TMTEP3_T11 -->
@@ -1975,7 +1980,7 @@
           </div>
         </div>
         <div id="add_to_me221">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t11()">+</button><br><br>
         <!-- TMTEP3_T12 -->
@@ -1985,7 +1990,7 @@
           dalyvavimas radijo ir televizijos laidose, dalyvavimas viešose konferencijose,
           diskusijose, populiarinimui skirtų leidinių rengimas ir skelbimas ir kt.)
         </p>
-        
+
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br>
@@ -2003,20 +2008,20 @@
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T12dataVieta1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            
+
             <input type="text" class="form-control text-center" name="tMTEP3_T12nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-8 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control" name="tMTEP3_T12veiklPobud2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T12dataVieta2" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me231">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t12()">+</button><br><br>
         <!-- TMTEP3_T13 -->
@@ -2051,30 +2056,30 @@
             </label>
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T13data1" placeholder="" autocomplete="off"></textarea>
           </div>
-          
+
           <div class="col-md-1 mb-3">
-            
+
             <input type="text" class="form-control text-center" name="tMTEP3_T13nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T13studDuom2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T13renginioPavad2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T13rezultatas2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T13data2" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me241">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t13()">+</button><br><br>
         <!-- TMTEP3_T14 -->
@@ -2107,24 +2112,24 @@
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T14dataVieta1" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            
+
             <input type="text" class="form-control text-center" name="tMTEP3_T14nr2" placeholder="" autocomplete="off" value="2" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T14renginys2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-4 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T14veiklPobud2" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
-            
+
             <textarea type="text" rows="1" class="form-control " name="tMTEP3_T14dataVieta2" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
         <div id="add_to_me251">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t14()">+</button><br><br>
         <!-- TMTEP3_S -->
@@ -2153,10 +2158,10 @@
           </div>
         </div>
         <div id="add_to_me261">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="t15()">+</button><br><br>
-        
+
         <!-- kTOV4 -->
         <p class="text-center font-weight-bold">4. KOMPETENCIJŲ TOBULINIMAS IR ORGANIZACINĖ VEIKLA</p>
         <div class="form-row">
@@ -2164,7 +2169,7 @@
             <label for=""> </label>
           </div>
           <div class="col-md-4 mb-3">
-            
+
           </div>
           <div class="col-md-2 mb-3 text-center">
             <label class="text-center" for="">Valandų skaičius</label>
@@ -2174,14 +2179,14 @@
           <div class="col-md-8 mb-3">
             <label for=""> </label>
           </div>
-          
+
           <div class="col-md-2 mb-3">
             <label for="">Planuota</label>
-            
+
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Atlikta</label>
-            
+
           </div>
         </div>
         <div class="form-row">
@@ -2217,16 +2222,16 @@
             <input type="number" id="atlikta3" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
-        
+
         <p style="text-align: left;"><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos kompetencijų tobulinimo ir orgnizacinės veiklos valandos:</b></p>
         <div class="form-row">
           <div class="col-md-12 mb-3 text-right">
             <textarea type="text" rows="1" class="form-control " name="kTOV4priezastys" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-        
+
         <!-- kTOV4_KV01 -->
-        
+
         <!-- KV01-->
         <!-- 24 lentelė.  -->
         <p class="font-weight-bold">
@@ -2304,7 +2309,7 @@
           </div>
         </div>
         <div id="add_to_meN031">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="mokymo()">+</button><br><br>
         <!-- 24 lentelė 2-->
@@ -2369,7 +2374,7 @@
           </div>
         </div>
         <div id="add_to_meN041">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="tyrimu()">+</button><br><br>
         <!-- 24 lentelė 3-->
@@ -2434,7 +2439,7 @@
           </div>
         </div>
         <div id="add_to_meN051">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="bendrosios()">+</button><br><br>
         <!-- 24 lentelė 4-->
@@ -2499,7 +2504,7 @@
           </div>
         </div>
         <div id="add_to_meN061">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="dalykines()">+</button><br><br>
         <div class="form-row">
@@ -2572,7 +2577,7 @@
           </div>
         </div>
         <div id="add_to_meN071">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="kTOV4_25()">+</button><br><br>
         <p>* Mokymo (si), tyrimų, bendrosios, dalykinės.
@@ -2632,7 +2637,7 @@
           </div>
         </div>
         <div id="add_to_meN081">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="kTOV4_26()">+</button><br><br>
         <p>* Mokymo (si), tyrimų, bendrosios, dalykinės.</p>
@@ -2962,12 +2967,12 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_KV03dalykas2" autocomplete="off"></textarea>
           </div>
         </div>
-        
+
         <div id="add_to_me271">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="kv03()">+</button><br><br>
-        
+
         <!--kTOV4_O01-->
         <p class="font-weight-bold">
           28.1.-28.2. lentelės. Organizacinė veikla
@@ -2979,7 +2984,7 @@
           grupėse; vadovavimas studentų mokslinei draugijai, mokslo dirbtuvėms ir kt. ; studentų
           grupių kuravimas
         </p>
-        
+
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
@@ -3004,10 +3009,10 @@
           </div>
         </div>
         <div id="add_to_me281">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="o01()">+</button><br><br>
-        
+
         <!-- kTOV4_O01_2 -->
         <!-- 28.2. lentelė.  -->
         <p class="font-weight-bold">
@@ -3090,7 +3095,7 @@
           vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
           karjeros planavimo veiklose, diskusijose ir pan. <br>
           ** <b>ŠV</b> – Mokslo ir švietimo institucijomis, <b>SP</b> – Regioninėmis valdymo struktūromis, socialiniu partnerių organizacijomis, <b>D</b> – Darbdaviais.</p>
-        
+
         <!-- kTOV4_S -->
         <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
         <div class="form-row">
@@ -3117,11 +3122,11 @@
           </div>
         </div>
         <div id="add_to_me301">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="o01_3()">+</button><br><br>
         <p style="text-align: center;"><b>5. KITOS VEIKLOS</b></p>
-        
+
         <!-- kV5_KT02 -->
         <!-- 30 lentelė. -->
         <p class="font-weight-bold">30 lentelė. Baigiamieji darbai verslumo ir (ar) socialinės atsakomybės, darnios plėtros tematika</p>
@@ -3579,11 +3584,11 @@
           </div>
         </div>
         <div id="add_to_me321">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="kt02()">+</button><br><br>
         <p>* <b>V</b> – verslumo tematika; <b>SA/DP</b> – socialinės atsakomybės, darnios plėtros tematika</p>
-        
+
         <!-- kV5_KT01 -->
         <!-- 31 lentelė. -->
         <p class="font-weight-bold">31 lentelė. Baigiamieji darbai (užsakomieji darbai),
@@ -3823,17 +3828,17 @@
           </div>
         </div>
         <div id="add_to_me311">
-          
+
         </div>
         <button class="plus-button" type="button" onclick="kt01()">+</button><br><br>
-        
+
         <p class="text-center"><b>Į socialinę atsakomybę ir inovacijas orientuotos veiklos su Vilniaus miesto savivaldybe ir visuomeninėmis organizacijomis.</b><i> (32 lentelė)</i></p>
         <!-- kV5_32 -->
         <!-- 32 lentelė.  -->
         <p class="font-weight-bold">
           32 lentelė. Socialinės atsakomybės ir darnios plėtros veiklos / iniciatyvos
         </p>
-        
+
         <table style="width:100%">
           <tr>
             <td style="width: 25%;">Veiklų / iniciatyvų tipas</td>
@@ -3956,7 +3961,7 @@
         <div id="add_to_meN141">
         </div>
         <button class="plus-button" type="button" onclick="kTOV4_32sav()">+</button><br><br>
-        
+
         <!-- kV5_33 -->
         <!-- 33 lentelė.  -->
         <p class="font-weight-bold">
@@ -4049,16 +4054,16 @@
         <div id="add_to_meN161">
         </div>
         <button class="plus-button" type="button" onclick="kV5_34()">+</button>
-        
+
         <p class="font-weight-bold"><br><br>Kita informacija:</p>
         <div class="form-row">
           <div class="col-md-12 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kV5_kitaInfo" autocomplete="off"></textarea>
           </div>
         </div>
-        
+
         <input type="text" name="ataskaitos_busena" value="redaguojama" hidden>
-        
+
         <!-- save iteration number -->
         <!-- pridedamiems mygtukams -->
         <input type="hidden" id="table2_id" name="table2_name" value="2">
@@ -4107,14 +4112,14 @@
         <input type="hidden" id="table325_id" name="table325_name" value="3">
         <input type="hidden" id="table33_id" name="table33_name" value="1">
         <input type="hidden" id="table34_id" name="table34_name" value="1">
-        
+
         <!-- padaryti, kad nerodytu paspaudus issaugoti -->
         <script>
           window.onbeforeunload = function() {
             return "";
           };
         </script>
-        
+
       </div>
       <%- %>
       <div class="row">
@@ -4122,11 +4127,11 @@
           <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti?');">IŠSAUGOTI</button>
         </div>
       </div>
-      
+
     </form>
     <% } %>
-    
-    
+
+
   </div>
 </div>
 
@@ -4145,7 +4150,7 @@
   var value1 = 3;
   var div = 1;
   var asd = "add_to_me01";
-  
+
   function addTable2() {
     var bendr = asd + div;
     div++;
@@ -4190,7 +4195,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4203,7 +4208,7 @@
   var value4 = 2;
   var div4 = 1;
   var asd4 = "add_to_me04";
-  
+
   function m02() {
     var bendr4 = asd4 + div4;
     div4++;
@@ -4324,7 +4329,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4337,7 +4342,7 @@
   var value6 = 2;
   var div6 = 1;
   var asd6 = "add_to_me06";
-  
+
   function m04() {
     var bendr6 = asd6 + div6;
     div6++;
@@ -4437,7 +4442,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4450,7 +4455,7 @@
   var value7 = 2;
   var div7 = 1;
   var asd7 = "add_to_me07";
-  
+
   function d01() {
     var bendr7 = asd7 + div7;
     div7++;
@@ -4479,7 +4484,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4492,7 +4497,7 @@
   var value8 = 2;
   var div8 = 1;
   var asd8 = "add_to_me08";
-  
+
   function d02() {
     var bendr8 = asd8 + div8;
     div8++;
@@ -4663,7 +4668,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4676,7 +4681,7 @@
   var value9 = 2;
   var div9 = 1;
   var asd9 = "add_to_me09";
-  
+
   function d03() {
     var bendr9 = asd9 + div9;
     div9++;
@@ -4912,7 +4917,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -4925,7 +4930,7 @@
   var value5 = 2;
   var div5 = 1;
   var asd5 = "add_to_me05";
-  
+
   function m03() {
     var bendr5 = asd5 + div5;
     div5++;
@@ -5016,7 +5021,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5029,7 +5034,7 @@
   var value10 = 2;
   var div10 = 1;
   var asd10 = "add_to_me10";
-  
+
   function s01() {
     var bendr10 = asd10 + div10;
     div10++;
@@ -5055,7 +5060,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5067,7 +5072,7 @@
   var value11 = 2;
   var div11 = 1;
   var asd11 = "add_to_me11";
-  
+
   function s01_2() {
     var bendr11 = asd11 + div11;
     div11++;
@@ -5093,7 +5098,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5106,7 +5111,7 @@
   var value12 = 2;
   var div12 = 1;
   var asd12 = "add_to_me12";
-  
+
   function t01() {
     var bendr12 = asd12 + div12;
     div12++;
@@ -5224,7 +5229,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5237,7 +5242,7 @@
   var value13 = 2;
   var div13 = 1;
   var asd13 = "add_to_me13";
-  
+
   function t02() {
     var bendr13 = asd13 + div13;
     div13++;
@@ -5368,7 +5373,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5381,7 +5386,7 @@
   var value14 = 3;
   var div14 = 1;
   var asd14 = "add_to_me14";
-  
+
   function t03() {
     var bendr14 = asd14 + div14;
     div14++;
@@ -5407,7 +5412,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5420,7 +5425,7 @@
   var value15 = 3;
   var div15 = 1;
   var asd15 = "add_to_me15";
-  
+
   function t04() {
     var bendr15 = asd15 + div15;
     div15++;
@@ -5458,7 +5463,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5471,7 +5476,7 @@
   var value16 = 3;
   var div16 = 1;
   var asd16 = "add_to_me16";
-  
+
   function t05() {
     var bendr16 = asd16 + div16;
     div16++;
@@ -5504,7 +5509,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5517,7 +5522,7 @@
   var value57 = 3;
   var div57 = 1;
   var asd57 = "add_to_meN01";
-  
+
   function n142() {
     var bendr57 = asd57 + div57;
     div57++;
@@ -5544,7 +5549,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5557,7 +5562,7 @@
   var value58 = 3;
   var div58 = 1;
   var asd58 = "add_to_meN02";
-  
+
   function n143() {
     var bendr58 = asd58 + div58;
     div58++;
@@ -5584,7 +5589,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5597,7 +5602,7 @@
   var value17 = 2;
   var div17 = 1;
   var asd17 = "add_to_me17";
-  
+
   function t06() {
     var bendr17 = asd17 + div17;
     div17++;
@@ -5657,7 +5662,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5670,7 +5675,7 @@
   var value18 = 2;
   var div18 = 1;
   var asd18 = "add_to_me18";
-  
+
   function t07() {
     var bendr18 = asd18 + div18;
     div18++;
@@ -5719,7 +5724,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5732,7 +5737,7 @@
   var value19 = 2;
   var div19 = 1;
   var asd19 = "add_to_me19";
-  
+
   function t08() {
     var bendr19 = asd19 + div19;
     div19++;
@@ -5781,7 +5786,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5794,7 +5799,7 @@
   var value20 = 2;
   var div20 = 1;
   var asd20 = "add_to_me20";
-  
+
   function t09() {
     var bendr20 = asd20 + div20;
     div20++;
@@ -5843,7 +5848,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5856,7 +5861,7 @@
   var value21 = 2;
   var div21 = 1;
   var asd21 = "add_to_me21";
-  
+
   function t10() {
     var bendr21 = asd21 + div21;
     div21++;
@@ -5914,7 +5919,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5927,7 +5932,7 @@
   var value22 = 2;
   var div22 = 1;
   var asd22 = "add_to_me22";
-  
+
   function t11() {
     var bendr22 = asd22 + div22;
     div22++;
@@ -5985,7 +5990,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -5998,7 +6003,7 @@
   var value23 = 3;
   var div23 = 1;
   var asd23 = "add_to_me23";
-  
+
   function t12() {
     var bendr23 = asd23 + div23;
     div23++;
@@ -6027,7 +6032,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6040,7 +6045,7 @@
   var value24 = 3;
   var div24 = 1;
   var asd24 = "add_to_me24";
-  
+
   function t13() {
     var bendr24 = asd24 + div24;
     div24++;
@@ -6078,7 +6083,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6091,7 +6096,7 @@
   var value25 = 3;
   var div25 = 1;
   var asd25 = "add_to_me25";
-  
+
   function t14() {
     var bendr25 = asd25 + div25;
     div25++;
@@ -6125,7 +6130,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6137,7 +6142,7 @@
   var value26 = 3;
   var div26 = 1;
   var asd26 = "add_to_me26";
-  
+
   function t15() {
     var bendr26 = asd26 + div26;
     div26++;
@@ -6163,7 +6168,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6177,7 +6182,7 @@
   var value59 = 5;
   var div59 = 1;
   var asd59 = "add_to_meN03";
-  
+
   function mokymo() {
     var bendr59 = asd59 + div59;
     div59++;
@@ -6209,7 +6214,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6223,7 +6228,7 @@
   var value60 = 5;
   var div60 = 1;
   var asd60 = "add_to_meN04";
-  
+
   function tyrimu() {
     var bendr60 = asd60 + div60;
     div60++;
@@ -6255,7 +6260,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6269,7 +6274,7 @@
   var value61 = 5;
   var div61 = 1;
   var asd61 = "add_to_meN05";
-  
+
   function bendrosios() {
     var bendr61 = asd61 + div61;
     div61++;
@@ -6301,7 +6306,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6315,7 +6320,7 @@
   var value62 = 5;
   var div62 = 1;
   var asd62 = "add_to_meN06";
-  
+
   function dalykines() {
     var bendr62 = asd62 + div62;
     div62++;
@@ -6347,7 +6352,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6360,7 +6365,7 @@
   var value63 = 3;
   var div63 = 1;
   var asd63 = "add_to_meN07";
-  
+
   function kTOV4_25() {
     var bendr63 = asd63 + div63;
     div63++;
@@ -6401,7 +6406,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6414,7 +6419,7 @@
   var value64 = 3;
   var div64 = 1;
   var asd64 = "add_to_meN08";
-  
+
   function kTOV4_26() {
     var bendr64 = asd64 + div64;
     div64++;
@@ -6453,7 +6458,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6466,7 +6471,7 @@
   var value27 = 3;
   var div27 = 1;
   var asd27 = "add_to_me27";
-  
+
   function kv03() {
     var bendr27 = asd27 + div27;
     div27++;
@@ -6640,7 +6645,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6653,7 +6658,7 @@
   var value28 = 3;
   var div28 = 1;
   var asd28 = "add_to_me28";
-  
+
   function o01() {
     var bendr28 = asd28 + div28;
     div28++;
@@ -6680,7 +6685,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6693,7 +6698,7 @@
   var value29 = 2;
   var div29 = 1;
   var asd29 = "add_to_me29";
-  
+
   function o01_2() {
     var bendr29 = asd29 + div29;
     div29++;
@@ -6736,7 +6741,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6748,7 +6753,7 @@
   var value30 = 3;
   var div30 = 1;
   var asd30 = "add_to_me30";
-  
+
   function o01_3() {
     var bendr30 = asd30 + div30;
     div30++;
@@ -6775,7 +6780,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6788,7 +6793,7 @@
   var value65 = 3;
   var div65 = 1;
   var asd65 = "add_to_meN09";
-  
+
   function kTOV4_29() {
     var bendr65 = asd65 + div65;
     div65++;
@@ -6820,7 +6825,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -6833,7 +6838,7 @@
   var value32 = 3;
   var div32 = 1;
   var asd32 = "add_to_me32";
-  
+
   function kt02() {
     var bendr32 = asd32 + div32;
     div32++;
@@ -7073,7 +7078,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7086,7 +7091,7 @@
   var value31 = 2;
   var div31 = 1;
   var asd31 = "add_to_me31";
-  
+
   function kt01() {
     var bendr31 = asd31 + div31;
     div31++;
@@ -7336,7 +7341,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7348,7 +7353,7 @@
   var value66 = 4;
   var div66 = 1;
   var asd66 = "add_to_meN10";
-  
+
   function kTOV4_32soc() {
     var bendr66 = asd66 + div66;
     div66++;
@@ -7371,7 +7376,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7383,7 +7388,7 @@
   var value67 = 4;
   var div67 = 1;
   var asd67 = "add_to_meN11";
-  
+
   function kTOV4_32apl() {
     var bendr67 = asd67 + div67;
     div67++;
@@ -7406,7 +7411,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7418,7 +7423,7 @@
   var value68 = 4;
   var div68 = 1;
   var asd68 = "add_to_meN12";
-  
+
   function kTOV4_32vals() {
     var bendr68 = asd68 + div68;
     div68++;
@@ -7441,7 +7446,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7453,7 +7458,7 @@
   var value69 = 4;
   var div69 = 1;
   var asd69 = "add_to_meN13";
-  
+
   function kTOV4_32etno() {
     var bendr69 = asd69 + div69;
     div69++;
@@ -7476,7 +7481,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7488,7 +7493,7 @@
   var value70 = 4;
   var div70 = 1;
   var asd70 = "add_to_meN14";
-  
+
   function kTOV4_32sav() {
     var bendr70 = asd70 + div70;
     div70++;
@@ -7511,7 +7516,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7524,7 +7529,7 @@
   var value71 = 2;
   var div71 = 1;
   var asd71 = "add_to_meN15";
-  
+
   function kTOV4_33() {
     var bendr71 = asd71 + div71;
     div71++;
@@ -7581,7 +7586,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7594,7 +7599,7 @@
   var value72 = 2;
   var div72 = 1;
   var asd72 = "add_to_meN16";
-  
+
   function kV5_34() {
     var bendr72 = asd72 + div72;
     div72++;
@@ -7644,7 +7649,7 @@
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-    
+
     function OnInput(e) {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
@@ -7659,7 +7664,7 @@
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
     tx[i].addEventListener("input", OnInput, false);
   }
-  
+
   function OnInput(e) {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
@@ -7672,30 +7677,30 @@
 <!-- 2 table -->
 <script type="text/javascript">
   function calcTable2() {
-    
+
     var srautaisPlanValString = document.getElementById("srautaisPlan").value;
     var srautaisAtlValString = document.getElementById("srautaisAtl").value;
     var uzsienioPlanValString = document.getElementById("uzsienioPlan").value;
     var uzsienioAtlValString = document.getElementById("uzsienioAtl").value;
-    
+
     //convert from string to float
     var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
     var srautaisAtlValSk = parseFloat(srautaisAtlValString) || 0;
     var uzsienioPlanValSk = parseFloat(uzsienioPlanValString) || 0;
     var uzsienioAtlValSk = parseFloat(uzsienioAtlValString) || 0;
-    
+
     var visoPlanSuma = srautaisPlanValSk + uzsienioPlanValSk;
     var visoAtlSuma = srautaisAtlValSk + uzsienioAtlValSk;
-    
+
     var planuotaVal = 0;
     var atliktaVal = 0;
     var planuota = "plan";
     var atlikta = "atl";
-    
+
     for (let zx = 1; zx <= value1 - 1; zx++) {
       var bendras = planuota + zx;
       var bendras2 = atlikta + zx;
-      
+
       var bendrPlanString = document.getElementById(bendras).value;
       var bendrAtlString = document.getElementById(bendras2).value;
       var bendrPlanSk = parseFloat(bendrPlanString) || 0;
@@ -7705,7 +7710,7 @@
     }
     document.getElementById("planuota4").value = planuotaVal;
     document.getElementById("atlikta4").value = atliktaVal;
-    
+
     if (visoPlanSuma == planuotaVal) {
       document.getElementById("srautaisPlan").style.color = "black";
       document.getElementById("uzsienioPlan").style.color = "black";
@@ -7713,7 +7718,7 @@
       document.getElementById("srautaisPlan").style.color = "red";
       document.getElementById("uzsienioPlan").style.color = "red";
     }
-    
+
     if (visoAtlSuma == atliktaVal) {
       document.getElementById("srautaisAtl").style.color = "black";
       document.getElementById("uzsienioAtl").style.color = "black";
@@ -7726,7 +7731,7 @@
 <!-- nD2 -->
 <script type="text/javascript">
   function calcTablenD2() {
-    
+
     var num1 = document.getElementById("num1").value;
     var num2 = document.getElementById("num2").value;
     var num3 = document.getElementById("num3").value;
@@ -7737,7 +7742,7 @@
     var num8 = document.getElementById("num8").value;
     var num9 = document.getElementById("num9").value;
     var num10 = document.getElementById("num10").value;
-    
+
     var num01 = parseFloat(num1) || 0;
     var num02 = parseFloat(num2) || 0;
     var num03 = parseFloat(num3) || 0;
@@ -7748,10 +7753,10 @@
     var num08 = parseFloat(num8) || 0;
     var num09 = parseFloat(num9) || 0;
     var num010 = parseFloat(num10) || 0;
-    
+
     var planuotanum = num01 + num02 + num03 + num04 + num05;
     var atliktanum = num06 + num07 + num08 + num09 + num010;
-    
+
     document.getElementById("planuota").value = planuotanum;
     document.getElementById("atlikta").value = atliktanum;
   }
@@ -7759,7 +7764,7 @@
 <!-- tMTEP3 -->
 <script type="text/javascript">
   function calcTabletMTEP3() {
-    
+
     var num11 = document.getElementById("num11").value;
     var num12 = document.getElementById("num12").value;
     var num13 = document.getElementById("num13").value;
@@ -7770,7 +7775,7 @@
     var num18 = document.getElementById("num18").value;
     var num19 = document.getElementById("num19").value;
     var num20 = document.getElementById("num20").value;
-    
+
     var num011 = parseFloat(num11) || 0;
     var num012 = parseFloat(num12) || 0;
     var num013 = parseFloat(num13) || 0;
@@ -7781,67 +7786,67 @@
     var num018 = parseFloat(num18) || 0;
     var num019 = parseFloat(num19) || 0;
     var num020 = parseFloat(num20) || 0;
-    
+
     var planuotanum2 = num011 + num012 + num013 + num014 + num015;
     var atliktanum2 = num016 + num017 + num018 + num019 + num020;
-    
+
     document.getElementById("planuota2").value = planuotanum2;
     document.getElementById("atlikta2").value = atliktanum2;
   }
 </script>
 <!-- kTOV4 -->
-<script type="text/javascript">
-    
+<!-- <script type="text/javascript">
+
   function calcTablekTOV4() {
-    
+
     var num21 = document.getElementById("num21").value;
     var num22 = document.getElementById("num22").value;
     var num23 = document.getElementById("num23").value;
     var num24 = document.getElementById("num24").value;
-    
+
     var num021 = parseFloat(num21) || 0;
     var num022 = parseFloat(num22) || 0;
     var num023 = parseFloat(num23) || 0;
     var num024 = parseFloat(num24) || 0;
-    
+
     var planuotanum3 = num021 + num022;
     var atliktanum3 = num023 + num024;
-    
+
     document.getElementById("planuota3").value = planuotanum3;
     document.getElementById("atlikta3").value = atliktanum3;
   }
-</script>
+</script> -->
 
 <!-- kTOV4_KV01 -->
 <!-- 24 table -->
 <script>
   function calc24() {
-    
+
     var trukmeLTnum24_1 = 0;
     var trukmeNeLTnum24_1 = 0;
     var trukmLT1 = "trukmLT1_";
     var trukmNeLT1 = "trukmNeLT1_";
-    
+
     var trukmeLTnum24_2 = 0;
     var trukmeNeLTnum24_2 = 0;
     var trukmLT2 = "trukmLT2_";
     var trukmNeLT2 = "trukmNeLT2_";
-    
+
     var trukmeLTnum24_3 = 0;
     var trukmeNeLTnum24_3 = 0;
     var trukmLT3 = "trukmLT3_";
     var trukmNeLT3 = "trukmNeLT3_";
-    
+
     var trukmeLTnum24_4 = 0;
     var trukmeNeLTnum24_4 = 0;
     var trukmLT4 = "trukmLT4_";
     var trukmNeLT4 = "trukmNeLT4_";
-    
+
     // 1 table
     for (let zx = 1; zx <= value59 - 1; zx++) {
       var bendrasLT_1 = trukmLT1 + zx;
       var bendrasNeLT_1 = trukmNeLT1 + zx;
-      
+
       var num00 = document.getElementById(bendrasLT_1).value;
       var num01 = document.getElementById(bendrasNeLT_1).value;
       var num000 = parseFloat(num00) || 0;
@@ -7853,7 +7858,7 @@
     for (let zx = 1; zx <= value60 - 1; zx++) {
       var bendrasLT_2 = trukmLT2 + zx;
       var bendrasNeLT_2 = trukmNeLT2 + zx;
-      
+
       var num00 = document.getElementById(bendrasLT_2).value;
       var num01 = document.getElementById(bendrasNeLT_2).value;
       var num000 = parseFloat(num00) || 0;
@@ -7865,7 +7870,7 @@
     for (let zx = 1; zx <= value61 - 1; zx++) {
       var bendrasLT_3 = trukmLT3 + zx;
       var bendrasNeLT_3 = trukmNeLT3 + zx;
-      
+
       var num00 = document.getElementById(bendrasLT_3).value;
       var num01 = document.getElementById(bendrasNeLT_3).value;
       var num000 = parseFloat(num00) || 0;
@@ -7877,7 +7882,7 @@
     for (let zx = 1; zx <= value62 - 1; zx++) {
       var bendrasLT_4 = trukmLT4 + zx;
       var bendrasNeLT_4 = trukmNeLT4 + zx;
-      
+
       var num00 = document.getElementById(bendrasLT_4).value;
       var num01 = document.getElementById(bendrasNeLT_4).value;
       var num000 = parseFloat(num00) || 0;
@@ -7885,10 +7890,10 @@
       trukmeLTnum24_4 = trukmeLTnum24_4 + num000;
       trukmeNeLTnum24_4 = trukmeNeLTnum24_4 + num001;
     }
-    
+
     var isVisoTrukmeLT24 = trukmeLTnum24_1 + trukmeLTnum24_2 + trukmeLTnum24_3 + trukmeLTnum24_4;
     var isVisotrukmeNeLT24 = trukmeNeLTnum24_1 + trukmeNeLTnum24_2 + trukmeNeLTnum24_3 + trukmeNeLTnum24_4;
-    
+
     document.getElementById("isVisoTrukmeValLT24").value = isVisoTrukmeLT24; //isveda i is viso langeli pagal ID
     document.getElementById("isVisoTrukmeValNeLT24").value = isVisotrukmeNeLT24;
   }

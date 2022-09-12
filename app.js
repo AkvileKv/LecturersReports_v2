@@ -39,6 +39,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 app.use(express.static("models"));
+app.use(express.static("assets"));
 
 app.use("/", homeRouter);
 app.use("/register", registerRouter);
