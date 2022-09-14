@@ -1,11 +1,12 @@
+// kD1_K01
+// 2 table
 
+  function addTable2() {
 
-function addTable2() {
     var value1 = 3;
     var div = 1;
     var asd = "add_to_me01";
-
-
+    
     var bendr = asd + div;
     div++;
     document.getElementById(bendr).innerHTML +=
@@ -44,11 +45,14 @@ function addTable2() {
     // Kiekviename eilutės pridėjimo scripte aprašyta eilutė, kuri nusiunčia skaičių į hidden:
     document.getElementById("table2_id").value = value1;
     value1++;
-    
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
       tx[i].addEventListener("input", OnInput, false);
     }
-  }
 
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }

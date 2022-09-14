@@ -1848,7 +1848,7 @@
         <!-- Mokymo(si)_komp -->
         <div <%if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi === null) { %> class="noprint" <% } %>>
           <% var new3 = 0; %>
-          <%  user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
+          <% user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.mokymosi.forEach(function(user){ %>
           <% new3++ %>
           <% if (new3==1) {%>
           <div class="form-row">
@@ -2496,7 +2496,7 @@
         </div>
 
         <!-- kV5_32 -->
-        <!-- 32 lentelė.  -->
+        <!-- 32 lentelė. -->
         <div <%if (user.mm2022_2023.destytojas.kV5_32.socAtskMaz.length === 0 &&
           user.mm2022_2023.destytojas.kV5_32.aplinkosaugInic.length === 0 &&
           user.mm2022_2023.destytojas.kV5_32.lietValstybPuosel.length === 0 &&
