@@ -64,10 +64,10 @@
             <div class="col-md-1 mb-3">
               <label><br></label>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-5 mb-3">
               <label>Dalykas</label>
             </div>
-            <div class="col-md-2 mb-3">
+            <div class="col-md-1 mb-3">
               <label>Akademinė grupė</label>
             </div>
             <div class="col-md-1 mb-3">
@@ -87,10 +87,10 @@
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center " rows="1" name="nr<%=numb%>" placeholder="" autocomplete="off" value="<%=numb%>" readonly="readonly">
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-5 mb-3">
               <textarea type="text" class="form-control textarea" rows="1" name="dalykas<%=numb%>" placeholder="" autocomplete="off"><%=user.dalykas%></textarea>
             </div>
-            <div class="col-md-2 mb-3">
+            <div class="col-md- mb-3">
               <textarea type="text" class="form-control textarea" rows="1" name="grupe<%=numb%>" placeholder="" autocomplete="off"><%=user.grupe%></textarea>
             </div>
             <div class="col-md-1 mb-3">
@@ -118,7 +118,7 @@
           <input type="hidden" id="table2_id" name="table2_name" value="<%=numb%>">
           <div id="add_to_me011">
           </div>
-          <button class="plus-button" type="button" onclick="myFunction()">+</button><br><br>
+          <button class="plus-button" type="button" onclick="addTable2()">+</button><br><br>
 
           <div class="form-row">
             <div class="col-md-8 mb-3 text-right">
@@ -3889,12 +3889,15 @@
 <!-- kD1_K01 -->
 <!-- 2 table -->
 <script>
+  //console.log(value1);
   var value1 = document.getElementById("table2_id").value;
   value1++;
+  //console.log(value1);
+
   var div = 1;
   var asd = "add_to_me01";
 
-  function myFunction() {
+  function addTable2() {
     var bendr = asd + div;
     div++;
     document.getElementById(bendr).innerHTML +=

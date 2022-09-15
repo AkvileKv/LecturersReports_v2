@@ -1,7 +1,7 @@
 // kD1_K01
 // 2 table
 //window.onload = calcTable2(); //iš edit
-  function calcTable2() {
+  function calcTable2() { //onchange event'as iškviečia
 
     var srautaisPlanValString = document.getElementById("srautaisPlan").value;
     var srautaisAtlValString = document.getElementById("srautaisAtl").value;
@@ -9,6 +9,14 @@
     var uzsienioAtlValString = document.getElementById("uzsienioAtl").value;
 
     //convert from string to float
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
+    var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
     var srautaisPlanValSk = parseFloat(srautaisPlanValString) || 0;
     var srautaisAtlValSk = parseFloat(srautaisAtlValString) || 0;
     var uzsienioPlanValSk = parseFloat(uzsienioPlanValString) || 0;
