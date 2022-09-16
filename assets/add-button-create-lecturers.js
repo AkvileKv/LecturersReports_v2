@@ -1,11 +1,24 @@
 // kD1_K01
 // 2 table
+function addTable2Create() {
 var value1 = 3;
-
 var div = 1;
 var asd = "add_to_me01";
 
-function addTable2() {
+addTable2(value1,div,asd);
+}
+
+function addTable2Edit() {
+  var value1 = document.getElementById("table2_id").value;
+  value1++;
+  var div = 1;
+  var asd = "add_to_me01";
+  
+  addTable2(value1,div,asd);
+  }
+
+
+function addTable2(value1, div, asd) {
 
   var bendr = asd + div;
   div++;
@@ -59,6 +72,7 @@ function addTable2() {
     this.style.height = (this.scrollHeight) + 'px';
   }
 }
+
 
 //nD2_M02
 //3 table
