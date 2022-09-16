@@ -2316,9 +2316,9 @@
           <input type="hidden" id="table282_id" name="table282_name" value="<%=numb29%>">
           <br>
         </div>
-
         <!--kTOV4_29-->
         <!-- 29 lentelė.  -->
+
         <div <%if (user.mm2022_2023.destytojas.kTOV4_29.length === 0) { %> class="noprint" <% } %>>
           <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais</b></p>
           <div class="form-row">
@@ -2356,8 +2356,8 @@
             karjeros planavimo veiklose, diskusijose ir pan.</p>
           <br>
         </div>
-
         <!-- kTOV4_S -->
+
         <div <%if (user.mm2022_2023.destytojas.kTOV4_S.length === 0) { %> class="noprint" <% } %>>
           <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
           <div class="form-row">
@@ -2939,25 +2939,15 @@
 <div class="noprint">
   <%- include('partials/footer') %>
 </div>
+
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
 </script>
+
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate4").value = todayDate;
 </script>
 
-<script>
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  }
-</script>

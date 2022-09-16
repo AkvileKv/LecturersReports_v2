@@ -2939,25 +2939,15 @@
 <div class="noprint">
   <%- include('partials/footer') %>
 </div>
+
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate2").placeholder = todayDate;
   document.getElementById("currentDate3").placeholder = todayDate;
 </script>
+
 <script>
   var todayDate = new Date().toISOString().slice(0, 10);
   document.getElementById("currentDate4").value = todayDate;
 </script>
 
-<script>
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  }
-</script>

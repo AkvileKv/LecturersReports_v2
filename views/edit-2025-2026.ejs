@@ -1,7 +1,7 @@
 <%- include('partials/headerLecturer2025_2026') %>
 
 <div class="container">
-  <div class="jumbotron ">
+  <div class="jumbotron">
 
     <h1 class="text-center">Dėstytojo darbo ataskaitos redagavimas 2025 - 2026 m. m.</h1>
 
@@ -3883,20 +3883,5 @@
     <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
   </div>
 <% } %>
-
-<!-- textarea size -->
-<script>
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-  }
-</script>
-
 
 <%- include('partials/footer') %>
