@@ -30,7 +30,7 @@
     var planuota = "plan";
     var atlikta = "atl";
 
-    for (let zx = 1; zx <= value1 - 1; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table2_id").value; zx++) {
       var bendras = planuota + zx;
       var bendras2 = atlikta + zx;
 
@@ -170,7 +170,7 @@
     var trukmNeLT4 = "trukmNeLT4_";
 
     // 1 table
-    for (let zx = 1; zx <= value59 - 1; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table241_id").value; zx++) {
       var bendrasLT_1 = trukmLT1 + zx;
       var bendrasNeLT_1 = trukmNeLT1 + zx;
 
@@ -182,7 +182,7 @@
       trukmeNeLTnum24_1 = trukmeNeLTnum24_1 + num001;
     }
     // 2 table
-    for (let zx = 1; zx <= value60 - 1; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table242_id").value; zx++) {
       var bendrasLT_2 = trukmLT2 + zx;
       var bendrasNeLT_2 = trukmNeLT2 + zx;
 
@@ -194,7 +194,7 @@
       trukmeNeLTnum24_2 = trukmeNeLTnum24_2 + num001;
     }
     // 3 table
-    for (let zx = 1; zx <= value61 - 1; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table243_id").value; zx++) {
       var bendrasLT_3 = trukmLT3 + zx;
       var bendrasNeLT_3 = trukmNeLT3 + zx;
 
@@ -206,7 +206,7 @@
       trukmeNeLTnum24_3 = trukmeNeLTnum24_3 + num001;
     }
     // 4 table
-    for (let zx = 1; zx <= value62 - 1; zx++) {
+    for (let zx = 1; zx <= document.getElementById("table244_id").value; zx++) {
       var bendrasLT_4 = trukmLT4 + zx;
       var bendrasNeLT_4 = trukmNeLT4 + zx;
 

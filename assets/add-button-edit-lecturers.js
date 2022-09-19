@@ -3,10 +3,9 @@
   var value1 = document.getElementById("table2_id").value;
   value1++;
   var div = 1;
-  var asd = "add_to_me01";
 
   function addTable2() {
-    var bendr = asd + div;
+    var bendr = "add_to_me01" + div;
     div++;
     document.getElementById(bendr).innerHTML +=
       `
@@ -41,6 +40,7 @@
         </div>
         <div id="add_to_me01` + div + `">
         `;
+        console.log("edit value1: "+ value1);
     document.getElementById("table2_id").value = value1;
     value1++;
     var tx = document.getElementsByTagName('textarea');
@@ -61,10 +61,9 @@
   var value4 = document.getElementById("table3_id").value;
   value4++;
   var div4 = 1;
-  var asd4 = "add_to_me04";
 
   function m02() {
-    var bendr4 = asd4 + div4;
+    var bendr4 = "add_to_me04" + div4;
     div4++;
     document.getElementById(bendr4).innerHTML +=
       `
@@ -196,10 +195,9 @@
   var value6 = document.getElementById("table4_id").value;
   value6++;
   var div6 = 1;
-  var asd6 = "add_to_me06";
 
   function m04() {
-    var bendr6 = asd6 + div6;
+    var bendr6 = "add_to_me06" + div6;
     div6++;
     document.getElementById(bendr6).innerHTML +=
       `
@@ -310,10 +308,9 @@
   var value7 = document.getElementById("table5_id").value;
   value7++;
   var div7 = 1;
-  var asd7 = "add_to_me07";
 
   function d01() {
-    var bendr7 = asd7 + div7;
+    var bendr7 = "add_to_me07" + div7;
     div7++;
     document.getElementById(bendr7).innerHTML +=
       `
@@ -353,10 +350,9 @@
   var value8 = document.getElementById("table6_id").value;
   value8++;
   var div8 = 1;
-  var asd8 = "add_to_me08";
 
   function d02() {
-    var bendr8 = asd8 + div8;
+    var bendr8 = "add_to_me08" + div8;
     div8++;
     document.getElementById(bendr8).innerHTML +=
       `
@@ -538,10 +534,9 @@
   var value9 = document.getElementById("table7_id").value;
   value9++;
   var div9 = 1;
-  var asd9 = "add_to_me09";
 
   function d03() {
-    var bendr9 = asd9 + div9;
+    var bendr9 = "add_to_me09" + div9;
     div9++;
     document.getElementById(bendr9).innerHTML +=
       `
@@ -788,10 +783,9 @@
   var value5 = document.getElementById("table8_id").value;
   value5++;
   var div5 = 1;
-  var asd5 = "add_to_me05";
 
   function m03() {
-    var bendr5 = asd5 + div5;
+    var bendr5 = "add_to_me05" + div5;
     div5++;
     document.getElementById(bendr5).innerHTML +=
       `
@@ -893,10 +887,9 @@
   var value10 = document.getElementById("table9_id").value;
   value10++;
   var div10 = 1;
-  var asd10 = "add_to_me10";
 
   function s01() {
-    var bendr10 = asd10 + div10;
+    var bendr10 = "add_to_me10" + div10;
     div10++;
     document.getElementById(bendr10).innerHTML +=
       `
@@ -932,10 +925,9 @@
   var value11 = document.getElementById("tablenD2_S_id").value;
   value11++;
   var div11 = 1;
-  var asd11 = "add_to_me11";
 
   function s01_2() {
-    var bendr11 = asd11 + div11;
+    var bendr11 = "add_to_me11" + div11;
     div11++;
     document.getElementById(bendr11).innerHTML +=
       `
@@ -972,10 +964,9 @@
   var value12 = document.getElementById("table10_id").value;
   value12++;
   var div12 = 1;
-  var asd12 = "add_to_me12";
 
   function t01() {
-    var bendr12 = asd12 + div12;
+    var bendr12 = "add_to_me12" + div12;
     div12++;
     document.getElementById(bendr12).innerHTML +=
       `
@@ -1105,10 +1096,9 @@
   var value13 = document.getElementById("table11_id").value;
   value13++;
   var div13 = 1;
-  var asd13 = "add_to_me13";
 
   function t02() {
-    var bendr13 = asd13 + div13;
+    var bendr13 = "add_to_me13" + div13;
     div13++;
     document.getElementById(bendr13).innerHTML +=
       `

@@ -1,12 +1,11 @@
 // kD1_K01
 // 2 table
-var value1 = 3;
+var value1 = document.getElementById("table2_id").value;
 var div = 1;
-var asd = "add_to_me01";
 
 function addTable2() {
 
-  var bendr = asd + div;
+  var bendr = "add_to_me01" + div;
   div++;
   document.getElementById(bendr).innerHTML +=
     `
@@ -42,7 +41,7 @@ function addTable2() {
         <div id="add_to_me01` + div + `">
         `;
   // Kiekviename eilutės pridėjimo scripte aprašyta eilutė, kuri nusiunčia skaičių į hidden:
-  console.log(value1);
+  console.log("create value1: "+ value1);
   document.getElementById("table2_id").value = value1;
   value1++;
   console.log(value1);
@@ -64,10 +63,9 @@ function addTable2() {
 //3 table
 var value4 = 2;
 var div4 = 1;
-var asd4 = "add_to_me04";
 
 function m02() {
-  var bendr4 = asd4 + div4;
+  var bendr4 = "add_to_me04" + div4;
   div4++;
   document.getElementById(bendr4).innerHTML +=
     `
@@ -199,10 +197,9 @@ function m02() {
 
 var value6 = 2;
 var div6 = 1;
-var asd6 = "add_to_me06";
 
 function m04() {
-  var bendr6 = asd6 + div6;
+  var bendr6 = "add_to_me06" + div6;
   div6++;
   document.getElementById(bendr6).innerHTML +=
     `

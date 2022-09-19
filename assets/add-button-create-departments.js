@@ -4,10 +4,10 @@
 // 1 table 
   var value1 = 2;
   var div1 = 1;
-  var asd1 = "add_to_me1";
+  //var asd1 = "add_to_me1";
 
   function addButtonTable01() {
-    var bendr1 = asd1 + div1;
+    var bendr1 = "add_to_me1" + div1;
     div1++;
     document.getElementById(bendr1).innerHTML +=
       `
@@ -279,10 +279,10 @@
 
   var value2 = 2;
   var div2 = 1;
-  var asd2 = "add_to_me2";
+  //var asd2 = "add_to_me2";
 
   function addButtonTable03() {
-    var bendr2 = asd2 + div2;
+    var bendr2 = "add_to_me2" + div2;
     div2++;
     document.getElementById(bendr2).innerHTML +=
       `
