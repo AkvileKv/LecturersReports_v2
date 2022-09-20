@@ -1,24 +1,23 @@
-// for tables: 1, 3, 6, 30, mV2_S, 32, 34, TMTEP_S, 35, kTOV4_S, 39, veiklSavinalize 
+// add_button scripts for tables: 1, 3, 6, 30, mV2_S, 32, 34, TMTEP_S, 35, kTOV4_S, 39, veiklSavinalize   
 
-// mV2_D04 
 // 1 table 
-  var value1 = 2;
-  var div1 = 1;
-  //var asd1 = "add_to_me1";
+  var iterNr1 = document.getElementById("table1_id").value;
+  iterNr1++;
+  var divNr1 = 1;
 
   function addButtonTable01() {
-    var bendr1 = "add_to_me1" + div1;
-    div1++;
+    let bendr1 = "add_to_me1" + divNr1;
+    divNr1++;
     document.getElementById(bendr1).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="mV2_D04nr` + value1 + `" placeholder="" autocomplete="off" value="` + value1 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="mV2_D04nr` + iterNr1 + `" placeholder="" autocomplete="off" value="` + iterNr1 + `" readonly="readonly">
           </div>
           <div class="col-md-4 mb-3">
               <label for="">Studijų kryptis</label>
-            <select name="mV2_D04studKryptis` + value1 + `" class="form-select form-control">
+            <select name="mV2_D04studKryptis` + iterNr1 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -164,90 +163,90 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Studijų programa</label>
-            <select name="mV2_D04studProgr` + value1 + `"class="form-select form-control">
-              <option value=""></option>
-              <optgroup label="Elektronikos ir informatikos fakultetas">
-                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
-                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
-                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
-                <option class="others" value="Programų sistemos">Programų sistemos</option>
-                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Ekonomikos fakultetas">
-                <option class="others" value="Apskaita">Apskaita</option>
-                <option class="others" value="Bankininkystė">Bankininkystė</option>
-                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
-                <option class="others" value="Finansai">Finansai</option>
-                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
-                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
-                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Verslo vadybos fakultetas">
-                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
-                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
-                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
-                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
-                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
-                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
-                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
-                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
-                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Sveikatos priežiūros fakultetas">
-                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
-                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
-                <option class="others" value="Dietetika">Dietetika</option>
-                <option class="others" value="Ergoterapija">Ergoterapija</option>
-                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
-                <option class="others" value="Kineziterapija">Kineziterapija</option>
-                <option class="others" value="Radiologija">Radiologija</option>
-              </optgroup>
-              <optgroup label="Agrotechnologijų fakultetas">
-                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
-                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
-                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
-                <option class="others" value="Maisto technologija">Maisto technologija</option>
-                <option class="others" value="Veterinarija">Veterinarija</option>
-              </optgroup>
-              <optgroup label="Pedagogikos fakultetas">
-                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
-                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
-                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
-                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
-              </optgroup>
-              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
-                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
-                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
-                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Mados dizainas">Mados dizainas</option>
-                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
-                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
-                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
-                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
-              </optgroup>
-            </select>
+          <select name="mV2_D04studProgr` + iterNr1 + `"class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Elektronikos ir informatikos fakultetas">
+              <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+              <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+              <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+              <option class="others" value="Programų sistemos">Programų sistemos</option>
+              <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Ekonomikos fakultetas">
+              <option class="others" value="Apskaita">Apskaita</option>
+              <option class="others" value="Bankininkystė">Bankininkystė</option>
+              <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+              <option class="others" value="Finansai">Finansai</option>
+              <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+              <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+              <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Verslo vadybos fakultetas">
+              <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+              <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+              <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+              <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+              <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+              <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+              <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+              <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+              <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Sveikatos priežiūros fakultetas">
+              <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+              <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+              <option class="others" value="Dietetika">Dietetika</option>
+              <option class="others" value="Ergoterapija">Ergoterapija</option>
+              <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+              <option class="others" value="Kineziterapija">Kineziterapija</option>
+              <option class="others" value="Radiologija">Radiologija</option>
+            </optgroup>
+            <optgroup label="Agrotechnologijų fakultetas">
+              <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+              <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+              <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+              <option class="others" value="Maisto technologija">Maisto technologija</option>
+              <option class="others" value="Veterinarija">Veterinarija</option>
+            </optgroup>
+            <optgroup label="Pedagogikos fakultetas">
+              <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+              <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+              <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+              <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+            </optgroup>
+            <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+              <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+              <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+              <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Mados dizainas">Mados dizainas</option>
+              <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+              <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+              <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+              <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+            </optgroup>
+          </select>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Valstybinis programos kodas</label>
-            <textarea rows="1" type="text" class="form-control text" name="mV2_D04progrKodas` + value1 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control text" name="mV2_D04progrKodas` + iterNr1 + `"placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
 
           </div>
           <div class="col-md-4 mb-3">
             <label for=""><br>SKVC direktoriaus įsakymo Nr., data</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D04isakNrData` + value1 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D04isakNrData` + iterNr1 + `"placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų kryptis akredituota iki/ planuojama vertinti
             </label>
-            <textarea rows="1" type="text" class="form-control" name="mV2_D04studKryptAkredit` + value1 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="mV2_D04studKryptAkredit` + iterNr1 + `"placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Akreditavimo laikotarpis (3 ar 7 metai)
             </label>
-            <select name="mV2_D04akreditLaikot` + value1 + `" class="form-select form-control">
+            <select name="mV2_D04akreditLaikot` + iterNr1 + `" class="form-select form-control">
               <option value=""></option>
               <option class="others" value="3 metai">3 metai</option>
               <option class="others" value="7 metai">7 metai</option>
@@ -255,13 +254,13 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>ECTS</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D04eCTS` + value1 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D04eCTS` + iterNr1 + `"placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me1` + div1 + `">
+                <div id="add_to_me1` + divNr1 + `">
               `;
-    document.getElementById("table1_id").value = value1;
-    value1++;
+    document.getElementById("table1_id").value = iterNr1;
+    iterNr1++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -274,26 +273,24 @@
     }
   }
 
-
 // 3 table 
-
-  var value2 = 2;
-  var div2 = 1;
-  //var asd2 = "add_to_me2";
+  var iterNr2 = document.getElementById("table3_id").value;
+  iterNr2++;
+  var divNr2 = 1;
 
   function addButtonTable03() {
-    var bendr2 = "add_to_me2" + div2;
-    div2++;
+    let bendr2 = "add_to_me3" + divNr2;
+    divNr2++;
     document.getElementById(bendr2).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="lent3_nr` + value2 + `" placeholder="" autocomplete="off" value="` + value2 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent3_nr1` + iterNr2 + `" placeholder="" autocomplete="off" value="` + iterNr2 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
               <label for="">Studijų kryptis</label>
-              <select name="lent3_studKryptis` + value2 + `"class="form-select form-control">
+              <select name="lent3_studKryptis` + iterNr2 + `"class="form-select form-control">
                 <option value=""></option>
                 <optgroup label="Matematikos mokslai">
                   <option class="others" value="Matematika">Matematika</option>
@@ -438,87 +435,87 @@
               </select>
           </div>
           <div class="col-md-4 mb-3">
-  <label for="">Studijų programa</label>
-              <select name="lent3_studProgr` + value2 + `"class="form-select form-control">
-              <option value=""></option>
-              <optgroup label="Elektronikos ir informatikos fakultetas">
-                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
-                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
-                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
-                <option class="others" value="Programų sistemos">Programų sistemos</option>
-                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Ekonomikos fakultetas">
-                <option class="others" value="Apskaita">Apskaita</option>
-                <option class="others" value="Bankininkystė">Bankininkystė</option>
-                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
-                <option class="others" value="Finansai">Finansai</option>
-                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
-                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
-                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Verslo vadybos fakultetas">
-                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
-                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
-                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
-                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
-                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
-                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
-                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
-                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
-                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Sveikatos priežiūros fakultetas">
-                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
-                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
-                <option class="others" value="Dietetika">Dietetika</option>
-                <option class="others" value="Ergoterapija">Ergoterapija</option>
-                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
-                <option class="others" value="Kineziterapija">Kineziterapija</option>
-                <option class="others" value="Radiologija">Radiologija</option>
-              </optgroup>
-              <optgroup label="Agrotechnologijų fakultetas">
-                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
-                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
-                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
-                <option class="others" value="Maisto technologija">Maisto technologija</option>
-                <option class="others" value="Veterinarija">Veterinarija</option>
-              </optgroup>
-              <optgroup label="Pedagogikos fakultetas">
-                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
-                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
-                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
-                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
-              </optgroup>
-              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
-                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
-                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
-                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Mados dizainas">Mados dizainas</option>
-                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
-                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
-                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
-                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
-              </optgroup>
-            </select>
+            <label for="">Studijų programa</label>
+            <select name="lent3_studProgr` + iterNr2 +`"class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Elektronikos ir informatikos fakultetas">
+              <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+              <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+              <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+              <option class="others" value="Programų sistemos">Programų sistemos</option>
+              <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Ekonomikos fakultetas">
+              <option class="others" value="Apskaita">Apskaita</option>
+              <option class="others" value="Bankininkystė">Bankininkystė</option>
+              <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+              <option class="others" value="Finansai">Finansai</option>
+              <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+              <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+              <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Verslo vadybos fakultetas">
+              <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+              <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+              <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+              <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+              <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+              <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+              <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+              <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+              <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Sveikatos priežiūros fakultetas">
+              <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+              <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+              <option class="others" value="Dietetika">Dietetika</option>
+              <option class="others" value="Ergoterapija">Ergoterapija</option>
+              <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+              <option class="others" value="Kineziterapija">Kineziterapija</option>
+              <option class="others" value="Radiologija">Radiologija</option>
+            </optgroup>
+            <optgroup label="Agrotechnologijų fakultetas">
+              <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+              <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+              <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+              <option class="others" value="Maisto technologija">Maisto technologija</option>
+              <option class="others" value="Veterinarija">Veterinarija</option>
+            </optgroup>
+            <optgroup label="Pedagogikos fakultetas">
+              <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+              <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+              <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+              <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+            </optgroup>
+            <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+              <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+              <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+              <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Mados dizainas">Mados dizainas</option>
+              <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+              <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+              <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+              <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+            </optgroup>
+          </select>
           </div>
           <div class="col-md-4 mb-3">
     <label for="">Dėstytojas-praktikas*</label>
-            <textarea rows="1" type="text" class="form-control" name="lent3_destytojas` + value2 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent3_destytojas` + iterNr2 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-11 mb-3">
             <label for="">Įmonė, įstaiga, organizacija</label>
-            <textarea type="text" rows="1" class="form-control" name="lent3_imonIstaig` + value2 + `"placeholder="" autocomplete="off"></textarea>
+            <textarea type="text" rows="1" class="form-control" name="lent3_imonIstaig` + iterNr2 + `"placeholder="" autocomplete="off"></textarea>
           </div>
 
         </div>
-                <div id="add_to_me2` + div2 + `">
+                <div id="add_to_me3` + divNr2 + `">
               `;
-    document.getElementById("table3_id").value = value2;
-    value2++;
+    document.getElementById("table3_id").value = iterNr2;
+    iterNr2++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -531,26 +528,24 @@
     }
   }
 
-
 // 6 table 
-
-  var value3 = 2;
-  var div3 = 1;
-  var asd3 = "add_to_me3";
+  var iterNr3 = document.getElementById("table6_id").value;
+  iterNr3++;
+  var divNr3 = 1;
 
   function addButtonTable06() {
-    var bendr3 = asd3 + div3;
-    div3++;
+    let bendr3 = "add_to_me6" + divNr3;
+    divNr3++;
     document.getElementById(bendr3).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="mV2_D06nr` + value3 + `" placeholder="" autocomplete="off" value="` + value3 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="mV2_D06nr` + iterNr3 + `" placeholder="" autocomplete="off" value="` + iterNr3 + `" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Studijų programa</label>
-            <select name="mV2_D06studProgr` + value3 + `"class="form-select form-control">
+            <select name="mV2_D06studProgr` + iterNr3 + `"class="form-select form-control">
             <option value=""></option>
             <optgroup label="Elektronikos ir informatikos fakultetas">
               <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
@@ -616,27 +611,27 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Valstybinis programos kodas</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D06progrKodas` + value3 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D06progrKodas` + iterNr3 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Atlikti patobulinimai</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D06atlPatobulin` + value3 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D06atlPatobulin` + iterNr3 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="">Patobulinimą inicijavusios priežastys</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinPriezast` + value3 + `" placeholder="" autocomplete="off"></textarea>
+            <label for="">Patobulinimą iniciajavusios priežastys</label>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinPriezast` + iterNr3 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Patobulinimus pagrindžiantys įrodymai*</label>
-            <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinIrod` + value3 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="mV2_D06tobulinIrod` + iterNr3 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me3` + div3 + `">
+                <div id="add_to_me6` + divNr3 + `">
               `;
-    document.getElementById("table6_id").value = value3;
-    value3++;
+    document.getElementById("table6_id").value = iterNr3;
+    iterNr3++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -649,30 +644,28 @@
     }
   }
 
-
 // 30 table 
-
-  var value4 = 2;
-  var div4 = 1;
-  var asd4 = "add_to_me4";
+  var iterNr4 = document.getElementById("table30_id").value;
+  iterNr4++;
+  var divNr4 = 1;
 
   function addButtonTable30() {
-    var bendr4 = asd4 + div4;
-    div4++;
+    let bendr4 = "add_to_me30" + divNr4;
+    divNr4++;
     document.getElementById(bendr4).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label><br></label>
-              <input type="number" class="form-control  text-center" name="lent30_nr` + value4 + `"readonly="readonly" value="` + value4 + `" autocomplete="off">
+              <input type="number" class="form-control  text-center" name="lent30_nr` + iterNr4 + `"readonly="readonly" value="` + iterNr4 + `" autocomplete="off">
               </div>
           <div class="col-md-4 mb-3">
           <label>Dėstytojas (pavardė, vardas)</label>
-            <textarea rows="1" type="text" class="form-control " name="lent30_destytojas` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_destytojas` + iterNr4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-3 mb-3">
               <label>Studijų kryptis</label>
-            <select name="lent30_studKryptis` + value4 + `"  class="form-select form-control">
+            <select name="lent30_studKryptis` + iterNr4 + `"  class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -818,24 +811,24 @@
           </div>
           <div class="col-md-4 mb-3">
             <label>Šalis</label>
-            <textarea rows="1" type="text" class="form-control" name="lent30_salis` + value4 + `" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent30_salis` + iterNr4 + `" autocomplete="off"></textarea>
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-4 mb-3">
               <label>Institucija</label>
-            <textarea rows="1" type="text" class="form-control " name="lent30_institucija` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_institucija` + iterNr4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-7 mb-3">
               <label>Dalykas / tema / projektas</label>
-            <textarea rows="1" type="text" class="form-control " name="lent30_dalykas` + value4 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent30_dalykas` + iterNr4 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
 
-                <div id="add_to_me4` + div4 + `">
+                <div id="add_to_me30` + divNr4 + `">
               `;
-    document.getElementById("table30_id").value = value4;
-    value4++;
+    document.getElementById("table30_id").value = iterNr4;
+    iterNr4++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -848,34 +841,33 @@
     }
   }
 
-
 // mV2_S 
-
-  var value5 = 3;
-  var div5 = 1;
-  var asd5 = "add_to_me5";
+  var iterNr5 = document.getElementById("tablemV2_S_id").value;
+  iterNr5++;
+  console.log("iterNr5 scripte: "+ iterNr5);
+  var divNr5 = 1;
 
   function mv2s() {
-    var bendr5 = asd5 + div5;
-    div5++;
+    let bendr5 = "add_to_me5" + divNr5;
+    divNr5++;
     document.getElementById(bendr5).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="mV2_Snr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="mV2_Snr` + iterNr5 + `" placeholder="" autocomplete="off" value="` + iterNr5 + `" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="mV2_Sstiprybes` + value5 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="mV2_Sstiprybes` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="mV2_Stobulintina` + value5 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="mV2_Stobulintina` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
 
-                <div id="add_to_me5` + div5 + `">
+                <div id="add_to_me5` + divNr5 + `">
               `;
-    document.getElementById("tablemV2_S_id").value = value5;
-    value5++;
+    document.getElementById("tablemV2_S_id").value = iterNr5;
+    iterNr5++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -888,24 +880,22 @@
     }
   }
 
-
 // 32 table 
-
-  var value6 = 2;
-  var div6 = 1;
-  var asd6 = "add_to_me6";
+  var iterNr6 = document.getElementById("table32_id").value;
+  iterNr6++;
+  var divNr6 = 1;
 
   function addButtonTable32() {
-    var bendr6 = asd6 + div6;
-    div6++;
+    let bendr6 = "add_to_me32" + divNr6;
+    divNr6++;
     document.getElementById(bendr6).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="lent32_nr` + value6 + `" value="` + value6 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent32_nr` + iterNr6 + `" value="` + iterNr6 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-3 mb-3">
-            <select name="lent32_studKryptis` + value6 + `" class="form-select form-control">
+            <select name="lent32_studKryptis` + iterNr6 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -1050,7 +1040,7 @@
             </select>
           </div>
           <div class="col-md-3 mb-3">
-          <select name="lent32_studProgr` + value6 + `"class="form-select form-control">
+            <select name="lent32_studProgr` + iterNr6 + `"class="form-select form-control">
             <option value=""></option>
             <optgroup label="Elektronikos ir informatikos fakultetas">
               <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
@@ -1115,13 +1105,13 @@
           </select>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="lent32_strategPartner` + value6 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="lent32_strategPartner` + iterNr6 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me6` + div6 + `">
+                <div id="add_to_me32` + divNr6 + `">
               `;
-    document.getElementById("table32_id").value = value6;
-    value6++;
+    document.getElementById("table32_id").value = iterNr6;
+    iterNr6++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1134,28 +1124,26 @@
     }
   }
 
-
 // 34 table 
-
-  var value7 = 2;
-  var div7 = 1;
-  var asd7 = "add_to_me7";
+  var iterNr7 = document.getElementById("table34_id").value;
+  iterNr7++;
+  var divNr7 = 1;
 
   function addButtonTable34() {
-    var bendr7 = asd7 + div7;
-    div7++;
+    let bendr7 = "add_to_me34" + divNr7;
+    divNr7++;
     document.getElementById(bendr7).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="lent34_nr` + value7 + `" value="` + value7 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent34_nr` + iterNr7 + `" value="` + iterNr7 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
             </div>
           <div class="col-md-5 mb-3">
         <label for="">Studijų kryptis</label>
-              <select name="lent34_studKryptis` + value7 + `" class="form-select form-control">
+              <select name="lent34_studKryptis` + iterNr7 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -1301,98 +1289,98 @@
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų programa</label>
-            <select name="lent34_studProgr` + value7 + `"class="form-select form-control">
-              <option value=""></option>
-              <optgroup label="Elektronikos ir informatikos fakultetas">
-                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
-                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
-                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
-                <option class="others" value="Programų sistemos">Programų sistemos</option>
-                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Ekonomikos fakultetas">
-                <option class="others" value="Apskaita">Apskaita</option>
-                <option class="others" value="Bankininkystė">Bankininkystė</option>
-                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
-                <option class="others" value="Finansai">Finansai</option>
-                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
-                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
-                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Verslo vadybos fakultetas">
-                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
-                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
-                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
-                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
-                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
-                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
-                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
-                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
-                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Sveikatos priežiūros fakultetas">
-                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
-                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
-                <option class="others" value="Dietetika">Dietetika</option>
-                <option class="others" value="Ergoterapija">Ergoterapija</option>
-                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
-                <option class="others" value="Kineziterapija">Kineziterapija</option>
-                <option class="others" value="Radiologija">Radiologija</option>
-              </optgroup>
-              <optgroup label="Agrotechnologijų fakultetas">
-                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
-                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
-                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
-                <option class="others" value="Maisto technologija">Maisto technologija</option>
-                <option class="others" value="Veterinarija">Veterinarija</option>
-              </optgroup>
-              <optgroup label="Pedagogikos fakultetas">
-                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
-                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
-                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
-                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
-              </optgroup>
-              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
-                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
-                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
-                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Mados dizainas">Mados dizainas</option>
-                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
-                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
-                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
-                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
-              </optgroup>
-            </select>
+            <select name="lent34_studProgr` + iterNr7 + `"class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Elektronikos ir informatikos fakultetas">
+              <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+              <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+              <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+              <option class="others" value="Programų sistemos">Programų sistemos</option>
+              <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Ekonomikos fakultetas">
+              <option class="others" value="Apskaita">Apskaita</option>
+              <option class="others" value="Bankininkystė">Bankininkystė</option>
+              <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+              <option class="others" value="Finansai">Finansai</option>
+              <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+              <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+              <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Verslo vadybos fakultetas">
+              <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+              <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+              <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+              <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+              <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+              <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+              <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+              <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+              <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Sveikatos priežiūros fakultetas">
+              <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+              <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+              <option class="others" value="Dietetika">Dietetika</option>
+              <option class="others" value="Ergoterapija">Ergoterapija</option>
+              <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+              <option class="others" value="Kineziterapija">Kineziterapija</option>
+              <option class="others" value="Radiologija">Radiologija</option>
+            </optgroup>
+            <optgroup label="Agrotechnologijų fakultetas">
+              <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+              <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+              <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+              <option class="others" value="Maisto technologija">Maisto technologija</option>
+              <option class="others" value="Veterinarija">Veterinarija</option>
+            </optgroup>
+            <optgroup label="Pedagogikos fakultetas">
+              <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+              <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+              <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+              <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+            </optgroup>
+            <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+              <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+              <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+              <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Mados dizainas">Mados dizainas</option>
+              <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+              <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+              <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+              <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+            </optgroup>
+          </select>
           </div>
           <div class="col-md-2 mb-3">
             </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_` + value7 + `"
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_` + iterNr7 + `"
             value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_` + value7 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_` + iterNr7 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_` + value7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
         </div>
-                <div id="add_to_me7` + div7 + `">
+                <div id="add_to_me34` + divNr7 + `">
               `;
-    document.getElementById("table34_id").value = value7;
-    value7++;
+    document.getElementById("table34_id").value = iterNr7;
+    iterNr7++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1405,33 +1393,31 @@
     }
   }
 
-
 // TMTEP_S 
-
-  var value8 = 3;
-  var div8 = 1;
-  var asd8 = "add_to_me8";
+  var iterNr8 = document.getElementById("tabletMTEP3_S_id").value;
+  iterNr8++;
+  var divNr8 = 1;
 
   function tmteps() {
-    var bendr8 = asd8 + div8;
-    div8++;
+    let bendr8 = "add_to_meTabletMTEP3_S" + divNr8;
+    divNr8++;
     document.getElementById(bendr8).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="tMTEP3_Snr` + value8 + `" placeholder="" autocomplete="off" value="` + value8 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="tMTEP3_Snr` + iterNr8 + `" placeholder="" autocomplete="off" value="` + iterNr8 + `" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Sstiprybes` + value8 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Sstiprybes` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Stobulintina` + value8 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Stobulintina` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me8` + div8 + `">
+                <div id="add_to_meTabletMTEP3_S` + divNr8 + `">
               `;
-    document.getElementById("tabletMTEP3_S_id").value = value8;
-    value8++;
+    document.getElementById("tabletMTEP3_S_id").value = iterNr8;
+    iterNr8++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1445,31 +1431,30 @@
   }
 
 // kTOV4_S 
-
-  var value10 = 3;
-  var div10 = 1;
-  var asd10 = "add_to_me10";
+  var iterNr10 = document.getElementById("tablekTOV4_S_id").value;
+  iterNr10++;
+  var divNr10 = 1;
 
   function kTOV4_S() {
-    var bendr10 = asd10 + div10;
-    div10++;
+    let bendr10 = "add_to_meTablekTOV4_S" + divNr10;
+    divNr10++;
     document.getElementById(bendr10).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_Snr` + value10 + `" placeholder="" autocomplete="off" value="` + value10 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="kTOV4_Snr` + iterNr10 + `" placeholder="" autocomplete="off" value="` + iterNr10 + `" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes` + value10 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina` + value10 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me10` + div10 + `">
+                <div id="add_to_meTablekTOV4_S` + divNr10 + `">
               `;
-    document.getElementById("tablekTOV4_S_id").value = value10;
-    value10++;
+    document.getElementById("tablekTOV4_S_id").value = iterNr10;
+    iterNr10++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1482,28 +1467,26 @@
     }
   }
 
-
 // 35 table 
-
-  var value9 = 2;
-  var div9 = 1;
-  var asd9 = "add_to_me9";
+  var iterNr9 = document.getElementById("table35_id").value;
+  iterNr9++;
+  var divNr9 = 1;
 
   function addButtonTable35() {
-    var bendr9 = asd9 + div9;
-    div9++;
+    let bendr9 = "add_to_me35" + divNr9;
+    divNr9++;
     document.getElementById(bendr9).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
-            <input type="text" class="form-control text-center" name="lent35_nr` + value9 + `" value="` + value9 + `" placeholder="" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent35_nr` + iterNr9 + `" value="` + iterNr9 + `" placeholder="" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-5 mb-3">
               <label for="">Studijų kryptis</label>
-            <select name="lent35_studKryptis` + value9 + `" class="form-select form-control">
+            <select name="lent35_studKryptis` + iterNr9 + `" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Matematikos mokslai">
                 <option class="others" value="Matematika">Matematika</option>
@@ -1649,122 +1632,122 @@
           </div>
           <div class="col-md-5 mb-3">
           <label for="">Studijų programa</label>
-            <select name="lent35_studProgr` + value9 + `"class="form-select form-control">
-              <option value=""></option>
-              <optgroup label="Elektronikos ir informatikos fakultetas">
-                <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
-                <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
-                <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
-                <option class="others" value="Programų sistemos">Programų sistemos</option>
-                <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Ekonomikos fakultetas">
-                <option class="others" value="Apskaita">Apskaita</option>
-                <option class="others" value="Bankininkystė">Bankininkystė</option>
-                <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
-                <option class="others" value="Finansai">Finansai</option>
-                <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
-                <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
-                <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Verslo vadybos fakultetas">
-                <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
-                <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
-                <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
-                <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
-                <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
-                <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
-                <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
-                <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
-                <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
-              </optgroup>
-              <optgroup label="Sveikatos priežiūros fakultetas">
-                <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
-                <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
-                <option class="others" value="Dietetika">Dietetika</option>
-                <option class="others" value="Ergoterapija">Ergoterapija</option>
-                <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
-                <option class="others" value="Kineziterapija">Kineziterapija</option>
-                <option class="others" value="Radiologija">Radiologija</option>
-              </optgroup>
-              <optgroup label="Agrotechnologijų fakultetas">
-                <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
-                <option class="others" value="Cheminė analizė">Cheminė analizė</option>
-                <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
-                <option class="others" value="Maisto technologija">Maisto technologija</option>
-                <option class="others" value="Veterinarija">Veterinarija</option>
-              </optgroup>
-              <optgroup label="Pedagogikos fakultetas">
-                <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
-                <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
-                <option class="others" value="Socialinis darbas">Socialinis darbas</option>
-                <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
-              </optgroup>
-              <optgroup label="Menų ir kūrybinių technologijų fakultetas">
-                <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
-                <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
-                <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
-                <option class="others" value="Mados dizainas">Mados dizainas</option>
-                <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
-                <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
-                <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
-                <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
-              </optgroup>
-            </select>
+          <select name="lent35_studProgr` + iterNr9 + `"class="form-select form-control">
+            <option value=""></option>
+            <optgroup label="Elektronikos ir informatikos fakultetas">
+              <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
+              <option class="others" value="Informacijos sistemos">Informacijos sistemos</option>
+              <option class="others" value="Kompiuterių inžinerija">Kompiuterių inžinerija</option>
+              <option class="others" value="Programų sistemos">Programų sistemos</option>
+              <option class="others" value="Programų sistemos (studijos anglų kalba)">Programų sistemos (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Ekonomikos fakultetas">
+              <option class="others" value="Apskaita">Apskaita</option>
+              <option class="others" value="Bankininkystė">Bankininkystė</option>
+              <option class="others" value="Bankininkystė (studijos anglų kalba)">Bankininkystė (studijos anglų kalba)</option>
+              <option class="others" value="Finansai">Finansai</option>
+              <option class="others" value="Investicijos ir draudimas">Investicijos ir draudimas</option>
+              <option class="others" value="Verslo ekonomika">Verslo ekonomika</option>
+              <option class="others" value="Verslo ekonomika (studijos anglų kalba)">Verslo ekonomika (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Verslo vadybos fakultetas">
+              <option class="others" value="Organizacijų vadyba">Organizacijų vadyba</option>
+              <option class="others" value="Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)">Kūrybiškumas ir verslo inovacijos (studijos anglų kalba)</option>
+              <option class="others" value="Reklamos vadyba">Reklamos vadyba</option>
+              <option class="others" value="Ryšiai su visuomene">Ryšiai su visuomene</option>
+              <option class="others" value="Tarptautinis verslas">Tarptautinis verslas</option>
+              <option class="others" value="Tarptautinis verslas (studijos anglų kalba)">Tarptautinis verslas (studijos anglų kalba)</option>
+              <option class="others" value="Turizmo vadyba">Turizmo vadyba</option>
+              <option class="others" value="Turizmo vadyba (studijos anglų kalba)">Turizmo vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Viešbučių ir restoranų verslas">Viešbučių ir restoranų verslas</option>
+              <option class="others" value="Viešbučių ir restoranų verslas (studijos anglų kalba)">Viešbučių ir restoranų verslas (studijos anglų kalba)</option>
+            </optgroup>
+            <optgroup label="Sveikatos priežiūros fakultetas">
+              <option class="others" value="Bendrosios praktikos slauga">Bendrosios praktikos slauga</option>
+              <option class="others" value="Biomedicininė diagnostika">Biomedicininė diagnostika</option>
+              <option class="others" value="Dietetika">Dietetika</option>
+              <option class="others" value="Ergoterapija">Ergoterapija</option>
+              <option class="others" value="Higieninė ir dekoratyvinė kosmetologija">Higieninė ir dekoratyvinė kosmetologija</option>
+              <option class="others" value="Kineziterapija">Kineziterapija</option>
+              <option class="others" value="Radiologija">Radiologija</option>
+            </optgroup>
+            <optgroup label="Agrotechnologijų fakultetas">
+              <option class="others" value="Agroverslo technologijos">Agroverslo technologijos</option>
+              <option class="others" value="Cheminė analizė">Cheminė analizė</option>
+              <option class="others" value="Kraštovaizdžio dizainas">Kraštovaizdžio dizainas</option>
+              <option class="others" value="Maisto technologija">Maisto technologija</option>
+              <option class="others" value="Veterinarija">Veterinarija</option>
+            </optgroup>
+            <optgroup label="Pedagogikos fakultetas">
+              <option class="others" value="Lietuvių gestų kalbos vertimas">Lietuvių gestų kalbos vertimas</option>
+              <option class="others" value="Pradinio ugdymo pedagogika">Pradinio ugdymo pedagogika</option>
+              <option class="others" value="Socialinis darbas">Socialinis darbas</option>
+              <option class="others" value="Vaikystės pedagogika">Vaikystės pedagogika</option>
+            </optgroup>
+            <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+              <option class="others" value="Įvaizdžio dizainas">Įvaizdžio dizainas</option>
+              <option class="others" value="Kultūrinės veiklos vadyba">Kultūrinės veiklos vadyba</option>
+              <option class="others" value="Kultūrinės veiklos vadyba (studijos anglų kalba)">Kultūrinės veiklos vadyba (studijos anglų kalba)</option>
+              <option class="others" value="Mados dizainas">Mados dizainas</option>
+              <option class="others" value="Mados technologijos ir verslas">Mados technologijos ir verslas</option>
+              <option class="others" value="Muzikinis teatras">Muzikinis teatras</option>
+              <option class="others" value="Populiarioji muzika">Populiarioji muzika</option>
+              <option class="others" value="Šokio pedagogika">Šokio pedagogika</option>
+            </optgroup>
+          </select>
           </div>
           <div class="col-md-2 mb-3">
 
           </div>
           <div class="col-md-2 mb-3">
           <label for=""><br>2017 - 2018 m. m. Bendras</label>
-          <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_` + value9 + `"value=""
+          <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_` + iterNr9 + `"value=""
           autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}"></div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_` + value9 + `"value=""
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_` + iterNr9 + `"value=""
             autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
           </div>
           <div class="col-md-2 mb-3">
               <label for=""><br>2018 - 2019 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
         </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_` + value9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
 
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2020 - 2021 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2021 - 2022 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_` + value9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
         </div>
-                <div id="add_to_me9` + div9 + `">
+                <div id="add_to_me35` + divNr9 + `">
               `;
-    document.getElementById("table35_id").value = value9;
-    value9++;
+    document.getElementById("table35_id").value = iterNr9;
+    iterNr9++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1777,33 +1760,31 @@
     }
   }
 
-
 // 39 table 
-
-  var value11 = 2;
-  var div11 = 1;
-  var asd11 = "add_to_me11";
+  var iterNr11 = document.getElementById("table39_id").value;
+  iterNr11++;
+  var divNr11 = 1;
 
   function addButtonTable39() {
-    var bendr11 = asd11 + div11;
-    div11++;
+    let bendr11 = "add_to_me39" + divNr11;
+    divNr11++;
     document.getElementById(bendr11).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="lent39_nr` + value11 + `" value="` + value11 + `" autocomplete="off" readonly="readonly">
+            <input type="text" class="form-control text-center" name="lent39_nr` + iterNr11 + `" value="` + iterNr11 + `" autocomplete="off" readonly="readonly">
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="lent39_kryptys` + value11 + `" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent39_kryptys` + iterNr11 + `" autocomplete="off"></textarea>
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="lent39_aprasymas` + value11 + `" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control" name="lent39_aprasymas` + iterNr11 + `" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me11` + div11 + `">
+                <div id="add_to_me39` + divNr11 + `">
               `;
-    document.getElementById("table39_id").value = value11;
-    value11++;
+    document.getElementById("table39_id").value = iterNr11;
+    iterNr11++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1816,33 +1797,32 @@
     }
   }
 
-
 // veiklSavinalize 
-
-  var value13 = 3;
-  var div13 = 1;
-  var asd13 = "add_to_me13";
+  var iterNr13 = document.getElementById("tableVeiklS_id").value;
+  iterNr13++;
+  var divNr13 = 1;
 
   function veiklSavianalize() {
-    var bendr13 = asd13 + div13;
-    div13++;
+    let bendr13 = "add_to_meTableVeiklS" + divNr13;
+    divNr13++;
     document.getElementById(bendr13).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="veiklSavianalizNr` + value13 + `" placeholder="" autocomplete="off" value="` + value13 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="veiklSavianalizNr` + iterNr13 + `" placeholder="" autocomplete="off" value="` + iterNr13 + `" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="veiklSavianalizStiprybes` + value13 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="veiklSavianalizStiprybes` + iterNr13 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="veiklSavianalizTobulintina` + value13 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="veiklSavianalizTobulintina` + iterNr13 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-                <div id="add_to_me13` + div13 + `">
+                <div id="add_to_meTableVeiklS` + divNr13 + `">
               `;
-    document.getElementById("tableVeiklS_id").value = value13;
-    value13++;
+    document.getElementById("tableVeiklS_id").value = iterNr13;
+    iterNr13++;
+    // AUTO SIZE for textarea (new fields)
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1856,8 +1836,7 @@
   }
 
 
-// AUTO SIZE for textarea 
-
+// AUTO SIZE for textarea (output fields)
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');

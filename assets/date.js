@@ -28,3 +28,11 @@ document.addEventListener('DOMContentLoaded', date);
 //     date();
 // });
 
+document.addEventListener('DOMContentLoaded', currentDate);
+ 
+function currentDate(){
+    document.getElementById("currentDate2").placeholder = new Date().toISOString().slice(0, 10);
+    document.getElementById("currentDate3").placeholder = new Date().toISOString().slice(0, 10);
+    document.getElementById("currentDate4").value = new Date().toISOString().slice(0, 10);
+};
+
