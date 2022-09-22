@@ -1,5 +1,4 @@
 var express = require('express');
-const User = require('../models/user');
 
 module.exports = {
   //first function nr1 (for "update" and "submit")
