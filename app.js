@@ -22,10 +22,13 @@ const lectGetReport = require('./assets/lecturers-get-report');
 const depGetReport = require('./assets/departments-get-report');
 
 const depGetLectList = require('./assets/departments-get-lect-list');
-const depGetLectEdit = require('./assets/departments-get-edit-user');
+const depLectEdit = require('./assets/departments-get-edit-user');
 
 const lectPostReport = require('./assets/lecturers-post-report');
 const depPostReport = require('./assets/departments-post-report');
+
+const userWindow = require('./assets/user-window');
+const adminWindow = require('./assets/admin');
 
 //---
 const app = express();
@@ -213,7 +216,6 @@ app.get("/admin/history-log", (req, res) => {
 
 //---------------------LECTURER-------------------
 app.get("/2022-2023/create", function (req, res) {
-
   if (req.isAuthenticated()) {
     lectGetReport.getCreate22_23(req, res);
   } else {
@@ -221,7 +223,6 @@ app.get("/2022-2023/create", function (req, res) {
   }
 });
 app.get("/2023-2024/create", function (req, res) {
-
   if (req.isAuthenticated()) {
     lectGetReport.getCreate23_24(req, res);
   } else {
@@ -229,7 +230,6 @@ app.get("/2023-2024/create", function (req, res) {
   }
 });
 app.get("/2024-2025/create", function (req, res) {
-
   if (req.isAuthenticated()) {
     lectGetReport.getCreate24_25(req, res);
   } else {
@@ -237,7 +237,6 @@ app.get("/2024-2025/create", function (req, res) {
   }
 });
 app.get("/2025-2026/create", function (req, res) {
-
   if (req.isAuthenticated()) {
     lectGetReport.getCreate25_26(req, res);
   } else {
@@ -389,7 +388,7 @@ app.get("/department/2025-2026/create", function (req, res) {
 });
 
 app.post("/dep-create-2022-2023", (req, res) => {
-depPostReport.postReportCreate22_23(req, res);
+  depPostReport.postReportCreate22_23(req, res);
 });
 app.post("/dep-create-2023-2024", (req, res) => {
   depPostReport.postReportCreate23_24(req, res);
@@ -485,7 +484,7 @@ app.post("/dep-submit-2024-2025", function (req, res) {
 app.post("/dep-submit-2025-2026", function (req, res) {
   depPostReport.postReportSubmit25_26(req, res);
 });
-
+//--------------------
 app.get("/logout", function (req, res) {
 
   User.findById(req.user.id, function (err, foundUser) {
@@ -509,51 +508,14 @@ app.get("/logout", function (req, res) {
 
 app.get("/user-window", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          console.log("user-window nepraleidžia");
-          res.redirect("/login");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    userWindow.getUserWindow(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.post("/update-user", function (req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser) {
-          foundUser.vardas = req.body.vardas,
-            foundUser.pavarde = req.body.pavarde,
-            foundUser.updated_for = req.user.username
-
-          foundUser.save(function (err) {
-            if (err) throw err;
-            console.log("Dėstytojas info succesfully updated ");
-            if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-              res.redirect("/user-window");
-            } else {
-              res.redirect("/login");
-            }
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    userWindow.postUpdateUser(req, res);
   } else {
     res.redirect("/login");
   }
@@ -561,44 +523,14 @@ app.post("/update-user", function (req, res) {
 
 app.get("/user-window-selection", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window-selection", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          res.redirect("/login");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    userWindow.getSelection(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.post("/update-user-window-selection-role", function (req, res) {
   if (req.isAuthenticated()) {
-
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser) {
-          foundUser.role = req.body.role,
-            foundUser.updated_for = req.user.username
-
-          foundUser.save(function (err) {
-            if (err) throw err;
-            res.redirect("/user-window");
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    userWindow.postChangeRole(req, res);
   } else {
     res.redirect("/login");
   }
@@ -606,83 +538,28 @@ app.post("/update-user-window-selection-role", function (req, res) {
 
 app.get("/2022-2023/user-window", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window-2022-2023", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          res.redirect("/login");
-        }
-      }
-    });
+    userWindow.getByYear22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2023-2024/user-window", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window-2023-2024", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          console.log("user-window nepraleidžia");
-          res.redirect("/login");
-        }
-      }
-    });
+    userWindow.getByYear23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2024-2025/user-window", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window-2024-2025", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          console.log("user-window nepraleidžia");
-          res.redirect("/login");
-        }
-      }
-    });
+    userWindow.getYear24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/2025-2026/user-window", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
-          res.render("user-window-2025-2026", {
-            user: foundUser
-          });
-        } else {
-          console.log("You don't have permission");
-          console.log("user-window nepraleidžia");
-          res.redirect("/login");
-        }
-      }
-    });
+    userWindow.getByYear25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -690,115 +567,28 @@ app.get("/2025-2026/user-window", function (req, res) {
 //Katedros vedėjas atnaujina dėstytojų sk. info profilyje
 app.post("/update-user-dep-2022-2023", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser) {
-          //foundUser.katedra = req.body.katedra,
-          //foundUser.fakultetas = req.body.fakultetas,
-          foundUser.mm2022_2023.katedrosVedejas.katedrosDestytojuSk = req.body.katedrosDestytojuSkaicius,
-            foundUser.updated_for = req.user.username
-          foundUser.save(function (err) {
-            if (err) throw err;
-            if (foundUser.role === "katedros vedėjas") {
-              res.redirect("/2022-2023/user-window");
-            } else {
-              res.redirect("/login");
-            }
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      }
-    });
+    userWindow.postUpdateUserDep22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.post("/update-user-dep-2023-2024", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser) {
-          //foundUser.katedra = req.body.katedra,
-          //foundUser.fakultetas = req.body.fakultetas,
-          foundUser.mm2023_2024.katedrosVedejas.katedrosDestytojuSk = req.body.katedrosDestytojuSkaicius,
-            foundUser.updated_for = req.user.username
-          foundUser.save(function (err) {
-            if (err) throw err;
-            if (foundUser.role === "katedros vedėjas") {
-              //console.log("vedejas");
-              res.redirect("/2023-2024/user-window");
-            } else {
-              res.redirect("/login");
-            }
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      }
-    });
+    userWindow.postUpdateUserDep23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.post("/update-user-dep-2024-2025", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser) {
-          //foundUser.katedra = req.body.katedra,
-          //foundUser.fakultetas = req.body.fakultetas,
-          foundUser.mm2024_2025.katedrosVedejas.katedrosDestytojuSk = req.body.katedrosDestytojuSkaicius,
-            foundUser.updated_for = req.user.username
-          foundUser.save(function (err) {
-            if (err) throw err;
-            if (foundUser.role === "katedros vedėjas") {
-              //console.log("vedejas");
-              res.redirect("/2024-2025/user-window");
-            } else {
-              res.redirect("/login");
-            }
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      }
-    });
+    userWindow.postUpdateUserDep24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.post("/update-user-dep-2025-2026", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser) {
-          //foundUser.katedra = req.body.katedra,
-          //foundUser.fakultetas = req.body.fakultetas,
-          foundUser.mm2025_2026.katedrosVedejas.katedrosDestytojuSk = req.body.katedrosDestytojuSkaicius,
-            foundUser.updated_for = req.user.username
-          foundUser.save(function (err) {
-            if (err) throw err;
-            if (foundUser.role === "katedros vedėjas") {
-              //console.log("vedejas");
-              res.redirect("/2025-2026/user-window");
-            } else {
-              res.redirect("/login");
-            }
-          });
-        } else {
-          console.log("User does'f found");
-        }
-      }
-    });
+    userWindow.postUpdateUserDep25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -863,28 +653,28 @@ app.get("/department/2025-2026/lecturers-list/:page", (req, res) => {
 
 app.get("/department/2022-2023/edit-user/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLec22_23(req, res);
+    depLectEdit.getEditLec22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2023-2024/edit-user/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLec23_24(req, res);
+    depLectEdit.getEditLec23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2024-2025/edit-user/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLec24_25(req, res);
+    depLectEdit.getEditLec24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2025-2026/edit-user/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLec25_26(req, res);
+    depLectEdit.getEditLec25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -892,102 +682,42 @@ app.get("/department/2025-2026/edit-user/:userId", (req, res) => {
 
 //Katedros vedėjas atnaujina dėstytojo būseną
 app.post("/update-user-info-dep-2022-2023", (req, res) => {
-  User.findById(req.body.id, function (err, foundUser) {
-    try {
-      if (foundUser) {
-        foundUser.busena22_23 = req.body.busena,
-          foundUser.updated_for = req.user.username
-        foundUser.save(function (err) {
-          if (err) throw err;
-          res.redirect("/department/2022-2023/lecturers-list");
-        });
-      } else {
-        console.log("Does'f found");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
+  depLectEdit.postEditLec22_23(req, res);
 });
 app.post("/update-user-info-dep-2023-2024", (req, res) => {
-  User.findById(req.body.id, function (err, foundUser) {
-    try {
-      if (foundUser) {
-        foundUser.busena23_24 = req.body.busena,
-          foundUser.updated_for = req.user.username
-        foundUser.save(function (err) {
-          if (err) throw err;
-          res.redirect("/department/2023-2024/lecturers-list");
-        });
-      } else {
-        console.log("Does'f found");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
+  depLectEdit.postEditLec23_24(req, res);
 });
 app.post("/update-user-info-dep-2024-2025", (req, res) => {
-  User.findById(req.body.id, function (err, foundUser) {
-    try {
-      if (foundUser) {
-        foundUser.busena24_25 = req.body.busena,
-          foundUser.updated_for = req.user.username
-        foundUser.save(function (err) {
-          if (err) throw err;
-          res.redirect("/department/2024-2025/lecturers-list");
-        });
-      } else {
-        console.log("Does'f found");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
+  depLectEdit.postEditLec24_25(req, res);
 });
 app.post("/update-user-info-dep-2025-2026", (req, res) => {
-  User.findById(req.body.id, function (err, foundUser) {
-    try {
-      if (foundUser) {
-        foundUser.busena25_26 = req.body.busena,
-          foundUser.updated_for = req.user.username
-        foundUser.save(function (err) {
-          if (err) throw err;
-          res.redirect("/department/2025-2026/lecturers-list");
-        });
-      } else {
-        console.log("Does'f found");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
+  depLectEdit.postEditLec25_26(req, res);
 });
 
 app.get("/department/2022-2023/edit-lecturer-report/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLecReport22_23(req, res);
+    depLectEdit.getEditLecReport22_23(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2023-2024/edit-lecturer-report/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLecReport23_24(req, res);
+    depLectEdit.getEditLecReport23_24(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2024-2025/edit-lecturer-report/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLecReport24_25(req, res);
+    depLectEdit.getEditLecReport24_25(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/department/2025-2026/edit-lecturer-report/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    depGetLectEdit.getEditLecReport25_26(req, res);
+    depLectEdit.getEditLecReport25_26(req, res);
   } else {
     res.redirect("/login");
   }
@@ -1009,46 +739,15 @@ app.post("/update-report-lecturer-dep-2025-2026", (req, res) => {
 //------------------ADMIN----------------------------------------
 app.get("/admin/profile", function (req, res) {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser.role === "administratorius") {
-          res.render("admin-window", {
-            user: foundUser
-          });
-        } else {
-          console.log("You dont have permission");
-          res.redirect("/login");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    adminWindow.getProfile(req, res);
   } else {
     res.redirect("/login");
   }
 });
 // Administratorius atnaujina savo info
 app.post("/update-profile-admin", function (req, res) {
-
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser) {
-          foundUser.vardas = req.body.vardas,
-            foundUser.pavarde = req.body.pavarde
-          foundUser.updated_for = req.user.username //username- savo username paimti
-          foundUser.save(function (err) {
-            if (err) throw err;
-            console.log("User info succesfully updated");
-            res.redirect("/admin/profile");
-          });
-        } else {
-          console.log("User doesn't found");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    adminWindow.postUpdateProfile(req, res);
   } else {
     res.redirect("/login");
   }
@@ -1056,276 +755,67 @@ app.post("/update-profile-admin", function (req, res) {
 
 // main list with ALL DB USERS
 app.get("/admin/users", (req, res) => {
-
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser.role === "administratorius") {
-          var perPage = 5;
-          var page = req.params.page || 1;
-          User.find({})
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function (err, users) {
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    adminWindow.getAllUsers(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/admin/users/:page", (req, res) => {
-
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      try {
-        if (foundUser.role === "administratorius") {
-          var perPage = 5;
-          var page = req.params.page || 1;
-          User.find({})
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function (err, users) {
-
-              if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
-                res.render("admin-users-list", {
-                  users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-                });
-              });
-            });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    });
+    adminWindow.getAllUsers(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/admin/users/edit/:userId", (req, res) => {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.userId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            User.findById((reqId), function (err, user) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-user-edit", {
-                  user: user
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin/profile");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
+    adminWindow.getUpdateUserInfo(req, res);
   } else {
     res.redirect("/login");
   }
 });
 // Administratorius atnaujina naudotojo info
 app.post("/update-user-info-admin", (req, res) => {
-
-  User.findById(req.body.id, function (err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundUser) {
-        foundUser.activeUser = req.body.isActive,
-          foundUser.vardas = req.body.vardas,
-          foundUser.pavarde = req.body.pavarde,
-          foundUser.username = req.body.elpastas,
-          foundUser.fakultetas = req.body.fakultetas,
-          foundUser.katedra = req.body.katedra,
-
-          foundUser.rolesKeitimas = req.body.rolesKeitimas,
-          foundUser.role = req.body.role,
-
-          foundUser.teachingYear22_23 = req.body.destymoMetai22_23,
-          foundUser.teachingYear23_24 = req.body.destymoMetai23_24,
-          foundUser.teachingYear24_25 = req.body.destymoMetai24_25,
-          foundUser.teachingYear25_26 = req.body.destymoMetai25_26,
-          foundUser.headOfTheDepartment22_23 = req.body.vedejoDarboMetai22_23,
-          foundUser.headOfTheDepartment23_24 = req.body.vedejoDarboMetai23_24,
-          foundUser.headOfTheDepartment24_25 = req.body.vedejoDarboMetai24_25,
-          foundUser.headOfTheDepartment25_26 = req.body.vedejoDarboMetai25_26,
-          foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
-        foundUser.save(function (err) {
-          if (err) throw err;
-          res.redirect("/admin/users");
-        });
-      } else {
-        console.log("Does'f found");
-      }
-    }
-  });
+  adminWindow.postUpdateUserInfo(req, res);
 });
 // Administratorius ištrina naudotoją iš DB
 app.post("/delete", function (req, res) {
-  User.deleteOne({
-    _id: req.body.deleteById
-  },
-    function (err) {
-      if (!err) {
-        res.redirect("/admin/users");
-      } else {
-        res.send(err);
-      }
-    }
-  );
+  adminWindow.postDeleteUser(req, res);
 });
 
 app.get("/admin/faculties", (req, res) => {
-
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          Faculty.find({}, function (err, faculties) {
-            if (err) {
-              console.log(err);
-            } else {
-              res.render("admin-faculties-list", {
-                faculties: faculties
-              });
-            }
-          });
-        } else {
-          console.log("You do not have permission");
-          res.redirect("/login");
-        }
-      }
-    });
+    adminWindow.getFaculty(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/admin/faculties/create", (req, res) => {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          res.render("admin-faculties-create");
-        } else {
-          console.log("User role unknown");
-          res.redirect("/login");
-        }
-      }
-    });
+    adminWindow.getCreateFaculty(req, res);
   } else {
     res.redirect("/login");
   }
 });
 app.get("/admin/faculties/edit/:facultyId", (req, res) => {
   if (req.isAuthenticated()) {
-    User.findById(req.user.id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (foundUser.role === "administratorius") {
-          const reqId = req.params.facultyId;
-          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
-            Faculty.findById((reqId), function (err, faculty) {
-              if (err) {
-                console.log(err);
-              } else {
-                res.render("admin-faculties-edit", {
-                  faculty: faculty
-                });
-              }
-            });
-          } else {
-            res.redirect("/admin/profile");
-          }
-        } else {
-          res.redirect("/home");
-        }
-      }
-    });
+    adminWindow.getUpdateFaculty(req, res);
   } else {
     res.redirect("/login");
   }
 });
 // Administratorius sukuria fakultetą
 app.post("/create-faculty", (req, res) => {
-  const faculty = new Faculty({
-    username: req.body.fakultetas,
-    dekanas: req.body.dekanas,
-    prodekanas: req.body.prodekanas
-  });
-  faculty.save(function (err) {
-    if (err) throw err;
-    console.log("Succesfully created");
-    res.redirect("/admin/faculties");
-  });
+  adminWindow.postCreateFaculty(req, res);
 });
 // Administratorius atnaujina fakultetą
 app.post("/edit-faculty", (req, res) => {
-
-  Faculty.findById(req.body.id, function (err, foundFaculty) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundFaculty) {
-        foundFaculty.username = req.body.fakultetas,
-          foundFaculty.dekanas = req.body.dekanas,
-          foundFaculty.prodekanas = req.body.prodekanas
-        foundFaculty.save(function (err) {
-          if (err) throw err;
-          console.log("Succesfully updated");
-          res.redirect("/admin/faculties");
-        });
-      } else {
-        console.log("Faculty does'f found");
-      }
-    }
-  });
+  adminWindow.postUpdateFaculty(req, res);
 });
 // Administratorius ištrina naudotoją iš DB
 app.post("/delete-faculty", function (req, res) {
-
-  Faculty.deleteOne({
-    _id: req.body.deleteById
-  },
-    function (err) {
-      if (!err) {
-        res.redirect("/admin/faculties");
-      } else {
-        res.send(err);
-      }
-    }
-  );
+  adminWindow.postDeleteFaculty(req, res);
 });
 //end main list with ALL DB USERS
 
@@ -2044,7 +1534,7 @@ app.get("/admin/2025-2026/lecturers/edit-report/:userId", (req, res) => {
 
 // Administratorius atnaujina dėstytojo ataskaitą
 app.post("/update-report-lec-admin-2022-2023", (req, res) => {
-lectPostReport.postReportAdmin22_23(req, res);
+  lectPostReport.postReportAdmin22_23(req, res);
 });
 app.post("/update-report-lec-admin-2023-2024", (req, res) => {
   lectPostReport.postReportAdmin23_24(req, res);

@@ -99,6 +99,78 @@ module.exports = {
 
         });
     },
+    postEditLec22_23: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena22_23 = req.body.busena,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/department/2022-2023/lecturers-list");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postEditLec23_24: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena23_24 = req.body.busena,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/department/2023-2024/lecturers-list");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postEditLec24_25: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena24_25 = req.body.busena,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/department/2024-2025/lecturers-list");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postEditLec25_26: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena25_26 = req.body.busena,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/department/2025-2026/lecturers-list");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
     getEditLecReport22_23: function (req, res) {
         User.findById(req.user.id, function (err, foundUser) {
             try {
