@@ -29,8 +29,7 @@ const depPostReport = require('./assets/departments-post-report');
 
 const userWindow = require('./assets/user-window');
 const adminWindow = require('./assets/admin');
-const mainModules = require('./assets/other');
-
+const mainModules = require('./assets/main-modules');
 
 const app = express();
 
@@ -76,98 +75,12 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 app.post("/register", (req, res) => {
-
-  User.register({
-    username: req.body.username,
-    activeUser: "aktyvus",
-    currentYear: new Date().getFullYear(),
-    updated_for: "Registracija",
-    //ataskaitų būsenos
-    busena22_23: "nesukurta",
-    busena23_24: "nesukurta",
-    busena24_25: "nesukurta",
-    busena25_26: "nesukurta",
-    busenaVedejo22_23: "nesukurta",
-    busenaVedejo23_24: "nesukurta",
-    busenaVedejo24_25: "nesukurta",
-    busenaVedejo25_26: "nesukurta",
-    //rolės naudotojo
-    role: "dėstytojas",
-    rolesKeitimas: false,
-    //naudotojo atpažinimui
-    teachingYear22_23: false,
-    teachingYear23_24: false,
-    teachingYear24_25: false,
-    teachingYear25_26: false,
-    headOfTheDepartment22_23: false,
-    headOfTheDepartment23_24: false,
-    headOfTheDepartment24_25: false,
-    headOfTheDepartment25_26: false,
-  }, req.body.password, function (err, user) {
-    if (err) {
-      console.log(err);
-      res.redirect("/register");
-    } else {
-      passport.authenticate("local")(req, res, function () {
-        res.redirect("/user-window-selection");
-      });
-    }
-  });
+  mainModules.postRegister(req, res);
 });
-
 app.post("/login", (req, res) => {
-  //2 rolem negalima prisijungti vienu metu
-
-  //   if (req.isAuthenticated()) {
-  // console.log("autentifikavo");
-  //     User.findById(req.user.id, function(err, foundUser) {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         if (foundUser.role === "dėstytojas") {
-  //           res.redirect("/user-window");
-  //         } else if (foundUser.role === "katedros vedėjas") {
-  //           res.redirect("/user-window-dep");
-  //         } else if (foundUser.role === "administratorius") {
-  //           res.redirect("/admin/profile");
-  //         }
-  //       }
-  //     });
-  //
-  // } else {
-  //use a Model (User) to create new documents (user) using `new`:
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password
-  });
-
-  req.login(user, function (err) {
-    if (err) throw err;
-    passport.authenticate("local", {
-      failureRedirect: '/login'
-    })(req, res, function () {
-      User.findById(req.user.id, function (err, foundUser) {
-        try {
-          var a = req.user.username;
-          foundUser.updated_for = "Prisijungimas" + " " + a;
-          foundUser.save(function (err) {
-            if (err) throw err;
-          });
-          if (foundUser.role === "dėstytojas") {
-            res.redirect("/user-window-selection");
-          } else if (foundUser.role === "katedros vedėjas") {
-            res.redirect("/user-window-selection");
-          } else if (foundUser.role === "administratorius") {
-            res.redirect("/admin/profile");
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      });
-    });
-  });
-  //}
+  mainModules.postLogin(req, res);
 });
 
 // METHOD FOR LOG
@@ -178,36 +91,32 @@ app.get("/admin/history-log", isLoggedIn, (req, res) => {
   var url = "mongodb://localhost:27017/";
 
   User.findById(req.user.id, function (err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundUser.role === "administratorius") {
+    if (err) throw err;
+    if (foundUser.role === "administratorius") {
+      MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
 
-        MongoClient.connect(url, function (err, db) {
-          if (err) throw err;
-
-          var dbo = db.db("reportsDB_v2");
-          dbo.collection("__historiesPlugin")
-            .find({}).toArray(function (err, _historiesPlugin) {
-              if (err) throw err;
-              //console.log(_historiesPlugin.collectionId);
-              //console.log(_historiesPlugin);
-              res.render("admin-history-log", {
-                users_history: _historiesPlugin
-              });
-              db.close();
+        var dbo = db.db("reportsDB_v2");
+        dbo.collection("__historiesPlugin")
+          .find({}).toArray(function (err, _historiesPlugin) {
+            if (err) throw err;
+            //console.log(_historiesPlugin.collectionId);
+            //console.log(_historiesPlugin);
+            res.render("admin-history-log", {
+              users_history: _historiesPlugin
             });
-        });
-      } else {
-        console.log("You do not have permission");
-        res.redirect("/login");
-      }
+            db.close();
+          });
+      });
+    } else {
+      console.log("You do not have permission");
+      res.redirect("/login");
     }
   });
 });
 
-
 //---------------------LECTURER-------------------
+//Create/update/submit lecturer report
 app.get("/2022-2023/create", isLoggedIn, (req, res) => {
   lectGetReport.getCreate22_23(req, res);
 });
@@ -280,7 +189,8 @@ app.post("/submit-2024-2025", isLoggedIn, (req, res) => {
 app.post("/submit-2025-2026", isLoggedIn, (req, res) => {
   lectPostReport.postReportSubmit25_26(req, res);
 });
-//---------------------DEPARTMENT-------------------
+//---------------------HEAD OF DEPARTMENT-------------------
+//Create/update/submit head of department report
 app.get("/department/2022-2023/create", isLoggedIn, (req, res) => {
   depGetReport.getCreate22_23(req, res);
 });
@@ -353,7 +263,7 @@ app.post("/dep-submit-2024-2025", isLoggedIn, (req, res) => {
 app.post("/dep-submit-2025-2026", isLoggedIn, (req, res) => {
   depPostReport.postReportSubmit25_26(req, res);
 });
-
+//User windows for lecturer and head of department
 app.get("/user-window", isLoggedIn, (req, res) => {
   userWindow.getUserWindow(req, res);
 });
@@ -373,12 +283,12 @@ app.get("/2023-2024/user-window", isLoggedIn, (req, res) => {
   userWindow.getByYear23_24(req, res);
 });
 app.get("/2024-2025/user-window", isLoggedIn, (req, res) => {
-  userWindow.getYear24_25(req, res);
+  userWindow.getByYear24_25(req, res);
 });
 app.get("/2025-2026/user-window", isLoggedIn, (req, res) => {
   userWindow.getByYear25_26(req, res);
 });
-//Katedros vedėjas atnaujina dėstytojų sk. info profilyje
+//Head of department updates number of lecturers by year
 app.post("/update-user-dep-2022-2023", isLoggedIn, (req, res) => {
   userWindow.postUpdateUserDep22_23(req, res);
 });
@@ -391,7 +301,7 @@ app.post("/update-user-dep-2024-2025", isLoggedIn, (req, res) => {
 app.post("/update-user-dep-2025-2026", isLoggedIn, (req, res) => {
   userWindow.postUpdateUserDep25_26(req, res);
 });
-//-----------------Head of the DEPARTMENT------------------------------------
+//Head of department receives a list of lecturers by year
 app.get("/department/2022-2023/lecturers-list", isLoggedIn, (req, res) => {
   depGetLectList.getLecturersList22_23(req, res);
 });
@@ -416,7 +326,7 @@ app.get("/department/2025-2026/lecturers-list", isLoggedIn, (req, res) => {
 app.get("/department/2025-2026/lecturers-list/:page", isLoggedIn, (req, res) => {
   depGetLectList.getLecturersList25_26(req, res);
 });
-
+//Head of department updates the status of lecturers by year
 app.get("/department/2022-2023/edit-user/:userId", isLoggedIn, (req, res) => {
   depLectEdit.getEditLec22_23(req, res);
 });
@@ -429,7 +339,6 @@ app.get("/department/2024-2025/edit-user/:userId", isLoggedIn, (req, res) => {
 app.get("/department/2025-2026/edit-user/:userId", isLoggedIn, (req, res) => {
   depLectEdit.getEditLec25_26(req, res);
 });
-//Katedros vedėjas atnaujina dėstytojo būseną
 app.post("/update-user-info-dep-2022-2023", isLoggedIn, (req, res) => {
   depLectEdit.postEditLec22_23(req, res);
 });
@@ -442,6 +351,7 @@ app.post("/update-user-info-dep-2024-2025", isLoggedIn, (req, res) => {
 app.post("/update-user-info-dep-2025-2026", isLoggedIn, (req, res) => {
   depLectEdit.postEditLec25_26(req, res);
 });
+//Head of department receives a list of lecturers reports by year
 app.get("/department/2022-2023/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
   depLectEdit.getEditLecReport22_23(req, res);
 });
@@ -454,7 +364,7 @@ app.get("/department/2024-2025/edit-lecturer-report/:userId", isLoggedIn, (req, 
 app.get("/department/2025-2026/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
   depLectEdit.getEditLecReport25_26(req, res);
 });
-// Katedros vedėjas atnaujina dėstytojo ataskaitą
+//Head of department updates a report of lecturers by year
 app.post("/update-report-lecturer-dep-2022-2023", isLoggedIn, (req, res) => {
   lectPostReport.postReportLec22_23(req, res);
 });
@@ -467,14 +377,15 @@ app.post("/update-report-lecturer-dep-2024-2025", isLoggedIn, (req, res) => {
 app.post("/update-report-lecturer-dep-2025-2026", isLoggedIn, (req, res) => {
   lectPostReport.postReportLec25_26(req, res);
 });
-//------------------ADMIN----------------------------------------
+//------------------ADMIN-----------------------
+//Profile
 app.get("/admin/profile", isLoggedIn, (req, res) => {
   adminWindow.getProfile(req, res);
 });
 app.post("/update-profile-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateProfile(req, res);
 });
-// main list with ALL DB USERS
+//Main list with ALL db users
 app.get("/admin/users", isLoggedIn, (req, res) => {
   adminWindow.getAllUsers(req, res);
 });
@@ -484,15 +395,13 @@ app.get("/admin/users/:page", isLoggedIn, (req, res) => {
 app.get("/admin/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserInfo(req, res);
 });
-// Administratorius atnaujina naudotojo info
 app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserInfo(req, res);
 });
-// Administratorius ištrina naudotoją iš DB
 app.post("/delete", (req, res) => {
   adminWindow.postDeleteUser(req, res);
 });
-//--Faculties--
+//----Faculties----
 app.get("/admin/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFaculties(req, res);
 });
@@ -508,11 +417,10 @@ app.post("/create-faculty", isLoggedIn, (req, res) => {
 app.post("/edit-faculty", isLoggedIn, (req, res) => {
   adminWindow.postUpdateFaculty(req, res);
 });
-// Administratorius ištrina naudotoją iš DB
 app.post("/delete-faculty", isLoggedIn, (req, res) => {
   adminWindow.postDeleteFaculty(req, res);
 });
-// USERS list by year
+//Receives a list of lecturers by year
 app.get("/admin/2022-2023/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear22_23(req, res);
 });
@@ -537,7 +445,7 @@ app.get("/admin/2025-2026/users", isLoggedIn, (req, res) => {
 app.get("/admin/2025-2026/users/:page", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear25_26(req, res);
 });
-//edit user window
+//Update User information by year
 app.get("/admin/2022-2023/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserByYear22_23(req, res);
 });
@@ -550,7 +458,6 @@ app.get("/admin/2024-2025/users/edit/:userId", isLoggedIn, (req, res) => {
 app.get("/admin/2025-2026/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserByYear25_26(req, res);
 });
-// Administratorius atnaujina naudotojo info
 app.post("/update-user-info-admin-2022-2023", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserByYear22_23(req, res);
 });
@@ -563,6 +470,7 @@ app.post("/update-user-info-admin-2024-2025", isLoggedIn, (req, res) => {
 app.post("/update-user-info-admin-2025-2026", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserByYear25_26(req, res);
 });
+//Receives a list of lecturers reports by year
 app.get("/admin/2022-2023/user-reports/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUserReportsByYear22_23(req, res);
 });
@@ -587,7 +495,7 @@ app.get("/admin/2024-2025/lecturers/edit-report/:userId", isLoggedIn, (req, res)
 app.get("/admin/2025-2026/lecturers/edit-report/:userId", isLoggedIn, (req, res) => {
   adminWindow.getLectReportByYear25_26(req, res);
 });
-// Administratorius atnaujina dėstytojo ataskaitą
+//Updates report of lecturers by year
 app.post("/update-report-lec-admin-2022-2023", isLoggedIn, (req, res) => {
   adminWindow.postLectReportUpdateByYear22_23(req, res);
 });
@@ -612,7 +520,7 @@ app.get("/admin/2024-2025/departments/edit-report/:userId", isLoggedIn, (req, re
 app.get("/admin/2025-2026/departments/edit-report/:userId", isLoggedIn, (req, res) => {
   adminWindow.getDepReportByYear25_26(req, res);
 });
-// Administratorius atnaujina katedros vedėjo ataskaitą
+//Updates report of the head of department by year
 app.post("/update-report-dep-admin-2022-2023", isLoggedIn, (req, res) => {
   adminWindow.postDepReportUpdateByYear22_23(req, res);
 });
@@ -629,7 +537,6 @@ app.post("/update-report-dep-admin-2025-2026", isLoggedIn, (req, res) => {
 app.get("/logout", (req, res) => {
   mainModules.getLogout(req, res);
 });
-
 app.use('/*/*/*', isLoggedIn, (req, res) => {
   mainModules.get404(req, res);
 });
@@ -640,7 +547,7 @@ app.use('*', isLoggedIn, (req, res) => {
   mainModules.get404(req, res);
 });
 
-// check isLoggedIn
+//Check isLoggedIn
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
