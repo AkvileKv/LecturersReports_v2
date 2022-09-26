@@ -844,7 +844,7 @@
 // mV2_S 
   var iterNr5 = document.getElementById("tablemV2_S_id").value;
   iterNr5++;
-  console.log("iterNr5 scripte: "+ iterNr5);
+  //console.log("iterNr5 scripte: "+ iterNr5);
   var divNr5 = 1;
 
   function mv2s() {

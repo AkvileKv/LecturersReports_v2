@@ -1,6 +1,11 @@
 const User = require('../models/user');
 const Faculty = require('../models/faculty');
 
+const lectReport22_23 = require('./report/lecturers-report22_23');
+const lectReport23_24 = require('./report/lecturers-report23_24');
+const lectReport24_25 = require('./report/lecturers-report24_25');
+const lectReport25_26 = require('./report/lecturers-report25_26');
+
 module.exports = {
     getProfile: function (req, res) {
         User.findById(req.user.id, function (err, foundUser) {
@@ -228,15 +233,743 @@ module.exports = {
     postDeleteFaculty: function (req, res) {
         Faculty.deleteOne({
             _id: req.body.deleteById
-          },
+        },
             function (err) {
-              if (!err) {
-                res.redirect("/admin/faculties");
-              } else {
-                res.send(err);
-              }
+                if (!err) {
+                    res.redirect("/admin/faculties");
+                } else {
+                    res.send(err);
+                }
             }
-          );
+        );
+    },
+    getUsersByYear22_23: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    var perPage = 5;
+                    var page = req.params.page || 1;
+                    User.find({
+                        teachingYear22_23: true
+                    })
+                        .skip((perPage * page) - perPage)
+                        .limit(perPage).exec(function (err, users) {
+                            if (err) throw err;
+                            User.countDocuments({
+                                teachingYear22_23: true
+                            }).exec((err, count) => {
+                                res.render("admin-users-list-2022-2023", {
+                                    users: users,
+                                    current: page,
+                                    pages: Math.ceil(count / perPage)
+                                });
+                            });
+                        });
+                } else {
+                    console.log("You do not have permission");
+                    res.redirect("/login");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUsersByYear23_24: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    var perPage = 5;
+                    var page = req.params.page || 1;
+                    User.find({
+                        teachingYear23_24: true
+                    })
+                        .skip((perPage * page) - perPage)
+                        .limit(perPage).exec(function (err, users) {
+                            if (err) throw err;
+                            User.countDocuments({
+                                teachingYear23_24: true
+                            }).exec((err, count) => {
+                                res.render("admin-users-list-2023-2024", {
+                                    users: users,
+                                    current: page,
+                                    pages: Math.ceil(count / perPage)
+                                });
+                            });
+                        });
+                } else {
+                    console.log("You do not have permission");
+                    res.redirect("/login");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUsersByYear24_25: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    let perPage = 5;
+                    let page = req.params.page || 1;
+                    console.log(page);
+                    User.find({
+                        teachingYear24_25: true
+                    }) // pagal metus perduoti
+                        .skip((perPage * page) - perPage)
+                        .limit(perPage).exec(function (err, users) {
+                            if (err) throw err;
+                            User.countDocuments({
+                                teachingYear24_25: true
+                            }).exec((err, count) => {
+                                res.render("admin-users-list-2024-2025", {
+                                    users: users,
+                                    current: page,
+                                    pages: Math.ceil(count / perPage)
+                                });
+                            });
+                        });
+                } else {
+                    console.log("You do not have permission");
+                    res.redirect("/login");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUsersByYear25_26: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    var perPage = 5;
+                    var page = req.params.page || 1;
+                    User.find({
+                        teachingYear25_26: true
+                    })
+                        .skip((perPage * page) - perPage)
+                        .limit(perPage).exec(function (err, users) {
+                            if (err) throw err;
+                            User.countDocuments({
+                                teachingYear25_26: true
+                            }).exec((err, count) => {
+                                res.render("admin-users-list-2025-2026", {
+                                    users: users,
+                                    current: page,
+                                    pages: Math.ceil(count / perPage)
+                                });
+                            });
+                        });
+                } else {
+                    console.log("You do not have permission");
+                    res.redirect("/login");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUpdateUserByYear22_23: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    const reqId = req.params.userId;
+                    if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                        User.findById((reqId), function (err, user) {
+                            if (err) throw err;
+                            res.render("admin-user-edit-2022-2023", {
+                                user: user
+                            });
+                        });
+                    } else {
+                        res.redirect("/admin/2022-2023/users");
+                    }
+                } else {
+                    res.redirect("/home");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUpdateUserByYear23_24: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    const reqId = req.params.userId;
+                    if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                        User.findById((reqId), function (err, user) {
+                            if (err) throw err;
+                            res.render("admin-user-edit-2023-2024", {
+                                user: user
+                            });
+                        });
+                    } else {
+                        res.redirect("/admin/2023-2024/users");
+                    }
+                } else {
+                    res.redirect("/home");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUpdateUserByYear24_25: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    const reqId = req.params.userId;
+                    if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                        User.findById((reqId), function (err, user) {
+                            if (err) throw err;
+                            res.render("admin-user-edit-2024-2025", {
+                                user: user
+                            });
+                        });
+                    } else {
+                        res.redirect("/admin/2024-2025/users");
+                    }
+                } else {
+                    res.redirect("/home");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getUpdateUserByYear25_26: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "administratorius") {
+                    const reqId = req.params.userId;
+                    if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                        User.findById((reqId), function (err, user) {
+                            if (err) throw err;
+                            res.render("admin-user-edit-2025-2026", {
+                                user: user
+                            });
+                        });
+                    } else {
+                        res.redirect("/admin/2025-2026/users");
+                    }
+                } else {
+                    res.redirect("/home");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postUpdateUserByYear22_23: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena22_23 = req.body.busena,
+                        foundUser.busenaVedejo22_23 = req.body.busenaVedejo,
+                        foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/admin/2022-2023/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postUpdateUserByYear23_24: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena23_24 = req.body.busena,
+                        foundUser.busenaVedejo23_24 = req.body.busenaVedejo,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/admin/2023-2024/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postUpdateUserByYear24_25: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    foundUser.busena24_25 = req.body.busena,
+                        foundUser.busenaVedejo24_25 = req.body.busenaVedejo,
+                        foundUser.updated_for = req.user.username
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        res.redirect("/admin/2024-2025/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postUpdateUserByYear25_26: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+              if (foundUser) {
+                foundUser.busena25_26 = req.body.busena,
+                  foundUser.busenaVedejo25_26 = req.body.busenaVedejo,
+                  foundUser.updated_for = req.user.username
+                foundUser.save(function (err) {
+                  if (err) throw err;
+                  res.redirect("/admin/2025-2026/users");
+                });
+              } else {
+                console.log("Does'f found");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getUserReportsByYear22_23: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-user-reports-all-2022-2023", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getUserReportsByYear23_24: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-user-reports-all-2023-2024", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getUserReportsByYear24_25: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-user-reports-all-2024-2025", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getUserReportsByYear25_26: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-user-reports-all-2025-2026", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getLectReportByYear22_23: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-lec-2022-2023", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getLectReportByYear23_24: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-lec-2023-2024", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getLectReportByYear24_25: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-lec-2024-2025", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    getLectReportByYear25_26: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-lec-2025-2026", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    //administratorius atnaujina destytojo ataskaita
+    postLectReportUpdateByYear22_23: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    //masyvu isvalymas update
+                    lectReport22_23.clearLecReport(foundUser);
+                    lectReport22_23.updateLecReport(foundUser, req);
+                    lectReport22_23.headOfDepAddToLecReport(foundUser, req);
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        console.log("Succesfully  updated");
+                        res.redirect("/admin/2022-2023/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postLectReportUpdateByYear23_24: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    lectReport23_24.clearLecReport(foundUser);
+                    lectReport23_24.updateLecReport(foundUser, req);
+                    lectReport23_24.headOfDepAddToLecReport(foundUser, req);
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        console.log("Succesfully  updated");
+                        res.redirect("/admin/2023-2024/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postLectReportUpdateByYear24_25: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    lectReport24_25.clearLecReport(foundUser);
+                    lectReport24_25.updateLecReport(foundUser, req);
+                    lectReport24_25.headOfDepAddToLecReport(foundUser, req);
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        console.log("Succesfully  updated");
+                        res.redirect("/admin/2024-2025/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postLectReportUpdateByYear25_26: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    lectReport25_26.clearLecReport(foundUser);
+                    lectReport25_26.updateLecReport(foundUser, req);
+                    lectReport25_26.headOfDepAddToLecReport(foundUser, req);
+                    foundUser.save(function (err) {
+                        if (err) throw err;
+                        console.log("Succesfully  updated");
+                        res.redirect("/admin/2025-2026/users");
+                    });
+                } else {
+                    console.log("Does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getDepReportByYear22_23: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-dep-2022-2023", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+                console.log(err);
+            }
+          });
+    },
+    getDepReportByYear23_24: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-dep-2023-2024", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+                console.log(err);
+            }
+          });
+    },
+    getDepReportByYear24_25: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-dep-2024-2025", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+                console.log(err);
+            }
+          });
+    },
+    getDepReportByYear25_26: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+              if (foundUser.role === "administratorius") {
+                const reqId = req.params.userId;
+                if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+                  User.findById((reqId), function (err, user) {
+                    if (err) throw err;
+                    res.render("admin-edit-report-dep-2025-2026", {
+                      user: user
+                    });
+                  });
+                } else {
+                  res.redirect("/admin/profile");
+                }
+              } else {
+                res.redirect("/home");
+              }
+            } catch (err) {
+                console.log(err);
+            }
+          });
+    },
+    //administratorius atnaujina vedejo ataskaita
+    postDepReportUpdateByYear22_23: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+              if (foundUser) {
+                depReport22_23.clearDepReport(foundUser);
+                depReport22_23.update(foundUser, req);
+                foundUser.save(function (err) {
+                  if (err) throw err;
+                  console.log("Succesfully  updated");
+                  res.redirect("admin/2022-2023/users");
+                });
+              } else {
+                console.log("Does'f found");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    postDepReportUpdateByYear23_24: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+              if (foundUser) {
+                depReport23_24.clearDepReport(foundUser);
+                depReport23_24.update(foundUser, req);
+                foundUser.save(function (err) {
+                  if (err) throw err;
+                  console.log("Succesfully  updated");
+                  res.redirect("admin/2023-2024/users");
+                });
+              } else {
+                console.log("Does'f found");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    postDepReportUpdateByYear24_25: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+              if (foundUser) {
+                depReport24_25.clearDepReport(foundUser);
+                depReport24_25.update(foundUser, req);
+                foundUser.save(function (err) {
+                  if (err) throw err;
+                  console.log("Succesfully  updated");
+                  res.redirect("admin/2024-2025/users");
+                });
+              } else {
+                console.log("Does'f found");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
+    },
+    postDepReportUpdateByYear25_26: function (req, res) {
+        User.findById(req.body.id, function (err, foundUser) {
+            try {
+              if (foundUser) {
+                depReport25_26.clearDepReport(foundUser);
+                depReport25_26.update(foundUser, req);
+                foundUser.save(function (err) {
+                  if (err) throw err;
+                  console.log("Succesfully  updated");
+                  res.redirect("admin/2025-2026/users");
+                });
+              } else {
+                console.log("Does'f found");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          });
     }
 
 }
