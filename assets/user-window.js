@@ -1,6 +1,7 @@
 const User = require('../models/user');
 
 module.exports = {
+    //For lecturers and departments
     getSelection: function (req, res) {
         User.findById(req.user.id, function (err, foundUser) {
             try {
@@ -139,7 +140,7 @@ module.exports = {
                 console.log(err);
             }
         });
-    },
+    }, // For departments:
     postUpdateUserDep22_23: function (req, res) {
         User.findById(req.user.id, function (err, foundUser) {
             try {

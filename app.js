@@ -18,14 +18,10 @@ const homeRouter = require('./controllers/home');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 
-const lectGetReport = require('./assets/lecturers-get-report');
-const depGetReport = require('./assets/departments-get-report');
+const depReport = require('./assets/departments-report');
+const lectReport = require('./assets/lecturers-report');
 
-const depGetLectList = require('./assets/departments-get-lect-list');
-const depLectEdit = require('./assets/departments-get-edit-user');
-
-const lectPostReport = require('./assets/lecturers-post-report');
-const depPostReport = require('./assets/departments-post-report');
+const depEditLect = require('./assets/departments-edit-lec');
 
 const userWindow = require('./assets/user-window');
 const adminWindow = require('./assets/admin');
@@ -118,150 +114,150 @@ app.get("/admin/history-log", isLoggedIn, (req, res) => {
 //---------------------LECTURER-------------------
 //Create/update/submit lecturer report
 app.get("/2022-2023/create", isLoggedIn, (req, res) => {
-  lectGetReport.getCreate22_23(req, res);
+  lectReport.getCreate22_23(req, res);
 });
 app.get("/2023-2024/create", isLoggedIn, (req, res) => {
-  lectGetReport.getCreate23_24(req, res);
+  lectReport.getCreate23_24(req, res);
 });
 app.get("/2024-2025/create", isLoggedIn, (req, res) => {
-  lectGetReport.getCreate24_25(req, res);
+  lectReport.getCreate24_25(req, res);
 });
 app.get("/2025-2026/create", isLoggedIn, (req, res) => {
-  lectGetReport.getCreate25_26(req, res);
+  lectReport.getCreate25_26(req, res);
 });
 app.post("/create-2022-2023", isLoggedIn, (req, res) => {
-  lectPostReport.postReportCreate22_23(req, res);
+  lectReport.postCreate22_23(req, res);
 });
 app.post("/create-2023-2024", isLoggedIn, (req, res) => {
-  lectPostReport.postReportCreate23_24(req, res);
+  lectReport.postCreate23_24(req, res);
 });
 app.post("/create-2024-2025", isLoggedIn, (req, res) => {
-  lectPostReport.postReportCreate24_25(req, res);
+  lectReport.postCreate24_25(req, res);
 });
 app.post("/create-2025-2026", isLoggedIn, (req, res) => {
-  lectPostReport.postReportCreate25_26(req, res);
+  lectReport.postCreate25_26(req, res);
 });
 app.get("/2022-2023/edit", isLoggedIn, (req, res) => {
-  lectGetReport.getUpdate22_23(req, res);
+  lectReport.getUpdate22_23(req, res);
 });
 app.get("/2023-2024/edit", isLoggedIn, (req, res) => {
-  lectGetReport.getUpdate23_24(req, res);
+  lectReport.getUpdate23_24(req, res);
 });
 app.get("/2024-2025/edit", isLoggedIn, (req, res) => {
-  lectGetReport.getUpdate24_25(req, res);
+  lectReport.getUpdate24_25(req, res);
 });
 app.get("/2025-2026/edit", isLoggedIn, (req, res) => {
-  lectGetReport.getUpdate25_26(req, res);
+  lectReport.getUpdate25_26(req, res);
 });
 app.post("/update-2022-2023", isLoggedIn, (req, res) => {
-  lectPostReport.postReportUpdate22_23(req, res);
+  lectReport.postUpdate22_23(req, res);
 });
 app.post("/update-2023-2024", isLoggedIn, (req, res) => {
-  lectPostReport.postReportUpdate23_24(req, res);
+  lectReport.postUpdate23_24(req, res);
 });
 app.post("/update-2024-2025", isLoggedIn, (req, res) => {
-  lectPostReport.postReportUpdate24_25(req, res);
+  lectReport.postUpdate24_25(req, res);
 });
 app.post("/update-2025-2026", isLoggedIn, (req, res) => {
-  lectPostReport.postReportUpdate25_26(req, res);
+  lectReport.postUpdate25_26(req, res);
 });
 app.get("/2022-2023/submit", isLoggedIn, (req, res) => {
-  lectGetReport.getSubmit22_23(req, res);
+  lectReport.getSubmit22_23(req, res);
 });
 app.get("/2023-2024/submit", isLoggedIn, (req, res) => {
-  lectGetReport.getSubmit23_24(req, res);
+  lectReport.getSubmit23_24(req, res);
 });
 app.get("/2024-2025/submit", isLoggedIn, (req, res) => {
-  lectGetReport.getSubmit24_25(req, res);
+  lectReport.getSubmit24_25(req, res);
 });
 app.get("/2025-2026/submit", isLoggedIn, (req, res) => {
-  lectGetReport.getSubmit25_26(req, res);
+  lectReport.getSubmit25_26(req, res);
 });
 app.post("/submit-2022-2023", isLoggedIn, (req, res) => {
-  lectPostReport.postReportSubmit22_23(req, res);
+  lectReport.postSubmit22_23(req, res);
 });
 app.post("/submit-2023-2024", isLoggedIn, (req, res) => {
-  lectPostReport.postReportSubmit23_24(req, res);
+  lectReport.postSubmit23_24(req, res);
 });
 app.post("/submit-2024-2025", isLoggedIn, (req, res) => {
-  lectPostReport.postReportSubmit24_25(req, res);
+  lectReport.postSubmit24_25(req, res);
 });
 app.post("/submit-2025-2026", isLoggedIn, (req, res) => {
-  lectPostReport.postReportSubmit25_26(req, res);
+  lectReport.postSubmit25_26(req, res);
 });
 //---------------------HEAD OF DEPARTMENT-------------------
 //Create/update/submit head of department report
 app.get("/department/2022-2023/create", isLoggedIn, (req, res) => {
-  depGetReport.getCreate22_23(req, res);
+  depReport.getCreate22_23(req, res);
 });
 app.get("/department/2023-2024/create", isLoggedIn, (req, res) => {
-  depGetReport.getCreate23_24(req, res);
+  depReport.getCreate23_24(req, res);
 });
 app.get("/department/2024-2025/create", isLoggedIn, (req, res) => {
-  depGetReport.getCreate24_25(req, res);
+  depReport.getCreate24_25(req, res);
 });
 app.get("/department/2025-2026/create", isLoggedIn, (req, res) => {
-  depGetReport.getCreate25_26(req, res);
+  depReport.getCreate25_26(req, res);
 });
 app.post("/dep-create-2022-2023", isLoggedIn, (req, res) => {
-  depPostReport.postReportCreate22_23(req, res);
+  depReport.postCreate22_23(req, res);
 });
 app.post("/dep-create-2023-2024", isLoggedIn, (req, res) => {
-  depPostReport.postReportCreate23_24(req, res);
+  depReport.postCreate23_24(req, res);
 });
 app.post("/dep-create-2024-2025", isLoggedIn, (req, res) => {
-  depPostReport.postReportCreate24_25(req, res);
+  depReport.postCreate24_25(req, res);
 });
 app.post("/dep-create-2025-2026", isLoggedIn, (req, res) => {
-  depPostReport.postReportCreate25_26(req, res);
+  depReport.postCreate25_26(req, res);
 });
 app.get("/department/2022-2023/edit", isLoggedIn, (req, res) => {
-  depGetReport.getEdit22_23(req, res);
+  depReport.getEdit22_23(req, res);
 });
 app.get("/department/2023-2024/edit", isLoggedIn, (req, res) => {
-  depGetReport.getEdit23_24(req, res);
+  depReport.getEdit23_24(req, res);
 });
 app.get("/department/2024-2025/edit", isLoggedIn, (req, res) => {
-  depGetReport.getEdit24_25(req, res);
+  depReport.getEdit24_25(req, res);
 });
 app.get("/department/2025-2026/edit", isLoggedIn, (req, res) => {
-  depGetReport.getEdit25_26(req, res);
+  depReport.getEdit25_26(req, res);
 });
 app.post("/dep-update-2022-2023", isLoggedIn, (req, res) => {
-  depPostReport.postReportUpdate22_23(req, res);
+  depReport.postUpdate22_23(req, res);
 });
 app.post("/dep-update-2023-2024", isLoggedIn, (req, res) => {
-  depPostReport.postReportUpdate23_24(req, res);
+  depReport.postUpdate23_24(req, res);
 });
 app.post("/dep-update-2024-2025", isLoggedIn, (req, res) => {
-  depPostReport.postReportUpdate24_25(req, res);
+  depReport.postUpdate24_25(req, res);
 });
 app.post("/dep-update-2025-2026", isLoggedIn, (req, res) => {
-  depPostReport.postReportUpdate25_26(req, res);
+  depReport.postUpdate25_26(req, res);
 });
 app.get("/department/2022-2023/submit", isLoggedIn, (req, res) => {
-  depGetReport.getSubmit22_23(req, res);
+  depReport.getSubmit22_23(req, res);
 });
 app.get("/department/2023-2024/submit", isLoggedIn, (req, res) => {
-  depGetReport.getSubmit23_24(req, res);
+  depReport.getSubmit23_24(req, res);
 });
 app.get("/department/2024-2025/submit", isLoggedIn, (req, res) => {
-  depGetReport.getSubmit24_25(req, res);
+  depReport.getSubmit24_25(req, res);
 });
 app.get("/department/2025-2026/submit", isLoggedIn, (req, res) => {
-  depGetReport.getSubmit25_26(req, res);
+  depReport.getSubmit25_26(req, res);
 });
 app.post("/dep-submit-2022-2023", isLoggedIn, (req, res) => {
-  depPostReport.postReportSubmit22_23(req, res);
+  depReport.postSubmit22_23(req, res);
 });
 app.post("/dep-submit-2023-2024", isLoggedIn, (req, res) => {
-  depPostReport.postReportSubmit23_24(req, res);
+  depReport.postSubmit23_24(req, res);
 });
 app.post("/dep-submit-2024-2025", isLoggedIn, (req, res) => {
-  depPostReport.postReportSubmit24_25(req, res);
+  depReport.postSubmit24_25(req, res);
 });
 app.post("/dep-submit-2025-2026", isLoggedIn, (req, res) => {
-  depPostReport.postReportSubmit25_26(req, res);
+  depReport.postSubmit25_26(req, res);
 });
 //User windows for lecturer and head of department
 app.get("/user-window", isLoggedIn, (req, res) => {
@@ -303,79 +299,79 @@ app.post("/update-user-dep-2025-2026", isLoggedIn, (req, res) => {
 });
 //Head of department receives a list of lecturers by year
 app.get("/department/2022-2023/lecturers-list", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList22_23(req, res);
+  depEditLect.getLecturersList22_23(req, res);
 });
 app.get("/department/2022-2023/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList22_23(req, res);
+  depEditLect.getLecturersList22_23(req, res);
 });
 app.get("/department/2023-2024/lecturers-list", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList23_24(req, res);
+  depEditLect.getLecturersList23_24(req, res);
 });
 app.get("/department/2023-2024/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList23_24(req, res);
+  depEditLect.getLecturersList23_24(req, res);
 });
 app.get("/department/2024-2025/lecturers-list", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList24_25(req, res);
+  depEditLect.getLecturersList24_25(req, res);
 });
 app.get("/department/2024-2025/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList24_25(req, res);
+  depEditLect.getLecturersList24_25(req, res);
 });
 app.get("/department/2025-2026/lecturers-list", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList25_26(req, res);
+  depEditLect.getLecturersList25_26(req, res);
 });
 app.get("/department/2025-2026/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depGetLectList.getLecturersList25_26(req, res);
+  depEditLect.getLecturersList25_26(req, res);
 });
 //Head of department updates the status of lecturers by year
 app.get("/department/2022-2023/edit-user/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLec22_23(req, res);
+  depEditLect.getEditLec22_23(req, res);
 });
 app.get("/department/2023-2024/edit-user/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLec23_24(req, res);
+  depEditLect.getEditLec23_24(req, res);
 });
 app.get("/department/2024-2025/edit-user/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLec24_25(req, res);
+  depEditLect.getEditLec24_25(req, res);
 });
 app.get("/department/2025-2026/edit-user/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLec25_26(req, res);
+  depEditLect.getEditLec25_26(req, res);
 });
 app.post("/update-user-info-dep-2022-2023", isLoggedIn, (req, res) => {
-  depLectEdit.postEditLec22_23(req, res);
+  depEditLect.postEditLec22_23(req, res);
 });
 app.post("/update-user-info-dep-2023-2024", isLoggedIn, (req, res) => {
-  depLectEdit.postEditLec23_24(req, res);
+  depEditLect.postEditLec23_24(req, res);
 });
 app.post("/update-user-info-dep-2024-2025", isLoggedIn, (req, res) => {
-  depLectEdit.postEditLec24_25(req, res);
+  depEditLect.postEditLec24_25(req, res);
 });
 app.post("/update-user-info-dep-2025-2026", isLoggedIn, (req, res) => {
-  depLectEdit.postEditLec25_26(req, res);
+  depEditLect.postEditLec25_26(req, res);
 });
 //Head of department receives a list of lecturers reports by year
 app.get("/department/2022-2023/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLecReport22_23(req, res);
+  lectReport.getEditLecReport22_23(req, res);
 });
 app.get("/department/2023-2024/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLecReport23_24(req, res);
+  lectReport.getEditLecReport23_24(req, res);
 });
 app.get("/department/2024-2025/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLecReport24_25(req, res);
+  lectReport.getEditLecReport24_25(req, res);
 });
 app.get("/department/2025-2026/edit-lecturer-report/:userId", isLoggedIn, (req, res) => {
-  depLectEdit.getEditLecReport25_26(req, res);
+  lectReport.getEditLecReport25_26(req, res);
 });
 //Head of department updates a report of lecturers by year
 app.post("/update-report-lecturer-dep-2022-2023", isLoggedIn, (req, res) => {
-  lectPostReport.postReportLec22_23(req, res);
+  lectReport.postReportLec22_23(req, res);
 });
 app.post("/update-report-lecturer-dep-2023-2024", isLoggedIn, (req, res) => {
-  lectPostReport.postReportLec23_24(req, res);
+  lectReport.postReportLec23_24(req, res);
 });
 app.post("/update-report-lecturer-dep-2024-2025", isLoggedIn, (req, res) => {
-  lectPostReport.postReportLec24_25(req, res);
+  lectReport.postReportLec24_25(req, res);
 });
 app.post("/update-report-lecturer-dep-2025-2026", isLoggedIn, (req, res) => {
-  lectPostReport.postReportLec25_26(req, res);
+  lectReport.postReportLec25_26(req, res);
 });
 //------------------ADMIN-----------------------
 //Profile
