@@ -7,6 +7,12 @@
 
 <div class="container">
   <div class="jumbotron ">
+    <% if(userNamee != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Sėkmingai atnaujinta!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <form action="/update-profile-admin" method="post">
 
       <div class="form-group">

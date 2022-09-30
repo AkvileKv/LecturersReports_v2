@@ -93,21 +93,22 @@ module.exports = {
     });
     //}
   },
-  getLogout: (req, res) => {
+  getLogout: (req, res, next) => {
     User.findById(req.user.id, function (err, foundUser) {
       if (err) {
         console.log(err);
         res.redirect('/login');
       } else {
-        var a = req.user.username;
+        let a = req.user.username;
         foundUser.updated_for = "Atsijungimas" + " " + a;
         foundUser.save(function (err) {
           if (err) throw err;
         });
       }
-      req.logout();
+    req.logout(function(err) {
+    if (err) { return next(err); }
+  });
     });
-    console.log("Logout ivykdytas");
     res.redirect('/');
   },
   get404: (req, res) => {

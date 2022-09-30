@@ -474,7 +474,19 @@ var userSchema = new mongoose.Schema({ //main schema
   currentYear: String,
   activeUser: String,
   updated_for: String,
-//naudotojo atpažinimui kaip dėstantis "dėstytojas"
+//rolė aplinkos pasirinkimui
+  role: String,
+  rolesKeitimas: Boolean,
+//ataskaitų būsenos
+  busena22_23: String,
+  busena23_24: String,
+  busena24_25: String,
+  busena25_26: String,
+  busenaVedejo22_23: String,
+  busenaVedejo23_24: String,
+  busenaVedejo24_25: String,
+  busenaVedejo25_26: String,
+  //naudotojo atpažinimui kaip dėstantis "dėstytojas"
   teachingYear22_23: Boolean,
   teachingYear23_24: Boolean,
   teachingYear24_25: Boolean,
@@ -484,23 +496,6 @@ var userSchema = new mongoose.Schema({ //main schema
   headOfTheDepartment23_24: Boolean,
   headOfTheDepartment24_25: Boolean,
   headOfTheDepartment25_26: Boolean,
-//rolė aplinkos pasirinkimui
-  role: String,
-  rolesKeitimas: Boolean,
-
-  role22_23: String,
-  role23_24: String,
-  role24_25: String,
-  role25_26: String,
-//ataskaitų būsenos
-  busenaVedejo22_23: String,
-  busenaVedejo23_24: String,
-  busenaVedejo24_25: String,
-  busenaVedejo25_26: String,
-  busena22_23: String,
-  busena23_24: String,
-  busena24_25: String,
-  busena25_26: String,
 
   mm2022_2023: {
 

@@ -7,25 +7,33 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Vilniaus kolegijos metinių veiklos ataskaitų sistema</h1>
   <%if ( user.role === "dėstytojas") { %>
-<h1>Dėstytojo aplinka</h1>
+  <h1>Dėstytojo aplinka</h1>
   <% } else if (user.role === "katedros vedėjas") { %>
-<h1>Katedros vedėjo aplinka</h1>
+  <h1>Katedros vedėjo aplinka</h1>
   <% } %>
 </div>
 
 <div class="container">
-<div class="jumbotron ">
-<h4 class="text-center">Jūsų asmeniniai duomenys</h4>
+  <div class="jumbotron ">
+    <!-- <div id="liveAlertPlaceholder"></div> -->
+    <% if(userNamee != '') { %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <div>Sėkmingai atnaujinta!</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- <h1 style="color: green; font-family: Arial, Helvetica, sans-serif;">Sėkmingai atnaujinta</h1> -->
+    <% } %>
+    <h4 class="text-center">Jūsų asmeniniai duomenys</h4>
     <div class="form-row">
       <div class="col-lg-3">
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12">
         <label for="">El. paštas:</label>
-        <input type="text" class="form-control" name="vardas" value="<%=user.username%>" placeholder="" readonly>
+        <input type="text" class="form-control" name="pastas" value="<%=user.username%>" placeholder="" readonly>
       </div>
     </div>
     <form action="/update-user" method="post">
-
+      
       <div class="form-group ">
         <div class="form-row">
           <div class="col-lg-3">
@@ -51,10 +59,11 @@
             <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
           </div>
         </div>
-
+        
       </div>
-
+      
     </form>
+    
   </div>
 </div>
 

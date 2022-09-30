@@ -1,15 +1,16 @@
 {
-  "name": "LecturersReports_v2",
+  "name": "lecturersreports_v2",
   "version": "2.0.0",
   "description": "Lecturer's Work Reports",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "Akvile Kv",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.7",
     "express": "^4.17.1",
@@ -22,8 +23,8 @@
     "mongoose-history-diff": "^1.0.6",
     "mongoose-history-plugin": "^3.0.1",
     "mongoose-history-trace": "^1.7.1",
-    "nodemon": "^2.0.14",
-    "passport": "^0.4.1",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
     "uuid": "^8.3.2"

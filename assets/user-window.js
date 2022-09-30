@@ -1,4 +1,5 @@
 const User = require('../models/user');
+//const alertF = require('./alerts');
 
 module.exports = {
     //For lecturers and departments
@@ -105,7 +106,9 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const userN = req.flash('user');
                     res.render("user-window", {
+                        userNamee: userN,
                         user: foundUser
                     });
                 } else {
@@ -121,18 +124,18 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser) {
-                    foundUser.vardas = req.body.vardas,
-                        foundUser.pavarde = req.body.pavarde,
-                        foundUser.updated_for = req.user.username
-                    foundUser.save(function (err) {
-                        if (err) throw err;
-                        console.log("Dėstytojas info succesfully updated ");
-                        if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                        foundUser.vardas = req.body.vardas,
+                            foundUser.pavarde = req.body.pavarde,
+                            foundUser.updated_for = req.user.username
+                        foundUser.save(function (err) {
+                            if (err) throw err;
+                            req.flash('user', req.body.vardas);
                             res.redirect("/user-window");
-                        } else {
-                            res.redirect("/login");
-                        }
-                    });
+                        });
+                    } else {
+                        res.redirect("/login");
+                    }
                 } else {
                     console.log("User does'f found");
                 }

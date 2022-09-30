@@ -10,6 +10,7 @@ const {
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 const _ = require("lodash");
+var flash = require('connect-flash');
 
 const User = require('./models/user');
 
@@ -58,8 +59,11 @@ app.use(session({
   } // 6 hour
 }));
 
+
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
