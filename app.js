@@ -15,10 +15,6 @@ var flash = require('connect-flash');
 const User = require('./models/user');
 
 //created modules
-const homeRouter = require('./controllers/home');
-const registerRouter = require('./controllers/register');
-const loginRouter = require('./controllers/login');
-
 const depReport = require('./assets/departments-report');
 const lectReport = require('./assets/lecturers-report');
 
@@ -35,10 +31,6 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(express.static("models"));
 app.use(express.static("assets"));
-
-app.use("/", homeRouter);
-app.use("/register", registerRouter);
-app.use("/login", loginRouter);
 
 app.use(bodyParser.urlencoded({
   limit: '150mb',
@@ -59,7 +51,6 @@ app.use(session({
   } // 6 hour
 }));
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -75,6 +66,18 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.get("/", (req, res) => {
+  res.render("home")
+});
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+app.get("/register", (req, res) => {
+  const userN = req.flash('userR');
+  res.render("register", {
+    userInfRegFailure: userN,
+  });
+});
 
 app.post("/register", (req, res) => {
   mainModules.postRegister(req, res);

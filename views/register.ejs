@@ -2,7 +2,12 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    <% if(userInfRegFailure != '') { %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <div>Registracija nesėkminga!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <form action="/register" method="post">
       <div class="form-group">
         <p class="text-center">REGISTRACIJA</p>
@@ -33,10 +38,12 @@
             <input type="password" name="confirmPassword" id="confirmPassword" minlength="5" class="form-control form-control-md" required placeholder="" autocomplete="off">
           </div>
         </div>
-
+        <div class=" text-center">
+        <span id='message'></span>
+      </div>
         <br>
         <div class=" text-center">
-          <button type="submit" class="btn btn-primary">Registruotis</button>
+          <button id="available" type="submit" class="btn btn-primary">Registruotis</button>
         </div>
 
       </div>

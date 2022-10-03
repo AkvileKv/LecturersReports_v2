@@ -11,9 +11,11 @@ module.exports = {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
-          const userN = req.flash('user');
+          const userN = req.flash('userL');
+          const userUpdate = req.flash('userUp');
           res.render("admin-window", {
             userNamee: userN,
+            userUpdateProfile: userUpdate,
             user: foundUser
           });
         } else {
@@ -34,7 +36,7 @@ module.exports = {
           foundUser.updated_for = req.user.username //username- savo username paimti
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash('user', req.body.vardas);
+            req.flash('userUp', req.body.vardas);
             res.redirect("/admin/profile");
           });
         } else {

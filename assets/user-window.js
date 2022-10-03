@@ -7,8 +7,12 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const userInfR = req.flash('userR');
+                    const userInfL = req.flash('userL');
                     res.render("user-window-selection", {
-                        user: foundUser
+                        user: foundUser,
+                        userInfReg: userInfR,
+                        userInfLogin: userInfL
                     });
                 } else {
                     console.log("You don't have permission");

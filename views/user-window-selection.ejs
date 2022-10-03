@@ -6,7 +6,18 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    <% if(userInfLogin != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Prisijungimas sėkmingas!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
+      <% if(userInfReg != '') { %>
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <div>Registracija sėkminga!</div>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
     <h4 class="text-center">Pasirinkite naudotojo aplinką</h4>
     <form action="/update-user-window-selection-role" method="post">
 

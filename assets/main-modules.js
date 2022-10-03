@@ -32,9 +32,11 @@ module.exports = {
     }, req.body.password, function (err, user) {
       if (err) {
         console.log(err);
+        req.flash('userR', req.body.username);
         res.redirect("/register");
       } else {
         passport.authenticate("local")(req, res, function () {
+          req.flash('userR', req.body.username);
           res.redirect("/user-window-selection");
         });
       }
@@ -75,16 +77,17 @@ module.exports = {
           try {
             var a = req.user.username;
             foundUser.updated_for = "Prisijungimas" + " " + a;
+
             foundUser.save(function (err) {
               if (err) throw err;
+              if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                req.flash('userL', req.body.username);
+                res.redirect("/user-window-selection");
+              } else if (foundUser.role === "administratorius") {
+                req.flash('userL', req.body.username);
+                res.redirect("/admin/profile");
+              }
             });
-            if (foundUser.role === "dėstytojas") {
-              res.redirect("/user-window-selection");
-            } else if (foundUser.role === "katedros vedėjas") {
-              res.redirect("/user-window-selection");
-            } else if (foundUser.role === "administratorius") {
-              res.redirect("/admin/profile");
-            }
           } catch (err) {
             console.log(err);
           }
