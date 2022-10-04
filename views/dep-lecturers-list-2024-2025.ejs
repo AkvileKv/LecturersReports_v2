@@ -2,6 +2,12 @@
 
 <div class="container">
   <div class="jumbotron ">
+    <% if(userUpd != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Sėkmingai atnaujinta!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <h1 class="text-center">Visų katedros dėstytojų sąrašas 2024 - 2025 m. m.</h1>
     <div class="">
       <p class="lead text-center text-danger">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu): <%=depUser.mm2024_2025.katedrosVedejas.katedrosDestytojuSk%></p>

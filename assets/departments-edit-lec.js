@@ -28,7 +28,9 @@ module.exports = {
                                 teachingYear22_23: true,
                                 katedra: vedejoKatedra
                             }).exec((err, count) => {
+                                const userUpdated = req.flash('user');
                                 res.render("dep-lecturers-list-2022-2023", {
+                                    userUpd: userUpdated,
                                     users: users,
                                     depUser: foundUser,
                                     current: page,
@@ -69,7 +71,9 @@ module.exports = {
                                 teachingYear23_24: true,
                                 katedra: vedejoKatedra
                             }).exec((err, count) => {
+                                const userUpdated = req.flash('user');
                                 res.render("dep-lecturers-list-2023-2024", {
+                                    userUpd: userUpdated,
                                     users: users,
                                     depUser: foundUser,
                                     current: page,
@@ -110,7 +114,9 @@ module.exports = {
                                 teachingYear24_25: true,
                                 katedra: vedejoKatedra
                             }).exec((err, count) => {
+                                const userUpdated = req.flash('user');
                                 res.render("dep-lecturers-list-2024-2025", {
+                                    userUpd: userUpdated,
                                     users: users,
                                     depUser: foundUser,
                                     current: page,
@@ -151,7 +157,9 @@ module.exports = {
                                 teachingYear25_26: true,
                                 katedra: vedejoKatedra
                             }).exec((err, count) => {
+                                const userUpdated = req.flash('user');
                                 res.render("dep-lecturers-list-2025-2026", {
+                                    userUpd: userUpdated,
                                     users: users,
                                     depUser: foundUser,
                                     current: page,
@@ -271,6 +279,7 @@ module.exports = {
                         foundUser.updated_for = req.user.username
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2022-2023/lecturers-list");
                     });
                 } else {
@@ -289,6 +298,7 @@ module.exports = {
                         foundUser.updated_for = req.user.username
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2023-2024/lecturers-list");
                     });
                 } else {
@@ -307,6 +317,7 @@ module.exports = {
                         foundUser.updated_for = req.user.username
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2024-2025/lecturers-list");
                     });
                 } else {
@@ -325,6 +336,7 @@ module.exports = {
                         foundUser.updated_for = req.user.username
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2025-2026/lecturers-list");
                     });
                 } else {
