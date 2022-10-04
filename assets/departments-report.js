@@ -121,7 +121,9 @@ module.exports = {
   getEdit22_23: function (req, res) {
     User.findById(req.user.id, function (err, foundUser) {
       if (err) throw err;
+      const repUpdated = req.flash('report');
       res.render("dep-edit-2022-2023", {
+        reportUpd: repUpdated,
         user: foundUser
       });
     });
@@ -129,7 +131,9 @@ module.exports = {
   getEdit23_24: function (req, res) {
     User.findById(req.user.id, function (err, foundUser) {
       if (err) throw err;
+      const repUpdated = req.flash('report');
       res.render("dep-edit-2023-2024", {
+        reportUpd: repUpdated,
         user: foundUser
       });
     });
@@ -137,7 +141,9 @@ module.exports = {
   getEdit24_25: function (req, res) {
     User.findById(req.user.id, function (err, foundUser) {
       if (err) throw err;
+      const repUpdated = req.flash('report');
       res.render("dep-edit-2024-2025", {
+        reportUpd: repUpdated,
         user: foundUser
       });
     });
@@ -145,7 +151,9 @@ module.exports = {
   getEdit25_26: function (req, res) {
     User.findById(req.user.id, function (err, foundUser) {
       if (err) throw err;
+      const repUpdated = req.flash('report');
       res.render("dep-edit-2025-2026", {
+        reportUpd: repUpdated,
         user: foundUser
       });
     });
@@ -158,7 +166,9 @@ module.exports = {
           username: currentUserFaculty
         }, function (err, foundFaculty) {
           if (err) throw err;
+          const repSubmited = req.flash('report');
           res.render("dep-submit-2022-2023", {
+            reportSubm: repSubmited,
             foundFaculty: foundFaculty,
             user: foundUser,
             fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -178,7 +188,9 @@ module.exports = {
           username: currentUserFaculty
         }, function (err, foundFaculty) {
           if (err) throw err;
+          const repSubmited = req.flash('report');
           res.render("dep-submit-2023-2024", {
+            reportSubm: repSubmited,
             foundFaculty: foundFaculty,
             user: foundUser,
             fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -198,7 +210,9 @@ module.exports = {
           username: currentUserFaculty
         }, function (err, foundFaculty) {
           if (err) throw err;
+          const repSubmited = req.flash('report');
           res.render("dep-submit-2024-2025", {
+            reportSubm: repSubmited,
             foundFaculty: foundFaculty,
             user: foundUser,
             fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -218,7 +232,9 @@ module.exports = {
           username: currentUserFaculty
         }, function (err, foundFaculty) {
           if (err) throw err;
+          const repSubmited = req.flash('report');
           res.render("dep-submit-2025-2026", {
+            reportSubm: repSubmited,
             foundFaculty: foundFaculty,
             user: foundUser,
             fakultetasUpper: _.toUpper(foundUser.fakultetas),
@@ -239,6 +255,7 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully created 2022-2023");
+            req.flash('reportCreated', 'Success');
             res.redirect("/2022-2023/user-window");
           });
         } else {
@@ -258,6 +275,7 @@ module.exports = {
           foundUser.save(function (err) {
             if (!err) {
               console.log("Succesfully created 2023-2024");
+              req.flash('reportCreated', 'Success');
               res.redirect("/2023-2024/user-window");
             }
           });
@@ -278,6 +296,7 @@ module.exports = {
           foundUser.save(function (err) {
             if (!err) {
               console.log("Succesfully created 2024-2025");
+              req.flash('reportCreated', 'Success');
               res.redirect("/2024-2025/user-window");
             }
           });
@@ -298,6 +317,7 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully created 2025-2026");
+            req.flash('reportCreated', 'Success');
             res.redirect("/2025-2026/user-window");
           });
         } else {
@@ -318,7 +338,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully updated 2022-2023");
-            res.redirect("/2022-2023/user-window");
+            req.flash('report', 'Success');
+            res.redirect("/department/2022-2023/edit");
           });
         } else {
           console.log("User does'f found");
@@ -338,7 +359,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (!err) {
               console.log("Succesfully updated 2023-2024");
-              res.redirect("/2023-2024/user-window");
+              req.flash('report', 'Success');
+              res.redirect("/department/2023-2024/edit");
             }
           });
         } else {
@@ -359,7 +381,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully updated 2024-2025");
-            res.redirect("/2024-2025/user-window");
+            req.flash('report', 'Success');
+            res.redirect("/department/2024-2025/edit");
           });
         } else {
           console.log("User does'f found");
@@ -379,7 +402,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully updated 2025-2026");
-            res.redirect("/2025-2026/user-window");
+            req.flash('report', 'Success');
+            res.redirect("/department/2025-2026/edit");
           });
         } else {
           console.log("User does'f found");
@@ -400,7 +424,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully submitted");
-            res.redirect("/user-window-2022-2023");
+            req.flash('report', 'Success');
+            res.redirect("/department/2022-2023/submit");
           });
         } else {
           console.log("User does'f found");
@@ -421,7 +446,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully submitted");
-            res.redirect("/user-window-2023-2024");
+            req.flash('report', 'Success');
+            res.redirect("/department/2023-2024/submit");
           });
         } else {
           console.log("User does'f found");
@@ -442,7 +468,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully submitted");
-            res.redirect("/user-window-2024-2025");
+            req.flash('report', 'Success');
+            res.redirect("/department/2024-2025/submit");
           });
         } else {
           console.log("User does'f found");
@@ -463,7 +490,8 @@ module.exports = {
           foundUser.save(function (err) {
             if (err) throw err;
             console.log("Succesfully submitted");
-            res.redirect("/user-window-2025-2026");
+            req.flash('report', 'Success');
+            res.redirect("/department/2025-2026/submit");
           });
         } else {
           console.log("User does'f found");

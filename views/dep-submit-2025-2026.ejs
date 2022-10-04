@@ -4,7 +4,12 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    <% if(reportSubm != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Sėkmingai pateikta!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <h1 class="text-center noprint">Katedros veiklos ataskaitos pateikimas 2025 - 2026 m. m.</h1>
     <%if ( user.busenaVedejo25_26 === "nesukurta") { %>
 

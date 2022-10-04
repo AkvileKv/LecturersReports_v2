@@ -46,7 +46,11 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const repCreated = req.flash('reportCreated');
+                    const userUpdated = req.flash('userUpd');
                     res.render("user-window-2022-2023", {
+                        reportCr: repCreated,
+                        userUpd: userUpdated,
                         user: foundUser
                     });
                 } else {
@@ -62,7 +66,11 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const repCreated = req.flash('reportCreated');
+                    const userUpdated = req.flash('userUpd');
                     res.render("user-window-2023-2024", {
+                        reportCr: repCreated,
+                        userUpd: userUpdated,
                         user: foundUser
                     });
                 } else {
@@ -78,7 +86,11 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const repCreated = req.flash('reportCreated');
+                    const userUpdated = req.flash('userUpd');
                     res.render("user-window-2024-2025", {
+                        reportCr: repCreated,
+                        userUpd: userUpdated,
                         user: foundUser
                     });
                 } else {
@@ -94,7 +106,11 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const repCreated = req.flash('reportCreated');
+                    const userUpdated = req.flash('userUpd');
                     res.render("user-window-2025-2026", {
+                        reportCr: repCreated,
+                        userUpd: userUpdated,
                         user: foundUser
                     });
                 } else {
@@ -157,6 +173,7 @@ module.exports = {
                     foundUser.save(function (err) {
                         if (err) throw err;
                         if (foundUser.role === "katedros vedėjas") {
+                            req.flash('userUpd', 'Success');
                             res.redirect("/2022-2023/user-window");
                         } else {
                             res.redirect("/login");
@@ -179,6 +196,7 @@ module.exports = {
                     foundUser.save(function (err) {
                         if (err) throw err;
                         if (foundUser.role === "katedros vedėjas") {
+                            req.flash('userUpd', 'Success');
                             res.redirect("/2023-2024/user-window");
                         } else {
                             res.redirect("/login");
@@ -201,6 +219,7 @@ module.exports = {
                     foundUser.save(function (err) {
                         if (err) throw err;
                         if (foundUser.role === "katedros vedėjas") {
+                            req.flash('userUpd', 'Success');
                             res.redirect("/2024-2025/user-window");
                         } else {
                             res.redirect("/login");
@@ -223,6 +242,7 @@ module.exports = {
                     foundUser.save(function (err) {
                         if (err) throw err;
                         if (foundUser.role === "katedros vedėjas") {
+                            req.flash('userUpd', 'Success');
                             res.redirect("/2025-2026/user-window");
                         } else {
                             res.redirect("/login");

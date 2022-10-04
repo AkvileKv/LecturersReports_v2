@@ -2,7 +2,12 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    <% if(reportUpd != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Sėkmingai atnaujinta!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <h1 class="text-center">Katedros veiklos ataskaitos redagavimas 2025 - 2026 m. m.</h1>
 
     <%if ( user.busenaVedejo25_26 === "nesukurta" || user.busenaVedejo25_26 === "užrakinta") { %>
