@@ -58,7 +58,11 @@ module.exports = {
             .limit(perPage).exec(function (err, users) {
               if (err) throw err;
               User.countDocuments({}).exec((err, count) => {
+                const userUpdate = req.flash('user');
+                const userDelete = req.flash('userDeleted');
                 res.render("admin-users-list", {
+                  userUp: userUpdate,
+                  userDel: userDelete,
                   users: users,
                   current: page,
                   pages: Math.ceil(count / perPage)
@@ -122,6 +126,7 @@ module.exports = {
             foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
           foundUser.save(function (err) {
             if (err) throw err;
+            req.flash('user', "Successfully");
             res.redirect("/admin/users");
           });
         } else {
@@ -139,6 +144,7 @@ module.exports = {
     },
       function (err) {
         if (!err) {
+          req.flash('userDeleted', "Successfully");
           res.redirect("/admin/users");
         } else {
           res.send(err);
@@ -152,9 +158,13 @@ module.exports = {
         if (foundUser.role === "administratorius") {
           Faculty.find({}, function (err, faculties) {
             if (err) throw err;
+            const success = "faculty";
+            const successDeleted = "faculyDelete";
             res.render("admin-faculties-list", {
+              facultyUpd: success,
+              facultyDel: successDeleted,
               faculties: faculties
-            });
+           });
           });
         } else {
           console.log("You do not have permission");
@@ -187,7 +197,7 @@ module.exports = {
     });
     faculty.save(function (err) {
       if (err) throw err;
-      console.log("Succesfully created");
+      req.flash("faculy","Success");
       res.redirect("/admin/faculties");
     });
   },
@@ -223,7 +233,7 @@ module.exports = {
             foundFaculty.prodekanas = req.body.prodekanas
           foundFaculty.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully updated");
+            req.flash("faculy","Success");
             res.redirect("/admin/faculties");
           });
         } else {
@@ -240,6 +250,7 @@ module.exports = {
     },
       function (err) {
         if (!err) {
+          req.flash("faculyDelete","Successfully");
           res.redirect("/admin/faculties");
         } else {
           res.send(err);

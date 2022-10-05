@@ -648,6 +648,7 @@ module.exports = {
                     }
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2022-2023/lecturers-list");
                     });
                 } else {
@@ -673,6 +674,7 @@ module.exports = {
                     }
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2023-2024/lecturers-list");
                     });
                 } else {
@@ -698,6 +700,7 @@ module.exports = {
                     } //"užrakintaVedėjo"
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2024-2025/lecturers-list");
                     });
                 } else {
@@ -723,6 +726,7 @@ module.exports = {
                     }
                     foundUser.save(function (err) {
                         if (err) throw err;
+                        req.flash('user', 'Success');
                         res.redirect("/department/2025-2026/lecturers-list");
                     });
                 } else {

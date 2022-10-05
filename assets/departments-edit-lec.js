@@ -197,7 +197,6 @@ module.exports = {
             } catch (err) {
                 console.log(err);
             }
-
         });
     },
     getEditLec23_24: function (req, res) {

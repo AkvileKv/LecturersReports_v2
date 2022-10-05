@@ -1,3 +1,4 @@
+const _ = require("lodash");
 const passport = require('passport');
 const User = require('../models/user');
 
@@ -97,7 +98,18 @@ module.exports = {
     //}
   },
   getLogout: (req, res, next) => {
+    let a = req.user.id;
+    if (typeof a === "undefined"){
+      console.log("undefined");
+      req.flash("userId", "Undefined");
+      res.redirect('/');
+    }
     User.findById(req.user.id, function (err, foundUser) {
+      // if (_.isUndefined(foundUser)){
+      //   console.log("undefined");
+      //   req.flash("userId", "Undefined");
+      //   res.redirect('/');
+      // }
       if (err) {
         console.log(err);
         res.redirect('/login');

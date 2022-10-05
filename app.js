@@ -67,7 +67,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
-  res.render("home")
+  const userUndefined = req.flash("userId");
+  res.render("home", {
+    userUndef: userUndefined
+  });
 });
 app.get("/login", (req, res) => {
   res.render("login");
