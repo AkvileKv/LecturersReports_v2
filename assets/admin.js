@@ -7,7 +7,7 @@ const lectReport24_25 = require('./report/lecturers-report24_25');
 const lectReport25_26 = require('./report/lecturers-report25_26');
 
 module.exports = {
-  getProfile: function (req, res) {
+  getProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -27,7 +27,7 @@ module.exports = {
       }
     });
   },
-  postUpdateProfile: function (req, res) {
+  postUpdateProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -47,7 +47,7 @@ module.exports = {
       }
     });
   },
-  getAllUsers: function (req, res) {
+  getAllUsers: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -78,7 +78,7 @@ module.exports = {
       }
     });
   },
-  getUpdateUserInfo: function (req, res) {
+  getUpdateUserInfo: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -101,7 +101,7 @@ module.exports = {
       }
     });
   },
-  postUpdateUserInfo: function (req, res) {
+  postUpdateUserInfo: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -138,7 +138,7 @@ module.exports = {
       }
     });
   },
-  postDeleteUser: function (req, res) {
+  postDeleteUser: (req, res) => {
     User.deleteOne({
       _id: req.body.deleteById
     },
@@ -152,14 +152,14 @@ module.exports = {
       }
     );
   },
-  getFaculties: function (req, res) {
+  getFaculties: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
           Faculty.find({}, function (err, faculties) {
             if (err) throw err;
-            const success = "faculty";
-            const successDeleted = "faculyDelete";
+            const success = req.flash('faculty');
+            const successDeleted = req.flash('facultyDelete');
             res.render("admin-faculties-list", {
               facultyUpd: success,
               facultyDel: successDeleted,
@@ -175,7 +175,7 @@ module.exports = {
       }
     });
   },
-  getCreateFaculty: function (req, res) {
+  getCreateFaculty: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -189,7 +189,7 @@ module.exports = {
       }
     });
   },
-  postCreateFaculty: function (req, res) {
+  postCreateFaculty: (req, res) => {
     const faculty = new Faculty({
       username: req.body.fakultetas,
       dekanas: req.body.dekanas,
@@ -197,11 +197,11 @@ module.exports = {
     });
     faculty.save(function (err) {
       if (err) throw err;
-      req.flash("faculy","Success");
+      req.flash("faculty","Success");
       res.redirect("/admin/faculties");
     });
   },
-  getUpdateFaculty: function (req, res) {
+  getUpdateFaculty: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -224,16 +224,15 @@ module.exports = {
       }
     });
   },
-  postUpdateFaculty: function (req, res) {
+  postUpdateFaculty: (req, res) => {
     Faculty.findById(req.body.id, function (err, foundFaculty) {
       try {
         if (foundFaculty) {
-          foundFaculty.username = req.body.fakultetas,
             foundFaculty.dekanas = req.body.dekanas,
             foundFaculty.prodekanas = req.body.prodekanas
           foundFaculty.save(function (err) {
             if (err) throw err;
-            req.flash("faculy","Success");
+            req.flash("faculty","Success");
             res.redirect("/admin/faculties");
           });
         } else {
@@ -244,13 +243,13 @@ module.exports = {
       }
     });
   },
-  postDeleteFaculty: function (req, res) {
+  postDeleteFaculty: (req, res) => {
     Faculty.deleteOne({
       _id: req.body.deleteById
     },
       function (err) {
         if (!err) {
-          req.flash("faculyDelete","Successfully");
+          req.flash("facultyDelete","Successfully");
           res.redirect("/admin/faculties");
         } else {
           res.send(err);
@@ -258,7 +257,7 @@ module.exports = {
       }
     );
   },
-  getUsersByYear22_23: function (req, res) {
+  getUsersByYear22_23: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -273,7 +272,9 @@ module.exports = {
               User.countDocuments({
                 teachingYear22_23: true
               }).exec((err, count) => {
+                const success = req.flash('user');
                 res.render("admin-users-list-2022-2023", {
+                  successMsg: success,
                   users: users,
                   current: page,
                   pages: Math.ceil(count / perPage)
@@ -289,7 +290,7 @@ module.exports = {
       }
     });
   },
-  getUsersByYear23_24: function (req, res) {
+  getUsersByYear23_24: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -304,7 +305,9 @@ module.exports = {
               User.countDocuments({
                 teachingYear23_24: true
               }).exec((err, count) => {
+                const success = req.flash('user');
                 res.render("admin-users-list-2023-2024", {
+                  successMsg: success,
                   users: users,
                   current: page,
                   pages: Math.ceil(count / perPage)
@@ -320,7 +323,7 @@ module.exports = {
       }
     });
   },
-  getUsersByYear24_25: function (req, res) {
+  getUsersByYear24_25: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -336,7 +339,9 @@ module.exports = {
               User.countDocuments({
                 teachingYear24_25: true
               }).exec((err, count) => {
+                const success = req.flash('user');
                 res.render("admin-users-list-2024-2025", {
+                  successMsg: success,
                   users: users,
                   current: page,
                   pages: Math.ceil(count / perPage)
@@ -352,7 +357,7 @@ module.exports = {
       }
     });
   },
-  getUsersByYear25_26: function (req, res) {
+  getUsersByYear25_26: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -367,7 +372,9 @@ module.exports = {
               User.countDocuments({
                 teachingYear25_26: true
               }).exec((err, count) => {
+                const success = req.flash('user');
                 res.render("admin-users-list-2025-2026", {
+                  successMsg: success,
                   users: users,
                   current: page,
                   pages: Math.ceil(count / perPage)
@@ -383,7 +390,7 @@ module.exports = {
       }
     });
   },
-  getUpdateUserByYear22_23: function (req, res) {
+  getUpdateUserByYear22_23: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -406,7 +413,7 @@ module.exports = {
       }
     });
   },
-  getUpdateUserByYear23_24: function (req, res) {
+  getUpdateUserByYear23_24: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -429,7 +436,7 @@ module.exports = {
       }
     });
   },
-  getUpdateUserByYear24_25: function (req, res) {
+  getUpdateUserByYear24_25: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -452,7 +459,7 @@ module.exports = {
       }
     });
   },
-  getUpdateUserByYear25_26: function (req, res) {
+  getUpdateUserByYear25_26: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -475,7 +482,7 @@ module.exports = {
       }
     });
   },
-  postUpdateUserByYear22_23: function (req, res) {
+  postUpdateUserByYear22_23: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -484,6 +491,7 @@ module.exports = {
             foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
           foundUser.save(function (err) {
             if (err) throw err;
+            req.flash("user","Success");
             res.redirect("/admin/2022-2023/users");
           });
         } else {
@@ -494,7 +502,7 @@ module.exports = {
       }
     });
   },
-  postUpdateUserByYear23_24: function (req, res) {
+  postUpdateUserByYear23_24: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -503,6 +511,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
+            req.flash("user","Success");
             res.redirect("/admin/2023-2024/users");
           });
         } else {
@@ -513,7 +522,7 @@ module.exports = {
       }
     });
   },
-  postUpdateUserByYear24_25: function (req, res) {
+  postUpdateUserByYear24_25: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -522,6 +531,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
+            req.flash("user","Success");
             res.redirect("/admin/2024-2025/users");
           });
         } else {
@@ -532,7 +542,7 @@ module.exports = {
       }
     });
   },
-  postUpdateUserByYear25_26: function (req, res) {
+  postUpdateUserByYear25_26: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -541,6 +551,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
+            req.flash("user","Success");
             res.redirect("/admin/2025-2026/users");
           });
         } else {
@@ -551,7 +562,7 @@ module.exports = {
       }
     });
   },
-  getUserReportsByYear22_23: function (req, res) {
+  getUserReportsByYear22_23: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -574,7 +585,7 @@ module.exports = {
       }
     });
   },
-  getUserReportsByYear23_24: function (req, res) {
+  getUserReportsByYear23_24: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -597,7 +608,7 @@ module.exports = {
       }
     });
   },
-  getUserReportsByYear24_25: function (req, res) {
+  getUserReportsByYear24_25: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -620,7 +631,7 @@ module.exports = {
       }
     });
   },
-  getUserReportsByYear25_26: function (req, res) {
+  getUserReportsByYear25_26: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -643,7 +654,7 @@ module.exports = {
       }
     });
   },
-  getLectReportByYear22_23: function (req, res) {
+  getLectReportByYear22_23: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -666,7 +677,7 @@ module.exports = {
       }
     });
   },
-  getLectReportByYear23_24: function (req, res) {
+  getLectReportByYear23_24: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -689,7 +700,7 @@ module.exports = {
       }
     });
   },
-  getLectReportByYear24_25: function (req, res) {
+  getLectReportByYear24_25: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -712,7 +723,7 @@ module.exports = {
       }
     });
   },
-  getLectReportByYear25_26: function (req, res) {
+  getLectReportByYear25_26: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -736,7 +747,7 @@ module.exports = {
     });
   },
   //administratorius atnaujina destytojo ataskaita
-  postLectReportUpdateByYear22_23: function (req, res) {
+  postLectReportUpdateByYear22_23: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -746,7 +757,7 @@ module.exports = {
           lectReport22_23.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("/admin/2022-2023/users");
           });
         } else {
@@ -757,7 +768,7 @@ module.exports = {
       }
     });
   },
-  postLectReportUpdateByYear23_24: function (req, res) {
+  postLectReportUpdateByYear23_24: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -766,7 +777,7 @@ module.exports = {
           lectReport23_24.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("/admin/2023-2024/users");
           });
         } else {
@@ -777,7 +788,7 @@ module.exports = {
       }
     });
   },
-  postLectReportUpdateByYear24_25: function (req, res) {
+  postLectReportUpdateByYear24_25: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -786,7 +797,7 @@ module.exports = {
           lectReport24_25.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("/admin/2024-2025/users");
           });
         } else {
@@ -797,7 +808,7 @@ module.exports = {
       }
     });
   },
-  postLectReportUpdateByYear25_26: function (req, res) {
+  postLectReportUpdateByYear25_26: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -806,7 +817,7 @@ module.exports = {
           lectReport25_26.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("/admin/2025-2026/users");
           });
         } else {
@@ -817,7 +828,7 @@ module.exports = {
       }
     });
   },
-  getDepReportByYear22_23: function (req, res) {
+  getDepReportByYear22_23: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -840,7 +851,7 @@ module.exports = {
       }
     });
   },
-  getDepReportByYear23_24: function (req, res) {
+  getDepReportByYear23_24: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -863,7 +874,7 @@ module.exports = {
       }
     });
   },
-  getDepReportByYear24_25: function (req, res) {
+  getDepReportByYear24_25: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -886,7 +897,7 @@ module.exports = {
       }
     });
   },
-  getDepReportByYear25_26: function (req, res) {
+  getDepReportByYear25_26: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
@@ -910,7 +921,7 @@ module.exports = {
     });
   },
   //administratorius atnaujina vedejo ataskaita
-  postDepReportUpdateByYear22_23: function (req, res) {
+  postDepReportUpdateByYear22_23: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -918,7 +929,7 @@ module.exports = {
           depReport22_23.update(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("admin/2022-2023/users");
           });
         } else {
@@ -929,7 +940,7 @@ module.exports = {
       }
     });
   },
-  postDepReportUpdateByYear23_24: function (req, res) {
+  postDepReportUpdateByYear23_24: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -937,7 +948,7 @@ module.exports = {
           depReport23_24.update(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("admin/2023-2024/users");
           });
         } else {
@@ -948,7 +959,7 @@ module.exports = {
       }
     });
   },
-  postDepReportUpdateByYear24_25: function (req, res) {
+  postDepReportUpdateByYear24_25: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -956,7 +967,7 @@ module.exports = {
           depReport24_25.update(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("admin/2024-2025/users");
           });
         } else {
@@ -967,7 +978,7 @@ module.exports = {
       }
     });
   },
-  postDepReportUpdateByYear25_26: function (req, res) {
+  postDepReportUpdateByYear25_26: (req, res) => {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
@@ -975,7 +986,7 @@ module.exports = {
           depReport25_26.update(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            console.log("Succesfully  updated");
+            req.flash("report","Success");
             res.redirect("admin/2025-2026/users");
           });
         } else {

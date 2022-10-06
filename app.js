@@ -76,9 +76,9 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 app.get("/register", (req, res) => {
-  const userN = req.flash('userR');
+  const userF = req.flash('userFail');
   res.render("register", {
-    userInfRegFailure: userN,
+    userInfRegFailure: userF,
   });
 });
 

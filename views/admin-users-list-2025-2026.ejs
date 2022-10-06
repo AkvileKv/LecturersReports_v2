@@ -2,7 +2,12 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    <% if(successMsg != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Sėkmingai atnaujinta!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
     <h1 class="text-center">Naudotojų sąrašas 2025 - 2026 m. m.</h1>
     <br>
     <table class="table table-hover">

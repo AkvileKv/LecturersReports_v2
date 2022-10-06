@@ -33,7 +33,7 @@ module.exports = {
     }, req.body.password, function (err, user) {
       if (err) {
         console.log(err);
-        req.flash('userR', req.body.username);
+        req.flash('userFail', req.body.username);
         res.redirect("/register");
       } else {
         passport.authenticate("local")(req, res, function () {
