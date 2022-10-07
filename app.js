@@ -73,7 +73,11 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/login", (req, res) => {
-  res.render("login");
+  const userF = req.flash('userFail');
+  console.log("Msg: " + userF);
+  res.render("login", {
+    userFailure: userF,
+  });
 });
 app.get("/register", (req, res) => {
   const userF = req.flash('userFail');

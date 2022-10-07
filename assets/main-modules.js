@@ -68,15 +68,16 @@ module.exports = {
       username: req.body.username,
       password: req.body.password
     });
+    req.flash('userFail', "Fail"); //nepaima requesto 
 
     req.login(user, function (err) {
       if (err) throw err;
       passport.authenticate("local", {
-        failureRedirect: '/login'
+        failureRedirect: '/login', failureMessage: true
       })(req, res, function () {
         User.findById(req.user.id, function (err, foundUser) {
           try {
-            var a = req.user.username;
+            let a = req.user.username;
             foundUser.updated_for = "Prisijungimas" + " " + a;
 
             foundUser.save(function (err) {
@@ -99,7 +100,7 @@ module.exports = {
   },
   getLogout: (req, res, next) => {
     let a = req.user.id;
-    if (typeof a === "undefined"){
+    if (typeof a === "undefined") {
       console.log("undefined");
       req.flash("userId", "Undefined");
       res.redirect('/');
@@ -120,9 +121,9 @@ module.exports = {
           if (err) throw err;
         });
       }
-    req.logout(function(err) {
-    if (err) { return next(err); }
-  });
+      req.logout(function (err) {
+        if (err) { return next(err); }
+      });
     });
     res.redirect('/');
   },

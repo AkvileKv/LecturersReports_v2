@@ -6,6 +6,11 @@ const lectReport23_24 = require('./report/lecturers-report23_24');
 const lectReport24_25 = require('./report/lecturers-report24_25');
 const lectReport25_26 = require('./report/lecturers-report25_26');
 
+const depReport22_23 = require('./report/departments-report22_23');
+const depReport23_24 = require('./report/departments-report23_24');
+const depReport24_25 = require('./report/departments-report24_25');
+const depReport25_26 = require('./report/departments-report25_26');
+
 module.exports = {
   getProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
@@ -751,13 +756,12 @@ module.exports = {
     User.findById(req.body.id, function (err, foundUser) {
       try {
         if (foundUser) {
-          //masyvu isvalymas update
           lectReport22_23.clearLecReport(foundUser);
           lectReport22_23.updateLecReport(foundUser, req);
           lectReport22_23.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("/admin/2022-2023/users");
           });
         } else {
@@ -777,7 +781,7 @@ module.exports = {
           lectReport23_24.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("/admin/2023-2024/users");
           });
         } else {
@@ -797,7 +801,7 @@ module.exports = {
           lectReport24_25.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("/admin/2024-2025/users");
           });
         } else {
@@ -817,7 +821,7 @@ module.exports = {
           lectReport25_26.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("/admin/2025-2026/users");
           });
         } else {
@@ -926,10 +930,10 @@ module.exports = {
       try {
         if (foundUser) {
           depReport22_23.clearDepReport(foundUser);
-          depReport22_23.update(foundUser, req);
+          depReport22_23.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("admin/2022-2023/users");
           });
         } else {
@@ -945,10 +949,10 @@ module.exports = {
       try {
         if (foundUser) {
           depReport23_24.clearDepReport(foundUser);
-          depReport23_24.update(foundUser, req);
+          depReport23_24.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("admin/2023-2024/users");
           });
         } else {
@@ -964,10 +968,10 @@ module.exports = {
       try {
         if (foundUser) {
           depReport24_25.clearDepReport(foundUser);
-          depReport24_25.update(foundUser, req);
+          depReport24_25.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("admin/2024-2025/users");
           });
         } else {
@@ -983,10 +987,10 @@ module.exports = {
       try {
         if (foundUser) {
           depReport25_26.clearDepReport(foundUser);
-          depReport25_26.update(foundUser, req);
+          depReport25_26.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("report","Success");
+            req.flash("user","Success");
             res.redirect("admin/2025-2026/users");
           });
         } else {
