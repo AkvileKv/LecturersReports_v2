@@ -12,6 +12,27 @@ const depReport24_25 = require('./report/departments-report24_25');
 const depReport25_26 = require('./report/departments-report25_26');
 
 module.exports = {
+  getUpdateUserAll: (req, res) => { //new
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          User.find({}, function (err, users) {
+              if (err) throw err;
+                const userUpdated = req.flash('user');
+                res.render("admin-users-edit-all", {
+                  userUp: userUpdated,
+                  users: users
+                });
+            });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
   getProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
@@ -169,7 +190,7 @@ module.exports = {
               facultyUpd: success,
               facultyDel: successDeleted,
               faculties: faculties
-           });
+            });
           });
         } else {
           console.log("You do not have permission");
@@ -202,7 +223,7 @@ module.exports = {
     });
     faculty.save(function (err) {
       if (err) throw err;
-      req.flash("faculty","Success");
+      req.flash("faculty", "Success");
       res.redirect("/admin/faculties");
     });
   },
@@ -233,11 +254,11 @@ module.exports = {
     Faculty.findById(req.body.id, function (err, foundFaculty) {
       try {
         if (foundFaculty) {
-            foundFaculty.dekanas = req.body.dekanas,
+          foundFaculty.dekanas = req.body.dekanas,
             foundFaculty.prodekanas = req.body.prodekanas
           foundFaculty.save(function (err) {
             if (err) throw err;
-            req.flash("faculty","Success");
+            req.flash("faculty", "Success");
             res.redirect("/admin/faculties");
           });
         } else {
@@ -254,7 +275,7 @@ module.exports = {
     },
       function (err) {
         if (!err) {
-          req.flash("facultyDelete","Successfully");
+          req.flash("facultyDelete", "Successfully");
           res.redirect("/admin/faculties");
         } else {
           res.send(err);
@@ -496,7 +517,7 @@ module.exports = {
             foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2022-2023/users");
           });
         } else {
@@ -516,7 +537,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2023-2024/users");
           });
         } else {
@@ -536,7 +557,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2024-2025/users");
           });
         } else {
@@ -556,7 +577,7 @@ module.exports = {
             foundUser.updated_for = req.user.username
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2025-2026/users");
           });
         } else {
@@ -761,7 +782,7 @@ module.exports = {
           lectReport22_23.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2022-2023/users");
           });
         } else {
@@ -781,7 +802,7 @@ module.exports = {
           lectReport23_24.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2023-2024/users");
           });
         } else {
@@ -801,7 +822,7 @@ module.exports = {
           lectReport24_25.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2024-2025/users");
           });
         } else {
@@ -821,7 +842,7 @@ module.exports = {
           lectReport25_26.headOfDepAddToLecReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("/admin/2025-2026/users");
           });
         } else {
@@ -933,7 +954,7 @@ module.exports = {
           depReport22_23.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("admin/2022-2023/users");
           });
         } else {
@@ -952,7 +973,7 @@ module.exports = {
           depReport23_24.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("admin/2023-2024/users");
           });
         } else {
@@ -971,7 +992,7 @@ module.exports = {
           depReport24_25.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("admin/2024-2025/users");
           });
         } else {
@@ -990,7 +1011,7 @@ module.exports = {
           depReport25_26.updateDepReport(foundUser, req);
           foundUser.save(function (err) {
             if (err) throw err;
-            req.flash("user","Success");
+            req.flash("user", "Success");
             res.redirect("admin/2025-2026/users");
           });
         } else {

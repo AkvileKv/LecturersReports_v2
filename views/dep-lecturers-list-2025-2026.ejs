@@ -13,7 +13,8 @@
       <p class="lead text-center text-danger">Katedros dėstytojų skaičius (patvirtintas direktoriaus įsakymu): <%=depUser.mm2025_2026.katedrosVedejas.katedrosDestytojuSk%></p>
     </div>
     <br>
-
+    <input class="form-control" id="myInput" type="text" placeholder="Ieškoti..">
+    <br>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -29,7 +30,7 @@
           <!--jei katedros vedejas yra TIK katedros vedejas jo sarase nerodo  -->
         <%  } else if (user.teachingYear25_26 === true || user.headOfTheDepartment25_26 === true){ %>
         <div class="database-result-edit ">
-          <tbody>
+          <tbody id="myTable">
             <tr>
               <td><%=user.katedra%></td>
               <td><%=user.busena25_26%></td>

@@ -74,7 +74,7 @@ app.get("/", (req, res) => {
 });
 app.get("/login", (req, res) => {
   const userF = req.flash('userFail');
-  console.log("Msg: " + userF);
+  //console.log("Msg: " + userF);
   res.render("login", {
     userFailure: userF,
   });
@@ -405,6 +405,9 @@ app.get("/admin/users/:page", isLoggedIn, (req, res) => {
 app.get("/admin/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserInfo(req, res);
 });
+app.get("/admin/users/editt/all", isLoggedIn, (req, res) => { //NEW
+  adminWindow.getUpdateUserAll(req, res);
+});
 app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserInfo(req, res);
 });
@@ -565,6 +568,6 @@ function isLoggedIn(req, res, next) {
   res.redirect("/login");
 }
 
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log("ReportsApp has started successfully on port 3000");
 });
