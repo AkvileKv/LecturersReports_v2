@@ -405,8 +405,11 @@ app.get("/admin/users/:page", isLoggedIn, (req, res) => {
 app.get("/admin/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserInfo(req, res);
 });
-app.get("/admin/users/editt/all", isLoggedIn, (req, res) => { //NEW
-  adminWindow.getUpdateUserAll(req, res);
+app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW
+  adminWindow.getUpdateUserAllByF(req, res);
+});
+app.post("/update-all-users-info-admin", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfo(req, res);
 });
 app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserInfo(req, res);

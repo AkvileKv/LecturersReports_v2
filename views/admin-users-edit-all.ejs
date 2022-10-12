@@ -1,114 +1,131 @@
 <%- include('partials/headerAdmin') %>
 
 <div class="container">
-  <div class="jumbotron ">
-    <% if(userUp != '') { %>
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <div>Sėkmingai atnaujinta!</div>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <% } %>
+  <div class="jumbotron">
+    
     <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
     <br>
-    <input class="form-control" id="myInput" type="text" placeholder="Ieškoti..">
+    <input class="form-control" id="myInput" type="text" placeholder="Naudotojas...">
     <br>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Fakultetas</th>
-          <th scope="col">Katedra</th>
-          <th scope="col">Naudotojas</th>
-          <th scope="col">Būsena</th>
-          <!-- <th scope="col">Dėstymo metai 2022 - 2023 m. m.</th> -->
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      
-      <%  users.forEach(function(user){ %>
-      <div class="database-result-edit ">
-        <tbody id="myTable">
+    <form action="/update-all-users-info-admin" method="post">
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <td>
-              <select name="fakultetas" class="form-select form-control" required>
-                <option value="nepasirinkta"></option>
-                <option class="others" <%if (user.fakultetas === "Agrotechnologijų") { %> selected <% } %> value="Agrotechnologijų">Agrotechnologijų</option>
-                <option class="others" <%if (user.fakultetas === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
-                <option class="others" <%if (user.fakultetas === "Elektronikos ir informatikos") { %> selected <% } %> value="Elektronikos ir informatikos">Elektronikos ir informatikos</option>
-                <option class="others" <%if (user.fakultetas === "Menų ir kūrybinių technologijų") { %> selected <% } %> value="Menų ir kūrybinių technologijų">Menų ir kūrybinių technologijų</option>
-                <option class="others" <%if (user.fakultetas === "Pedagogikos") { %> selected <% } %> value="Pedagogikos">Pedagogikos</option>
-                <option class="others" <%if (user.fakultetas === "Sveikatos priežiūros") { %> selected <% } %> value="Sveikatos priežiūros">Sveikatos priežiūros</option>
-                <option class="others" <%if (user.fakultetas === "Verslo vadybos") { %> selected <% } %> value="Verslo vadybos">Verslo vadybos</option>
-              </select>
-            </td>
-            <td> <select name="katedra" class="form-select form-control" required>
-                <option value="nepasirinkta"></option>
-                <optgroup label="Elektronikos ir informatikos fakultetas">
-                  <option class="others" <%if (user.katedra === "Elektronikos ir kompiuterių inžinerijos") { %> selected <% } %> value="Elektronikos ir kompiuterių inžinerijos">Elektronikos ir kompiuterių inžinerijos</option>
-                  <option class="others" <%if (user.katedra === "Informacinių sistemų") { %> selected <% } %> value="Informacinių sistemų">Informacinių sistemų</option>
-                  <option class="others" <%if (user.katedra === "Programinės įrangos") { %> selected <% } %> value="Programinės įrangos">Programinės įrangos</option>
-                <optgroup label="Ekonomikos fakultetas">
-                  <option class="others" <%if (user.katedra === "Bankininkystės") { %> selected <% } %> value="Bankininkystės">Bankininkystės</option>
-                  <option class="others" <%if (user.katedra === "Buhalterinės apskaitos") { %> selected <% } %> value="Buhalterinės apskaitos">Buhalterinės apskaitos</option>
-                  <option class="others" <%if (user.katedra === "Draudimo") { %> selected <% } %> value="Draudimo">Draudimo</option>
-                  <option class="others" <%if (user.katedra === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
-                  <option class="others" <%if (user.katedra === "Finansų") { %> selected <% } %> value="Finansų">Finansų</option>
-                </optgroup>
-                <optgroup label="Verslo vadybos fakultetas">
-                  <option class="others" <%if (user.katedra === "Reklamos ir komunikacijos") { %> selected <% } %> value="Reklamos ir komunikacijos">Reklamos ir komunikacijos</option>
-                  <option class="others" <%if (user.katedra === "Tarptautinio verslo") { %> selected <% } %> value="Tarptautinio verslo">Tarptautinio verslo</option>
-                  <option class="others" <%if (user.katedra === "Turizmo") { %> selected <% } %> value="Turizmo">Turizmo</option>
-                  <option class="others" <%if (user.katedra === "Vadybos") { %> selected <% } %> value="Vadybos">Vadybos</option>
-                  <option class="others" <%if (user.katedra === "Verslo inovacijų") { %> selected <% } %> value="Verslo inovacijų">Verslo inovacijų</option>
-                </optgroup>
-                <optgroup label="Sveikatos priežiūros fakultetas">
-                  <option class="others" <%if (user.katedra === "Medicinos technologijų ir dietetikos") { %> selected <% } %> value="Medicinos technologijų ir dietetikos">Medicinos technologijų ir dietetikos</option>
-                  <option class="others" <%if (user.katedra === "Grožio terapijos") { %> selected <% } %> value="Grožio terapijos">Grožio terapijos</option>
-                  <option class="others" <%if (user.katedra === "Reabilitacijos") { %> selected <% } %> value="Reabilitacijos">Reabilitacijos</option>
-                  <option class="others" <%if (user.katedra === "Slaugos") { %> selected <% } %> value="Slaugos">Slaugos</option>
-                </optgroup>
-                <optgroup label="Agrotechnologijų fakultetas">
-                  <option class="others" <%if (user.katedra === "Chemijos ir maisto technologijos") { %> selected <% } %> value="Chemijos ir maisto technologijos">Chemijos ir maisto technologijos</option>
-                  <option class="others" <%if (user.katedra === "Kraštotvarkos ir agroverslo technologijų") { %> selected <% } %> value="Kraštotvarkos ir agroverslo technologijų">Kraštotvarkos ir agroverslo technologijų</option>
-                  <option class="others" <%if (user.katedra === "Veterinarijos") { %> selected <% } %> value="Veterinarijos">Veterinarijos</option>
-                </optgroup>
-                <optgroup label="Pedagogikos fakultetas">
-                  <option class="others" <%if (user.katedra === "Edukologijos") { %> selected <% } %> value="Edukologijos">Edukologijos</option>
-                  <option class="others" <%if (user.katedra === "Socialinės gerovės") { %> selected <% } %> value="Socialinės gerovės">Socialinės gerovės</option>
-                </optgroup>
-                <optgroup label="Menų ir kūrybinių technologijų fakultetas">
-                  <option class="others" <%if (user.katedra === "Kultūros vadybos ir šokio pedagogikos") { %> selected <% } %> value="Kultūros vadybos ir šokio pedagogikos">Kultūros vadybos ir šokio pedagogikos</option>
-                  <option class="others" <%if (user.katedra === "Mados dizaino") { %> selected <% } %> value="Mados dizaino">Mados dizaino</option>
-                  <option class="others" <%if (user.katedra === "Ritminės muzikos") { %> selected <% } %> value="Ritminės muzikos">Ritminės muzikos</option>
-                  <option class="others" <%if (user.katedra === "Scenos meno") { %> selected <% } %> value="Scenos meno">Scenos meno</option>
-                </optgroup>
-              </select>
-            </td>
-            <td scope="row">
-              <div class="edit-left">
-                <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
-              </div>
-            </td>
-            <td>
-              <%if (user.activeUser == "aktyvus"){ %>
-              aktyvus
-              <%  } else { %>
-              neaktyvus
-              <%  } %>
-            </td>
-            <!-- <td><%=user.teachingYear22_23 %></td> -->
-            <td>
-              <div class="text-right">
-                <div class="btn-group" role="group" aria-label="" id="group">
-                  <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
-                </div>
-              </div>
-            </td>
+            <th scope="col">Katedra</th>
+            <th scope="col">Naudotojas</th>
+            <th scope="col">Būsena</th>
+            <th scope="col">2022 - 2023 m. m.</th>
+            <th scope="col">2023 - 2024 m. m.</th>
+            <th scope="col">2024 - 2025 m. m.</th>
+            <th scope="col">2025 - 2026 m. m.</th>
+            <th scope="col"></th>
           </tr>
-        </tbody>
+        </thead>
+        
+        <%  users.forEach(function(user){ %>
+        <div class="database-result-edit ">
+          <tbody id="myTable">
+            <tr>
+              <td> <select name="katedra" class="form-select form-control" required>
+                  <option value="nepasirinkta"></option>
+                  <optgroup label="Elektronikos ir informatikos fakultetas">
+                    <option class="others" <%if (user.katedra === "Elektronikos ir kompiuterių inžinerijos") { %> selected <% } %> value="Elektronikos ir kompiuterių inžinerijos">Elektronikos ir kompiuterių inžinerijos</option>
+                    <option class="others" <%if (user.katedra === "Informacinių sistemų") { %> selected <% } %> value="Informacinių sistemų">Informacinių sistemų</option>
+                    <option class="others" <%if (user.katedra === "Programinės įrangos") { %> selected <% } %> value="Programinės įrangos">Programinės įrangos</option>
+                  <optgroup label="Ekonomikos fakultetas">
+                    <option class="others" <%if (user.katedra === "Bankininkystės") { %> selected <% } %> value="Bankininkystės">Bankininkystės</option>
+                    <option class="others" <%if (user.katedra === "Buhalterinės apskaitos") { %> selected <% } %> value="Buhalterinės apskaitos">Buhalterinės apskaitos</option>
+                    <option class="others" <%if (user.katedra === "Draudimo") { %> selected <% } %> value="Draudimo">Draudimo</option>
+                    <option class="others" <%if (user.katedra === "Ekonomikos") { %> selected <% } %> value="Ekonomikos">Ekonomikos</option>
+                    <option class="others" <%if (user.katedra === "Finansų") { %> selected <% } %> value="Finansų">Finansų</option>
+                  </optgroup>
+                  <optgroup label="Verslo vadybos fakultetas">
+                    <option class="others" <%if (user.katedra === "Reklamos ir komunikacijos") { %> selected <% } %> value="Reklamos ir komunikacijos">Reklamos ir komunikacijos</option>
+                    <option class="others" <%if (user.katedra === "Tarptautinio verslo") { %> selected <% } %> value="Tarptautinio verslo">Tarptautinio verslo</option>
+                    <option class="others" <%if (user.katedra === "Turizmo") { %> selected <% } %> value="Turizmo">Turizmo</option>
+                    <option class="others" <%if (user.katedra === "Vadybos") { %> selected <% } %> value="Vadybos">Vadybos</option>
+                    <option class="others" <%if (user.katedra === "Verslo inovacijų") { %> selected <% } %> value="Verslo inovacijų">Verslo inovacijų</option>
+                  </optgroup>
+                  <optgroup label="Sveikatos priežiūros fakultetas">
+                    <option class="others" <%if (user.katedra === "Medicinos technologijų ir dietetikos") { %> selected <% } %> value="Medicinos technologijų ir dietetikos">Medicinos technologijų ir dietetikos</option>
+                    <option class="others" <%if (user.katedra === "Grožio terapijos") { %> selected <% } %> value="Grožio terapijos">Grožio terapijos</option>
+                    <option class="others" <%if (user.katedra === "Reabilitacijos") { %> selected <% } %> value="Reabilitacijos">Reabilitacijos</option>
+                    <option class="others" <%if (user.katedra === "Slaugos") { %> selected <% } %> value="Slaugos">Slaugos</option>
+                  </optgroup>
+                  <optgroup label="Agrotechnologijų fakultetas">
+                    <option class="others" <%if (user.katedra === "Chemijos ir maisto technologijos") { %> selected <% } %> value="Chemijos ir maisto technologijos">Chemijos ir maisto technologijos</option>
+                    <option class="others" <%if (user.katedra === "Kraštotvarkos ir agroverslo technologijų") { %> selected <% } %> value="Kraštotvarkos ir agroverslo technologijų">Kraštotvarkos ir agroverslo technologijų</option>
+                    <option class="others" <%if (user.katedra === "Veterinarijos") { %> selected <% } %> value="Veterinarijos">Veterinarijos</option>
+                  </optgroup>
+                  <optgroup label="Pedagogikos fakultetas">
+                    <option class="others" <%if (user.katedra === "Edukologijos") { %> selected <% } %> value="Edukologijos">Edukologijos</option>
+                    <option class="others" <%if (user.katedra === "Socialinės gerovės") { %> selected <% } %> value="Socialinės gerovės">Socialinės gerovės</option>
+                  </optgroup>
+                  <optgroup label="Menų ir kūrybinių technologijų fakultetas">
+                    <option class="others" <%if (user.katedra === "Kultūros vadybos ir šokio pedagogikos") { %> selected <% } %> value="Kultūros vadybos ir šokio pedagogikos">Kultūros vadybos ir šokio pedagogikos</option>
+                    <option class="others" <%if (user.katedra === "Mados dizaino") { %> selected <% } %> value="Mados dizaino">Mados dizaino</option>
+                    <option class="others" <%if (user.katedra === "Ritminės muzikos") { %> selected <% } %> value="Ritminės muzikos">Ritminės muzikos</option>
+                    <option class="others" <%if (user.katedra === "Scenos meno") { %> selected <% } %> value="Scenos meno">Scenos meno</option>
+                  </optgroup>
+                </select>
+              </td>
+              <td scope="row">
+                <div class="edit-left">
+                  <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+                </div>
+              </td>
+              <td>
+                <%if (user.activeUser == "aktyvus"){ %>
+                aktyvus
+                <%  } else { %>
+                neaktyvus
+                <%  } %>
+              </td>
+              <td>
+                <select name="destymoMetai22_23" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear22_23 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear22_23 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <select name="destymoMetai23_24" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear23_24 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear23_24 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <select name="destymoMetai24_25" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear24_25 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear24_25 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <select name="destymoMetai25_26" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear25_26 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear25_26 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <div class="text-right">
+                  <div class="btn-group" role="group" aria-label="" id="group">
+                    <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </div>
+        <% }) %>
+      </table>
+      <br>
+      <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+        </div>
       </div>
-      <% }) %>
-      
-    </table>
+    </form>
     <br>
     
   </div>

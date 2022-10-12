@@ -27,7 +27,6 @@
           <th scope="col">Dekanas</th>
           <th scope="col">Prodekanas</th>
           <th scope="col" class="text-right"></th>
-          
         </tr>
       </thead>
       
@@ -40,21 +39,21 @@
                 <span class=""> <%=faculty.username%></span>
               </div>
             </td>
-            
-              <td scope="row">
-                <div class="edit-left">
-                  <span class=""> <%=faculty.dekanas%></span>
-                </div>
-              </td>
-              <td scope="row">
-                <div class="edit-left">
-                  <span class=""> <%=faculty.prodekanas%></span>
-                </div>
-              </td>
-              <td>
+            <td scope="row">
+              <div class="edit-left">
+                <span class=""> <%=faculty.dekanas%></span>
+              </div>
+            </td>
+            <td scope="row">
+              <div class="edit-left">
+                <span class=""> <%=faculty.prodekanas%></span>
+              </div>
+            </td>
+            <td>
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
-                  <a type="button" class="btn btn-primary" href="/admin/faculties/edit/<%=faculty._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-secondary" href="/admin/usersp/edit-users/<%=faculty._id%>">Fakulteto dėstytojai</a>
+                  <a type="button" class="btn btn-primary" href="/admin/faculties/edit/<%=faculty._id %>">Redaguoti</a>
                   <form action="/delete-faculty" method="post">
                     <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti fakultetą?');" value="<%=faculty._id%>" disabled>Ištrinti</button>
                   </form>
@@ -65,7 +64,6 @@
             
           </tr>
         </tbody>
-        
       </div>
       <% }) %>
     </table>
