@@ -13,7 +13,6 @@
           <tr>
             <th scope="col">Naudotojas</th>
             <th scope="col">Katedra</th>
-            <th scope="col">Rolė</th>
             <th scope="col">2022 - 2023 m. m.</th>
             <th scope="col">2023 - 2024 m. m.</th>
             <th scope="col">2024 - 2025 m. m.</th>
@@ -26,11 +25,12 @@
         <%  users.forEach(function(user){ %>
         <% userNr++; %>
         <div class="database-result-edit ">
+          
           <tbody id="myTable">
             <tr>
               <td scope="row">
-                <div class="edit-left">
-                  <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+                <div class="edit-left" id="id01">
+                  <span name="spann" class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
                 </div>
                 <input type="text" name="userId<%=userNr%>" value="<%=user._id%>" hidden>
               </td>
@@ -79,27 +79,28 @@
                 </select>
               </td>
               <td>
-                <%=user.role%>
+                <select name="destymoMetai22_23<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear22_23 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear22_23 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
               </td>
               <td>
-                <div class="form-check">
-                  <input class="form-check-input form-control" name="destymoMetai22_23<%=userNr%>" type="checkbox" <%if (user.teachingYear22_23 === true) { %> checked value=true <% } %> <% if (user.teachingYear22_23 === false) { %> value=false <% } %>>
-                </div>
+                <select name="destymoMetai23_24<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear23_24 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear23_24 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
               </td>
               <td>
-                <div class="form-check">
-                  <input class="form-check-input form-control" name="destymoMetai23_24<%=userNr%>" type="checkbox" <%if (user.teachingYear23_24 === true) { %> checked value=true <% } %> <% if (user.teachingYear23_24 === false) { %> value=false <% } %>>
-                </div>
+                <select name="destymoMetai24_25<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear24_25 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear24_25 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
               </td>
               <td>
-                <div class="form-check">
-                  <input class="form-check-input form-control " name="destymoMetai24_25<%=userNr%>" type="checkbox" <%if (user.teachingYear24_25 === true) { %> checked value=true <% } %> <% if (user.teachingYear24_25 === false) { %> value=false <% } %>>
-                </div>
-              </td>
-              <td>
-                <div class="form-check">
-                  <input class="form-check-input form-control " name="destymoMetai25_26<%=userNr%>" type="checkbox" <%if (user.teachingYear25_26 === true) { %> checked value=true <% } %> <% if (user.teachingYear25_26 === false) { %> value=false <% } %>>
-                </div>
+                <select name="destymoMetai25_26<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear25_26 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear25_26 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
               </td>
               <td>
                 <%if (user.activeUser == "aktyvus"){ %>
