@@ -14,7 +14,6 @@ const depReport25_26 = require('./report/departments-report25_26');
 module.exports = {
   getUpdateUserAllByF: (req, res) => { //new
     User.findById(req.user.id, function (err, foundUser) {
-      console.log("pateko");
       try {
         if (foundUser.role === "administratorius") {
           const reqId = req.params.facultyId;
@@ -46,40 +45,40 @@ module.exports = {
     });
   },
   postUpdateAllUsersInfo: (req, res) => {
+    for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
+      let a = eval("req.body.userId" + i);
+      //console.log(i);
+      //console.log(a);
+      User.findById(a, function (err, foundUser) {
+        try {
+          if (foundUser) {
+            //foundUser.activeUser = req.body.isActive,
+              foundUser.katedra = eval("req.body.katedra" + i),
 
-    // ciklo reikia, kad imtų 
-    
-    User.findById(req.body.id, function (err, foundUser) {
-      try {
-        if (foundUser) {
-          foundUser.activeUser = req.body.isActive,
-            foundUser.katedra = req.body.katedra,
-
-            foundUser.teachingYear22_23 = req.body.destymoMetai22_23,
-            foundUser.teachingYear23_24 = req.body.destymoMetai23_24,
-            foundUser.teachingYear24_25 = req.body.destymoMetai24_25,
-            foundUser.teachingYear25_26 = req.body.destymoMetai25_26,
-            // foundUser.headOfTheDepartment22_23 = req.body.vedejoDarboMetai22_23,
-            // foundUser.headOfTheDepartment23_24 = req.body.vedejoDarboMetai23_24,
-            // foundUser.headOfTheDepartment24_25 = req.body.vedejoDarboMetai24_25,
-            // foundUser.headOfTheDepartment25_26 = req.body.vedejoDarboMetai25_26,
-            foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
-          foundUser.save(function (err) {
-            if (err) throw err;
-            req.flash('user', "Successfully");
+              foundUser.teachingYear22_23 = eval("req.body.destymoMetai22_23" + i),
+              foundUser.teachingYear23_24 = eval("req.body.destymoMetai23_24" + i),
+              foundUser.teachingYear24_25 = eval("req.body.destymoMetai24_25" + i),
+              foundUser.teachingYear25_26 = eval("req.body.destymoMetai25_26" + i),
+              // foundUser.headOfTheDepartment22_23 = req.body.vedejoDarboMetai22_23,
+              // foundUser.headOfTheDepartment23_24 = req.body.vedejoDarboMetai23_24,
+              // foundUser.headOfTheDepartment24_25 = req.body.vedejoDarboMetai24_25,
+              // foundUser.headOfTheDepartment25_26 = req.body.vedejoDarboMetai25_26,
+              //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+            foundUser.save(function (err) {
+              if (err) throw err;
+              //req.flash('user', "Successfully");
+              //res.redirect("/admin/users");
+            });
+          } else {
+            console.log("Does'f found");
             res.redirect("/admin/users");
-          });
-        } else {
-          console.log("Does'f found");
-          res.redirect("/admin/users");
+          }
+        } catch (err) {
+          console.log(err);
         }
-
-        // ciklo end
-
-      } catch (err) {
-        console.log(err);
-      }
-    });
+      });
+    }
+    res.redirect("/admin/faculties");
   },
   getProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {

@@ -3,30 +3,39 @@
 <div class="container">
   <div class="jumbotron">
     
-    <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
+    <h1 class="text-center"><%=faculty.username%> fakulteto dėstytojų/katedros vedėjų sąrašas</h1>
     <br>
-    <input class="form-control" id="myInput" type="text" placeholder="Naudotojas...">
+    <input class="form-control" id="myInput" type="text" placeholder="Ieškoti naudotojo..">
     <br>
     <form action="/update-all-users-info-admin" method="post">
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Katedra</th>
             <th scope="col">Naudotojas</th>
-            <th scope="col">Būsena</th>
+            <th scope="col">Katedra</th>
+            <th scope="col">Rolė</th>
             <th scope="col">2022 - 2023 m. m.</th>
             <th scope="col">2023 - 2024 m. m.</th>
             <th scope="col">2024 - 2025 m. m.</th>
             <th scope="col">2025 - 2026 m. m.</th>
+            <th scope="col">Būsena</th>
             <th scope="col"></th>
           </tr>
         </thead>
-        
+        <% var userNr = 0; %>
         <%  users.forEach(function(user){ %>
+        <% userNr++; %>
         <div class="database-result-edit ">
           <tbody id="myTable">
             <tr>
-              <td> <select name="katedra" class="form-select form-control" required>
+              <td scope="row">
+                <div class="edit-left">
+                  <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+                </div>
+                <input type="text" name="userId<%=userNr%>" value="<%=user._id%>" hidden>
+              </td>
+              <td>
+                <select name="katedra<%=userNr%>" class="form-select form-control">
                   <option value="nepasirinkta"></option>
                   <optgroup label="Elektronikos ir informatikos fakultetas">
                     <option class="others" <%if (user.katedra === "Elektronikos ir kompiuterių inžinerijos") { %> selected <% } %> value="Elektronikos ir kompiuterių inžinerijos">Elektronikos ir kompiuterių inžinerijos</option>
@@ -69,9 +78,27 @@
                   </optgroup>
                 </select>
               </td>
-              <td scope="row">
-                <div class="edit-left">
-                  <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+              <td>
+                <%=user.role%>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input form-control" name="destymoMetai22_23<%=userNr%>" type="checkbox" <%if (user.teachingYear22_23 === true) { %> checked value=true <% } %> <% if (user.teachingYear22_23 === false) { %> value=false <% } %>>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input form-control" name="destymoMetai23_24<%=userNr%>" type="checkbox" <%if (user.teachingYear23_24 === true) { %> checked value=true <% } %> <% if (user.teachingYear23_24 === false) { %> value=false <% } %>>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input form-control " name="destymoMetai24_25<%=userNr%>" type="checkbox" <%if (user.teachingYear24_25 === true) { %> checked value=true <% } %> <% if (user.teachingYear24_25 === false) { %> value=false <% } %>>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input form-control " name="destymoMetai25_26<%=userNr%>" type="checkbox" <%if (user.teachingYear25_26 === true) { %> checked value=true <% } %> <% if (user.teachingYear25_26 === false) { %> value=false <% } %>>
                 </div>
               </td>
               <td>
@@ -80,30 +107,6 @@
                 <%  } else { %>
                 neaktyvus
                 <%  } %>
-              </td>
-              <td>
-                <select name="destymoMetai22_23" class="form-select form-control" required>
-                  <option class="others" <%if (user.teachingYear22_23 === false) { %> selected <% } %> value=false>Ne</option>
-                  <option class="others" <%if (user.teachingYear22_23 === true) { %> selected <% } %> value=true>Taip</option>
-                </select>
-              </td>
-              <td>
-                <select name="destymoMetai23_24" class="form-select form-control" required>
-                  <option class="others" <%if (user.teachingYear23_24 === false) { %> selected <% } %> value=false>Ne</option>
-                  <option class="others" <%if (user.teachingYear23_24 === true) { %> selected <% } %> value=true>Taip</option>
-                </select>
-              </td>
-              <td>
-                <select name="destymoMetai24_25" class="form-select form-control" required>
-                  <option class="others" <%if (user.teachingYear24_25 === false) { %> selected <% } %> value=false>Ne</option>
-                  <option class="others" <%if (user.teachingYear24_25 === true) { %> selected <% } %> value=true>Taip</option>
-                </select>
-              </td>
-              <td>
-                <select name="destymoMetai25_26" class="form-select form-control" required>
-                  <option class="others" <%if (user.teachingYear25_26 === false) { %> selected <% } %> value=false>Ne</option>
-                  <option class="others" <%if (user.teachingYear25_26 === true) { %> selected <% } %> value=true>Taip</option>
-                </select>
               </td>
               <td>
                 <div class="text-right">
@@ -117,6 +120,7 @@
         </div>
         <% }) %>
       </table>
+      <input type="" id="userTable_id" name="userTable_name" value="<%=userNr%>" hidden>
       <br>
       <div class="row">
         <div class="col-lg-3">

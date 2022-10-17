@@ -44,6 +44,7 @@ module.exports = {
     });
   },
   postLogin: (req, res) => {
+    //console.log("1");
     //2 rolem negalima prisijungti vienu metu
 
     //   if (req.isAuthenticated()) {
@@ -68,14 +69,18 @@ module.exports = {
       username: req.body.username,
       password: req.body.password
     });
+    //console.log("2");
     req.flash('userFail', "Fail"); //nepaima requesto 
 
     req.login(user, function (err) {
+     // console.log("3");
       if (err) throw err;
       passport.authenticate("local", {
         failureRedirect: '/login', failureMessage: true
       })(req, res, function () {
+        //console.log("4");
         User.findById(req.user.id, function (err, foundUser) {
+        //  console.log("5");
           try {
             let a = req.user.username;
             foundUser.updated_for = "Prisijungimas" + " " + a;
