@@ -22,7 +22,8 @@ module.exports = {
             Faculty.findById((reqId), function (err, faculty) {
               if (err) throw err;
               User.find({
-                fakultetas: faculty.username
+                fakultetas: faculty.username,
+              
               }, function (err, users) {
                 if (err) throw err;
                 //const userUpdated = req.flash('user');
@@ -44,25 +45,144 @@ module.exports = {
       }
     });
   },
+  getUpdateUserAllByF22_23: (req, res) => { //new by year
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.facultyId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            Faculty.findById((reqId), function (err, faculty) {
+              if (err) throw err;
+              User.find({
+                fakultetas: faculty.username,
+              }, function (err, users) {
+                if (err) throw err;
+                //const userUpdated = req.flash('user');
+                res.render("admin-users-edit-all-2022-2023", {
+                  // userUp: userUpdated,
+                  faculty: faculty,
+                  users: users
+                });
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getUpdateUserAllByF23_24: (req, res) => { //new by year
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.facultyId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            Faculty.findById((reqId), function (err, faculty) {
+              if (err) throw err;
+              User.find({
+                fakultetas: faculty.username,
+              }, function (err, users) {
+                if (err) throw err;
+                //const userUpdated = req.flash('user');
+                res.render("admin-users-edit-all-2023-2024", {
+                  // userUp: userUpdated,
+                  faculty: faculty,
+                  users: users
+                });
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getUpdateUserAllByF24_25: (req, res) => { //new by year
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.facultyId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            Faculty.findById((reqId), function (err, faculty) {
+              if (err) throw err;
+              User.find({
+                fakultetas: faculty.username,
+              }, function (err, users) {
+                if (err) throw err;
+                //const userUpdated = req.flash('user');
+                res.render("admin-users-edit-all-2024-2025", {
+                  // userUp: userUpdated,
+                  faculty: faculty,
+                  users: users
+                });
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getUpdateUserAllByF25_26: (req, res) => { //new by year
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.facultyId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            Faculty.findById((reqId), function (err, faculty) {
+              if (err) throw err;
+              User.find({
+                fakultetas: faculty.username,
+              }, function (err, users) {
+                if (err) throw err;
+                //const userUpdated = req.flash('user');
+                res.render("admin-users-edit-all-2025-2026", {
+                  // userUp: userUpdated,
+                  faculty: faculty,
+                  users: users
+                });
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
   postUpdateAllUsersInfo: (req, res) => {
     for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
-      let a = eval("req.body.userId" + i);
-      //console.log(i);
-      //console.log(a);
-      User.findById(a, function (err, foundUser) {
+
+      User.findById(eval("req.body.userId" + i), function (err, foundUser) {
         try {
           if (foundUser) {
-            //foundUser.activeUser = req.body.isActive,
-              foundUser.katedra = eval("req.body.katedra" + i),
-
               foundUser.teachingYear22_23 = eval("req.body.destymoMetai22_23" + i),
               foundUser.teachingYear23_24 = eval("req.body.destymoMetai23_24" + i),
               foundUser.teachingYear24_25 = eval("req.body.destymoMetai24_25" + i),
               foundUser.teachingYear25_26 = eval("req.body.destymoMetai25_26" + i),
-              // foundUser.headOfTheDepartment22_23 = req.body.vedejoDarboMetai22_23,
-              // foundUser.headOfTheDepartment23_24 = req.body.vedejoDarboMetai23_24,
-              // foundUser.headOfTheDepartment24_25 = req.body.vedejoDarboMetai24_25,
-              // foundUser.headOfTheDepartment25_26 = req.body.vedejoDarboMetai25_26,
+              foundUser.headOfTheDepartment22_23 = eval("req.body.vedejoDarboMetai22_23" + i),
+              foundUser.headOfTheDepartment23_24 = eval("req.body.vedejoDarboMetai23_24" + i),
+              foundUser.headOfTheDepartment24_25 = eval("req.body.vedejoDarboMetai24_25" + i),
+              foundUser.headOfTheDepartment25_26 = eval("req.body.vedejoDarboMetai25_26" + i),
               //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
             foundUser.save(function (err) {
               if (err) throw err;
@@ -236,6 +356,90 @@ module.exports = {
             res.render("admin-faculties-list", {
               facultyUpd: success,
               facultyDel: successDeleted,
+              faculties: faculties
+            });
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getFacultiesByYear22_23: (req, res) => {
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          Faculty.find({}, function (err, faculties) {
+            if (err) throw err;
+            const success = req.flash('faculty');
+            res.render("admin-faculties-list-2022-2023", {
+              facultyUpd: success,
+              faculties: faculties
+            });
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getFacultiesByYear23_24: (req, res) => {
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          Faculty.find({}, function (err, faculties) {
+            if (err) throw err;
+            const success = req.flash('faculty');
+            res.render("admin-faculties-list-2023-2024", {
+              facultyUpd: success,
+              faculties: faculties
+            });
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getFacultiesByYear24_25: (req, res) => {
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          Faculty.find({}, function (err, faculties) {
+            if (err) throw err;
+            const success = req.flash('faculty');
+            res.render("admin-faculties-list-2024-2025", {
+              facultyUpd: success,
+              faculties: faculties
+            });
+          });
+        } else {
+          console.log("You do not have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  getFacultiesByYear25_26: (req, res) => {
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          Faculty.find({}, function (err, faculties) {
+            if (err) throw err;
+            const success = req.flash('faculty');
+            res.render("admin-faculties-list-2025-2026", {
+              facultyUpd: success,
               faculties: faculties
             });
           });

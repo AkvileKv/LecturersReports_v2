@@ -1,0 +1,88 @@
+<%- include('partials/headerAdmin2025_2026') %>
+
+<div class="container">
+  <div class="jumbotron">
+    
+    <h1 class="text-center"><%=faculty.username%> fakulteto dėstytojų/katedros vedėjų sąrašas 2025 - 2026 m. m.</h1>
+    <br>
+    <input class="form-control" id="myInput" type="text" placeholder="Ieškoti naudotojo..">
+    <br>
+    
+    <form action="/update-all-users-info-admin" method="post">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Naudotojas </th>
+            <th scope="col">Katedra</th>
+            <th scope="col">Dėstytojo 2025 - 2026 m. m.</th>
+            <th scope="col">Katedros vedėjo 2025 - 2026 m. m.</th>
+            <th scope="col">Būsena</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <% var userNr = 0; %>
+        <%  users.forEach(function(user){ %>
+        <% userNr++; %>
+        <div class="database-result-edit ">
+          
+          <tbody id="myTable">
+            <tr>
+              <td scope="row">
+                <div class="edit-left" id="id01">
+                  <span name="spann" class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+                </div>
+                <input type="text" name="userId<%=userNr%>" value="<%=user._id%>" hidden>
+              </td>
+              <td>
+                <%= user.katedra %>
+              </td>
+              <td>
+                <select name="destymoMetai25_26<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.teachingYear25_26 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.teachingYear25_26 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <select name="vedejoDarboMetai25_26<%=userNr%>" class="form-select form-control" required>
+                  <option class="others" <%if (user.headOfTheDepartment25_26 === false) { %> selected <% } %> value=false>Ne</option>
+                  <option class="others" <%if (user.headOfTheDepartment25_26 === true) { %> selected <% } %> value=true>Taip</option>
+                </select>
+              </td>
+              <td>
+                <%if (user.activeUser == "aktyvus"){ %>
+                aktyvus
+                <%  } else { %>
+                neaktyvus
+                <%  } %>
+              </td>
+              <td>
+                <div class="text-right">
+                  <div class="btn-group" role="group" aria-label="" id="group">
+                    <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </div>
+        <% }) %>
+      </table>
+      <input type="" id="userTable_id" name="userTable_name" value="<%=userNr%>" hidden>
+      <br>
+      <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    
+  </div>
+</div>
+
+
+
+
+<%- include('partials/footer') %>

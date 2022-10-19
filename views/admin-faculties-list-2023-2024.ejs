@@ -1,4 +1,4 @@
-<%- include('partials/headerAdmin') %>
+<%- include('partials/headerAdmin2023_2024') %>
 
 <div class="container">
   <div class="jumbotron ">
@@ -8,15 +8,8 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <% } %>
-    <% if(facultyDel != '') { %>
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <div>Sėkmingai pašalinta!</div>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <% } %>
     <h1 class="text-center">Viko fakultetų sąrašas</h1>
     <div class="text-left">
-      <!-- <a type="button" class="btn btn-secondary" href="/admin/faculties/create" > Sukurti</a> -->
       <br>
       <p></p>
     </div>
@@ -52,11 +45,7 @@
             <td>
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
-                  <a type="button" class="btn btn-secondary" href="/admin/usersp/edit-users/<%=faculty._id%>">Fakulteto dėstytojai ir katedrų vedėjai</a>
-                  <a type="button" class="btn btn-primary" href="/admin/faculties/edit/<%=faculty._id %>">Redaguoti</a>
-                  <form action="/delete-faculty" method="post">
-                    <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti fakultetą?');" value="<%=faculty._id%>" disabled>Ištrinti</button>
-                  </form>
+                  <a type="button" class="btn btn-secondary" href="/admin/2023-2024/users/edit-users/<%=faculty._id%>">Fakulteto dėstytojai ir katedrų vedėjai</a>
                 </div>
               </div>
               
