@@ -424,6 +424,18 @@ app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW
 app.post("/update-all-users-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateAllUsersInfo(req, res);
 });
+app.post("/update-all-users-info-admin-2022-2023", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfoByF22_23(req, res);
+});
+app.post("/update-all-users-info-admin-2023-2024", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfoByF23_24(req, res);
+});
+app.post("/update-all-users-info-admin-2024-2025", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfoByF24_25(req, res);
+});
+app.post("/update-all-users-info-admin-2025-2026", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfoByF25_26(req, res);
+});
 app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserInfo(req, res);
 });
@@ -433,6 +445,15 @@ app.post("/delete", (req, res) => {
 //----Faculties----
 app.get("/admin/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFaculties(req, res);
+});
+app.get("/admin/2023-2024/faculties", isLoggedIn, (req, res) => {
+  adminWindow.getFacultiesByYear23_24(req, res);
+});
+app.get("/admin/2024-2025/faculties", isLoggedIn, (req, res) => {
+  adminWindow.getFacultiesByYear24_25(req, res);
+});
+app.get("/admin/2025-2026/faculties", isLoggedIn, (req, res) => {
+  adminWindow.getFacultiesByYear25_26(req, res);
 });
 app.get("/admin/faculties/create", isLoggedIn, (req, res) => {
   adminWindow.getCreateFaculty(req, res);
@@ -452,15 +473,7 @@ app.post("/delete-faculty", isLoggedIn, (req, res) => {
 app.get("/admin/2022-2023/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFacultiesByYear22_23(req, res);
 });
-app.get("/admin/2023-2024/faculties", isLoggedIn, (req, res) => {
-  adminWindow.getFacultiesByYear23_24(req, res);
-});
-app.get("/admin/2024-2025/faculties", isLoggedIn, (req, res) => {
-  adminWindow.getFacultiesByYear24_25(req, res);
-});
-app.get("/admin/2025-2026/faculties", isLoggedIn, (req, res) => {
-  adminWindow.getFacultiesByYear25_26(req, res);
-});
+
 //Receives a list of lecturers by year
 app.get("/admin/2022-2023/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear22_23(req, res);

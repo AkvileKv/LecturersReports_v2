@@ -200,6 +200,106 @@ module.exports = {
     }
     res.redirect("/admin/faculties");
   },
+  postUpdateAllUsersInfoByF22_23: (req, res) => {
+    for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
+
+      User.findById(eval("req.body.userId" + i), function (err, foundUser) {
+        try {
+          if (foundUser) {
+              foundUser.teachingYear22_23 = eval("req.body.destymoMetai22_23" + i),
+              foundUser.headOfTheDepartment22_23 = eval("req.body.vedejoDarboMetai22_23" + i),
+              //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+            foundUser.save(function (err) {
+              if (err) throw err;
+              //req.flash('user', "Successfully");
+              //res.redirect("/admin/users");
+            });
+          } else {
+            console.log("Does'f found");
+            res.redirect("/admin/2022-2023/faculties");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    }
+    res.redirect("/admin/2022-2023/faculties");
+  },
+  postUpdateAllUsersInfoByF23_24: (req, res) => {
+    for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
+
+      User.findById(eval("req.body.userId" + i), function (err, foundUser) {
+        try {
+          if (foundUser) {
+              foundUser.teachingYear23_24 = eval("req.body.destymoMetai23_24" + i),
+              foundUser.headOfTheDepartment23_24 = eval("req.body.vedejoDarboMetai23_24" + i),
+              //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+            foundUser.save(function (err) {
+              if (err) throw err;
+              //req.flash('user', "Successfully");
+              //res.redirect("/admin/users");
+            });
+          } else {
+            console.log("Does'f found");
+            res.redirect("/admin/2023-2024/faculties");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    }
+    res.redirect("/admin/2023-2024/faculties");
+  },
+  postUpdateAllUsersInfoByF24_25: (req, res) => {
+    for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
+
+      User.findById(eval("req.body.userId" + i), function (err, foundUser) {
+        try {
+          if (foundUser) {
+              foundUser.teachingYear24_25 = eval("req.body.destymoMetai24_25" + i),
+              foundUser.headOfTheDepartment24_25 = eval("req.body.vedejoDarboMetai24_25" + i),
+              //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+            foundUser.save(function (err) {
+              if (err) throw err;
+              //req.flash('user', "Successfully");
+              //res.redirect("/admin/users");
+            });
+          } else {
+            console.log("Does'f found");
+            res.redirect("/admin/2024-2025/faculties");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    }
+    res.redirect("/admin/2024-2025/faculties");
+  },
+  postUpdateAllUsersInfoByF25_26: (req, res) => {
+    for (let i = 1; i <= parseInt(req.body.userTable_name); i++) {
+
+      User.findById(eval("req.body.userId" + i), function (err, foundUser) {
+        try {
+          if (foundUser) {
+              foundUser.teachingYear25_26 = eval("req.body.destymoMetai25_26" + i),
+              foundUser.headOfTheDepartment25_26 = eval("req.body.vedejoDarboMetai25_26" + i),
+              //foundUser.updated_for = req.user.username //username- prisijungusio userio id paimti iš DB reikia username
+            foundUser.save(function (err) {
+              if (err) throw err;
+              //req.flash('user', "Successfully");
+              //res.redirect("/admin/users");
+            });
+          } else {
+            console.log("Does'f found");
+            res.redirect("/admin/2025-2026/faculties");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    }
+    res.redirect("/admin/2025-2026/faculties");
+  },
   getProfile: (req, res) => {
     User.findById(req.user.id, function (err, foundUser) {
       try {
