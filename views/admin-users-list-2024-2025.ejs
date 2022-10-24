@@ -3,46 +3,46 @@
 <div class="container">
   <div class="jumbotron ">
     <% if(successMsg != '') { %>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <div>Sėkmingai atnaujinta!</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      <% } %>
-    <h1 class="text-center">Naudotojų sąrašas 2024 - 2025 m. m.</h1>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <div>Sėkmingai atnaujinta!</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+    <h1 class="text-center">Dėstytojų ir katedros vedėjų sąrašas 2024 - 2025 m. m.</h1>
     <br>
     <input class="form-control" id="myInput" type="text" placeholder="Ieškoti..">
     <br>
     <table class="table table-hover">
       <thead>
         <tr>
+          <th scope="col">Naudotojas</th>
+          <th scope="col">Rolė</th>
           <th scope="col">Fakultetas</th>
           <th scope="col">Katedra</th>
-          <th scope="col">Rolė</th>
-          <th scope="col">Naudotojas</th>
           <th scope="col"></th>
         </tr>
       </thead>
-
+      
       <%  users.forEach(function(user){ %>
       <div class="database-result-edit ">
         <tbody id="myTable">
           <tr>
-            <td><%=user.fakultetas%></td>
-            <td><%=user.katedra%></td>
+            <td scope="row">
+              <div class="edit-left">
+                <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
+              </div>
+            </td>
             <td>
               <%if (user.teachingYear24_25 === true && user.headOfTheDepartment24_25 === true){ %>
               katedros vedėjas / dėstytojas
               <%  } else if (user.teachingYear24_25 === true){ %>
               dėstytojas
               <%  } else if (user.headOfTheDepartment24_25 === true){ %>
-                katedros vedėjas
-                <%  }  %>
+              katedros vedėjas
+              <%  }  %>
             </td>
-            <td scope="row">
-              <div class="edit-left">
-                <span class="font-weight-bold"> <%=user.vardas + " " + user.pavarde%></span>
-              </div>
-            </td>
+            <td><%=user.fakultetas%></td>
+            <td><%=user.katedra%></td>
             <td>
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
@@ -55,43 +55,9 @@
         </tbody>
       </div>
       <% }) %>
-
+      
     </table>
-<br>
-    <% if (pages > 0) { %>
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <% if (current == 1) { %>
-            <li class="page-item disabled"><a class="page-link">First</a></li>
-        <% } else { %>
-            <li class="page-item"><a class="page-link" href="/admin/2024-2025/users/1">First</a></li>
-        <% } %>
-        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-        <% if (i !== 1) { %>
-            <li class="page-item disabled"><a class="page-link">...</a></li>
-        <% } %>
-
-        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
-            <% if (i == current) { %>
-                <li class="page-item active"><a class="page-link"><%= i %></a></li>
-            <% } else { %>
-                <li class="disabled"><a class="page-link" href="/admin/2024-2025/users/<%= i %>"><%= i %></a></li>
-            <% } %>
-            <% if (i == Number(current) + 4 && i < pages) { %>
-                <li class="disabled"><a class="page-link">...</a></li>
-            <% } %>
-        <% } %>
-
-        <% if (current == pages) { %>
-            <li class="page-item disabled"><a class="page-link">Last</a></li>
-        <% } else { %>
-            <li class="disabled"><a class="page-link" href="/admin/2024-2025/users/<%= pages %>">Last</a></li>
-        <% } %>
-    </ul>
-</nav>
-<% } %>
-
-
+    <br>
   </div>
 </div>
 

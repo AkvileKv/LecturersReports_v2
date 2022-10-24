@@ -402,9 +402,25 @@ app.get("/admin/users", isLoggedIn, (req, res) => {
 app.get("/admin/users/:page", isLoggedIn, (req, res) => {
   adminWindow.getAllUsers(req, res);
 });
+//Update user info (main)
 app.get("/admin/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserInfo(req, res);
 });
+app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateUserInfo(req, res);
+});
+//Update users info (Taip/Ne by year) by faculty (all years)
+app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW
+  adminWindow.getUpdateUserAllByF(req, res);
+});
+app.post("/update-all-users-info-admin", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateAllUsersInfo(req, res);
+});
+//Delete user
+app.post("/delete", (req, res) => {
+  adminWindow.postDeleteUser(req, res);
+});
+//Ger and Update users info by Faculty and Year
 app.get("/admin/2022-2023/users/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW by year
   adminWindow.getUpdateUserAllByF22_23(req, res);
 });
@@ -416,13 +432,6 @@ app.get("/admin/2024-2025/users/edit-users/:facultyId", isLoggedIn, (req, res) =
 });
 app.get("/admin/2025-2026/users/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW by year
   adminWindow.getUpdateUserAllByF25_26(req, res);
-});
-app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW
-  adminWindow.getUpdateUserAllByF(req, res);
-});
-
-app.post("/update-all-users-info-admin", isLoggedIn, (req, res) => {
-  adminWindow.postUpdateAllUsersInfo(req, res);
 });
 app.post("/update-all-users-info-admin-2022-2023", isLoggedIn, (req, res) => {
   adminWindow.postUpdateAllUsersInfoByF22_23(req, res);
@@ -436,15 +445,32 @@ app.post("/update-all-users-info-admin-2024-2025", isLoggedIn, (req, res) => {
 app.post("/update-all-users-info-admin-2025-2026", isLoggedIn, (req, res) => {
   adminWindow.postUpdateAllUsersInfoByF25_26(req, res);
 });
-app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
-  adminWindow.postUpdateUserInfo(req, res);
-});
-app.post("/delete", (req, res) => {
-  adminWindow.postDeleteUser(req, res);
-});
-//----Faculties----
+
+//------Faculties------
 app.get("/admin/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFaculties(req, res);
+});
+//Create new faculty
+app.get("/admin/faculties/create", isLoggedIn, (req, res) => {
+  adminWindow.getCreateFaculty(req, res);
+});
+app.post("/create-faculty", isLoggedIn, (req, res) => {
+  adminWindow.postCreateFaculty(req, res);
+});
+//Edit faculty
+app.get("/admin/faculties/edit/:facultyId", isLoggedIn, (req, res) => {
+  adminWindow.getUpdateFaculty(req, res);
+});
+app.post("/edit-faculty", isLoggedIn, (req, res) => {
+  adminWindow.postUpdateFaculty(req, res);
+});
+//Delete faculty
+app.post("/delete-faculty", isLoggedIn, (req, res) => {
+  adminWindow.postDeleteFaculty(req, res);
+});
+//Get faculties list by Year "Fakultetai"
+app.get("/admin/2022-2023/faculties", isLoggedIn, (req, res) => {
+  adminWindow.getFacultiesByYear22_23(req, res);
 });
 app.get("/admin/2023-2024/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFacultiesByYear23_24(req, res);
@@ -455,32 +481,13 @@ app.get("/admin/2024-2025/faculties", isLoggedIn, (req, res) => {
 app.get("/admin/2025-2026/faculties", isLoggedIn, (req, res) => {
   adminWindow.getFacultiesByYear25_26(req, res);
 });
-app.get("/admin/faculties/create", isLoggedIn, (req, res) => {
-  adminWindow.getCreateFaculty(req, res);
-});
-app.get("/admin/faculties/edit/:facultyId", isLoggedIn, (req, res) => {
-  adminWindow.getUpdateFaculty(req, res);
-});
-app.post("/create-faculty", isLoggedIn, (req, res) => {
-  adminWindow.postCreateFaculty(req, res);
-});
-app.post("/edit-faculty", isLoggedIn, (req, res) => {
-  adminWindow.postUpdateFaculty(req, res);
-});
-app.post("/delete-faculty", isLoggedIn, (req, res) => {
-  adminWindow.postDeleteFaculty(req, res);
-});
-app.get("/admin/2022-2023/faculties", isLoggedIn, (req, res) => {
-  adminWindow.getFacultiesByYear22_23(req, res);
-});
-
-//Receives a list of lecturers by year
+//Receives a list of lecturers by Year
 app.get("/admin/2022-2023/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear22_23(req, res);
 });
-app.get("/admin/2022-2023/users/:page", isLoggedIn, (req, res) => {
-  adminWindow.getUsersByYear22_23(req, res);
-});
+// app.get("/admin/2022-2023/users/:page", isLoggedIn, (req, res) => {
+//   adminWindow.getUsersByYear22_23(req, res);
+// });
 app.get("/admin/2023-2024/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear23_24(req, res);
 });
@@ -512,6 +519,7 @@ app.get("/admin/2024-2025/users/edit/:userId", isLoggedIn, (req, res) => {
 app.get("/admin/2025-2026/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserByYear25_26(req, res);
 });
+//Update Users repors information by year
 app.post("/update-user-info-admin-2022-2023", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserByYear22_23(req, res);
 });

@@ -2,10 +2,10 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    
     <h1 class="text-center">Naudotojo <%= user.vardas %> <%= user.pavarde %> ataskaitos</h1>
     <br>
-
+    
     <table class="table table-hover">
       <thead>
         <tr>
@@ -20,77 +20,77 @@
       <div class="database-result-edit ">
         <tbody>
           <!-- Destytojas ir Vedejas viename -->
-            <%if (user.rolesKeitimas === true) { %>
-              <tr>
-                <td>
-                  <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.sukurimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.destytojas.ivykiuDatos.sukurimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.pateikimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.destytojas.ivykiuDatos.pateikimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.destytojas.ivykiuDatos.pateikimasVedejo %>
-                  <% } %>
-                </td>
-                <td><%= user.busena25_26 %></td>
-                <td>
-                  <div class="text-right">
-                    <a type="button" class="btn btn-primary" href="/admin/2025-2026/lecturers/edit-report/<%= user._id %>"> Dėstytojo ataskaita</a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas == undefined) { %>
-                  -
-                  <% } else { %>
-                  <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas %>
-                  <% } %>
-                </td>
-                <td>
-                  <p class="text-info">laukas neegzistuoja</p>
-                </td>
-                <td><%= user.busenaVedejo25_26 %></td>
-                <td>
-                  <div class="text-right">
-                    <a type="button" class="btn btn-primary" href="/admin/2025-2026/departments/edit-report/<%= user._id %>"> Vedėjo ataskaita</a>
-                  </div>
-                </td>
-              </tr>
+          <%if (user.rolesKeitimas === true) { %>
+          <tr>
+            <td>
+              <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.sukurimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.destytojas.ivykiuDatos.sukurimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.destytojas.ivykiuDatos.atnaujinimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.pateikimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.destytojas.ivykiuDatos.pateikimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.pateikimasVedejo == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.destytojas.ivykiuDatos.pateikimasVedejo %>
+              <% } %>
+            </td>
+            <td><%= user.busena25_26 %></td>
+            <td>
+              <div class="text-right">
+                <a type="button" class="btn btn-primary" href="/admin/2025-2026/lecturers/edit-report/<%= user._id %>"> Dėstytojo ataskaita</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.atnaujinimas %>
+              <% } %>
+            </td>
+            <td>
+              <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas == undefined) { %>
+              -
+              <% } else { %>
+              <%= user.mm2025_2026.katedrosVedejas.ivykiuDatos.pateikimas %>
+              <% } %>
+            </td>
+            <td>
+              <p class="text-info">laukas neegzistuoja</p>
+            </td>
+            <td><%= user.busenaVedejo25_26 %></td>
+            <td>
+              <div class="text-right">
+                <a type="button" class="btn btn-primary" href="/admin/2025-2026/departments/edit-report/<%= user._id %>"> Vedėjo ataskaita</a>
+              </div>
+            </td>
+          </tr>
           <!-- 1 eilute - tik Destytojas -->
-<% }  else if (user.rolesKeitimas === false && user.role === "dėstytojas") { %>
+          <% }  else if (user.rolesKeitimas === false && user.role === "dėstytojas") { %>
           <tr>
             <td>
               <% if (user.mm2025_2026.destytojas.ivykiuDatos == undefined || user.mm2025_2026.destytojas.ivykiuDatos.sukurimas == undefined) { %>
@@ -128,7 +128,7 @@
             </td>
           </tr>
           <!-- 2 eilute - Vedejas -->
-        <% } else if (user.rolesKeitimas === false && user.role === "katedros vedėjas") {  %>
+          <% } else if (user.rolesKeitimas === false && user.role === "katedros vedėjas") {  %>
           <tr>
             <td>
               <% if (user.mm2025_2026.katedrosVedejas.ivykiuDatos == undefined || user.mm2025_2026.katedrosVedejas.ivykiuDatos.sukurimas == undefined) { %>
@@ -166,9 +166,9 @@
           <% } %>
         </tbody>
       </div>
-
+      
     </table>
-
+    
   </div>
 </div>
 

@@ -3,7 +3,7 @@
 <div class="container">
   <div class="jumbotron">
     
-    <h1 class="text-center"><%=faculty.username%> fakulteto dėstytojų/katedros vedėjų sąrašas 2022 - 2023 m. m.</h1>
+    <h1 class="text-center"><%=faculty.username%> fakulteto dėstytojų ir katedros vedėjų sąrašas 2022 - 2023 m. m.</h1>
     <br>
     <input class="form-control" id="myInput" type="text" placeholder="Ieškoti naudotojo..">
     <br>
@@ -14,8 +14,8 @@
           <tr>
             <th scope="col">Naudotojas </th>
             <th scope="col">Katedra</th>
-            <th scope="col">Dėstytojo 2022 - 2023 m. m.</th>
-            <th scope="col">Katedros vedėjo 2022 - 2023 m. m.</th>
+            <th scope="col">"Dėstytojas" rolė (2022 - 2023 m. m.)</th>
+            <th scope="col">"Katedros vedėjas" rolė (2022 - 2023 m. m.)</th>
             <th scope="col">Būsena</th>
             <th scope="col"></th>
           </tr>
@@ -55,13 +55,6 @@
                 neaktyvus
                 <%  } %>
               </td>
-              <td>
-                <div class="text-right">
-                  <div class="btn-group" role="group" aria-label="" id="group">
-                    <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
-                  </div>
-                </div>
-              </td>
             </tr>
           </tbody>
         </div>
@@ -73,7 +66,7 @@
         <div class="col-lg-3">
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-          <button type="submit" class="btn btn-primary" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+          <button type="submit" class="btn btn-primary" <%if (userNr == 0) { %> disabled <% } %> onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
         </div>
       </div>
     </form>
