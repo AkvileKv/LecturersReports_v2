@@ -73,18 +73,14 @@ module.exports = {
     req.flash('userFail', "Fail"); //nepaima requesto 
 
     req.login(user, function (err) {
-     // console.log("3");
       if (err) throw err;
       passport.authenticate("local", {
         failureRedirect: '/login', failureMessage: true
       })(req, res, function () {
-        //console.log("4");
         User.findById(req.user.id, function (err, foundUser) {
-        //  console.log("5");
           try {
             let a = req.user.username;
             foundUser.updated_for = "Prisijungimas" + " " + a;
-
             foundUser.save(function (err) {
               if (err) throw err;
               if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {

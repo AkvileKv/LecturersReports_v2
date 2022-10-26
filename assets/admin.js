@@ -345,23 +345,15 @@ module.exports = {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
-          var perPage = 5;
-          var page = req.params.page || 1;
-          User.find({})
-            .skip((perPage * page) - perPage)
-            .limit(perPage).exec(function (err, users) {
+          User.find({}, function (err, users) {
               if (err) throw err;
-              User.countDocuments({}).exec((err, count) => {
                 const userUpdate = req.flash('user');
                 const userDelete = req.flash('userDeleted');
                 res.render("admin-users-list", {
                   userUp: userUpdate,
                   userDel: userDelete,
                   users: users,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
                 });
-              });
             });
         } else {
           console.log("You do not have permission");
