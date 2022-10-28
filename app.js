@@ -9,6 +9,7 @@ const {
 } = require('uuid'); // uuid, To call: uuidv4();
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
+const helmet = require("helmet");
 const _ = require("lodash");
 var flash = require('connect-flash');
 
@@ -25,6 +26,18 @@ const adminWindow = require('./assets/admin');
 const mainModules = require('./assets/main-modules');
 
 const app = express();
+app.use(helmet());
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'code.jquery.com', 'ajax.googleapis.com', 'maxcdn.bootstrapcdn.com',
+        "cdn.jsdelivr.net", "kit.fontawesome.com", "cdnjs.cloudflare.com"],
+      connectSrc: ["'self'", "https://ka-f.fontawesome.com", "https://use.fontawesome.com"],
+    },
+  })
+);
 
 app.set('view engine', 'ejs');
 
