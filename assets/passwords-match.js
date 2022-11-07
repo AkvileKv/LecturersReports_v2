@@ -1,8 +1,12 @@
-  $(document).ready(function() {
-    $('#password, #confirmPassword').on('keyup', function() {
-      if ($('#password').val() == $('#confirmPassword').val()) {
-        $('#message').html('Slaptažodžiai sutampa').css('color', 'green');
-      } else
-        $('#message').html('Slaptažodžiai nesutampa').css('color', 'red');
-    });
+$(document).ready(function () {
+  $('#password, #confirmPassword').on('keyup', function () {
+    if ($('#password').val() == $('#confirmPassword').val()) {
+      $('#isAvailable').attr("disabled", false),
+      $('#message').html('Slaptažodžiai sutampa').css('color', 'green');
+
+    } else
+    $('#isAvailable').attr("disabled", true),
+      $('#message').html('Slaptažodžiai nesutampa').css('color', 'red');
+
   });
+});

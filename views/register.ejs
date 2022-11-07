@@ -3,15 +3,15 @@
 <div class="container">
   <div class="jumbotron ">
     <% if(userInfRegFailure != '') { %>
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <div>Registracija nesėkminga! Naudotojas su šiuo el. paštu jau yra užsiregistravęs sistemoje</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      <% } %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <div>Registracija nesėkminga! Naudotojas su šiuo el. paštu jau yra užsiregistravęs sistemoje</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
     <form action="/register" method="post">
       <div class="form-group">
         <p class="text-center">REGISTRACIJA</p>
-
+        
         <div class="form-row">
           <div class="col-lg-3">
           </div>
@@ -20,16 +20,16 @@
             <input type="email" name="username" class="form-control form-control-md" autofocus required placeholder="" autocomplete="off">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="col-lg-3">
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-                  <label>Slaptažodis:</label>
+            <label>Slaptažodis:</label>
             <input type="password" name="password" id="password" minlength="5" class="form-control form-control-md" required placeholder="" autocomplete="off">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="col-lg-3">
           </div>
@@ -39,16 +39,16 @@
           </div>
         </div>
         <div class=" text-center">
-        <span id='message'></span>
-      </div>
+          <span id='message'></span>
+        </div>
         <br>
         <div class=" text-center">
-          <button id="available" type="submit" class="btn btn-primary">Registruotis</button>
+          <button id="isAvailable" type="submit" class="btn btn-primary">Registruotis</button>
         </div>
-
+        
       </div>
     </form>
-
+    
   </div>
 </div>
 

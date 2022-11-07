@@ -126,9 +126,11 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const userChangedPassw = req.flash('userP');
                     const userN = req.flash('user');
                     res.render("user-window", {
                         userNamee: userN,
+                        successMsg: userChangedPassw,
                         user: foundUser
                     });
                 } else {
@@ -153,6 +155,45 @@ module.exports = {
                             req.flash('user', req.body.vardas);
                             res.redirect("/user-window");
                         });
+                    } else {
+                        res.redirect("/login");
+                    }
+                } else {
+                    console.log("User does'f found");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    getChangePassword: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    res.render("user-window-change-password", {
+                        user: foundUser
+                    });
+                } else {
+                    console.log("You don't have permission");
+                    res.redirect("/login");
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    },
+    postChangePassword: function (req, res) {
+        User.findById(req.user.id, function (err, foundUser) {
+            try {
+                if (foundUser) {
+                    if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                        foundUser.updated_for = req.user.username,
+                            foundUser.changePassword(req.body.password,
+                                req.body.newPassword, function (err) {
+                                    if (err) throw err;
+                                    req.flash('userP', 'Success');
+                                    res.redirect("/user-window");
+                                });
                     } else {
                         res.redirect("/login");
                     }

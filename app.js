@@ -34,7 +34,7 @@ app.use(
       defaultSrc: ["'self'"],
       scriptSrc: ["'self'", 'code.jquery.com', 'ajax.googleapis.com', 'maxcdn.bootstrapcdn.com',
         "cdn.jsdelivr.net", "kit.fontawesome.com", "cdnjs.cloudflare.com"],
-      connectSrc: ["'self'", "https://ka-f.fontawesome.com", "https://use.fontawesome.com"],
+      connectSrc: ["'self'", "https://ka-f.fontawesome.com", "https://use.fontawesome.com/"],
     },
   })
 );
@@ -99,6 +99,7 @@ app.get("/register", (req, res) => {
   });
 });
 
+
 app.post("/register", (req, res) => {
   mainModules.postRegister(req, res);
 });
@@ -108,34 +109,34 @@ app.post("/login", (req, res) => {
 
 // METHOD FOR LOG
 app.get("/admin/history-log", isLoggedIn, (req, res) => {
+  // //var HistoryUser = User.historyModel();
+  // var MongoClient = require('mongodb').MongoClient;
+  // var url = "mongodb://localhost:27017/";
 
-  //var HistoryUser = User.historyModel();
-  var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27017/";
+  // User.findById(req.user.id, function (err, foundUser) {
+  //   if (err) throw err;
+  //   if (foundUser.role === "administratorius") {
+  //     MongoClient.connect(url, function (err, db) {
+  //       if (err) throw err;
 
-  User.findById(req.user.id, function (err, foundUser) {
-    if (err) throw err;
-    if (foundUser.role === "administratorius") {
-      MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
+  //       var dbo = db.db("reportsDB_v2");
+  //       dbo.collection("__historiesPlugin")
+  //         .find({}).toArray(function (err, _historiesPlugin) {
+  //           if (err) throw err;
+  //           //console.log(_historiesPlugin.collectionId);
+  //           //console.log(_historiesPlugin);
+  //           res.render("admin-history-log", {
+  //             users_history: _historiesPlugin
+  //           });
+  //           db.close();
+  //         });
+  //     });
+  //   } else {
+  //     console.log("You do not have permission");
+  //     res.redirect("/login");
+  //   }
+  // });
 
-        var dbo = db.db("reportsDB_v2");
-        dbo.collection("__historiesPlugin")
-          .find({}).toArray(function (err, _historiesPlugin) {
-            if (err) throw err;
-            //console.log(_historiesPlugin.collectionId);
-            //console.log(_historiesPlugin);
-            res.render("admin-history-log", {
-              users_history: _historiesPlugin
-            });
-            db.close();
-          });
-      });
-    } else {
-      console.log("You do not have permission");
-      res.redirect("/login");
-    }
-  });
 });
 
 //---------------------LECTURER-------------------
@@ -292,6 +293,12 @@ app.get("/user-window", isLoggedIn, (req, res) => {
 });
 app.post("/update-user", isLoggedIn, (req, res) => {
   userWindow.postUpdateUser(req, res);
+});
+app.get("/user-window-change-password", (req, res) => {
+  userWindow.getChangePassword(req, res);
+});
+app.post("/change-user-password", (req, res) => {
+  userWindow.postChangePassword(req, res);
 });
 app.get("/user-window-selection", isLoggedIn, (req, res) => {
   userWindow.getSelection(req, res);

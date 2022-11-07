@@ -14,13 +14,21 @@
 </div>
 
 <div class="container">
-  <div class="jumbotron ">
+  <div class="jumbotron">
+
     <% if(userNamee != '') { %>
     <div class="alert alert-success alert-dismissible" role="alert">
       <div>Sėkmingai atnaujinta!</div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <% } %>
+    <% if(successMsg != '') { %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <div>Slaptažodis sėkmingai atnaujintas!</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
     <h4 class="text-center">Jūsų asmeniniai duomenys</h4>
     <div class="form-row">
       <div class="col-lg-3">

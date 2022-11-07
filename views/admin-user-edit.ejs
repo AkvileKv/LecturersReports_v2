@@ -2,10 +2,10 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    
     <h1 class="text-center">Naudotojo <%=user.vardas%> <%=user.pavarde%> redagavimas</h1>
     <form action="/update-user-info-admin" method="post">
-
+      
       <div class="form-group ">
         <!-- <h4 class="text-center">Jūsų duomenys</h4> -->
         <input type="hidden" class="form-control" name="id" value="<%=user._id%>">
