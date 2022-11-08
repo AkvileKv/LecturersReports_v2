@@ -170,8 +170,10 @@ module.exports = {
         User.findById(req.user.id, function (err, foundUser) {
             try {
                 if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas") {
+                    const passwF = req.flash('passwFail');
                     res.render("user-window-change-password", {
-                        user: foundUser
+                        user: foundUser,
+                        failureMsg: passwF
                     });
                 } else {
                     console.log("You don't have permission");
@@ -190,9 +192,14 @@ module.exports = {
                         foundUser.updated_for = req.user.username,
                             foundUser.changePassword(req.body.password,
                                 req.body.newPassword, function (err) {
-                                    if (err) throw err;
-                                    req.flash('userP', 'Success');
-                                    res.redirect("/user-window");
+                                    if (err) {
+                                        req.flash('passwFail', "Failure");
+                                        res.redirect("/user-window-change-password"); 
+                                    }
+                                    else {
+                                        req.flash('userP', 'Success');
+                                        res.redirect("/user-window");
+                                    }
                                 });
                     } else {
                         res.redirect("/login");

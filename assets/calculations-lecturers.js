@@ -1,6 +1,9 @@
 // kD1_K01
 // 2 table
 //window.onload = calcTable2(); //iš edit
+
+document.addEventListener('onclick', calcTable2); //naujai prideta ***
+
   function calcTable2() { //onchange event'as iškviečia
     //convert from string to float
     var srautaisPlanValSk = parseFloat(document.getElementById("srautaisPlan").value) || 0;

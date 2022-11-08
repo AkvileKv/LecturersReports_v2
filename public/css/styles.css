@@ -14,7 +14,7 @@ footer {
 }
 
 #footer .container-fluid {
-  padding-top: 0.8%;
+  padding-top: 0.7%;
 }
 a {
   text-decoration: none;
@@ -108,10 +108,10 @@ input:focus::placeholder {
   line-height: 1;
   padding: 16px 1px 1px 1px;
   text-decoration: none;
-  font-size: 59%;
+  font-size: 65%;
   position: fixed;
   right: 2.5rem;
-  bottom: 3.5rem;
+  bottom: 6rem;
 }
 /* new */
 .select,
@@ -120,4 +120,8 @@ input:focus::placeholder {
 }
 .like {
   margin-right: 10px;
+}
+
+.jumbotron {
+  margin-bottom: 7.5rem;
 }
