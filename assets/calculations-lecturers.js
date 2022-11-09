@@ -2,7 +2,7 @@
 // 2 table
 //window.onload = calcTable2(); //iš edit
 
-document.addEventListener('onclick', calcTable2); //naujai prideta ***
+document.addEventListener('onchange', calcTable2); //naujai prideta ***
 
   function calcTable2() { //onchange event'as iškviečia
     //convert from string to float
@@ -49,6 +49,7 @@ document.addEventListener('onclick', calcTable2); //naujai prideta ***
   }
 
 // nD2
+document.addEventListener('onchange', calc); //naujai prideta ***
   function calc() {
 
     let num01 = parseFloat(document.getElementById("num1").value) || 0;

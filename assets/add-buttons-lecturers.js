@@ -4,6 +4,8 @@
   value1++;
   var div = 1;
 
+  document.getElementById("addTable2Script").addEventListener('click', addTable2);
+
   function addTable2() {
     let bendr = "add_to_me01" + div;
     div++;
@@ -40,7 +42,7 @@
         </div>
         <div id="add_to_me01` + div + `">
         `;
-        console.log("edit value1: "+ value1);
+        // console.log("edit value1: "+ value1);
     document.getElementById("table2_id").value = value1;
     value1++;
     var tx = document.getElementsByTagName('textarea');
@@ -61,6 +63,7 @@
   value4++;
   var div4 = 1;
 
+  document.getElementById("m02Script").addEventListener('click', m02);
   function m02() {
     let bendr4 = "add_to_me04" + div4;
     div4++;
@@ -194,6 +197,7 @@
   value6++;
   var div6 = 1;
 
+  document.getElementById("m04Script").addEventListener('click', m04);
   function m04() {
     let bendr6 = "add_to_me06" + div6;
     div6++;
@@ -305,6 +309,8 @@
   var value7 = document.getElementById("table5_id").value;
   value7++;
   var div7 = 1;
+  
+  document.getElementById("d01Script").addEventListener('click', d01);
 
   function d01() {
     let bendr7 = "add_to_me07" + div7;
@@ -347,6 +353,7 @@
   value8++;
   var div8 = 1;
 
+  document.getElementById("d02Script").addEventListener('click', d02);
   function d02() {
     let bendr8 = "add_to_me08" + div8;
     div8++;
@@ -530,6 +537,7 @@
   value9++;
   var div9 = 1;
 
+  document.getElementById("d03Script").addEventListener('click', d03);
   function d03() {
     let bendr9 = "add_to_me09" + div9;
     div9++;
@@ -778,6 +786,7 @@
   value5++;
   var div5 = 1;
 
+  document.getElementById("m03Script").addEventListener('click', m03);
   function m03() {
     let bendr5 = "add_to_me05" + div5;
     div5++;
@@ -881,6 +890,7 @@
   value10++;
   var div10 = 1;
 
+  document.getElementById("s01Script").addEventListener('click', s01);
   function s01() {
     let bendr10 = "add_to_me10" + div10;
     div10++;
@@ -918,6 +928,7 @@
   value11++;
   var div11 = 1;
 
+  document.getElementById("s01_2Script").addEventListener('click', s01_2);
   function s01_2() {
     let bendr11 = "add_to_me11" + div11;
     div11++;
@@ -956,6 +967,7 @@
   value12++;
   var div12 = 1;
 
+  document.getElementById("t01Script").addEventListener('click', t01);
   function t01() {
     let bendr12 = "add_to_me12" + div12;
     div12++;
@@ -1088,6 +1100,7 @@
   value13++;
   var div13 = 1;
 
+  document.getElementById("t02Script").addEventListener('click', t02);
   function t02() {
     let bendr13 = "add_to_me13" + div13;
     div13++;
@@ -1229,6 +1242,7 @@
   value14++;
   var div14 = 1;
 
+  document.getElementById("t03Script").addEventListener('click', t03);
   function t03() {
     let bendr14 = "add_to_me14" + div14;
     div14++;
@@ -1268,6 +1282,7 @@
   value15++;
   var div15 = 1;
 
+  document.getElementById("t04Script").addEventListener('click', t04);
   function t04() {
     let bendr15 = "add_to_me15" + div15;
     div15++;
@@ -1317,6 +1332,7 @@
   value16++;
   var div16 = 1;
 
+  document.getElementById("t05Script").addEventListener('click', t05);
   function t05() {
     let bendr16 = "add_to_me16" + div16;
     div16++;
@@ -1363,6 +1379,7 @@
   var div57 = 1;
   var asd57 = "add_to_meN01";
 
+  document.getElementById("n142Script").addEventListener('click', n142);
   function n142() {
     let bendr57 = "add_to_meN01" + div57;
     div57++;
@@ -1402,6 +1419,7 @@
   value58++;
   var div58 = 1;
 
+  document.getElementById("n143Script").addEventListener('click', n143);
   function n143() {
     let bendr58 = "add_to_meN02" + div58;
     div58++;
@@ -1442,6 +1460,7 @@
   value17++;
   var div17 = 1;
 
+  document.getElementById("t06Script").addEventListener('click', t06);
   function t06() {
     let bendr17 = "add_to_me17" + div17;
     div17++;
@@ -1512,6 +1531,7 @@
   value18++;
   var div18 = 1;
 
+  document.getElementById("t07Script").addEventListener('click', t07);
   function t07() {
     let bendr18 = "add_to_me18" + div18;
     div18++;
@@ -1574,6 +1594,7 @@
   value19++;
   var div19 = 1;
 
+  document.getElementById("t08Script").addEventListener('click', t08);
   function t08() {
     let bendr19 = "add_to_me19" + div19;
     div19++;
@@ -1636,6 +1657,7 @@
   value20++;
   var div20 = 1;
 
+  document.getElementById("t09Script").addEventListener('click', t09);
   function t09() {
     let bendr20 = "add_to_me20" + div20;
     div20++;
@@ -1698,6 +1720,7 @@
   value21++;
   var div21 = 1;
 
+  document.getElementById("t10Script").addEventListener('click', t10);
   function t10() {
     let bendr21 = "add_to_me21" + div21;
     div21++;
@@ -1768,6 +1791,7 @@
   value22++;
   var div22 = 1;
 
+  document.getElementById("t11Script").addEventListener('click', t11);
   function t11() {
     let bendr22 = "add_to_me22" + div22;
     div22++;
@@ -1838,6 +1862,7 @@
   value23++;
   var div23 = 1;
 
+  document.getElementById("t12Script").addEventListener('click', t12);
   function t12() {
     let bendr23 = "add_to_me23" + div23;
     div23++;
@@ -1879,6 +1904,7 @@
   value24++;
   var div24 = 1;
 
+  document.getElementById("t13Script").addEventListener('click', t13);
   function t13() {
     let bendr24 = "add_to_me24" + div24;
     div24++;
@@ -1930,6 +1956,7 @@
   value25++;
   var div25 = 1;
 
+  document.getElementById("t14Script").addEventListener('click', t14);
   function t14() {
     let bendr25 = "add_to_me25" + div25;
     div25++;
@@ -1976,6 +2003,7 @@
   value26++;
   var div26 = 1;
 
+  document.getElementById("t15Script").addEventListener('click', t15);
   function t15() {
     let bendr26 = "add_to_me26" + div26;
     div26++;
@@ -2016,6 +2044,7 @@
   value59++;
   var div59 = 1;
 
+  document.getElementById("mokymoScript").addEventListener('click', mokymo);
   function mokymo() {
     let bendr59 = "add_to_meN03" + div59;
     div59++;
@@ -2061,6 +2090,7 @@
   value60++;
   var div60 = 1;
 
+  document.getElementById("tyrimuScript").addEventListener('click', tyrimu);
   function tyrimu() {
     let bendr60 = "add_to_meN04" + div60;
     div60++;
@@ -2106,6 +2136,7 @@
   value61++;
   var div61 = 1;
  
+  document.getElementById("bendrosiosScript").addEventListener('click', bendrosios);
   function bendrosios() {
     let bendr61 = "add_to_meN05" + div61;
     div61++;
@@ -2151,6 +2182,7 @@
   value62++;
   var div62 = 1;
 
+  document.getElementById("dalykinesScript").addEventListener('click', dalykines);
   function dalykines() {
     let bendr62 = "add_to_meN06" + div62;
     div62++;
@@ -2195,6 +2227,7 @@
   value63++;
   var div63 = 1;
 
+  document.getElementById("kTOV4_25Script").addEventListener('click', kTOV4_25);
   function kTOV4_25() {
     let bendr63 = "add_to_meN07" + div63;
     div63++;
@@ -2249,6 +2282,7 @@
   value64++;
   var div64 = 1;
 
+  document.getElementById("kTOV4_26Script").addEventListener('click', kTOV4_26);
   function kTOV4_26() {
     let bendr64 = "add_to_meN08" + div64;
     div64++;
@@ -2301,6 +2335,7 @@
   value27++;
   var div27 = 1;
 
+  document.getElementById("kv03Script").addEventListener('click', kv03);
   function kv03() {
     let bendr27 = "add_to_me27" + div27;
     div27++;
@@ -2488,6 +2523,7 @@
   value28++;
   var div28 = 1;
 
+  document.getElementById("o01Script").addEventListener('click', o01);
   function o01() {
     let bendr28 = "add_to_me28" + div28;
     div28++;
@@ -2528,6 +2564,7 @@
   value29++;
   var div29 = 1;
 
+  document.getElementById("o01_2Script").addEventListener('click', o01_2);
   function o01_2() {
     let bendr29 = "add_to_me29" + div29;
     div29++;
@@ -2583,6 +2620,7 @@
   value65++;
   var div65 = 1;
 
+  document.getElementById("kTOV4_29Script").addEventListener('click', kTOV4_29);
   function kTOV4_29() {
     let bendr65 = "add_to_meN09" + div65;
     div65++;
@@ -2592,10 +2630,10 @@
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
             </div>
-            <div class="col-md-8 mb-3">
+            <div class="col-md-6 mb-3">
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-5 mb-3">
               <select name="kTOV4_29socPartneris` + value65 + `" class="form-select form-control">
                 <option value=""></option>
                 <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
@@ -2627,6 +2665,7 @@
   value30++;
   var div30 = 1;
 
+  document.getElementById("o01_3Script").addEventListener('click', o01_3);
   function o01_3() {
     let bendr30 = "add_to_me30" + div30;
     div30++;
@@ -2666,6 +2705,7 @@
   value32++;
   var div32 = 1;
 
+  document.getElementById("kt02Script").addEventListener('click', kt02);
   function kt02() {
     let bendr32 = "add_to_me32" + div32;
     div32++;
@@ -2919,6 +2959,7 @@
   value31++;
   var div31 = 1;
 
+  document.getElementById("kt01Script").addEventListener('click', kt01);
   function kt01() {
     let bendr31 = "add_to_me31" + div31;
     div31++;
@@ -2930,7 +2971,7 @@
                     <input type="text" class="form-control text-center" name="kV5_KT01nr` + value31 + `" autocomplete="off" value="` + value31 + `" readonly="readonly">
                   </div>
 
-                  <div class="col-md-3 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label for="">Studijų kryptis</label>
                     <select name="kV5_KT01studKryptis` + value31 + `" class="form-select form-control">
                     <option value=""></option>
@@ -3142,7 +3183,7 @@
                       </optgroup>
                     </select>
                   </div>
-                  <div class="col-md-4 mb-3">
+                  <div class="col-md-3 mb-3">
               <label for="">Studentas (pavardė, vardas)</label>
                     <textarea type="text" rows="1" class="form-control " name="kV5_KT01diplomantas` + value31 + `" autocomplete="off"></textarea>
                   </div>
@@ -3150,11 +3191,11 @@
                   <div class="form-row">
                     <div class="col-md-1 mb-3">
                     </div>
-                  <div class="col-md-7 mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="">Darbo tema</label>
                     <textarea type="text" rows="1" class="form-control " name="kV5_KT01darboTema` + value31 + `" autocomplete="off"></textarea>
                   </div>
-                  <div class="col-md-4 mb-3">
+                  <div class="col-md-5 mb-3">
                     <label for="">Užsakovas</label>
                     <textarea type="text" rows="1" class="form-control " name="kV5_KT01uzsakovas` + value31 + `" autocomplete="off"></textarea>
                   </div>
@@ -3181,6 +3222,7 @@
   value66++;
   var div66 = 1;
 
+  document.getElementById("kTOV4_32socScript").addEventListener('click', kTOV4_32soc);
   function kTOV4_32soc() {
     let bendr66 = "add_to_meN10" + div66;
     div66++;
@@ -3216,6 +3258,7 @@
   value67++;
   var div67 = 1;
 
+  document.getElementById("kTOV4_32aplScript").addEventListener('click', kTOV4_32apl);
   function kTOV4_32apl() {
     let bendr67 = "add_to_meN11" + div67;
     div67++;
@@ -3251,6 +3294,7 @@
   value68++;
   var div68 = 1;
 
+  document.getElementById("kTOV4_32valsScript").addEventListener('click', kTOV4_32vals);
   function kTOV4_32vals() {
     let bendr68 = "add_to_meN12" + div68;
     div68++;
@@ -3286,6 +3330,7 @@
   value69++;
   var div69 = 1;
 
+  document.getElementById("kTOV4_32etnoScript").addEventListener('click', kTOV4_32etno);
   function kTOV4_32etno() {
     let bendr69 = "add_to_meN13" + div69;
     div69++;
@@ -3321,6 +3366,7 @@
   value70++;
   var div70 = 1;
 
+  document.getElementById("kTOV4_32savScript").addEventListener('click', kTOV4_32sav);
   function kTOV4_32sav() {
     let bendr70 = "add_to_meN14" + div70;
     div70++;
@@ -3357,6 +3403,7 @@
   value71++;
   var div71 = 1;
 
+  document.getElementById("kV5_33Script").addEventListener('click', kV5_33);
   function kV5_33() {
     let bendr71 = "add_to_meN15" + div71;
     div71++;
@@ -3426,6 +3473,7 @@
   value72++;
   var div72 = 1;
 
+  document.getElementById("kV5_34Script").addEventListener('click', kV5_34); 
   function kV5_34() {
     let bendr72 = "add_to_meN16" + div72;
     div72++;
