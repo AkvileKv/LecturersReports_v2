@@ -48,11 +48,11 @@
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control text-center" name="pedagogStazas" autocomplete="off" value="" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="pedagogStazas" autocomplete="off" value="" min="0"  >
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control text-center" name="praktinStazas" value="" autocomplete="off" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="praktinStazas" value="" autocomplete="off" min="0"  >
           </div>
         </div>
         <!-- kD1_K01 -->
@@ -89,11 +89,11 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>Planuota</label>
-            <input type="number" min="0" id="plan1" onchange="calcTable2()" class="form-control text-center textarea" name="planuotosVal1" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="plan1" class="form-control text-center textarea" name="planuotosVal1" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>Atlikta</label>
-            <input type="number" min="0" id="atl1" onchange="calcTable2()" class="form-control text-center textarea" name="atliktosVal1" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="atl1" class="form-control text-center textarea" name="atliktosVal1" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -119,10 +119,10 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="plan2" onchange="calcTable2()" class="form-control text-center textarea" name="planuotosVal2" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="plan2" class="form-control text-center textarea" name="planuotosVal2" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="atl2" onchange="calcTable2()" class="form-control text-center textarea" name="atliktosVal2" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="atl2" class="form-control text-center textarea" name="atliktosVal2" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div id="add_to_me011">
@@ -134,10 +134,10 @@
             <label for="">Iš viso val.</label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="planuota4" class="form-control text-center" name="kD1_K01isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="planuota4" class="form-control text-center" name="kD1_K01isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="atlikta4" class="form-control text-center" name="kD1_K01isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="atlikta4" class="form-control text-center" name="kD1_K01isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
         </div>
         <div class="form-row">
@@ -145,10 +145,10 @@
             <label for="">Iš jų srautais</label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="srautaisPlan" onchange="calcTable2()" class="form-control text-center" name="isJuSrautaisValPlan" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="srautaisPlan" class="form-control text-center" name="isJuSrautaisValPlan" placeholder="" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="srautaisAtl" onchange="calcTable2()" class="form-control text-center" name="isJuSrautaisValAtl" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="srautaisAtl" class="form-control text-center" name="isJuSrautaisValAtl" placeholder="" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -156,10 +156,10 @@
             <label class="" for="">Iš jų užsienio kalba</label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="uzsienioPlan" onchange="calcTable2()" class="form-control text-center" name="isJuUzsienioValPlan" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="uzsienioPlan" class="form-control text-center" name="isJuUzsienioValPlan" placeholder="" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="uzsienioAtl" onchange="calcTable2()" class="form-control text-center" name="isJuUzsienioValAtl" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="uzsienioAtl" class="form-control text-center" name="isJuUzsienioValAtl" placeholder="" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -186,10 +186,10 @@
             <label class="bottom-align" for=""><b>Nekontaktinis darbas su studentais</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num1" onchange="calc()" class="form-control text-center" name="nekSuStud_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num1"  class="form-control text-center" name="nekSuStud_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num6" onchange="calc()" class="form-control text-center" name="nekSuStud_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num6"  class="form-control text-center" name="nekSuStud_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -197,10 +197,10 @@
             <label for=""><b>Pasirengimas dėstyti</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num2" onchange="calc()" class="form-control text-center" name="pasirengDest_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num2"  class="form-control text-center" name="pasirengDest_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num7" onchange="calc()" class="form-control text-center" name="pasirengDest_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num7"  class="form-control text-center" name="pasirengDest_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -208,10 +208,10 @@
             <label for=""><b>Metodinė veikla</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num3" onchange="calc()" class="form-control text-center" name="metod_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num3"  class="form-control text-center" name="metod_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num8" onchange="calc()" class="form-control text-center" name="metod_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num8"  class="form-control text-center" name="metod_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -219,10 +219,10 @@
             <label for=""><b>Dalyvavimas studijų programų kokybės užtikrinimo veikloje</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num4" onchange="calc()" class="form-control text-center" name="dalyvSPKUV_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num4"  class="form-control text-center" name="dalyvSPKUV_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num9" onchange="calc()" class="form-control text-center" name="dalyvSPKUV_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num9" class="form-control text-center" name="dalyvSPKUV_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -230,10 +230,10 @@
             <label for=""><b>Studijų populiarinimas</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num5" onchange="calc()" class="form-control text-center" name="studPop_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num5" class="form-control text-center" name="studPop_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num10" onchange="calc()" class="form-control text-center" name="studPop_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num10"  class="form-control text-center" name="studPop_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -241,10 +241,10 @@
             <label for=""><b>Iš viso val.</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="planuota" onchange="calc()" class="form-control text-center" name="nD2isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="planuota" class="form-control text-center" name="nD2isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="atlikta" onchange="calc()" class="form-control text-center" name="nD2isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="atlikta" class="form-control text-center" name="nD2isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
         </div>
         <div class="form-row">
@@ -462,7 +462,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Apimtis kreditais</label>
-            <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit1" placeholder="" autocomplete="off"   min="0">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Būsena*</label>
@@ -1012,7 +1012,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br />Apimtis kreditais</label>
-            <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit1" placeholder="" autocomplete="off"   min="0">
           </div>
         </div>
         <div id="add_to_me051">
@@ -1092,10 +1092,10 @@
             <label class="bottom-align" for=""><b>TMTEP ir šios veiklos rezultatų skelbimas</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num11" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPveiklRez_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="num11" class="form-control text-center" name="tMTEPveiklRez_planVal" placeholder="(val. sk.)" autocomplete="off" min="0" max="9999"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num16" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPveiklRez_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="num16" class="form-control text-center" name="tMTEPveiklRez_atlVal" placeholder="(val. sk.)" autocomplete="off" min="0" max="9999"  >
           </div>
         </div>
         <div class="form-row">
@@ -1103,10 +1103,10 @@
             <label for=""><b>Meno veikla (apima dailės ir dizaino, teatro, šokio ir choreografijos bei muzikos sritis)</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num12" onchange="calcTabletMTEP3()" class="form-control text-center" name="menoVeikl_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num12" class="form-control text-center" name="menoVeikl_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num17" onchange="calcTabletMTEP3()" class="form-control text-center" name="menoVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num17" class="form-control text-center" name="menoVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -1114,10 +1114,10 @@
             <label for=""><b>TMTEP ir meno veiklos populiarinimas</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num13" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPmenoVeiklPop_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num13" class="form-control text-center" name="tMTEPmenoVeiklPop_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num18" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPmenoVeiklPop_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num18" class="form-control text-center" name="tMTEPmenoVeiklPop_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -1125,10 +1125,10 @@
             <label for=""><b>Studentų rengimas studentų profesinio meistriškumo konkursui, olimpiadai, varžyboms, konferencijoms, straipsnio rengimui ir kt.</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num14" onchange="calcTabletMTEP3()" class="form-control text-center" name="studReng_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num14" class="form-control text-center" name="studReng_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num19" onchange="calcTabletMTEP3()" class="form-control text-center" name="studReng_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num19" class="form-control text-center" name="studReng_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -1136,10 +1136,10 @@
             <label for=""><b>Kita švietėjiška veikla</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num15" onchange="calcTabletMTEP3()" class="form-control text-center" name="kitaVeikl_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num15" class="form-control text-center" name="kitaVeikl_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num20" onchange="calcTabletMTEP3()" class="form-control text-center" name="kitaVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num20" class="form-control text-center" name="kitaVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -1147,10 +1147,10 @@
             <label for=""><b>Iš viso val.</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="planuota2" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEP3isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="planuota2" class="form-control text-center" name="tMTEP3isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="atlikta2" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEP3isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="atlikta2" class="form-control text-center" name="tMTEP3isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
         </div>
         <div class="form-row">
@@ -1906,7 +1906,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk1" placeholder="" autocomplete="off"   min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -1958,7 +1958,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk1" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk1" placeholder="" autocomplete="off"   min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -2189,10 +2189,10 @@
             <label class="bottom-align" for=""><b>Kompetencijų tobulinimas</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num21" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4kompTobulinimas_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num21" class="form-control text-center" name="kTOV4kompTobulinimas_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num23" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4kompTobulinimas_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num23" class="form-control text-center" name="kTOV4kompTobulinimas_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -2200,10 +2200,10 @@
             <label class="bottom-align" for=""><b>Organizacinė veikla</b></label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num22" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4organizacVeikl_planVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num22" class="form-control text-center" name="kTOV4organizacVeikl_planVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" max="9999" id="num24" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4organizacVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" max="9999" id="num24" class="form-control text-center" name="kTOV4organizacVeikl_atlVal" placeholder="(val. sk.)" autocomplete="off"  >
           </div>
         </div>
         <div class="form-row">
@@ -2211,10 +2211,10 @@
             <label for=""><b>Iš viso</b> </label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="planuota3" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="planuota3" class="form-control text-center" name="kTOV4isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="atlikta3" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" id="atlikta3" class="form-control text-center" name="kTOV4isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly"  >
           </div>
         </div>
 
@@ -2255,10 +2255,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT1_1" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT1_1" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT1_1" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT1_1" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2269,10 +2269,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT1_2" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT1_2" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT1_2" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT1_2" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2283,10 +2283,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr3" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="trukmLT1_3" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="trukmLT1_3" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT1_3" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT1_3" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2297,10 +2297,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr4" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="trukmLT1_4" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="trukmLT1_4" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT4" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT1_4" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT1_4" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT4" min="0"   autocomplete="off">
           </div>
         </div>
         <div id="add_to_meN031">
@@ -2320,10 +2320,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT2_1" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT2_1" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT2_1" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT2_1" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2334,10 +2334,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT2_2" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT2_2" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT2_2" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT2_2" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2348,10 +2348,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr3" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT2_3" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT2_3" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT2_3" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT2_3" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2362,10 +2362,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr4" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT2_4" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT2_4" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT4" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT2_4" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT2_4" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT4" min="0"   autocomplete="off">
           </div>
         </div>
         <div id="add_to_meN041">
@@ -2385,10 +2385,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT3_1" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT3_1" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT3_1" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT3_1" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2399,10 +2399,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT3_2" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT3_2" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT3_2" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT3_2" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2413,10 +2413,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr3" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT3_3" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT3_3" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT3_3" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT3_3" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2427,10 +2427,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr4" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT3_4" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT3_4" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT4" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT3_4" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT3_4" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT4" min="0"   autocomplete="off">
           </div>
         </div>
         <div id="add_to_meN051">
@@ -2450,10 +2450,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr1" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT4_1" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT4_1" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT4_1" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT4_1" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2464,10 +2464,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr2" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT4_2" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT4_2" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT4_2" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT4_2" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2478,10 +2478,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr3" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT4_3" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT4_3" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT4_3" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT3" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT4_3" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT3" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2492,10 +2492,10 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr4" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT4_4" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT4_4" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT4" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT4_4" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT4" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT4_4" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT4" min="0"   autocomplete="off">
           </div>
         </div>
         <div id="add_to_meN061">
@@ -2509,10 +2509,10 @@
             <label style="text-align: right;" for="">Iš viso:</label>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="isVisoTrukmeValLT24" class="form-control text-center" name="kTOV4_trukmeValLT" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeValLT24" class="form-control text-center" name="kTOV4_trukmeValLT" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" id="isVisoTrukmeValNeLT24" class="form-control text-center" name="kTOV4_trukmeValNeLT" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeValNeLT24" class="form-control text-center" name="kTOV4_trukmeValNeLT" min="0" readonly="readonly"   autocomplete="off">
           </div>
         </div>
         <p>** Akademinė valanda prilyginama astronominei valandai</p>
@@ -2603,7 +2603,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Trukmė val.</label>
-            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal1" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal1" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Data</label>
@@ -2625,7 +2625,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal2" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal2" min="0"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kTOV4_26data2" autocomplete="off"></textarea>

@@ -2,7 +2,23 @@
 // 2 table
 //window.onload = calcTable2(); //iš edit
 
-document.addEventListener('onchange', calcTable2); //naujai prideta ***
+document.getElementById("plan1").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("plan2").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("atl1").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("atl2").addEventListener('change', calcTable2); //naujai prideta ***
+
+// document.getElementById("planuota4").addEventListener('change', calcTable2); //naujai prideta ***
+// document.getElementById("atlikta4").addEventListener('change', calcTable2); //naujai prideta ***
+
+document.getElementById("srautaisPlan").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("srautaisAtl").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("uzsienioPlan").addEventListener('change', calcTable2); //naujai prideta ***
+document.getElementById("uzsienioAtl").addEventListener('change', calcTable2); //naujai prideta ***
+
+// document.getElementById("plan3").addEventListener('change', calcTable2); //naujai prideta ***
+// document.getElementById("plan4").addEventListener('change', calcTable2); //naujai prideta ***
+// document.getElementById("atl3").addEventListener('change', calcTable2); //naujai prideta ***
+// document.getElementById("atl4").addEventListener('change', calcTable2); //naujai prideta ***
 
   function calcTable2() { //onchange event'as iškviečia
     //convert from string to float
@@ -49,7 +65,19 @@ document.addEventListener('onchange', calcTable2); //naujai prideta ***
   }
 
 // nD2
-document.addEventListener('onchange', calc); //naujai prideta ***
+document.getElementById("num1").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num2").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num3").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num4").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num5").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num6").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num7").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num8").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num9").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("num10").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("planuota").addEventListener('change', calc); //naujai prideta ***
+document.getElementById("atlikta").addEventListener('change', calc); //naujai prideta ***
+
   function calc() {
 
     let num01 = parseFloat(document.getElementById("num1").value) || 0;
@@ -68,6 +96,19 @@ document.addEventListener('onchange', calc); //naujai prideta ***
   }
 
 //tMTEP3
+document.getElementById("num11").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num12").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num13").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num14").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num15").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num16").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num17").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num18").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num19").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("num20").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("planuota2").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+document.getElementById("atlikta2").addEventListener('change', calcTabletMTEP3); //naujai prideta ***
+
   function calcTabletMTEP3() {
 
     let num011 = parseFloat(document.getElementById("num11").value) || 0;
@@ -86,6 +127,13 @@ document.addEventListener('onchange', calc); //naujai prideta ***
   }
 
 //kTOV4
+document.getElementById("num21").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+document.getElementById("num22").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+document.getElementById("num23").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+document.getElementById("num24").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+document.getElementById("planuota3").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+document.getElementById("atlikta3").addEventListener('change', calcTablekTOV4); //naujai prideta ***
+
   function calcTablekTOV4() {
 
     let num021 = parseFloat(document.getElementById("num21").value) || 0;

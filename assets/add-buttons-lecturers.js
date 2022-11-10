@@ -34,10 +34,10 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="plan` + value1 + `"  onchange="calcTable2()" class="form-control text-center textarea" name="planuotosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="plan` + value1 + `" class="form-control text-center textarea" name="planuotosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" >
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" min="0" id="atl` + value1 + `"  onchange="calcTable2()" class="form-control text-center textarea" name="atliktosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" min="0" id="atl` + value1 + `" class="form-control text-center textarea" name="atliktosVal` + value1 + `" placeholder="(val. sk.)" autocomplete="off">
           </div>
         </div>
         <div id="add_to_me01` + div + `">

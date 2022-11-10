@@ -123,7 +123,7 @@
           <input type="hidden" id="table2_id" name="table2_name" value="<%=numb%>">
           <div id="add_to_me011">
           </div>
-          <button class="plus-button" type="button" onclick="addTable2()">+</button><br><br>
+          <button class="plus-button" type="button" id="addTable2Script">+</button><br><br>
 
           <div class="form-row">
             <div class="col-md-8 mb-3 text-right">
@@ -184,11 +184,11 @@
               <label class="bottom-align" for=""><b>Nekontaktinis darbas su studentais</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num1" value="<%=user.mm2024_2025.destytojas.nD2.nekSuStud_planVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="nekSuStud_planVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num1" value="<%=user.mm2024_2025.destytojas.nD2.nekSuStud_planVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="nekSuStud_planVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num6" value="<%=user.mm2024_2025.destytojas.nD2.nekSuStud_atlVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="nekSuStud_atlVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num6" value="<%=user.mm2024_2025.destytojas.nD2.nekSuStud_atlVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="nekSuStud_atlVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -197,11 +197,11 @@
               <label for=""><b>Pasirengimas dėstyti</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num2" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_planVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="pasirengDest_planVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num2" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_planVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="pasirengDest_planVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num7" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_atlVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="pasirengDest_atlVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num7" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_atlVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="pasirengDest_atlVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -210,11 +210,11 @@
               <label for=""><b>Metodinė veikla</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num3" value="<%=user.mm2024_2025.destytojas.nD2.metod_planVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="metod_planVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num3" value="<%=user.mm2024_2025.destytojas.nD2.metod_planVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="metod_planVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num8" value="<%=user.mm2024_2025.destytojas.nD2.metod_atlVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="metod_atlVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num8" value="<%=user.mm2024_2025.destytojas.nD2.metod_atlVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="metod_atlVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -223,11 +223,11 @@
               <label for=""><b>Dalyvavimas studijų programų kokybės užtikrinimo veikloje</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num4" value="<%=user.mm2024_2025.destytojas.nD2.dalyvSPKUV_planVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="dalyvSPKUV_planVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num4" value="<%=user.mm2024_2025.destytojas.nD2.dalyvSPKUV_planVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="dalyvSPKUV_planVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num9" value="<%=user.mm2024_2025.destytojas.nD2.dalyvSPKUV_atlVal%>" onchange="calc()" class="form-control text-center" placeholder="(val. sk.)" name="dalyvSPKUV_atlVal" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num9" value="<%=user.mm2024_2025.destytojas.nD2.dalyvSPKUV_atlVal%>"   class="form-control text-center" placeholder="(val. sk.)" name="dalyvSPKUV_atlVal" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -236,11 +236,11 @@
               <label for=""><b>Studijų populiarinimas</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num5" value="<%=user.mm2024_2025.destytojas.nD2.studPop_planVal%>" onchange="calc()" class="form-control text-center" name="studPop_planVal" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num5" value="<%=user.mm2024_2025.destytojas.nD2.studPop_planVal%>"   class="form-control text-center" name="studPop_planVal" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num10" value="<%=user.mm2024_2025.destytojas.nD2.studPop_atlVal%>" onchange="calc()" class="form-control text-center" name="studPop_atlVal" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num10" value="<%=user.mm2024_2025.destytojas.nD2.studPop_atlVal%>"   class="form-control text-center" name="studPop_atlVal" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -249,11 +249,11 @@
               <label for=""><b>Iš viso val.</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" id="planuota" value="<%=user.mm2024_2025.destytojas.nD2.isVisoValPlan%>" onchange="calc()" class="form-control text-center" name="nD2isVisoValPlan" autocomplete="off" readonly="readonly"
+              <input type="number" id="planuota" value="<%=user.mm2024_2025.destytojas.nD2.isVisoValPlan%>"   class="form-control text-center" name="nD2isVisoValPlan" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" id="atlikta" value="<%=user.mm2024_2025.destytojas.nD2.isVisoValAtl%>" onchange="calc()" class="form-control text-center" name="nD2isVisoValAtl" autocomplete="off" readonly="readonly"
+              <input type="number" id="atlikta" value="<%=user.mm2024_2025.destytojas.nD2.isVisoValAtl%>"   class="form-control text-center" name="nD2isVisoValAtl" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -388,7 +388,7 @@
           <div id="add_to_me041">
 
           </div>
-          <button class="plus-button" type="button" onclick="m02()">+</button><br><br>
+          <button class="plus-button" type="button" id="m02Script">+</button><br><br>
           <p class="text-justify">*<b> V</b> – vadovėliai, <b>MK</b> – mokomosios knygos, <b>ML</b> – kiti metodiniai leidiniai, <b>KM</b> – konferencijų medžiaga ir <b>Kt </b>– kita.
             <br>**<b> H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai,<b> N </b>– Gamtos mokslai,<b> A </b>– Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai, <b>T </b> – Technologijos mokslai.
             <br> *** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
@@ -510,7 +510,7 @@
           <input type="hidden" id="table4_id" name="table4_name" value="<%=numb6%>">
           <div id="add_to_me061">
           </div>
-          <button class="plus-button" type="button" onclick="m04()">+</button><br><br>
+          <button class="plus-button" type="button" id="m04Script">+</button><br><br>
           <p class="text-justify">
             *<b> P</b> – Parengtas atestacijai,
             <b>A</b> – Atestuotas,
@@ -560,7 +560,7 @@
           <div id="add_to_me071">
 
           </div>
-          <button class="plus-button" type="button" onclick="d01()">+</button><br><br>
+          <button class="plus-button" type="button" id="d01Script">+</button><br><br>
           <!-- nD2_D02 -->
           <!-- 6 lentelė.  -->
           <div class="form-row">
@@ -746,7 +746,7 @@
           <div id="add_to_me081">
 
           </div>
-          <button class="plus-button" type="button" onclick="d02()">+</button><br><br>
+          <button class="plus-button" type="button" id="d02Script">+</button><br><br>
           <!-- nD2_D03 -->
           <!-- 7 lentelė.  -->
           <div class="form-row">
@@ -1000,7 +1000,7 @@
           <div id="add_to_me091">
 
           </div>
-          <button class="plus-button" type="button" onclick="d03()">+</button><br><br>
+          <button class="plus-button" type="button" id="d03Script">+</button><br><br>
           <p class="text-justify">* Parengta vertinimui (PV, numatomas vertinimo terminas)
             / Aktedituota (A, terminas iki kada, SKVC įsak. Nr. ir data).</p>
           <!-- nD2_M03 -->
@@ -1108,7 +1108,7 @@
           <div id="add_to_me051">
 
           </div>
-          <button class="plus-button" type="button" onclick="m03()">+</button><br><br>
+          <button class="plus-button" type="button" id="m03Script">+</button><br><br>
           <!-- nD2_S01 -->
           <!-- 9 lentelė.  -->
           <div class="form-row">
@@ -1151,7 +1151,7 @@
           <div id="add_to_me101">
 
           </div>
-          <button class="plus-button" type="button" onclick="s01()">+</button><br><br>
+          <button class="plus-button" type="button" id="s01Script">+</button><br><br>
           <!-- nD2_S -->
           <div class="form-row">
             <div class="text-center col-md-12 mb-3">
@@ -1188,7 +1188,7 @@
           <div id="add_to_me111">
 
           </div>
-          <button class="plus-button" type="button" onclick="s01_2()">+</button><br><br>
+          <button class="plus-button" type="button" id="s01_2Script">+</button><br><br>
 
           <!-- tMTEP3 -->
           <p class="text-center font-weight-bold">3. TAIKOMŲJŲ MOKSLINIŲ TYRIMŲ IR EKSPERIMENTINĖS
@@ -1209,11 +1209,11 @@
               <label class="bottom-align" for=""><b>TMTEP ir šios veiklos rezultatų skelbimas</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num11" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPveiklRez_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_planVal%>" placeholder="(val. sk.)"
+              <input type="number" min="0" max="9999" id="num11"   class="form-control text-center" name="tMTEPveiklRez_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_planVal%>" placeholder="(val. sk.)"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num16" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPveiklRez_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal%>" placeholder="(val. sk.)"
+              <input type="number" min="0" max="9999" id="num16"   class="form-control text-center" name="tMTEPveiklRez_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal%>" placeholder="(val. sk.)"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1222,11 +1222,11 @@
               <label for=""><b>Meno veikla (apima dailės ir dizaino, teatro, šokio ir choreografijos bei muzikos sritis)</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num12" onchange="calcTabletMTEP3()" class="form-control text-center" name="menoVeikl_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_planVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num12"   class="form-control text-center" name="menoVeikl_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_planVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num17" onchange="calcTabletMTEP3()" class="form-control text-center" name="menoVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num17"   class="form-control text-center" name="menoVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1235,11 +1235,11 @@
               <label for=""><b>TMTEP ir meno veiklos populiarinimas</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num13" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPmenoVeiklPop_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal%>" placeholder="(val. sk.)"
+              <input type="number" min="0" max="9999" id="num13"   class="form-control text-center" name="tMTEPmenoVeiklPop_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_planVal%>" placeholder="(val. sk.)"
                 autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num18" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEPmenoVeiklPop_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal%>" placeholder="(val. sk.)"
+              <input type="number" min="0" max="9999" id="num18"   class="form-control text-center" name="tMTEPmenoVeiklPop_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPmenoVeiklPop_atlVal%>" placeholder="(val. sk.)"
                 autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1248,11 +1248,11 @@
               <label for=""><b>Studentų rengimas studentų profesinio meistriškumo konkursui, olimpiadai, varžyboms</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num14" onchange="calcTabletMTEP3()" class="form-control text-center" name="studReng_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_planVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num14"   class="form-control text-center" name="studReng_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_planVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num19" onchange="calcTabletMTEP3()" class="form-control text-center" name="studReng_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num19"   class="form-control text-center" name="studReng_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1261,11 +1261,11 @@
               <label for=""><b>Kita švietėjiška veikla</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num15" onchange="calcTabletMTEP3()" class="form-control text-center" name="kitaVeikl_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.kitaVeikl_planVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num15"   class="form-control text-center" name="kitaVeikl_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.kitaVeikl_planVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num20" onchange="calcTabletMTEP3()" class="form-control text-center" name="kitaVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.kitaVeikl_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num20"   class="form-control text-center" name="kitaVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.kitaVeikl_atlVal%>" placeholder="(val. sk.)" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1274,11 +1274,11 @@
               <label for=""><b>Iš viso val.</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" value="<%=user.mm2024_2025.destytojas.tMTEP3.isVisoValPlan%>" id="planuota2" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEP3isVisoValPlan" autocomplete="off" readonly="readonly"
+              <input type="number" value="<%=user.mm2024_2025.destytojas.tMTEP3.isVisoValPlan%>" id="planuota2"   class="form-control text-center" name="tMTEP3isVisoValPlan" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" value="<%=user.mm2024_2025.destytojas.tMTEP3.isVisoValAtl%>" id="atlikta2" onchange="calcTabletMTEP3()" class="form-control text-center" name="tMTEP3isVisoValAtl" autocomplete="off" readonly="readonly"
+              <input type="number" value="<%=user.mm2024_2025.destytojas.tMTEP3.isVisoValAtl%>" id="atlikta2"   class="form-control text-center" name="tMTEP3isVisoValAtl" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -1404,7 +1404,7 @@
           <div id="add_to_me121">
 
           </div>
-          <button class="plus-button" type="button" onclick="t01()">+</button><br><br>
+          <button class="plus-button" type="button" id="t01Script">+</button><br><br>
           <p class="text-justify">* Jeigu tyrimas užsakomasis, nurodykite užsakovą. Jei tyrimas yra sudėtinė projekto dalis, nurodykite projekto pavadinimą.
             <br>** Studijų kokybės bei kompetencijų užtikrinimo tyrimai (kodas <b>T01</b>); Verslo aplinkos ir darbo rinkos analizės tyrimai (kodas <b>T02</b>);
             Technologijos mokslų srities tyrimai (kodas <b>T03</b>); Specializuotos tematikos
@@ -1594,7 +1594,7 @@
           <div id="add_to_me131">
 
           </div>
-          <button class="plus-button" type="button" onclick="t02()">+</button><br><br>
+          <button class="plus-button" type="button" id="t02Script">+</button><br><br>
 
           <p>* <b>H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
             <b>T</b> – Technologijos mokslai.
@@ -1633,7 +1633,7 @@
           <div id="add_to_me141">
 
           </div>
-          <button class="plus-button" type="button" onclick="t03()">+</button><br><br>
+          <button class="plus-button" type="button" id="t03Script">+</button><br><br>
           <p>* Seminaras, konferencija, kt.<br>
           <b>PASTABA</b>: Pateikti įrodymus (nuoroda į programą ir pan.). </p>
 
@@ -1688,7 +1688,7 @@
           <div id="add_to_me151">
 
           </div>
-          <button class="plus-button" type="button" onclick="t04()">+</button><br><br>
+          <button class="plus-button" type="button" id="t04Script">+</button><br><br>
           <p class="font-weight-bold">14.1.-14.3. lentelės. Ekspertinė veikla</p>
           <!-- TMTEP3_T05 -->
           <!-- 14.1 lentelė.  -->
@@ -1736,7 +1736,7 @@
           <div id="add_to_me161">
 
           </div>
-          <button class="plus-button" type="button" onclick="t05()">+</button><br><br>
+          <button class="plus-button" type="button" id="t05Script">+</button><br><br>
 
           <!-- 14.2. -->
           <p><b>14.2. Narystė profesiniuose tinkluose, atstovavimas Kolegijai asociacijose, organizacijose, išorės institucijų
@@ -1772,7 +1772,7 @@
           <div id="add_to_meN011">
 
           </div>
-          <button class="plus-button" type="button" onclick="n142()">+</button><br><br>
+          <button class="plus-button" type="button" id="n142Script">+</button><br><br>
 
           <!-- 14.3. -->
           <p><b>14.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų</b></p>
@@ -1806,7 +1806,7 @@
           <div id="add_to_meN021">
 
           </div>
-          <button class="plus-button" type="button" onclick="n143()">+</button><br><br>
+          <button class="plus-button" type="button" id="n143Script">+</button><br><br>
 
           <!-- TMTEP3_T06 -->
           <!-- 15 lentelė.  -->
@@ -1867,7 +1867,7 @@
           <div id="add_to_me171">
 
           </div>
-          <button class="plus-button" type="button" onclick="t06()">+</button><br><br>
+          <button class="plus-button" type="button" id="t06Script">+</button><br><br>
           <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai. Nuoroda:
             <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/a010ca61043a11e98a758703636ea610</a>
             <br>
@@ -1924,7 +1924,7 @@
           <div id="add_to_me181">
 
           </div>
-          <button class="plus-button" type="button" onclick="t07()">+</button><br><br>
+          <button class="plus-button" type="button" id="t07Script">+</button><br><br>
           <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
             <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
           </p>
@@ -1979,7 +1979,7 @@
           <div id="add_to_me191">
 
           </div>
-          <button class="plus-button" type="button" onclick="t08()">+</button><br><br>
+          <button class="plus-button" type="button" id="t08Script">+</button><br><br>
           <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
             <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
           </p>
@@ -2033,7 +2033,7 @@
           <div id="add_to_me201">
 
           </div>
-          <button class="plus-button" type="button" onclick="t09()">+</button><br><br>
+          <button class="plus-button" type="button" id="t09Script">+</button><br><br>
           <p>*<b> C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
             <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
           </p>
@@ -2093,7 +2093,7 @@
           <div id="add_to_me211">
 
           </div>
-          <button class="plus-button" type="button" onclick="t10()">+</button><br><br>
+          <button class="plus-button" type="button" id="t10Script">+</button><br><br>
           <!-- TMTEP3_T11 -->
           <!-- 20 lentelė.  -->
           <p class="font-weight-bold">
@@ -2150,7 +2150,7 @@
           <div id="add_to_me221">
 
           </div>
-          <button class="plus-button" type="button" onclick="t11()">+</button><br><br>
+          <button class="plus-button" type="button" id="t11Script">+</button><br><br>
           <!-- TMTEP3_T12 -->
           <!-- 21 lentelė.  -->
           <p class="font-weight-bold">
@@ -2190,7 +2190,7 @@
           <div id="add_to_me231">
 
           </div>
-          <button class="plus-button" type="button" onclick="t12()">+</button><br><br>
+          <button class="plus-button" type="button" id="t12Script">+</button><br><br>
           <!-- TMTEP3_T13 -->
           <!-- 22 lentelė.  -->
           <p class="font-weight-bold">
@@ -2244,7 +2244,7 @@
           <div id="add_to_me241">
 
           </div>
-          <button class="plus-button" type="button" onclick="t13()">+</button><br><br>
+          <button class="plus-button" type="button" id="t13Script">+</button><br><br>
           <!-- TMTEP3_T14 -->
           <!-- 23 lentelė.  -->
           <p class="font-weight-bold">
@@ -2293,7 +2293,7 @@
           <div id="add_to_me251">
 
           </div>
-          <button class="plus-button" type="button" onclick="t14()">+</button><br><br>
+          <button class="plus-button" type="button" id="t14Script">+</button><br><br>
           <!-- TMTEP3_S -->
           <p class="text-center font-weight-bold">TMTEP VYKDYMO, MENO TAIKOMOJI VEIKLOS,
             PROFESIONALIOJO MENO VEIKLOS, ŠIOS VEIKLOS REZULTATŲ SKELBIMO IR VIEŠINIMO SAVIANALIZĖ</p>
@@ -2327,7 +2327,7 @@
           <div id="add_to_me261">
 
           </div>
-          <button class="plus-button" type="button" onclick="t15()">+</button><br><br>
+          <button class="plus-button" type="button" id="t15Script">+</button><br><br>
 
           <!-- kTOV4 -->
           <p class="text-center font-weight-bold">4. KOMPETENCIJŲ TOBULINIMAS IR ORGANIZACINĖ VEIKLA</p>
@@ -2357,11 +2357,11 @@
               <label class="bottom-align" for=""><b>Kompetencijų tobulinimas</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num21" onchange="calcTablekTOV4()" placeholder="(val. sk.)" class="form-control text-center" name="kTOV4kompTobulinimas_planVal" value="<%=user.mm2024_2025.destytojas.kTOV4.kompTobulinimas_planVal%>" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num21"   placeholder="(val. sk.)" class="form-control text-center" name="kTOV4kompTobulinimas_planVal" value="<%=user.mm2024_2025.destytojas.kTOV4.kompTobulinimas_planVal%>" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num23" onchange="calcTablekTOV4()" placeholder="(val. sk.)" class="form-control text-center" name="kTOV4kompTobulinimas_atlVal" value="<%=user.mm2024_2025.destytojas.kTOV4.kompTobulinimas_atlVal%>" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num23"   placeholder="(val. sk.)" class="form-control text-center" name="kTOV4kompTobulinimas_atlVal" value="<%=user.mm2024_2025.destytojas.kTOV4.kompTobulinimas_atlVal%>" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -2370,11 +2370,11 @@
               <label class="bottom-align" for=""><b>Organizacinė veikla</b></label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num22" onchange="calcTablekTOV4()" placeholder="(val. sk.)" class="form-control text-center" name="kTOV4organizacVeikl_planVal" value="<%=user.mm2024_2025.destytojas.kTOV4.organizacVeikl_planVal%>" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num22"   placeholder="(val. sk.)" class="form-control text-center" name="kTOV4organizacVeikl_planVal" value="<%=user.mm2024_2025.destytojas.kTOV4.organizacVeikl_planVal%>" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" min="0" max="9999" id="num24" onchange="calcTablekTOV4()" placeholder="(val. sk.)" class="form-control text-center" name="kTOV4organizacVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.kTOV4.organizacVeikl_atlVal%>" autocomplete="off"
+              <input type="number" min="0" max="9999" id="num24"   placeholder="(val. sk.)" class="form-control text-center" name="kTOV4organizacVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.kTOV4.organizacVeikl_atlVal%>" autocomplete="off"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -2383,11 +2383,11 @@
               <label for=""><b>Iš viso</b> </label>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" id="planuota3" value="<%=user.mm2024_2025.destytojas.kTOV4.isVisoValPlan%>" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4isVisoValPlan" autocomplete="off" readonly="readonly"
+              <input type="number" id="planuota3" value="<%=user.mm2024_2025.destytojas.kTOV4.isVisoValPlan%>"   class="form-control text-center" name="kTOV4isVisoValPlan" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" id="atlikta3" value="<%=user.mm2024_2025.destytojas.kTOV4.isVisoValAtl%>" onchange="calcTablekTOV4()" class="form-control text-center" name="kTOV4isVisoValAtl" autocomplete="off" readonly="readonly"
+              <input type="number" id="atlikta3" value="<%=user.mm2024_2025.destytojas.kTOV4.isVisoValAtl%>"   class="form-control text-center" name="kTOV4isVisoValAtl" autocomplete="off" readonly="readonly"
                 onkeyup="if(this.value<0){this.value= this.value * -1}">
             </div>
           </div>
@@ -2466,7 +2466,7 @@
           <div id="add_to_meN031">
 
           </div>
-          <button class="plus-button" type="button" onclick="mokymo()">+</button><br><br>
+          <button class="plus-button" type="button" id="mokymoScript">+</button><br><br>
           <!-- 24 lentelė 2-->
           <!-- Tyrimų_komp -->
           <% var new4 = 0; %>
@@ -2517,7 +2517,7 @@
           <div id="add_to_meN041">
 
           </div>
-          <button class="plus-button" type="button" onclick="tyrimu()">+</button><br><br>
+          <button class="plus-button" type="button" id="tyrimuScript">+</button><br><br>
 
           <!-- 24 lentelė 3-->
           <!-- Bendrosios_komp -->
@@ -2569,7 +2569,7 @@
           <div id="add_to_meN051">
 
           </div>
-          <button class="plus-button" type="button" onclick="bendrosios()">+</button><br><br>
+            <button class="plus-button" type="button" id="bendrosiosScript">+</button><br><br>
           <!-- 24 lentelė 4-->
           <!-- Dalykinės_komp -->
           <% var new6 = 0; %>
@@ -2620,7 +2620,7 @@
           <div id="add_to_meN061">
 
           </div>
-          <button class="plus-button" type="button" onclick="dalykines()">+</button><br><br>
+          <button class="plus-button" type="button" id="dalykinesScript">+</button><br><br>
           <div class="form-row">
             <div class="col-md-7 mb-3">
             </div>
@@ -2688,7 +2688,7 @@
           <div id="add_to_meN071">
 
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_25()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_25Script">+</button><br><br>
           <p>
             * <b>AP</b> – akademinis personalas, <b>NP</b> – neakademinis personalas, <b>VP</b> – visas personalas.
           </p>
@@ -2743,7 +2743,7 @@
           <div id="add_to_meN081">
 
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_26()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_26Script">+</button><br><br>
 
           <!--kTOV4_KV03-->
           <!-- 27 lentelė.  -->
@@ -2934,7 +2934,7 @@
           <div id="add_to_me271">
 
           </div>
-          <button class="plus-button" type="button" onclick="kv03()">+</button><br><br>
+          <button class="plus-button" type="button" id="kv03Script">+</button><br><br>
 
           <!--kTOV4_O01-->
           <p class="font-weight-bold">
@@ -2977,7 +2977,7 @@
           <div id="add_to_me281">
 
           </div>
-          <button class="plus-button" type="button" onclick="o01()">+</button><br><br>
+          <button class="plus-button" type="button" id="o01Script">+</button><br><br>
           <!-- kTOV4_O01_2 -->
           <!-- 28.2. lentelė.  -->
           <p class="font-weight-bold">
@@ -3022,7 +3022,7 @@
           <div id="add_to_me291">
 
           </div>
-          <button class="plus-button" type="button" onclick="o01_2()">+</button><br><br>
+          <button class="plus-button" type="button" id="o01_2Script">+</button><br><br>
           <!--kTOV4_29-->
           <!-- 29 lentelė.  -->
           <p><b>29 lentelė. Bendradarbiavimas su socialiniais partneriais</b></p>
@@ -3061,7 +3061,7 @@
           <div id="add_to_meN091">
 
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_29()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_29Script">+</button><br><br>
           <p class="text-justify">* Veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas,
             vadovavimas baigiamiesiems darbams, dalyvavimas kvalifikavimo komisijose, dalyvavimas
             karjeros planavimo veiklose, diskusijose ir pan. <br>
@@ -3098,7 +3098,7 @@
           <div id="add_to_me301">
 
           </div>
-          <button class="plus-button" type="button" onclick="o01_3()">+</button><br><br>
+          <button class="plus-button" type="button" id="o01_3Script">+</button><br><br>
 
           <p style="text-align: center;"><b>5. KITOS VEIKLOS</b></p>
 
@@ -3356,7 +3356,7 @@
           <div id="add_to_me321">
 
           </div>
-          <button class="plus-button" type="button" onclick="kt02()">+</button><br><br>
+          <button class="plus-button" type="button" id="kt02Script">+</button><br><br>
           <p>* <b>V</b> – verslumo tematika; <b>SA/DP</b> – socialinės atsakomybės, darnios plėtros tematika</p>
           <!-- kV5_KT01 -->
           <!-- 31 lentelė. -->
@@ -3604,7 +3604,7 @@
           <div id="add_to_me311">
 
           </div>
-          <button class="plus-button" type="button" onclick="kt01()">+</button><br><br>
+               <button class="plus-button" type="button" id="kt01Script">+</button><br><br>
           <!-- kV5_32 -->
           <!-- 32 lentelė.  -->
           <p class="font-weight-bold">
@@ -3645,7 +3645,7 @@
           <input type="hidden" id="table321_id" name="table321_name" value="<%=numb32_1%>">
           <div id="add_to_meN101">
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_32soc()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_32socScript">+</button><br><br>
           <!-- 32 lentele 2-->
           <!-- Aplinkosauginės iniciatyvos -->
           <% var numb32_2 = 0; %>
@@ -3673,7 +3673,7 @@
           <input type="hidden" id="table322_id" name="table322_name" value="<%=numb32_2%>">
           <div id="add_to_meN111">
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_32apl()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_32aplScript">+</button><br><br>
           <!-- 32 lentele 3-->
           <!-- Lietuvos valstybingumo ir istorinės atminties tęstinumo puoselėjimas -->
           <% var numb32_3 = 0; %>
@@ -3701,7 +3701,7 @@
           <input type="hidden" id="table323_id" name="table323_name" value="<%=numb32_3%>">
           <div id="add_to_meN121">
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_32vals()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_32valsScript">+</button><br><br>
           <!-- 32 lentele 4-->
           <!-- Lietuvos etnokultūros puoselėjimas -->
           <% var numb32_4 = 0; %>
@@ -3729,7 +3729,7 @@
           <input type="hidden" id="table324_id" name="table324_name" value="<%=numb32_4%>">
           <div id="add_to_meN131">
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_32etno()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_32etnoScript">+</button><br><br>
           <!-- 32 lentele 5-->
           <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
           <% var numb32_5 = 0; %>
@@ -3757,7 +3757,7 @@
           <input type="hidden" id="table325_id" name="table325_name" value="<%=numb32_5%>">
           <div id="add_to_meN141">
           </div>
-          <button class="plus-button" type="button" onclick="kTOV4_32sav()">+</button><br><br>
+          <button class="plus-button" type="button" id="kTOV4_32savScript">+</button><br><br>
 
           <!-- kV5_33 -->
           <!-- 33 lentelė.  -->
@@ -3812,7 +3812,7 @@
           <input type="hidden" id="table33_id" name="table33_name" value="<%=numb33%>">
           <div id="add_to_meN151">
           </div>
-          <button class="plus-button" type="button" onclick="kV5_33()">+</button><br><br>
+          <button class="plus-button" type="button" id="kV5_33Script">+</button><br><br>
           <p>* Tyrimas, konsultacija be finansinio atlygio ir t.t.</p>
           <!-- kV5_34 -->
           <!-- 34 lentelė.  -->
@@ -3860,7 +3860,7 @@
           <input type="hidden" id="table34_id" name="table34_name" value="<%=numb34%>">
           <div id="add_to_meN161">
           </div>
-          <button class="plus-button" type="button" onclick="kV5_34()">+</button>
+          <button class="plus-button" type="button" id="kV5_34Script">+</button>
 
           <p class="font-weight-bold"> <br><br>Kita informacija:</p>
           <div class="form-row">
