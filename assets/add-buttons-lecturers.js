@@ -1,16 +1,16 @@
 //kD1_K01 
 //2 table 
-  var value1 = document.getElementById("table2_id").value;
-  value1++;
-  var div = 1;
+var value1 = document.getElementById("table2_id").value;
+value1++;
+var div = 1;
 
-  document.getElementById("addTable2Script").addEventListener('click', addTable2);
+document.getElementById("addTable2Script").addEventListener('click', addTable2);
 
-  function addTable2() {
-    let bendr = "add_to_me01" + div;
-    div++;
-    document.getElementById(bendr).innerHTML +=
-      `
+function addTable2() {
+  let bendr = "add_to_me01" + div;
+  div++;
+  document.getElementById(bendr).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center " rows="1" name="nr` + value1 + `" placeholder="" autocomplete="off" value="` + value1 + `" readonly="readonly">
@@ -42,33 +42,39 @@
         </div>
         <div id="add_to_me01` + div + `">
         `;
-        // console.log("edit value1: "+ value1);
-    document.getElementById("table2_id").value = value1;
-    value1++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
+  document.getElementById("table2_id").value = value1;
+  value1++;
 
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  // reikalinga skaiciavimams realiu laiku --> calculations-lecturers.js failui
+  for (let zx = 1; zx <= document.getElementById("table2_id").value; zx++) {
+    document.getElementById("plan" + zx).addEventListener('change', calcTable2);
+    document.getElementById("atl" + zx).addEventListener('change', calcTable2);
   }
-  
+
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
+  }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
+
 //   nD2_M02 
 // 3 table 
-  var value4 = document.getElementById("table3_id").value;
-  value4++;
-  var div4 = 1;
+var value4 = document.getElementById("table3_id").value;
+value4++;
+var div4 = 1;
 
-  document.getElementById("m02Script").addEventListener('click', m02);
-  function m02() {
-    let bendr4 = "add_to_me04" + div4;
-    div4++;
-    document.getElementById(bendr4).innerHTML +=
-      `
+document.getElementById("m02Script").addEventListener('click', m02);
+function m02() {
+  let bendr4 = "add_to_me04" + div4;
+  div4++;
+  document.getElementById(bendr4).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                     <label for=""><br><br></label>
@@ -177,32 +183,32 @@
                   </div>
                 <div id="add_to_me04` + div4 + `">
               `;
-    document.getElementById("table3_id").value = value4;
-    value4++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table3_id").value = value4;
+  value4++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_M04 
 // 4 table. 
-  var value6 = document.getElementById("table4_id").value;
-  value6++;
-  var div6 = 1;
+var value6 = document.getElementById("table4_id").value;
+value6++;
+var div6 = 1;
 
-  document.getElementById("m04Script").addEventListener('click', m04);
-  function m04() {
-    let bendr6 = "add_to_me06" + div6;
-    div6++;
-    document.getElementById(bendr6).innerHTML +=
-      `
+document.getElementById("m04Script").addEventListener('click', m04);
+function m04() {
+  let bendr6 = "add_to_me06" + div6;
+  div6++;
+  document.getElementById(bendr6).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="nD2_M04nr` + value6 + `" placeholder="" autocomplete="off" value="` + value6 + `" readonly="readonly">
@@ -276,7 +282,7 @@
                   <textarea type="text" rows="1" class="form-control " name="nD2_M04dalykPavad` + value6 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit` + value6 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                  <input type="number" class="form-control text-center" name="nD2_M04apimtisKredit` + value6 + `" placeholder="" autocomplete="off"  min="0">
                 </div>
                 <div class="col-md-2 mb-3">
                   <select name="nD2_M04busena` + value6 + `" class="form-select form-control">
@@ -290,33 +296,33 @@
               </div>
               <div id="add_to_me06` + div6 + `">
               `;
-    document.getElementById("table4_id").value = value6;
-    value6++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table4_id").value = value6;
+  value6++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_D01 
 // 5 table.  
-  var value7 = document.getElementById("table5_id").value;
-  value7++;
-  var div7 = 1;
-  
-  document.getElementById("d01Script").addEventListener('click', d01);
+var value7 = document.getElementById("table5_id").value;
+value7++;
+var div7 = 1;
 
-  function d01() {
-    let bendr7 = "add_to_me07" + div7;
-    div7++;
-    document.getElementById(bendr7).innerHTML +=
-      `
+document.getElementById("d01Script").addEventListener('click', d01);
+
+function d01() {
+  let bendr7 = "add_to_me07" + div7;
+  div7++;
+  document.getElementById(bendr7).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="nD2_D01nr` + value7 + `" placeholder="" autocomplete="off" value="` + value7 + `" readonly="readonly">
@@ -333,32 +339,32 @@
               </div>
               <div id="add_to_me07` + div7 + `">
               `;
-    document.getElementById("table5_id").value = value7;
-    value7++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table5_id").value = value7;
+  value7++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_D02 
 // 6 table  
-  var value8 = document.getElementById("table6_id").value;
-  value8++;
-  var div8 = 1;
+var value8 = document.getElementById("table6_id").value;
+value8++;
+var div8 = 1;
 
-  document.getElementById("d02Script").addEventListener('click', d02);
-  function d02() {
-    let bendr8 = "add_to_me08" + div8;
-    div8++;
-    document.getElementById(bendr8).innerHTML +=
-      `
+document.getElementById("d02Script").addEventListener('click', d02);
+function d02() {
+  let bendr8 = "add_to_me08" + div8;
+  div8++;
+  document.getElementById(bendr8).innerHTML +=
+    `
       <div class="form-row">
         <div class="col-md-1 mb-3">
           <input type="text" class="form-control text-center" name="nD2_D02nr` + value8 + `" placeholder="" autocomplete="off" value="` + value8 + `" readonly="readonly">
@@ -517,32 +523,32 @@
       </div>
               <div id="add_to_me08` + div8 + `">
               `;
-    document.getElementById("table6_id").value = value8;
-    value8++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table6_id").value = value8;
+  value8++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_D03 
 // 7 table  
-  var value9 = document.getElementById("table7_id").value;
-  value9++;
-  var div9 = 1;
+var value9 = document.getElementById("table7_id").value;
+value9++;
+var div9 = 1;
 
-  document.getElementById("d03Script").addEventListener('click', d03);
-  function d03() {
-    let bendr9 = "add_to_me09" + div9;
-    div9++;
-    document.getElementById(bendr9).innerHTML +=
-      `
+document.getElementById("d03Script").addEventListener('click', d03);
+function d03() {
+  let bendr9 = "add_to_me09" + div9;
+  div9++;
+  document.getElementById(bendr9).innerHTML +=
+    `
       <div class="form-row">
         <div class="col-md-1 mb-3">
           <input type="text" class="form-control text-center" name="nD2_D03nr` + value9 + `" placeholder="" autocomplete="off" value="` + value9 + `" readonly="readonly">
@@ -766,32 +772,32 @@
       </div>
               <div id="add_to_me09` + div9 + `">
               `;
-    document.getElementById("table7_id").value = value9;
-    value9++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table7_id").value = value9;
+  value9++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_M03 
 // 8 table 
-  var value5 = document.getElementById("table8_id").value;
-  value5++;
-  var div5 = 1;
+var value5 = document.getElementById("table8_id").value;
+value5++;
+var div5 = 1;
 
-  document.getElementById("m03Script").addEventListener('click', m03);
-  function m03() {
-    let bendr5 = "add_to_me05" + div5;
-    div5++;
-    document.getElementById(bendr5).innerHTML +=
-      `
+document.getElementById("m03Script").addEventListener('click', m03);
+function m03() {
+  let bendr5 = "add_to_me05" + div5;
+  div5++;
+  document.getElementById(bendr5).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text"  class="form-control text-center" name="nD2_M03nr` + value5 + `" placeholder="" autocomplete="off" value="` + value5 + `" readonly="readonly">
@@ -865,37 +871,37 @@
                   <textarea type="text" rows="1" class="form-control " name="nD2_M03dalykPavad` + value5 + `" placeholder="" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit` + value5 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                  <input type="number" class="form-control text-center" name="nD2_M03apimtisKredit` + value5 + `" placeholder="" autocomplete="off"  min="0">
                 </div>
               </div>
               <div id="add_to_me05` + div5 + `">
               `;
-    document.getElementById("table8_id").value = value5;
-    value5++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table8_id").value = value5;
+  value5++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // nD2_S01 
 // 9 table  
-  var value10 = document.getElementById("table9_id").value;
-  value10++;
-  var div10 = 1;
+var value10 = document.getElementById("table9_id").value;
+value10++;
+var div10 = 1;
 
-  document.getElementById("s01Script").addEventListener('click', s01);
-  function s01() {
-    let bendr10 = "add_to_me10" + div10;
-    div10++;
-    document.getElementById(bendr10).innerHTML +=
-      `
+document.getElementById("s01Script").addEventListener('click', s01);
+function s01() {
+  let bendr10 = "add_to_me10" + div10;
+  div10++;
+  document.getElementById(bendr10).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="nD2_S01nr` + value10 + `" placeholder="" autocomplete="off" value="` + value10 + `" readonly="readonly">
@@ -909,31 +915,31 @@
               </div>
               <div id="add_to_me10` + div10 + `">
               `;
-    document.getElementById("table9_id").value = value10;
-    value10++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table9_id").value = value10;
+  value10++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
 
-// nD2_S 
-  var value11 = document.getElementById("tablenD2_S_id").value;
-  value11++;
-  var div11 = 1;
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
-  document.getElementById("s01_2Script").addEventListener('click', s01_2);
-  function s01_2() {
-    let bendr11 = "add_to_me11" + div11;
-    div11++;
-    document.getElementById(bendr11).innerHTML +=
-      `
+// nD2_S 
+var value11 = document.getElementById("tablenD2_S_id").value;
+value11++;
+var div11 = 1;
+
+document.getElementById("s01_2Script").addEventListener('click', s01_2);
+function s01_2() {
+  let bendr11 = "add_to_me11" + div11;
+  div11++;
+  document.getElementById(bendr11).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="nD2_Snr` + value11 + `" placeholder="" autocomplete="off" value="` + value11 + `" readonly="readonly">
@@ -947,32 +953,32 @@
               </div>
               <div id="add_to_me11` + div11 + `">
               `;
-    document.getElementById("tablenD2_S_id").value = value11;
-    value11++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("tablenD2_S_id").value = value11;
+  value11++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // tMTEP3_T01 
 // 10 table
-  var value12 = document.getElementById("table10_id").value;
-  value12++;
-  var div12 = 1;
+var value12 = document.getElementById("table10_id").value;
+value12++;
+var div12 = 1;
 
-  document.getElementById("t01Script").addEventListener('click', t01);
-  function t01() {
-    let bendr12 = "add_to_me12" + div12;
-    div12++;
-    document.getElementById(bendr12).innerHTML +=
-      `
+document.getElementById("t01Script").addEventListener('click', t01);
+function t01() {
+  let bendr12 = "add_to_me12" + div12;
+  div12++;
+  document.getElementById(bendr12).innerHTML +=
+    `
 
       <div class="form-row">
                 <div class="col-md-1 mb-3">
@@ -1079,33 +1085,33 @@
               </div>
               <div id="add_to_me12` + div12 + `">
               `;
-    document.getElementById("table10_id").value = value12;
-    value12++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table10_id").value = value12;
+  value12++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T02 
 // 11 table 
 
-  var value13 = document.getElementById("table11_id").value;
-  value13++;
-  var div13 = 1;
+var value13 = document.getElementById("table11_id").value;
+value13++;
+var div13 = 1;
 
-  document.getElementById("t02Script").addEventListener('click', t02);
-  function t02() {
-    let bendr13 = "add_to_me13" + div13;
-    div13++;
-    document.getElementById(bendr13).innerHTML +=
-      `
+document.getElementById("t02Script").addEventListener('click', t02);
+function t02() {
+  let bendr13 = "add_to_me13" + div13;
+  div13++;
+  document.getElementById(bendr13).innerHTML +=
+    `
       <div class="form-row">
   <div class="col-md-1 mb-3">
     <label for=""><br></label>
@@ -1221,33 +1227,33 @@
 </div>
                 <div id="add_to_me13` + div13 + `">
               `;
-    document.getElementById("table11_id").value = value13;
-    value13++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table11_id").value = value13;
+  value13++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T03 
 // 12 table 
 
-  var value14 = document.getElementById("table12_id").value;
-  value14++;
-  var div14 = 1;
+var value14 = document.getElementById("table12_id").value;
+value14++;
+var div14 = 1;
 
-  document.getElementById("t03Script").addEventListener('click', t03);
-  function t03() {
-    let bendr14 = "add_to_me14" + div14;
-    div14++;
-    document.getElementById(bendr14).innerHTML +=
-      `
+document.getElementById("t03Script").addEventListener('click', t03);
+function t03() {
+  let bendr14 = "add_to_me14" + div14;
+  div14++;
+  document.getElementById(bendr14).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="tMTEP3_T03nr` + value14 + `" placeholder="" autocomplete="off" value="` + value14 + `" readonly="readonly">
@@ -1261,33 +1267,33 @@
               </div>
               <div id="add_to_me14` + div14 + `">
               `;
-    document.getElementById("table12_id").value = value14;
-    value14++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table12_id").value = value14;
+  value14++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T04 
 // 13 table.  
 
-  var value15 = document.getElementById("table13_id").value;
-  value15++;
-  var div15 = 1;
+var value15 = document.getElementById("table13_id").value;
+value15++;
+var div15 = 1;
 
-  document.getElementById("t04Script").addEventListener('click', t04);
-  function t04() {
-    let bendr15 = "add_to_me15" + div15;
-    div15++;
-    document.getElementById(bendr15).innerHTML +=
-      `
+document.getElementById("t04Script").addEventListener('click', t04);
+function t04() {
+  let bendr15 = "add_to_me15" + div15;
+  div15++;
+  document.getElementById(bendr15).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="tMTEP3_T04nr` + value15 + `" placeholder="" autocomplete="off" value="` + value15 + `" readonly="readonly">
@@ -1311,33 +1317,33 @@
                 </div>
                 <div id="add_to_me15` + div15 + `">
               `;
-    document.getElementById("table13_id").value = value15;
-    value15++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table13_id").value = value15;
+  value15++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T05 
 // 14.1 table  
 
-  var value16 = document.getElementById("table141_id").value;
-  value16++;
-  var div16 = 1;
+var value16 = document.getElementById("table141_id").value;
+value16++;
+var div16 = 1;
 
-  document.getElementById("t05Script").addEventListener('click', t05);
-  function t05() {
-    let bendr16 = "add_to_me16" + div16;
-    div16++;
-    document.getElementById(bendr16).innerHTML +=
-      `
+document.getElementById("t05Script").addEventListener('click', t05);
+function t05() {
+  let bendr16 = "add_to_me16" + div16;
+  div16++;
+  document.getElementById(bendr16).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control  text-center" name="tMTEP3_T05nr` + value16 + `" placeholder="" autocomplete="off" value="` + value16 + `" readonly="readonly">
@@ -1358,33 +1364,33 @@
               </div>
                 <div id="add_to_me16` + div16 + `">
               `;
-    document.getElementById("table141_id").value = value16;
-    value16++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table141_id").value = value16;
+  value16++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 14.2 table 
 
-  var value57 = document.getElementById("table142_id").value;
-  value57++;
-  var div57 = 1;
-  var asd57 = "add_to_meN01";
+var value57 = document.getElementById("table142_id").value;
+value57++;
+var div57 = 1;
+var asd57 = "add_to_meN01";
 
-  document.getElementById("n142Script").addEventListener('click', n142);
-  function n142() {
-    let bendr57 = "add_to_meN01" + div57;
-    div57++;
-    document.getElementById(bendr57).innerHTML +=
-      `
+document.getElementById("n142Script").addEventListener('click', n142);
+function n142() {
+  let bendr57 = "add_to_meN01" + div57;
+  div57++;
+  document.getElementById(bendr57).innerHTML +=
+    `
       <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="tMTEP3_142nr` + value57 + `" placeholder="" autocomplete="off" value="` + value57 + `" readonly="readonly">
@@ -1399,32 +1405,32 @@
                 <div id="add_to_meN01` + div57 + `">
                   </div>
               `;
-    document.getElementById("table142_id").value = value57;
-    value57++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table142_id").value = value57;
+  value57++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 14.3 table 
 
-  var value58 = document.getElementById("table143_id").value;
-  value58++;
-  var div58 = 1;
+var value58 = document.getElementById("table143_id").value;
+value58++;
+var div58 = 1;
 
-  document.getElementById("n143Script").addEventListener('click', n143);
-  function n143() {
-    let bendr58 = "add_to_meN02" + div58;
-    div58++;
-    document.getElementById(bendr58).innerHTML +=
-      `
+document.getElementById("n143Script").addEventListener('click', n143);
+function n143() {
+  let bendr58 = "add_to_meN02" + div58;
+  div58++;
+  document.getElementById(bendr58).innerHTML +=
+    `
       <div class="form-row">
               <div class="col-md-1 mb-3">
                 <input type="text" class="form-control text-center" name="tMTEP3_143nr` + value58 + `" placeholder="" autocomplete="off" value="` + value58 + `" readonly="readonly">
@@ -1439,33 +1445,33 @@
                 <div id="add_to_meN02` + div58 + `">
                   </div>
               `;
-    document.getElementById("table143_id").value = value58;
-    value58++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table143_id").value = value58;
+  value58++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T06 
 // 15 table.  
 
-  var value17 = document.getElementById("table15_id").value;
-  value17++;
-  var div17 = 1;
+var value17 = document.getElementById("table15_id").value;
+value17++;
+var div17 = 1;
 
-  document.getElementById("t06Script").addEventListener('click', t06);
-  function t06() {
-    let bendr17 = "add_to_me17" + div17;
-    div17++;
-    document.getElementById(bendr17).innerHTML +=
-      `
+document.getElementById("t06Script").addEventListener('click', t06);
+function t06() {
+  let bendr17 = "add_to_me17" + div17;
+  div17++;
+  document.getElementById(bendr17).innerHTML +=
+    `
       <div class="form-row">
     <div class="col-md-1 mb-3">
       <label for=""><br></label>
@@ -1510,33 +1516,33 @@
   </div>
                 <div id="add_to_me17` + div17 + `">
               `;
-    document.getElementById("table15_id").value = value17;
-    value17++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table15_id").value = value17;
+  value17++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T07 
 // 16 table.  
 
-  var value18 = document.getElementById("table16_id").value;
-  value18++;
-  var div18 = 1;
+var value18 = document.getElementById("table16_id").value;
+value18++;
+var div18 = 1;
 
-  document.getElementById("t07Script").addEventListener('click', t07);
-  function t07() {
-    let bendr18 = "add_to_me18" + div18;
-    div18++;
-    document.getElementById(bendr18).innerHTML +=
-      `
+document.getElementById("t07Script").addEventListener('click', t07);
+function t07() {
+  let bendr18 = "add_to_me18" + div18;
+  div18++;
+  document.getElementById(bendr18).innerHTML +=
+    `
                 <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <label for=""><br></label>
@@ -1573,33 +1579,33 @@
               </div>
               <div id="add_to_me18` + div18 + `">
               `;
-    document.getElementById("table16_id").value = value18;
-    value18++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table16_id").value = value18;
+  value18++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T08 
 // 17 table.  
 
-  var value19 = document.getElementById("table17_id").value;
-  value19++;
-  var div19 = 1;
+var value19 = document.getElementById("table17_id").value;
+value19++;
+var div19 = 1;
 
-  document.getElementById("t08Script").addEventListener('click', t08);
-  function t08() {
-    let bendr19 = "add_to_me19" + div19;
-    div19++;
-    document.getElementById(bendr19).innerHTML +=
-      `
+document.getElementById("t08Script").addEventListener('click', t08);
+function t08() {
+  let bendr19 = "add_to_me19" + div19;
+  div19++;
+  document.getElementById(bendr19).innerHTML +=
+    `
       <div class="form-row">
         <div class="col-md-1 mb-3">
           <label for=""><br></label>
@@ -1636,33 +1642,33 @@
       </div>
       <div id="add_to_me19` + div19 + `">
               `;
-    document.getElementById("table17_id").value = value19;
-    value19++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table17_id").value = value19;
+  value19++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T09 
 // 18 table.  
 
-  var value20 = document.getElementById("table18_id").value;
-  value20++;
-  var div20 = 1;
+var value20 = document.getElementById("table18_id").value;
+value20++;
+var div20 = 1;
 
-  document.getElementById("t09Script").addEventListener('click', t09);
-  function t09() {
-    let bendr20 = "add_to_me20" + div20;
-    div20++;
-    document.getElementById(bendr20).innerHTML +=
-      `
+document.getElementById("t09Script").addEventListener('click', t09);
+function t09() {
+  let bendr20 = "add_to_me20" + div20;
+  div20++;
+  document.getElementById(bendr20).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <label for=""><br></label>
@@ -1699,33 +1705,33 @@
               </div>
               <div id="add_to_me20` + div20 + `">
               `;
-    document.getElementById("table18_id").value = value20;
-    value20++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table18_id").value = value20;
+  value20++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T10 
 // 19 table.  
 
-  var value21 = document.getElementById("table19_id").value;
-  value21++;
-  var div21 = 1;
+var value21 = document.getElementById("table19_id").value;
+value21++;
+var div21 = 1;
 
-  document.getElementById("t10Script").addEventListener('click', t10);
-  function t10() {
-    let bendr21 = "add_to_me21" + div21;
-    div21++;
-    document.getElementById(bendr21).innerHTML +=
-      `
+document.getElementById("t10Script").addEventListener('click', t10);
+function t10() {
+  let bendr21 = "add_to_me21" + div21;
+  div21++;
+  document.getElementById(bendr21).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                     <label for=""><br></label>
@@ -1753,7 +1759,7 @@
                   <div class="col-md-2 mb-3">
                     <label for="">Dalyvių skaičius
                     </label>
-                    <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk` + value21 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                    <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk` + value21 + `" placeholder="" autocomplete="off"  min="0">
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="">Kiti komentarai</label>
@@ -1770,33 +1776,33 @@
                   </div>
                 <div id="add_to_me21` + div21 + `">
               `;
-    document.getElementById("table19_id").value = value21;
-    value21++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table19_id").value = value21;
+  value21++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T11 
 // 20 table.  
 
-  var value22 = document.getElementById("table20_id").value;
-  value22++;
-  var div22 = 1;
+var value22 = document.getElementById("table20_id").value;
+value22++;
+var div22 = 1;
 
-  document.getElementById("t11Script").addEventListener('click', t11);
-  function t11() {
-    let bendr22 = "add_to_me22" + div22;
-    div22++;
-    document.getElementById(bendr22).innerHTML +=
-      `
+document.getElementById("t11Script").addEventListener('click', t11);
+function t11() {
+  let bendr22 = "add_to_me22" + div22;
+  div22++;
+  document.getElementById(bendr22).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                   <label for=""><br></label>
@@ -1824,7 +1830,7 @@
                   <div class="col-md-2 mb-3">
                     <label for="">Dalyvių skaičius
                     </label>
-                    <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk` + value22 + `" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+                    <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk` + value22 + `" placeholder="" autocomplete="off"  min="0">
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="">Kiti komentarai  </label>
@@ -1841,33 +1847,33 @@
                   </div>
                 <div id="add_to_me22` + div22 + `">
               `;
-    document.getElementById("table20_id").value = value22;
-    value22++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table20_id").value = value22;
+  value22++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T12 
 // 21 table.  
 
-  var value23 = document.getElementById("table21_id").value;
-  value23++;
-  var div23 = 1;
+var value23 = document.getElementById("table21_id").value;
+value23++;
+var div23 = 1;
 
-  document.getElementById("t12Script").addEventListener('click', t12);
-  function t12() {
-    let bendr23 = "add_to_me23" + div23;
-    div23++;
-    document.getElementById(bendr23).innerHTML +=
-      `
+document.getElementById("t12Script").addEventListener('click', t12);
+function t12() {
+  let bendr23 = "add_to_me23" + div23;
+  div23++;
+  document.getElementById(bendr23).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="tMTEP3_T12nr` + value23 + `" placeholder="" autocomplete="off" value="` + value23 + `" readonly="readonly">
@@ -1883,33 +1889,33 @@
                 </div>
                 <div id="add_to_me23` + div23 + `">
               `;
-    document.getElementById("table21_id").value = value23;
-    value23++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table21_id").value = value23;
+  value23++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T13 
 // 22 table.  
 
-  var value24 = document.getElementById("table22_id").value;
-  value24++;
-  var div24 = 1;
+var value24 = document.getElementById("table22_id").value;
+value24++;
+var div24 = 1;
 
-  document.getElementById("t13Script").addEventListener('click', t13);
-  function t13() {
-    let bendr24 = "add_to_me24" + div24;
-    div24++;
-    document.getElementById(bendr24).innerHTML +=
-      `
+document.getElementById("t13Script").addEventListener('click', t13);
+function t13() {
+  let bendr24 = "add_to_me24" + div24;
+  div24++;
+  document.getElementById(bendr24).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
 
@@ -1935,33 +1941,33 @@
                 </div>
                 <div id="add_to_me24` + div24 + `">
               `;
-    document.getElementById("table22_id").value = value24;
-    value24++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table22_id").value = value24;
+  value24++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_T14 
 // 23 table.  
 
-  var value25 = document.getElementById("table23_id").value;
-  value25++;
-  var div25 = 1;
+var value25 = document.getElementById("table23_id").value;
+value25++;
+var div25 = 1;
 
-  document.getElementById("t14Script").addEventListener('click', t14);
-  function t14() {
-    let bendr25 = "add_to_me25" + div25;
-    div25++;
-    document.getElementById(bendr25).innerHTML +=
-      `
+document.getElementById("t14Script").addEventListener('click', t14);
+function t14() {
+  let bendr25 = "add_to_me25" + div25;
+  div25++;
+  document.getElementById(bendr25).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
 
@@ -1983,32 +1989,32 @@
                 </div>
                 <div id="add_to_me25` + div25 + `">
               `;
-    document.getElementById("table23_id").value = value25;
-    value25++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table23_id").value = value25;
+  value25++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // TMTEP3_S 
 
-  var value26 = document.getElementById("tableTMTEP3_S_id").value;
-  value26++;
-  var div26 = 1;
+var value26 = document.getElementById("tableTMTEP3_S_id").value;
+value26++;
+var div26 = 1;
 
-  document.getElementById("t15Script").addEventListener('click', t15);
-  function t15() {
-    let bendr26 = "add_to_me26" + div26;
-    div26++;
-    document.getElementById(bendr26).innerHTML +=
-      `
+document.getElementById("t15Script").addEventListener('click', t15);
+function t15() {
+  let bendr26 = "add_to_me26" + div26;
+  div26++;
+  document.getElementById(bendr26).innerHTML +=
+    `
       <div class="form-row">
       <div class="col-md-1 mb-3">
         <input type="text" class="form-control text-center" name="tMTEP3_Snr` + value26 + `" placeholder="" autocomplete="off" value="` + value26 + `" readonly="readonly">
@@ -2022,34 +2028,34 @@
       </div>
       <div id="add_to_me26` + div26 + `">
               `;
-    document.getElementById("tableTMTEP3_S_id").value = value26;
-    value26++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("tableTMTEP3_S_id").value = value26;
+  value26++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // KV01
 // 24 table 1
 // Mokymo(si) komp 
 
-  var value59 = document.getElementById("table241_id").value;
-  value59++;
-  var div59 = 1;
+var value59 = document.getElementById("table241_id").value;
+value59++;
+var div59 = 1;
 
-  document.getElementById("mokymoScript").addEventListener('click', mokymo);
-  function mokymo() {
-    let bendr59 = "add_to_meN03" + div59;
-    div59++;
-    document.getElementById(bendr59).innerHTML +=
-      `
+document.getElementById("mokymoScript").addEventListener('click', mokymo);
+function mokymo() {
+  let bendr59 = "add_to_meN03" + div59;
+  div59++;
+  document.getElementById(bendr59).innerHTML +=
+    `
       <div class="form-row">
       <div class="col-md-2 mb-3">
           </div>
@@ -2060,42 +2066,49 @@
             <textarea type="text" rows="1" class="form-control " name="kTOV4_mokymopazymNr` + value59 + `" autocomplete="off"></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmLT1_` + value59 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValLT` + value59 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmLT1_` + value59 + `"  class="form-control text-center" name="kTOV4_mokymotrukmeValLT` + value59 + `" min="0"  autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" rows="1" id="trukmNeLT1_` + value59 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT` + value59 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" rows="1" id="trukmNeLT1_` + value59 + `"  class="form-control text-center" name="kTOV4_mokymotrukmeValNeLT` + value59 + `" min="0"  autocomplete="off">
           </div>
           </div>
                 <div id="add_to_meN03` + div59 + `">
                   </div>
               `;
-    document.getElementById("table241_id").value = value59;
-    value59++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
+  document.getElementById("table241_id").value = value59;
+  value59++;
 
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  // 1 table
+for (let zx = 1; zx <= document.getElementById("table241_id").value; zx++) {
+  document.getElementById("trukmLT1_" + zx).addEventListener('change', calc24); 
+  document.getElementById("trukmNeLT1_" + zx).addEventListener('change', calc24);
+}
+
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 24 table 2
 // Tyrimų_komp 
 
-  var value60 = document.getElementById("table242_id").value;
-  value60++;
-  var div60 = 1;
+var value60 = document.getElementById("table242_id").value;
+value60++;
+var div60 = 1;
 
-  document.getElementById("tyrimuScript").addEventListener('click', tyrimu);
-  function tyrimu() {
-    let bendr60 = "add_to_meN04" + div60;
-    div60++;
-    document.getElementById(bendr60).innerHTML +=
-      `
+document.getElementById("tyrimuScript").addEventListener('click', tyrimu);
+function tyrimu() {
+  let bendr60 = "add_to_meN04" + div60;
+  div60++;
+  document.getElementById(bendr60).innerHTML +=
+    `
     <div class="form-row">
                 <div class="col-md-2 mb-3">
                 </div>
@@ -2106,42 +2119,47 @@
                   <textarea type="text" rows="1" class="form-control " name="kTOV4_tyrimupazymNr` + value60 + `" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" rows="1" id="trukmLT2_` + value60 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValLT` + value60 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  <input type="number" rows="1" id="trukmLT2_` + value60 + `"  class="form-control text-center" name="kTOV4_tyrimutrukmeValLT` + value60 + `" min="0"  autocomplete="off">
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" rows="1" id="trukmNeLT2_` + value60 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT` + value60 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  <input type="number" rows="1" id="trukmNeLT2_` + value60 + `"  class="form-control text-center" name="kTOV4_tyrimutrukmeValNeLT` + value60 + `" min="0"  autocomplete="off">
                 </div>
               </div>
               <div id="add_to_meN04` + div60 + `">
                 </div>
             `;
-    document.getElementById("table242_id").value = value60;
-    value60++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table242_id").value = value60;
+  value60++;
+  // 2 table
+for (let zx = 1; zx <= document.getElementById("table242_id").value; zx++) {
+  document.getElementById("trukmLT2_" + zx).addEventListener('change', calc24); 
+  document.getElementById("trukmNeLT2_" + zx).addEventListener('change', calc24);
+}
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 24 table 3
 // Bendrosios_komp 
 
-  var value61 = document.getElementById("table243_id").value;
-  value61++;
-  var div61 = 1;
- 
-  document.getElementById("bendrosiosScript").addEventListener('click', bendrosios);
-  function bendrosios() {
-    let bendr61 = "add_to_meN05" + div61;
-    div61++;
-    document.getElementById(bendr61).innerHTML +=
-      `
+var value61 = document.getElementById("table243_id").value;
+value61++;
+var div61 = 1;
+
+document.getElementById("bendrosiosScript").addEventListener('click', bendrosios);
+function bendrosios() {
+  let bendr61 = "add_to_meN05" + div61;
+  div61++;
+  document.getElementById(bendr61).innerHTML +=
+    `
                 <div class="form-row">
                  <div class="col-md-2 mb-3">
                  </div>
@@ -2152,42 +2170,47 @@
                    <textarea type="text" rows="1" class="form-control " name="kTOV4_bendrosiospazymNr` + value61 + `" autocomplete="off"></textarea>
                  </div>
                  <div class="col-md-2 mb-3">
-                   <input type="number" rows="1" id="trukmLT3_` + value61 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT` + value61 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                   <input type="number" rows="1" id="trukmLT3_` + value61 + `"  class="form-control text-center" name="kTOV4_bendrosiostrukmeValLT` + value61 + `" min="0"  autocomplete="off">
                  </div>
                  <div class="col-md-2 mb-3">
-                   <input type="number" rows="1" id="trukmNeLT3_` + value61 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT` + value61 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                   <input type="number" rows="1" id="trukmNeLT3_` + value61 + `"  class="form-control text-center" name="kTOV4_bendrosiostrukmeValNeLT` + value61 + `" min="0"  autocomplete="off">
                 </div>
                </div>
               <div id="add_to_meN05` + div61 + `">
                 </div>
             `;
-    document.getElementById("table243_id").value = value61;
-    value61++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table243_id").value = value61;
+  value61++;
+  // 3 table
+for (let zx = 1; zx <= document.getElementById("table243_id").value; zx++) {
+  document.getElementById("trukmLT3_" + zx).addEventListener('change', calc24); 
+  document.getElementById("trukmNeLT3_" + zx).addEventListener('change', calc24);
+}
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 24 table 4
 // Dalykinės_komp 
 
-  var value62 = document.getElementById("table244_id").value;
-  value62++;
-  var div62 = 1;
+var value62 = document.getElementById("table244_id").value;
+value62++;
+var div62 = 1;
 
-  document.getElementById("dalykinesScript").addEventListener('click', dalykines);
-  function dalykines() {
-    let bendr62 = "add_to_meN06" + div62;
-    div62++;
-    document.getElementById(bendr62).innerHTML +=
-      `
+document.getElementById("dalykinesScript").addEventListener('click', dalykines);
+function dalykines() {
+  let bendr62 = "add_to_meN06" + div62;
+  div62++;
+  document.getElementById(bendr62).innerHTML +=
+    `
     <div class="form-row">
                 <div class="col-md-2 mb-3">
                 </div>
@@ -2198,41 +2221,46 @@
                   <textarea type="text" rows="1" class="form-control " name="kTOV4_dalykpazymNr` + value62 + `" autocomplete="off"></textarea>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" rows="1" id="trukmLT4_` + value62 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValLT` + value62 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  <input type="number" rows="1" id="trukmLT4_` + value62 + `"  class="form-control text-center" name="kTOV4_dalyktrukmeValLT` + value62 + `" min="0"  autocomplete="off">
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="number" rows="1" id="trukmNeLT4_` + value62 + `" onchange="calc24()" class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT` + value62 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+                  <input type="number" rows="1" id="trukmNeLT4_` + value62 + `"  class="form-control text-center" name="kTOV4_dalyktrukmeValNeLT` + value62 + `" min="0"  autocomplete="off">
                 </div>
               </div>
               <div id="add_to_meN06` + div62 + `">
                 </div>
             `;
-    document.getElementById("table244_id").value = value62;
-    value62++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table244_id").value = value62;
+  value62++;
+  // 4 table
+for (let zx = 1; zx <= document.getElementById("table244_id").value; zx++) {
+  document.getElementById("trukmLT4_" + zx).addEventListener('change', calc24); 
+  document.getElementById("trukmNeLT4_" + zx).addEventListener('change', calc24);
+}
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 25 table 
 
-  var value63 = document.getElementById("table25_id").value; // pagal id
-  value63++;
-  var div63 = 1;
+var value63 = document.getElementById("table25_id").value; // pagal id
+value63++;
+var div63 = 1;
 
-  document.getElementById("kTOV4_25Script").addEventListener('click', kTOV4_25);
-  function kTOV4_25() {
-    let bendr63 = "add_to_meN07" + div63;
-    div63++;
-    document.getElementById(bendr63).innerHTML +=
-      `
+document.getElementById("kTOV4_25Script").addEventListener('click', kTOV4_25);
+function kTOV4_25() {
+  let bendr63 = "add_to_meN07" + div63;
+  div63++;
+  document.getElementById(bendr63).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center" name="kTOV4_25nr` + value63 + `" placeholder="" autocomplete="off" value="` + value63 + `" readonly="readonly">
@@ -2261,33 +2289,33 @@
                 <div id="add_to_meN07` + div63 + `">
                   </div>
               `;
-    document.getElementById("table25_id").value = value63;
-    value63++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table25_id").value = value63;
+  value63++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 //kTOV4_26
 // 26 table 
 
-  var value64 = document.getElementById("table26_id").value;
-  value64++;
-  var div64 = 1;
+var value64 = document.getElementById("table26_id").value;
+value64++;
+var div64 = 1;
 
-  document.getElementById("kTOV4_26Script").addEventListener('click', kTOV4_26);
-  function kTOV4_26() {
-    let bendr64 = "add_to_meN08" + div64;
-    div64++;
-    document.getElementById(bendr64).innerHTML +=
-      `
+document.getElementById("kTOV4_26Script").addEventListener('click', kTOV4_26);
+function kTOV4_26() {
+  let bendr64 = "add_to_meN08" + div64;
+  div64++;
+  document.getElementById(bendr64).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <input type="text" class="form-control text-center" name="kTOV4_26nr` + value64 + `" placeholder="" autocomplete="off" value="` + value64 + `" readonly="readonly">
@@ -2305,7 +2333,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal` + value64 + `" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="kTOV4_26trukmeVal` + value64 + `" min="0"  autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control " name="kTOV4_26data` + value64 + `" autocomplete="off"></textarea>
@@ -2314,33 +2342,33 @@
                 <div id="add_to_meN08` + div64 + `">
                   </div>
               `;
-    document.getElementById("table26_id").value = value64;
-    value64++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table26_id").value = value64;
+  value64++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 //kTOV4_KV03
 // 27 table 
 
-  var value27 = document.getElementById("table27_id").value;
-  value27++;
-  var div27 = 1;
+var value27 = document.getElementById("table27_id").value;
+value27++;
+var div27 = 1;
 
-  document.getElementById("kv03Script").addEventListener('click', kv03);
-  function kv03() {
-    let bendr27 = "add_to_me27" + div27;
-    div27++;
-    document.getElementById(bendr27).innerHTML +=
-      `
+document.getElementById("kv03Script").addEventListener('click', kv03);
+function kv03() {
+  let bendr27 = "add_to_me27" + div27;
+  div27++;
+  document.getElementById(bendr27).innerHTML +=
+    `
       <div class="form-row">
                 <div class="col-md-1 mb-3">
                   <input type="text" class="form-control text-center" name="kTOV4_KV03nr` + value27 + `" autocomplete="off" value="` + value27 + `" readonly="readonly">
@@ -2502,33 +2530,33 @@
                 </div>
                 <div id="add_to_me27` + div27 + `">
               `;
-    document.getElementById("table27_id").value = value27;
-    value27++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table27_id").value = value27;
+  value27++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kTOV4_O01_1 
 // 28.1. table  
 
-  var value28 = document.getElementById("table281_id").value;
-  value28++;
-  var div28 = 1;
+var value28 = document.getElementById("table281_id").value;
+value28++;
+var div28 = 1;
 
-  document.getElementById("o01Script").addEventListener('click', o01);
-  function o01() {
-    let bendr28 = "add_to_me28" + div28;
-    div28++;
-    document.getElementById(bendr28).innerHTML +=
-      `
+document.getElementById("o01Script").addEventListener('click', o01);
+function o01() {
+  let bendr28 = "add_to_me28" + div28;
+  div28++;
+  document.getElementById(bendr28).innerHTML +=
+    `
 
       <div class="form-row">
                 <div class="col-md-1 mb-3">
@@ -2543,33 +2571,33 @@
                 </div>
                 <div id="add_to_me28` + div28 + `">
               `;
-    document.getElementById("table281_id").value = value28;
-    value28++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table281_id").value = value28;
+  value28++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kTOV4_O01_2 
 // 28.2.table  
 
-  var value29 = document.getElementById("table282_id").value;
-  value29++;
-  var div29 = 1;
+var value29 = document.getElementById("table282_id").value;
+value29++;
+var div29 = 1;
 
-  document.getElementById("o01_2Script").addEventListener('click', o01_2);
-  function o01_2() {
-    let bendr29 = "add_to_me29" + div29;
-    div29++;
-    document.getElementById(bendr29).innerHTML +=
-      `
+document.getElementById("o01_2Script").addEventListener('click', o01_2);
+function o01_2() {
+  let bendr29 = "add_to_me29" + div29;
+  div29++;
+  document.getElementById(bendr29).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                     <label for=""><br></label>
@@ -2599,33 +2627,33 @@
                   </div>
                 <div id="add_to_me29` + div29 + `">
               `;
-    document.getElementById("table282_id").value = value29;
-    value29++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table282_id").value = value29;
+  value29++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 //kTOV4_29
 // 29 table  
 
-  var value65 = document.getElementById("table29_id").value;
-  value65++;
-  var div65 = 1;
+var value65 = document.getElementById("table29_id").value;
+value65++;
+var div65 = 1;
 
-  document.getElementById("kTOV4_29Script").addEventListener('click', kTOV4_29);
-  function kTOV4_29() {
-    let bendr65 = "add_to_meN09" + div65;
-    div65++;
-    document.getElementById(bendr65).innerHTML +=
-      `
+document.getElementById("kTOV4_29Script").addEventListener('click', kTOV4_29);
+function kTOV4_29() {
+  let bendr65 = "add_to_meN09" + div65;
+  div65++;
+  document.getElementById(bendr65).innerHTML +=
+    `
       <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
@@ -2645,32 +2673,32 @@
                 <div id="add_to_meN09` + div65 + `">
                   </div>
               `;
-    document.getElementById("table29_id").value = value65;
-    value65++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table29_id").value = value65;
+  value65++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kTOV4_S 
 
-  var value30 = document.getElementById("tablekTOV4_S_id").value;
-  value30++;
-  var div30 = 1;
+var value30 = document.getElementById("tablekTOV4_S_id").value;
+value30++;
+var div30 = 1;
 
-  document.getElementById("o01_3Script").addEventListener('click', o01_3);
-  function o01_3() {
-    let bendr30 = "add_to_me30" + div30;
-    div30++;
-    document.getElementById(bendr30).innerHTML +=
-      `
+document.getElementById("o01_3Script").addEventListener('click', o01_3);
+function o01_3() {
+  let bendr30 = "add_to_me30" + div30;
+  div30++;
+  document.getElementById(bendr30).innerHTML +=
+    `
       <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_Snr` + value30 + `" placeholder="" autocomplete="off" value="` + value30 + `" readonly="readonly">
@@ -2684,33 +2712,33 @@
       </div>
       <div id="add_to_me30` + div30 + `">
               `;
-    document.getElementById("tablekTOV4_S_id").value = value30;
-    value30++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("tablekTOV4_S_id").value = value30;
+  value30++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kV5_KT02 
 // 30 table 
 
-  var value32 = document.getElementById("table30_id").value;
-  value32++;
-  var div32 = 1;
+var value32 = document.getElementById("table30_id").value;
+value32++;
+var div32 = 1;
 
-  document.getElementById("kt02Script").addEventListener('click', kt02);
-  function kt02() {
-    let bendr32 = "add_to_me32" + div32;
-    div32++;
-    document.getElementById(bendr32).innerHTML +=
-      `
+document.getElementById("kt02Script").addEventListener('click', kt02);
+function kt02() {
+  let bendr32 = "add_to_me32" + div32;
+  div32++;
+  document.getElementById(bendr32).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                     <input type="text" class="form-control text-center" name="kV5_KT02nr` + value32 + `" autocomplete="off" value="` + value32 + `" readonly="readonly">
@@ -2938,33 +2966,33 @@
                 </div>
                 <div id="add_to_me32` + div32 + `">
               `;
-    document.getElementById("table30_id").value = value32;
-    value32++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table30_id").value = value32;
+  value32++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kV5_KT01 
 // 31 table 
 
-  var value31 = document.getElementById("table31_id").value;
-  value31++;
-  var div31 = 1;
+var value31 = document.getElementById("table31_id").value;
+value31++;
+var div31 = 1;
 
-  document.getElementById("kt01Script").addEventListener('click', kt01);
-  function kt01() {
-    let bendr31 = "add_to_me31" + div31;
-    div31++;
-    document.getElementById(bendr31).innerHTML +=
-      `
+document.getElementById("kt01Script").addEventListener('click', kt01);
+function kt01() {
+  let bendr31 = "add_to_me31" + div31;
+  div31++;
+  document.getElementById(bendr31).innerHTML +=
+    `
       <div class="form-row">
                   <div class="col-md-1 mb-3">
                     <label for=""><br></label>
@@ -3202,32 +3230,32 @@
                   </div>
                 <div id="add_to_me31` + div31 + `">
               `;
-    document.getElementById("table31_id").value = value31;
-    value31++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table31_id").value = value31;
+  value31++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 32 table 1
 
-  var value66 = document.getElementById("table321_id").value;
-  value66++;
-  var div66 = 1;
+var value66 = document.getElementById("table321_id").value;
+value66++;
+var div66 = 1;
 
-  document.getElementById("kTOV4_32socScript").addEventListener('click', kTOV4_32soc);
-  function kTOV4_32soc() {
-    let bendr66 = "add_to_meN10" + div66;
-    div66++;
-    document.getElementById(bendr66).innerHTML +=
-      `
+document.getElementById("kTOV4_32socScript").addEventListener('click', kTOV4_32soc);
+function kTOV4_32soc() {
+  let bendr66 = "add_to_meN10" + div66;
+  div66++;
+  document.getElementById(bendr66).innerHTML +=
+    `
       <div class="form-row">
       <div class="col-md-3 mb-3">
           </div>
@@ -3238,32 +3266,32 @@
                 <div id="add_to_meN10` + div66 + `">
                   </div>
               `;
-    document.getElementById("table321_id").value = value66;
-    value66++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table321_id").value = value66;
+  value66++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 32 table 2
 
-  var value67 = document.getElementById("table322_id").value;
-  value67++;
-  var div67 = 1;
+var value67 = document.getElementById("table322_id").value;
+value67++;
+var div67 = 1;
 
-  document.getElementById("kTOV4_32aplScript").addEventListener('click', kTOV4_32apl);
-  function kTOV4_32apl() {
-    let bendr67 = "add_to_meN11" + div67;
-    div67++;
-    document.getElementById(bendr67).innerHTML +=
-      `
+document.getElementById("kTOV4_32aplScript").addEventListener('click', kTOV4_32apl);
+function kTOV4_32apl() {
+  let bendr67 = "add_to_meN11" + div67;
+  div67++;
+  document.getElementById(bendr67).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-3 mb-3">
             </div>
@@ -3274,32 +3302,32 @@
                 <div id="add_to_meN11` + div67 + `">
                   </div>
               `;
-    document.getElementById("table322_id").value = value67;
-    value67++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table322_id").value = value67;
+  value67++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 32 table 3
 
-  var value68 = document.getElementById("table323_id").value;
-  value68++;
-  var div68 = 1;
+var value68 = document.getElementById("table323_id").value;
+value68++;
+var div68 = 1;
 
-  document.getElementById("kTOV4_32valsScript").addEventListener('click', kTOV4_32vals);
-  function kTOV4_32vals() {
-    let bendr68 = "add_to_meN12" + div68;
-    div68++;
-    document.getElementById(bendr68).innerHTML +=
-      `
+document.getElementById("kTOV4_32valsScript").addEventListener('click', kTOV4_32vals);
+function kTOV4_32vals() {
+  let bendr68 = "add_to_meN12" + div68;
+  div68++;
+  document.getElementById(bendr68).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-3 mb-3">
             </div>
@@ -3310,32 +3338,32 @@
                 <div id="add_to_meN12` + div68 + `">
                   </div>
               `;
-    document.getElementById("table323_id").value = value68;
-    value68++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table323_id").value = value68;
+  value68++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 32 table 4
 
-  var value69 = document.getElementById("table324_id").value;
-  value69++;
-  var div69 = 1;
+var value69 = document.getElementById("table324_id").value;
+value69++;
+var div69 = 1;
 
-  document.getElementById("kTOV4_32etnoScript").addEventListener('click', kTOV4_32etno);
-  function kTOV4_32etno() {
-    let bendr69 = "add_to_meN13" + div69;
-    div69++;
-    document.getElementById(bendr69).innerHTML +=
-      `
+document.getElementById("kTOV4_32etnoScript").addEventListener('click', kTOV4_32etno);
+function kTOV4_32etno() {
+  let bendr69 = "add_to_meN13" + div69;
+  div69++;
+  document.getElementById(bendr69).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-3 mb-3">
             </div>
@@ -3346,32 +3374,32 @@
                 <div id="add_to_meN13` + div69 + `">
                   </div>
               `;
-    document.getElementById("table324_id").value = value69;
-    value69++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table324_id").value = value69;
+  value69++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // 32 table 5
 
-  var value70 = document.getElementById("table325_id").value;
-  value70++;
-  var div70 = 1;
+var value70 = document.getElementById("table325_id").value;
+value70++;
+var div70 = 1;
 
-  document.getElementById("kTOV4_32savScript").addEventListener('click', kTOV4_32sav);
-  function kTOV4_32sav() {
-    let bendr70 = "add_to_meN14" + div70;
-    div70++;
-    document.getElementById(bendr70).innerHTML +=
-      `
+document.getElementById("kTOV4_32savScript").addEventListener('click', kTOV4_32sav);
+function kTOV4_32sav() {
+  let bendr70 = "add_to_meN14" + div70;
+  div70++;
+  document.getElementById(bendr70).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-3 mb-3">
             </div>
@@ -3382,33 +3410,33 @@
                 <div id="add_to_meN14` + div70 + `">
                   </div>
               `;
-    document.getElementById("table325_id").value = value70;
-    value70++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table325_id").value = value70;
+  value70++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kV5_33 
 // 33 table 
 
-  var value71 = document.getElementById("table33_id").value;
-  value71++;
-  var div71 = 1;
+var value71 = document.getElementById("table33_id").value;
+value71++;
+var div71 = 1;
 
-  document.getElementById("kV5_33Script").addEventListener('click', kV5_33);
-  function kV5_33() {
-    let bendr71 = "add_to_meN15" + div71;
-    div71++;
-    document.getElementById(bendr71).innerHTML +=
-      `
+document.getElementById("kV5_33Script").addEventListener('click', kV5_33);
+function kV5_33() {
+  let bendr71 = "add_to_meN15" + div71;
+  div71++;
+  document.getElementById(bendr71).innerHTML +=
+    `
       <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
@@ -3452,33 +3480,33 @@
                 <div id="add_to_meN15` + div71 + `">
                     </div>
               `;
-    document.getElementById("table33_id").value = value71;
-    value71++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
+  document.getElementById("table33_id").value = value71;
+  value71++;
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
   }
+
+  function OnInput(e) {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  }
+}
 
 // kV5_34 
 // 34 table 
 
-  var value72 = document.getElementById("table34_id").value;
-  value72++;
-  var div72 = 1;
+var value72 = document.getElementById("table34_id").value;
+value72++;
+var div72 = 1;
 
-  document.getElementById("kV5_34Script").addEventListener('click', kV5_34); 
-  function kV5_34() {
-    let bendr72 = "add_to_meN16" + div72;
-    div72++;
-    document.getElementById(bendr72).innerHTML +=
-      `
+document.getElementById("kV5_34Script").addEventListener('click', kV5_34);
+function kV5_34() {
+  let bendr72 = "add_to_meN16" + div72;
+  div72++;
+  document.getElementById(bendr72).innerHTML +=
+    `
       <div class="form-row">
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
@@ -3516,21 +3544,8 @@
                 <div id="add_to_meN16` + div72 + `">
                   </div>
               `;
-    document.getElementById("table34_id").value = value72;
-    value72++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-
- //textarea size
+  document.getElementById("table34_id").value = value72;
+  value72++;
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -3541,4 +3556,17 @@
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
   }
+}
+
+//textarea size
+var tx = document.getElementsByTagName('textarea');
+for (var i = 0; i < tx.length; i++) {
+  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+  tx[i].addEventListener("input", OnInput, false);
+}
+
+function OnInput(e) {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+}
 
