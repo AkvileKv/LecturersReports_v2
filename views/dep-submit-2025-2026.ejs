@@ -45,7 +45,7 @@
       <% if (user.busenaVedejo25_26 === "užrakinta") { %>
       <br>
       <div class="text-center">
-        <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
+        <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
       </div>
       <p class="lead text-danger noprint text-center">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į administratorių.</p>
       <% } else { %>
@@ -64,7 +64,7 @@
 
         <!-- 1 lentelė -->
         <!-- mV2_D04 -->
-        <p class=" font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
+        <p class="font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
         <% var numb1 = 0; %>
         <%  user.mm2025_2026.katedrosVedejas.kKPP1_1.forEach(function(user){ %>
         <% numb1++; %>

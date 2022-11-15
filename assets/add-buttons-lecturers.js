@@ -1,3 +1,15 @@
+//AUTO SIZE for textarea 
+var tx = document.getElementsByTagName('textarea');
+for (var i = 0; i < tx.length; i++) {
+  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+  tx[i].addEventListener("input", OnInput, false);
+}
+
+function OnInput(e) {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+}
+
 //kD1_K01 
 //2 table 
 var value1 = document.getElementById("table2_id").value;
@@ -50,7 +62,7 @@ function addTable2() {
     document.getElementById("plan" + zx).addEventListener('change', calcTable2);
     document.getElementById("atl" + zx).addEventListener('change', calcTable2);
   }
-
+  // AUTO SIZE for textarea (new fields)
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -1357,8 +1369,8 @@ function t05() {
                 <div class="col-md-2 mb-3">
                   <select name="tMTEP3_T05atlygArNe` + value16 + `" class="form-select form-control">
                     <option value=""></option>
-                    <option class="others" <%if (user.atlygArNe === "Atlygintinai") { %> selected <% } %> value="Atlygintinai">Atlygintinai</option>
-                    <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
+                    <option class="others" value="Atlygintinai">Atlygintinai</option>
+                    <option class="others" value="Neatlygintinai">Neatlygintinai</option>
                   </select>
                 </div>
               </div>
@@ -2077,12 +2089,11 @@ function mokymo() {
               `;
   document.getElementById("table241_id").value = value59;
   value59++;
-
   // 1 table
-for (let zx = 1; zx <= document.getElementById("table241_id").value; zx++) {
-  document.getElementById("trukmLT1_" + zx).addEventListener('change', calc24); 
-  document.getElementById("trukmNeLT1_" + zx).addEventListener('change', calc24);
-}
+  for (let zx = 1; zx <= document.getElementById("table241_id").value; zx++) {
+    document.getElementById("trukmLT1_" + zx).addEventListener('change', calc24);
+    document.getElementById("trukmNeLT1_" + zx).addEventListener('change', calc24);
+  }
 
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
@@ -2131,10 +2142,10 @@ function tyrimu() {
   document.getElementById("table242_id").value = value60;
   value60++;
   // 2 table
-for (let zx = 1; zx <= document.getElementById("table242_id").value; zx++) {
-  document.getElementById("trukmLT2_" + zx).addEventListener('change', calc24); 
-  document.getElementById("trukmNeLT2_" + zx).addEventListener('change', calc24);
-}
+  for (let zx = 1; zx <= document.getElementById("table242_id").value; zx++) {
+    document.getElementById("trukmLT2_" + zx).addEventListener('change', calc24);
+    document.getElementById("trukmNeLT2_" + zx).addEventListener('change', calc24);
+  }
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -2182,10 +2193,10 @@ function bendrosios() {
   document.getElementById("table243_id").value = value61;
   value61++;
   // 3 table
-for (let zx = 1; zx <= document.getElementById("table243_id").value; zx++) {
-  document.getElementById("trukmLT3_" + zx).addEventListener('change', calc24); 
-  document.getElementById("trukmNeLT3_" + zx).addEventListener('change', calc24);
-}
+  for (let zx = 1; zx <= document.getElementById("table243_id").value; zx++) {
+    document.getElementById("trukmLT3_" + zx).addEventListener('change', calc24);
+    document.getElementById("trukmNeLT3_" + zx).addEventListener('change', calc24);
+  }
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -2233,10 +2244,10 @@ function dalykines() {
   document.getElementById("table244_id").value = value62;
   value62++;
   // 4 table
-for (let zx = 1; zx <= document.getElementById("table244_id").value; zx++) {
-  document.getElementById("trukmLT4_" + zx).addEventListener('change', calc24); 
-  document.getElementById("trukmNeLT4_" + zx).addEventListener('change', calc24);
-}
+  for (let zx = 1; zx <= document.getElementById("table244_id").value; zx++) {
+    document.getElementById("trukmLT4_" + zx).addEventListener('change', calc24);
+    document.getElementById("trukmNeLT4_" + zx).addEventListener('change', calc24);
+  }
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -2658,10 +2669,10 @@ function kTOV4_29() {
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center" name="kTOV4_29nr` + value65 + `" placeholder="" autocomplete="off" value="` + value65 + `" readonly="readonly">
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-8 mb-3">
               <textarea type="text" rows="1" class="form-control " name="kTOV4_29veikla` + value65 + `" placeholder="" autocomplete="off"></textarea>
             </div>
-            <div class="col-md-5 mb-3">
+            <div class="col-md-3 mb-3">
               <select name="kTOV4_29socPartneris` + value65 + `" class="form-select form-control">
                 <option value=""></option>
                 <option class="others" value="Mokslo ir švietimo institucijos">ŠV</option>
@@ -3546,6 +3557,8 @@ function kV5_34() {
               `;
   document.getElementById("table34_id").value = value72;
   value72++;
+
+  // AUTO SIZE for textarea (new fields)
   var tx = document.getElementsByTagName('textarea');
   for (var i = 0; i < tx.length; i++) {
     tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -3557,16 +3570,3 @@ function kV5_34() {
     this.style.height = (this.scrollHeight) + 'px';
   }
 }
-
-//textarea size
-var tx = document.getElementsByTagName('textarea');
-for (var i = 0; i < tx.length; i++) {
-  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-  tx[i].addEventListener("input", OnInput, false);
-}
-
-function OnInput(e) {
-  this.style.height = 'auto';
-  this.style.height = (this.scrollHeight) + 'px';
-}
-

@@ -1,9 +1,10 @@
 // add_button scripts for tables: 1, 3, 6, 30, mV2_S, 32, 34, TMTEP_S, 35, kTOV4_S, 39, veiklSavinalize   
-
 // 1 table 
   var iterNr1 = document.getElementById("table1_id").value;
   iterNr1++;
   var divNr1 = 1;
+
+  document.getElementById("addButtonTable01Script").addEventListener('click', addButtonTable01);
 
   function addButtonTable01() {
     let bendr1 = "add_to_me1" + divNr1;
@@ -261,6 +262,7 @@
               `;
     document.getElementById("table1_id").value = iterNr1;
     iterNr1++;
+    // AUTO SIZE for textarea (new fields)
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -277,6 +279,8 @@
   var iterNr2 = document.getElementById("table3_id").value;
   iterNr2++;
   var divNr2 = 1;
+
+  document.getElementById("addButtonTable03Script").addEventListener('click', addButtonTable03);
 
   function addButtonTable03() {
     let bendr2 = "add_to_me3" + divNr2;
@@ -533,6 +537,8 @@
   iterNr3++;
   var divNr3 = 1;
 
+  document.getElementById("addButtonTable06Script").addEventListener('click', addButtonTable06);
+
   function addButtonTable06() {
     let bendr3 = "add_to_me6" + divNr3;
     divNr3++;
@@ -643,11 +649,93 @@
       this.style.height = (this.scrollHeight) + 'px';
     }
   }
+  // mV2_S 
+  var iterNr5 = document.getElementById("tablemV2_S_id").value;
+  iterNr5++;
+  //console.log("iterNr5 scripte: "+ iterNr5);
+  var divNr5 = 1;
+
+  document.getElementById("mv2sScript").addEventListener('click', mv2s);
+
+  function mv2s() {
+    let bendr5 = "add_to_me5" + divNr5;
+    divNr5++;
+    document.getElementById(bendr5).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="mV2_Snr` + iterNr5 + `" placeholder="" autocomplete="off" value="` + iterNr5 + `" readonly="readonly">
+          </div>
+          <div class="col-md-6 mb-3">
+            <textarea rows="1" type="text" class="form-control" name="mV2_Sstiprybes` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-5 mb-3">
+            <textarea rows="1" type="text" class="form-control" name="mV2_Stobulintina` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
+
+                <div id="add_to_me5` + divNr5 + `">
+              `;
+    document.getElementById("tablemV2_S_id").value = iterNr5;
+    iterNr5++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+
+  // TMTEP_S 
+  var iterNr8 = document.getElementById("tabletMTEP3_S_id").value;
+  iterNr8++;
+  var divNr8 = 1;
+
+  document.getElementById("tmtepsScript").addEventListener('click', tmteps);
+
+  function tmteps() {
+    let bendr8 = "add_to_meTabletMTEP3_S" + divNr8;
+    divNr8++;
+    document.getElementById(bendr8).innerHTML +=
+      `
+      <div class="form-row">
+          <div class="col-md-1 mb-3">
+            <input type="text" class="form-control text-center" name="tMTEP3_Snr` + iterNr8 + `" placeholder="" autocomplete="off" value="` + iterNr8 + `" readonly="readonly">
+          </div>
+          <div class="col-md-6 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Sstiprybes` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+          <div class="col-md-5 mb-3">
+            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Stobulintina` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
+          </div>
+        </div>
+                <div id="add_to_meTabletMTEP3_S` + divNr8 + `">
+              `;
+    document.getElementById("tabletMTEP3_S_id").value = iterNr8;
+    iterNr8++;
+    var tx = document.getElementsByTagName('textarea');
+    for (var i = 0; i < tx.length; i++) {
+      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+      tx[i].addEventListener("input", OnInput, false);
+    }
+
+    function OnInput(e) {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    }
+  }
+
 
 // 30 table 
   var iterNr4 = document.getElementById("table30_id").value;
   iterNr4++;
   var divNr4 = 1;
+
+  document.getElementById("addButtonTable30Script").addEventListener('click', addButtonTable30);
 
   function addButtonTable30() {
     let bendr4 = "add_to_me30" + divNr4;
@@ -840,34 +928,33 @@
       this.style.height = (this.scrollHeight) + 'px';
     }
   }
+  // kTOV4_S 
+  var iterNr10 = document.getElementById("tablekTOV4_S_id").value;
+  iterNr10++;
+  var divNr10 = 1;
 
-// mV2_S 
-  var iterNr5 = document.getElementById("tablemV2_S_id").value;
-  iterNr5++;
-  //console.log("iterNr5 scripte: "+ iterNr5);
-  var divNr5 = 1;
+  document.getElementById("kTOV4_SScript").addEventListener('click', kTOV4_S);
 
-  function mv2s() {
-    let bendr5 = "add_to_me5" + divNr5;
-    divNr5++;
-    document.getElementById(bendr5).innerHTML +=
+  function kTOV4_S() {
+    let bendr10 = "add_to_meTablekTOV4_S" + divNr10;
+    divNr10++;
+    document.getElementById(bendr10).innerHTML +=
       `
       <div class="form-row">
           <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="mV2_Snr` + iterNr5 + `" placeholder="" autocomplete="off" value="` + iterNr5 + `" readonly="readonly">
+            <input type="text" class="form-control text-center" name="kTOV4_Snr` + iterNr10 + `" placeholder="" autocomplete="off" value="` + iterNr10 + `" readonly="readonly">
           </div>
           <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="mV2_Sstiprybes` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
           </div>
           <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control" name="mV2_Stobulintina` + iterNr5 + `" placeholder="" autocomplete="off"></textarea>
+            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-
-                <div id="add_to_me5` + divNr5 + `">
+                <div id="add_to_meTablekTOV4_S` + divNr10 + `">
               `;
-    document.getElementById("tablemV2_S_id").value = iterNr5;
-    iterNr5++;
+    document.getElementById("tablekTOV4_S_id").value = iterNr10;
+    iterNr10++;
     var tx = document.getElementsByTagName('textarea');
     for (var i = 0; i < tx.length; i++) {
       tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
@@ -884,6 +971,8 @@
   var iterNr6 = document.getElementById("table32_id").value;
   iterNr6++;
   var divNr6 = 1;
+
+  document.getElementById("addButtonTable32Script").addEventListener('click', addButtonTable32);
 
   function addButtonTable32() {
     let bendr6 = "add_to_me32" + divNr6;
@@ -1128,6 +1217,8 @@
   var iterNr7 = document.getElementById("table34_id").value;
   iterNr7++;
   var divNr7 = 1;
+
+  document.getElementById("addButtonTable34Script").addEventListener('click', addButtonTable34);
 
   function addButtonTable34() {
     let bendr7 = "add_to_me34" + divNr7;
@@ -1393,84 +1484,12 @@
     }
   }
 
-// TMTEP_S 
-  var iterNr8 = document.getElementById("tabletMTEP3_S_id").value;
-  iterNr8++;
-  var divNr8 = 1;
-
-  function tmteps() {
-    let bendr8 = "add_to_meTabletMTEP3_S" + divNr8;
-    divNr8++;
-    document.getElementById(bendr8).innerHTML +=
-      `
-      <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="tMTEP3_Snr` + iterNr8 + `" placeholder="" autocomplete="off" value="` + iterNr8 + `" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Sstiprybes` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="tMTEP3_Stobulintina` + iterNr8 + `" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-                <div id="add_to_meTabletMTEP3_S` + divNr8 + `">
-              `;
-    document.getElementById("tabletMTEP3_S_id").value = iterNr8;
-    iterNr8++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-
-// kTOV4_S 
-  var iterNr10 = document.getElementById("tablekTOV4_S_id").value;
-  iterNr10++;
-  var divNr10 = 1;
-
-  function kTOV4_S() {
-    let bendr10 = "add_to_meTablekTOV4_S" + divNr10;
-    divNr10++;
-    document.getElementById(bendr10).innerHTML +=
-      `
-      <div class="form-row">
-          <div class="col-md-1 mb-3">
-            <input type="text" class="form-control text-center" name="kTOV4_Snr` + iterNr10 + `" placeholder="" autocomplete="off" value="` + iterNr10 + `" readonly="readonly">
-          </div>
-          <div class="col-md-6 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Sstiprybes` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
-          </div>
-          <div class="col-md-5 mb-3">
-            <textarea rows="1" type="text" class="form-control " name="kTOV4_Stobulintina` + iterNr10 + `" placeholder="" autocomplete="off"></textarea>
-          </div>
-        </div>
-                <div id="add_to_meTablekTOV4_S` + divNr10 + `">
-              `;
-    document.getElementById("tablekTOV4_S_id").value = iterNr10;
-    iterNr10++;
-    var tx = document.getElementsByTagName('textarea');
-    for (var i = 0; i < tx.length; i++) {
-      tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-      tx[i].addEventListener("input", OnInput, false);
-    }
-
-    function OnInput(e) {
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-    }
-  }
-
 // 35 table 
   var iterNr9 = document.getElementById("table35_id").value;
   iterNr9++;
   var divNr9 = 1;
+
+  document.getElementById("addButtonTable35Script").addEventListener('click', addButtonTable35);
 
   function addButtonTable35() {
     let bendr9 = "add_to_me35" + divNr9;
@@ -1764,6 +1783,8 @@
   var iterNr11 = document.getElementById("table39_id").value;
   iterNr11++;
   var divNr11 = 1;
+  
+  document.getElementById("addButtonTable39Script").addEventListener('click', addButtonTable39);
 
   function addButtonTable39() {
     let bendr11 = "add_to_me39" + divNr11;
@@ -1802,6 +1823,8 @@
   iterNr13++;
   var divNr13 = 1;
 
+  document.getElementById("veiklSavianalizeScript").addEventListener('click', veiklSavianalize);
+
   function veiklSavianalize() {
     let bendr13 = "add_to_meTableVeiklS" + divNr13;
     divNr13++;
@@ -1833,17 +1856,4 @@
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
     }
-  }
-
-
-// AUTO SIZE for textarea (output fields)
-  var tx = document.getElementsByTagName('textarea');
-  for (var i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-    tx[i].addEventListener("input", OnInput, false);
-  }
-
-  function OnInput(e) {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
   }

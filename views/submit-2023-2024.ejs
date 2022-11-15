@@ -42,12 +42,12 @@
       <% if (user.busena23_24 === "užrakinta") { %>
       <br>
       <div class="text-center">
-        <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
+        <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
       </div>
       <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į katedros vedėją.</p>
       <% } else if (user.busena23_24 === "užrakintaVedėjo") { %>
       <div class="text-center">
-        <a type="button" class="btn btn-secondary noprint" href="javascript:window.print()">Spausdinti</a>
+        <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
       </div>
       <div class="row noprint">
         <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į katedros vedėją.</p>

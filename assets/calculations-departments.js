@@ -5,9 +5,27 @@
  /* The DOMContentLoaded event will fire as soon as the DOM hierarchy has 
  been fully constructed, the load event will do it when all the images 
  and sub-frames have finished loading. */
-
-  //window.onload = calc26();
+ 
   document.addEventListener('DOMContentLoaded', calc26);
+
+// reikalingas ciklas pirmai inicializacijai:
+// 1 table
+for (let zx = 1; zx <= document.getElementById("table261_id").value; zx++) {
+  document.getElementById("trukmLT1_" + zx).addEventListener('change', calc26); 
+  document.getElementById("trukmNeLT1_" + zx).addEventListener('change', calc26);
+} // 2 table
+for (let zx = 1; zx <= document.getElementById("table262_id").value; zx++) {
+  document.getElementById("trukmLT2_" + zx).addEventListener('change', calc26); 
+  document.getElementById("trukmNeLT2_" + zx).addEventListener('change', calc26);
+} // 3 table
+for (let zx = 1; zx <= document.getElementById("table263_id").value; zx++) {
+  document.getElementById("trukmLT3_" + zx).addEventListener('change', calc26); 
+  document.getElementById("trukmNeLT3_" + zx).addEventListener('change', calc26);
+} // 4 table
+for (let zx = 1; zx <= document.getElementById("table264_id").value; zx++) {
+  document.getElementById("trukmLT4_" + zx).addEventListener('change', calc26); 
+  document.getElementById("trukmNeLT4_" + zx).addEventListener('change', calc26);
+}
 
   function calc26() {
 

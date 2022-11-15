@@ -2,19 +2,19 @@
 
 <div class="container">
   <div class="jumbotron ">
-
+    
     <h1 class="text-center">Katedros veiklos ataskaitos sukūrimas 2022 - 2023 m. m.</h1>
-
+    
     <%if ( logedInUser.busenaVedejo22_23 === "redaguojama" || logedInUser.busenaVedejo22_23 === "užrakinta") { %>
-
+    
     <p class="lead text-center text-danger">Ataskaitos sukūrimas nėra galimas. Ataskaita yra <%=logedInUser.busenaVedejo22_23%></p>
-
+    
     <% } else if (logedInUser.busenaVedejo22_23 === "nesukurta") { %>
-
+    
     <form action="/dep-create-2022-2023" method="post">
       <div class="form-group" id="begin">
-            <br><br>
-      <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
+        <br><br>
+        <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
         <!-- 1 lentelė -->
         <!-- mV2_D04 -->
         <p class=" font-weight-bold">1 lentelė. Katedros kuruojamos studijų programos</p>
@@ -266,8 +266,8 @@
         </div>
         <div id="add_to_me11">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable01()">+</button><br><br>
-
+        <button class="plus-button" type="button" id="addButtonTable01Script">+</button><br><br>
+        
         <!-- 2 lentelė -->
         <!-- KATEDROS DĖSTYTOJŲ SĄRAŠAS -->
         <p class="font-weight-bold">2 lentelė. Katedros dėstytojų sąrašas (patvirtintas direktoriaus įsakymu) </p>
@@ -297,18 +297,18 @@
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.pedagogStazas%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.praktVeiklStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.mm2022_2023.destytojas.praktVeiklStazas%>" autocomplete="off">
           </div>
         </div>
         <% }%>
         <% }) %>
-
+        
         <input type="hidden" id="table2_id" name="table2_name" value="<%=numb2%>">
-
+        
         <!-- 3 lentelė -->
         <!-- kKPP1_1 -->
         <div class="form-row">
@@ -546,10 +546,10 @@
         </div>
         <div id="add_to_me31">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable03()">+</button><br><br>
+        <button class="plus-button" type="button" id="addButtonTable03Script">+</button><br><br>
         <p class="text-justify">* Pavardė, vardas</p>
-
-
+        
+        
         <br><br>
         <p class=" font-weight-bold text-center">2. METODINĖ VEIKLA. DALYVAVIMAS STUDIJŲ PROGRAMŲ KOKYBĖS UŽTIKRINIMO VEIKLOJE. STUDIJŲ POPULIARINIMAS</p>
         <!-- 4 lentelė -->
@@ -559,7 +559,7 @@
             <label for=""><b>4 lentelė. Metodinio leidinio, atitinkančio Kolegijos studijų kryptis, parengimas (įskaitomi leidiniai, išleisti su Kolegijos prieskyra) </b></label>
           </div>
         </div>
-
+        
         <div class="form-row">
           <% var numb4 = 0; %>
           <%  users.forEach(function(user){ %>
@@ -673,7 +673,7 @@
           <br>**<b> H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai,<b> N </b>– Gamtos mokslai,<b> A </b>– Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai, <b>T </b> – Technologijos mokslai.
           <br> *** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-
+        
         <!-- 5 lentelė -->
         <!-- mV2_M04 -->
         <div class="form-row">
@@ -681,7 +681,7 @@
             <label for=""><b>5 lentelė. E. dalyko (modulio) parengimas atestacijai</b></label>
           </div>
         </div>
-
+        
         <% var numb6 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
@@ -764,7 +764,7 @@
               </optgroup>
             </select>
           </div>
-
+          
           <div class="col-md-1 mb-3">
           </div>
           <div class="col-md-6 mb-3">
@@ -773,7 +773,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Dalyko apimtis kr.</label>
-            <input type="number" class="form-control text-center" name="mV2_M04apimtisKredit<%=numb6%>" value="<%=user.apimtisKredit%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="mV2_M04apimtisKredit<%=numb6%>" value="<%=user.apimtisKredit%>" placeholder="" autocomplete="off">
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Būsena*</label>
@@ -795,7 +795,7 @@
           <b>AS</b> – Atestuotas su sąlyga,
           <b>NA</b> – Neatestuotas.
         </p>
-
+        
         <!-- 6 lentelė. -->
         <!-- mV2_D06 -->
         <div class="form-row">
@@ -898,11 +898,11 @@
         <!-- pakeisti pavadinimą -->
         <div id="add_to_me61">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable06()">+</button><br><br>
+        <button class="plus-button" type="button" id="addButtonTable06Script">+</button><br><br>
         <p>*Patobulinimus pagrindžiantys įrodymai – direktoriaus įsak., studijų komitetų posėdžių protokolai (įsak. / protokolo Nr., data)</p>
         <p><i><b>Prašome atkreipti dėmesį į VK strateginės partnerystės Programos priemonę: ne rečiau kaip kas dvejus metus turi būti atliekama studijų
               programų peržiūra studijų kryptyse, įtraukiant verslumo ir socialinės atsakomybės ugdymo aspektus, įtraukiant strateginius partnerius </b></i></p>
-
+        
         <!-- 7 lentelė -->
         <!-- mV2_D01 -->
         <div class="form-row">
@@ -938,12 +938,12 @@
             <label for="">Rezultatai</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D01rezultatai<%=numb7%>" placeholder="" autocomplete="off"><%=user.rezultatai%></textarea>
           </div>
-
+          
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table7_id" name="table7_name" value="<%=numb7%>">
-
+        
         <!-- 8 lentelė -->
         <!-- mV2_D02 -->
         <div class="form-row">
@@ -951,7 +951,7 @@
             <label for=""><b>8 lentelė. Darbas studijų krypties savianalizės rengimo grupėje </b></label>
           </div>
         </div>
-
+        
         <% var numb8 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
@@ -1122,12 +1122,12 @@
             <label for="">Rezultatai</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D02rezultatai<%=numb8%>" value="" placeholder="" autocomplete="off"><%=user.rezultatai%></textarea>
           </div>
-
+          
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table8_id" name="table8_name" value="<%=numb8%>">
-
+        
         <!-- 9 lentelė -->
         <!-- mV2_D03 -->
         <div class="form-row">
@@ -1135,7 +1135,7 @@
             <label for=""><b>9 lentelė. Darbas ketinamos vykdyti studijų programos komitete</b></label>
           </div>
         </div>
-
+        
         <% var numb9 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
@@ -1372,12 +1372,12 @@
             <label for="">Rezultatai</label>
             <textarea rows="1" type="text" class="form-control " name="mV2_D03rezultatai<%=numb9%>" value="" placeholder="" autocomplete="off"><%=user.rezultatai%></textarea>
           </div>
-
+          
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table9_id" name="table9_name" value="<%=numb9%>">
-
+        
         <!-- 10 lentelė -->
         <!-- mV2_M03 -->
         <div class="form-row">
@@ -1483,14 +1483,14 @@
             <textarea type="text" rows="1" class="form-control " name="mV2_M03dalykPavad<%=numb5%>" value="" autocomplete="off"><%=user.dalykPavad%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="mV2_M03apimtisKredit<%=numb5%>" value="<%=user.apimtisKredit%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="mV2_M03apimtisKredit<%=numb5%>" value="<%=user.apimtisKredit%>" autocomplete="off">
           </div>
-
+          
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table10_id" name="table10_name" value="<%=numb5%>">
-
+        
         <!-- 11 lentelė -->
         <!-- mV2_S01 -->
         <div class="form-row">
@@ -1563,18 +1563,18 @@
           </div>
         </div>
         <div id="add_to_me51">
-
+          
         </div>
-        <button class="plus-button" type="button" onclick="mv2s()">+</button><br><br>
-
-
+        <button class="plus-button" type="button" id="mv2sScript">+</button><br><br>
+        
+        
         <div class="form-row">
           <div class="col-md-12 mb-3">
             <label for=""><b>3. TAIKOMŲJŲ MOKSLINIŲ TYRIMŲ IR EKSPERIMENTINĖS PLĖTROS
                 (TMTEP) VYKDYMAS, MENO TAIKOMOJI VEIKLA, PROFESIONALIOJO MENO VEIKLA, ŠIOS VEIKLOS REZULTATŲ SKELBIMAS IR VIEŠINIMAS</b></label>
           </div>
         </div>
-
+        
         <!-- 12 lentelė. -->
         <!-- tMTEP3_T01 -->
         <p class="text-left font-weight-bold">12 lentelė. Taikomųjų mokslinių tyrimų, eksperimentų atlikimas </p>
@@ -1700,7 +1700,7 @@
           <br>**** Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">
             https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-
+        
         <!-- 13 lentelė. -->
         <!-- TMTEP3_T02 -->
         <p class="font-weight-bold">
@@ -1871,13 +1871,13 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table13_id" name="table13_name" value="<%=numb13%>">
-
-
+        
+        
         <p><b>* H</b> – Humanitariniai mokslai, <b>S</b> – Socialiniai mokslai, <b>N</b> – Gamtos mokslai, <b>A</b> – Žemės ūkio mokslai, <b>M</b> – Medicinos ir sveikatos mokslai,
           <b>T</b> – Technologijos mokslai.
           <br><b>**</b> Mokslo kryptys: <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr" target="_blank">https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/064e79a22a4f11e9a505bd13c24940c9/asr</a>
         </p>
-
+        
         <!-- 14 lentelė. -->
         <!-- TMTEP3_T03 -->
         <div class="form-row">
@@ -1897,7 +1897,7 @@
             <label for="">Renginio tipas**</label>
           </div>
         </div>
-
+        
         <% var numb14 = 0; %>
         <%  users.forEach(function(user){ %>
         <%  user.mm2022_2023.destytojas.tMTEP3_T03.forEach(function(user){ %>
@@ -1916,10 +1916,10 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table14_id" name="table14_name" value="<%=numb14%>">
-
+        
         <p> * Pateikti įrodymus (nuoroda į programąir pan.)<br>
           ** Seminaras, konferencija, kt.</p>
-
+        
         <!-- 15 lentelė. -->
         <!-- TMTEP3_T04 -->
         <p class="text-left font-weight-bold">15 lentelė. Konsultacijos užsakovams</p>
@@ -1928,7 +1928,7 @@
         <% var pavVar = user.pavarde + " " + user.vardas; %>
         <%  user.mm2022_2023.destytojas.tMTEP3_T04.forEach(function(user){ %>
         <% numb15++ %>
-
+        
         <div class="form-row">
           <div class="col-md-1 mb-3">
             <label for=""><br></label>
@@ -1963,11 +1963,11 @@
             </select>
           </div>
         </div>
-
+        
         <% }) %>
         <% }) %>
         <input type="hidden" id="table15_id" name="table15_name" value="<%=numb15%>">
-
+        
         <!-- 16.1 lentelė.  -->
         <!-- TMTEP3_T05 -->
         <p class="font-weight-bold">16.1. lentelė. Mokslinių darbų, metodinių leidinių
@@ -1991,7 +1991,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Atlygintinai/ Neatlygintinai</label>
           </div>
-
+          
         </div>
         <% var numb16 = 0; %>
         <%  users.forEach(function(user){ %>
@@ -2022,7 +2022,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table161_id" name="table161_name" value="<%=numb16%>">
-
+        
         <!-- 16.2. lentelė NEW -->
         <p><b>16.2. Narystė profesiniuose tinkluose, atstovavimas Kolegijai asociacijose, organizacijose, išorės institucijų darbo grupėse ir kt.</b></p>
         <div class="form-row">
@@ -2039,7 +2039,7 @@
             <label for="">Pastabos</label>
           </div>
         </div>
-
+        
         <% var numb162 = 0; %>
         <%  users.forEach(function(user){ %>
         <% var pavVar = user.pavarde + " " + user.vardas; %>
@@ -2062,7 +2062,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table162_id" name="table162_name" value="<%=numb162%>">
-
+        
         <!-- 16.3 lentelė -->
         <!-- TMTEP3_T16 -->
         <p><b>16.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų
@@ -2105,7 +2105,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table163_id" name="table163_name" value="<%=numb163%>">
-
+        
         <!-- 17 lentelė. -->
         <!-- TMTEP3_T06 -->
         <p><b>17 lentelė. Dailės ir dizaino veikla (personalinė paroda užsienyje, dalyvavimas tarptautinėje parodoje užsienyje; personalinė paroda,
@@ -2217,7 +2217,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table18_id" name="table18_name" value="<%=numb18%>">
-
+        
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
@@ -2273,16 +2273,16 @@
               <option class="others" <%if (user.atlygArNe === "Neatlygintinai") { %> selected <% } %> value="Neatlygintinai">Neatlygintinai</option>
             </select>
           </div>
-
+          
         </div>
         <% }) %>
         <% }) %>
         <input type="hidden" id="table19_id" name="table19_name" value="<%=numb19%>">
-
+        
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
-
+        
         <!-- 20 lentelė. -->
         <!-- TMTEP3_T09 -->
         <p><b>20 lentelė. Muzikos veikla (autorinis koncertas, muzikinis scenos veikalas (opera, baletas ir pan.), koncertinis kūrinys, rečitalis ar dalis koncerto programos,
@@ -2338,11 +2338,11 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table20_id" name="table20_name" value="<%=numb20%>">
-
+        
         <p><b>* C</b> – Scenos ir ekrano menai; <b>V</b> – Vaizduojamieji menai<br>
           <b>PASTABA</b>: pridedami atlikėjo veiklą įrodantys dokumentai (<i>skelbimai, lankstinukai, kvietimai, pažymos ir kiti dokumentai, kuriuose paminėtos atlikėjų pavardės</i>)
         </p>
-
+        
         <!-- 21 lentelė. -->
         <!-- TMTEP3_T10 -->
         <p><b>21 lentelė. Meno projektų kuravimas ir vadyba </b></p>
@@ -2378,7 +2378,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk<%=numb21%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk<%=numb21%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -2397,7 +2397,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table21_id" name="table21_name" value="<%=numb21%>">
-
+        
         <!-- 22 lentelė -->
         <!-- TMTEP3_T11 -->
         <p><b>22 lentelė. Meno renginių vedimas </b></p>
@@ -2438,7 +2438,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk<%=numb22%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk<%=numb22%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -2457,7 +2457,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table22_id" name="table22_name" value="<%=numb22%>">
-
+        
         <!-- 23 lentelė -->
         <!-- TMTEP3_T12 -->
         <p><b>23 lentelė. TMTEP ir meno veiklos populiarinimas (viešų paskaitų skaitymas, dalyvavimas radijo ir
@@ -2503,7 +2503,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table23_id" name="table23_name" value="<%=numb23%>">
-
+        
         <!-- TMTEP3_T14 -->
         <!-- 24 lentelė. -->
         <p><b>24 lentelė. Kita švietėjiška veikla (jaunųjų talentų mokyklų (akademijų) veiklų organizavimas ir dalyvavimas jose, stovyklų vaikams, paauglių, senjorų užimtumo
@@ -2544,7 +2544,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table24_id" name="table24_name" value="<%=numb25%>">
-
+        
         <!-- TMTEP3_T13 -->
         <!-- 25 lentelė. -->
         <p><b>25 lentelė. Studentų rengimas studentų profesinio meistriškumo konkursui,
@@ -2591,7 +2591,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table25_id" name="table25_name" value="<%=numb24%>">
-
+        
         <!-- TMTEP_S -->
         <div class="form-row">
           <div class="col-md-12 mb-3 text-center">
@@ -2625,13 +2625,13 @@
         </div>
         <div id="add_to_meTabletMTEP3_S1">
         </div>
-        <button class="plus-button" type="button" onclick="tmteps()">+</button><br><br>
-
+        <button class="plus-button" type="button" id="tmtepsScript">+</button><br><br>
+        
         <!-- kTOV4 -->
         <p class="text-center font-weight-bold">4. KOMPETENCIJŲ TOBULINIMAS IR ORGANIZACINĖ VEIKLA</p>
         <!-- 26 lentelė priedas -->
         <p><b>26 lentelės priedas. Dėstytojų kompetencijų tobulinimo renginių sąrašas</b></p>
-
+        
         <!-- KV01-->
         <table style="width:100%">
           <tr>
@@ -2664,12 +2664,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01mokymosiKomppazymNr<%=iterationNr261%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT1_<%=iterationNr261%>" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=pavVard%></textarea>
@@ -2687,12 +2685,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01mokymosiKomppazymNr<%=iterationNr261%>" value="" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT1_<%=iterationNr261%>" class="form-control text-center" min="0" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" class="form-control text-center" min="0" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" value="" autocomplete="off"><%=pavVard%></textarea>
@@ -2709,15 +2705,15 @@
             <label for="">Iš viso mokymo(si) kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeMokymValLT26" class="form-control text-center" name="kTOV4_trukmeMokymValLT1" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeMokymValLT26" class="form-control text-center" name="kTOV4_trukmeMokymValLT1" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeMokymValNeLT26" class="form-control text-center" name="kTOV4_trukmeMokymValNeLT1" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeMokymValNeLT26" class="form-control text-center" name="kTOV4_trukmeMokymValNeLT1" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
         </div>
-
+        
         <br>
         <!-- tyrimu -->
         <% var tyrimuKompSk = 0; %>
@@ -2739,12 +2735,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01tyrimuKomppazymNr<%=iterationNr262%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT2_<%=iterationNr262%>" class="form-control text-center" min="0" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" class="form-control text-center" min="0" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=pavVard%></textarea>
@@ -2762,12 +2756,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01tyrimuKomppazymNr<%=iterationNr262%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT2_<%=iterationNr262%>" class="form-control text-center" min="0" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" class="form-control text-center" min="0" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off"><%=pavVard%></textarea>
@@ -2784,10 +2776,10 @@
             <label for="">Iš viso tyrimų kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeTyrimuValLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValLT2" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeTyrimuValLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValLT2" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeTyrimuValNeLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValNeLT2" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeTyrimuValNeLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValNeLT2" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2813,12 +2805,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKomppazymNr<%=iterationNr263%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=pavVard%></textarea>
@@ -2836,12 +2826,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKomppazymNr<%=iterationNr263%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" value="" autocomplete="off"><%=pavVard%></textarea>
@@ -2858,10 +2846,10 @@
             <label for="">Iš viso bendrosios kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeBendrValLT26" class="form-control text-center" name="kTOV4_trukmeBendrValLT3" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeBendrValLT26" class="form-control text-center" name="kTOV4_trukmeBendrValLT3" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeBendrValNeLT26" class="form-control text-center" name="kTOV4_trukmeBendrValNeLT3" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeBendrValNeLT26" class="form-control text-center" name="kTOV4_trukmeBendrValNeLT3" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2887,12 +2875,10 @@
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKomppazymNr<%=iterationNr264%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=pavVard%></textarea>
@@ -2910,12 +2896,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKomppazymNr<%=iterationNr264%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>"
-              value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>"
-              value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off"><%=pavVard%></textarea>
@@ -2932,15 +2916,15 @@
             <label for="">Iš viso dalykinės kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeDalykValLT26" class="form-control text-center" name="kTOV4_trukmeDalykValLT4" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeDalykValLT26" class="form-control text-center" name="kTOV4_trukmeDalykValLT4" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeDalykValNeLT26" class="form-control text-center" name="kTOV4_trukmeDalykValNeLT4" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeDalykValNeLT26" class="form-control text-center" name="kTOV4_trukmeDalykValNeLT4" min="0" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="col-md-7 mb-3">
           </div>
@@ -2948,28 +2932,28 @@
             <label style="text-align: right;" for="">Iš viso:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValLT26" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" class="form-control text-center" name="kTOV4_trukmeValLTbendr" readonly="readonly" autocomplete="off">
+            <input type="number" id="isVisoTrukmeValLT26" min="0" class="form-control text-center" name="kTOV4_trukmeValLTbendr" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValNeLT26" class="form-control text-center" name="kTOV4_trukmeValNeLTbendr" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off" value="0">
+            <input type="number" id="isVisoTrukmeValNeLT26" class="form-control text-center" name="kTOV4_trukmeValNeLTbendr" min="0" readonly="readonly" autocomplete="off" value="0">
           </div>
           <div class="col-md-2 mb-3">
           </div>
         </div>
-
+        
         <!-- skaiciavimams reikia -->
         <%  var mokymosiKompSk = 0; %>
         <%  var tyrimuKompSk = 0; %>
         <%  var bendrKompSk = 0; %>
         <%  var dalykKompSk = 0; %>
-
+        
         <%  users.forEach(function(user){ %>
         <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoMokymosiKomp == true) mokymosiKompSk++ %>
         <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoTyrimuKomp == true) tyrimuKompSk++ %>
         <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoBendrKomp == true) bendrKompSk++ %>
         <% if (user.mm2022_2023.destytojas.kTOV4_KV01.kompetencijos.dalyvavoDalykKomp == true) dalykKompSk++ %>
         <% }) %>
-
+        
         <br>
         <p><b>26 lentelė. Dėstytojų kompetencijų tobulinimas</b></p>
         <br>
@@ -2991,13 +2975,13 @@
             <input type="number" class="form-control  text-center" name="mokymosiLTdestytojuSk" value="<%=mokymosiKompSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiLTtrukmeVal" name="mokymosiLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="mokymosiLTtrukmeVal" name="mokymosiLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiNeLttrukmeVal" name="mokymosiNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="mokymosiNeLttrukmeVal" name="mokymosiNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiIsVisoVal" name="mokymosiIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="mokymosiIsVisoVal" name="mokymosiIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -3008,13 +2992,13 @@
             <input type="number" class="form-control  text-center" name="tyrimuLTdestytojuSk" value="<%=tyrimuKompSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuLTtrukmeVal" name="tyrimuLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="tyrimuLTtrukmeVal" name="tyrimuLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuNeLttrukmeVal" name="tyrimuNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="tyrimuNeLttrukmeVal" name="tyrimuNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuIsVisoVal" name="tyrimuIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="tyrimuIsVisoVal" name="tyrimuIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -3025,13 +3009,13 @@
             <input type="number" class="form-control  text-center" name="bendrosiosLTdestytojuSk" value="<%=bendrKompSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosLTtrukmeVal" name="bendrosiosLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="bendrosiosLTtrukmeVal" name="bendrosiosLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosNeLttrukmeVal" name="bendrosiosNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="bendrosiosNeLttrukmeVal" name="bendrosiosNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosIsVisoVal" name="bendrosiosIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="bendrosiosIsVisoVal" name="bendrosiosIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -3042,17 +3026,17 @@
             <input type="number" class="form-control text-center" name="dalykinesLTdestytojuSk" value="<%=dalykKompSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesLTtrukmeVal" name="dalykinesLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="dalykinesLTtrukmeVal" name="dalykinesLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesNeLttrukmeVal" name="dalykinesNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="dalykinesNeLttrukmeVal" name="dalykinesNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesIsVisoVal" name="dalykinesIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center" id="dalykinesIsVisoVal" name="dalykinesIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <p>** Akademinė valanda prilyginama astronominei valandai</p>
-
+        
         <!-- kTOV4_27 new-->
         <!-- 27 lentelė -->
         <!-- destytojo ataskaitoje 25 lentele -->
@@ -3123,7 +3107,7 @@
         <p>* Mokymo (si), tyrimų, bendrosios, dalykinės. <br>
           ** <b>AP</b> – akademinis personalas, <b>NP</b> – neakademinis personalas, <b>VP</b> – Visas personalasas. <br>
         </p>
-
+        
         <!-- kTOV4_28 new-->
         <!-- 28 lentelė -->
         <!-- destytojo ataskaitoje 26 lentele -->
@@ -3173,7 +3157,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="lent28_trukmeVal<%=numb28_new%>" min="0" value="<%=user.trukmeVal%>" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="lent28_trukmeVal<%=numb28_new%>" min="0" value="<%=user.trukmeVal%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control " name="lent28_data<%=numb28_new%>" autocomplete="off"><%=user.data%></textarea>
@@ -3182,7 +3166,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table28_id" name="table28_name" value="<%=numb28_new%>">
-
+        
         <!-- kTOV4_KV03-->
         <!-- 29 lentelė -->
         <p><b>29 lentelė. Išvykstančių dėstytojų tarptautinis judumas. </b></p>
@@ -3554,8 +3538,8 @@
         </div>
         <div id="add_to_me301">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable30()">+</button><br><br>
-
+        <button class="plus-button" type="button" id="addButtonTable30Script">+</button><br><br>
+        
         <br>
         <!-- 31.1 lentelė -->
         <!-- kTOV4_O01_1 -->
@@ -3598,7 +3582,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table311_id" name="table311_name" value="<%=numb311%>">
-
+        
         <!-- 31.2 lentelė -->
         <!-- kTOV4_O01_2 -->
         <p class="font-weight-bold">
@@ -3669,10 +3653,10 @@
         </div>
         <div id="add_to_meTablekTOV4_S1">
         </div>
-        <button class="plus-button" type="button" onclick="kTOV4_S()">+</button><br><br>
-
+        <button class="plus-button" type="button" id="kTOV4_SScript">+</button><br><br>
+        
         <p style="text-align: center;"><b>5. KITOS VEIKLOS</b></p>
-
+        
         <!-- 32 lentelė -->
         <p><b>32 lentelė. Katedros strateginiai partneriai</b></p>
         <div class="form-row">
@@ -3839,7 +3823,7 @@
             </select>
           </div>
           <div class="col-md-3 mb-3">
-              <select name="lent32_studProgr1" class="form-select form-control">
+            <select name="lent32_studProgr1" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Elektronikos ir informatikos fakultetas">
                 <option class="others" value="Elektronikos inžinerija">Elektronikos inžinerija</option>
@@ -3909,8 +3893,8 @@
         </div>
         <div id="add_to_me321">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable32()">+</button><br><br>
-
+        <button class="plus-button" type="button" id="addButtonTable32Script">+</button><br><br>
+        
         <br>
         <!-- kV5_bcp33 -->
         <!-- 33 lentelė. -->
@@ -3952,10 +3936,10 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table33_id" name="table33_name" value="<%=iterationNr33%>">
-
+        
         <p class="text-justify">* Veikla: studijų dalykų / modulių dėstymas; viešos paskaitų kolegijoje skaitymas, vadovavimas baigiamiesiems darbams,
           dalyvavimas kvalifikavimo komisijose, dalyvavimas karjeros planavimo veiklose, diskusijose ir pan.</p>
-
+        
         <!-- 34 lentelė -->
         <p><b>34 lentelė. Studentų, atliekančių baigiamąją praktiką pas strateginius partnerius, skaičius*</b></p>
         <div class="form-row">
@@ -4181,32 +4165,32 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_1" value="" autocomplete="off">
           </div>
-
+          
         </div>
         <div id="add_to_me341">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable34()">+</button><br><br>
+        <button class="plus-button" type="button" id="addButtonTable34Script">+</button><br><br>
         <p class="text-justify">* Jeigu fakultete yra padalinys atsakingas už praktikas, katedra šios lentelės nepildo. <br>
           * Lentelė pildoma nuo strateginės partnerystės Programos įgyvendinimo pradžios.</p>
-
+        
         <!-- 35 lentelė -->
         <p><b>35 lentelė. Baigiamųjų darbų, parengtų pagal įmonių / įstaigų / organizacijų užsakymus, skaičius</b></p>
         <div class="form-row">
@@ -4215,7 +4199,7 @@
             <input type="text" class="form-control text-center" name="lent35_nr1" placeholder="" autocomplete="off" value="1" readonly="readonly">
           </div>
           <div class="col-md-1 mb-3">
-
+            
           </div>
           <div class="col-md-5 mb-3">
             <label for="">Studijų kryptis</label>
@@ -4430,59 +4414,59 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-
+            
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2017 - 2018 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2018 - 2019 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-
+            
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2020 - 2021 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2021 - 2022 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_1" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_1" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_1" value="" autocomplete="off">
           </div>
-
+          
         </div>
         <div id="add_to_me351">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable35()">+</button><br><br>
+        <button class="plus-button" type="button" id="addButtonTable35Script">+</button><br><br>
         <p class="text-justify">* Jeigu fakultete yra padalinys atsakingas už praktikas, katedra šios lentelės nepildo. <br>
           * Lentelė pildoma nuo strateginės partnerystės Programos įgyvendinimo pradžios.</p>
-
+        
         <!-- 36 lentelė -->
         <!-- kV5_KT02 -->
         <p><b>36 lentelė. Baigiamieji darbai verslumo ir (ar) socialinės atsakomybės, darnios plėtros tematika </b></p>
@@ -4658,7 +4642,7 @@
             </select>
           </div>
           <div class="col-md-3 mb-3">
-              <select name="kV5_KT02studProgr<%=numb32%>" class="form-select form-control">
+            <select name="kV5_KT02studProgr<%=numb32%>" class="form-select form-control">
               <option value=""></option>
               <optgroup label="Elektronikos ir informatikos fakultetas">
                 <option class="others" <%if (user.studProgr === "Elektronikos inžinerija") { %> selected <% } %> value="Elektronikos inžinerija">Elektronikos inžinerija</option>
@@ -4737,7 +4721,7 @@
         <% }) %>
         <input type="hidden" id="table36_id" name="table36_name" value="<%=numb32%>">
         <p>* <b>V</b> – verslumo tematika; <b>SA/DP</b> – socialinės atsakomybės, darnios plėtros tematika</p>
-
+        
         <!-- 37 lentelė -->
         <!-- kV5_KT01 -->
         <p><b>37 lentelė. Baigiamieji darbai (užsakomieji darbai), pritaikyti užsakovo poreikiams, regiono ar visos šalies raidai</b></p>
@@ -4981,7 +4965,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table37_id" name="table37_name" value="<%=numb31%>">
-
+        
         <!-- 38 lentelė.  -->
         <p class="font-weight-bold">
           38 lentelė. Dalyvavimas Lietuvos ir tarptautiniuose projektuose ir programose, tarptautiniuose mainuose.*(Erasmus+ ir kt.), ES struktūrinių fondų projektuose.</p>
@@ -5053,7 +5037,7 @@
         </div>
         <div id="add_to_me391">
         </div>
-        <button class="plus-button" type="button" onclick="addButtonTable39()">+</button>
+        <button class="plus-button" type="button" id="addButtonTable39Script">+</button><br><br>
         <br>
         <br>
         <!-- kV5_32 -->
@@ -5062,7 +5046,7 @@
         <p class="font-weight-bold">
           40 lentelė. Katedros socialinės atsakomybės ir darnios plėtros veiklos / iniciatyvos
         </p>
-
+        
         <table style="width:100%">
           <tr>
             <td style="width: 25%;">Veiklų / iniciatyvų tipas</td>
@@ -5207,7 +5191,7 @@
         <% }) %>
         <% }) %>
         <input type="hidden" id="table404_id" name="table404_name" value="<%=iterationNr404%>">
-
+        
         <!-- 40 lentelė 5  -->
         <!-- Savanorystės, pilietinio aktyvumo, paramos ir kitos iniciatyvos -->
         <% var iterationNr405 = 0; %>
@@ -5329,9 +5313,9 @@
         </div>
         <div id="add_to_meTableVeiklS1">
         </div>
-        <button class="plus-button" type="button" onclick="veiklSavianalize()">+</button><br><br>
+        <button class="plus-button" type="button" id="veiklSavianalizeScript">+</button><br><br>
         <br>
-
+        
         <div class="form-row">
           <div class="col-md-12 mb-3 text-left">
             <label for=""><b>Išvados apie katedros veiklą</b></label>
@@ -5342,7 +5326,7 @@
             <textarea type="text" rows="1" class="form-control " name="isvadosApieVeikl" placeholder="" autocomplete="off"></textarea>
           </div>
         </div>
-
+        
         <!-- Pridedamiems mygtukams reikalinga: -->
         <input type="hidden" id="table1_id" name="table1_name" value="1">
         <input type="hidden" id="table3_id" name="table3_name" value="1">
@@ -5358,7 +5342,7 @@
         <input type="hidden" id="tableVeiklS_id" name="tableVeiklS_name" value="2">
         <!------------------- PABAIGA----------- -->
         <input type="hidden" name="ataskaitos_busena" value="redaguojama">
-
+        
       </div>
       <%  if (numb2 == logedInUser.mm2022_2023.katedrosVedejas.katedrosDestytojuSk){ %>
       <div class="row">
@@ -5367,11 +5351,11 @@
         </div>
       </div>
       <% } else { %>
-        <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. <br>Ne visi dėstytojai yra pateikę ataskaitas.
-          Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
-        <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%>
-          , iš jų ataskaitas yra pateikę: <span class="text-danger"><%=numb2%></span>.</p>
-        <p text-center"> </p>
+      <p class="lead text-danger text-center">Ataskaitos sukūrimas nėra galimas. <br>Ne visi dėstytojai yra pateikę ataskaitas.
+        Pateiktų ataskaitų skaičius nesutampa su katedrai priklausančių dėstytojų skaičiumi.</p>
+      <p class="lead text-info text-center">Katedros dėstytojų skaičius: <%=logedInUser.mm2022_2023.katedrosVedejas.katedrosDestytojuSk%>
+        , iš jų ataskaitas yra pateikę: <span class="text-danger"><%=numb2%></span>.</p>
+      <p text-center"> </p>
       <% } %>
     </form>
     <% } else {  %>
@@ -5381,9 +5365,9 @@
 </div>
 
 <%if ( logedInUser.busenaVedejo22_23 === "nesukurta") { %>
-  <div class="circle-button">
-    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
-  </div>
+<div class="circle-button">
+  <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+</div>
 <% } %>
 
 
