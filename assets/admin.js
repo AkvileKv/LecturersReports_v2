@@ -654,7 +654,6 @@ module.exports = {
     User.findById(req.user.id, function (err, foundUser) {
       try {
         if (foundUser.role === "administratorius") {
-          var perPage = 5;
           User.find({
             teachingYear23_24: true
           }, function (err, users) {

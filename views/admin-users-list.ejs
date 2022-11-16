@@ -54,7 +54,7 @@
                 <div class="btn-group" role="group" aria-label="" id="group">
                   <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
                   <form action="/delete" method="post">
-                    <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti naudotoją?');" value="<%=user._id%>">Ištrinti</button>
+                    <button class="btn btn-danger" type="submit" name="deleteById" id="confDelete" value="<%=user._id%>">Ištrinti</button>
                   </form>
                 </div>
               </div>

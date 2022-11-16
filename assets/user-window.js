@@ -194,7 +194,7 @@ module.exports = {
                                 req.body.newPassword, function (err) {
                                     if (err) {
                                         req.flash('passwFail', "Failure");
-                                        res.redirect("/user-window-change-password"); 
+                                        res.redirect("/user-window-change-password");
                                     }
                                     else {
                                         req.flash('userP', 'Success');

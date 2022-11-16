@@ -1449,23 +1449,23 @@
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
             <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_` + iterNr7 + `"
-            value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            value="" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_` + iterNr7 + `"value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_` + iterNr7 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_` + iterNr7 + `" value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_` + iterNr7 + `"value="" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_` + iterNr7 + `"value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_` + iterNr7 + `"value="" autocomplete="off">
           </div>
         </div>
                 <div id="add_to_me34` + divNr7 + `">
@@ -1721,46 +1721,46 @@
           <div class="col-md-2 mb-3">
           <label for=""><br>2017 - 2018 m. m. Bendras</label>
           <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_` + iterNr9 + `"value=""
-          autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}"></div>
+          autocomplete="off"  ></div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
             <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_` + iterNr9 + `"value=""
-            autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
               <label for=""><br>2018 - 2019 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_` + iterNr9 + `" value="" autocomplete="off"  >
             </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_` + iterNr9 + `" value="" autocomplete="off"  >
         </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_` + iterNr9 + `" value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_` + iterNr9 + `" value="" autocomplete="off"  >
             </div>
             <div class="col-md-2 mb-3">
 
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_` + iterNr9 + `"  value="" autocomplete="off"  >
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2020 - 2021 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_` + iterNr9 + `"  value="" autocomplete="off"  >
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_` + iterNr9 + `"  value="" autocomplete="off"  >
             </div>
             <div class="col-md-2 mb-3">
               <label for=""><br>2021 - 2022 m. m. Bendras</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_` + iterNr9 + `"  value="" autocomplete="off"  >
             </div>
             <div class="col-md-2 mb-3">
               <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_` + iterNr9 + `"  value="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+              <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_` + iterNr9 + `"  value="" autocomplete="off"  >
             </div>
         </div>
                 <div id="add_to_me35` + divNr9 + `">

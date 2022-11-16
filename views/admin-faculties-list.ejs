@@ -17,8 +17,8 @@
     <h1 class="text-center">Viko fakultetų sąrašas</h1>
     <div class="text-left">
       <!-- užkomentuoti sukūrimą: -->
-      <a type="button" class="btn btn-secondary" href="/admin/faculties/create" > Sukurti</a> 
-
+      <a type="button" class="btn btn-secondary" href="/admin/faculties/create"> Sukurti</a>
+      
       <br>
       <p></p>
     </div>
@@ -57,7 +57,7 @@
                   <a type="button" class="btn btn-secondary" href="/admin/usersp/edit-users/<%=faculty._id%>">Fakulteto dėstytojai ir katedrų vedėjai</a>
                   <a type="button" class="btn btn-primary" href="/admin/faculties/edit/<%=faculty._id %>">Redaguoti</a>
                   <form action="/delete-faculty" method="post">
-                    <button class="btn btn-danger" type="submit" name="deleteById" onclick="return confirm('Ar tikrai norite ištrinti fakultetą?');" value="<%=faculty._id%>" disabled>Ištrinti</button>
+                    <button class="btn btn-danger" type="submit" name="deleteById" id="confDelete" value="<%=faculty._id%>" disabled>Ištrinti</button>
                   </form>
                 </div>
               </div>

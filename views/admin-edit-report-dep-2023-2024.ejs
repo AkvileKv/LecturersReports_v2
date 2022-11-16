@@ -13,7 +13,7 @@
         <br>
         <div class="row">
           <div class="text-center">
-            <button type="submit" class="btn btn-danger" onclick="return confirm('Ar tikrai norite išsaugoti pakeitimus?');">ATNAUJINTI</button>
+            <button type="submit" class="btn btn-danger" id="confirmSave">ATNAUJINTI</button>
           </div>
         </div>
         <br>
@@ -235,11 +235,11 @@
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais <br>(pedagoginis)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.pedagogStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_pedagogStazas<%=numb2%>" value="<%=user.pedagogStazas%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label>Stažas metais (praktinės veiklos)</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.praktinStazas%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent2_praktinStazas<%=numb2%>" value="<%=user.praktinStazas%>" autocomplete="off"  >
           </div>
         </div>
         <% }) %>
@@ -577,7 +577,7 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">Dalyko apimtis kr.</label>
-            <input type="number" class="form-control text-center" name="mV2_M04apimtisKredit<%=numb6%>" value="<%=user.apimtisKredit%>" placeholder="" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="mV2_M04apimtisKredit<%=numb6%>" value="<%=user.apimtisKredit%>" placeholder="" autocomplete="off"  >
           </div>
           <div class="col-md-3 mb-3">
             <label for="">Būsena*</label>
@@ -1081,7 +1081,7 @@
             <textarea type="text" rows="1" class="form-control " name="mV2_M03dalykPavad<%=numb10%>" autocomplete="off"><%=user.dalykPavad%></textarea>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="mV2_M03apimtisKredit<%=numb10%>" value="<%=user.apimtisKredit%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control text-center" name="mV2_M03apimtisKredit<%=numb10%>" value="<%=user.apimtisKredit%>" autocomplete="off"  >
           </div>
         </div>
         <% }) %>
@@ -1933,7 +1933,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk<%=numb21%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T10dalyvSk<%=numb21%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off"   min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -1990,7 +1990,7 @@
           <div class="col-md-2 mb-3">
             <label for="">Dalyvių skaičius
             </label>
-            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk<%=numb22%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}" min="0">
+            <input type="number" class="form-control text-center" name="tMTEP3_T11dalyvSk<%=numb22%>" placeholder="" value="<%=user.dalyvSk%>" autocomplete="off"   min="0">
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Kiti komentarai
@@ -2197,10 +2197,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01mokymosiKomppazymNr<%=iterationNr261%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT1_<%=iterationNr261%>"   name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" class="form-control text-center" min="0"   value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT1_<%=iterationNr261%>"   name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" class="form-control text-center" min="0"   value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2218,10 +2218,10 @@
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKomppazymNr<%=iterationNr261%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT1_<%=iterationNr261%>"   class="form-control text-center" min="0"   name="kTOV4_KV01mokymosiKomptrukmeValLT<%=iterationNr261%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT1_<%=iterationNr261%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT1_<%=iterationNr261%>"   class="form-control text-center" min="0"   name="kTOV4_KV01mokymosiKomptrukmeValNeLT<%=iterationNr261%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01mokymosiKompdalyvis<%=iterationNr261%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2237,10 +2237,10 @@
             <label for="">Iš viso mokymo(si) kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeMokymValLT26" class="form-control text-center" name="kTOV4_trukmeMokymValLT1" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeMokymValLT26" class="form-control text-center" name="kTOV4_trukmeMokymValLT1" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeMokymValNeLT26" class="form-control text-center" name="kTOV4_trukmeMokymValNeLT1" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeMokymValNeLT26" class="form-control text-center" name="kTOV4_trukmeMokymValNeLT1" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2263,10 +2263,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01tyrimuKomppazymNr<%=iterationNr262%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT2_<%=iterationNr262%>"   class="form-control text-center" min="0"   name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT2_<%=iterationNr262%>"   class="form-control text-center" min="0"   name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2284,10 +2284,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01tyrimuKomppazymNr<%=iterationNr262%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" id="trukmLT2_<%=iterationNr262%>"   class="form-control text-center" min="0"   name="kTOV4_KV01tyrimuKomptrukmeValLT<%=iterationNr262%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="trukmNeLT2_<%=iterationNr262%>" onchange="calc26()" class="form-control text-center" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}" name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" id="trukmNeLT2_<%=iterationNr262%>"   class="form-control text-center" min="0"   name="kTOV4_KV01tyrimuKomptrukmeValNeLT<%=iterationNr262%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01tyrimuKompdalyvis<%=iterationNr262%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2303,10 +2303,10 @@
             <label for="">Iš viso tyrimų kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeTyrimuValLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValLT2" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeTyrimuValLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValLT2" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeTyrimuValNeLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValNeLT2" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeTyrimuValNeLT26" class="form-control text-center" name="kTOV4_trukmeTyrimValNeLT2" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2328,10 +2328,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKomppazymNr<%=iterationNr263%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2349,10 +2349,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01bendrKomppazymNr<%=iterationNr263%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValLT<%=iterationNr263%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmNeLT3_<%=iterationNr263%>" name="kTOV4_KV01bendrKomptrukmeValNeLT<%=iterationNr263%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01bendrKompdalyvis<%=iterationNr263%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2368,10 +2368,10 @@
             <label for="">Iš viso bendrosios kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeBendrValLT26" class="form-control text-center" name="kTOV4_trukmeBendrValLT3" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeBendrValLT26" class="form-control text-center" name="kTOV4_trukmeBendrValLT3" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeBendrValNeLT26" class="form-control text-center" name="kTOV4_trukmeBendrValNeLT3" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeBendrValNeLT26" class="form-control text-center" name="kTOV4_trukmeBendrValNeLT3" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2393,10 +2393,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKomppazymNr<%=iterationNr264%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2414,10 +2414,10 @@
             <textarea rows="1" type="text" class="form-control " name="kTOV4_KV01dalykKomppazymNr<%=iterationNr264%>" autocomplete="off"><%=user.pazymNr%></textarea>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValLT<%=iterationNr264%>" value="<%=user.trukmeValLT%>" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" class="form-control text-center" min="0" onchange="calc26()" onkeyup="if(this.value<0){this.value= this.value * -1}" id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
+            <input type="number" class="form-control text-center" min="0"     id="trukmNeLT4_<%=iterationNr264%>" name="kTOV4_KV01dalykKompTrukmeValNeLT<%=iterationNr264%>" value="<%=user.trukmeValNeLT%>" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea rows="1" type="text" class="form-control" name="kTOV4_KV01dalykKompdalyvis<%=iterationNr264%>" autocomplete="off" readonly><%=user.destytojas%></textarea>
@@ -2433,10 +2433,10 @@
             <label for="">Iš viso dalykinės kompetencijos:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeDalykValLT26" class="form-control text-center" name="kTOV4_trukmeDalykValLT4" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeDalykValLT26" class="form-control text-center" name="kTOV4_trukmeDalykValLT4" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeDalykValNeLT26" class="form-control text-center" name="kTOV4_trukmeDalykValNeLT4" min="0" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" id="isVisoTrukmeDalykValNeLT26" class="form-control text-center" name="kTOV4_trukmeDalykValNeLT4" min="0" readonly="readonly"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2449,10 +2449,10 @@
             <label style="text-align: right;" for="">Iš viso:</label>
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValLT26" min="0" name="kTOV4_trukmeValLTbendr" onkeyup="if(this.value<0){this.value= this.value * -1}" class="form-control text-center" readonly="readonly" autocomplete="off">
+            <input type="number" id="isVisoTrukmeValLT26" min="0" name="kTOV4_trukmeValLTbendr"   class="form-control text-center" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-1 mb-3">
-            <input type="number" id="isVisoTrukmeValNeLT26" min="0" name="kTOV4_trukmeValNeLTbendr" class="form-control text-center" readonly="readonly" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off" value="0">
+            <input type="number" id="isVisoTrukmeValNeLT26" min="0" name="kTOV4_trukmeValNeLTbendr" class="form-control text-center" readonly="readonly"   autocomplete="off" value="0">
           </div>
           <div class="col-md-2 mb-3">
           </div>
@@ -2479,13 +2479,13 @@
             <input type="number" class="form-control  text-center" name="mokymosiLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.mokymosi.destytojuSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiLTtrukmeVal" name="mokymosiLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="mokymosiLTtrukmeVal" name="mokymosiLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiNeLttrukmeVal" name="mokymosiNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="mokymosiNeLttrukmeVal" name="mokymosiNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="mokymosiIsVisoVal" name="mokymosiIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="mokymosiIsVisoVal" name="mokymosiIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -2496,13 +2496,13 @@
             <input type="number" class="form-control  text-center" name="tyrimuLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.tyrimu.destytojuSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuLTtrukmeVal" name="tyrimuLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="tyrimuLTtrukmeVal" name="tyrimuLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuNeLttrukmeVal" name="tyrimuNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="tyrimuNeLttrukmeVal" name="tyrimuNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="tyrimuIsVisoVal" name="tyrimuIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="tyrimuIsVisoVal" name="tyrimuIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -2513,13 +2513,13 @@
             <input type="number" class="form-control  text-center" name="bendrosiosLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.bendrosios.destytojuSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosLTtrukmeVal" name="bendrosiosLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="bendrosiosLTtrukmeVal" name="bendrosiosLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosNeLttrukmeVal" name="bendrosiosNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="bendrosiosNeLttrukmeVal" name="bendrosiosNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="bendrosiosIsVisoVal" name="bendrosiosIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="bendrosiosIsVisoVal" name="bendrosiosIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <div class="form-row">
@@ -2530,13 +2530,13 @@
             <input type="number" class="form-control text-center" name="dalykinesLTdestytojuSk" value="<%=user.mm2023_2024.katedrosVedejas.kTOV4.kTOV4_KV01.kTOV4_26.dalykines.destytojuSk%>" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesLTtrukmeVal" name="dalykinesLTtrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="dalykinesLTtrukmeVal" name="dalykinesLTtrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesNeLttrukmeVal" name="dalykinesNeLttrukmeVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="dalykinesNeLttrukmeVal" name="dalykinesNeLttrukmeVal" readonly="readonly" autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" onchange="calc26()" id="dalykinesIsVisoVal" name="dalykinesIsVisoVal" readonly="readonly" autocomplete="off">
+            <input type="number" class="form-control text-center"   id="dalykinesIsVisoVal" name="dalykinesIsVisoVal" readonly="readonly" autocomplete="off">
           </div>
         </div>
         <p>** Akademinė valanda prilyginama astronominei valandai</p>
@@ -2652,7 +2652,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3">
-            <input type="number" class="form-control text-center" name="lent28_trukmeVal<%=numb28%>" min="0" value="<%=user.trukmeVal%>" onkeyup="if(this.value<0){this.value= this.value * -1}" autocomplete="off">
+            <input type="number" class="form-control text-center" name="lent28_trukmeVal<%=numb28%>" min="0" value="<%=user.trukmeVal%>"   autocomplete="off">
           </div>
           <div class="col-md-2 mb-3">
             <textarea type="text" rows="1" class="form-control " name="lent28_data<%=numb28%>" autocomplete="off"><%=user.data%></textarea>
@@ -3529,23 +3529,23 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_<%=iterationNr34%>" value="<%=user.studentuSk1%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk1_<%=iterationNr34%>" value="<%=user.studentuSk1%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_<%=iterationNr34%>" value="<%=user.studentuSk2%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk2_<%=iterationNr34%>" value="<%=user.studentuSk2%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_<%=iterationNr34%>" value="<%=user.studentuSk3%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk3_<%=iterationNr34%>" value="<%=user.studentuSk3%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_<%=iterationNr34%>" value="<%=user.studentuSk4%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk4_<%=iterationNr34%>" value="<%=user.studentuSk4%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m.</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_<%=iterationNr34%>" value="<%=user.studentuSk5%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent34_studentuSk5_<%=iterationNr34%>" value="<%=user.studentuSk5%>" autocomplete="off"  >
           </div>
           
         </div>
@@ -3721,46 +3721,46 @@
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2017 - 2018 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_<%=numb35%>" value="<%=user.studentuSk1%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr1_<%=numb35%>" value="<%=user.studentuSk1%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2017 - 2018 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_<%=numb35%>" value="<%=user.pasPartnerSk1%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk1_<%=numb35%>" value="<%=user.pasPartnerSk1%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2018 - 2019 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_<%=numb35%>" value="<%=user.studentuSk2%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr2_<%=numb35%>" value="<%=user.studentuSk2%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2018 - 2019 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_<%=numb35%>" value="<%=user.pasPartnerSk2%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk2_<%=numb35%>" value="<%=user.pasPartnerSk2%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2019 - 2020 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_<%=numb35%>" value="<%=user.studentuSk3%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr3_<%=numb35%>" value="<%=user.studentuSk3%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2019 - 2020 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_<%=numb35%>" value="<%=user.pasPartnerSk3%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk3_<%=numb35%>" value="<%=user.pasPartnerSk3%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2020 - 2021 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_<%=numb35%>" value="<%=user.studentuSk4%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr4_<%=numb35%>" value="<%=user.studentuSk4%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2020 - 2021 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_<%=numb35%>" value="<%=user.pasPartnerSk4%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk4_<%=numb35%>" value="<%=user.pasPartnerSk4%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for=""><br>2021 - 2022 m. m. Bendras</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_<%=numb35%>" value="<%=user.studentuSk5%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSkBendr5_<%=numb35%>" value="<%=user.studentuSk5%>" autocomplete="off"  >
           </div>
           <div class="col-md-2 mb-3">
             <label for="">2021 - 2022 m. m. Iš jų strateginių partnerių</label>
-            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_<%=numb35%>" value="<%=user.pasPartnerSk5%>" autocomplete="off" onkeyup="if(this.value<0){this.value= this.value * -1}">
+            <input type="number" class="form-control  text-center" min="0" name="lent35_studentuSk5_<%=numb35%>" value="<%=user.pasPartnerSk5%>" autocomplete="off"  >
           </div>
           
         </div>
