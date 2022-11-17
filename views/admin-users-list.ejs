@@ -14,6 +14,13 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <% } %>
+    <% if(userP != '') { %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>Naujas slaptažodis sėkmingai priskirtas!</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
+    
     <h1 class="text-center">Visų duomenų bazėje esančių naudotojų sąrašas</h1>
     <br>
     <input class="form-control" id="myInput" type="text" placeholder="Ieškoti..">
@@ -53,6 +60,7 @@
               <div class="text-right">
                 <div class="btn-group" role="group" aria-label="" id="group">
                   <a type="button" class="btn btn-primary" href="/admin/users/edit/<%= user._id %>"> Redaguoti</a>
+                  <a type="button" class="btn btn-secondary" href="/admin/users/change-user-password/<%= user._id %>"> Keisti slaptažodį</a>
                   <form action="/delete" method="post">
                     <button class="btn btn-danger" type="submit" name="deleteById" id="confDelete" value="<%=user._id%>">Ištrinti</button>
                   </form>
@@ -67,10 +75,7 @@
     </table>
     <br>
     
-    
   </div>
 </div>
-
-
 
 <%- include('partials/footer') %>

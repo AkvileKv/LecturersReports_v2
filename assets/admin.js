@@ -12,6 +12,60 @@ const depReport24_25 = require('./report/departments-report24_25');
 const depReport25_26 = require('./report/departments-report25_26');
 
 module.exports = {
+  getChangePassword: function (req, res) {
+    User.findById(req.user.id, function (err, foundUser) {
+      try {
+        if (foundUser.role === "administratorius") {
+          const reqId = req.params.userId;
+          if (reqId.match(/^[0-9a-fA-F]{24}$/)) {
+            User.findById((reqId), function (err, user) {
+              if (err) throw err;
+              const passwF = req.flash('passwFail');
+              res.render("admin-change-user-password", {
+                user: user,
+                failureMsg: passwF
+              });
+            });
+          } else {
+            res.redirect("/admin/profile");
+          }
+        } else {
+          console.log("You don't have permission");
+          res.redirect("/login");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
+  postChangePassword: function (req, res) {
+    User.findById(req.body.idUser, function (err, foundUser) {
+      try {
+        if (foundUser) {
+          if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas" || foundUser.role === "administratorius") {
+            foundUser.updated_for = req.user.username,
+              foundUser.setPassword(req.body.password, function (err) {
+                if (err) {
+                  console.log(err);
+                  req.flash('passwFail', "Failure");
+                  res.redirect("/admin/users");
+                }
+                else {
+                  req.flash('userP', 'Success');
+                  res.redirect("/user-window");
+                }
+              });
+          } else {
+            res.redirect("/login");
+          }
+        } else {
+          console.log("User does'f found");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  },
   getUpdateUserAllByF: (req, res) => { //new
     User.findById(req.user.id, function (err, foundUser) {
       try {
@@ -346,15 +400,17 @@ module.exports = {
       try {
         if (foundUser.role === "administratorius") {
           User.find({}, function (err, users) {
-              if (err) throw err;
-                const userUpdate = req.flash('user');
-                const userDelete = req.flash('userDeleted');
-                res.render("admin-users-list", {
-                  userUp: userUpdate,
-                  userDel: userDelete,
-                  users: users,
-                });
+            if (err) throw err;
+            const userUpdate = req.flash('user');
+            const userDelete = req.flash('userDeleted');
+            const userPasswordUpdate = req.flash('userP');
+            res.render("admin-users-list", {
+              userUp: userUpdate,
+              userDel: userDelete,
+              userP: userPasswordUpdate,
+              users: users,
             });
+          });
         } else {
           console.log("You do not have permission");
           res.redirect("/login");
@@ -687,7 +743,7 @@ module.exports = {
               users: users
             });
           });
-        
+
         } else {
           console.log("You do not have permission");
           res.redirect("/login");
@@ -711,7 +767,7 @@ module.exports = {
               users: users
             });
           });
-        
+
         } else {
           console.log("You do not have permission");
           res.redirect("/login");

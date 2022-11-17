@@ -24,6 +24,7 @@ const depEditLect = require('./assets/departments-edit-lec');
 const userWindow = require('./assets/user-window');
 const adminWindow = require('./assets/admin');
 const mainModules = require('./assets/main-modules');
+const admin = require('./assets/admin');
 
 const app = express();
 app.use(helmet());
@@ -335,27 +336,27 @@ app.post("/update-user-dep-2025-2026", isLoggedIn, (req, res) => {
 app.get("/department/2022-2023/lecturers-list", isLoggedIn, (req, res) => {
   depEditLect.getLecturersList22_23(req, res);
 });
-app.get("/department/2022-2023/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depEditLect.getLecturersList22_23(req, res);
-});
+// app.get("/department/2022-2023/lecturers-list/:page", isLoggedIn, (req, res) => {
+//   depEditLect.getLecturersList22_23(req, res);
+// });
 app.get("/department/2023-2024/lecturers-list", isLoggedIn, (req, res) => {
   depEditLect.getLecturersList23_24(req, res);
 });
-app.get("/department/2023-2024/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depEditLect.getLecturersList23_24(req, res);
-});
+// app.get("/department/2023-2024/lecturers-list/:page", isLoggedIn, (req, res) => {
+//   depEditLect.getLecturersList23_24(req, res);
+// });
 app.get("/department/2024-2025/lecturers-list", isLoggedIn, (req, res) => {
   depEditLect.getLecturersList24_25(req, res);
 });
-app.get("/department/2024-2025/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depEditLect.getLecturersList24_25(req, res);
-});
+// app.get("/department/2024-2025/lecturers-list/:page", isLoggedIn, (req, res) => {
+//   depEditLect.getLecturersList24_25(req, res);
+// });
 app.get("/department/2025-2026/lecturers-list", isLoggedIn, (req, res) => {
   depEditLect.getLecturersList25_26(req, res);
 });
-app.get("/department/2025-2026/lecturers-list/:page", isLoggedIn, (req, res) => {
-  depEditLect.getLecturersList25_26(req, res);
-});
+// app.get("/department/2025-2026/lecturers-list/:page", isLoggedIn, (req, res) => {
+//   depEditLect.getLecturersList25_26(req, res);
+// });
 //Head of department updates the status of lecturers by year
 app.get("/department/2022-2023/edit-user/:userId", isLoggedIn, (req, res) => {
   depEditLect.getEditLec22_23(req, res);
@@ -419,9 +420,18 @@ app.post("/update-profile-admin", isLoggedIn, (req, res) => {
 app.get("/admin/users", isLoggedIn, (req, res) => {
   adminWindow.getAllUsers(req, res);
 });
-app.get("/admin/users/:page", isLoggedIn, (req, res) => {
-  adminWindow.getAllUsers(req, res);
+// app.get("/admin/users/:page", isLoggedIn, (req, res) => {
+//   adminWindow.getAllUsers(req, res);
+// });
+
+//Change user password
+app.get("/admin/users/change-user-password/:userId", (req, res) => { // NEW ---
+  adminWindow.getChangePassword(req, res);
 });
+app.post("/change-user-password-admin", (req, res) => { // NEW ---
+  adminWindow.postChangePassword(req, res);
+});
+
 //Update user info (main)
 app.get("/admin/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserInfo(req, res);
@@ -511,21 +521,21 @@ app.get("/admin/2022-2023/users", isLoggedIn, (req, res) => {
 app.get("/admin/2023-2024/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear23_24(req, res);
 });
-app.get("/admin/2023-2024/users/:page", isLoggedIn, (req, res) => {
-  adminWindow.getUsersByYear23_24(req, res);
-});
+// app.get("/admin/2023-2024/users/:page", isLoggedIn, (req, res) => {
+//   adminWindow.getUsersByYear23_24(req, res);
+// });
 app.get("/admin/2024-2025/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear24_25(req, res);
 });
-app.get("/admin/2024-2025/users/:page", isLoggedIn, (req, res) => {
-  adminWindow.getUsersByYear24_25(req, res);
-});
+// app.get("/admin/2024-2025/users/:page", isLoggedIn, (req, res) => {
+//   adminWindow.getUsersByYear24_25(req, res);
+// });
 app.get("/admin/2025-2026/users", isLoggedIn, (req, res) => {
   adminWindow.getUsersByYear25_26(req, res);
 });
-app.get("/admin/2025-2026/users/:page", isLoggedIn, (req, res) => {
-  adminWindow.getUsersByYear25_26(req, res);
-});
+// app.get("/admin/2025-2026/users/:page", isLoggedIn, (req, res) => {
+//   adminWindow.getUsersByYear25_26(req, res);
+// });
 //Update User information by year
 app.get("/admin/2022-2023/users/edit/:userId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserByYear22_23(req, res);
