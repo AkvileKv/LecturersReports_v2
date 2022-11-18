@@ -39,10 +39,7 @@
         <br>
       </div>
     </div>
-
-    <form action="/dep-submit-2024-2025" method="post">
-
-      <% if (user.busenaVedejo24_25 === "užrakinta") { %>
+    <% if (user.busenaVedejo24_25 === "užrakinta") { %>
       <br>
       <div class="text-center">
         <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
@@ -51,13 +48,17 @@
       <% } else { %>
       <br>
       <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
-      <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
+
       <div class="row noprint">
         <div class="text-center">
-          <button type="submit" class="btn btn-danger" id="submitRep">PATEIKTI</button> </div>
+          <button type="submit" class="btn btn-danger" id="submitReportId">PATEIKTI</button> </div>
       </div>
       <% } %>
       <br><br>
+
+    <form id="form-submitReport-id" action="/dep-submit-2024-2025" method="post">
+
+      <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
       <div class="form-group" id="begin">
         <p class=" font-weight-bold text-center">1. KATEDROS KURUOJAMA (-OS) PROGRAMA (-OS) IR PERSONALAS</p>
 

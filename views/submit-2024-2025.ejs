@@ -3,23 +3,23 @@
 <div class="container">
   <div class="jumbotron ">
     <% if(reportSubm != '') { %>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <div>Sėkmingai pateikta!</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      <% } %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <div>Sėkmingai pateikta!</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
     <h1 class="text-center noprint">Dėstytojo darbo ataskaitos pateikimas 2024 - 2025 m. m.</h1>
-
+    
     <%if ( user.busena24_25 === "nesukurta") { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, ataskaita nėra sukurta. Pirmiausia sukurkite ataskaitą.</p>
-  <% } else if (user.katedra == "" || user.fakultetas == "" || user.katedra == undefined || user.fakultetas == undefined) { %>
+    <% } else if (user.katedra == "" || user.fakultetas == "" || user.katedra == undefined || user.fakultetas == undefined) { %>
     <p class="lead text-center text-danger">Ataskaitos pateikimas nėra galimas, Jums nėra nepriskirta katedra ir/arba fakultetas.</p>
     <% } else { %>
     <div class="printable">
       <div class="text-center">
         <p class="font-weight-bold">VILNIAUS KOLEGIJOS <%=fakultetasUpper%> FAKULTETO</p>
         <p class="font-weight-bold"><%=katedraUpper%> KATEDRA</p>
-
+        
         <div class="text-right">
           <p>TVIRTINU</p>
           <p>Dekanas</p>
@@ -34,33 +34,33 @@
         <br>
       </div>
     </div>
-
-    <form action="/submit-2024-2025" method="post">
-
-      <% if (user.busena24_25 === "užrakinta") { %>
-      <br>
+    <% if (user.busena24_25 === "užrakinta") { %>
+    <br>
+    <div class="text-center">
+      <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
+    </div>
+    <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į katedros vedėją.</p>
+    <% } else if (user.busena24_25 === "užrakintaVedėjo") { %>
+    <div class="text-center">
+      <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
+    </div>
+    <div class="row noprint">
+      <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į katedros vedėją.</p>
+    </div>
+    <% } else { %>
+    <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
+    <div class="row noprint">
       <div class="text-center">
-        <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
+        <button type="submit" class="btn btn-danger" id="submitReportId">PATEIKTI</button>
       </div>
-      <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta. Kreipkitės į katedros vedėją.</p>
-      <% } else if (user.busena24_25 === "užrakintaVedėjo") { %>
-      <div class="text-center">
-        <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
-      </div>
-      <div class="row noprint">
-        <p class="lead text-danger text-center noprint">Pakartotinis ataskaitos pateikimas nėra galimas, ataskaita yra užrakinta katedros vedėjo. Kreipkitės į katedros vedėją.</p>
-      </div>
-      <% } else { %>
-      <p class="lead text-danger noprint text-center">Pateikus ataskaitą negalėsite jos redaguoti, bet galėsite ją atsispausdinti</p>
+    </div>
+    <% } %>
+    <br>
+    <form id="form-submitReport-id" action="/submit-2024-2025" method="post">
       <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
-      <div class="row noprint">
-        <div class="text-center">
-          <button type="submit" class="btn btn-danger" id="submitRep">PATEIKTI</button></div>
-      </div>
-      <% } %>
-      <br>
-
-        <div class="form-group" id="begin">
+      
+      
+      <div class="form-group" id="begin">
         <!-- 1 lentelė -->
         <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
         <div class="form-row">
@@ -96,7 +96,7 @@
           </div>
           <br>
         </div>
-
+        
         <!-- kD1_K01 -->
         <div <%if (user.mm2024_2025.destytojas.kD1_K01.kD1_K01_array.length === 0) { %> class="noprint" <% } %>>
           <!-- kD1_K01 -->
@@ -145,11 +145,11 @@
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" value="<%=user.planuotosVal%>" class="form-control text-center the_textarea" name="planuotosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
-                <div class="print_helper text-center"><%=user.planuotosVal%></div>
+              <div class="print_helper text-center"><%=user.planuotosVal%></div>
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" value="<%=user.atliktosVal%>" class="form-control text-center the_textarea" name="atliktosVal<%=numb%>" placeholder="(val. sk.)" autocomplete="off">
-                <div class="print_helper text-center"><%=user.atliktosVal%></div>
+              <div class="print_helper text-center"><%=user.atliktosVal%></div>
             </div>
           </div>
           <% }) %>
@@ -161,11 +161,11 @@
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" value="<%=user.mm2024_2025.destytojas.kD1_K01.isVisoValPlan%>" class="form-control text-center the_textarea" name="kD1_K01isVisoValPlan" placeholder="" autocomplete="off" readonly="readonly">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.kD1_K01.isVisoValPlan%></div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.kD1_K01.isVisoValPlan%></div>
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" value="<%=user.mm2024_2025.destytojas.kD1_K01.isVisoValAtl%>" class="form-control text-center the_textarea" name="kD1_K01isVisoValAtl" placeholder="" autocomplete="off" readonly="readonly">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.kD1_K01.isVisoValAtl%></div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.kD1_K01.isVisoValAtl%></div>
             </div>
           </div>
           <div class="form-row">
@@ -204,7 +204,7 @@
           </div>
           <br>
         </div>
-
+        
         <!-- nD2 -->
         <div <%if (user.mm2024_2025.destytojas.nD2.isVisoValPlan === null) { %> class="noprint" <% } %>>
           <p class="text-center font-weight-bold">2. NEKONTAKTINIS DARBAS</p>
@@ -237,12 +237,12 @@
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_planVal%>" class="form-control text-center the_textarea" placeholder="(val. sk.)" name="pasirengDest_planVal" autocomplete="off">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.nD2.pasirengDest_planVal%></div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.nD2.pasirengDest_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" value="<%=user.mm2024_2025.destytojas.nD2.pasirengDest_atlVal%>" class="form-control text-center the_textarea" placeholder="(val. sk.)" name="pasirengDest_atlVal" autocomplete="off">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.nD2.pasirengDest_atlVal%></div>
-              </div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.nD2.pasirengDest_atlVal%></div>
+            </div>
           </div>
           <div class="form-row">
             <div class="col-md-8 mb-3">
@@ -298,17 +298,17 @@
           </div>
           <br>
           <div <%if (user.mm2024_2025.destytojas.nD2.priezastys === "") { %> class="noprint" <% } %>>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos nekontaktinio darbo valandos</b></label>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="nD2priezastys" placeholder="" autocomplete="off"><%=user.mm2024_2025.destytojas.nD2.priezastys%></textarea>
-              <div class="print_helper"><%=user.mm2024_2025.destytojas.nD2.priezastys%></div>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos nekontaktinio darbo valandos</b></label>
+                <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="nD2priezastys" placeholder="" autocomplete="off"><%=user.mm2024_2025.destytojas.nD2.priezastys%></textarea>
+                <div class="print_helper"><%=user.mm2024_2025.destytojas.nD2.priezastys%></div>
+              </div>
             </div>
           </div>
-                </div>
           <br>
         </div>
-
+        
         <!--   nD2_M02 -->
         <!-- 3 lentelė. -->
         <div <%if (user.mm2024_2025.destytojas.nD2_M02.length === 0) { %> class="noprint" <% } %>>
@@ -321,7 +321,7 @@
           <% var numb4 = 0; %>
           <%  user.mm2024_2025.destytojas.nD2_M02.forEach(function(user){ %>
           <% numb4++ %>
-
+          
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <label for=""><br><br></label>
@@ -365,7 +365,7 @@
           </p> -->
           <br>
         </div>
-
+        
         <!-- 4 lentelė. -->
         <!-- nD2_M04 -->
         <div <%if (user.mm2024_2025.destytojas.nD2_M04.length === 0) { %> class="noprint" <% } %>>
@@ -420,7 +420,7 @@
           <input type="hidden" id="table4_id" name="table4_name" value="<%=numb6%>">
           <br>
         </div>
-
+        
         <!-- 5 lentelė.  -->
         <!-- nD2_D01 -->
         <div <%if (user.mm2024_2025.destytojas.nD2_D01.length === 0) { %> class="noprint" <% } %>>
@@ -449,7 +449,7 @@
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center the_textarea" name="nD2_D01nr<%=numb7%>" placeholder="" autocomplete="off" value="<%=numb7%>" readonly="readonly">
-                <div class="print_helper"><%=numb7%></div>
+              <div class="print_helper"><%=numb7%></div>
             </div>
             <div class="col-md-3 mb-3">
               <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="nD2_D01komitetas<%=numb7%>" placeholder="" autocomplete="off"><%=user.komitetas%></textarea>
@@ -468,8 +468,8 @@
           <input type="hidden" id="table5_id" name="table5_name" value="<%=numb7%>">
           <br>
         </div>
-
-
+        
+        
         <!-- 6 lentelė.  -->
         <!-- nD2_D02 -->
         <div <%if (user.mm2024_2025.destytojas.nD2_D02.length === 0) { %> class="noprint" <% } %>>
@@ -517,7 +517,7 @@
           <input type="hidden" id="table6_id" name="table6_name" value="<%=numb8%>">
           <br>
         </div>
-
+        
         <!-- 7 lentelė.  -->
         <!-- nD2_D03 -->
         <div <%if (user.mm2024_2025.destytojas.nD2_D03.length === 0) { %> class="noprint" <% } %>>
@@ -574,7 +574,7 @@
             / Aktedituota (A, terminas iki kada, SKVC įsak. Nr. ir data).</p>
           <br>
         </div>
-
+        
         <!-- 8 lentelė -->
         <!-- nD2_M03 -->
         <div <%if (user.mm2024_2025.destytojas.nD2_M03.length === 0) { %> class="noprint" <% } %>>
@@ -622,8 +622,8 @@
           <input type="hidden" id="table8_id" name="table8_name" value="<%=numb5%>">
           <br>
         </div>
-
-
+        
+        
         <!-- nD2_S01 -->
         <!-- 9 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.nD2_S01.length === 0) { %> class="noprint" <% } %>>
@@ -669,8 +669,8 @@
           <input type="hidden" id="table9_id" name="table9_name" value="<%=numb10%>">
           <br>
         </div>
-
-
+        
+        
         <!-- nD2_S -->
         <div <%if (user.mm2024_2025.destytojas.nD2_S.length === 0) { %> class="noprint" <% } %>>
           <div class="form-row">
@@ -710,7 +710,7 @@
           <input type="hidden" id="tablenD2_S_id" name="tablenD2_S_name" value="<%=numb11%>">
           <br>
         </div>
-
+        
         <!-- tMTEP3 -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3.isVisoValPlan === null) { %> class="noprint" <% } %>>
           <p class="text-center font-weight-bold">3. TAIKOMŲJŲ MOKSLINIŲ TYRIMŲ IR EKSPERIMENTINĖS
@@ -734,7 +734,7 @@
               <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly"class="form-control text-center the_textarea" name="tMTEPveiklRez_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="tMTEPveiklRez_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.tMTEPveiklRez_atlVal%></div>
             </div>
           </div>
@@ -747,7 +747,7 @@
               <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
-              <input type="number" readonly="readonly"class="form-control text-center the_textarea" name="menoVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal%>" placeholder="(val. sk.)">
+              <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="menoVeikl_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal%>" placeholder="(val. sk.)">
               <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.menoVeikl_atlVal%></div>
             </div>
           </div>
@@ -770,11 +770,11 @@
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_planVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_planVal%>" placeholder="(val. sk.)">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.studReng_planVal%></div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.studReng_planVal%></div>
             </div>
             <div class="col-md-2 mb-3">
               <input type="number" readonly="readonly" class="form-control text-center the_textarea" name="studReng_atlVal" value="<%=user.mm2024_2025.destytojas.tMTEP3.studReng_atlVal%>" placeholder="(val. sk.)">
-                <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.studReng_atlVal%></div>
+              <div class="print_helper text-center"><%=user.mm2024_2025.destytojas.tMTEP3.studReng_atlVal%></div>
             </div>
           </div>
           <div class="form-row">
@@ -805,19 +805,19 @@
           </div>
           <br>
           <div <%if (user.mm2024_2025.destytojas.kTOV4.priezastys === "") { %> class="noprint" <% } %>>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos
-                  TMTEP vykdymo, meno taikomosios veiklos, profesionaliojo meno veiklos,
-                  šios veiklos rezultatų skelbimo ir viešinimo valandos:</b></label>
-              <textarea type="text" class="form-control the_textarea textarea the_textarea" rows="1" readonly="readonly" name="tMTEP3priezastys"><%=user.mm2024_2025.destytojas.tMTEP3.priezastys%></textarea>
-              <div class="print_helper"><%=user.mm2024_2025.destytojas.tMTEP3.priezastys%></div>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <label for=""><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos
+                    TMTEP vykdymo, meno taikomosios veiklos, profesionaliojo meno veiklos,
+                    šios veiklos rezultatų skelbimo ir viešinimo valandos:</b></label>
+                <textarea type="text" class="form-control the_textarea textarea the_textarea" rows="1" readonly="readonly" name="tMTEP3priezastys"><%=user.mm2024_2025.destytojas.tMTEP3.priezastys%></textarea>
+                <div class="print_helper"><%=user.mm2024_2025.destytojas.tMTEP3.priezastys%></div>
+              </div>
             </div>
           </div>
-            </div>
           <br>
         </div>
-
+        
         <!-- 10 lentelė.  -->
         <!-- tMTEP3_T01 -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T01.length === 0) { %> class="noprint" <% } %>>
@@ -825,7 +825,7 @@
           <% var numb12 = 0; %>
           <%  user.mm2024_2025.destytojas.tMTEP3_T01.forEach(function(user){ %>
           <% numb12++ %>
-
+          
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
@@ -871,7 +871,7 @@
           </p> -->
           <br>
         </div>
-
+        
         <!-- TMTEP3_T02 -->
         <!-- 11 lentelė -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T02.length === 0) { %> class="noprint" <% } %>>
@@ -932,7 +932,7 @@
           <% var numb13 = 0; %>
           <%  user.mm2024_2025.destytojas.tMTEP3_T02.forEach(function(user){ %>
           <% numb13++ %>
-
+          
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
@@ -980,7 +980,7 @@
           </p> -->
           <br>
         </div>
-
+        
         <!-- TMTEP3_T03 -->
         <!-- 12 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T03.length === 0) { %> class="noprint" <% } %>>
@@ -1016,10 +1016,11 @@
           <% }) %>
           <input type="hidden" id="table12_id" name="table12_name" value="<%=numb14%>">
           <p>* Seminaras, konferencija, kt.<br>
-          <b>PASTABA</b>: Pateikti įrodymus (nuoroda į programą ir pan.).</p>
+            <b>PASTABA</b>: Pateikti įrodymus (nuoroda į programą ir pan.).
+          </p>
           <br>
         </div>
-
+        
         <!-- TMTEP3_T04 -->
         <!-- 13 lentelė  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T04.length === 0) { %> class="noprint" <% } %>>
@@ -1070,8 +1071,8 @@
           <input type="hidden" id="table13_id" name="table13_name" value="<%=numb15%>">
           <br>
         </div>
-
-
+        
+        
         <!-- TMTEP3_T05 -->
         <!-- 14.1 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T05.length === 0) { %> class="noprint" <% } %>>
@@ -1119,8 +1120,8 @@
           <input type="hidden" id="table141_id" name="table141_name" value="<%=numb16%>">
           <br>
         </div>
-
-
+        
+        
         <!-- 14.2. -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_142.length === 0) { %> class="noprint" <% } %>>
           <p><b>14.2. Narystė profesiniuose tinkluose, atstovavimas Kolegijai asociacijose, organizacijose, išorės institucijų
@@ -1158,7 +1159,7 @@
           <input type="hidden" id="table142_id" name="table142_name" value="<%=new1%>">
           <br>
         </div>
-
+        
         <!-- 14.3. -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_143.length === 0) { %> class="noprint" <% } %>>
           <p><b>14.3. Norminių dokumentų rengimas Vilniaus kolegijoje ir už Kolegijos ribų</b></p>
@@ -1194,7 +1195,7 @@
           <input type="hidden" id="table143_id" name="table143_name" value="<%=new2%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_T06 -->
         <!-- 15 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T06.length === 0) { %> class="noprint" <% } %>>
@@ -1258,7 +1259,7 @@
           </p>
           <br>
         </div>
-
+        
         <!-- TMTEP3_T07 -->
         <!-- 16 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T07.length === 0) { %> class="noprint" <% } %>>
@@ -1315,7 +1316,7 @@
           </p>
           <br>
         </div>
-
+        
         <!-- TMTEP3_T08 -->
         <!-- 17 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T08.length === 0) { %> class="noprint" <% } %>>
@@ -1372,7 +1373,7 @@
           </p>
           <br>
         </div>
-
+        
         <!-- TMTEP3_T09 -->
         <!-- 18 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T09.length === 0) { %> class="noprint" <% } %>>
@@ -1428,7 +1429,7 @@
           </p>
           <br>
         </div>
-
+        
         <!-- TMTEP3_T10 -->
         <!-- 19 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T10.length === 0) { %> class="noprint" <% } %>>
@@ -1442,7 +1443,7 @@
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_T10nr<%=numb21%>" placeholder="" autocomplete="off" value="<%=numb21%>" readonly="readonly">
-                <div class="print_helper"><%=numb21%></div>
+              <div class="print_helper"><%=numb21%></div>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Veiklos pobūdis</label>
@@ -1485,7 +1486,7 @@
           <input type="hidden" id="table19_id" name="table19_name" value="<%=numb21%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_T11 -->
         <!-- 20 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T11.length === 0) { %> class="noprint" <% } %>>
@@ -1499,7 +1500,7 @@
             <div class="col-md-1 mb-3">
               <label for=""><br></label>
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_T11nr<%=numb22%>" placeholder="" autocomplete="off" value="<%=numb22%>" readonly="readonly">
-                <div class="print_helper"><%=numb22%></div>
+              <div class="print_helper"><%=numb22%></div>
             </div>
             <div class="col-md-5 mb-3">
               <label for="">Veiklos pobūdis
@@ -1545,7 +1546,7 @@
           <input type="hidden" id="table20_id" name="table20_name" value="<%=numb22%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_T12 -->
         <!-- 21 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T12.length === 0) { %> class="noprint" <% } %>>
@@ -1573,7 +1574,7 @@
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_T12nr<%=numb23%>" placeholder="" autocomplete="off" value="<%=numb23%>" readonly="readonly">
-                <div class="print_helper"><%=numb23%></div>
+              <div class="print_helper"><%=numb23%></div>
             </div>
             <div class="col-md-8 mb-3">
               <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="tMTEP3_T12veiklPobud<%=numb23%>" placeholder="" autocomplete="off"><%=user.veiklPobud%></textarea>
@@ -1588,7 +1589,7 @@
           <input type="hidden" id="table21_id" name="table21_name" value="<%=numb23%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_T13 -->
         <!-- 22 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T13.length === 0) { %> class="noprint" <% } %>>
@@ -1624,7 +1625,7 @@
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_T13nr<%=numb24%>" placeholder="" autocomplete="off" value="<%=numb24%>" readonly="readonly">
-                <div class="print_helper"><%=numb24%></div>
+              <div class="print_helper"><%=numb24%></div>
             </div>
             <div class="col-md-3 mb-3">
               <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="tMTEP3_T13studDuom<%=numb24%>" placeholder="" autocomplete="off"><%=user.studDuom%></textarea>
@@ -1647,7 +1648,7 @@
           <input type="hidden" id="table22_id" name="table22_name" value="<%=numb24%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_T14 -->
         <!-- 23 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_T14.length === 0) { %> class="noprint" <% } %>>
@@ -1681,7 +1682,7 @@
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_T14nr<%=numb25%>" placeholder="" autocomplete="off" value="<%=numb25%>" readonly="readonly">
-                <div class="print_helper"><%=numb25%></div>
+              <div class="print_helper"><%=numb25%></div>
             </div>
             <div class="col-md-4 mb-3">
               <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="tMTEP3_T14renginys<%=numb25%>" placeholder="" autocomplete="off"><%=user.renginys%></textarea>
@@ -1700,7 +1701,7 @@
           <input type="hidden" id="table23_id" name="table23_name" value="<%=numb25%>">
           <br>
         </div>
-
+        
         <!-- TMTEP3_S -->
         <div <%if (user.mm2024_2025.destytojas.tMTEP3_S.length === 0) { %> class="noprint" <% } %>>
           <p class="text-center font-weight-bold">TMTEP VYKDYMO, MENO TAIKOMOJI VEIKLOS,
@@ -1722,7 +1723,7 @@
           <div class="form-row">
             <div class="col-md-1 mb-3">
               <input type="text" class="form-control text-center the_textarea" name="tMTEP3_Snr<%=numb26%>" placeholder="" autocomplete="off" value="<%=numb26%>" readonly="readonly">
-                <div class="print_helper"><%=numb26%></div>
+              <div class="print_helper"><%=numb26%></div>
             </div>
             <div class="col-md-6 mb-3">
               <textarea type="text" readonly="readonly" rows="1" class="form-control the_textarea" name="tMTEP3_Sstiprybes<%=numb26%>" placeholder="" autocomplete="off"><%=user.stiprybes%></textarea>
@@ -1737,8 +1738,8 @@
           <input type="hidden" id="tableTMTEP3_S_id" name="tableTMTEP3_S_name" value="<%=numb26%>">
           <br>
         </div>
-
-
+        
+        
         <!-- kTOV4 -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4.isVisoValPlan === null) { %> class="noprint" <% } %>>
           <p class="text-center font-weight-bold">4. KOMPETENCIJŲ TOBULINIMAS IR ORGANIZACINĖ VEIKLA</p>
@@ -1804,20 +1805,20 @@
           </div>
           <br>
           <div <%if (user.mm2024_2025.destytojas.kTOV4.priezastys === "") { %> class="noprint" <% } %>>
-          <p class="text-left"><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos kompetencijų tobulinimo ir orgnizacinės veiklos valandos:</b></p>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="kTOV4priezastys" autocomplete="off"><%=user.mm2024_2025.destytojas.kTOV4.priezastys%></textarea>
-              <div class="print_helper"><%=user.mm2024_2025.destytojas.kTOV4.priezastys%></div>
+            <p class="text-left"><b>Pateikite priežastis, jei nebuvo atliktos visos planuotos kompetencijų tobulinimo ir orgnizacinės veiklos valandos:</b></p>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" rows="1" name="kTOV4priezastys" autocomplete="off"><%=user.mm2024_2025.destytojas.kTOV4.priezastys%></textarea>
+                <div class="print_helper"><%=user.mm2024_2025.destytojas.kTOV4.priezastys%></div>
+              </div>
             </div>
-          </div>
           </div>
           <br>
         </div>
-
-
+        
+        
         <!-- kTOV4_KV01 -->
-
+        
         <!-- kompetencijos-->
         <!-- 24 lentelė.  -->
         <!-- IF PASIRAŠYTI SPAUSDINIMUI -->
@@ -1945,7 +1946,7 @@
           <% }) %>
           <input type="hidden" id="table242_id" name="table242_name" value="<%=new4%>">
         </div>
-
+        
         <!-- 24 lentelė 3-->
         <!-- Bendrosios_komp -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_KV01.kompetencijos.bendrosios === null) { %> class="noprint" <% } %>>
@@ -2073,7 +2074,7 @@
           </div>
           <p>**Akademinė valanda prilyginama astronominei valandai</p>
         </div>
-
+        
         <!--kTOV4_25-->
         <!-- 25 lentelė -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_25.length === 0) { %> class="noprint" <% } %>>
@@ -2117,7 +2118,7 @@
           <input type="hidden" id="table25_id" name="table25_name" value="<%=numb_25%>">
           <br>
         </div>
-
+        
         <!--kTOV4_26-->
         <!-- 26 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_26.length === 0) { %> class="noprint" <% } %>>
@@ -2168,7 +2169,7 @@
           <input type="hidden" id="table26_id" name="table26_name" value="<%=numb_26%>">
           <br>
         </div>
-
+        
         <!--kTOV4_KV03-->
         <!-- 27 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_KV03.length === 0) { %> class="noprint" <% } %>>
@@ -2221,8 +2222,8 @@
           <input type="hidden" id="table27_id" name="table27_name" value="<%=numb27%>">
           <br>
         </div>
-
-
+        
+        
         <!--kTOV4_O01-->
         <!-- kTOV4_O01_1 -->
         <!-- 28.1. lentelė.  -->
@@ -2311,7 +2312,7 @@
           <input type="hidden" id="table282_id" name="table282_name" value="<%=numb29%>">
           <br>
         </div>
-
+        
         <!--kTOV4_29-->
         <!-- 29 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_29.length === 0) { %> class="noprint" <% } %>>
@@ -2351,7 +2352,7 @@
             karjeros planavimo veiklose, diskusijose ir pan.</p>
           <br>
         </div>
-
+        
         <!-- kTOV4_S -->
         <div <%if (user.mm2024_2025.destytojas.kTOV4_S.length === 0) { %> class="noprint" <% } %>>
           <p style="text-align: center;"><b>KOMPETENCIJŲ TOBULINIMO IR ORGANIZACINĖS VEIKLOS SAVIANALIZĖ</b></p>
@@ -2387,7 +2388,7 @@
           <input type="hidden" id="tablekTOV4_S_id" name="tablekTOV4_S_name" value="<%=numb30%>">
           <br>
         </div>
-
+        
         <!-- kV5_KT02 -->
         <!-- 30 lentelė. -->
         <div <%if (user.mm2024_2025.destytojas.kV5_KT02.length === 0) { %> class="noprint" <% } %>>
@@ -2440,7 +2441,7 @@
           <!-- <p>* <b>V</b> – verslumo tematika; <b>SA/DP</b> – socialinės atsakomybės, darnios plėtros tematika</p> -->
           <br>
         </div>
-
+        
         <!-- kV5_KT01 -->
         <!-- 31 lentelė. -->
         <div <%if (user.mm2024_2025.destytojas.kV5_KT01.length === 0) { %> class="noprint" <% } %>>
@@ -2489,7 +2490,7 @@
           <input type="hidden" id="table31_id" name="table31_name" value="<%=numb31%>">
           <br>
         </div>
-
+        
         <!-- kV5_32 -->
         <!-- 32 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kV5_32.socAtskMaz.length === 0 &&
@@ -2500,7 +2501,7 @@
           <p class="font-weight-bold">
             32 lentelė. Socialinės atsakomybės ir darnios plėtros veiklos / iniciatyvos
           </p>
-
+          
           <table style="width:100%">
             <tr>
               <td style="width: 25%;">Veiklų / iniciatyvų tipas</td>
@@ -2655,7 +2656,7 @@
           <input type="hidden" id="table325_id" name="table325_name" value="<%=numb32_5%>">
           <br>
         </div>
-
+        
         <!-- kV5_33 -->
         <!-- 33 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kV5_33.length === 0) { %> class="noprint" <% } %>>
@@ -2715,7 +2716,7 @@
           <p>* Tyrimas, konsultacija be finansinio atlygio ir t.t.</p>
           <br>
         </div>
-
+        
         <!-- kV5_34 -->
         <!-- 34 lentelė.  -->
         <div <%if (user.mm2024_2025.destytojas.kV5_34.length === 0) { %> class="noprint" <% } %>>
@@ -2786,19 +2787,19 @@
           <p><%=user.vardas%> <%=user.pavarde%></p>
         </div>
         <div class="database-result-edit ">
-
-        <%if (user.busena24_25 == "redaguojama") { %>
-            <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" id="currentDate4" value="" maxlength="10">
+          
+          <%if (user.busena24_25 == "redaguojama") { %>
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" id="currentDate4" value="" maxlength="10">
           <% } else if (user.busena24_25 == "užrakintaVedėjo" || user.busena24_25 == "užrakinta") { %>
-            <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.mm2024_2025.destytojas.ataskaitosPateikimoData%>" readonly>
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoData" value="<%=user.mm2024_2025.destytojas.ataskaitosPateikimoData%>" readonly>
           <% } else { %>
-            -
+          -
           <%  } %>
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
         <!-- dėstytojo formos pabaiga -->
-<p class="lead text-danger text-center noprint">--- Toliau pildo katedros vedėjas ---</p>
+        <p class="lead text-danger text-center noprint">--- Toliau pildo katedros vedėjas ---</p>
         <br>
         <p><b>Katedros vedėjo (-s) išvados apie suplanuotą ir įvykdytą (jei neįvykdyta – nurodyti priežastis) dėstytojo veiklą.</b></p>
         <div class="form-row">
@@ -2807,7 +2808,7 @@
             <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_isvados%></div>
           </div>
         </div>
-
+        
         <p><b>Katedros vedėjo (-s) rekomendacijos dėstytojo pedagoginei veiklai gerinti:</b></p>
         <!-- table -->
         <table style="width: 100%">
@@ -2820,8 +2821,7 @@
             <td style="text-align: center;">1.</td>
             <td> Kontaktinis darbas</td>
             <td>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kontaktD%> </textarea>
+              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kontaktD%> </textarea>
               <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kontaktD%></div>
             </td>
           </tr>
@@ -2829,8 +2829,7 @@
             <td style="text-align: center;">2.</td>
             <td>Nekontaktinis darbas</td>
             <td>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD%> </textarea>
+              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD%> </textarea>
               <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.neKontaktD%></div>
             </td>
           </tr>
@@ -2838,8 +2837,7 @@
             <td style="text-align: center;">3.</td>
             <td>TMTEP vykdymas, meno taikomųjų ir profesionaliojo meno veiklų rezultatų skelbimas ir viešinimas</td>
             <td>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas%> </textarea>
+              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas%> </textarea>
               <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.tMTEP_vykdymas%></div>
             </td>
           </tr>
@@ -2847,8 +2845,7 @@
             <td style="text-align: center;">4.</td>
             <td>Kompetencijų tobulinimas ir organizacinė veikla</td>
             <td>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas%> </textarea>
+              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas%> </textarea>
               <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kompTobulinimas%></div>
             </td>
           </tr>
@@ -2856,44 +2853,43 @@
             <td style="text-align: center;">5.</td>
             <td>Kitos veiklos</td>
             <td>
-              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly"
-                style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl%> </textarea>
+              <textarea type="text" class="form-control textarea the_textarea" readonly="readonly" style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl%> </textarea>
               <div class="print_helper"><%=user.mm2024_2025.destytojas.katedrosV_rekomendacijos.kitosVeikl%></div>
             </td>
           </tr>
         </table>
-
+        
         <br>
-
+        
         <div class="database-result-edit ">
           <p class="edit-left">Katedros vedėjas (-a)</p>
           <%if (user.busena24_25 == "užrakinta") { %>
-              <% if (user.mm2024_2025.destytojas.vedejoVardasPavarde == undefined) { %>
-                <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
-                <% } else { %>
-                  <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2024_2025.destytojas.vedejoVardasPavarde%>" readonly>
-                  <% } %>
-            <% } else if (user.busena24_25 == "užrakintaVedėjo") { %>
-              <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2024_2025.destytojas.vedejoVardasPavarde%>" readonly>
-            <% } else { %>
-                <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė" readonly>
-            <%  } %>
-
+          <% if (user.mm2024_2025.destytojas.vedejoVardasPavarde == undefined) { %>
+          <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" placeholder="Vardas Pavardė">
+          <% } else { %>
+          <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2024_2025.destytojas.vedejoVardasPavarde%>" readonly>
+          <% } %>
+          <% } else if (user.busena24_25 == "užrakintaVedėjo") { %>
+          <input type="text" style="border: none;" class="text-right" name="vedejoVardasPavarde" value="<%=user.mm2024_2025.destytojas.vedejoVardasPavarde%>" readonly>
+          <% } else { %>
+          <input type="text" class="text-right" style="border: none;" placeholder="Vardas Pavardė" readonly>
+          <%  } %>
+          
         </div>
         <br>
         <div class="database-result-edit ">
           <%if (user.busena24_25 == "užrakinta") { %>
-              <% if (user.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo == undefined) { %>
-                  <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="Data">
-              <% } else { %>
-                  <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
-              <% } %>
+          <% if (user.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo == undefined) { %>
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="" maxlength="10" readonly placeholder="Data">
+          <% } else { %>
+          <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
+          <% } %>
           <% } else if (user.busena24_25 == "užrakintaVedėjo") { %>
           <input type="text" style="border: none;" class="edit-left" name="ataskaitosPateikimoDataVedejo" value="<%=user.mm2024_2025.destytojas.ataskaitosPateikimoDataVedejo%>" readonly>
           <% } else { %>
           <input type="text" style="border: none;" class="edit-left" value="" maxlength="10" readonly placeholder="Data" readonly>
           <%  } %>
-
+          
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br>
@@ -2908,18 +2904,19 @@
           <p class="text-center font-italic">(parašas)</p>
         </div>
         <br> <br>
-
+        
         <div class="text-left">
           <br>
           <p>Susipažinau,
-        <input type="text" class="text-left" style="border: none;" size="48" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti"> </p>
+            <input type="text" class="text-left" style="border: none;" size="48" placeholder="ataskaitą siūlau tvirtinti / ataskaitos siūlau netvirtinti">
+          </p>
           <p>Prodekanas (-ė)</p>
           <p class="font-italic">(parašas)</p>
           <p><%=foundFaculty.prodekanas%></p>
           <input type="text" style="border: none;" class="edit-left" id="currentDate3" value="" maxlength="10">
         </div>
         <br>
-
+        
       </div>
     </form>
     <% } %>
@@ -2927,12 +2924,11 @@
 </div>
 
 <%if ( user.busena24_25 !== "nesukurta") { %>
-  <div class="circle-button noprint">
-    <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
-  </div>
+<div class="circle-button noprint">
+  <a class="btn circle" href="#begin" role="button">BACK TO BEGIN</a>
+</div>
 <% } %>
 
 <div class="noprint">
   <%- include('partials/footer') %>
 </div>
-

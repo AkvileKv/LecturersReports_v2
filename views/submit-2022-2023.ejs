@@ -35,10 +35,8 @@
         <br>
       </div>
     </div>
-    
-    <form action="/submit-2022-2023" method="post">
-      
-      <% if (user.busena22_23 === "užrakinta") { %>
+
+    <% if (user.busena22_23 === "užrakinta") { %>
       <br>
       <div class="text-center">
         <a type="button" class="btn btn-secondary noprint" id="spausdintiAtaskaita">Spausdinti</a>
@@ -56,13 +54,16 @@
       <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
       <div class="row noprint">
         <div class="text-center">
-          <button type="submit" class="btn btn-danger" id="submitRep">PATEIKTI</button>
+          <button class="btn btn-danger" id="submitReportId">PATEIKTI</button>
         </div>
       </div>
       <% } %>
       <br>
+
+    <form id="form-submitReport-id" action="/submit-2022-2023" method="post">
       
       <div class="form-group" id="begin">
+        <input type="text" name="ataskaitos_busena" value="užrakinta" hidden>
         <!-- 1 lentelė -->
         <p class=" font-weight-bold">1 lentelė. Dėstytojo pareigos ir stažas</p>
         <div class="form-row">
