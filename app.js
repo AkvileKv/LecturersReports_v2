@@ -440,7 +440,7 @@ app.post("/update-user-info-admin", isLoggedIn, (req, res) => {
   adminWindow.postUpdateUserInfo(req, res);
 });
 //Update users info (Taip/Ne by year) by faculty (all years)
-app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => { //NEW
+app.get("/admin/usersp/edit-users/:facultyId", isLoggedIn, (req, res) => {
   adminWindow.getUpdateUserAllByF(req, res);
 });
 app.post("/update-all-users-info-admin", isLoggedIn, (req, res) => {

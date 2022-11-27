@@ -30,7 +30,7 @@ module.exports = {
             res.redirect("/admin/profile");
           }
         } else {
-          console.log("You don't have permission");
+          console.log("You don't have permission get change password");
           res.redirect("/login");
         }
       } catch (err) {
@@ -44,18 +44,22 @@ module.exports = {
         if (foundUser) {
           if (foundUser.role === "dėstytojas" || foundUser.role === "katedros vedėjas" || foundUser.role === "administratorius") {
             foundUser.updated_for = req.user.username,
-              foundUser.setPassword(req.body.password, function (err) {
+              foundUser.setPassword(req.body.newPassword, function (err) {
                 if (err) {
                   console.log(err);
                   req.flash('passwFail', "Failure");
                   res.redirect("/admin/users");
                 }
                 else {
+                  foundUser.save(function (err) {
+                    if (err) throw err;
+                  });
                   req.flash('userP', 'Success');
-                  res.redirect("/user-window");
+                  res.redirect("/admin/users");
                 }
               });
           } else {
+            console.log(err);
             res.redirect("/login");
           }
         } else {
